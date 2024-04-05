@@ -1,5 +1,5 @@
 /* 컨텐츠 사이즈 */
-.contentSize{width: 100%; padding-inline: calc((100% - 1260px) / 2); box-sizing: border-box;}
+.contentSize{width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
 
 
 /* 해더 */

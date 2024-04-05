@@ -1,0 +1,7 @@
+
+/* 메인 */
+/* 메인 - welcome */
+.welcomeArea{background-color: #FCF2C4;}
+.welcomeArea h2{font-weight: 700;}
+.welcomeArea p{color: var(--color-font01);}
+.welcomeArea::after{content: ''; aspect-ratio: 720 / 540; background: url(../images/main-top.png) no-repeat center / cover;}

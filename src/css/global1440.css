@@ -1,3 +1,6 @@
+/* 줄바꿈 */
+br[class]:not([class*="pc"]){display: none;}
+
 
 /* 해더 */
 header h1{width: 249px;}

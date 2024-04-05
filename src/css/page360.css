@@ -1,0 +1,6 @@
+/* 메인 */
+/* 메인 - welcome */
+.welcomeArea{padding-block: 50px 55px; text-align: center;}
+.welcomeArea h2{font-size: 36px; line-height: 46px; margin-bottom: 20px;}
+.welcomeArea p{font-size: 16px; line-height: 22px;}
+.welcomeArea::after{display: block; max-width: 500px; margin-inline: auto;}

@@ -1,0 +1,2 @@
+/* 줄바꿈 */
+br[class]:not([class*="tablet"]){display: none;}
