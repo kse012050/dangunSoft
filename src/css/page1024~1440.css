@@ -1,7 +1,7 @@
 /* 메인 */
 /* 메인 - welcome */
-.welcomeArea{position: relative;}
-.welcomeArea h2{margin-bottom: 30px; position: relative; z-index: 1;}
-.welcomeArea h2::before{content: ''; position: absolute; z-index: -1; aspect-ratio: 1; background-color: #FFD88B; border-radius: 100%;}
-.welcomeArea p{word-break: keep-all;}
-.welcomeArea::after{position: absolute; right: max(calc((100% - 1260px) / 2), 24px); top: 50%; transform: translateY(-50%);}
+.mainPage .welcomeArea{position: relative;}
+.mainPage .welcomeArea h2{margin-bottom: 30px; position: relative; z-index: 1;}
+.mainPage .welcomeArea h2::before{content: ''; position: absolute; z-index: -1; aspect-ratio: 1; background-color: #FFD88B; border-radius: 100%;}
+.mainPage .welcomeArea p{word-break: keep-all;}
+.mainPage .welcomeArea::after{position: absolute; right: var(--contentPadding); top: 50%; transform: translateY(-50%);}

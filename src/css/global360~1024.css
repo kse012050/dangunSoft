@@ -15,5 +15,6 @@ header > div a{font-size: 14px; font-weight: 400; color: var(--color-font03); fl
 header > div a::before{content: ''; width: 22px; aspect-ratio: 1; background: url(../images/gnb-sns.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; margin-right: 10px;}
 header > div a:nth-child(1){--styleIdx: 0;}
 header > div a:nth-child(2){--styleIdx: 1;}
+body:has(header nav.active){overflow: hidden;}
 header nav.active{display: block;}
 header nav.active ~ :is(a, div){display: flex;}

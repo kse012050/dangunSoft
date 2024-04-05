@@ -6,4 +6,5 @@
     --color-face: #f8f8f8;
     --color-line: #dedede;
     --color-point: #96C51A;
+    --contentPadding: max(calc((100% - 1260px) / 2), 24px);
 }

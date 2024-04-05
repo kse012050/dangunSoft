@@ -1,7 +1,7 @@
 /* 메인 */
 /* 메인 - welcome */
-.welcomeArea{padding-block: 170px 260px;}
-.welcomeArea h2{font-size: 64px; line-height: 74px;}
-.welcomeArea h2::before{left: -35px; top: -31px; width: 100px;}
-.welcomeArea p{font-size: 20px; line-height: 28px; max-width: 460px;}
-.welcomeArea::after{width: min(50%, 720px);}
+.mainPage .welcomeArea{padding-block: 170px 260px;}
+.mainPage .welcomeArea h2{font-size: 64px; line-height: 74px;}
+.mainPage .welcomeArea h2::before{left: -35px; top: -31px; width: 100px;}
+.mainPage .welcomeArea p{font-size: 20px; line-height: 28px; max-width: 460px;}
+.mainPage .welcomeArea::after{width: min(50%, 720px);}

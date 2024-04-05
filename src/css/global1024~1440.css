@@ -1,2 +1,3 @@
 /* 컨텐츠 사이즈 */
 .contentSize{--minSpacing: 24px;}
+[class$="Page"] > [class$="Area"]{--minSpacing: 24px;}
