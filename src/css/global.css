@@ -1,3 +1,9 @@
+/* 컨텐츠 사이즈 */
+.contentSize{width: 100%; padding-inline: calc((100% - 1260px) / 2); box-sizing: border-box;}
+
 
 /* 해더 */
-header{}
+header{position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
+header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+header nav ul li > a{font-size: 20px; font-weight: 700; text-align: center; display: block; }
+header nav ul li div{display: none;}
