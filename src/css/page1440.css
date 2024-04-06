@@ -1,7 +1,18 @@
 /* 메인 */
+.mainPage h3{font-size: 50px; line-height: 60px;}
 /* 메인 - welcome */
 .mainPage .welcomeArea{padding-block: 170px 260px;}
 .mainPage .welcomeArea h2{font-size: 64px; line-height: 74px;}
 .mainPage .welcomeArea h2::before{left: -35px; top: -31px; width: 100px;}
 .mainPage .welcomeArea p{font-size: 20px; line-height: 28px; max-width: 460px;}
 .mainPage .welcomeArea::after{width: min(50%, 720px);}
+
+
+/* 메인 - 주요제품 */
+.mainPage .productArea{--areaPaddingTop: 100px; padding-bottom: 120px;}
+.mainPage .productArea div{width: min(30.7617%, 406px); padding-right: 39px;}
+.mainPage .productArea div h3{margin-bottom: 40px;}
+.mainPage .productArea div p{font-size: 20px; line-height: 28px;}
+.mainPage .productArea ul li{--width: 32.2222%; height: 320px;}
+.mainPage .productArea ul li a strong{font-size: 24px; line-height: 32px;}
+.mainPage .productArea ul li a p{font-size: 16px; line-height: 22px;}

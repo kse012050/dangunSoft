@@ -5,3 +5,7 @@
 .mainPage .welcomeArea h2::before{content: ''; position: absolute; z-index: -1; aspect-ratio: 1; background-color: #FFD88B; border-radius: 100%;}
 .mainPage .welcomeArea p{word-break: keep-all;}
 .mainPage .welcomeArea::after{position: absolute; right: var(--contentPadding); top: 50%; transform: translateY(-50%);}
+
+
+/* 메인 - 주요제품 */
+.mainPage .productArea div{position: absolute; left: var(--contentPadding); top: var(--areaPaddingTop); box-sizing: border-box;}
