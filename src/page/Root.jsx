@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import {styleIdx} from '../js/style.js';
 import Header from '../components/Header'
+import Footer from '../components/Footer.jsx';
 
 export default function Root() {
     const location = useLocation().pathname.slice(1) || 'main';
@@ -17,6 +18,7 @@ export default function Root() {
         <div className={`${location}Page`}>
             <Header />
             <Outlet />
+            <Footer />
         </div>
     );
 }

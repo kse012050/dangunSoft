@@ -1,2 +1,12 @@
 /* 줄바꿈 */
 br[class]:not([class*="tablet"]){display: none;}
+
+
+/* 해더 */
+
+
+/* 푸터 */
+footer strong{font-size: 20px;}
+footer b{font-size: 15px;}
+footer address{font-weight: 14px; margin-bottom: 9px;}
+footer > p{font-size: 14px; line-height: 22px;}

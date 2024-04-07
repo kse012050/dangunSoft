@@ -8,3 +8,20 @@ header{background-color: white; position: sticky; top: 0; width: 100%; padding-i
 header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
 header nav ul li > a{font-size: 20px; font-weight: 700; text-align: center; display: block; }
 header nav ul li div{display: none;}
+
+
+/* 푸터 */
+footer{padding-block: 40px 30px; padding-inline: max(calc((100% - 1340px) / 2), var(--minSpacing)); color: white; background-color: black;}
+footer strong{font-weight: 700;}
+footer b{font-weight: 700;}
+footer address{--color: rgba(255, 255, 255, 0.6); color: var(--color); display: flex; flex-wrap: wrap;}
+footer address dl{display: flex; align-items: center; gap: 0.4em;}
+footer address dl:first-of-type dt{display: flex; align-items: center; gap: 0.4em;}
+footer address dl:first-of-type dt::after{content: ':';}
+footer address dl:nth-of-type(1), footer address dl:nth-of-type(2){margin-right: 0.8em; padding-right: 0.8em; position: relative;}
+:is(footer address dl:nth-of-type(1), footer address dl:nth-of-type(2))::after{content: ''; position: absolute; right: 0; top: 50%; width: 1px; height: 70%; transform: translateY(-50%); background-color: var(--color);}
+footer address p{width: 100%;}
+footer > p{font-weight: 700; color: white;}
+footer ul{display: flex; gap: 20px;}
+footer ul li a{width: 48px; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: var(--color-font01); border-radius: 100%; text-indent: -9999px;}
+footer ul li a::before{content: ''; width: 30px; aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}

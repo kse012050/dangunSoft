@@ -14,3 +14,13 @@ header nav ul li > a.active::before{content: ''; position: absolute; left: 0; bo
 header > a{width: 156px; line-height: 50px; font-size: 16px; font-weight: 700; color: white; text-align: center; background-color: var(--color-point); border-radius: 6px;}
 header > div{display: none;}
 header button{display: none;}
+
+
+/* 해더 */
+
+
+/* 푸터 */
+footer strong{font-size: 24px; line-height: 30px;}
+footer b{font-size: 16px; line-height: 20px;}
+footer address{font-size: 15px; margin-bottom: 3px;}
+footer > p{font-size: 15px; line-height: 20px;}

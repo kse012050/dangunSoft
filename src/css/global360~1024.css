@@ -18,3 +18,8 @@ header > div a:nth-child(2){--styleIdx: 1;}
 body:has(header nav.active){overflow: hidden;}
 header nav.active{display: block;}
 header nav.active ~ :is(a, div){display: flex;}
+
+
+/* 푸터 */
+footer strong{line-height: 24px;}
+footer b{line-height: 22px;}

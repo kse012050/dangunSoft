@@ -1,3 +1,13 @@
 /* 컨텐츠 사이즈 */
 .contentSize{--minSpacing: 24px;}
 [class$="Page"] > [class$="Area"]{--minSpacing: 24px;}
+
+
+/* 해더 */
+
+
+/* 푸터 */
+footer{--minSpacing: 24px; display: flex; flex-wrap: wrap; justify-content: space-between;}
+footer strong{margin-bottom: 15px;}
+footer address{width: 100%; line-height: 22px;}
+footer > p{align-self: flex-end;}
