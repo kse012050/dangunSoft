@@ -8,8 +8,11 @@
 .mainPage .welcomeArea::after{content: ''; aspect-ratio: 720 / 540; background: url(../images/main-top.png) no-repeat center / cover;}
 
 
+/* 메인 - 주요제품, 주요기능 공통 */
+.mainPage :is(.productArea, .functionArea){padding-top: var(--areaPaddingTop);}
+
 /* 메인 - 주요제품 */
-.mainPage .productArea{padding-top: var(--areaPaddingTop); position: relative;}
+.mainPage .productArea{position: relative;}
 .mainPage .productArea div p{color: var(--color-font01);}
 .mainPage .productArea ul{display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 20px;}
 .mainPage .productArea ul li:first-child{margin-left: calc(var(--width) + (100% - (var(--width) * 3)) / 2);}
@@ -22,3 +25,13 @@
 .mainPage .productArea ul li:nth-child(5) a::before{--styleIdx: 1;}
 .mainPage .productArea ul li a strong{margin-bottom: 15px; font-weight: 700; display: block;}
 .mainPage .productArea ul li a p{color: var(--color-font02);}
+
+
+/* 메인 - 주요제품 */
+.functionArea{text-align: center; background-color: var(--color-face);}
+.functionArea > p{margin-bottom: 100px;}
+.functionArea ul{text-align: left;}
+.functionArea ul li{padding-top: 30px; border-top: 1px solid black;}
+.functionArea ul li::before{content: ''; width: 40px; margin-bottom: 10px; aspect-ratio: 1; display: block; background: url(../images/main-function.png) no-repeat left top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) / 100%;}
+.functionArea ul li strong{font-weight: 700; display: block;}
+.functionArea ul li p{color: var(--color-font02);}

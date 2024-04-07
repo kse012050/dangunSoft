@@ -9,11 +9,18 @@
 .mainPage .welcomeArea::after{width: max(44.9218%, 460px);}
 
 
+/* 메인 - 주요제품, 주요기능 공통 */
+.mainPage :is(.productArea, .functionArea){--areaPaddingTop: 80px; padding-bottom: 100px;}
+.mainPage :is(.productArea div, .functionArea) h3{margin-bottom: 30px;}
+.mainPage :is(.productArea div, .functionArea) > p{font-size: 18px; line-height: 26px;}
+
 /* 메인 - 주요제품 */
-.mainPage .productArea{--areaPaddingTop: 80px; padding-bottom: 100px;}
 .mainPage .productArea div{width: 30.7617%; padding-right: 35px;}
-.mainPage .productArea div h3{margin-bottom: 30px;}
-.mainPage .productArea div p{font-size: 18px; line-height: 26px;}
 .mainPage .productArea ul li{--width: 32.2745%; height: 332px;}
 .mainPage .productArea ul li a strong{font-size: 22px; line-height: 30px;}
 .mainPage .productArea ul li a p{font-size: 14px; line-height: 20px;}
+
+
+/* 메인 - 주요제품 */
+.functionArea ul li{width: 18.2377%;}
+.functionArea ul li strong{font-size: 22px; line-height: 30px;}

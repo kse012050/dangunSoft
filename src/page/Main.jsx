@@ -55,6 +55,33 @@ export default function Main() {
                     </li>
                 </ul>
             </section>
+
+            <section className='functionArea'>
+                <h3>주요기능</h3>
+                <p>JetBrains는 더욱 편리한 코딩 환경 및 협업 환경을 제공합니다.</p>
+                <ul data-styleIdx>
+                    <li>
+                        <strong>코딩 지원</strong>
+                        <p>JetBrains 제품은 코드 완성부터 코드 중복 검사, 디버거, 역 컴파일러 등 다양한 코딩 지원 기능을 제공합니다. 특히 JetBrains AI의 등장으로 이전과는 차원이 다른 개발 흐름을 경험할 수 있습니다.</p>
+                    </li>
+                    <li>
+                        <strong>모든 기술 스택 지원</strong>
+                        <p>JetBrains 제품은 프로그래밍 언어, 프레임워크, 플랫폼 등 다양한 기술 스택을 지원합니다. 개발자는 JetBrains를 통해 원하는 기술을 제한없이 자유롭게 사용할 수 있습니다.</p>
+                    </li>
+                    <li>
+                        <strong>협업</strong>
+                        <p>현대의 소프트웨어 개발 과정은 이전보다 훨씬 복잡하게 구성됩니다. 이제 각 분야 전문가들의 협력은 필수적입니다. JetBrains의 모든 제품에는 간편한 협업 기능이 제공됩니다. 특히 JetBrains의 팀툴을 사용하면 팀원 간 협업 능력을 크게 향상시킬 수 있습니다.</p>
+                    </li>
+                    <li>
+                        <strong>플러그인</strong>
+                        <p>JetBrains 플러그인은 JetBrains 제품 기능을 무제한으로 확장할 수 있도록 도와줍니다. JetBrains 플러그인 에코시스템은 개발자에게 필요한 모든 검증된 플러그인을 보유하고 있습니다.</p>
+                    </li>
+                    <li>
+                        <strong>모든 환경 지원</strong>
+                        <p>JetBrains는 가능한 모든 개발 환경을 지원합니다. JetBrains를 통해 온라인부터 오프라인, 클라우드, 온프레미스, 원격 환경에 이르기까지 다양한 환경에서 작업이 가능합니다.</p>
+                    </li>
+                </ul>
+            </section>
         </>
     );
 }

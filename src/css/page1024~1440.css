@@ -7,5 +7,12 @@
 .mainPage .welcomeArea::after{position: absolute; right: var(--contentPadding); top: 50%; transform: translateY(-50%);}
 
 
+/* 메인 - 주요제품, 주요기능 공통 */
+
 /* 메인 - 주요제품 */
 .mainPage .productArea div{position: absolute; left: var(--contentPadding); top: var(--areaPaddingTop); box-sizing: border-box;}
+
+
+/* 메인 - 주요제품 */
+.functionArea ul{display: flex; justify-content: space-between;}
+.functionArea ul li strong{margin-bottom: 30px;}

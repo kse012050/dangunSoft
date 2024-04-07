@@ -11,6 +11,7 @@
 @import url(global1440.css) screen and (1440px <= width);
 @import url(page.css);
 @import url(page360.css) screen and (width <= 1024px);
+@import url(page360~1024.css) screen and (width < 1440px);
 @import url(page1024.css) screen and (1024px <= width) and (width < 1440px);
 @import url(page1024~1440.css) screen and (1024px <= width);
 @import url(page1440.css) screen and (1440px <= width);
