@@ -8,4 +8,13 @@
 
 
 /* 메인 - 주요제품 */
-.functionArea ul li p{font-size: 14px; line-height: 20px;}
+.mainPage .functionArea ul li p{font-size: 14px; line-height: 20px;}
+
+
+/* 메인 - NATTOSYSTEM */
+.mainPage .nattoArea h3{margin-bottom: 40px;}
+.mainPage .nattoArea div dl dd{font-size: 14px; line-height: 20px;} 
+.mainPage .nattoArea div dl:last-of-type::after{margin-top: 30px;}
+
+
+/* 메인 - SNS */

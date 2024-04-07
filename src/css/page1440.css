@@ -1,5 +1,5 @@
 /* 메인 */
-.mainPage h3{font-size: 50px; line-height: 60px;}
+.mainPage h3:not(:has(img)){font-size: 50px; line-height: 60px;}
 /* 메인 - welcome */
 .mainPage .welcomeArea{padding-block: 170px 260px;}
 .mainPage .welcomeArea h2{font-size: 64px; line-height: 74px;}
@@ -21,6 +21,20 @@
 
 
 /* 메인 - 주요제품 */
-.functionArea ul li{width: 17.4603%;}
-.functionArea ul li strong{font-size: 24px; line-height: 32px;}
-.functionArea ul li p{font-size: 16px; line-height: 22px;}
+.mainPage .functionArea ul li{width: 17.4603%;}
+.mainPage .functionArea ul li strong{font-size: 24px; line-height: 32px;}
+.mainPage .functionArea ul li p{font-size: 16px; line-height: 22px;}
+
+
+/* 메인 - NATTOSYSTEM */
+.mainPage .nattoArea{padding-block: 182px 134px;}
+.mainPage .nattoArea h3{max-width: 600px; margin-bottom: 70px;}
+.mainPage .nattoArea div{max-width: 1040px; padding-left: 20px;}
+.mainPage .nattoArea div::before{right: 0; top: -7px; width: 430px;}
+.mainPage .nattoArea div strong{font-size: 32px; line-height: 40px;}
+.mainPage .nattoArea div dl dt{font-size: 24px; line-height: 32px;}
+.mainPage .nattoArea div dl dd{font-size: 16px; line-height: 22px;}
+.mainPage .nattoArea div dl:last-of-type::after{margin-top: 40px;}
+
+
+/* 메인 - SNS */

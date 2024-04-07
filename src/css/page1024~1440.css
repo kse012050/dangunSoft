@@ -14,5 +14,14 @@
 
 
 /* 메인 - 주요제품 */
-.functionArea ul{display: flex; justify-content: space-between;}
-.functionArea ul li strong{margin-bottom: 30px;}
+.mainPage .functionArea ul{display: flex; justify-content: space-between;}
+.mainPage .functionArea ul li strong{margin-bottom: 30px;}
+
+
+/* 메인 - NATTOSYSTEM */
+.mainPage .nattoArea div{margin-inline: auto; position: relative;}
+.mainPage .nattoArea div::before{position: absolute;}
+.mainPage .nattoArea div dl{max-width: 400px;}
+
+
+/* 메인 - SNS */

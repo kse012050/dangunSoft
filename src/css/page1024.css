@@ -1,5 +1,5 @@
 /* 메인 */
-.mainPage h3{font-size: 44px; line-height: 54px;}
+.mainPage h3:not(:has(img)){font-size: 44px; line-height: 54px;}
 /* 메인 - welcome */
 .mainPage .welcomeArea{padding-block: 110px 148px;}
 .mainPage .welcomeArea h2{font-size: 50px; line-height: 60px;}
@@ -22,5 +22,17 @@
 
 
 /* 메인 - 주요제품 */
-.functionArea ul li{width: 18.2377%;}
-.functionArea ul li strong{font-size: 22px; line-height: 30px;}
+.mainPage .functionArea ul li{width: 18.2377%;}
+.mainPage .functionArea ul li strong{font-size: 22px; line-height: 30px;}
+
+
+/* 메인 - NATTOSYSTEM */
+.mainPage .nattoArea{padding-block: 140px 98px;}
+.mainPage .nattoArea h3{max-width: 450px;}
+.mainPage .nattoArea div{max-width: 880px;}
+.mainPage .nattoArea div::before{right: 0; top: 0; width: 362px;}
+.mainPage .nattoArea div strong{font-size: 28px; line-height: 36px;}
+.mainPage .nattoArea div dl dt{font-size: 22px; line-height: 30px;}
+
+
+/* 메인 - SNS */

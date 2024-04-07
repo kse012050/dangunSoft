@@ -82,6 +82,42 @@ export default function Main() {
                     </li>
                 </ul>
             </section>
+
+            <section className='nattoArea'>
+                <h3><img src={require('../images/main-logo.png')} alt="NATTOSYSYEM" /></h3>
+                <div>
+                    <strong>마스코트</strong>
+                    <dl>
+                        <dt>츠루</dt>
+                        <dd>
+                            윤기나는 건강한 낫또가 되는게 목표인 낫또 마을의 1등 노란 콩 누루.<br/>
+                            누루는 끈적임이 강해 그 누구든 누루에게 착! 붙는 순간 누루와 친해질 수 있습니다.
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>츠루</dt>
+                        <dd>
+                            아직 작은 완두콩에 불과한 츠루지만 누구보다 현명하고 밝은 성격을 가지고 있습니다.<br className='mobile'/>
+                            츠루는 누루가 어떠한 어려움에 빠져서 척척 해결해주는 고마운 해결사이자 둘도 없는 친구 입니다.
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+
+            <div className='snsArea'>
+                <strong>Friends with <mark>NATTOSYSTEM</mark></strong>
+                <p>지금 NATTOSYSTEM과 친구 맺고 최신 소식과 할인 혜택을 받아보세요!</p>
+                <ul>
+                    <li>
+                        @Twitter
+                        <Link to=''>+ 친구</Link>
+                    </li>
+                    <li>
+                        @Line_ID
+                        <Link to=''>+ 친구</Link>
+                    </li>
+                </ul>
+            </div>
         </>
     );
 }

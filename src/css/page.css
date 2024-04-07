@@ -1,6 +1,7 @@
 
 /* 메인 */
-.mainPage h3{font-weight: 700;}
+.mainPage h3:not(:has(img)){font-weight: 700;}
+.mainPage h3:has(img){line-height: 0;}
 /* 메인 - welcome */
 .mainPage .welcomeArea{background-color: #FCF2C4;}
 .mainPage .welcomeArea h2{font-weight: 700;}
@@ -28,10 +29,26 @@
 
 
 /* 메인 - 주요제품 */
-.functionArea{text-align: center; background-color: var(--color-face);}
-.functionArea > p{margin-bottom: 100px;}
-.functionArea ul{text-align: left;}
-.functionArea ul li{padding-top: 30px; border-top: 1px solid black;}
-.functionArea ul li::before{content: ''; width: 40px; margin-bottom: 10px; aspect-ratio: 1; display: block; background: url(../images/main-function.png) no-repeat left top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) / 100%;}
-.functionArea ul li strong{font-weight: 700; display: block;}
-.functionArea ul li p{color: var(--color-font02);}
+.mainPage .functionArea{text-align: center; background-color: var(--color-face);}
+.mainPage .functionArea > p{margin-bottom: 100px;}
+.mainPage .functionArea ul{text-align: left;}
+.mainPage .functionArea ul li{padding-top: 30px; border-top: 1px solid black;}
+.mainPage .functionArea ul li::before{content: ''; width: 40px; margin-bottom: 10px; aspect-ratio: 1; display: block; background: url(../images/main-function.png) no-repeat left top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) / 100%;}
+.mainPage .functionArea ul li strong{font-weight: 700; display: block;}
+.mainPage .functionArea ul li p{color: var(--color-font02);}
+
+
+/* 메인 - NATTOSYSTEM */
+.mainPage .nattoArea{background-color: #FCF2C4;}
+.mainPage .nattoArea h3{margin-inline: auto;}
+.mainPage .nattoArea h3 img{width: 100%;}
+.mainPage .nattoArea div::before{content: ''; aspect-ratio: 430 / 500; background: url(../images/main-character01.png) no-repeat center / cover; }
+.mainPage .nattoArea div strong{font-weight: 700;}
+.mainPage .nattoArea div dl{margin-top: 30px;}
+.mainPage .nattoArea div dl dt{margin-bottom: 10px; font-weight: 700;}
+.mainPage .nattoArea div dl dd{color: var(--color-font01);}
+.mainPage .nattoArea div dl:last-of-type::after{content: ''; max-width: 340px; display: block; aspect-ratio: 340 / 96; background: url(../images/main-character02.png) no-repeat center / cover;}
+
+
+/* 메인 - SNS */
+.mainPage .snsArea{}
