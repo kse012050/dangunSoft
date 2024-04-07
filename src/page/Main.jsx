@@ -107,7 +107,7 @@ export default function Main() {
             <div className='snsArea'>
                 <strong>Friends with <mark>NATTOSYSTEM</mark></strong>
                 <p>지금 NATTOSYSTEM과 친구 맺고 최신 소식과 할인 혜택을 받아보세요!</p>
-                <ul>
+                <ul data-styleIdx>
                     <li>
                         @Twitter
                         <Link to=''>+ 친구</Link>

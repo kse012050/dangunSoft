@@ -18,3 +18,8 @@
 
 
 /* 메인 - SNS */
+.mainPage .snsArea{text-align: center;}
+.mainPage .snsArea p{line-height: 22px;}
+.mainPage .snsArea ul li{font-size: 14px;}
+.mainPage .snsArea ul li::before{width: 26px;}
+.mainPage .snsArea ul li a{line-height: 48px;}

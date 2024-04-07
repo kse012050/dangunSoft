@@ -51,4 +51,11 @@
 
 
 /* 메인 - SNS */
-.mainPage .snsArea{}
+.mainPage .snsArea{position: relative; color: white; background-color: black;}
+.mainPage .snsArea strong{font-weight: 700; display: block;}
+.mainPage .snsArea strong mark{color: #F8B800;}
+.mainPage .snsArea p{color: rgba(255, 255, 255, 0.7);}
+.mainPage .snsArea ul li{padding-left: 25px; font-weight: 700; box-sizing: border-box; border: 1px solid white; border-radius: 6px; display: flex; align-items: center;}
+.mainPage .snsArea ul li::before{content: ''; aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}
+.mainPage .snsArea ul li a{font-size: 12px; text-align: center; margin-left: auto; position: relative;}
+.mainPage .snsArea ul li a::before{content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 2px; height: 18px; background-color: rgba(255, 255, 255, 0.2);}

@@ -25,3 +25,6 @@
 
 
 /* 메인 - SNS */
+.mainPage .snsArea ul{display: flex;}
+.mainPage .snsArea ul li{width: 238px;}
+.mainPage .snsArea ul li a{width: 78px;}

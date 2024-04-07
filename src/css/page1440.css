@@ -38,3 +38,10 @@
 
 
 /* 메인 - SNS */
+.mainPage .snsArea{padding-block: 59px;}
+.mainPage .snsArea strong{font-size: 36px; line-height: 46px; margin-bottom: 12px;}
+.mainPage .snsArea p{font-size: 18px; line-height: 24px;}
+.mainPage .snsArea ul{position: absolute; top: 50%; right: var(--contentPadding); transform: translateY(-50%); gap: 22px;}
+.mainPage .snsArea ul li{font-size: 15px;}
+.mainPage .snsArea ul li::before{width: 32px; margin-right: 12px;}
+.mainPage .snsArea ul li a{line-height: 54px;}

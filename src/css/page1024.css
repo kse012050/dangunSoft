@@ -36,3 +36,8 @@
 
 
 /* 메인 - SNS */
+.mainPage .snsArea{padding-block: 50px;}
+.mainPage .snsArea strong{font-size: 32px; line-height: 42px; margin-bottom: 10px;}
+.mainPage .snsArea p{font-size: 16px; margin-bottom: 40px;}
+.mainPage .snsArea ul{gap: 20px; justify-content: center;}
+.mainPage .snsArea ul li::before{margin-right: 18px;}
