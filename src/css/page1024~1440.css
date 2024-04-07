@@ -28,3 +28,13 @@
 .mainPage .snsArea ul{display: flex;}
 .mainPage .snsArea ul li{width: 238px;}
 .mainPage .snsArea ul li a{width: 78px;}
+
+
+/* 메인 - 문의하기 */
+.mainPage .inquiryArea{display: flex; flex-wrap: wrap;}
+.mainPage .inquiryArea h3{width: 100%;}
+.mainPage .inquiryArea > ul{display: flex; flex-direction: column; justify-content: center;}
+.mainPage .inquiryArea form fieldset li label{font-size: 15px;}
+.mainPage .inquiryArea form::before{left: 0; top: 0; width: 1px; height: 100%;}
+.mainPage .inquiryArea form fieldset ul li div input{padding-inline: 15px;}
+.mainPage .inquiryArea iframe{height: 540px;}

@@ -41,3 +41,13 @@
 .mainPage .snsArea p{font-size: 16px; margin-bottom: 40px;}
 .mainPage .snsArea ul{gap: 20px; justify-content: center;}
 .mainPage .snsArea ul li::before{margin-right: 18px;}
+
+
+/* 메인 - 문의하기 */
+.mainPage .inquiryArea{padding-block: 80px 100px;}
+.mainPage .inquiryArea h3{margin-bottom: 40px;}
+.mainPage .inquiryArea > ul{flex: 336;}
+.mainPage .inquiryArea > ul li b{font-size: 16px;}
+.mainPage .inquiryArea form{flex: 640; padding-left: 40px;}
+.mainPage .inquiryArea form fieldset strong{font-size: 22px; line-height: 30px;}
+.mainPage .inquiryArea iframe{margin-top: 80px;}

@@ -59,7 +59,7 @@ export default function Main() {
             <section className='functionArea'>
                 <h3>주요기능</h3>
                 <p>JetBrains는 더욱 편리한 코딩 환경 및 협업 환경을 제공합니다.</p>
-                <ul data-styleIdx>
+                <ul data-styleidx>
                     <li>
                         <strong>코딩 지원</strong>
                         <p>JetBrains 제품은 코드 완성부터 코드 중복 검사, 디버거, 역 컴파일러 등 다양한 코딩 지원 기능을 제공합니다. 특히 JetBrains AI의 등장으로 이전과는 차원이 다른 개발 흐름을 경험할 수 있습니다.</p>
@@ -107,7 +107,7 @@ export default function Main() {
             <div className='snsArea'>
                 <strong>Friends with <mark>NATTOSYSTEM</mark></strong>
                 <p>지금 NATTOSYSTEM과 친구 맺고 최신 소식과 할인 혜택을 받아보세요!</p>
-                <ul data-styleIdx>
+                <ul data-styleidx>
                     <li>
                         @Twitter
                         <Link to=''>+ 친구</Link>
@@ -118,6 +118,58 @@ export default function Main() {
                     </li>
                 </ul>
             </div>
+
+            <section className='inquiryArea'>
+                <h3>문의하기</h3>
+                <ul data-styleidx>
+                    <li>
+                        <b>Phone</b>
+                        <Link to=''>+82-10-3951-6206</Link>
+                    </li>
+                    <li>
+                        <b>Email</b>
+                        <Link to=''>info@nattosystem.com</Link>
+                    </li>
+                    <li>
+                        <b>Address</b>
+                        <p>東京都江東区豊洲六丁目２番<br className='tablet_mobile'/>３１－１９１７号</p>
+                    </li>
+                </ul>
+                <form>
+                    <fieldset>
+                        <strong>Get in Touch</strong>
+                        <ul>
+                            <li>
+                                <label htmlFor="">이름</label>
+                                <div>
+                                    <input type="text" placeholder='성'/>
+                                    <input type="text" placeholder='이름'/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="">Email</label>
+                                <div>
+                                    <input type="text" placeholder='이메일 주소를 입력해 주세요'/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="">주소</label>
+                                <div>
+                                    <input type="text" placeholder='주소를 입력해 주세요'/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="">비고</label>
+                                <div>
+                                    <input type="text" placeholder='문의를 남겨주세요'/>
+                                </div>
+                            </li>
+                        </ul>
+                         <input type="submit"  value='확인'/>
+                    </fieldset>
+                </form>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.208763150456!2d139.78802818820756!3d35.64722786119988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018899618e75f09%3A0x9024041a7f367e9a!2z5pel5pys44CB44CSMTM1LTAwNjEg5p2x5Lqs6YO95rGf5p2x5Yy66LGK5rSy77yW5LiB55uu77yS4oiS77yT77yRIOOCueOCq-OCpOOCuuOCv-ODr-ODvCbjgqzjg7zjg4fjg7MgMTkxNw!5e0!3m2!1sja!2skr!4v1712521574682!5m2!1sja!2skr" title='東京都江東区豊洲六丁目２番３１－１９１７号' loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            </section>
         </>
     );
 }

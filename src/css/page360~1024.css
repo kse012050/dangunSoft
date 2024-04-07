@@ -23,3 +23,10 @@
 .mainPage .snsArea ul li{font-size: 14px;}
 .mainPage .snsArea ul li::before{width: 26px;}
 .mainPage .snsArea ul li a{line-height: 48px;}
+
+
+/* 메인 - 문의하기 */
+.mainPage .inquiryArea > ul li::before{width: 50px; margin-bottom: 10px;}
+.mainPage .inquiryArea > ul li b{margin-bottom: 10px; line-height: 22px;}
+.mainPage .inquiryArea form fieldset input{height: 50px;}
+.mainPage .inquiryArea form fieldset input[type="submit"]{font-size: 16px;}

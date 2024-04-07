@@ -59,3 +59,23 @@
 .mainPage .snsArea ul li::before{content: ''; aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}
 .mainPage .snsArea ul li a{font-size: 12px; text-align: center; margin-left: auto; position: relative;}
 .mainPage .snsArea ul li a::before{content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 2px; height: 18px; background-color: rgba(255, 255, 255, 0.2);}
+
+
+/* 메인 - 문의하기 */
+.mainPage .inquiryArea{}
+.mainPage .inquiryArea > ul{text-align: center;}
+.mainPage .inquiryArea > ul li:not(:last-child){margin-bottom: 50px;}
+.mainPage .inquiryArea > ul li::before{content: ''; aspect-ratio: 1; display: block; margin-inline: auto; background: url(../images/main-address.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}
+.mainPage .inquiryArea > ul li b{display: block; font-weight: 700;}
+.mainPage .inquiryArea form{position: relative;}
+.mainPage .inquiryArea form::before{content: ''; position: absolute; background-color: var(--color-line);}
+.mainPage .inquiryArea form fieldset strong{margin-bottom: 30px; display: block; font-weight: 700;}
+.mainPage .inquiryArea form fieldset ul{margin-bottom: 30px;}
+.mainPage .inquiryArea form fieldset ul li:not(:last-child){margin-bottom: 30px;}
+.mainPage .inquiryArea form fieldset ul li label{line-height: 20px; font-weight: 700;}
+.mainPage .inquiryArea form fieldset ul li div{margin-top: 10px; display: flex; gap: 10px;}
+.mainPage .inquiryArea form fieldset ul li div input{flex: 1; border: 1px solid var(--color-line); box-sizing: border-box;}
+.mainPage .inquiryArea form fieldset ul li div input::placeholder{color: var(--color-font04);}
+.mainPage .inquiryArea form fieldset input{border-radius: 6px;}
+.mainPage .inquiryArea form fieldset input[type="submit"]{width: 100%; font-weight: 700; border: none; background-color: black; color: white;}
+.mainPage .inquiryArea iframe{width: 100%;}
