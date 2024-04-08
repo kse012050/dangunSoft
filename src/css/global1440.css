@@ -1,6 +1,9 @@
 /* 줄바꿈 */
 br[class]:not([class*="pc"]){display: none;}
 
+/* 버튼 */
+[class *= 'btn-border']{line-height: 58px; font-size: 18px;}
+
 
 /* 해더 */
 header h1{width: 249px;}

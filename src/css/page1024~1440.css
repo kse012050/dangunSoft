@@ -38,3 +38,23 @@
 .mainPage .inquiryArea form::before{left: 0; top: 0; width: 1px; height: 100%;}
 .mainPage .inquiryArea form fieldset ul li div input{padding-inline: 15px;}
 .mainPage .inquiryArea iframe{height: 540px;}
+
+
+/* 제품 페이지 */
+/* 제품 페이지 - welcome */
+.productPage .welcomeArea{position: relative;}
+.productPage .welcomeArea h2{margin-bottom: 30px;}
+.productPage .welcomeArea p{margin-bottom: 60px;}
+.productPage .welcomeArea p::after{position: absolute; right: calc(var(--contentPadding) + var(--areaPadding)); top: 50%; transform: translateY(-50%);}
+
+
+/* 제품 페이지 - 주요제품 */
+.productPage .productArea .tabArea > button{display: none;}
+.productPage .productArea .tabArea ul{display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;}
+.productPage .productArea .tabArea ul li button{font-size: 15px; padding-inline: 24px; height: 46px; color: var(--color-font02); background-color: var(--color-face); border: 1px solid #eee; border-radius: 6px; white-space: nowrap; box-sizing: border-box;}
+.productPage .productArea .tabArea ul li button.active{font-weight: 700; border: none; background-color: black; color: white;}
+.productPage .productArea > ul{gap: 20px;}
+.productPage .productArea > ul > li a{height: 180px; padding-left: 140px; padding-right: 30px;}
+.productPage .productArea > ul > li a::before{left: 30px; width: 70px;}
+.productPage .productArea > ul > li a b{font-size: 20px; line-height: 26px; margin-bottom: 8px;}
+.productPage .productArea > ul > li a p{font-size: 16px; line-height: 22px; margin-bottom: 15px;}

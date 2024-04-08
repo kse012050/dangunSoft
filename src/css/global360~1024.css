@@ -1,3 +1,6 @@
+/* 버튼 */
+[class *= 'btn-border']{line-height: 48px; font-size: 16px;}
+
 
 /* 해더 */
 header{--headerHeight: 58px; height: var(--headerHeight);}

@@ -9,7 +9,7 @@ export default function Header() {
             <nav className={isMenu ? 'active': ''}>
                 <ul>
                     <li><NavLink to='/'>홈</NavLink></li>
-                    <li><NavLink to='/produc'>제품</NavLink></li>
+                    <li><NavLink to='/product'>제품</NavLink></li>
                     <li><NavLink to='/produc'>솔루션</NavLink></li>
                     <li>
                         <NavLink to='/produc'>지원</NavLink>

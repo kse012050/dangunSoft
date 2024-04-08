@@ -3,6 +3,11 @@
 [class$="Page"] > [class$="Area"]{width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
 
 
+/* 버튼 */
+[class *= 'btn-border']{display: block; border-width: 1px; border-style: solid; border-radius: 6px; font-weight: 700; text-align: center;}
+.btn-border-white{border-color: white;}
+
+
 /* 해더 */
 header{background-color: white; position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
 header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}

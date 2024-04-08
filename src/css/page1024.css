@@ -51,3 +51,19 @@
 .mainPage .inquiryArea form{flex: 640; padding-left: 40px;}
 .mainPage .inquiryArea form fieldset strong{font-size: 22px; line-height: 30px;}
 .mainPage .inquiryArea iframe{margin-top: 80px;}
+
+
+/* 제품 페이지 */
+/* 제품 페이지 - welcome */
+.productPage .welcomeArea{padding-block: 110px 117px;}
+.productPage .welcomeArea > *{margin-left: 36px;}
+.productPage .welcomeArea h2{font-size: 64px; line-height: 74px;}
+.productPage .welcomeArea p{font-size: 18px; line-height: 26px;}
+.productPage .welcomeArea p::after{width: max(35.15625%, 360px); --areaPadding: 56px;}
+
+
+/* 제품 페이지 - 주요제품 */
+.productPage .productArea{padding-block: 80px 100px;}
+.productPage .productArea h3{font-size: 44px; line-height: 54px;}
+.productPage .productArea .tabArea{margin-bottom: 60px;}
+.productPage .productArea > ul > li{flex: 1; min-width: 406px;}

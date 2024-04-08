@@ -58,3 +58,18 @@
 .mainPage .inquiryArea form fieldset input{height: 60px;}
 .mainPage .inquiryArea form fieldset input[type="submit"]{font-size: 18px;}
 .mainPage .inquiryArea iframe{margin-top: 100px;}
+
+
+/* 제품 페이지 */
+/* 제품 페이지 - welcome */
+.productPage .welcomeArea{padding-block: 170px 224px;}
+.productPage .welcomeArea h2{font-size: 64px; line-height: 74px;}
+.productPage .welcomeArea p{font-size: 20px; line-height: 28px;}
+.productPage .welcomeArea p::after{width: 600px; --areaPadding: 30px;}
+
+
+/* 제품 페이지 - 주요제품 */
+.productPage .productArea{padding-block: 100px 120px;}
+.productPage .productArea h3{font-size: 50px; line-height: 60px; margin-bottom: 60px;}
+.productPage .productArea .tabArea{margin-bottom: 80px;}
+.productPage .productArea > ul > li{max-width: 406px;}

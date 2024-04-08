@@ -62,7 +62,6 @@
 
 
 /* 메인 - 문의하기 */
-.mainPage .inquiryArea{}
 .mainPage .inquiryArea > ul{text-align: center;}
 .mainPage .inquiryArea > ul li:not(:last-child){margin-bottom: 50px;}
 .mainPage .inquiryArea > ul li::before{content: ''; aspect-ratio: 1; display: block; margin-inline: auto; background: url(../images/main-address.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}
@@ -79,3 +78,23 @@
 .mainPage .inquiryArea form fieldset input{border-radius: 6px;}
 .mainPage .inquiryArea form fieldset input[type="submit"]{width: 100%; font-weight: 700; border: none; background-color: black; color: white;}
 .mainPage .inquiryArea iframe{width: 100%;}
+
+
+/* 제품 페이지 */
+/* 제품 페이지 - welcome */
+.productPage .welcomeArea{background-color: black; color: white;}
+.productPage .welcomeArea h2{font-weight: 700;}
+.productPage .welcomeArea p{color: rgba(255, 255, 255, 0.7);}
+.productPage .welcomeArea p::after{content: ''; aspect-ratio: 1; background: url(../images/product-top.png) no-repeat center / cover;}
+.productPage .welcomeArea .btn-border-white{max-width: 360px;}
+
+
+/* 제품 페이지 - 주요제품 */
+.productPage .productArea h3{font-weight: 700;}
+.productPage .productArea > ul{display: flex; flex-wrap: wrap;}
+.productPage .productArea > ul > li{border: 1px solid var(--color-line); box-sizing: border-box;}
+.productPage .productArea > ul > li a{display: flex; flex-direction: column; justify-content: center; position: relative; box-sizing: border-box;}
+.productPage .productArea > ul > li a::before{content: ''; position: absolute; top: 50%; aspect-ratio: 1; transform: translateY(-50%); background: url(../images/icon-products.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;;}
+.productPage .productArea > ul > li a b{font-weight: 700;}
+.productPage .productArea > ul > li a ul{display: flex; flex-wrap: wrap; gap: 5px 7px;}
+.productPage .productArea > ul > li a ul li{font-size: 11px; line-height: 22px; padding-inline: 10px; background-color: #f1f1f1; border-radius: 6px 0;}
