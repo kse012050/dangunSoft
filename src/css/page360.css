@@ -92,8 +92,8 @@
 /* 제품 상세 페이지 - 제품 정보 */
 .productDetailPage .infoArea ul li:not(:last-child){margin-bottom: 60px;}
 .productDetailPage .infoArea ul li::before{display: block; margin-bottom: 20px;}
-.productDetailPage .infoArea ul li div strong{font-size: 20px; line-height: 28px;}
-.productDetailPage .infoArea ul li div p{font-size: 14px; line-height: 20px; margin-top: 10px;}
+.productDetailPage strong{font-size: 20px; line-height: 28px;}
+.productDetailPage p{font-size: 14px; line-height: 20px; margin-top: 10px;}
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
@@ -104,3 +104,7 @@
 .productDetailPage .purchaseArea div b span{font-size: 24px;}
 .productDetailPage .purchaseArea div ul li{font-size: 16px; line-height: 22px;}
 .productDetailPage .purchaseArea div ul li span a{width: 100%;}
+
+
+/* 제품 상세 페이지 - 구독 옵션 */
+.productDetailPage .subscribeArea p:not(:last-of-type){margin-bottom: 20px;}

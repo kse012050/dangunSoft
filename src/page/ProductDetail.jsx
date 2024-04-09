@@ -101,6 +101,14 @@ export default function ProductDetail() {
                     </ul>
                 </div>
             </section>
+
+            <section className='subscribeArea'>
+                <h3>구독 옵션</h3>
+                <strong>상업용</strong>
+                <p>법인(영리 및 비영리)은 상업적 용도로 사용할 소프트웨어가 필요한 경우 상업용 Toolbox(JetBrains 데스크탑 개발자 도구) 구독을 이용할 수 있습니다. 법인은 Toolbox 구독을 통해 얻은 소프트웨어를 모든 컴퓨터 및 운영체제에서 사용할 수 있습니다. 단, 소프트웨어의 동시 사용자 수의 합이 법인이 구매한 구독 수량을 초과할 수 없습니다.</p>
+                <strong>개인용</strong>
+                <p>개인의 자금으로 Toolbox(JetBrains 데스크탑 개발자 도구) 구독을 구매하려는 경우, 개인용 Toolbox 구독이 적합합니다. 개인용 Toolbox 구독은 어떤 방식으로든 회사가 구매 및 상환할 수 없습니다. 개인용 Toolbox 구독을 통해 얻은 소프트웨어는 회사 하드웨어를 포함한 모든 하드웨어에서 사용할 수 있습니다.</p>
+            </section>
         </>
     );
 }

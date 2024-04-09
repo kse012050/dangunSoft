@@ -93,7 +93,7 @@
 .productDetailPage .infoArea ul li{gap: 60px;}
 .productDetailPage .infoArea ul li::before{flex: 740;}
 .productDetailPage .infoArea ul li div{flex: 460;}
-.productDetailPage .infoArea ul li div p{font-size: 18px; line-height: 24px; margin-top: 15px;}
+.productDetailPage p{font-size: 18px; line-height: 24px; margin-top: 15px;}
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
@@ -105,3 +105,7 @@
 .productDetailPage .purchaseArea div b span{font-size: 28px;}
 .productDetailPage .purchaseArea div ul li{font-size: 20px; line-height: 26px;}
 .productDetailPage .purchaseArea div ul li span[title="포함"]::after{width: 40px;}
+
+
+/* 제품 상세 페이지 - 구독 옵션 */
+.productDetailPage .subscribeArea p:not(:last-of-type){margin-bottom: 40px;}

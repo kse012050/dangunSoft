@@ -115,8 +115,8 @@
 .productDetailPage .infoArea ul li:nth-child(1)::before{background-image: url(../images/productDetail-info01.png);}
 .productDetailPage .infoArea ul li:nth-child(2)::before{background-image: url(../images/productDetail-info02.png);}
 .productDetailPage .infoArea ul li:nth-child(3)::before{background-image: url(../images/productDetail-info03.png);}
-.productDetailPage .infoArea ul li div strong{font-weight: 700;}
-.productDetailPage .infoArea ul li div p{color: var(--color-font02);}
+.productDetailPage strong{font-weight: 700;}
+.productDetailPage p{color: var(--color-font02);}
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
