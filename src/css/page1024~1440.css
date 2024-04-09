@@ -41,10 +41,11 @@
 
 
 /* 제품 페이지 */
+/* 제품 페이지, 제품 상세 페이지 공통 */
+:is(.productPage .welcomeArea, .productDetailPage .topArea) h2{margin-bottom: 30px;}
+:is(.productPage .welcomeArea, .productDetailPage .topArea) p{margin-bottom: 60px;}
 /* 제품 페이지 - welcome */
 .productPage .welcomeArea{position: relative;}
-.productPage .welcomeArea h2{margin-bottom: 30px;}
-.productPage .welcomeArea p{margin-bottom: 60px;}
 .productPage .welcomeArea p::after{position: absolute; right: calc(var(--contentPadding) + var(--areaPadding)); top: 50%; transform: translateY(-50%);}
 
 
@@ -58,3 +59,8 @@
 .productPage .productArea > ul > li a::before{left: 30px; width: 70px;}
 .productPage .productArea > ul > li a b{font-size: 20px; line-height: 26px; margin-bottom: 8px;}
 .productPage .productArea > ul > li a p{font-size: 16px; line-height: 22px; margin-bottom: 15px;}
+
+
+/* 제품 상세 페이지 - 상단 */
+.productDetailPage .topArea{position: relative;}
+.productDetailPage .topArea::after{position: absolute; top: 50%; transform: translateY(-50%);}

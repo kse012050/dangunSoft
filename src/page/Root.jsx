@@ -6,8 +6,9 @@ import Header from '../components/Header'
 import Footer from '../components/Footer.jsx';
 
 export default function Root() {
-    const location = useLocation().pathname.slice(1) || 'main';
-
+    const location = useLocation().pathname.slice(1).split('/');
+    const className = !location[1] ? (location[0] ? location[0] : 'main') : `${location[0]}Detail`
+    
     useEffect(()=>{
         return(
             document.querySelectorAll('[data-styleidx]').length ? styleIdx() : undefined
@@ -15,7 +16,7 @@ export default function Root() {
     },[location])
 
     return (
-        <div className={`${location}Page`}>
+        <div className={`${className}Page`}>
             <Header />
             <Outlet />
             <Footer />
