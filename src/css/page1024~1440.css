@@ -73,3 +73,14 @@
 .productDetailPage .infoArea ul li:not(:last-child){margin-bottom: 40px;}
 .productDetailPage .infoArea ul li::before{order: 1;}
 .productDetailPage .infoArea ul li div strong{font-size: 28px; line-height: 36px;}
+
+
+/* 제품 상세 페이지 - 구매 옵션 */
+.productDetailPage .purchaseArea::after{content: ''; clear: both; display: block; overflow: hidden;}
+.productDetailPage .purchaseArea div{float: left;}
+.productDetailPage .purchaseArea div :is(b, ul li){display: flex;}
+.productDetailPage .purchaseArea div:first-of-type b::before, 
+.productDetailPage .purchaseArea div:first-of-type ul li::before{content: attr(title); padding-inline: 20px; box-sizing: border-box;}
+.productDetailPage .purchaseArea div:nth-of-type(2) :is(b, ul li) span{width: 100%;}
+.productDetailPage .purchaseArea div :is(b span, ul li span){border-left: 1px solid var(--color-line);}
+.productDetailPage .purchaseArea div ul li span a{width: 223px;}

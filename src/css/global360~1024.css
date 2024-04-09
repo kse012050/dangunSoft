@@ -1,5 +1,7 @@
 /* 버튼 */
-[class *= 'btn-border']{line-height: 48px; font-size: 16px;}
+[class*='btn']{font-size: 16px;}
+[class *= 'btn-border']{line-height: 48px;}
+.btn-bg{line-height: 50px;}
 
 
 /* 해더 */

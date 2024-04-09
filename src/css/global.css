@@ -4,8 +4,11 @@
 
 
 /* 버튼 */
-[class *= 'btn-border']{display: block; border-width: 1px; border-style: solid; border-radius: 6px; font-weight: 700; text-align: center;}
-.btn-border-white{border-color: white;}
+[class*='btn']{border-radius: 6px; font-weight: 700; text-align: center;}
+[class*='btn-border']{display: block; border-width: 1px; border-style: solid;}
+.btn-border-white{border-color: white; color: white;}
+.btn-border-black{border-color: black;}
+.btn-bg{background-color: black; color: white;}
 
 
 /* 해더 */
