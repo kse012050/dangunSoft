@@ -83,7 +83,7 @@
 :is(.productDetailPage, .solutionPage) h3 p{font-size: 16px; line-height: 22px;}
 /* 제품 상세 페이지 공통*/
 .productDetailPage > .topArea{margin-bottom: 60px;}
-.productDetailPage > [class$='Area']:not(.topArea){margin-bottom: 80px;}
+.productDetailPage > :not(.topArea){margin-bottom: 80px;}
 /* 제품 상세 페이지 - 상단 */
 .productDetailPage .topArea{padding-block: 60px; text-align: center;}
 .productDetailPage .topArea::after{display: block; max-width: 160px; margin-inline: auto;}
@@ -93,7 +93,7 @@
 .productDetailPage .infoArea ul li:not(:last-child){margin-bottom: 60px;}
 .productDetailPage .infoArea ul li::before{display: block; margin-bottom: 20px;}
 .productDetailPage strong{font-size: 20px; line-height: 28px;}
-.productDetailPage p{font-size: 14px; line-height: 20px; margin-top: 10px;}
+.productDetailPage strong + p{font-size: 14px; line-height: 20px; margin-top: 10px;}
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
@@ -108,3 +108,6 @@
 
 /* 제품 상세 페이지 - 구독 옵션 */
 .productDetailPage .subscribeArea p:not(:last-of-type){margin-bottom: 20px;}
+.FAQBox ul li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
+.FAQBox ul li details summary::after{width: 26px;}
+.FAQBox ul li details div{font-size: 14px; line-height: 20px;}

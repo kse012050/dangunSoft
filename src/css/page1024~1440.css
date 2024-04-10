@@ -87,3 +87,4 @@
 
 
 /* 제품 상세 페이지 - 구독 옵션 */
+.FAQBox ul li details summary::after{width: 34px;}

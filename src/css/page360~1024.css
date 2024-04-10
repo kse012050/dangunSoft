@@ -48,7 +48,7 @@
 
 /* 제품 상세 페이지 - 제품 정보 */
 .productDetailPage .infoArea h3 + p{margin-bottom: 60px;}
-.productDetailPage p{margin-top: 10px;}
+.productDetailPage strong + p{margin-top: 10px;}
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
@@ -57,3 +57,5 @@
 
 
 /* 제품 상세 페이지 - 구독 옵션 */
+.FAQBox ul li details summary{padding-inline: 20px;}
+.FAQBox ul li details div{padding-block: 20px;}

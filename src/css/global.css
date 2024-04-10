@@ -1,6 +1,6 @@
 /* 컨텐츠 사이즈 */
 .contentSize{width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
-[class$="Page"] > [class$="Area"]{width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
+[class$="Page"] > *{width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
 
 
 /* 버튼 */

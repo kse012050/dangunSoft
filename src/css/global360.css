@@ -4,7 +4,7 @@ br[class]:not([class*="mobile"]){display: none;}
 
 /* 컨텐츠 사이즈 */
 .contentSize{--minSpacing: 30px;}
-[class$="Page"] > [class$="Area"]{--minSpacing: 30px;}
+[class$="Page"] > *{--minSpacing: 30px;}
 
 
 /* 해더 */
