@@ -89,7 +89,9 @@
 /* 제품 페이지 */
 /* 제품 페이지, 제품 상세 페이지 공통 */
 :is(.productPage .welcomeArea, .productDetailPage .topArea) p{color: rgba(255, 255, 255, 0.7);}
-:is(.productPage, .productDetailPage) h3{font-weight: 700;}
+:is(.productPage, .productDetailPage, .solutionPage) h3{font-weight: 700;
+
+}
 /* 제품 페이지 - welcome */
 .productPage .welcomeArea{background-color: black; color: white;}
 .productPage .welcomeArea p::after{content: ''; aspect-ratio: 1; background: url(../images/product-top.png) no-repeat center / cover;}
@@ -108,6 +110,8 @@
 
 
 /* 제품 상세 페이지, 솔루션 페이지 공통 */
+:is(.productDetailPage, .solutionPage) strong{font-weight: 700;}
+
 /* 제품 상세 페이지 공통 */
 /* 제품 상세 페이지 - 상단 */
 .productDetailPage .topArea{background-color: black; color: white;}
@@ -120,7 +124,6 @@
 .productDetailPage .infoArea ul li:nth-child(1)::before{background-image: url(../images/productDetail-info01.png);}
 .productDetailPage .infoArea ul li:nth-child(2)::before{background-image: url(../images/productDetail-info02.png);}
 .productDetailPage .infoArea ul li:nth-child(3)::before{background-image: url(../images/productDetail-info03.png);}
-.productDetailPage strong{font-weight: 700;}
 .productDetailPage strong + p{color: var(--color-font02);}
 
 
@@ -146,12 +149,25 @@
 
 
 /* 솔루션 페이지 */
-.solutionPage{background-color: black; color: white;}
-.solutionPage header{background-color: black;}
+.solutionPage{background-color: #111; color: white;}
+.solutionPage header{background-color: #111;}
 .solutionPage header h1 a{--styleIdx: 1;}
+
+/* 솔루션 페이지 공통 */
+.solutionPage h3 + p{color: rgba(255, 255, 255, 0.7);}
+.solutionPage strong + p{color: rgba(255, 255, 255, 0.7);}
 
 
 /* 솔루션 페이지 - 상단 */
 .solutionPage .topArea{background: url(../images/solution-bg01.png) no-repeat center / cover;}
 .solutionPage .topArea b{display: block;}
 .solutionPage .topArea p{color: rgba(255, 255, 255, 0.5);}
+
+
+/* 솔루션 페이지 - about */
+.solutionPage .aboutArea ::after{border-radius: 20px;}
+.solutionPage .aboutArea h3 + p::after{content: ''; aspect-ratio: 590 / 416; background: url(../images/solution-about.png) no-repeat center / cover;}
+.solutionPage .aboutArea ul li p::after{content: ''; aspect-ratio: 1260 / 650; display: block; background-repeat: no-repeat; background-position: center; background-size: cover;}
+.solutionPage .aboutArea ul li:nth-child(1) p::after{background-image: url(../images/solution-about01.png);}
+.solutionPage .aboutArea ul li:nth-child(2) p::after{background-image: url(../images/solution-about02.png);}
+.solutionPage .aboutArea ul li:nth-child(3) p::after{background-image: url(../images/solution-about03.png);}

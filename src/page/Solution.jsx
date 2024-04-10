@@ -16,10 +16,10 @@ export default function Solution() {
                 </p>
             </section>
 
-            <section>
+            <section className='aboutArea'>
                 <h3>About JetBrains AI</h3>
                 <p>JetBrains AI는 IDE(통합 개발 환경) 내부에 AI 채팅, 리팩토링, 자동 완성, 런타임 에러 설명 등 강력한 AI 기능을 제공하는 플러그인입니다. JetBrains AI Service가 IDE와 LLM(대규모 언어 모델)을 안전하게 연결하여 IDE 내부에 다양한 AI 서비스를 제공합니다. JetBrains AI는 IDE에 열린 프로젝트 컨텍스트를 깊게 이해하고 있으며 이를 통해 사용자에게 최적화된 정보와 기능을 제공할 수 있습니다. JetBrains의 상업용 IDE 라이선스가 있는 경우 평가판을 통해 JetBrains AI를 경험할 수 있습니다.</p>
-                <Link to=''>견적교청</Link>
+                <Link to='' className='btn-border-white'>견적요청</Link>
                 <ul>
                     <li>
                         <strong>리팩토링</strong>
