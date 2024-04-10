@@ -50,7 +50,7 @@
 .mainPage .inquiryArea form fieldset strong{font-size: 20px; line-height: 28px;}
 .mainPage .inquiryArea form fieldset ul{text-align: left;}
 .mainPage .inquiryArea form fieldset ul li label{font-size: 14px;}
-.mainPage .inquiryArea form fieldset ul li div input{padding-inline: 12px; width: 100%;}
+.mainPage .inquiryArea form fieldset ul li div input{width: 100%;}
 .mainPage .inquiryArea iframe{margin-top: 60px; height: 260px;}
 
 
@@ -132,3 +132,21 @@
 
 
 /* 솔루션 페이지 - 구매 옵션 */
+
+
+:is(.boardPage, .inquiryPage) section h2{font-size: 36px; line-height: 46px;}
+
+/* 지원 페이지 */
+/* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
+:is(.boardPage, .inquiryPage) section{padding-block: 60px 80px;}
+
+
+/* 지원 페이지 - 게시판 */
+.boardPage section .searchArea{margin-bottom: 60px;}
+.boardPage section .searchArea button{width: 30px; right: 10px;}
+.boardPage section .boardBox :is(div, ul li a){padding: 20px 10px; gap: 10px 20px;}
+.boardPage section .boardBox > div{display: none;}
+.boardPage section .boardBox > ul li a{flex-wrap: wrap;}
+.boardPage section .boardBox > ul li a > :first-child{display: none;}
+.boardPage section .boardBox > ul li a p{width: 100%; line-height: 22px; padding-right: 30px;}
+.boardPage section .boardBox > ul li a p ~ *{font-size: 14px; color: var(--color-font03);}

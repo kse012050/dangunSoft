@@ -12,10 +12,10 @@ export default function Header() {
                     <li><NavLink to='/product'>제품</NavLink></li>
                     <li><NavLink to='/solution'>솔루션</NavLink></li>
                     <li>
-                        <NavLink to='/produc'>지원</NavLink>
+                        <NavLink to='/support'>지원</NavLink>
                         <div>
-                            <NavLink to='/produc'>게시판</NavLink>
-                            <NavLink to='/produc'>문의하기</NavLink>
+                            <NavLink to='board'>게시판</NavLink>
+                            <NavLink to='inquiry'>문의하기</NavLink>
                             <NavLink to='/produc'>FAQ</NavLink>
                         </div>
                     </li>

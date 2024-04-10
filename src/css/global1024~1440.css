@@ -1,6 +1,10 @@
 /* 컨텐츠 사이즈 */
 .contentSize{--minSpacing: 24px;}
-[class$="Page"] > *{--minSpacing: 24px;}
+[class$="Page"] > *:not(header, footer){--minSpacing: 24px;}
+
+
+/* 입력 */
+input{padding-inline: 15px;}
 
 
 /* 구매 옵션 테이블 */

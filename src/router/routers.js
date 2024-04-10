@@ -1,3 +1,5 @@
+import Board from "../page/Board";
+import Inquiry from "../page/Inquiry";
 import Main from "../page/Main";
 import Product from "../page/Product";
 import ProductDetail from "../page/ProductDetail";
@@ -25,6 +27,15 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <Solution/> },
+        ]
+    },
+    {
+        path: '/support',
+        element: <Root />,
+        children: [
+            { index: true, element: <Board/> },
+            { path: 'board', element: <Board/>  },
+            { path: 'inquiry', element: <Inquiry/>  },
         ]
     }
 ]

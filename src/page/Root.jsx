@@ -7,8 +7,11 @@ import Footer from '../components/Footer.jsx';
 
 export default function Root() {
     const location = useLocation().pathname.slice(1).split('/');
-    const className = !location[1] ? (location[0] ? location[0] : 'main') : `${location[0]}Detail`
-    
+    let className = !location[0] ? 
+                            'main' : 
+                            (isNaN(Number(location.at(-1))) ? location.at(-1) : `${location.at(-2)}Detail`)
+    className === 'support' && (className = 'board')
+
     useEffect(()=>{
         return(
             document.querySelectorAll('[data-styleidx]').length ? styleIdx() : undefined

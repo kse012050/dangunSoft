@@ -1,6 +1,6 @@
 /* 컨텐츠 사이즈 */
 .contentSize{width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
-[class$="Page"] > *{width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
+[class$="Page"] > *:not(header, footer){width: 100%; padding-inline: max(calc((100% - 1260px) / 2), var(--minSpacing)); box-sizing: border-box;}
 
 
 /* 버튼 */
@@ -9,6 +9,30 @@
 .btn-border-white{border-color: white; color: white;}
 .btn-border-black{border-color: black;}
 .btn-bg{background-color: black; color: white;}
+
+
+/* 입력 */
+input{border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
+input::placeholder{color: var(--color-font04);}
+
+
+/* 페이지네이션 */
+.paginationBox{display: flex; justify-content: center; align-items: center;}
+.paginationBox > a{width: 30px; aspect-ratio: 1; background: url(../images/icon-pagination.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+.paginationBox > a:nth-of-type(1){--styleIdx: 0;}
+.paginationBox > a:nth-of-type(2){--styleIdx: 1;}
+.paginationBox ol{display: flex; justify-content: center; align-items: center; margin-inline: 10px;}
+.paginationBox ol li a{font-size: 15px; width: 40px; line-height: 20px; color: var(--color-font03); text-align: center;}
+.paginationBox ol li a.active{color: black; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px;}
+
+
+/* 팝업 */
+.popupBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.popupBox > div{padding: 40px; max-width: 380px; margin-inline: 20px; background-color: white; border: 1px solid black; text-align: center; position: relative;}
+.popupBox > div p{font-size: 16px; line-height: 22px; margin-bottom: 30px;}
+.popupBox > div input{width: 100%; margin-bottom: 30px;}
+.popupBox > div button:first-of-type{width: 148px; height: 50px; font-weight: 700; background-color: var(--color-point); color: white; border: none; border-radius: 6px;}
+.popupBox > div button:last-of-type{position: absolute; right: 10px; top: 10px; width: 38px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
 
 
 /* 구매 옵션 테이블 */
@@ -35,7 +59,8 @@ header{background-color: white; position: sticky; top: 0; width: 100%; padding-i
 header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
 header nav ul li > a{font-size: 20px; font-weight: 700; text-align: center; display: block; }
 header nav ul li div{display: none;}
-
+header nav ul li div a{color: var(--color-font03);}
+header nav ul li:has(div) > a.active + div{display: flex;}
 
 /* 푸터 */
 footer{padding-block: 40px 30px; padding-inline: max(calc((100% - 1340px) / 2), var(--minSpacing)); color: white; background-color: black;}

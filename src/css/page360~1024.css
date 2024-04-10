@@ -28,7 +28,6 @@
 /* 메인 - 문의하기 */
 .mainPage .inquiryArea > ul li::before{width: 50px; margin-bottom: 10px;}
 .mainPage .inquiryArea > ul li b{margin-bottom: 10px; line-height: 22px;}
-.mainPage .inquiryArea form fieldset input{height: 50px;}
 .mainPage .inquiryArea form fieldset input[type="submit"]{font-size: 16px;}
 
 
@@ -80,3 +79,13 @@
 
 
 /* 솔루션 페이지 - 구매 옵션 */
+
+
+/* 지원 페이지 */
+/* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
+
+
+/* 지원 페이지 - 게시판 */
+.boardPage section h2{margin-bottom: 40px;}
+.boardPage section .boardBox{font-size: 15px;}
+.boardPage section .btn-bg{margin-top: 60px;}

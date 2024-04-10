@@ -55,7 +55,6 @@
 .mainPage .inquiryArea > ul li b{font-size: 18px; line-height: 24px; margin-bottom: 7px;}
 .mainPage .inquiryArea form{flex: 780; padding-left: 90px;}
 .mainPage .inquiryArea form fieldset strong{font-size: 24px; line-height: 32px;}
-.mainPage .inquiryArea form fieldset input{height: 60px;}
 .mainPage .inquiryArea form fieldset input[type="submit"]{font-size: 18px;}
 .mainPage .inquiryArea iframe{margin-top: 100px;}
 
@@ -139,3 +138,21 @@
 
 /* 솔루션 페이지 - 구매 옵션 */
 
+
+:is(.boardPage, .inquiryPage) section h2{font-size: 50px; line-height: 60px;}
+
+/* 지원 페이지 */
+/* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
+:is(.boardPage, .inquiryPage) section{padding-block: 60px 120px;}
+
+
+/* 지원 페이지 - 게시판 */
+.boardPage section h2{margin-bottom: 60px;}
+.boardPage section .searchArea button{width: 36px;}
+.boardPage section .boardBox{font-size: 16px;}
+.boardPage section .boardBox :is(div, ul li a){gap: 40px; height: 70px;}
+.boardPage section .boardBox :is(div, ul li a) > *:nth-child(1){flex: 100;}
+.boardPage section .boardBox :is(div, ul li a) > *:nth-child(2){flex: 720;}
+.boardPage section .boardBox :is(div, ul li a) > *:nth-child(3){flex: 140;}
+.boardPage section .boardBox :is(div, ul li a) > *:nth-child(4){flex: 140;}
+.boardPage section .btn-bg{margin-top: 80px;}
