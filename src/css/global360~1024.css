@@ -4,6 +4,11 @@
 .btn-bg{line-height: 50px;}
 
 
+/* 구매 옵션 테이블 */
+[class*="purchaseBox"] div :is(b, ul li) span{height: 70px;}
+[class*="purchaseBox"] div ul li span[title="포함"]::after{width: 36px;}
+
+
 /* 해더 */
 header{--headerHeight: 58px; height: var(--headerHeight);}
 header h1{width: 162px;}

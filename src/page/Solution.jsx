@@ -57,6 +57,42 @@ export default function Solution() {
                     </li>
                 </ul>
             </section>
+
+            <section className='purchaseBox-black'>
+                <h3>구매 옵션</h3>
+                <div>
+                    <b><span>상업용</span></b>
+                    <ul>
+                        <li title='신규'>
+                            <span>
+                                $200<br/>
+                                (VAT 포함가 $220)
+                            </span>
+                        </li>
+                        <li title='모든 기능'><span title='포함'></span></li>
+                        <li title='라이선스 공유'><span title='포함'></span></li>
+                        <li title='기술 문의'><span title='포함'></span></li>
+                        <li title='라이선스 소유'><span>법인</span></li>
+                        <li><span><Link to='' className='btn-border-white'>견적요청</Link></span></li>
+                    </ul>
+                </div>
+                <div>
+                    <b><span>개인용</span></b>
+                    <ul>
+                        <li title='신규'>
+                            <span>
+                                $100<br/>
+                                (VAT 포함가 $110)
+                            </span>
+                        </li>
+                        <li title='모든 기능'><span title='포함'></span></li>
+                        <li title='라이선스 공유'><span></span></li>
+                        <li title='기술 문의'><span></span></li>
+                        <li title='라이선스 소유'><span>개인</span></li>
+                        <li><span><Link to='' className='btn-border-white'>견적요청</Link></span></li>
+                    </ul>
+                </div>
+            </section>
         </>
     );
 }

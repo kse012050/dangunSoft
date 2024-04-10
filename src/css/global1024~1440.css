@@ -3,6 +3,19 @@
 [class$="Page"] > *{--minSpacing: 24px;}
 
 
+/* 구매 옵션 테이블 */
+[class*="purchaseBox"]::after{content: ''; clear: both; display: block; visibility: hidden;}
+[class*="purchaseBox"] div{float: left;}
+[class*="purchaseBox"] div :is(b, ul li){display: flex;}
+[class*="purchaseBox"] div:first-of-type b::before, 
+[class*="purchaseBox"] div:first-of-type ul li::before{content: attr(title); padding-inline: 20px; box-sizing: border-box;}
+[class*="purchaseBox"] div:nth-of-type(2) :is(b, ul li) span{width: 100%;}
+[class*="purchaseBox"] div :is(b span, ul li span){border-left-width: 1px; border-left-style: solid;}
+[class*="purchaseBox"] div ul li span a{width: 223px;}
+.purchaseBox-white div :is(b span, ul li span){border-left-color: var(--color-line);}
+.purchaseBox-black div :is(b span, ul li span){border-left-color: #444;}
+
+
 /* 해더 */
 
 

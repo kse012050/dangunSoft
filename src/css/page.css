@@ -128,14 +128,6 @@
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
-.productDetailPage .purchaseArea{font-weight: 700;}
-.productDetailPage .purchaseArea div b span, 
-.productDetailPage .purchaseArea div b::before{background-color: var(--color-face); border-top: 1px solid black;}
-.productDetailPage .purchaseArea div :is(b, ul li){border-bottom: 1px solid var(--color-line);}
-.productDetailPage .purchaseArea div :is(b span, ul li span),
-.productDetailPage .purchaseArea div ul li::before{text-align: center; display: flex; align-items: center;}
-.productDetailPage .purchaseArea div :is(b span, ul li span){justify-content: center;}
-.productDetailPage .purchaseArea div ul li span[title="포함"]::after{content: ''; aspect-ratio: 1; background: url(../images/icon-check.png) no-repeat center / cover;}
 
 
 /* 제품 상세 페이지 - 구독 옵션 */

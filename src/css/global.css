@@ -11,6 +11,25 @@
 .btn-bg{background-color: black; color: white;}
 
 
+/* 구매 옵션 테이블 */
+[class*="purchaseBox"]{font-weight: 700;}
+[class*="purchaseBox"] div b span, 
+[class*="purchaseBox"] div b::before{border-top-width: 1px; border-top-style: solid;}
+[class*="purchaseBox"] div :is(b, ul li){border-bottom-width: 1px; border-bottom-style: solid;}
+[class*="purchaseBox"] div :is(b span, ul li span),
+[class*="purchaseBox"] div ul li::before{text-align: center; display: flex; align-items: center;}
+[class*="purchaseBox"] div :is(b span, ul li span){justify-content: center;}
+[class*="purchaseBox"] div ul li span[title="포함"]::after{content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
+.purchaseBox-white div b span, 
+.purchaseBox-white div b::before{background-color: var(--color-face); border-top-color: black;}
+.purchaseBox-white div :is(b, ul li){border-bottom-color: var(--color-line);}
+.purchaseBox-white div ul li span[title="포함"]::after{background-image: url(../images/icon-check-black.png);}
+.purchaseBox-black div b span, 
+.purchaseBox-black div b::before{background-color: #1C1C1C; border-top-color: white;}
+.purchaseBox-black div :is(b, ul li){border-bottom-color: #444;}
+.purchaseBox-black div ul li span[title="포함"]::after{background-image: url(../images/icon-check-white.png);}
+
+
 /* 해더 */
 header{background-color: white; position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
 header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}

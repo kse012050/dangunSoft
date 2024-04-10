@@ -38,7 +38,7 @@ export default function ProductDetail() {
                 </ul>
             </section>
 
-            <section className='purchaseArea'>
+            <section className='purchaseBox-white'>
                 <h3>구매 옵션</h3>
                 <div>
                     <b><span>상업용</span></b>
