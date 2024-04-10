@@ -126,3 +126,12 @@
 .solutionPage .aboutArea h3 + p:after{width: 460px;}
 .solutionPage .aboutArea h3 ~ a{margin-bottom: 80px;}
 
+
+/* 솔루션 페이지 - 주요 이점 */
+.solutionPage .advantageArea ul{gap: 20px;}
+.solutionPage .advantageArea ul li b{font-size: 26px; line-height: 34px;}
+.solutionPage .advantageArea ul li p{font-size: 16px; line-height: 22px;}
+
+
+/* 솔루션 페이지 - 구매 옵션 */
+

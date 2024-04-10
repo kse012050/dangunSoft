@@ -171,3 +171,13 @@
 .solutionPage .aboutArea ul li:nth-child(1) p::after{background-image: url(../images/solution-about01.png);}
 .solutionPage .aboutArea ul li:nth-child(2) p::after{background-image: url(../images/solution-about02.png);}
 .solutionPage .aboutArea ul li:nth-child(3) p::after{background-image: url(../images/solution-about03.png);}
+
+
+/* 솔루션 페이지 - 주요 이점 */
+.solutionPage .advantageArea ul li{background-color: #1C1C1C;}
+.solutionPage .advantageArea ul li b{font-weight: 700;}
+.solutionPage .advantageArea ul li p{color: rgba(255, 255, 255, 0.5);}
+
+
+/* 솔루션 페이지 - 구매 옵션 */
+

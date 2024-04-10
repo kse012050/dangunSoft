@@ -36,12 +36,26 @@ export default function Solution() {
                 </ul>
             </section>
 
-            <section>
+            <section className='advantageArea'>
                 <h3>주요 이점</h3>
                 <p>
-                    JetBrains AI를 사용하면 IDE(통합 개발 환경)에 다양한 AI 기능이 추가됩니다. 
+                    JetBrains AI를 사용하면 IDE(통합 개발 환경)에 다양한 AI 기능이 추가됩니다.<br/>
                     또한 JetBrains AI는 데이터 및 코드 보안을 보장하므로 IDE에서 안전하게 AI 기능을 사용할 수 있습니다.
                 </p>
+                <ul>
+                    <li>
+                        <b>AI 기능의 다양성</b>
+                        <p>JetBrains AI는 AI 채팅부터 리팩토링, 런타임 에러 설명, 코드 자동 완성, 유닛 테스트 생성, 문서화에 이르기까지 다양한 AI 기능을 제공합니다.</p>
+                    </li>
+                    <li>
+                        <b>IDE와 완벽한 통합</b>
+                        <p>JetBrains AI는 JetBrains IDE(통합 개발 환경)의 UI와 완벽하게 통합됩니다. 따라서 사용자들은 IDE 내부에서 다양한 AI 기능을 쾌적하게 사용할 수 있습니다.</p>
+                    </li>
+                    <li>
+                        <b>안전성</b>
+                        <p>JetBrains는 데이터 및 코드 보안을 그 무엇보다 중요하게 생각합니다. JetBrains AI는 필요 이상의 데이터를 LLM에 보내지 않습니다. 또한 JetBrains 와 LLM 제공 업체는 고객의 데이터를 절대로 모델 교육에 사용하지 않습니다.</p>
+                    </li>
+                </ul>
             </section>
         </>
     );

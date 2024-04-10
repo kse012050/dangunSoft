@@ -131,3 +131,11 @@
 .solutionPage .aboutArea h3 + p:after{margin-top: 30px; display: block;}
 .solutionPage .aboutArea h3 ~ a{margin-bottom: 60px;}
 .solutionPage .aboutArea ul li:not(:last-child){margin-bottom: 60px;}
+
+
+/* 솔루션 페이지 - 주요 이점 */
+.solutionPage .advantageArea ul li b{font-size: 24px; line-height: 32px;}
+.solutionPage .advantageArea ul li p{font-size: 14px; line-height: 22px; margin-top: 15px;}
+
+
+/* 솔루션 페이지 - 구매 옵션 */

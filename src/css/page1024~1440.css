@@ -104,3 +104,11 @@
 .solutionPage .aboutArea{position: relative;}
 .solutionPage .aboutArea h3 + p:after{position: absolute; top: 0; right: var(--contentPadding);}
 .solutionPage .aboutArea ul li:not(:last-child){margin-bottom: 80px;}
+
+
+/* 솔루션 페이지 - 주요 이점 */
+.solutionPage .advantageArea ul{display: flex;}
+.solutionPage .advantageArea ul li{flex: 1; padding: 30px;}
+
+
+/* 솔루션 페이지 - 구매 옵션 */

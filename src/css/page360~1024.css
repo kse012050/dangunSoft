@@ -74,3 +74,11 @@
 
 /* 솔루션 페이지 - about */
 .solutionPage .aboutArea ul li p::after{margin-top: 20px;}
+
+
+/* 솔루션 페이지 - 주요 이점 */
+.solutionPage .advantageArea > p{margin-bottom: 40px;}
+.solutionPage .advantageArea ul li p{margin-top: 15px;}
+
+
+/* 솔루션 페이지 - 구매 옵션 */
