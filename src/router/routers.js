@@ -7,6 +7,7 @@ import Product from "../page/Product";
 import ProductDetail from "../page/ProductDetail";
 import Root from "../page/Root";
 import Solution from "../page/Solution";
+import Estimate from "../page/Estimate";
 
 export const routers = [
     {
@@ -40,6 +41,13 @@ export const routers = [
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
             { path: 'faq', element: <FAQ/>  },
+        ]
+    },
+    {
+        path: '/estimate',
+        element: <Root />,
+        children: [
+            { index: true, element: <Estimate/> },
         ]
     }
 ]

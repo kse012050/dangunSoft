@@ -8,8 +8,10 @@ br[class]:not([class*="pc"]){display: none;}
 
 
 /* 입력 */
-input{height: 60px;}
+:is(input, textarea, .selectBox > button){height: 60px; font-size: 16px;}
 textarea{height: 180px;}
+.selectBox > button::after{right: 15px;}
+.inputBox-product ul li div input[type="radio"] + label{font-size: 15px; height: 50px;}
 
 
 /* 검색 */
@@ -37,9 +39,10 @@ textarea{height: 180px;}
 
 
 /* 인풋 */
-form:has(.inputBox){margin-top: 80px;}
+form:has([class*="inputBox"]){margin-top: 80px;}
 [class*="inputBox"] input[type="checkbox"] + label{font-size: 16px;}
 [class*="inputBox"] input[type="checkbox"] + label::before{width: 24px;}
+.inputBox-product > div{gap: 40px;}
 
 
 /* 해더 */

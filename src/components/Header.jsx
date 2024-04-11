@@ -22,7 +22,7 @@ export default function Header() {
                 </ul>
                 <button onClick={()=>setIsMenu(false)}>메뉴 닫기</button>
             </nav>
-            <Link to='/'>견적요청</Link>
+            <Link to='/estimate'>견적요청</Link>
             <div>
                 <Link to='/'>Twitter</Link>
                 <Link to='/'>Line_ID</Link>

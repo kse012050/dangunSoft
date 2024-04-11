@@ -110,3 +110,7 @@
 /* 지원 페이지 - FAQ */
 .faqPage section .searchBox button:nth-of-type(2){width: 20px;}
 .faqPage section .FAQBox:not(:last-of-type){margin-bottom: 60px;}
+
+
+/* 견적요청 페이지 */
+.estimatePage section form .inputBox > p{font-size: 15px; margin-top: 20px;}

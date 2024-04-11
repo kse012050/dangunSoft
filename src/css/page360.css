@@ -131,15 +131,15 @@
 /* 솔루션 페이지 - 구매 옵션 */
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2{font-size: 36px; line-height: 46px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimatePage) section h2{font-size: 36px; line-height: 46px;}
 :is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2 + p{font-size: 15px;}
+/* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 견적요청 공통 */
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimatePage) section{padding-block: 60px 80px;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
 :is(.inquiryPage, .faqPage) section h2{margin-bottom: 20px;}
 
 /* 지원 페이지 */
-/* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section{padding-block: 60px 80px;}
 
 
 /* 지원 페이지 - 게시판 */
@@ -170,3 +170,6 @@
 .faqPage section .tabArea{gap: 10px; margin-bottom: 60px;}
 .faqPage section .tabArea button{font-size: 14px; height: 40px; padding-inline: 15px;}
 .faqPage section > strong{font-size: 30px; line-height: 40px; margin-bottom: 20px;}
+
+
+/* 견적요청 페이지 */

@@ -5,8 +5,11 @@
 
 
 /* 입력 */
-input{height: 50px;}
+:is(input, .selectBox > button){font-size: 15px; height: 50px;}
 textarea{height: 150px;}
+.selectBox > button::after{right: 10px;}
+.inputBox-product ul li div input[type="radio"] + label{font-size: 14px; height: 44px;}
+.inputBox-product > div{gap: 30px;}
 
 
 /* 검색 */
