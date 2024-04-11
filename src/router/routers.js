@@ -1,4 +1,5 @@
 import Board from "../page/Board";
+import BoardDetail from "../page/BoardDetail";
 import Inquiry from "../page/Inquiry";
 import Main from "../page/Main";
 import Product from "../page/Product";
@@ -35,6 +36,7 @@ export const routers = [
         children: [
             { index: true, element: <Board/> },
             { path: 'board', element: <Board/>  },
+            { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
         ]
     }

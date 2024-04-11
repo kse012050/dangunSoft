@@ -89,3 +89,12 @@
 .boardPage section h2{margin-bottom: 40px;}
 .boardPage section .boardBox{font-size: 15px;}
 .boardPage section .btn-bg{margin-top: 60px;}
+
+
+/* 지원 페이지 - 게시판 상세 */
+.boardDetailPage section h2{margin-bottom: 60px;}
+.boardDetailPage section strong{font-size: 16px; line-height: 22px; padding-block: 20px;}
+.boardDetailPage section dl{padding-block: 20px;}
+.boardDetailPage section dl :is(dt, dd){font-size: 15px;}
+.boardDetailPage section .detailArea{font-size: 15px;}
+.boardDetailPage section .answerArea{font-size: 15px;}

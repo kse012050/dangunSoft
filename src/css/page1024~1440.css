@@ -114,3 +114,14 @@
 .boardPage section .searchArea button{right: 15px;}
 .boardPage section .boardBox :is(div, ul li a){padding-inline: 20px; align-items: center;}
 .boardPage section .btn-bg{max-width: 295px; margin-inline: auto;}
+
+
+/* 지원 페이지 - 게시판 상세 */
+.boardDetailPage section :is(strong, dl dt, dl dd){padding-inline: 20px;}
+.boardDetailPage section dl{float: left; width: 50%;}
+.boardDetailPage section dl:last-of-type + *{clear: both;}
+.boardDetailPage section dl dt{width: 120px;}
+.boardDetailPage section dl dd{flex: 1;}
+.boardDetailPage section .detailArea{padding: 40px;}
+.boardDetailPage section .answerArea{padding: 40px 80px 60px;}
+.boardDetailPage section .btn-border-black{max-width: 295px; margin-inline: auto; margin-top: 80px;}

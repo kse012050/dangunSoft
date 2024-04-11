@@ -34,7 +34,7 @@ export default function Board() {
                         </Link>
                     </li>
                     <li>
-                        <Link to=''>
+                        <Link to='/support/board/0'>
                             <span>999</span>
                             <p>프로모션으로 제품을 구매했는데요~ 문의드려요~ </p>
                             <span>홍길동</span>

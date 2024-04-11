@@ -39,7 +39,7 @@ header:has(nav ul li a.active + div){padding-bottom: 60px;}
 header nav ul li:has(div){position: relative;}
 header nav ul li div{position: absolute; left: 50%; top: 100%; transform: translateX(-50%);}
 header nav ul li div a{font-size: 22px; line-height: 60px; padding-inline: 20px; font-weight: 700; white-space: nowrap;}
-header nav ul li a.active:has(+ div) + div a:first-child,
+header nav ul li a.active:has(+ div) + div:not(:has( .active)) a:first-child,
 header nav ul li div a.active{color: var(--color-point);}
 header > a{width: 156px; line-height: 50px; font-size: 16px; font-weight: 700; color: white; text-align: center; background-color: var(--color-point); border-radius: 6px;}
 header > div{display: none;}

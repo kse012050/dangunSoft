@@ -174,7 +174,7 @@
 
 
 
-:is(.boardPage, .inquiryPage) h2{font-weight: 700; text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage) h2{font-weight: 700; text-align: center;}
 
 /* 지원 페이지 */
 /* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
@@ -193,4 +193,11 @@
 .boardPage section .btn-bg{display: block;}
 
 
-
+/* 지원 페이지 - 게시판 상세 */
+.boardDetailPage section :is(strong, dl dt, dl dd){box-sizing: border-box;}
+.boardDetailPage section strong{display: block; font-weight: 700; border-top: 1px solid black;}
+.boardDetailPage section dl{display: flex; border-top: 1px solid var(--color-line);}
+.boardDetailPage section dl dt{flex-shrink: 0; color: var(--color-font03); border-right: 1px solid var(--color-line);}
+.boardDetailPage section dl :is(dt, dd){line-height: 22px;}
+.boardDetailPage section .detailArea{line-height: 22px; margin-bottom: 20px; border-top: 1px solid var(--color-line);}
+.boardDetailPage section .answerArea{line-height: 22px; background-color: var(--color-face); color: var(--color-font02); border-bottom: 1px solid var(--color-line);}
