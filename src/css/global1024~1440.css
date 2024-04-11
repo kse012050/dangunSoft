@@ -4,7 +4,8 @@
 
 
 /* 입력 */
-input{padding-inline: 15px;}
+:is(input, textarea){padding-inline: 15px;}
+textarea{padding-block: 20px;}
 
 
 /* 검색 */
@@ -22,6 +23,14 @@ input{padding-inline: 15px;}
 [class*="purchaseBox"] div ul li span a{width: 223px;}
 .purchaseBox-white div :is(b span, ul li span){border-left-color: var(--color-line);}
 .purchaseBox-black div :is(b span, ul li span){border-left-color: #444;}
+
+
+/* FAQ */
+.FAQBox li details summary::after{width: 34px;}
+
+
+/* 인풋 */
+[class*="inputBox"] ul li label:first-child{font-size: 14px;}
 
 
 /* 해더 */

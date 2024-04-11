@@ -130,13 +130,6 @@
 
 
 /* 제품 상세 페이지 - 구독 옵션 */
-.FAQBox li:not(:last-child){margin-bottom: 10px;}
-.FAQBox li details summary::-webkit-details-marker{display: none;}
-.FAQBox li details summary{list-style-type: none; background-color: var(--color-face); font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;}
-.FAQBox li details summary::after{content: ''; aspect-ratio: 1; background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
-.FAQBox li details[open] summary::after{transform: rotate(180deg);}
-.FAQBox li details div{color: var(--color-font02);}
-.FAQBox li details div ul li::before{content: '- ';}
 
 
 /* 솔루션 페이지 */
@@ -174,8 +167,10 @@
 
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) h2{font-weight: 700; text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2{font-weight: 700; text-align: center;}
 :is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2 + p{color: var(--color-font01); text-align: center;}
+
+/* 지원 페이지 - 문의하기, FAQ 공통 */
 
 /* 지원 페이지 */
 /* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
@@ -203,6 +198,8 @@
 
 
 /* 지원 페이지 - 문의하기 */
+.inquiryPage section [class*="inputBox"] > div{display: flex; align-items: center; border-top: 1px solid var(--color-line);}
+.inquiryPage section [class*="inputBox"] > div input[type="password"]{width: 100%; max-width: 300px;}
 
 
 /* 지원 페이지 - FAQ */

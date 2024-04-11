@@ -103,9 +103,6 @@
 
 /* 제품 상세 페이지 - 구독 옵션 */
 .productDetailPage .subscribeArea p:not(:last-of-type){margin-bottom: 20px;}
-.FAQBox li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
-.FAQBox li details summary::after{width: 26px;}
-.FAQBox li details div{font-size: 14px; line-height: 20px;}
 
 
 /* 솔루션 페이지 */
@@ -137,6 +134,9 @@
 :is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2{font-size: 36px; line-height: 46px;}
 :is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2 + p{font-size: 15px;}
 
+/* 지원 페이지 - 문의하기, FAQ 공통 */
+:is(.inquiryPage, .faqPage) section h2{margin-bottom: 20px;}
+
 /* 지원 페이지 */
 /* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
 :is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section{padding-block: 60px 80px;}
@@ -161,10 +161,11 @@
 
 
 /* 지원 페이지 - 문의하기 */
+.inquiryPage section [class*="inputBox"] > div{margin-top: 40px; padding-top: 20px;}
+.submitBox{margin-top: 60px;}
 
 
 /* 지원 페이지 - FAQ */
-.faqPage section h2{margin-bottom: 20px;}
 .faqPage section .searchBox button:nth-of-type(2){right: 55px;}
 .faqPage section .tabArea{gap: 10px; margin-bottom: 60px;}
 .faqPage section .tabArea button{font-size: 14px; height: 40px; padding-inline: 15px;}

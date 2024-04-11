@@ -19,6 +19,14 @@ br[class]:not([class*="tablet"]){display: none;}
 [class*="purchaseBox"] div ul li{font-size: 18px; line-height: 24px;}
 
 
+/* FAQ */
+.FAQBox li details summary{font-size: 18px; line-height: 24px; min-height: 70px;}
+.FAQBox li details div{font-size: 16px; line-height: 22px;}
+
+
+/* 인풋 */
+
+
 /* 해더 */
 
 

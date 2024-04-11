@@ -12,8 +12,9 @@
 
 
 /* 입력 */
-input{border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
-input::placeholder{color: var(--color-font04);}
+label{cursor: pointer;}
+:is(input, textarea){border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
+:is(input, textarea)::placeholder{color: var(--color-font04);}
 
 
 /* 검색 */
@@ -59,6 +60,30 @@ input::placeholder{color: var(--color-font04);}
 .purchaseBox-black div b::before{background-color: #1C1C1C; border-top-color: white;}
 .purchaseBox-black div :is(b, ul li){border-bottom-color: #444;}
 .purchaseBox-black div ul li span[title="포함"]::after{background-image: url(../images/icon-check-white.png);}
+
+
+/* FAQ */
+.FAQBox li:not(:last-child){margin-bottom: 10px;}
+.FAQBox li details summary::-webkit-details-marker{display: none;}
+.FAQBox li details summary{list-style-type: none; background-color: var(--color-face); font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;}
+.FAQBox li details summary::after{content: ''; aspect-ratio: 1; background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
+.FAQBox li details[open] summary::after{transform: rotate(180deg);}
+.FAQBox li details div{color: var(--color-font02);}
+.FAQBox li details div ul li::before{content: '- ';}
+
+
+/* 인풋 */
+[class*="inputBox"] input[type="checkbox"] + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
+[class*="inputBox"] input[type="checkbox"] + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background: url(../images/icon-checkbox.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
+[class*="inputBox"] input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
+[class*="inputBox"] ul li:not(:last-child){margin-bottom: 30px;}
+[class*="inputBox"] ul li label:first-child{display: block; font-weight: 700; margin-bottom: 10px; line-height: 20px;}
+[class*="inputBox"] ul li:has(:required) label:first-child::after{content: '*'; color: #F00;}
+[class*="inputBox"] ul li div{display: flex; gap: 10px;}
+[class*="inputBox"] ul li div > *{flex: 1; width: 100%;}
+.submitBox{display: flex; gap: 10px;}
+.submitBox input{flex: 1;}
+.submitBox input[type="reset"]{background-color: transparent;}
 
 
 /* 해더 */

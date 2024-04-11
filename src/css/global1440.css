@@ -9,6 +9,7 @@ br[class]:not([class*="pc"]){display: none;}
 
 /* 입력 */
 input{height: 60px;}
+textarea{height: 180px;}
 
 
 /* 검색 */
@@ -28,6 +29,17 @@ input{height: 60px;}
 [class*="purchaseBox"] div b span{font-size: 28px;}
 [class*="purchaseBox"] div ul li{font-size: 20px; line-height: 26px;}
 [class*="purchaseBox"] div ul li span[title="포함"]::after{width: 40px;}
+
+
+/* FAQ */
+.FAQBox li details summary{font-size: 20px; line-height: 26px; min-height: 80px; padding-inline: 30px;}
+.FAQBox li details div{font-size: 18px; line-height: 24px; padding-block: 30px;}
+
+
+/* 인풋 */
+form:has(.inputBox){margin-top: 80px;}
+[class*="inputBox"] input[type="checkbox"] + label{font-size: 16px;}
+[class*="inputBox"] input[type="checkbox"] + label::before{width: 24px;}
 
 
 /* 해더 */

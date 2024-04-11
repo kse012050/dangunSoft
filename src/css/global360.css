@@ -8,7 +8,8 @@ br[class]:not([class*="mobile"]){display: none;}
 
 
 /* 입력 */
-input{padding-inline: 12px;}
+:is(input, textarea){padding-inline: 12px;}
+textarea{padding-block: 14px;}
 
 
 /* 검색 */
@@ -23,6 +24,16 @@ input{padding-inline: 12px;}
 [class*="purchaseBox"] div b span{font-size: 24px;}
 [class*="purchaseBox"] div ul li{font-size: 16px; line-height: 22px;}
 [class*="purchaseBox"] div ul li span a{width: 100%;}
+
+
+/* FAQ */
+.FAQBox li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
+.FAQBox li details summary::after{width: 26px;}
+.FAQBox li details div{font-size: 14px; line-height: 20px;}
+
+
+/* 인풋 */
+[class*="inputBox"] ul li label:first-child{font-size: 13px;}
 
 
 /* 해더 */
