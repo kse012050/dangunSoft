@@ -11,6 +11,10 @@ br[class]:not([class*="mobile"]){display: none;}
 input{padding-inline: 12px;}
 
 
+/* 검색 */
+.searchBox button:first-of-type{width: 30px; right: 10px;}
+
+
 /* 구매 옵션 테이블 */
 [class*="purchaseBox"] div:not(:last-of-type){margin-bottom: 40px;}
 [class*="purchaseBox"] div ul li{display: flex; justify-content: space-between; padding-inline: 10px;}

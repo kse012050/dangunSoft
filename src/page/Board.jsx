@@ -13,7 +13,7 @@ export default function Board() {
     return (
         <section>
             <h2>게시판</h2>
-            <div className='searchArea'>
+            <div className='searchBox'>
                 <input type="search" placeholder='글 제목 검색'/>
                 <button>검색</button>
             </div>

@@ -112,7 +112,7 @@ export default function ProductDetail() {
 
             <section className='FAQBox'>
                 <h3>FAQ</h3>
-                <ul>
+                <ul className='FAQBox'>
                     <li>
                         <details>
                             <summary>JetBrains의 라이선스 모델은 무엇인가요?</summary>

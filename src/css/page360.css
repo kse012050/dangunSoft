@@ -103,9 +103,9 @@
 
 /* 제품 상세 페이지 - 구독 옵션 */
 .productDetailPage .subscribeArea p:not(:last-of-type){margin-bottom: 20px;}
-.FAQBox ul li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
-.FAQBox ul li details summary::after{width: 26px;}
-.FAQBox ul li details div{font-size: 14px; line-height: 20px;}
+.FAQBox li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
+.FAQBox li details summary::after{width: 26px;}
+.FAQBox li details div{font-size: 14px; line-height: 20px;}
 
 
 /* 솔루션 페이지 */
@@ -134,16 +134,16 @@
 /* 솔루션 페이지 - 구매 옵션 */
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage) section h2{font-size: 36px; line-height: 46px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2{font-size: 36px; line-height: 46px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2 + p{font-size: 15px;}
 
 /* 지원 페이지 */
 /* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
-:is(.boardPage, .boardDetailPage, .inquiryPage) section{padding-block: 60px 80px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section{padding-block: 60px 80px;}
 
 
 /* 지원 페이지 - 게시판 */
-.boardPage section .searchArea{margin-bottom: 60px;}
-.boardPage section .searchArea button{width: 30px; right: 10px;}
+.boardPage section .searchBox{margin-bottom: 60px;}
 .boardPage section .boardBox :is(div, ul li a){padding: 20px 10px; gap: 10px 20px;}
 .boardPage section .boardBox > div{display: none;}
 .boardPage section .boardBox > ul li a{flex-wrap: wrap;}
@@ -158,3 +158,14 @@
 .boardDetailPage section .detailArea{padding: 20px;}
 .boardDetailPage section .answerArea{padding: 30px 40px 50px;}
 .boardDetailPage section .btn-border-black{margin-top: 40px;}
+
+
+/* 지원 페이지 - 문의하기 */
+
+
+/* 지원 페이지 - FAQ */
+.faqPage section h2{margin-bottom: 20px;}
+.faqPage section .searchBox button:nth-of-type(2){right: 55px;}
+.faqPage section .tabArea{gap: 10px; margin-bottom: 60px;}
+.faqPage section .tabArea button{font-size: 14px; height: 40px; padding-inline: 15px;}
+.faqPage section > strong{font-size: 30px; line-height: 40px; margin-bottom: 20px;}

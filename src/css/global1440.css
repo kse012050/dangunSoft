@@ -11,6 +11,10 @@ br[class]:not([class*="pc"]){display: none;}
 input{height: 60px;}
 
 
+/* 검색 */
+.searchBox button:first-of-type{width: 36px;}
+
+
 /* 페이지네이션 */
 .paginationBox{margin-top: 60px;}
 
@@ -44,9 +48,6 @@ header nav ul li div a.active{color: var(--color-point);}
 header > a{width: 156px; line-height: 50px; font-size: 16px; font-weight: 700; color: white; text-align: center; background-color: var(--color-point); border-radius: 6px;}
 header > div{display: none;}
 header button{display: none;}
-
-
-/* 해더 */
 
 
 /* 푸터 */

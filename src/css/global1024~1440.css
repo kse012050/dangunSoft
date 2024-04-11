@@ -7,6 +7,10 @@
 input{padding-inline: 15px;}
 
 
+/* 검색 */
+.searchBox button:first-of-type{right: 15px;}
+
+
 /* 구매 옵션 테이블 */
 [class*="purchaseBox"]::after{content: ''; clear: both; display: block; visibility: hidden;}
 [class*="purchaseBox"] div{float: left;}

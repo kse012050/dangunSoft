@@ -5,6 +5,10 @@ br[class]:not([class*="tablet"]){display: none;}
 /* 입력 */
 
 
+/* 검색 */
+.searchBox button:first-of-type{width: 34px;}
+
+
 /* 구매 옵션 테이블 */
 [class*="purchaseBox"] div :is(b, ul li) span{width: 303px;}
 [class*="purchaseBox"] div:first-of-type b::before, 
