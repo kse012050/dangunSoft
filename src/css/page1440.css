@@ -194,6 +194,7 @@
 
 /* 견적 요청, 구매 완료 페이지 공통 */
 :is(.estimateResultPage, .buyResultPage) section h2 + p{margin-bottom: 80px;}
+:is(.estimateResultPage, .buyResultPage) section > .btn-bg{margin-top: 80px;}
 
 /* 견적 요청 완료 페이지 */
 

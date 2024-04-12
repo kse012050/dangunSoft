@@ -1,7 +1,10 @@
 import React from 'react';
 import Select from '../components/Select';
+import { useNavigate } from 'react-router-dom';
 
 export default function Estimate() {
+    const navigate = useNavigate();
+
     return (
         <section>
             <h2>견적요청</h2>
@@ -105,7 +108,7 @@ export default function Estimate() {
                 </fieldset>
                 <div className='submitBox'>
                     <input type="reset" className='btn-border-black' value='취소'/>
-                    <input type="submit" className='btn-bg' value='확인'/>
+                    <input type="submit" className='btn-bg' value='확인' onClick={()=>navigate('/estimateResult')}/>
                 </div>
             </form>
         </section>

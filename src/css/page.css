@@ -232,3 +232,7 @@
 .buyPage section form .inputArea ul li > div:has(dl, p) dl{display: flex; align-items: center;}
 .buyPage section form .inputArea ul li > div:has(dl, p) dl dt{display: flex; align-items: center;}
 .buyPage section form .inputArea ul li > div:has(dl, p) dl dt::after{content: ':';}
+
+
+/* 견적 요청, 구매 완료 페이지 공통 */
+:is(.estimateResultPage, .buyResultPage) section > .btn-bg{display: block; margin-inline: auto;}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function BuyResult() {
     return (
@@ -107,6 +108,8 @@ export default function BuyResult() {
                     <dd>신용카드 (OO카드 / 5555)</dd>
                 </dl>
             </div>
+
+            <Link to='/' className='btn-bg'>확인</Link>
         </section>
     );
 }

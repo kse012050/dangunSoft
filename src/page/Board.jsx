@@ -53,7 +53,7 @@ export default function Board() {
                 <Link to=''>다음</Link>
             </div>
 
-            <Link to='' className='btn-bg'>문의하기</Link>
+            <Link to='/support/inquiry' className='btn-bg'>문의하기</Link>
 
             { popup &&
                 <div className='popupBox' onClick={()=>setPopup(false)}>

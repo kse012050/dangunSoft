@@ -185,6 +185,9 @@
 .buyPage section form .amountBox{margin-top: 40px;}
 
 
+/* 견적 요청, 구매 완료 페이지 공통 */
+:is(.estimateResultPage, .buyResultPage) section > .btn-bg{max-width: 600px; margin-top: 40px;}
+
 /* 견적 요청 완료 페이지 */
 
 

@@ -163,6 +163,9 @@
 .buyPage section form fieldset strong{font-size: 18px; line-height: 24px;}
 
 
+/* 견적 요청, 구매 완료 페이지 공통 */
+:is(.estimateResultPage, .buyResultPage) section > .btn-bg{margin-top: 60px;}
+
 /* 견적 요청 완료 페이지 */
 
 

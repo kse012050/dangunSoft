@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function EstimateResult() {
     return (
@@ -65,6 +66,8 @@ export default function EstimateResult() {
                     </dd>
                 </dl>
             </div>
+            
+            <Link to='/' className='btn-bg'>확인</Link>
         </section>
     );
 }

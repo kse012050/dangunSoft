@@ -81,7 +81,7 @@
 
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2 + p{line-height: 22px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimateResultPage, .buyResultPage) section h2 + p{line-height: 22px;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
 

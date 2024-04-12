@@ -66,8 +66,8 @@ export default function ProductDetail() {
                         <li title='라이선스 공유'><span title='포함'></span></li>
                         <li title='기술 문의'><span title='포함'></span></li>
                         <li title='라이선스 소유'><span>법인</span></li>
-                        <li><span><Link to='' className='btn-border-black'>견적요청</Link></span></li>
-                        <li><span><Link to='' className='btn-bg'>구매하기</Link></span></li>
+                        <li><span><Link to='/estimate' className='btn-border-black'>견적요청</Link></span></li>
+                        <li><span><Link to='/buy' className='btn-bg'>구매하기</Link></span></li>
                     </ul>
                 </div>
                 <div>
@@ -96,8 +96,8 @@ export default function ProductDetail() {
                         <li title='라이선스 공유'><span></span></li>
                         <li title='기술 문의'><span></span></li>
                         <li title='라이선스 소유'><span>개인</span></li>
-                        <li><span><Link to='' className='btn-border-black'>견적요청</Link></span></li>
-                        <li><span><Link to='' className='btn-bg'>구매하기</Link></span></li>
+                        <li><span><Link to='/estimate' className='btn-border-black'>견적요청</Link></span></li>
+                        <li><span><Link to='/buy' className='btn-bg'>구매하기</Link></span></li>
                     </ul>
                 </div>
             </section>

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Inquiry() {
+    const navigate = useNavigate();
+
     return (
         <section>
             <h2>문의하기</h2>
@@ -65,7 +68,7 @@ export default function Inquiry() {
                 </fieldset>
                 <div className='submitBox'>
                     <input type="reset" className='btn-border-black' value='취소'/>
-                    <input type="submit" className='btn-bg' value='확인'/>
+                    <input type="submit" className='btn-bg' value='확인' onClick={()=>navigate('/inquiryResult')}/>
                 </div>
             </form>
         </section>

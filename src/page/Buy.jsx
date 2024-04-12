@@ -1,7 +1,10 @@
 import React from 'react';
 import Select from '../components/Select';
+import { useNavigate } from 'react-router-dom';
 
 export default function Buy() {
+    const navigate = useNavigate();
+
     return (
         <section>
             <h2>구매하기</h2>
@@ -193,7 +196,7 @@ export default function Buy() {
                 </dl>
                 <div className='submitBox'>
                     <input type="reset" className='btn-border-black' value='취소'/>
-                    <input type="submit" className='btn-bg' value='확인'/>
+                    <input type="submit" className='btn-bg' value='확인' onClick={()=>navigate('/buyResult')}/>
                 </div>
             </form>
         </section>
