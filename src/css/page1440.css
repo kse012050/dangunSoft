@@ -137,11 +137,11 @@
 /* 솔루션 페이지 - 구매 옵션 */
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimatePage) section h2{font-size: 50px; line-height: 60px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimatePage, .buyPage) section h2{font-size: 50px; line-height: 60px;}
 :is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2 + p{font-size: 18px; line-height: 24px;}
 /* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQ 공통 */
 :is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section{padding-block: 60px 120px;}
-:is(.estimatePage) section{padding-block: 120px;}
+:is(.estimatePage, .buyPage) section{padding-block: 120px;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
 :is(.inquiryPage, .faqPage) section h2{margin-bottom: 40px;}
@@ -181,3 +181,11 @@
 
 /* 견적요청 페이지 */
 .estimatePage section form .inputBox > p{font-size: 16px; margin-top: 30px;}
+
+
+/* 구매하기 페이지 */
+.buyPage section form fieldset strong{font-size: 20px; line-height: 26px;}
+.buyPage section form .inputArea ul li label:first-child + p{font-size: 16px;}
+.buyPage section form .inputArea ul li div:has(input) input[type="radio"] + label{font-size: 16px;}
+.buyPage section form .inputArea ul li div:has(input) input[type="radio"] + label::before{width: 24px;}
+.buyPage section form .inputArea ul li div:has(dl, p){font-size: 15px; line-height: 22px;}

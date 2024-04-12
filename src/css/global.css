@@ -77,11 +77,25 @@ label{cursor: pointer;}
 .FAQBox li details div ul li::before{content: '- ';}
 
 
+/* 상품 정보 */
+.productBox{max-width: 600px; margin-inline: auto; border-top: 1px solid black;}
+.productBox figure{display: flex; gap: var(--gap);}
+.productBox figure img{width: var(--imgWidth); flex-shrink: 0; object-fit: cover; align-self: flex-start;}
+.productBox figure figcaption strong{margin-bottom: 20px; font-weight: 700; display: block;}
+.productBox figure figcaption div:has(button){display: flex; justify-content: space-between; align-items: center; font-size: 15px; width: 150px; height: 50px; padding: 12px 10px; border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
+.productBox figure figcaption div:has(button) button{width: 26px; aspect-ratio: 1; background: url(../images/icon-minusPlus.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+.productBox figure figcaption div:has(button) button:nth-of-type(1){--styleIdx: 0;}
+.productBox figure figcaption div:has(button) button:nth-of-type(2){--styleIdx: 1;}
+.productBox .deliveryArea{height: 60px; margin-left: calc(var(--imgWidth) + var(--gap)); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee;}
+.productBox .deliveryArea dt{color: var(--color-font04);}
+.productBox .deliveryArea dd{font-weight: 700;}
+
+
 /* 인풋 */
 form:has([class*="inputBox"]){max-width: 600px; margin-inline: auto;}
-[class*="inputBox"] input[type="checkbox"] + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
-[class*="inputBox"] input[type="checkbox"] + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background: url(../images/icon-checkbox.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
-[class*="inputBox"] input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
+input[type="checkbox"] + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
+input[type="checkbox"] + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background: url(../images/icon-checkbox.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
+input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 [class*="inputBox"] ul{display: flex; flex-wrap: wrap; column-gap: 10px;}
 [class*="inputBox"] ul li:not(.half){width: 100%;}
 [class*="inputBox"] ul li.half{width: calc((100% - 10px) / 2);}
@@ -89,7 +103,8 @@ form:has([class*="inputBox"]){max-width: 600px; margin-inline: auto;}
 [class*="inputBox"] ul li label:first-child{display: block; font-weight: 700; margin-bottom: 10px; line-height: 20px;}
 [class*="inputBox"] ul li:has(:required) label:first-child::after{content: '*'; color: #F00;}
 [class*="inputBox"] ul li > div{display: flex; gap: 10px;}
-[class*="inputBox"] ul li > div > *{flex: 1; width: 100%;}
+[class*="inputBox"] ul li > div:not(:last-of-type){margin-bottom: 10px;}
+[class*="inputBox"] ul li > div > *:not(label){flex: 1; width: 100%;}
 .submitBox{display: flex; gap: 10px;}
 .submitBox input{flex: 1;}
 .submitBox input[type="reset"]{background-color: transparent;}
@@ -98,6 +113,10 @@ form:has([class*="inputBox"]){max-width: 600px; margin-inline: auto;}
 .inputBox-product ul li div input[type="radio"]:checked + label{font-weight: 700; background-color: black; color: white; border: none;}
 .inputBox-product > div{margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--color-line); display: flex; justify-content: flex-end;}
 .inputBox-product > div button{line-height: 22px; font-weight: 700;}
+
+
+/* 최종 결제 금액 */
+.amountBox{display: flex; justify-content: space-between; align-items: center; background-color: var(--color-face); border-block: 1px solid var(--color-line); font-weight: 700; box-sizing: border-box;}
 
 
 /* 해더 */

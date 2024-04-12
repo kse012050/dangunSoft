@@ -24,7 +24,16 @@ br[class]:not([class*="tablet"]){display: none;}
 .FAQBox li details div{font-size: 16px; line-height: 22px;}
 
 
+/* 상품 정보 */
+.productBox{--imgWidth: 100px;}
+.productBox figure figcaption :is(strong, p){padding-right: 210px;}
+
+
 /* 인풋 */
+
+
+/* 최종 결제 금액 */
+.amountBox{height: 70px;}
 
 
 /* 해더 */

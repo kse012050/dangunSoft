@@ -114,3 +114,10 @@
 
 /* 견적요청 페이지 */
 .estimatePage section form .inputBox > p{font-size: 15px; margin-top: 20px;}
+
+
+/* 구매하기 페이지 */
+.buyPage section form .inputArea ul li label:first-child + p{font-size: 15px;}
+.buyPage section form .inputArea ul li div:has(input) input[type="radio"] + label{font-size: 15px;}
+.buyPage section form .inputArea ul li div:has(input) input[type="radio"] + label::before{width: 22px;}
+.buyPage section form .inputArea ul li div:has(dl, p){font-size: 14px; line-height: 20px;}

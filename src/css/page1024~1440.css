@@ -140,3 +140,12 @@
 
 
 /* 견적요청 페이지 */
+
+
+/* 구매하기 페이지 */
+.buyPage section form fieldset:not(:last-of-type){margin-bottom: 60px;}
+.buyPage section form fieldset strong{margin-bottom: 30px;}
+.buyPage section form .inputArea ul li:not(:last-child){margin-bottom: 40px;}
+.buyPage section form .inputArea ul li label:first-child{font-size: 14px;}
+.buyPage section form .inputArea ul li > div:has(input){margin-top: 20px;}
+.buyPage section form .amountBox{margin-top: 60px;}

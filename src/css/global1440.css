@@ -8,8 +8,8 @@ br[class]:not([class*="pc"]){display: none;}
 
 
 /* 입력 */
-:is(input, textarea, .selectBox > button){height: 60px; font-size: 16px;}
-textarea{height: 180px;}
+:is(input, .selectBox > button){height: 60px; font-size: 16px;}
+textarea{height: 180px; font-size: 16px;}
 .selectBox > button::after{right: 15px;}
 .inputBox-product ul li div input[type="radio"] + label{font-size: 15px; height: 50px;}
 
@@ -38,11 +38,21 @@ textarea{height: 180px;}
 .FAQBox li details div{font-size: 18px; line-height: 24px; padding-block: 30px;}
 
 
+/* 상품 정보 */
+.productBox{--imgWidth: 120px; margin-top: 80px;}
+.productBox figure figcaption :is(strong, p){font-size: 18px; line-height: 24px; padding-right: 190px;}
+.productBox .deliveryArea{font-size: 16px;}
+
+
 /* 인풋 */
 form:has([class*="inputBox"]){margin-top: 80px;}
-[class*="inputBox"] input[type="checkbox"] + label{font-size: 16px;}
-[class*="inputBox"] input[type="checkbox"] + label::before{width: 24px;}
+input[type="checkbox"] + label{font-size: 16px;}
+input[type="checkbox"] + label::before{width: 24px;}
 .inputBox-product > div{gap: 40px;}
+
+
+/* 최종 결제 금액 */
+.amountBox{font-size: 18px; line-height: 24px; height: 80px;}
 
 
 /* 해더 */

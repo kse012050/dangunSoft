@@ -29,10 +29,20 @@ textarea{height: 150px;}
 .FAQBox li details div{padding-block: 20px;}
 
 
+/* 상품 정보 */
+.productBox{margin-top: 60px;}
+.productBox figure figcaption :is(strong, p){font-size: 16px; line-height: 22px;}
+.productBox .deliveryArea{font-size: 14px;}
+
+
 /* 인풋 */
 form:has(.inputBox){margin-top: 60px;}
-[class*="inputBox"] input[type="checkbox"] + label{font-size: 15px;}
-[class*="inputBox"] input[type="checkbox"] + label::before{width: 22px;}
+input[type="checkbox"] + label{font-size: 15px;}
+input[type="checkbox"] + label::before{width: 22px;}
+
+
+/* 최종 결제 금액 */
+.amountBox{font-size: 16px; line-height: 22px;}
 
 
 /* 해더 */
