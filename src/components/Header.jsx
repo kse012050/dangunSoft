@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export default function Header() {
+    const location = useLocation().pathname;
     const [isMenu, setIsMenu] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        setIsMenu(false)
+    },[location])
     return (
         <header>
             <h1><Link to='/'>NATTOSYSYEM logo</Link></h1>

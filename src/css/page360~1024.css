@@ -59,7 +59,8 @@
 
 
 /* 솔루션 페이지 */
-
+.solutionPage header > button{background: url(../images/icon-menu-white.png) no-repeat center / cover;} 
+.solutionPage header{color: black;}
 /* 솔루션 페이지 공통 */
 
 

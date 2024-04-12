@@ -59,7 +59,7 @@ header nav button{--styleIdx: 1; position: absolute; right: 12px; top: 11px; z-i
 header nav ul{padding-top: calc(var(--headerHeight) + 40px);}
 header nav ul li:not(:last-child){margin-bottom: 50px;}
 header nav ul li > a{line-height: 28px;}
-header nav ul li div{justify-content: center; gap: 30px; margin-top: 20px;}
+header nav ul li div{display: flex; justify-content: center; gap: 30px; margin-top: 20px; padding-right: 10px;}
 header nav ul li div a{font-size: 16px; line-height: 22px;}
 header > a{display: none; font-size: 20px; font-weight: 700; justify-content: center; width: 100%; position: fixed; left: 0; top: calc(var(--headerHeight) + 404px); z-index: 102;}
 header > button{--styleIdx: 0;}

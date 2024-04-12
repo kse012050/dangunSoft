@@ -136,6 +136,7 @@
 .solutionPage{background-color: #111; color: white;}
 .solutionPage header{background-color: #111;}
 .solutionPage header h1 a{--styleIdx: 1;}
+.solutionPage header::after{background-color: rgba(255, 255, 255, 0.2);}
 
 /* 솔루션 페이지 공통 */
 .solutionPage h3 + p{color: rgba(255, 255, 255, 0.7);}
