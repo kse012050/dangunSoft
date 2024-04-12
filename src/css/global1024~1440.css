@@ -35,7 +35,9 @@ textarea{padding-block: 20px;}
 .productBox{padding-top: 30px; --gap: 30px;}
 .productBox .deliveryArea{padding-right: 30px;}
 .productBox figure figcaption{position: relative;}
-.productBox figure figcaption div{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+.productBox figure figcaption div{position: absolute; top: 50%; transform: translateY(-50%);}
+.productBox figure figcaption div:has(button){right: 0;}
+.productBox figure figcaption div:not(:has(button)){right: 30px;}
 .productBox .deliveryArea{margin-top: 30px;}
 
 
@@ -45,6 +47,12 @@ textarea{padding-block: 20px;}
 
 /* 최종 결제 금액 */
 .amountBox{padding-inline: 30px;}
+
+
+/* 완료 */
+.resultBox strong{margin-top: 60px; margin-bottom: 20px;}
+.resultBox dl :is(dt, dd){padding-inline: 20px;}
+.resultBox dl dt{width: 160px;}
 
 
 /* 해더 */

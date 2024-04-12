@@ -167,8 +167,8 @@
 
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimatePage, .buyPage) section h2{font-weight: 700; text-align: center;}
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage) section h2 + p{color: var(--color-font01); text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimatePage, .buyPage, .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimateResultPage, .buyResultPage ) section h2 + p{color: var(--color-font01); text-align: center;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
 

@@ -39,8 +39,9 @@ textarea{height: 180px; font-size: 16px;}
 
 
 /* 상품 정보 */
-.productBox{--imgWidth: 120px; margin-top: 80px;}
-.productBox figure figcaption :is(strong, p){font-size: 18px; line-height: 24px; padding-right: 190px;}
+.productBox{--imgWidth: 120px;}
+.productBox figure figcaption :is(strong, p, div:not(:has(button))){font-size: 18px; line-height: 24px;}
+.productBox figure figcaption :is(strong, p){padding-right: 190px;}
 .productBox .deliveryArea{font-size: 16px;}
 
 
@@ -53,6 +54,12 @@ input[type="checkbox"] + label::before{width: 24px;}
 
 /* 최종 결제 금액 */
 .amountBox{font-size: 18px; line-height: 24px; height: 80px;}
+
+
+/* 완료 */
+.resultBox strong{font-size: 20px; line-height: 26px;}
+.resultBox dl :is(dt, dd){padding-block: 24px;}
+.resultBox dl{font-size: 16px;}
 
 
 /* 해더 */

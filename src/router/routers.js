@@ -9,6 +9,8 @@ import Root from "../page/Root";
 import Solution from "../page/Solution";
 import Estimate from "../page/Estimate";
 import Buy from "../page/Buy";
+import EstimateResult from "../page/EstimateResult";
+import BuyResult from "../page/BuyResult";
 
 export const routers = [
     {
@@ -52,10 +54,24 @@ export const routers = [
         ]
     },
     {
+        path: '/estimateResult',
+        element: <Root />,
+        children: [
+            { index: true, element: <EstimateResult/> },
+        ]
+    },
+    {
         path: '/buy',
         element: <Root />,
         children: [
             { index: true, element: <Buy/> },
         ]
-    }
+    },
+    {
+        path: '/buyResult',
+        element: <Root />,
+        children: [
+            { index: true, element: <BuyResult/> },
+        ]
+    },
 ]

@@ -36,6 +36,10 @@ br[class]:not([class*="tablet"]){display: none;}
 .amountBox{height: 70px;}
 
 
+/* 완료 */
+.resultBox strong{font-size: 18px; line-height: 24px;}
+
+
 /* 해더 */
 
 

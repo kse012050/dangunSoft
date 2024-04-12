@@ -119,6 +119,17 @@ input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 .amountBox{display: flex; justify-content: space-between; align-items: center; background-color: var(--color-face); border-block: 1px solid var(--color-line); font-weight: 700; box-sizing: border-box;}
 
 
+/* 완료 */
+.resultBox{max-width: 600px; margin-inline: auto;}
+.resultBox:has(strong) strong + dl{border-top: 1px solid black;}
+.resultBox:not(:has(strong)){border-top: 1px solid black;}
+.resultBox strong{font-weight: 700; display: block;}
+.resultBox dl{line-height: 22px; display: flex; border-bottom: 1px solid var(--color-line);}
+.resultBox dl :is(dt, dd){box-sizing: border-box;}
+.resultBox dl dt{flex-shrink: 0; background-color: var(--color-face); color: var(--color-font03); word-break: keep-all;}
+.resultBox dl dd{flex: 1;}
+
+
 /* 해더 */
 header{background-color: white; position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
 header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
