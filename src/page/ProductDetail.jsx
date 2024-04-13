@@ -1,6 +1,7 @@
 import React from 'react';
 import { iconList } from '../js/product'
 import { Link } from 'react-router-dom';
+import EstimateLink from '../components/EstimateLink';
 
 export default function ProductDetail() {
     return (
@@ -11,6 +12,7 @@ export default function ProductDetail() {
                     IntelliJ IDEA는 Java 와 Kotlin 개발을 위한 IDE(통합 개발 환경) 입니다.<br />
                     IntelliJ IDEA는 전세계 수많은 사용자들이 신뢰하는 강력한 코딩 지원 기능을 제공합니다.
                 </p>
+                <EstimateLink />
             </section>
 
             <section className='infoArea'>

@@ -11,6 +11,11 @@
 .btn-bg{background-color: black; color: white;}
 
 
+/* 견적 링크 */
+section:has(.estimateLink){position: relative;}
+.estimateLink{position: absolute; aspect-ratio: 1; right: var(--contentPadding); bottom: 0; transform: translateY(50%); background: url(../images/icon-rfq.png) no-repeat center / cover; text-indent: -9999px; border-radius: 100%; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); z-index: 1;}
+
+
 /* 입력 */
 label{cursor: pointer;}
 :is(input, textarea, .selectBox > button){border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}

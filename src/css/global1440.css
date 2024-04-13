@@ -7,6 +7,10 @@ br[class]:not([class*="pc"]){display: none;}
 .btn-bg{line-height: 60px;}
 
 
+/* 견적 링크 */
+.estimateLink{width: 80px;}
+
+
 /* 입력 */
 :is(input, .selectBox > button){height: 60px; font-size: 16px;}
 textarea{height: 180px; font-size: 16px;}

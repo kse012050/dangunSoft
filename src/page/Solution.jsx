@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import EstimateLink from '../components/EstimateLink';
 
 export default function Solution() {
     return (
@@ -14,6 +15,7 @@ export default function Solution() {
                     JetBrains AI를 사용하면 지금까지와는 다르게<br/>
                     IDE(통합 개발 환경)에서 더 많은 정보와 더 많은 기능을 사용할 수 있습니다.
                 </p>
+                <EstimateLink />
             </section>
 
             <section className='aboutArea'>

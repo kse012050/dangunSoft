@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { tabList, iconList } from '../js/product'
+import EstimateLink from '../components/EstimateLink';
 
 // const tabList = [
 //     'View All',
@@ -303,6 +304,7 @@ export default function Product() {
                 </h2>
                 <p>JetBrains는 개인과 팀 모두를 위한 다양한 도구를 제공합니다.</p>
                 <Link to='/estimate' className='btn-border-white'>견적요청</Link>
+                <EstimateLink />
             </section>
 
             <section className='productArea'>

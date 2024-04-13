@@ -19,9 +19,9 @@ export default function Header() {
                     <li>
                         <NavLink to='/support'>지원</NavLink>
                         <div>
-                            <NavLink to='board'>게시판</NavLink>
-                            <NavLink to='inquiry'>문의하기</NavLink>
-                            <NavLink to='faq'>FAQ</NavLink>
+                            <NavLink to='/support/board'>게시판</NavLink>
+                            <NavLink to='/support/inquiry'>문의하기</NavLink>
+                            <NavLink to='/support/faq'>FAQ</NavLink>
                         </div>
                     </li>
                 </ul>

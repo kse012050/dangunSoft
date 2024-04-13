@@ -68,7 +68,7 @@ export default function Inquiry() {
                 </fieldset>
                 <div className='submitBox'>
                     <input type="reset" className='btn-border-black' value='취소'/>
-                    <input type="submit" className='btn-bg' value='확인' onClick={()=>navigate('/inquiryResult')}/>
+                    <input type="submit" className='btn-bg' value='확인' onClick={()=>navigate('/support/inquiry')}/>
                 </div>
             </form>
         </section>

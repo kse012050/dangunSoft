@@ -18,7 +18,10 @@
 .mainPage .productArea ul{display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 20px;}
 .mainPage .productArea ul li:first-child{margin-left: calc(var(--width) + (100% - (var(--width) * 3)) / 2);}
 .mainPage .productArea ul li{width: var(--width); padding: 40px 30px 0; border: 1px solid var(--color-line); box-sizing: border-box; text-align: center;}
-.mainPage .productArea ul li a::before{content: ''; --styleIdx: 1; width: 60px; margin-bottom: 30px; aspect-ratio: 1; display: inline-block; margin-inline: auto; background: url(../images/icon-products.png) no-repeat left top calc((100% / 23 * var(--styleIdx))) / 100%;}
+.mainPage .productArea ul li a::before{content: ''; --styleIdx: 1; width: 60px; margin-bottom: 30px; aspect-ratio: 1; display: inline-block; margin-inline: auto; 
+    background: url(../images/icon-products.png) no-repeat left top calc(100% / (24 - 1) * var(--styleIdx)) / 100%;
+    /* background: url(../images/icon-products.png) no-repeat left top calc(100% / 23 * var(--styleIdx)) / 100%; */
+}
 .mainPage .productArea ul li:nth-child(1) a::before{--styleIdx: 2;}
 .mainPage .productArea ul li:nth-child(2) a::before{--styleIdx: 0;}
 .mainPage .productArea ul li:nth-child(3) a::before{--styleIdx: 22;}
