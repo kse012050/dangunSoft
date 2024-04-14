@@ -12,9 +12,15 @@
 .mainPage :is(.productArea div, .functionArea) h3{margin-bottom: 20px;}
 .mainPage :is(.productArea div, .functionArea) > p{font-size: 16px; line-height: 22px;}
 
-/* 메인 - 주요제품 */
-.mainPage .productArea div{margin-bottom: 60px; text-align: center;}
+/* 메인 - 주요기능 */
+.mainPage .productArea > div:first-child{margin-bottom: 60px; text-align: center;}
 .mainPage .productArea ul{display: none;}
+.mainPage .productArea .swiper-wrapper .swiper-slide{/* height: 300px;  */padding: 30px 20px 40px;}
+.mainPage .productArea .swiper-wrapper .swiper-slide a::before{width: 50px;}
+.mainPage .productArea .swiper-wrapper .swiper-slide a strong{font-size: 20px; line-height: 28px;}
+.mainPage .productArea .swiper .swiper-pagination{margin-top: 30px; position: static;}
+.mainPage .productArea .swiper .swiper-pagination .swiper-pagination-bullet{background: #D9D9D9;}
+.mainPage .productArea .swiper .swiper-pagination .swiper-pagination-bullet-active{background: #96C51A;}
 
 
 /* 메인 - 주요제품 */
@@ -77,9 +83,12 @@
 
 
 /* 제품 페이지 - 주요제품 */
-.productPage .productArea .tabArea{margin-bottom: 40px;}
+.productPage .productArea .tabArea{margin-bottom: 40px; position: relative;}
 .productPage .productArea .tabArea > button{width: 100%; font-size: 15px; height: 50px; padding-inline: 15px; font-weight: 400; border: 1px solid var(--color-line); border-radius: 6px; text-align: left; box-sizing: border-box; background: url(../images/icon-arrow-down.png) no-repeat center right 10px / 26px;}
+.productPage .productArea .tabArea > button.active{border: 1px solid black;}
 .productPage .productArea .tabArea ul{display: none;}
+.productPage .productArea .tabArea ul.active{display: block; position: absolute; left: 0; top: calc(100% + 4px); width: 100%; border: 1px solid black; border-radius: 6px; background-color: white; padding-block: 10px; z-index: 1;}
+.productPage .productArea .tabArea ul li button{font-size: 16px; width: 100%; height: 42px; padding-inline: 15px; text-align: left;}
 .productPage .productArea > ul{gap: 12px;}
 .productPage .productArea > ul > li{flex: 1; min-width: 336px;}
 .productPage .productArea > ul > li a{ padding: 20px 20px 20px 100px;}

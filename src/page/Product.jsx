@@ -294,6 +294,25 @@ import EstimateLink from '../components/EstimateLink';
 
 export default function Product() {
     const [activeTab, setActiveTab] = useState(tabList[0])
+    const [isSelect, setIsSelect] = useState();
+    const [list, setList] = useState(iconList)
+
+    const tabClick = (e) =>{
+        setActiveTab(e.target.innerHTML)
+        setIsSelect(prev => !prev)
+        const selectType = e.target.innerHTML.split('/').map((type)=>type.trim())
+        // // console.log(selectType);
+        if(e.target.innerHTML === tabList[0]){
+            setList(iconList)
+        }else{
+            setList((list)=>{
+                list = iconList.filter(({type})=>{
+                    return type.some(item => selectType.some(item2 => item.includes(item2)));
+                })
+                return list
+            })
+        }
+    }
 
     return (
         <>
@@ -310,18 +329,18 @@ export default function Product() {
             <section className='productArea'>
                 <h3>주요제품</h3>
                 <div className='tabArea'>
-                    <button>{ activeTab }</button>
-                    <ul>
+                    <button onClick={()=>setIsSelect(prev => !prev)} className={isSelect ? 'active': ''}>{ activeTab }</button>
+                    <ul className={isSelect ? 'active': ''}>
                         { tabList.map((data, i)=>
                             <li key={i}>
-                                <button className={activeTab === data ? 'active' : ''}>{ data }</button>
+                                <button className={activeTab === data ? 'active' : ''} onClick={tabClick}>{ data }</button>
                             </li>
                         )}
                     </ul>
                 </div>
 
                 <ul style={{'--styleTotal': iconList.length}}>
-                    { iconList.map((data)=>
+                    { list.map((data)=>
                         <li style={{'--styleIdx': data.idx}} key={data.idx}>
                             <Link to={`/product/${data.idx}`}>
                                 <b>{ data.title }</b>

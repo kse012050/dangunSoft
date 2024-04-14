@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from '../components/Select';
 import { useNavigate } from 'react-router-dom';
 
 export default function Buy() {
     const navigate = useNavigate();
+    const [test, setTest] = useState(true)
 
     return (
         <section>
@@ -149,22 +150,26 @@ export default function Buy() {
                         <li>
                             <label htmlFor="">결제 방법</label>
                             <div>
-                                <input type="radio" defaultChecked/>
-                                <label htmlFor="">신용카드</label>
-                                <input type="radio" />
-                                <label htmlFor="">무통장입금</label>
+                                <input type="radio" defaultChecked id='test01' name='test' onChange={()=>setTest(true)}/>
+                                <label htmlFor="test01">신용카드</label>
+                                <input type="radio" id='test02' name='test' onChange={()=>setTest(false)}/>
+                                <label htmlFor="test02">무통장입금</label>
                             </div>
                             <div>
-                                <p>카드 : 현대카드, 국민카드, 롯데카드, 삼성카드, 비씨카드, 신한카드, 하나(외환)카드, NH농협카드</p>
-                                {/* <dl>
-                                    <dt>계좌번호</dt>
-                                    <dd></dd>
-                                </dl>
-                                <dl>
-                                    <dt>예금주</dt>
-                                    <dd></dd>
-                                </dl>
-                                <p>입금 확인은 자동으로 진행되며 확인이 완료되면 영업일 기준 1-2일 이내로 라이선스 증서를 받아보실 수 있습니다.</p> */}
+                                { test ?
+                                    <p>카드 : 현대카드, 국민카드, 롯데카드, 삼성카드, 비씨카드, 신한카드, 하나(외환)카드, NH농협카드</p> :
+                                    <>
+                                        <dl>
+                                            <dt>계좌번호</dt>
+                                            <dd></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>예금주</dt>
+                                            <dd></dd>
+                                        </dl>
+                                        <p>입금 확인은 자동으로 진행되며 확인이 완료되면 영업일 기준 1-2일 이내로 라이선스 증서를 받아보실 수 있습니다.</p>
+                                    </>
+                                }
                             </div>
                         </li>
                     </ul>

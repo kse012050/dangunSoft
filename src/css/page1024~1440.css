@@ -10,10 +10,15 @@
 /* 메인 - 주요제품, 주요기능 공통 */
 
 /* 메인 - 주요제품 */
-.mainPage .productArea div{position: absolute; left: var(--contentPadding); top: var(--areaPaddingTop); box-sizing: border-box;}
+.mainPage .productArea > div:first-child{position: absolute; left: var(--contentPadding); top: var(--areaPaddingTop); box-sizing: border-box;}
+.mainPage .productArea .swiper-wrapper{display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 20px;}
+.mainPage .productArea .swiper-wrapper .swiper-slide{width: var(--width); padding: 40px 30px 0;}
+.mainPage .productArea .swiper-wrapper .swiper-slide:first-child{margin-left: calc(var(--width) + (100% - (var(--width) * 3)) / 2);}
+.mainPage .productArea .swiper-wrapper .swiper-slide a::before{width: 60px;}
+.mainPage .productArea .swiper .swiper-pagination{display: none;}
 
 
-/* 메인 - 주요제품 */
+/* 메인 - 주요기능 */
 .mainPage .functionArea ul{display: flex; justify-content: space-between;}
 .mainPage .functionArea ul li strong{margin-bottom: 30px;}
 

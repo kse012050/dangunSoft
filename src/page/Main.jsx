@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 import EstimateLink from '../components/EstimateLink';
+import { Pagination } from 'swiper/modules';
 
 export default function Main() {
     return (
@@ -24,6 +27,59 @@ export default function Main() {
                     <h3>주요제품</h3>
                     <p>JetBrains는 소프트웨어 개발에 필요한 모든 도구를 제공합니다. JetBrains는 단순한 코딩 지원뿐만 아니라 코드 품질 검사, 협업 등 모든 개발 과정을 지원합니다.</p>
                 </div>
+                <Swiper
+                    modules={[Pagination]}
+                    pagination={true}
+                    breakpoints={{
+                        // 해상도가 768px 미만일 때
+                        1023: {
+                            slidesPerView: 1, // 슬라이드 뷰 1개
+                            // allowSlideNext: true,
+                            // allowSlidePrev: true,
+                            pagination: true
+                        },
+                        // 해상도가 768px 이상일 때
+                        1024: {
+                            slidesPerView: 'auto', // 슬라이드 뷰를 자동으로 설정
+                            allowSlideNext: false,
+                            allowSlidePrev: false,
+                        },
+                    }}
+                >
+                    {/* 슬라이드 추가 */}
+                    <SwiperSlide>
+                        <Link to='/product/0'>
+                            <strong>IntelliJ IDEA</strong>
+                            <p>IntelliJ IDEA는 Java 와 Kotlin 개발자를 위한 IDE(통합 개발 환경) 입니다. IntelliJ IDEA의 지능적인 코드 완성으로 개발자의 생산성이 증가합니다. 또한 IntelliJ IDEA의 다양한 프레임워크 지원으로 개발자가 자유롭게 개발할 수 있습니다.</p>
+                        </Link>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Link to='/product/0'>
+                            <strong>All Products Pack</strong>
+                            <p>All Products Pack은 말 그대로 모든 JetBrains 데스크탑 도구를 단 하나의 라이선스에 담은 제품입니다. 이제 All Products Pack을 통해 수많은 라이선스를 더욱 경제적으로 사용할 수 있습니다.</p>
+                        </Link>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Link to='/product/0'>
+                            <strong>Qodana</strong>
+                            <p>Qodana는 코드 품질 검사 플랫폼입니다. Qodana의 2천5백여 개의 코드 검사는 코드 품질을 더욱 높여줍니다. 또한 Qodana의 라이선스 감사 기능은 부적절한 라이선스 사용을 방지합니다.</p>
+                        </Link>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Link to='/product/0'>
+                            <strong>WebStorm</strong>
+                            <p>WebStorm은 JavaScript 와 TypeScript 를 위한 IDE(통합 개발 환경) 입니다. WebStorm은 React를 시작으로 Vue, Angular, NodeJS 까지 다양한 기술 스택을 완벽하게 지원합니다.</p>
+                        </Link>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Link to='/product/0'>
+                            <strong>JetBrains AI</strong>
+                            <p>JetBrains AI는 IDE(통합 개발 환경) 내부에 강력한 AI 기능을 제공하는 JetBrains 플러그인 입니다. JetBrains AI는 AI 채팅 부터 리팩토링, 런타임 에러 설명, 코드 완성 까지 수많은 AI 기능을 제공합니다.</p>
+                        </Link>
+                    </SwiperSlide>
+                    {/* 추가 슬라이드 */}
+                </Swiper>
+                
                 <ul>
                     <li style={{'--styleIdx': 2}}>
                         <Link to='/product/0'>

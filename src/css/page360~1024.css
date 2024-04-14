@@ -5,9 +5,10 @@
 /* 메인 - 주요제품, 주요기능 공통 */
 
 /* 메인 - 주요제품 */
+.mainPage .productArea .swiper-wrapper .swiper-slide a p{font-size: 14px; line-height: 20px;}
 
 
-/* 메인 - 주요제품 */
+/* 메인 - 주요기능 */
 .mainPage .functionArea ul li p{font-size: 14px; line-height: 20px;}
 
 

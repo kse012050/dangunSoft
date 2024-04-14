@@ -13,7 +13,7 @@
 
 /* 견적 링크 */
 section:has(.estimateLink){position: relative;}
-.estimateLink{position: absolute; aspect-ratio: 1; right: var(--contentPadding); bottom: 0; transform: translateY(50%); background: url(../images/icon-rfq.png) no-repeat center / cover; text-indent: -9999px; border-radius: 100%; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); z-index: 1;}
+.estimateLink{position: absolute; aspect-ratio: 1; right: var(--contentPadding); bottom: 0; transform: translateY(50%); background: url(../images/icon-rfq.png) no-repeat center / cover; text-indent: -9999px; border-radius: 100%; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); z-index: 1; box-sizing: border-box;}
 
 
 /* 입력 */

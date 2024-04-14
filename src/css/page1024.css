@@ -14,11 +14,13 @@
 .mainPage :is(.productArea div, .functionArea) h3{margin-bottom: 30px;}
 .mainPage :is(.productArea div, .functionArea) > p{font-size: 18px; line-height: 26px;}
 
-/* 메인 - 주요제품 */
-.mainPage .productArea div{width: 30.7617%; padding-right: 35px;}
+/* 메인 - 주요기능 */
+.mainPage .productArea > div:first-child{width: 30.7617%; padding-right: 35px;}
 .mainPage .productArea ul li{--width: 32.2745%; height: 332px;}
 .mainPage .productArea ul li a strong{font-size: 22px; line-height: 30px;}
 .mainPage .productArea ul li a p{font-size: 14px; line-height: 20px;}
+.mainPage .productArea .swiper-wrapper .swiper-slide{--width: 32.2745%; height: 332px;}
+.mainPage .productArea .swiper-wrapper .swiper-slide a strong{font-size: 22px; line-height: 30px;}
 
 
 /* 메인 - 주요제품 */
