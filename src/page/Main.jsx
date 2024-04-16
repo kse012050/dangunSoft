@@ -25,7 +25,7 @@ export default function Main() {
             <section className='productArea'>
                 <div>
                     <h3>주요제품</h3>
-                    <p>JetBrains는 소프트웨어 개발에 필요한 모든 도구를 제공합니다. JetBrains는 단순한 코딩 지원뿐만 아니라 코드 품질 검사, 협업 등 모든 개발 과정을 지원합니다.</p>
+                    <p>JetBrainsは、ソフトウェア開発に必要なすべてのツールを提供します。JetBrainsは、単純なコーディングサポートだけでなく、コード品質チェック、コラボレーションなど、すべての開発プロセスをサポートします。</p>
                 </div>
                 <Swiper
                     modules={[Pagination]}
@@ -50,31 +50,31 @@ export default function Main() {
                     <SwiperSlide>
                         <Link to='/product/0'>
                             <strong>IntelliJ IDEA</strong>
-                            <p>IntelliJ IDEA는 Java 와 Kotlin 개발자를 위한 IDE(통합 개발 환경) 입니다. IntelliJ IDEA의 지능적인 코드 완성으로 개발자의 생산성이 증가합니다. 또한 IntelliJ IDEA의 다양한 프레임워크 지원으로 개발자가 자유롭게 개발할 수 있습니다.</p>
+                            <p>IntelliJ IDEAは、JavaとKotlin開発者のためのIDE(統合開発環境)です。IntelliJ IDEAのスマートなコード完成により、開発者の生産性が向上します。 また、IntelliJ IDEAの多様なフレームワークのサポートにより、開発者が自由に開発することができます。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Link to='/product/0'>
                             <strong>All Products Pack</strong>
-                            <p>All Products Pack은 말 그대로 모든 JetBrains 데스크탑 도구를 단 하나의 라이선스에 담은 제품입니다. 이제 All Products Pack을 통해 수많은 라이선스를 더욱 경제적으로 사용할 수 있습니다.</p>
+                            <p>All Products Packは、文字通りJetBrainsのすべてのデスクトップツールを1つのライセンスにまとめた製品です。 All Products Packを利用することで、多数のライセンスをよりお得に利用できるようになりました。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Link to='/product/0'>
                             <strong>Qodana</strong>
-                            <p>Qodana는 코드 품질 검사 플랫폼입니다. Qodana의 2천5백여 개의 코드 검사는 코드 품질을 더욱 높여줍니다. 또한 Qodana의 라이선스 감사 기능은 부적절한 라이선스 사용을 방지합니다.</p>
+                            <p>Qodanaはコード品質検査プラットフォームです。Qodanaの2,500以上のコード検査は、コード品質をさらに向上させます。 また、Qodanaのライセンスチェック機能は、不適切なライセンスの使用を防止します。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Link to='/product/0'>
                             <strong>WebStorm</strong>
-                            <p>WebStorm은 JavaScript 와 TypeScript 를 위한 IDE(통합 개발 환경) 입니다. WebStorm은 React를 시작으로 Vue, Angular, NodeJS 까지 다양한 기술 스택을 완벽하게 지원합니다.</p>
+                            <p>WebStormはJavaScriptとTypeScriptのためのIDE(統合開発環境)です。WebStormはReactをはじめ、Vue、Angular、NodeJSまでさまざまな技術スタックを完全にサポートします。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Link to='/product/0'>
                             <strong>JetBrains AI</strong>
-                            <p>JetBrains AI는 IDE(통합 개발 환경) 내부에 강력한 AI 기능을 제공하는 JetBrains 플러그인 입니다. JetBrains AI는 AI 채팅 부터 리팩토링, 런타임 에러 설명, 코드 완성 까지 수많은 AI 기능을 제공합니다.</p>
+                            <p>JetBrains AIは、IDE(統合開発環境) 内部で強力なAI機能を提供するJetBrainsのプラグインです。JetBrains AIは、AIチャットからリファクタリング、ランタイムエラーの説明、コード完成まで、数多くのAI機能を提供します。</p>
                         </Link>
                     </SwiperSlide>
                     {/* 추가 슬라이드 */}
@@ -119,24 +119,24 @@ export default function Main() {
                 <p>JetBrains는 더욱 편리한 코딩 환경 및 협업 환경을 제공합니다.</p>
                 <ul data-styleidx>
                     <li>
-                        <strong>코딩 지원</strong>
-                        <p>JetBrains 제품은 코드 완성부터 코드 중복 검사, 디버거, 역 컴파일러 등 다양한 코딩 지원 기능을 제공합니다. 특히 JetBrains AI의 등장으로 이전과는 차원이 다른 개발 흐름을 경험할 수 있습니다.</p>
+                        <strong>コーディングサポート</strong>
+                        <p>JetBrains製品は、コード完成からコード重複チェック、デバッガ、逆コンパイラなど、さまざまなコーディングサポート機能を提供します。特にJetBrains AIの登場により、これまでとは異なる開発フローを体験することができます。</p>
                     </li>
                     <li>
-                        <strong>모든 기술 스택 지원</strong>
-                        <p>JetBrains 제품은 프로그래밍 언어, 프레임워크, 플랫폼 등 다양한 기술 스택을 지원합니다. 개발자는 JetBrains를 통해 원하는 기술을 제한없이 자유롭게 사용할 수 있습니다.</p>
+                        <strong>すべての技術スタックをサポート</strong>
+                        <p>JetBrainsの製品は、プログラミング言語、フレームワーク、プラットフォームなど、さまざまな技術スタックをサポートしています。開発者は、JetBrainsを使用することで、好きな技術を制限なく自由に使用することができます。</p>
                     </li>
                     <li>
-                        <strong>협업</strong>
-                        <p>현대의 소프트웨어 개발 과정은 이전보다 훨씬 복잡하게 구성됩니다. 이제 각 분야 전문가들의 협력은 필수적입니다. JetBrains의 모든 제품에는 간편한 협업 기능이 제공됩니다. 특히 JetBrains의 팀툴을 사용하면 팀원 간 협업 능력을 크게 향상시킬 수 있습니다.</p>
+                        <strong>コラボレーション</strong>
+                        <p>現代のソフトウェア開発プロセスは、以前よりもはるかに複雑に構成されています。各分野の専門家の協力が不可欠です。JetBrainsのすべての製品には簡単なコラボレーション機能が搭載されており、特にJetBrainsのチームツールを使用すると、チームメンバー間のコラボレーション能力を大幅に向上させることができます。</p>
                     </li>
                     <li>
-                        <strong>플러그인</strong>
-                        <p>JetBrains 플러그인은 JetBrains 제품 기능을 무제한으로 확장할 수 있도록 도와줍니다. JetBrains 플러그인 에코시스템은 개발자에게 필요한 모든 검증된 플러그인을 보유하고 있습니다.</p>
+                        <strong>プラグイン</strong>
+                        <p>JetBrainsのプラグインは、JetBrains製品の機能を無制限に拡張することができます。JetBrainsのプラグインエコシステムには、開発者が必要とする実証済みのプラグインがすべて揃っています。</p>
                     </li>
                     <li>
-                        <strong>모든 환경 지원</strong>
-                        <p>JetBrains는 가능한 모든 개발 환경을 지원합니다. JetBrains를 통해 온라인부터 오프라인, 클라우드, 온프레미스, 원격 환경에 이르기까지 다양한 환경에서 작업이 가능합니다.</p>
+                        <strong>あらゆる環境対応</strong>
+                        <p>JetBrainsはあらゆる開発環境をサポートします。JetBrainsでは、オンラインからオフライン、クラウド、オンプレミス、リモート環境まで、さまざまな環境での作業が可能です。</p>
                     </li>
                 </ul>
             </section>

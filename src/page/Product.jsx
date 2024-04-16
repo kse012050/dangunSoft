@@ -293,23 +293,20 @@ import EstimateLink from '../components/EstimateLink';
 // ]
 
 export default function Product() {
-    const [activeTab, setActiveTab] = useState(tabList[0])
+    const [activeTab, setActiveTab] = useState(tabList[0].name)
     const [isSelect, setIsSelect] = useState();
     const [list, setList] = useState(iconList)
 
-    const tabClick = (e) =>{
+    const tabClick = (e, selectType) =>{
         setActiveTab(e.target.innerHTML)
         setIsSelect(prev => !prev)
-        const selectType = e.target.innerHTML.split('/').map((type)=>type.trim())
-        // // console.log(selectType);
-        if(e.target.innerHTML === tabList[0]){
+        if(e.target.innerHTML === tabList[0].name){
             setList(iconList)
         }else{
-            setList((list)=>{
-                list = iconList.filter(({type})=>{
-                    return type.some(item => selectType.some(item2 => item.includes(item2)));
+            setList(()=>{
+                return iconList.filter(({title})=>{
+                    return selectType.some(item => item === title);
                 })
-                return list
             })
         }
     }
@@ -321,7 +318,7 @@ export default function Product() {
                     Welcome to<br/>
                     JetBrains Tool!
                 </h2>
-                <p>JetBrains는 개인과 팀 모두를 위한 다양한 도구를 제공합니다.</p>
+                <p>JetBrainsは、個人とチームの両方のために、さまざまなツールを提供しています。</p>
                 <Link to='/estimate' className='btn-border-white'>견적요청</Link>
                 <EstimateLink />
             </section>
@@ -333,7 +330,7 @@ export default function Product() {
                     <ul className={isSelect ? 'active': ''}>
                         { tabList.map((data, i)=>
                             <li key={i}>
-                                <button className={activeTab === data ? 'active' : ''} onClick={tabClick}>{ data }</button>
+                                <button className={activeTab === data.name ? 'active' : ''} onClick={(e)=>tabClick(e, data.type)}>{ data.name }</button>
                             </li>
                         )}
                     </ul>

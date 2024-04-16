@@ -137,6 +137,7 @@
 /* 제품 상세 페이지 - 상단 */
 .productDetailPage .topArea{background-color: black; color: white;}
 .productDetailPage .topArea::after{content: ''; aspect-ratio: 1; background: url(../images/icon-products.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}
+.productDetailPage .topArea p{white-space: pre-wrap;}
 
 
 /* 제품 상세 페이지 - 제품 정보 */

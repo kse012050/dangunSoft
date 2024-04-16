@@ -59,7 +59,7 @@ label{cursor: pointer;}
 [class*="purchaseBox"] div b::before{border-top-width: 1px; border-top-style: solid;}
 [class*="purchaseBox"] div :is(b, ul li){border-bottom-width: 1px; border-bottom-style: solid;}
 [class*="purchaseBox"] div :is(b span, ul li span),
-[class*="purchaseBox"] div ul li::before{text-align: center; display: flex; align-items: center;}
+[class*="purchaseBox"] div ul li::before{text-align: center; display: flex; align-items: center; white-space: pre-wrap;}
 [class*="purchaseBox"] div :is(b span, ul li span){justify-content: center;}
 [class*="purchaseBox"] div ul li span[title="포함"]::after{content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
 .purchaseBox-white div b span, 

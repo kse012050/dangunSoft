@@ -1,288 +1,2343 @@
 export const tabList = [
-    'View All',
-    'JavaScript / TypeScript',
-    'HTML / CSS',
-    'Python',
-    'SQL / databases',
-    'Java / Scala',
-    'C# / C++ / C',
-    'PHP',
-    'Go',
-    'Kotlin',
-    'Ruby',
-    'R',
-    'VB.NET / F#',
-    'Extension',
-    'Profiler',
-    'Product Pack',
-    'Plugin',
-    'Team Tool',
+    {
+        name: 'View All',
+    },
+    {
+        name: 'JavaScript / TypeScript',
+        type: ['WebStorm']
+    },
+    {
+        name: 'HTML / CSS',
+        type: ['WebStorm']
+    },
+    {
+        name: 'Python',
+        type: [
+            'PyCharm',
+            'DataSpell'
+        ]
+    },
+    {
+        name: 'SQL / databases',
+        type: [
+            'DataGrip',
+            'DataSpell',
+        ]
+    },
+    {
+        name: 'Java / Scala',
+        type: ['IntelliJ IDEA']
+    },
+    {
+        name: 'C# / C++ / C',
+        type: [
+            'CLion',
+            'Rider',
+            'ReSharper',
+            'ReSharper C++',
+        ]
+    },
+    {
+        name: 'PHP',
+        type: ['PhpStorm']
+    },
+    {
+        name: 'Go',
+        type: ['GoLand']
+    },
+    {
+        name: 'Kotlin',
+        type: ['IntelliJ IDEA']
+    },
+    {
+        name: 'Ruby',
+        type: ['RubyMine']
+    },
+    {
+        name: 'R',
+        type: ['DataSpell']
+    },
+    {
+        name: 'VB.NET / F#',
+        type: [
+            'Rider',
+            'ReSharper'
+        ]
+    },
+    {
+        name: 'Extension',
+        type: [
+            'ReSharper',
+            'ReSharper C++',
+            'dotCover',
+        ]
+    },
+    {
+        name: 'Profiler',
+        type: [
+            'dotTrace',
+            'dotMemory',
+        ]
+    },
+    {
+        name: 'Product Pack',
+        type: [
+            'All Products Pack',
+            'dotUltimate',
+        ]
+    },
+    {
+        name: 'Plugin',
+        type: [
+            'AI Assistant',
+            'Code With Me',
+        ]
+    },
+    {
+        name: 'Team Tool',
+        type: [
+            'Datalore',
+            'YouTrack',
+            'Space',
+            'Qodana',
+            'TeamCity',
+        ]
+    },
 ]
 
 export const iconList = [
     {
         idx: 0,
         title: 'All Products Pack',
-        detail: '모든 JetBrains 데스크탑 도구를 담은 패키지',
+        detail: 'すべてのJetBrainsデスクトップツールのパッケージ',
         type: [
             'IDE',
             'Extension',
             'Profiler',
+        ],
+        summary: 'All Products Packは、JetBrainsのすべてのデスクトップツールをまとめたパッケージ製品です。\nAll Products Packでは、JetBrainsのすべてのデスクトップツールを2つの製品価格でご利用いただけます。',
+        info: 'All Products Packは、JetBrainsのすべてのデスクトップツールをまとめたパッケージ製品です。All Products Packを使用すると、すべてのJetBrainsデスクトップツールを1つのパッケージライセンスで経済的に使用し、効率的に管理することができます。All Products Packでは、CLion、DataGrip、DataSpell、GoLand、IntelliJ IDEA、PhpStorm、PyCharm、Rider、RubyMine、WebStorm、ReSharper、ReSharper C++、dotCover、dotMemory、dotTrace、Code With Meをご利用いただけます。All Products Packを使用すると、多数の製品をたった2つの製品価格で使用し、簡単に管理することができます。',
+        function: [
+            {
+                title: '経済的なコストと簡単なライセンス管理',
+                description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$779\n(VAT 込み価格 $856.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$623\n(VAT 込み価格 $685.30)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$467\n(VAT 込み価格 $513.70)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$289\n(VAT 込み価格 $317.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$231\n(VAT 込み価格 $254.10)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$173\n(VAT 込み価格 $190.30)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 1,
         title: 'JetBrains AI',
-        detail: 'IDE 내부에 강력한 AI 기능을 제공하는 플러그인',
+        detail: 'IDE内部に強力なAI機能を提供するプラグイン',
+        // type: [
+        //     'Java',
+        //     'Kotlin',
+        // ]
         type: [
-            'Java',
-            'Kotlin',
+            'AI',
+            'IDE',
+        ],
+        summary: 'JetBrains AIは、IDE(統合開発環境)内部にさまざまなAI機能を提供するプラグインです。\nJetBrains AIが提供するAIチャット、リファクタリング、コード完成などのAI機能は、開発者の生産性を最大化します。',
+        info: 'JetBrains AIは、IDE(統合開発環境)内部にさまざまなAI機能を提供するプラグインです。JetBrains AIは、非効率的な作業を代行することで、コーディング時間を大幅に節約し、開発者の生産性を最大化します。JetBrains AIは、AIチャット、リファクタリング、コード補完、ランタイムエラーの説明などさまざまなAI機能を提供します。特に、クラス、関数、変数の名前を変更したり、コード構造を変更する場合、JetBrains AIのリファクタリングにより、安全かつ簡単に作業することができます。',
+        function: [
+            {
+                title: 'AIチャット',
+                description: 'JetBrains AIのAIチャットは、現在のプロジェクトに最適な回答を提供します。IDE(統合開発環境)とウェブブラウザを切り替えることなく、IDE内で直接AIチャット機能を使用することができます。'
+            },
+            {
+                title: 'リファクタリング',
+                description: 'JetBrains AIはプロジェクトを分析し、最適なリファクタリングを提案します。JetBrains AIのリファクタリングを使用すると、必要な部分に対して迅速かつ安全にコードを変更することができます。'
+            },
+            {
+                title: 'Commitメッセージの作成',
+                description: 'JetBrains AIは、プロジェクトのすべての変更内容を把握しており、これに基づいてCommitメッセージを作成します。JetBrains AIが提供するCommitメッセージにより、より迅速かつ正確にCommit作業を進めることができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$200\n(VAT 込み価格 $220)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンスの共有',
+                        include: true
+                    },
+                    {
+                        title: '技術的なお問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$100\n(VAT 込み価格 $110)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンスの共有',
+                    },
+                    {
+                        title: '技術的なお問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 2,
         title: 'IntelliJ IDEA',
-        detail: 'Java와 Kotlin 개발자를 위한 IDE',
+        detail: 'JavaとKotlin開発者向けのIDE',
         type: [
+            'Java',
+            'Kotlin',
             'Spring',
-            'AI',
-            'IDE',
             'JakartaEE',
             'JavaScript',
             'TypeScript',
+        ],
+        summary: 'IntelliJ IDEAはJavaとKotlin開発のためのIDE(統合開発環境)です。\nIntelliJ IDEAは、世界中の多くのユーザーから信頼されている強力なコーディングサポート機能を提供します。',
+        info: 'IntelliJ IDEAはJavaとKotlin開発向けのIDE(統合開発環境)です。IntelliJ IDEAは、コーディング支援機能はもちろん、それ以上の機能でIDEを拡張します。IntelliJ IDEAのコード補完、静的コード分析、リファクタリングなどの強力なコーディングサポート機能は、開発者の生産性を最大化します。 また、SpringやSpring Boot、Jakarta EE、JPA、Reactorなどの主要技術やフレームワークもIntelliJ IDEAで使用できます。必要な機能があれば、プラグインを追加してIntelliJ IDEAの機能を拡張することができます。全世界のJava開発者の78%が選択したIntelliJ IDEAは、JavaとKotlin開発のための最高の環境を提供します。',
+        function: [
+            {
+                title: 'インテリジェントなコード補完',
+                description: 'IntelliJ IDEAはコード補完機能を提供します。IntelliJ IDEAでコード入力を開始すると、プロジェクト全体のインデックスに基づいて正確なコード補完を提案します。これにより、開発時間を節約することができます。'
+            },
+            {
+                title: 'ダイアグラム',
+                description: 'IntelliJ IDEAはダイアグラムをサポートします。IntelliJ IDEAで大型プロジェクトを開発する時、ダイアグラムを使用すると、プロジェクトの構造を簡単に設計して把握することができます。'
+            },
+            {
+                title: 'JVMフレームワーク',
+                description: 'IntelliJ IDEAはSpring、Spring Boot、Jakarta EE、JPA、Reactorなどさまざまなフレームワークをサポートします。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$599\n(VAT 込み価格 $658.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$479\n(VAT 込み価格 $526.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$359\n(VAT 込み価格 $394.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 3,
         title: 'PyCharm',
-        detail: 'Python 개발자를 위한 IDE',
+        detail: 'Python開発者向けIDE',
         type: [
             'Python',
             'Django',
             'Jupyter',
-            'PHP',
-            'Laravel',
-            'Symfony',
+            'SQL',
+            'JavaScript',
+            'Flask',
+        ],
+        summary: 'PyCharmはPyhton開発者のために設計されたIDE(統合開発環境)です。PyCharmはDjango、Flaskなどのウェブ開発フレームワークはもちろん、Jupyter、Pandasなどのデータサイエンス向けのツールもサポートしています。',
+        info: 'PyCharmはPython開発者のために設計されたIDE(統合開発環境)です。PyCharmはPython開発のための全ての技術を集めた環境です。まず、PyCharmはDjango、Flask、FastAPIなどさまざまなウェブ開発フレームワークを提供します。それだけでなく、PyCharmはJupyter Notebookと統合され、Anaconda、Pandas、Polars DataFramesなどさまざまなデータサイエンスツールも提供します。また、PyCharmはPythonはもちろん、JavaScript、TypeScript、SQL、HTML/CSSなどさまざまな言語による開発もサポートします。PyCharmのコード補完、コード検査、エラーの強調表示などさまざまなコーディング支援機能は開発時間を短縮し、特にリファクタリング機能は、プロジェクト全体に対する簡単で安全なコード変更を提供します。Python開発向けのすべてのツールをPyCharmで体験することができます。',
+        function: [
+            {
+                title: 'コーディングサポート',
+                description: 'PyCharmはコード補完、リファクタリング、コード検査、エラー表示など、さまざまなコーディングサポート機能を提供します。'
+            },
+            {
+                title: 'Jupyter Notebookの統合',
+                description: 'PyCharmはJupyter Notebookをサポートします。Jupyter NotebookとPyCharmのコードサポート機能が合わさってPython開発環境を向上させます。'
+            },
+            {
+                title: 'ウィジェットレンダリング',
+                description: 'PyCharmは、Matplotlib、Bokeh、Plotly、TensorBoardなどの可視化ライブラリに対してインタラクティブなグラフィックを表示します。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$249\n(VAT 込み価格 $273.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$199\n(VAT 込み価格 $218.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$149\n(VAT 込み価格 $163.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 4,
         title: 'PhpStorm',
-        detail: 'PHP 개발자를 위한 IDE',
+        detail: 'PHP開発者向けIDE',
         type: [
-            'Go',
+            'PHP',
+            'Laravel',
+            'Symfony',
+            'WordPress',
             'JavaScript',
             'TypeScript',
-            'SQL',
-            'JavaScript',
-            'Flask',
+        ],
+        summary: 'PhpStormは高速でスマートなPHP IDE(統合開発環境)です。\nPhpStormはSymfony、LaravelなどさまざまなフレームワークからHTML、JavaScript、TypeScriptなどさまざまなフロントエンド技術までPHP開発向けのすべてを提供します。',
+        info: 'PhpStormは高速でスマートなPHP IDE(統合開発環境)です。PhpStormは、PHP開発のためのすべてを搭載しています。 まず、PhpStormはSymfony、Laravel、Drupal、WordPress、Zend Framework、Magentoなど多数のフレームワークと完全に対応しています。 また、HTML5、CSS、TypeScript、JavaScriptなど様々なフロントエンド技術も完全にサポートしています。PhpStormのコード補完、リファクタリングなどのコーディングサポート機能は開発時間を短縮します。 また、PhpStormはXdebugおよびZend Debuggerと互換性のある視覚的なデバッガを提供し、簡単なデバッグとテストが可能です。PHPだけの機能が満載のPhpStormは最高のPHP開発環境を提供します。',
+        function: [
+            {
+                title: '主なフレームワークのサポート',
+                description: 'PhpStormはSymfony、Laravel、Drupal、WordPress、Zend Framework、Magento、Joomla！、CakePHP、Yiiなどさまざまなフレームワークをサポートしています。'
+            },
+            {
+                title: 'デバッガ',
+                description: 'PhpStormはXdebugとZend Debuggerと互換性のあるビジュアルデバッガを提供します。視覚的なデバッガを使用して、アプリケーションの状態を詳細に把握することができます。'
+            },
+            {
+                title: 'コードテスト',
+                description: 'PhpStormはPHPテストフレームワークであるPHPUnit、Pest、Behat、PHPSpec、Codeceptionと統合されます。PhpStormでテストを生成して管理することができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$249\n(VAT 込み価格 $273.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$199\n(VAT 込み価格 $218.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$149\n(VAT 込み価格 $163.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 5,
         title: 'GoLand',
-        detail: 'Go 개발자를 위한 IDE',
+        detail: 'Go開発者向けIDE',
         type: [
-            'WordPress',
+            'Go',
             'JavaScript',
             'TypeScript',
             'SQL',
             'React',
+        ],
+        summary: 'GoLandはGo開発者のために設計されたIDE(統合開発環境)です。\nGoLandはフロントエンド開発、SQLおよびデータベースを最適化したサポートを提供します。',
+        info: 'GoLandはGo開発者のために設計されたIDE(統合開発環境)です。 GoLandはGo開発のためのすべての機能をIDEに搭載しました。 GoLandを使用すると、さまざまなコーディングサポート機能により、コードを非常に簡単に読み込み、書き込み、変更することができます。 また、GoLandはJavaScript、TypeScript、NodeJS、SQL、データベース、Docker、Kubernetes、Terraformなど、Go開発のためのすべての技術とプラットフォームをサポートします。GoLandは単なるIDE以上のGo開発環境を提供します。',
+        function: [
+            {
+                title: 'デバッガー',
+                description: 'GoLandは完璧なデバッガを提供します。GoLandデバッガは、追加の設定やプラグインをインストールすることなく、すぐにテストやアプリケーションで使用することができます。'
+            },
+            {
+                title: 'Goツール',
+                description: 'Code → Go Toolsメニューを使用すると、コマンドラインに切り替えることなく、プロジェクトでGoツールを実行することができます。'
+            },
+            {
+                title: 'フロントエンドとバックエンドの開発',
+                description: 'GoLandはさまざまなフロントエンド技術をサポートしています。JavaScript、TypeScript、Dart、Reactなど多様な言語をサポートし、プラグインを通じてAngular、NodeJS技術を使うことができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$249\n(VAT 込み価格 $273.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$199\n(VAT 込み価格 $218.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$149\n(VAT 込み価格 $163.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 6,
         title: 'Rider',
-        detail: '.NET 개발자를 위한 IDE',
+        detail: '.NET開発者向けIDE',
         type: [
             'C#',
             '.NET',
             'ASP.NET',
-            'C',
-            'C++',
-            'CMake',
+            'F#',
+            'Unity',
+            'Unreal Engine',
+        ],
+        summary: 'Riderは.NET開発のためのクロスプラットフォームIDE(統合開発環境)です。\nRiderは.NET開発はもちろん、Unity/Unrealなどのゲームエンジン開発にも最高の機能を提供します。',
+        info: 'Riderは.NET開発向けのクロスプラットフォームIDE(統合開発環境)です。Riderは.NETとゲームエンジン開発に必要なすべての機能を迅速かつ軽快に提供します。Riderは.NETフレームワーク、.NET Coreなどさまざまなプロジェクトをサポートし、.NETアプリケーションとUnityの開発をサポートします。 また、RiderとReSharper C++の統合により、Unreal Engineの開発も可能です。Riderのリファクタリング、デバッガ、ユニットテストランナーなど、さまざまなコーディング支援機能が開発時間を短縮します。 特に、RiderはReSharperをベースに数百のコンテキストアクションを搭載しており、非常に高速かつ軽快に反応します。',
+        function: [
+            {
+                title: 'コード検査',
+                description: 'Riderは基本的なIDE(統合開発環境)機能だけでなく、ReSharperが提供する数千種類のコード検査機能もサポートしています。Riderは数多くの機能にも非常に高速かつ軽快に動作します。'
+            },
+            {
+                title: 'リファクタリング',
+                description: 'Riderは数百種類のリファクタリング機能を提供します。これにより、関数名変更、コード構造変更などの作業を安全に行うことができます。'
+            },
+            {
+                title: 'Unity用Rider',
+                description: 'RiderはUnity開発をサポートします。Unityを開くと、エディタとしてRiderを使用するように自動設定されます。Riderを離れることなく、プレイモードに切り替えたり、画面を停止して次のフレームを確認することができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$419\n(VAT 込み価格 $460.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$335\n(VAT 込み価格 $368.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$251\n(VAT 込み価格 $276.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$149\n(VAT 込み価格 $163.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$119\n(VAT 込み価格 $130.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$89\n(VAT 込み価格 $97.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 7,
         title: 'CLion',
-        detail: 'C와 C++ 개발자를 위한 IDE',
+        detail: 'CとC++の開発者向けIDE',
         type: [
-            'JavaScript',
-            'TypeScript',
-            'React',
-            'F#',
-            'Unity',
-            'Unreal Engine',
+            'C',
+            'C++',
+            'CMake',
+            'Embedded',
+            'SQL',
+            'Assembly',
+        ],
+        summary: 'CLionはCとC++開発のためのクロスプラットフォームIDE(統合開発環境)です。\nCLionはコードを徹底的に理解し、CとC++に最適化されたコーディングサポートを提供します。',
+        info: 'CLionはCとC++開発のためのIDE(統合開発環境)です。CLionはCとC++開発のための様々なコーディングサポートツールとビルドツールを提供します。CLionのリファクタリング、リアルタイムのイシュー検出などさまざまなコーディングサポートツールで開発時間を大幅に節約することができます。 また、Makefile、Cmakeなどのビルドツールはプロジェクトのビルドを自動化するのに最適です。CLionの様々な機能をWindows、macOS、Linuxで使用することができます。',
+        function: [
+            {
+                title: '探索と検索',
+                description: 'CLionでは、コード、ユーザーアクション、UI要素など、あらゆる要素を見つけることができます。CLion内部でほぼすべての情報をどこでも簡単に検索することができます。'
+            },
+            {
+                title: 'デバッガ',
+                description: 'CLionでアプリケーションとユニットテストを実行し、デバッグします。コードの問題を見つけて解決する上で、最高のデバッグを提供します。'
+            },
+            {
+                title: 'CMakeサポート',
+                description: 'CMakeは、CとC++プロジェクトに広く使われているクロスプラットフォームのビルドシステムです。CLionは、Cmakeのコード生成、自動アップデートなどさまざまな機能により、開発者の生産性を向上させます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$137\n(VAT 込み価格 $150.70)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 8,
         title: 'WebStorm',
-        detail: 'JavaScript와 TypeScript 개발자를 위한 IDE',
+        detail: 'JavaScriptとTypeScript開発者向けのIDE',
         type: [
-            'Embedded',
-            'SQL',
-            'Assembly',
+            'JavaScript',
+            'TypeScript',
+            'React',
             'Vue',
             'Angular',
+        ],
+        summary: 'WebStormはJavaScriptとTypeScriptのためのIDE(統合開発環境)です。\nWebStormにはJavaScript開発のためのすべての機能が含まれているので、プラグインのインストールや別途設定なしですぐにコーディングを始めることができます。',
+        info: 'WebStormはJavaScriptとTypeScriptのためのIDE(統合開発環境)です。WebStormにはJavaScriptとTypeScript開発をするためのすべての機能が含まれているので、すぐにコーディングを開始することができます。WebStormはReact、Vue、Angular、NodeJS、HTMLなどJavaScript開発に関連する技術を完全にサポートします。 また、WebStormはコード補完や文法検査などさまざまなコーディング支援機能を提供します。特に、WebStormの最高の機能の一つであるリファクタリングは、プロジェクト全体に対して安全なコード修正を保証します。',
+        function: [
+            {
+                title: 'JavaScript専用環境',
+                description: 'WebStormはJavaScript、TypeScript、React、React Native、Electron、Vue、Angular、NodeJS、HTML、CSSなどさまざまな技術をサポートします。 そのため、WebStormを使えば、別途インストールせずにすぐにJavaScript開発を始めることができます。'
+            },
+            {
+                title: 'リファクタリング',
+                description: 'WebStormは最高のリファクタリング機能を提供します。WebStormのリファクタリングにより、ファイル、フォルダ名を変更することができるだけでなく、コンポーネント、メソッド、変数を抽出することができます。'
+            },
+            {
+                title: 'デバッガ',
+                description: 'WebStormは柔軟なデバッグをサポートします。Vanilla JavaScriptからTypeScript、Vueまでさまざまな種類のアプリケーションでデバッグを行うことができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$159\n(VAT 込み価格 $174.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$127\n(VAT 込み価格 $139.70)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$95\n(VAT 込み価格 $104.50)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$69\n(VAT 込み価格 $75.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$55\n(VAT 込み価格 $60.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$41\n(VAT 込み価格 $45.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 9,
         title: 'RubyMine',
-        detail: 'Ruby 와 Rails 개발자를 위한 IDE',
+        detail: 'RubyとRails開発者向けのIDE',
         type: [
-            'Rubyon Rails (RoR)',
+            'Ruby on Rails (RoR)',
             'Hotwire',
-            'MySQL',
-            'PostgreSQL',
-            'Oracle',
-            'Python',
+            'RuboCop',
+            'RSpec',
+            'React',
+            'Vue',
+        ],
+        summary: 'RubyMineはRubyとRailsのためのIDE(統合開発環境)です。\nRubyMineはMVCベースのView、GUIベースのデバッガなどRuby開発向けのさまざまな機能を提供します。',
+        info: 'RubyMineはRubyおよびRuby on Rails専用の統合開発環境(IDE)です。RubyMineは最高のRuby開発環境を提供するために15年間機能を改善してきました。 RubyMineはRuby開発のためのRails、RBS、Rakeなどさまざまな技術をサポートします。 また、RubyMineのMVCベースのプロジェクトサポートにより、複雑なRuby on Railsプロジェクトでも迅速なコード探索が可能です。RubyMineのGUIを提供するデバッガを使って簡単にコードやライブラリをデバッグすることができます。',
+        function: [
+            {
+                title: 'リファクタリング',
+                description: 'RubyMineのすべてのリファクタリングはRuby on Railsを認識するので、コントローラの名前を変更すると、関連する名前も変更されます。これにより、RubyMineで安全なコード修正が可能です。'
+            },
+            {
+                title: 'MVCベースの探索',
+                description: 'RubyMineはMVCベースの探索をサポートするので、RubyMineでRailsのコントローラー、アクション、ビュー、モデル、データベース間の迅速な探索が可能です。'
+            },
+            {
+                title: 'さまざまなRuby関連の技術サポート',
+                description: 'RubyMineはRails、RBS、Rake、RubocopなどRuby開発のための多様な技術をサポートします。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$137\n(VAT 込み価格 $150.70)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 10,
         title: 'DataGrip',
-        detail: '수많은 데이터베이스와 완벽하게 연결되는 데이터베이스 도구',
+        detail: '多数のデータベースと完璧に接続するデータベースツール',
         type: [
-            'Jupyter',
-            'SQL cells',
-            'RuboCop',
-            'RSpec',
-            'React',
-            'Vue',
+            'MySQL',
+            'PostgreSQL',
+            'Oracle',
+            'SQL Server',
+            'MongoDB',
+            'Redis',
+        ],
+        summary: 'DataGripはSQL開発者向けに設計されたIDE(統合開発環境)とデータベースツールです。\nDataGripでは、数多くのデータベースを使用することができます。',
+        info: 'DataGripはSQL開発者のために設計されたIDE(統合開発環境)とデータベースツールです。DataGripはデータ操作向けの高度な機能を提供します。まず、DataGripのスマートなコード補完とクエリコンソールは、データエンジニアの生産性を向上させます。 また、他のオブジェクトに移動したい時、高度な検索機能で任意のオブジェクトに簡単に移動することができます。 さらに、DataGripのダイアグラムを通じて、多数のテーブル間の関係を一目で把握することができます。DataGripのこれらの高度な機能を多数のデータベースと接続して作業を開始することができます。',
+        function: [
+            {
+                title: 'ダイアグラム',
+                description: 'DataGripでオブジェクトをダイアグラムに視覚化することができます。ダイアグラムを通じてテーブル間の関係を一目で把握します。必要であれば、ダイアグラムを画像ファイルとして保存することもできます。'
+            },
+            {
+                title: 'スマートテキストエディタ',
+                description: 'DataGripには生産性を高めてくれるコードエディタが含まれています。 その中の一つであるDataGripのマルチカーソル機能は、SQLコードを修正するときに効果的です。'
+            },
+            {
+                title: 'コード分析と修正',
+                description: 'DataGripは、コードでバグが発生する可能性がある部分を検出して解決方法を提案します。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$137\n(VAT 込み価格 $150.70)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 11,
         title: 'DataSpell',
-        detail: '데이터 과학자를 위한 IDE',
+        detail: 'データサイエンティストのためのIDE',
         type: [
-            'SQL Server',
-            'MongoDB',
-            'Redis',
+            'Python',
+            'Jupyter',
+            'SQL cells',
             'dbt Core',
             'SQL',
             'Low-code',
             'R',
+        ],
+        summary: 'DataSpellはデータサイエンスのためのIDE(統合開発環境)です。\nDataSpellはJupyter Notebook、Python、R、dbt Coreなどデータサイエンスの向けのさまざまな技術を提供します。',
+        info: 'DataSpellはデータサイエンス向けに設計されたIDE(統合開発環境)です。DataSpellは便利なデータサイエンス作業向けの機能を提供します。DataSpellはJupyter Notebookのインタラクティブ機能とPyCharmのコーディングサポート機能を一つの環境に組み合わせました。 また、DataSpellはPython、dbt Core、Jupyter、Condaなどのサポートでデータサイエンスに最適化された環境を提供します。',
+        function: [
+            {
+                title: 'SQLセル',
+                description: 'DataSpellはSQLセルをサポートしています。DataSpellのSQLセルを通じてデータを簡単にインポートし、簡単にPython開発を始めることができます。'
+            },
+            {
+                title: 'dbt Core',
+                description: 'DataSpellはdbt Coreをサポートします。DataSpellで事前構成されたテンプレートを通じて簡単にdbtプロジェクトを開始することができます。'
+            },
+            {
+                title: 'インタラクティブテーブル',
+                description: 'DataSpellでデータを扱う時、インタラクティブテーブルを使うことができます。DataSpellのインタラクティブテーブルを通じて、頻繁に発生する値のリストとパーセンテージを一目で把握することができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$137\n(VAT 込み価格 $150.70)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 12,
         title: 'ReSharper',
-        detail: '.NET 개발자를 위한 Visual Studio 확장 프로그램',
+        detail: '.NET開発者向けのVisual Studio拡張プログラム',
         type: [
             'C#',
             '.NET',
             'ASP.NET',
             'VB.NET',
+        ],
+        summary: 'ReSharperは.NET開発者向けのVisual Studio拡張機能です。\nReSharperのコード検査や自動化されたリファクタリングなどのコーディングサポート機能でVisual Studioの性能を拡張します。',
+        info: 'ReSharperは.NET開発者向けのVisual Studio拡張プログラムです。 ReSharperの多数の.NET開発サポート機能により、Visual Studioのパフォーマンスをより強力に拡張することができます。ReSharperはC#、VB.NET、ASP.NETなど.NET言語のための2,200以上のコードチェックを提供します。単にコード検査だけでなく、発見された問題を自動的に修正する数百種類のクイック修正機能も提供しています。また、ReSharperの60種類以上のリファクタリング機能でコードを安全に修正することができます。',
+        function: [
+            {
+                title: 'コード検査',
+                description: 'ReSharperはC#、VB.NET、ASP.NETなど.NET開発のための2,200種類以上のコードチェックをサポートします。'
+            },
+            {
+                title: 'リファクタリング',
+                description: 'ReSharperは60種類以上のリファクタリングと450種類以上のコンテキストアクションをサポートしています。これにより、コードを安全に修正することができます。'
+            },
+            {
+                title: 'コード形式指定',
+                description: 'ReSharperは、C#、VB.NET、ASP.NETなどの言語にコードをフォーマットを指定することができます。これにより、コードの一貫性が向上します。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$349\n(VAT 込み価格 $383.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$279\n(VAT 込み価格 $306.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$209\n(VAT 込み価格 $229.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$139\n(VAT 込み価格 $152.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$111\n(VAT 込み価格 $122.10)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$83\n(VAT 込み価格 $91.30)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 13,
         title: 'ReSharper C++',
-        detail: 'C++ 개발자를 위한 Visual Studio 확장 프로그램',
+        detail: 'C++開発者向けのVisual Studio拡張プログラム',
         type: [
             'C++',
             'Unreal Engine',
+        ],
+        summary: 'ReSharper C++ は、C++ 開発者向けの Visual Studio の拡張機能です。\nReSharper C++のコード分析や簡単な検索機能でVisual Studioの性能を拡張します。',
+        info: 'ReSharper C++ は、C++開発者向けのVisual Studio拡張プログラムです。ReSharper C++ は、C++ と Unreal Engine 開発の Visual Studio のパフォーマンスをより高いレベルに拡張します。ReSharper C++ の信頼性の高いリファクタリングを使用して、C++ のような複雑なコードベースを安全に修正することができます。 また、ReSharper C++ のコード品質チェックのサポートにより、コードを簡単かつ迅速に探索することができます。 さらに、ReSharper C++ は Unreal Engine の開発もサポートしています。ReSharper C++ と UnrealHeaderTool (ヘッダファイルのマクロを管理するツール) が統合され、Unreal Engine の開発が可能です。',
+        function: [
+            {
+                title: 'コード分析',
+                description: 'ReSharper C++は、Visual Studioのプロジェクトに対してさまざまなコード分析を行います。ReSharper C++は、コード分析だけでなく、40種類以上のクイックフィックス機能により、問題を即座に解決します。'
+            },
+            {
+                title: 'リファクタリング',
+                description: 'ReSharper C++のリファクタリングにより、C++のような複雑な言語でも安全にコードを変更することができます。ReSharper C++ は、Rename (名前の変更)、Extract Method (メソッドの抽出)、Change Signature (シグネチャの変更) などの完全なリファクタリングを提供します。'
+            },
+            {
+                title: 'Unreal Engine開発サポート',
+                description: 'ReSharper C++はUnreal Engine開発をサポートします。ReSharper C++ はリフレクションメカニズムを理解し、マクロ内のリフレクション指定子に対してコード補完を提供します。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$349\n(VAT 込み価格 $383.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$279\n(VAT 込み価格 $306.90)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$209\n(VAT 込み価格 $229.90)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$139\n(VAT 込み価格 $152.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$111\n(VAT 込み価格 $122.10)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$83\n(VAT 込み価格 $91.30)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 14,
         title: 'dotCover',
-        detail: '.NET 유닛 테스트 러너이자 코드 커버리지 도구',
+        detail: '.NETユニットテストランナーとコードカバレッジツール',
         type: [
             '.NET',
             'Unit Test',
             'Code Coverage',
+        ],
+        summary: 'dotCoverは.NETユニットテストランチャーおよびコードカバレッジツールです。\ndotCoverはVisual StudioおよびRiderとスムーズに統合され、スマートなユニットテストと可視化されたコードカバレッジを提供します。',
+        info: 'dotCoverは.NETユニットテストツールとコードカバレッジツールです。 dotCoverを使用すると、Visual StudioとRiderでエディタを離れることなく、レベルの高いユニットテストとコードカバレッジを体験することができます。 dotCoverはMSTest、NUnit、xUnit、MSpecなどのさまざまなユニットテストフレームワークをサポートします。 また、dotCoverは、コード修正により影響を受けるユニットテストを自動的に再テストします。 dotCoverは、ユニットテストの実行に対するコードカバレッジを視覚化します。これにより、ユニットテストがどれだけ多くのコードを実行したかを簡単に把握することができます。',
+        function: [
+            {
+                title: 'ユニットテスト',
+                description: 'dotCoverはMSTest、NUnit、xUnit、MSpecなどの多様なユニットテストフレームワークをサポートします。 また、dotCoverはテストが必要なコードを自動的に検出して実行します。'
+            },
+            {
+                title: 'Hot Spotを見る',
+                description: 'dotCoverは、コードカバレッジを一目で確認できるHot Spotビューを提供します。これにより、簡単にコードカバレッジを分析することができます。'
+            },
+            {
+                title: 'Visual StudioおよびRiderとの統合',
+                description: 'Visual StudioとRiderでdotCoverをプラグインとして使用することができます。 dotCoverを使用すると、IDE(統合開発環境)で直接ユニットテストを実行し、コードカバレッジを分析することができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$281\n(VAT 込み価格 $309.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 15,
         title: 'dotTrace',
-        detail: '.NET 성능 프로파일러',
+        detail: '.NETパフォーマンスプロファイラ',
         type: [
             '.NET',
             'Performance Profiler',
+        ],
+        summary: 'dotTraceは.NETパフォーマンスプロファイラです。\ndotTraceは豊富なユーザーインターフェースと大規模なスナップショットをサポートしています。これらのdotTraceの機能で.NETプログラムのボトルネック原因を簡単に見つけることができます。',
+        info: 'dotTraceは.NETパフォーマンスプロファイラーです。 dotTraceを使用すると、.NETアプリケーションの実行が遅くなる原因を簡単に見つけることができます。 dotTraceの豊富なスナップショットにより、プログラムのパフォーマンスを簡単に比較することができます。 また、dotTraceのタイムライン分析は、プログラムの実行中に発生する現象を時間に応じて視覚化します。 dotTraceのさまざまな分析機能で、エディタを離れることなく、アプリケーションのパフォーマンスを最適化することができます。',
+        function: [
+            {
+                title: '.NETおよびUnityアプリケーションのプロファイリング',
+                description: 'dotTraceを使用すると、デスクトップアプリケーション、.NET Core、IIS、Unityアプリケーションなど様々な.NETアプリケーションのボトルネックの原因を見つけることができます。'
+            },
+            {
+                title: 'タイムラインプロファイリング',
+                description: 'dotTraceのタイムラインプロファイリングは、メソッドの呼び出し順序と持続時間を時間順に表示します。これにより、さまざまなパフォーマンスの問題を把握することができます。'
+            },
+            {
+                title: 'Visual StudioおよびRiderとの統合',
+                description: 'Visual StudioとRiderでdotTraceをプラグインとして使用することができます。 dotTraceを使用すると、IDE(統合開発環境)ですぐにさまざまな性能プロファイリングを開始することができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$281\n(VAT 込み価格 $309.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 16,
         title: 'dotMemory',
-        detail: '.NET 메모리 프로파일러',
+        detail: '.NETメモリプロファイラ',
         type: [
             '.NET',
             'Memory Profiler',
+        ],
+        summary: 'dotMemoryは.NETメモリプロファイラです。\ndotMemoryは.NETアプリケーションのメモリ使用を最適化し、さまざまなメモリ問題を分析します。',
+        info: 'dotMemoryはメモリプロファイラです。 dotMemoryを使用すると、エディタ内でさまざまなメモリ分析機能を使用することができます。 dotMemoryを使用すると、デスクトップアプリケーション、Windowsサービス、ASP.NET Webアプリケーションなど、さまざまな.NETアプリケーションでメモリ使用を最適化します。 また、dotMemoryのさまざまな検査機能を非常に簡単に使用することができます。 特に、dotMemoryのタイムラインビューは、アプリケーションで使用するメモリをリアルタイムで確認することができます。',
+        function: [
+            {
+                title: 'あらゆるタイプのメモリ問題の処理',
+                description: 'dotMemoryを使用すると、デスクトップアプリケーション、Windowsサービス、ASP.NET Webアプリケーション、IISなどさまざまな.NETアプリケーションのメモリ使用状況を分析することができます。'
+            },
+            {
+                title: '自動スナップショット',
+                description: 'dotMemoryの自動スナップショットにより、特定の状況にスナップショットを撮ることができます。自動スナップショットは、アプリケーションのメモリ使用量が大幅に増加したり、手動でスナップショットを撮影するのが難しい場合に便利です。'
+            },
+            {
+                title: 'ダイアグラム',
+                description: 'dotMemoryのダイアグラムでアプリケーション要素のメモリ占有率を一目で把握することができます。 dotMemoryのダイアグラムは、アプリケーションのメモリ最適化を支援します。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$281\n(VAT 込み価格 $309.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 17,
         title: 'dotUltimate',
-        detail: 'Rider, ReSharper C++, 모든 .NET 도구를 담은 패키지',
+        detail: 'Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ',
         type: [
             '.NET',
             'Visual Studio',
+        ],
+        summary: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。\ndotUltimateを使用すると、.NETとVisual Studio開発に必要なすべてのツールをリーズナブルに使用することができます。',
+        info: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、一つのパッケージライセンスでさまざまな製品を経済的に使用し、効率的に管理することができます。 dotUltimateを使用すると、Rider、ReSharper、ReSharper C++、dotCover、dotMemory、dotTraceを使用することができます。 dotUltimateが提供するさまざまな製品でVisual StudioとRiderを簡単に切り替えることができ、豊富な環境で開発が可能です。',
+        function: [
+            {
+                title: '完全な.NET開発パッケージ',
+                description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$281\n(VAT 込み価格 $309.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 18,
         title: 'Code With Me',
-        detail: '리얼타임 원격 협업을 위한 솔루션',
+        detail: 'リアルタイム遠隔コラボレーション向けソリューション',
         type: [
             'Pair Programming',
             'Collaboration',
+        ],
+        summary: 'Code With Meは、リアルタイム遠隔コラボレーション向けのソリューションです。\nCode With Meを使えば、場所に関係なく、チームメンバーとリアルタイムのコードレビューやペアプログラミングを体験することができます。',
+        info: 'Code With Meは、リアルタイムのリモートコラボレーション向けのソリューションです。Code With Meのホストがリモートセッションを作成し、ここに他のユーザーが参加することになります。Code With Meのリモートセッションを通じて、他の開発者とリアルタイムのペアプログラミングが可能です。 また、Code With Meの音声およびビデオ通話機能を使用して、チームメンバー間でより効果的なコードレビューを行うことができます。このように、Code With Meはリモート環境に完璧なコラボレーションソリューションを提供します。',
+        function: [
+            {
+                title: 'リモートペアプログラミング',
+                description: 'Code With Meセッションに参加すると、他の開発者と一緒にコーディングをすることができます。リアルタイムで一緒にコードを作成して、修正するリモートペアプログラミングを体験することができます。'
+            },
+            {
+                title: 'リアルタイムリモートコードレビュー',
+                description: 'Code With Meセッションでは、チームメンバーと一緒にコードレビューを行うことができます。リアルタイムで一緒にコードを見ながら、ビデオ通話で問題について議論することもできます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$110 / host\n(VAT 込み価格 $121)`,
+                    },
+                    {
+                        title: 'セッション制限期間',
+                        detail: `無制限`,
+                    },
+                    {
+                        title: 'セッションあたりのゲスト数',
+                        detail: `最大50名様まで`,
+                    },
+                    {
+                        title: 'Floating ライセンス',
+                    },
+                    {
+                        title: '技術的なお問い合わせ',
+                        include: true
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: `$55 / host\n(VAT 込み価格 $60.50)`,
+                    },
+                    {
+                        title: 'セッション制限期間',
+                        detail: `無制限`,
+                    },
+                    {
+                        title: 'セッションあたりのゲスト数',
+                        detail: `最大50名様まで`,
+                    },
+                    {
+                        title: 'Floating ライセンス',
+                    },
+                    {
+                        title: '技術的なお問い合わせ',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 19,
         title: 'Datalore',
-        detail: '스마트 코딩으로 데이터를 분석하고 편리하게 협업하는 데이터 과학 플랫폼',
+        detail: 'スマートコーディングでデータを分析し、スマートにコラボレートするデータサイエンスプラットフォーム',
         type: [
             'Jupyter',
             'Python',
             'Kotlin',
-            'Project',
-            'Issue',
+            'SQL cells',
+            'Collaboration',
+        ],
+        summary: 'Dataloreはデータサイエンスのコラボレーションプラットフォームです。\nDataloreはJupyter、Pandasのようなデータサイエンスツールはもちろん、さまざまなコラボレーション機能を通じてデータサイエンスチームに最適化されたサービスを提供します。',
+        info: 'Dataloreはデータサイエンスのコラボレーションプラットフォームです。Dataloreはデータチームにコラボレーションの生産性を最大化できる環境を提供します。まず、Dataloreはさまざまなデータベース、クラウドストレージと連動します。Dataloreの作業は基本的にJupyter Notebook互換のエディタを中心に行われ、文法強調、コード自動補完などのクエリサポートを提供します。クエリだけでなく、コード自動補完、リファクタリング、AI質問などのコーディングサポートも提供します。Dataloreを通じ、チームメンバー間で簡単にレポートを共有し、意見交換が可能です。 また、Dataloreの管理者は、一箇所でデータ、ノートパソコン、報告書を管理することができます。',
+        function: [
+            {
+                title: 'JupyterとPython ノートパソコン',
+                description: 'DataloreはJupyterノートパソコンとPythonノートパソコンをサポートします。DataloreのJupyterノートパソコンでIPYNBファイル作業が可能で、Pythonノートパソコンではコード自動補完、リファクタリングなど多様なコーディングサポート機能を提供します。'
+            },
+            {
+                title: '可視化資料',
+                description: 'また、Dataloreでは簡単に視覚化資料を作成することができます。 さらに、DataloreはMatplotlib、plotly、altair、seabornなどさまざまな視覚化ライブラリをサポートしています。Dataloreの視覚化された資料を通じて、データを簡単に理解することができます。'
+            },
+            {
+                title: 'チームワークスペース',
+                description: 'Dataloreはチームのためのワークスペースを提供します。チームメンバーはこのワークスペースでノートパソコン、データ、報告書などの資料を共有します。Dataloreが提供するワークスペースを通じて、簡単かつ活発にコラボレーションすることができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: 'Team',
+                details: [
+                    {
+                        title: '価格',
+                        detail: `$360 / user\n(VAT 込み価格 $396)`,
+                    },
+                    {
+                        title: 'ホスティング',
+                        detail: `Cloud`,
+                    },
+                    {
+                        title: '統合ストレージ容量',
+                        detail: `20 GB`,
+                    },
+                    {
+                        title: 'CPUとGPU時間',
+                        detail: `CPU S 750時間/月`,
+                    },
+                    {
+                        title: 'SSO構成',
+                    },
+                ]
+            },
+            {
+                title: 'Enterprise',
+                details: [
+                    {
+                        title: '価格',
+                        detail: `$1,500 / user\n(VAT 込み価格 $1,650)`,
+                    },
+                    {
+                        title: 'ホスティング',
+                        detail: `Private Cloud\nOn-Premises`,
+                    },
+                    {
+                        title: '統合ストレージ容量',
+                        detail: `無制限`,
+                    },
+                    {
+                        title: 'CPUとGPU時間',
+                        detail: `無制限`,
+                    },
+                    {
+                        title: 'SSO構成',
+                        include: true
+                    },
+                ]
+            }
         ]
     },
     {
         idx: 20,
         title: 'YouTrack',
-        detail: '모든 팀을 위한 유연한 프로젝트 및 이슈 관리 도구',
+        detail: 'あらゆるチームのためのフレキシブルなプロジェクトおよび問題管理ツール',
         type: [
+            'Project',
+            'Issue',
             'Task Management',
-            'SQL cells',
-            'Collaboration',
+        ],
+        summary: 'YouTrackは業務をプロジェクトとイシューという単位で管理してくれるツールです。\nYouTrackが提供するさまざまなプロジェクトとイシュー管理機能により、チームの業務を完全に把握することができます。',
+        info:  'YouTrackは仕事をプロジェクトとイシューという単位で管理してくれるツールです。YouTrackを使用すると、チームで好きなプロジェクトを作成することができます。 そして、このプロジェクトに関連する業務をイシューとして作成し、管理することができます。YouTrackはイシュー管理のために重要度タグ、アップデート通知などの機能を提供します。特に、YouTrackのアジャイルボードを通じて複数のプロジェクトの全体的な進行状況を一目で確認し、管理することができます。 また、イシューだけでなく、ナレッジベースを通じて会議内容やお知らせなどの内部情報を作成し、公開することができます。YouTrackが提供するさまざまなプロジェクトとイシュー管理機能により、チームの業務を完璧に管理することができます。',
+        function: [
+            {
+                title: 'プロジェクト管理',
+                description: 'YouTrackでチーム別または業務別のプロジェクトを作成します。作成したプロジェクトにユーザーを追加し、それぞれのユーザーに適切な権限を付与することができます。'
+            },
+            {
+                title: '知識ベース',
+                description: 'YouTrackは会議メモ、お知らせなどの内部情報を作成し、これを公開することができます。YouTrackのナレッジベースを通じてチームメンバーが知っておくべき情報を簡単に作成し、これを共有します。'
+            },
+            {
+                title: '報告書',
+                description: 'YouTrackはイシュー分析を簡単にできるさまざまなレポートを提供します。その中の一つであるタイムラインレポートは、指定された期間中の課題の進行状況を一目で見ることができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: 'Cloud',
+                details: [
+                    {
+                        detail: `11 user, 4 agent以上購入可能`,
+                    },
+                    {
+                        detail: `User`,
+                    },
+                    {
+                        detail: `최대 $44 / user\n(VAT 込み価格 $48.40)`,
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        detail: ``,
+                    },
+                    {
+                        detail: `Agent`,
+                    },
+                    {
+                        detail: `$54 / agent\n(VAT 込み価格 $59.40)`,
+                    },
+                ]
+            }
         ]
     },
     {
         idx: 21,
         title: 'Space',
-        detail: '개발 프로세스를 향상시킬 모든 기능이 포함된 올인원 협업 플랫폼',
+        detail: '開発プロセスを向上させる全機能を備えたオールインワンコラボレーションプラットフォーム',
+        // type: [
+        //     'Quality Gate',
+        //     'Static Analysis',
+        //     'CI/CD',
+        // ],
         type: [
-            'Quality Gate',
-            'Static Analysis',
+            'Git Hosting',
+            'Development',
             'CI/CD',
+        ],
+        summary: 'Spaceはソフトウェア開発向けのオールインワンコラボレーションプラットフォームです。\nSpaceはGitストレージのホスティングから、開発環境、コード品質検査、CI/CD、プロジェクト管理に至るまで、すべての開発段階に最高のツールを提供するコラボレーションプラットフォームです。',
+        info:  'Spaceはソフトウェア開発向けのオールインワンコラボレーションプラットフォームです。まず、SpaceはGitリポジトリホスティングを提供します。そのため、ユーザーは好きなコードリポジトリをSpaceに追加することができます。その後、JetBrains IDEと連動してコーディング作業を行います。 特に、Spaceが提供するリモート開発環境を使用すると、ユーザーは別のIDEをインストールすることなく、好きなIDEで作業することができます。Spaceはコード品質を高めるための機能も提供しており、Merge Requestを作成すると、Spaceで複数の担当者が簡単にコードレビューを行うことができます。CI/CD段階では、Space Automationを通じてシンプルかつ強力なCI/CDを実行します。 また、Spaceはプロジェクト進行中に発生するイシューを完全に管理できる機能も提供します。このように、SpaceはGitリポジトリホスティングから、開発環境、コード品質検査、CI/CD、プロジェクト管理に至るまで、すべての開発段階に最高の機能を提供するコラボレーションプラットフォームです。',
+        function: [
+            {
+                title: 'Gitリポジトリホスティング',
+                description: 'SpaceはGitリポジトリをホストします。Spaceで新しいリポジトリを作成したり、他のGitサービスを使ってリポジトリを作成することができます。'
+            },
+            {
+                title: 'Space Automation',
+                description: 'Space AutomationはSpaceが提供するCI/CDツールです。Space Automationを使ってプロジェクトをビルド、テスト、デプロイします。Space Automationはスクリプトで構成し、Kotlin言語で作成することができます。'
+            },
+            {
+                title: '開発環境',
+                description: 'SpaceはDev Environmentというリモート開発環境を提供します。Spaceクラウドで実行される仮想マシンがコード処理、コンパイル、ビルドなどのすべての作業を代行します。ユーザーはSpaceクラウドの仮想マシンに接続してIDE(統合開発環境)を使用することができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: '商業用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: ``,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: ``,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: ``,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                        include: true
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '法人',
+                    }
+                ]
+            },
+            {
+                title: '個人用',
+                details: [
+                    {
+                        title: '新規購入',
+                        detail: ``,
+                    },
+                    {
+                        title: '2年目更新',
+                        detail: ``,
+                    },
+                    {
+                        title: '3年目以降の更新',
+                        detail: ``,
+                    },
+                    {
+                        title: 'すべての機能',
+                        include: true
+                    },
+                    {
+                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                    {
+                        title: 'ライセンス共有',
+                    },
+                    {
+                        title: '技術お問い合わせ',
+                    },
+                    {
+                        title: 'ライセンス所有',
+                        detail: '個人',
+                    }
+                ]
+            }
         ]
     },
     {
         idx: 22,
         title: 'Qodana',
-        detail: '코드 품질 검사 플랫폼',
+        detail: 'コード品質検査プラットフォーム',
         type: [
-            'Test Automation',
-            'Git Hosting',
-            'Development',
+            'Quality Gate',
+            'Static Analysis',
+            'License Audit'
+        ],
+        summary: 'Qodanaはフレキシブルなコード品質検査プラットフォームです。Qodanaの多数の静的分析は、高いコード品質を保証します。\n特に、Jenkins、GitHub Actions、TeamCityなどのCIツールと統合して、コードチェックを自動化することができます。',
+        info:  'Qodanaは柔軟なコード品質検査プラットフォームです。Qodanaは数多くの静的解析検査を提供しています。さらに、Qodanaはフレームワークやライブラリのライセンス監査もサポートしています。Qodana Cloudでは、これらの検査に関するレポートを取得することができます。 また、Qodanaのさまざまな検査をCIツールと統合することで、Qodanaのさまざまな検査を自動化します。これにより、開発プロセスの初期段階でコードの問題を見つけることができます。',
+        function: [
+            {
+                title: 'コード検査',
+                description: 'Qodanaは、パフォーマンスの問題、コード構造、潜在的なバグなど、さまざまな分野に対して多数のコードチェックを提供します。'
+            },
+            {
+                title: 'ライセンス監査',
+                description: 'Qodanaは、プロジェクト開発に使用したフレームワーク、ライブラリのライセンスがプロジェクトのライセンスと互換性がない場合、それを検出してお知らせします。これにより、ライセンスに関する法的な問題を予防することができます。'
+            },
+            {
+                title: 'CI/CDツールとの統合',
+                description: 'QodanaはJenkins、GitHub Actions、GitLab、TeamCityなどのCI/CDツールと統合することができます。Qodanaの実行を自動化し、開発プロセスにコード品質チェックを自然に溶け込ませることができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: 'Ultimate',
+                details: [
+                    {
+                        title: '価格',
+                        detail: `$60 / active contributor\n(VAT 込み価格 $66)`,
+                    },
+                    {
+                        title: '購入可能数量',
+                        detail: `3 active contributors以上購入可能`,
+                    },
+                    {
+                        title: 'さまざまなCIの統合',
+                        include: true
+                    },
+                    {
+                        title: 'IDE統合',
+                        include: true
+                    },
+                    {
+                        title: 'オープンソースライセンス監査',
+                    },
+                    {
+                        title: '存続性とAPI検査',
+                    },
+                    {
+                        title: 'Taint分析',
+                    },
+                ]
+            },
+            {
+                title: 'Ultimate Plus',
+                details: [
+                    {
+                        title: '価格',
+                        detail: `$180 / active contributor\n(VAT 込み価格 $198)`,
+                    },
+                    {
+                        title: '購入可能数量',
+                        detail: `3 active contributors以上購入可能`,
+                    },
+                    {
+                        title: 'さまざまなCIの統合',
+                        include: true
+                    },
+                    {
+                        title: 'IDE統合',
+                        include: true
+                    },
+                    {
+                        title: 'オープンソースライセンス監査',
+                        include: true
+                    },
+                    {
+                        title: '存続性とAPI検査',
+                        include: true
+                    },
+                    {
+                        title: 'Taint分析',
+                        include: true
+                    },
+                ]
+            }
         ]
     },
     {
         idx: 23,
         title: 'TeamCity',
-        detail: '강력하고 간편한 CI/CD 서버',
+        detail: '強力で簡単なCI/CDサーバー',
         type: [
             'CI/CD',
-            'License Audit',
+            'Test Automation',
+        ],
+        summary: 'TeamCityはシンプルかつ強力なCI/CDサーバーです。\nTeamCityはDocker、GitHub、AWSなどの技術やプラットフォームはもちろん、ほとんどのビルドツールをサポートします。\nTeamCityを通じて便利な機能が搭載されたCIを体験することができます。',
+        info:  'TeamCityはシンプルかつ強力なCI/CDサーバーです。TeamCityの高速で柔軟なCI/CDサーバーで開発チームの生産性を高めることができます。TeamCityはMaven、npm、Gradle、MSBuildなどさまざまなビルドツールと統合されます。TeamCityは連動されたVCSの変更を検知して自動的にビルドを実行します。その後、TeamCityのビルド結果はリアルタイムで報告されます。このビルド報告には、ビルドログ、ビルドアーティファクトなどな詳細が含まれます。 そのため、失敗したビルドを迅速に分析し、再実行することができます。TeamCityのビルドチェーンは、関連するビルドを相互に接続します。これにより、複数のビルドを順番に実行し、開発プロセスを構造化することができます。',
+        function: [
+            {
+                title: 'ビルド自動化',
+                description: 'TeamCityを使うと、ビルドが特定の条件で自動的に開始するように設定することができます。TeamCityに連動されたVCSに変更を検知するたびに自動的にビルドを開始することができます。 そして、ビルド間の依存関係を構成して、次のビルドが順次実行されるように構成することができます。'
+            },
+            {
+                title: '並列テスト',
+                description: 'TeamCityはテストを複数のビルドエージェントに分散させることができます。これにより、テストを並列に実行することができ、結果として全体的なテスト時間を節約することができます。'
+            },
+            {
+                title: '多様な技術スタックのサポート',
+                description: 'TeamCityは、GitHub、GitLab、SpaceなどのVCSはもちろん、Amazon Web Services、Kubernetes、Google Cloud Platformなどのクラウドなど、さまざまな技術スタックをサポートしています。 特に、TeamCityとDockerの統合により、ビルドからDockerイメージを作成したり、Dockerコンテナでビルドを実行することができます。'
+            }
+        ],
+        purchase: [
+            {
+                title: 'Cloud',
+                details: [
+                    {
+                        title: '価格',
+                        detail: `$180 / committer\n(VAT 込み価格 $198)`,
+                    },
+                    {
+                        title: '購入可能数量',
+                        detail: `3 committer以上購入可能`,
+                    },
+                    {
+                        title: 'Build Credit',
+                        detail: `$20 / 25,000 build credits`,
+                    },
+                ]
+            },
         ]
     }
 ]
