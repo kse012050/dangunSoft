@@ -29,9 +29,9 @@ textarea{padding-block: 14px;}
 
 
 /* FAQ */
-.FAQBox li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
-.FAQBox li details summary::after{width: 26px;}
-.FAQBox li details div{font-size: 14px; line-height: 20px;}
+.FAQBox > li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
+.FAQBox > li details summary::after{width: 26px;}
+.FAQBox > li details div{font-size: 14px; line-height: 20px;}
 
 
 /* 상품 정보 */

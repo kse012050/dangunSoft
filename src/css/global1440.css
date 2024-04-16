@@ -38,8 +38,8 @@ textarea{height: 180px; font-size: 16px;}
 
 
 /* FAQ */
-.FAQBox li details summary{font-size: 20px; line-height: 26px; min-height: 80px; padding-inline: 30px;}
-.FAQBox li details div{font-size: 18px; line-height: 24px; padding-block: 30px;}
+.FAQBox > li details summary{font-size: 20px; line-height: 26px; min-height: 80px; padding-inline: 30px;}
+.FAQBox > li details div{font-size: 18px; line-height: 24px; padding: 30px;}
 
 
 /* 상품 정보 */

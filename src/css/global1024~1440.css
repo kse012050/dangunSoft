@@ -28,7 +28,7 @@ textarea{padding-block: 20px;}
 
 
 /* FAQ */
-.FAQBox li details summary::after{width: 34px;}
+.FAQBox > li details summary::after{width: 34px;}
 
 
 /* 상품 정보 */

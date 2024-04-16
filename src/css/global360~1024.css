@@ -29,8 +29,8 @@ textarea{height: 150px;}
 
 
 /* FAQ */
-.FAQBox li details summary{padding-inline: 20px;}
-.FAQBox li details div{padding-block: 20px;}
+.FAQBox > li details summary{padding-inline: 20px;}
+.FAQBox > li details div{padding: 20px;}
 
 
 /* 상품 정보 */

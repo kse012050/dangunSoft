@@ -20,8 +20,8 @@ br[class]:not([class*="tablet"]){display: none;}
 
 
 /* FAQ */
-.FAQBox li details summary{font-size: 18px; line-height: 24px; min-height: 70px;}
-.FAQBox li details div{font-size: 16px; line-height: 22px;}
+.FAQBox > li details summary{font-size: 18px; line-height: 24px; min-height: 70px;}
+.FAQBox > li details div{font-size: 16px; line-height: 22px;}
 
 
 /* 상품 정보 */

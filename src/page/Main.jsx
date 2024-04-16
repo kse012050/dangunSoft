@@ -24,7 +24,7 @@ export default function Main() {
 
             <section className='productArea'>
                 <div>
-                    <h3>주요제품</h3>
+                    <h3>主な製品</h3>
                     <p>JetBrainsは、ソフトウェア開発に必要なすべてのツールを提供します。JetBrainsは、単純なコーディングサポートだけでなく、コード品質チェック、コラボレーションなど、すべての開発プロセスをサポートします。</p>
                 </div>
                 <Swiper
@@ -115,7 +115,7 @@ export default function Main() {
             </section>
 
             <section className='functionArea'>
-                <h3>주요기능</h3>
+                <h3>主な機能</h3>
                 <p>JetBrains는 더욱 편리한 코딩 환경 및 협업 환경을 제공합니다.</p>
                 <ul data-styleidx>
                     <li>
