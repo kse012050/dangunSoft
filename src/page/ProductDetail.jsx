@@ -36,16 +36,35 @@ export default function ProductDetail() {
                 <h3>구매 옵션</h3>
                 { productData.purchase.map((data, i)=>
                     <div key={i}>
-                        <b><span>{ data.title }</span></b>
-                        <ul>
-                            {data.details.map((detailData, i)=>
-                                <li title={ detailData.title } key={i}>
-                                    <span title={ detailData.include ? '포함': ''}>{ detailData.detail }</span>
-                                </li>
-                            )}
-                            <li><span><Link to='/estimate' className='btn-border-black'>견적요청</Link></span></li>
-                            <li><span><Link to='/buy' className='btn-bg'>구매하기</Link></span></li>
-                        </ul>
+                        <b>
+                            <span>
+                                { data.title }
+                                { data.subTitle && data.subTitle.map((data, i)=>
+                                    <span key={i}>{ data }</span>
+                                )}
+                            </span>
+                        </b>
+                        { !Array.isArray(data.details[0]) ? 
+                            <ul>
+                                {data.details.map((detailData, i)=>
+                                    <li title={ detailData.title } key={i}>
+                                        <span title={ detailData.include ? '포함': ''}>{ detailData.detail }</span>
+                                    </li>
+                                )}
+                                <li><span><Link to='/estimate' className='btn-border-black'>견적요청</Link></span></li>
+                                <li><span><Link to='/buy' className='btn-bg'>구매하기</Link></span></li>
+                            </ul> :
+                            data.details.map((list, i)=>
+                            <ul key={i}>
+                                    {list.map((detailData, i)=>
+                                        <li title={ detailData.title } key={i}>
+                                            <span title={ detailData.include ? '포함': ''}>{ detailData.detail }</span>
+                                        </li>
+                                    )}
+                                <li><span><Link to='/estimate' className='btn-border-black'>견적요청</Link></span></li>
+                                <li><span><Link to='/buy' className='btn-bg'>구매하기</Link></span></li>
+                            </ul>
+                        )}
                     </div>
                 )}
             </section>

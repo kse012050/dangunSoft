@@ -10,13 +10,13 @@ br[class]:not([class*="tablet"]){display: none;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"] div :is(b, ul li) span{width: 303px;}
-[class*="purchaseBox"] div:first-of-type b::before, 
-[class*="purchaseBox"] div:first-of-type ul li::before{width: calc(100% - 303px);}
-[class*="purchaseBox"] div:nth-of-type(1){width: calc(100% - 303px);}
-[class*="purchaseBox"] div:nth-of-type(2){width: 303px;}
-[class*="purchaseBox"] div b span{font-size: 26px;}
-[class*="purchaseBox"] div ul li{font-size: 18px; line-height: 24px;}
+[class*="purchaseBox"] > div :is(b, ul li) span{width: 303px;}
+[class*="purchaseBox"] > div:first-of-type b::before, 
+[class*="purchaseBox"] > div:first-of-type ul li::before{width: calc(100% - 303px);}
+[class*="purchaseBox"] > div:nth-of-type(1){width: calc(100% - 303px);}
+[class*="purchaseBox"] > div:nth-of-type(2){width: 303px;}
+[class*="purchaseBox"] > div b span{font-size: 26px;}
+[class*="purchaseBox"] > div ul li{font-size: 18px; line-height: 24px;}
 
 
 /* FAQ */

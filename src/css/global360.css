@@ -19,13 +19,13 @@ textarea{padding-block: 14px;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"] div:not(:last-of-type){margin-bottom: 40px;}
-[class*="purchaseBox"] div ul li{display: flex; justify-content: space-between; padding-inline: 10px;}
-[class*="purchaseBox"] div ul li:not(:has(a)):before{content: attr(title); flex: 1;}
-[class*="purchaseBox"] div ul li span{flex: 1;}
-[class*="purchaseBox"] div b span{font-size: 24px;}
-[class*="purchaseBox"] div ul li{font-size: 16px; line-height: 22px;}
-[class*="purchaseBox"] div ul li span a{width: 100%;}
+[class*="purchaseBox"] > div:not(:last-of-type){margin-bottom: 40px;}
+[class*="purchaseBox"] > div ul li{display: flex; justify-content: space-between; padding-inline: 10px;}
+[class*="purchaseBox"] > div ul li:not(:has(a)):before{content: attr(title); flex: 1;}
+[class*="purchaseBox"] > div ul li span{flex: 1;}
+[class*="purchaseBox"] > div b span{font-size: 24px;}
+[class*="purchaseBox"] > div ul li{font-size: 16px; line-height: 22px;}
+[class*="purchaseBox"] > div ul li span a{width: 100%;}
 
 
 /* FAQ */

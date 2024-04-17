@@ -27,14 +27,22 @@ textarea{height: 180px; font-size: 16px;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"] div :is(b, ul li) span{height: 80px; width: 40%;}
-[class*="purchaseBox"] div:first-of-type b::before, 
-[class*="purchaseBox"] div:first-of-type ul li::before{width: 60.153%;}
-[class*="purchaseBox"] div:nth-of-type(1){width: 71.4286%;}
-[class*="purchaseBox"] div:nth-of-type(2){width: 28.5715%;}
-[class*="purchaseBox"] div b span{font-size: 28px;}
-[class*="purchaseBox"] div ul li{font-size: 20px; line-height: 26px;}
-[class*="purchaseBox"] div ul li span[title="포함"]::after{width: 40px;}
+[class*="purchaseBox"] > div :is(b, ul li) > span{height: 80px; width: 100%;}
+[class*="purchaseBox"] > div:first-of-type b::before, 
+[class*="purchaseBox"] > div:first-of-type ul li::before{width: calc(100% - 360px);}
+[class*="purchaseBox"] > div:nth-of-type(1){width: calc(100% - 360px);}
+[class*="purchaseBox"] > :is(div:first-of-type b span, div:first-of-type ul li span, div:nth-of-type(2)){width: 360px;}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:nth-of-type(1){width: calc(100% - 250px);}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:nth-of-type(2){width: 250px;}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type{width: calc(100% - 250px);}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type b::before{width: calc(100% - 500px);}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type b > span{width: 500px;}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type li::before{width: calc(100% - 250px);}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type li span{width: 250px;}
+[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:nth-of-type(2){width: 250px;}
+[class*="purchaseBox"] > div b > span{font-size: 28px;}
+[class*="purchaseBox"] > div ul li{font-size: 20px; line-height: 26px;}
+[class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 40px;}
 
 
 /* FAQ */

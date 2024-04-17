@@ -2022,26 +2022,50 @@ export const iconList = [
         purchase: [
             {
                 title: '商業用',
+                subTitle: ['Premium', 'Enterprise'],
                 details: [
-                    {
-                        title: '新規購入',
-                        detail: `$110 / host\n(VAT 込み価格 $121)`,
-                    },
-                    {
-                        title: 'セッション制限期間',
-                        detail: `無制限`,
-                    },
-                    {
-                        title: 'セッションあたりのゲスト数',
-                        detail: `最大50名様まで`,
-                    },
-                    {
-                        title: 'Floating ライセンス',
-                    },
-                    {
-                        title: '技術的なお問い合わせ',
-                        include: true
-                    }
+                    [
+                        {
+                            title: '新規購入',
+                            detail: `$110 / host\n(VAT 込み価格 $121)`,
+                        },
+                        {
+                            title: 'セッション制限期間',
+                            detail: `無制限`,
+                        },
+                        {
+                            title: 'セッションあたりのゲスト数',
+                            detail: `最大50名様まで`,
+                        },
+                        {
+                            title: 'Floating ライセンス',
+                        },
+                        {
+                            title: '技術的なお問い合わせ',
+                            include: true
+                        }
+                    ],[
+                        {
+                            title: '新規購入',
+                            detail: `$400 / host\n(VAT 込み価格 $440)`,
+                        },
+                        {
+                            title: 'セッション制限期間',
+                            detail: `無制限`,
+                        },
+                        {
+                            title: 'セッションあたりのゲスト数',
+                            detail: `最大100名様まで`,
+                        },
+                        {
+                            title: 'Floating ライセンス',
+                            include: true
+                        },
+                        {
+                            title: '技術的なお問い合わせ',
+                            include: true
+                        }
+                    ]
                 ]
             },
             {
