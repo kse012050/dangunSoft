@@ -1,4 +1,4 @@
-const faqList = [
+export const faqList = [
     {
         type: '購入について',
         title: 'ライセンス購入の手順を教えてください。',
@@ -1042,7 +1042,11 @@ const faqList = [
         description: [
             {
                 type: 'video',
-                detail: ''
+                detail: 'https://www.youtube-nocookie.com/embed/pr46Fobo9Og?enablejsapi=1&origin=https%3A%2F%2Fsales.jetbrains.com'
+            },
+            {
+                type: 'video',
+                detail: 'https://www.youtube-nocookie.com/embed/3EhTq6VJtsA?enablejsapi=1&origin=https%3A%2F%2Fsales.jetbrains.com'
             },
         ]
     },
@@ -1868,15 +1872,15 @@ const faqList = [
                 detail: {
                     title: ['個人用ライセンス所有者', 'チームマネージャー', '組織管理者', '할당된 라이선스 사용자'],
                     details: [
-                        ['JetBrainsアカウントでJetBrains製品をアクティベーションする', '', '', '', '']
-                        ['ライセンスの返却', '', '', '', '']
-                        ['ライセンスの割り当てと取り消し', '', '', '', '']
-                        ['レガシーライセンスキーの生成', '', '', '', '']
-                        ['オフラインアクティベーションコードの生成', '', '', '', '']
-                        ['チームの生成', '', '', '', '']
-                        ['チームの統合', '', '', '', '']
-                        ['チーム間のライセンス移動', '', '', '', '']
-                        ['チーム管理者の招待', '', '', '', '']
+                        ['JetBrainsアカウントでJetBrains製品をアクティベーションする', '', '', '', ''],
+                        ['ライセンスの返却', '', '', '', ''],
+                        ['ライセンスの割り当てと取り消し', '', '', '', ''],
+                        ['レガシーライセンスキーの生成', '', '', '', ''],
+                        ['オフラインアクティベーションコードの生成', '', '', '', ''],
+                        ['チームの生成', '', '', '', ''],
+                        ['チームの統合', '', '', '', ''],
+                        ['チーム間のライセンス移動', '', '', '', ''],
+                        ['チーム管理者の招待', '', '', '', ''],
                         ['組織管理者の招待', '', '', '', '']
                     ]
                 }
@@ -2292,3 +2296,32 @@ const faqList = [
         ]
     },
 ]
+
+export function tab(){
+    let tabList = [...faqList];
+    tabList = [...new Set(tabList.map((data)=>data.type))]
+    return tabList;
+}
+
+export function list(search, page = 1){
+    let list = [...faqList]
+    
+    let result = []
+
+    if(search){
+        list = list.filter((data)=> data.type.includes(search));
+        // console.log(list);
+    }
+    // console.log(list);
+    let totalCount = list.length + 1
+
+    list = list.slice(((page - 1) * 10) , page * 10)
+    const type = [...new Set(list.map((data)=>data.type))]
+    type.forEach((type)=>{
+        result.push({
+            type,
+            list: list.filter((data)=> data.type === type)
+        })
+    })
+    return {totalCount, faqList: result}
+}

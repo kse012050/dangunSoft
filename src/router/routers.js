@@ -44,6 +44,7 @@ export const routers = [
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
             { path: 'faq', element: <FAQ/>  },
+            { path: 'faq/:search', element: <FAQ/>  },
         ]
     },
     {
