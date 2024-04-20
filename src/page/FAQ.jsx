@@ -9,7 +9,7 @@ export default function FAQ() {
     const [tabActive, setTabActive] = useState(tab()[0])
     const tabList = tab()
     const { search, page } = urlParams(useLocation())
-    const {totalCount} = list(undefined, page)
+    const {totalCount} = list(search, page)
     const [faqList, setFaqList] = useState(list(search, page).faqList)
     const pageInfo = {
         totalPage: parseInt(totalCount / 10) + 1,
@@ -78,6 +78,9 @@ export default function FAQ() {
                                                 {(type === 'text' &&
                                                     <p>{ detail }</p>
                                                 )}
+                                                {(type === 'link' &&
+                                                    <Link to={detail.link}>{ detail.text }</Link>
+                                                )}
                                                 {(type === 'list' &&
                                                     <ul>
                                                         { detail.map((data, i)=><li key={i}>{ data }</li>) }
@@ -102,7 +105,7 @@ export default function FAQ() {
                 </Fragment>
             )}
 
-            { (totalCount > 10 && !search) &&
+            { (totalCount > 10) &&
                 <div className='paginationBox'>
                     <Link 
                         to={`${search ? `?search=` + search : ''}?page=${pageInfo.currentPage - 1}`}

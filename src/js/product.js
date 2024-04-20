@@ -170,80 +170,112 @@ export const iconList = [
                 description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$779\n(VAT 込み価格 $856.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$623\n(VAT 込み価格 $685.30)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$467\n(VAT 込み価格 $513.70)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$289\n(VAT 込み価格 $317.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$231\n(VAT 込み価格 $254.10)`,
+                        text: '$779\n(VAT 込み価格 $856.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$173\n(VAT 込み価格 $190.30)`,
+                        text: '$289\n(VAT 込み価格 $317.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$623\n(VAT 込み価格 $685.30)'
+                    },
+                    {
+                        text: '$231\n(VAT 込み価格 $254.10)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$467\n(VAT 込み価格 $513.70)'
+                    },
+                    {
+                        text: '$173\n(VAT 込み価格 $190.30)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
                 ]
-            }
-        ],
+            ]
+            
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -251,10 +283,6 @@ export const iconList = [
         idx: 1,
         title: 'JetBrains AI',
         detail: 'IDE内部に強力なAI機能を提供するプラグイン',
-        // type: [
-        //     'Java',
-        //     'Kotlin',
-        // ]
         type: [
             'AI',
             'IDE',
@@ -275,56 +303,78 @@ export const iconList = [
                 description: 'JetBrains AIは、プロジェクトのすべての変更内容を把握しており、これに基づいてCommitメッセージを作成します。JetBrains AIが提供するCommitメッセージにより、より迅速かつ正確にCommit作業を進めることができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$200\n(VAT 込み価格 $220)`,
+                        text: ''
                     },
                     {
-                        title: 'すべての機能',
-                        include: true
+                        text: '商業用'
                     },
                     {
-                        title: 'ライセンスの共有',
-                        include: true
-                    },
-                    {
-                        title: '技術的なお問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$100\n(VAT 込み価格 $110)`,
+                        text: '新規購入'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$200\n(VAT 込み価格 $220)'
+                    },
+                    {
+                        text: '$100\n(VAT 込み価格 $110)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンスの共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンスの共有'
                     },
                     {
-                        title: '技術的なお問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術的なお問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -377,80 +427,111 @@ export const iconList = [
                 description: 'IntelliJ IDEAはSpring、Spring Boot、Jakarta EE、JPA、Reactorなどさまざまなフレームワークをサポートします。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$599\n(VAT 込み価格 $658.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$479\n(VAT 込み価格 $526.90)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$359\n(VAT 込み価格 $394.90)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                        text: '$599\n(VAT 込み価格 $658.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                        text: '$169\n(VAT 込み価格 $185.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$479\n(VAT 込み価格 $526.90)'
+                    },
+                    {
+                        text: '$135\n(VAT 込み価格 $148.50)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$359\n(VAT 込み価格 $394.90)'
+                    },
+                    {
+                        text: '$101\n(VAT 込み価格 $111.10)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -482,80 +563,111 @@ export const iconList = [
                 description: 'PyCharmは、Matplotlib、Bokeh、Plotly、TensorBoardなどの可視化ライブラリに対してインタラクティブなグラフィックを表示します。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$249\n(VAT 込み価格 $273.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$199\n(VAT 込み価格 $218.90)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$149\n(VAT 込み価格 $163.90)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                        text: '$249\n(VAT 込み価格 $273.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                        text: '$99\n(VAT 込み価格 $108.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$199\n(VAT 込み価格 $218.90)'
+                    },
+                    {
+                        text: '$79\n(VAT 込み価格 $86.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$149\n(VAT 込み価格 $163.90)'
+                    },
+                    {
+                        text: '$59\n(VAT 込み価格 $64.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -587,80 +699,111 @@ export const iconList = [
                 description: 'PhpStormはPHPテストフレームワークであるPHPUnit、Pest、Behat、PHPSpec、Codeceptionと統合されます。PhpStormでテストを生成して管理することができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$249\n(VAT 込み価格 $273.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$199\n(VAT 込み価格 $218.90)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$149\n(VAT 込み価格 $163.90)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                        text: '$249\n(VAT 込み価格 $273.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                        text: '$99\n(VAT 込み価格 $108.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$199\n(VAT 込み価格 $218.90)'
+                    },
+                    {
+                        text: '$79\n(VAT 込み価格 $86.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$149\n(VAT 込み価格 $163.90)'
+                    },
+                    {
+                        text: '$59\n(VAT 込み価格 $64.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -691,80 +834,111 @@ export const iconList = [
                 description: 'GoLandはさまざまなフロントエンド技術をサポートしています。JavaScript、TypeScript、Dart、Reactなど多様な言語をサポートし、プラグインを通じてAngular、NodeJS技術を使うことができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$249\n(VAT 込み価格 $273.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$199\n(VAT 込み価格 $218.90)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$149\n(VAT 込み価格 $163.90)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                        text: '$249\n(VAT 込み価格 $273.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                        text: '$99\n(VAT 込み価格 $108.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$199\n(VAT 込み価格 $218.90)'
+                    },
+                    {
+                        text: '$79\n(VAT 込み価格 $86.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$149\n(VAT 込み価格 $163.90)'
+                    },
+                    {
+                        text: '$59\n(VAT 込み価格 $64.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -796,80 +970,111 @@ export const iconList = [
                 description: 'RiderはUnity開発をサポートします。Unityを開くと、エディタとしてRiderを使用するように自動設定されます。Riderを離れることなく、プレイモードに切り替えたり、画面を停止して次のフレームを確認することができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$419\n(VAT 込み価格 $460.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$335\n(VAT 込み価格 $368.50)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$251\n(VAT 込み価格 $276.10)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$149\n(VAT 込み価格 $163.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$119\n(VAT 込み価格 $130.90)`,
+                        text: '$419\n(VAT 込み価格 $460.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$89\n(VAT 込み価格 $97.90)`,
+                        text: '$149\n(VAT 込み価格 $163.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$335\n(VAT 込み価格 $368.50)'
+                    },
+                    {
+                        text: '$119\n(VAT 込み価格 $130.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$251\n(VAT 込み価格 $276.10)'
+                    },
+                    {
+                        text: '$89\n(VAT 込み価格 $97.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -901,80 +1106,111 @@ export const iconList = [
                 description: 'CMakeは、CとC++プロジェクトに広く使われているクロスプラットフォームのビルドシステムです。CLionは、Cmakeのコード生成、自動アップデートなどさまざまな機能により、開発者の生産性を向上させます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$137\n(VAT 込み価格 $150.70)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                        text: '$229\n(VAT 込み価格 $251.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                        text: '$99\n(VAT 込み価格 $108.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$183\n(VAT 込み価格 $201.30)'
+                    },
+                    {
+                        text: '$79\n(VAT 込み価格 $86.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$137\n(VAT 込み価格 $150.70)'
+                    },
+                    {
+                        text: '$59\n(VAT 込み価格 $64.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1005,80 +1241,111 @@ export const iconList = [
                 description: 'WebStormは柔軟なデバッグをサポートします。Vanilla JavaScriptからTypeScript、Vueまでさまざまな種類のアプリケーションでデバッグを行うことができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$159\n(VAT 込み価格 $174.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$127\n(VAT 込み価格 $139.70)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$95\n(VAT 込み価格 $104.50)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$69\n(VAT 込み価格 $75.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$55\n(VAT 込み価格 $60.50)`,
+                        text: '$159\n(VAT 込み価格 $174.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$41\n(VAT 込み価格 $45.10)`,
+                        text: '$69\n(VAT 込み価格 $75.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$127\n(VAT 込み価格 $139.70)'
+                    },
+                    {
+                        text: '$55\n(VAT 込み価格 $60.50)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$95\n(VAT 込み価格 $104.50)'
+                    },
+                    {
+                        text: '$41\n(VAT 込み価格 $45.10)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1110,80 +1377,111 @@ export const iconList = [
                 description: 'RubyMineはRails、RBS、Rake、RubocopなどRuby開発のための多様な技術をサポートします。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$137\n(VAT 込み価格 $150.70)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                        text: '$229\n(VAT 込み価格 $251.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                        text: '$99\n(VAT 込み価格 $108.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$183\n(VAT 込み価格 $201.30)'
+                    },
+                    {
+                        text: '$79\n(VAT 込み価格 $86.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$137\n(VAT 込み価格 $150.70)'
+                    },
+                    {
+                        text: '$59\n(VAT 込み価格 $64.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1215,80 +1513,111 @@ export const iconList = [
                 description: 'DataGripは、コードでバグが発生する可能性がある部分を検出して解決方法を提案します。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$137\n(VAT 込み価格 $150.70)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                        text: '$229\n(VAT 込み価格 $251.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                        text: '$99\n(VAT 込み価格 $108.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$183\n(VAT 込み価格 $201.30)'
+                    },
+                    {
+                        text: '$79\n(VAT 込み価格 $86.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$137\n(VAT 込み価格 $150.70)'
+                    },
+                    {
+                        text: '$59\n(VAT 込み価格 $64.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1321,80 +1650,111 @@ export const iconList = [
                 description: 'DataSpellでデータを扱う時、インタラクティブテーブルを使うことができます。DataSpellのインタラクティブテーブルを通じて、頻繁に発生する値のリストとパーセンテージを一目で把握することができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$229\n(VAT 込み価格 $251.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$183\n(VAT 込み価格 $201.30)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$137\n(VAT 込み価格 $150.70)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$99\n(VAT 込み価格 $108.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$79\n(VAT 込み価格 $86.90)`,
+                        text: '$229\n(VAT 込み価格 $251.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$59\n(VAT 込み価格 $64.90)`,
+                        text: '$99\n(VAT 込み価格 $108.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$183\n(VAT 込み価格 $201.30)'
+                    },
+                    {
+                        text: '$79\n(VAT 込み価格 $86.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$137\n(VAT 込み価格 $150.70)'
+                    },
+                    {
+                        text: '$59\n(VAT 込み価格 $64.90)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1424,80 +1784,111 @@ export const iconList = [
                 description: 'ReSharperは、C#、VB.NET、ASP.NETなどの言語にコードをフォーマットを指定することができます。これにより、コードの一貫性が向上します。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$349\n(VAT 込み価格 $383.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$279\n(VAT 込み価格 $306.90)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$209\n(VAT 込み価格 $229.90)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$139\n(VAT 込み価格 $152.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$111\n(VAT 込み価格 $122.10)`,
+                        text: '$349\n(VAT 込み価格 $383.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$83\n(VAT 込み価格 $91.30)`,
+                        text: '$139\n(VAT 込み価格 $152.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$279\n(VAT 込み価格 $306.90)'
+                    },
+                    {
+                        text: '$111\n(VAT 込み価格 $122.10)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$209\n(VAT 込み価格 $229.90)'
+                    },
+                    {
+                        text: '$83\n(VAT 込み価格 $91.30)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1525,80 +1916,111 @@ export const iconList = [
                 description: 'ReSharper C++はUnreal Engine開発をサポートします。ReSharper C++ はリフレクションメカニズムを理解し、マクロ内のリフレクション指定子に対してコード補完を提供します。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$349\n(VAT 込み価格 $383.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$279\n(VAT 込み価格 $306.90)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$209\n(VAT 込み価格 $229.90)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$139\n(VAT 込み価格 $152.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$111\n(VAT 込み価格 $122.10)`,
+                        text: '$349\n(VAT 込み価格 $383.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$83\n(VAT 込み価格 $91.30)`,
+                        text: '$139\n(VAT 込み価格 $152.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$279\n(VAT 込み価格 $306.90)'
+                    },
+                    {
+                        text: '$111\n(VAT 込み価格 $122.10)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$209\n(VAT 込み価格 $229.90)'
+                    },
+                    {
+                        text: '$83\n(VAT 込み価格 $91.30)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1627,80 +2049,111 @@ export const iconList = [
                 description: 'Visual StudioとRiderでdotCoverをプラグインとして使用することができます。 dotCoverを使用すると、IDE(統合開発環境)で直接ユニットテストを実行し、コードカバレッジを分析することができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$281\n(VAT 込み価格 $309.10)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                        text: '$469\n(VAT 込み価格 $515.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                        text: '$169\n(VAT 込み価格 $185.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$375\n(VAT 込み価格 $412.50)'
+                    },
+                    {
+                        text: '$135\n(VAT 込み価格 $148.50)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$281\n(VAT 込み価格 $309.10)'
+                    },
+                    {
+                        text: '$101\n(VAT 込み価格 $111.10)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1728,80 +2181,111 @@ export const iconList = [
                 description: 'Visual StudioとRiderでdotTraceをプラグインとして使用することができます。 dotTraceを使用すると、IDE(統合開発環境)ですぐにさまざまな性能プロファイリングを開始することができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$281\n(VAT 込み価格 $309.10)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                        text: '$469\n(VAT 込み価格 $515.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                        text: '$169\n(VAT 込み価格 $185.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$375\n(VAT 込み価格 $412.50)'
+                    },
+                    {
+                        text: '$135\n(VAT 込み価格 $148.50)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$281\n(VAT 込み価格 $309.10)'
+                    },
+                    {
+                        text: '$101\n(VAT 込み価格 $111.10)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1829,80 +2313,111 @@ export const iconList = [
                 description: 'dotMemoryのダイアグラムでアプリケーション要素のメモリ占有率を一目で把握することができます。 dotMemoryのダイアグラムは、アプリケーションのメモリ最適化を支援します。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$281\n(VAT 込み価格 $309.10)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                        text: '$469\n(VAT 込み価格 $515.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                        text: '$169\n(VAT 込み価格 $185.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$375\n(VAT 込み価格 $412.50)'
+                    },
+                    {
+                        text: '$135\n(VAT 込み価格 $148.50)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$281\n(VAT 込み価格 $309.10)'
+                    },
+                    {
+                        text: '$101\n(VAT 込み価格 $111.10)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -1922,80 +2437,111 @@ export const iconList = [
                 description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$469\n(VAT 込み価格 $515.90)`,
+                        text: ''
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$375\n(VAT 込み価格 $412.50)`,
+                        text: '商業用'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$281\n(VAT 込み価格 $309.10)`,
-                    },
-                    {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: '個人用'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$169\n(VAT 込み価格 $185.90)`,
+                        text: '新規購入'
                     },
                     {
-                        title: '2年目更新',
-                        detail: `$135\n(VAT 込み価格 $148.50)`,
+                        text: '$469\n(VAT 込み価格 $515.90)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: `$101\n(VAT 込み価格 $111.10)`,
+                        text: '$169\n(VAT 込み価格 $185.90)'
+                    },
+                ],
+                [
+                    {
+                        text: '2年目更新'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$375\n(VAT 込み価格 $412.50)'
+                    },
+                    {
+                        text: '$135\n(VAT 込み価格 $148.50)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年目以降の更新'
+                    },
+                    {
+                        text: '$281\n(VAT 込み価格 $309.10)'
+                    },
+                    {
+                        text: '$101\n(VAT 込み価格 $111.10)'
+                    },
+                ],
+                [
+                    {
+                        text: 'すべての機能'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'フォールバックライセンス',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'フォールバックライセンス'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'ライセンス共有',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス共有'
                     },
                     {
-                        title: '技術お問い合わせ',
+                        include: true
                     },
                     {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術お問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '個人'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -2019,79 +2565,106 @@ export const iconList = [
                 description: 'Code With Meセッションでは、チームメンバーと一緒にコードレビューを行うことができます。リアルタイムで一緒にコードを見ながら、ビデオ通話で問題について議論することもできます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                subTitle: ['Premium', 'Enterprise'],
-                details: [
-                    [
-                        {
-                            title: '新規購入',
-                            detail: `$110 / host\n(VAT 込み価格 $121)`,
-                        },
-                        {
-                            title: 'セッション制限期間',
-                            detail: `無制限`,
-                        },
-                        {
-                            title: 'セッションあたりのゲスト数',
-                            detail: `最大50名様まで`,
-                        },
-                        {
-                            title: 'Floating ライセンス',
-                        },
-                        {
-                            title: '技術的なお問い合わせ',
-                            include: true
-                        }
-                    ],[
-                        {
-                            title: '新規購入',
-                            detail: `$400 / host\n(VAT 込み価格 $440)`,
-                        },
-                        {
-                            title: 'セッション制限期間',
-                            detail: `無制限`,
-                        },
-                        {
-                            title: 'セッションあたりのゲスト数',
-                            detail: `最大100名様まで`,
-                        },
-                        {
-                            title: 'Floating ライセンス',
-                            include: true
-                        },
-                        {
-                            title: '技術的なお問い合わせ',
-                            include: true
-                        }
-                    ]
-                ]
-            },
-            {
-                title: '個人用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: `$55 / host\n(VAT 込み価格 $60.50)`,
+                        text: '',
+                        row: 2
                     },
                     {
-                        title: 'セッション制限期間',
-                        detail: `無制限`,
+                        text: '商業用',
+                        col: 2
                     },
                     {
-                        title: 'セッションあたりのゲスト数',
-                        detail: `最大50名様まで`,
+                        text: '個人用'
+                    }
+                ],
+                [
+                    {
+                        text: 'Premium',
                     },
                     {
-                        title: 'Floating ライセンス',
+                        text: 'Enterprise'
                     },
                     {
-                        title: '技術的なお問い合わせ',
+                        text: 'Premium'
                     }
                 ]
-            }
-        ],
+            ],
+            details: [
+                [
+                    {
+                        text: '新規購入'
+                    },
+                    {
+                        text: '$110 / host\n(VAT 込み価格 $121)'
+                    },
+                    {
+                        text: '$400 / host\n(VAT 込み価格 $440)'
+                    },
+                    {
+                        text: '$55 / host\n(VAT 込み価格 $60.50)'
+                    },
+                ],
+                [
+                    {
+                        text: 'セッション制限期間'
+                    },
+                    {
+                        text: '無制限'
+                    },
+                    {
+                        text: '無制限'
+                    },
+                    {
+                        text: '無制限'
+                    },
+                ],
+                [
+                    {
+                        text: 'セッションあたりのゲスト数'
+                    },
+                    {
+                        text: '最大50名様まで'
+                    },
+                    {
+                        text: '最大100名様まで'
+                    },
+                    {
+                        text: '最大50名様まで'
+                    },
+                ],
+                [
+                    {
+                        text: 'Floating ライセンス'
+                    },
+                    {
+                        include: false
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+                [
+                    {
+                        text: '技術的なお問い合わせ'
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: true
+                    },
+                    {
+                        include: false
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -2139,57 +2712,78 @@ export const iconList = [
                 description: 'Dataloreはチームのためのワークスペースを提供します。チームメンバーはこのワークスペースでノートパソコン、データ、報告書などの資料を共有します。Dataloreが提供するワークスペースを通じて、簡単かつ活発にコラボレーションすることができます。'
             }
         ],
-        purchase: [
-            {
-                title: 'Team',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '価格',
-                        detail: `$360 / user\n(VAT 込み価格 $396)`,
+                        text: ''
                     },
                     {
-                        title: 'ホスティング',
-                        detail: `Cloud`,
+                        text: '商業用'
                     },
                     {
-                        title: '統合ストレージ容量',
-                        detail: `20 GB`,
-                    },
-                    {
-                        title: 'CPUとGPU時間',
-                        detail: `CPU S 750時間/月`,
-                    },
-                    {
-                        title: 'SSO構成',
-                    },
+                        text: '個人用'
+                    }
                 ]
-            },
-            {
-                title: 'Enterprise',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '価格',
-                        detail: `$1,500 / user\n(VAT 込み価格 $1,650)`,
+                        text: '価格'
                     },
                     {
-                        title: 'ホスティング',
-                        detail: `Private Cloud\nOn-Premises`,
+                        text: '$360 / user\n(VAT 込み価格 $396)'
                     },
                     {
-                        title: '統合ストレージ容量',
-                        detail: `無制限`,
+                        text: '$1,500 / user\n(VAT 込み価格 $1,650)'
+                    },
+                ],
+                [
+                    {
+                        text: 'ホスティング'
                     },
                     {
-                        title: 'CPUとGPU時間',
-                        detail: `無制限`,
+                        text: 'Cloud'
                     },
                     {
-                        title: 'SSO構成',
+                        text: 'Private Cloud\nOn-Premises'
+                    },
+                ],
+                [
+                    {
+                        text: '統合ストレージ容量'
+                    },
+                    {
+                        text: '20 GB'
+                    },
+                    {
+                        text: '無制限'
+                    },
+                ],
+                [
+                    {
+                        text: 'CPUとGPU時間'
+                    },
+                    {
+                        text: 'CPU S 750時間/月'
+                    },
+                    {
+                        text: '無制限'
+                    },
+                ],
+                [
+                    {
+                        text: 'SSO構成'
+                    },
+                    {
+                        include: false
+                    },
+                    {
                         include: true
                     },
                 ]
-            }
-        ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -2231,36 +2825,40 @@ export const iconList = [
                 description: 'YouTrackはイシュー分析を簡単にできるさまざまなレポートを提供します。その中の一つであるタイムラインレポートは、指定された期間中の課題の進行状況を一目で見ることができます。'
             }
         ],
-        purchase: [
-            {
-                title: 'Cloud',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        detail: `11 user, 4 agent以上購入可能`,
-                    },
-                    {
-                        detail: `User`,
-                    },
-                    {
-                        detail: `최대 $44 / user\n(VAT 込み価格 $48.40)`,
+                        text: 'Cloud',
+                        col: 2
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        detail: ``,
+                        text: '11 user, 4 agent以上購入可能',
+                        col: 2
+                    }
+                ],
+                [
+                    {
+                        text: 'User'
                     },
                     {
-                        detail: `Agent`,
+                        text: '최대 $44 / user\n(VAT 込み価格 $48.40)'
+                    },
+                ],
+                [
+                    {
+                        text: 'Agent'
                     },
                     {
-                        detail: `$54 / agent\n(VAT 込み価格 $59.40)`,
+                        text: '$54 / agent\n(VAT 込み価格 $59.40)'
                     },
-                ]
-            }
-        ],
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -2289,11 +2887,6 @@ export const iconList = [
         idx: 21,
         title: 'Space',
         detail: '開発プロセスを向上させる全機能を備えたオールインワンコラボレーションプラットフォーム',
-        // type: [
-        //     'Quality Gate',
-        //     'Static Analysis',
-        //     'CI/CD',
-        // ],
         type: [
             'Git Hosting',
             'Development',
@@ -2315,80 +2908,140 @@ export const iconList = [
                 description: 'SpaceはDev Environmentというリモート開発環境を提供します。Spaceクラウドで実行される仮想マシンがコード処理、コンパイル、ビルドなどのすべての作業を代行します。ユーザーはSpaceクラウドの仮想マシンに接続してIDE(統合開発環境)を使用することができます。'
             }
         ],
-        purchase: [
-            {
-                title: '商業用',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '新規購入',
-                        detail: ``,
+                        text: '',
+                        row: 2
                     },
                     {
-                        title: '2年目更新',
-                        detail: ``,
+                        text: 'Cloud',
+                        col: 3
+                    }
+                ],
+                [
+                    {
+                        text: 'Team'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: ``,
+                        text: 'Organization'
                     },
                     {
-                        title: 'すべての機能',
-                        include: true
-                    },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                        include: true
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '法人',
+                        text: 'Enterprise'
                     }
                 ]
-            },
-            {
-                title: '個人用',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '新規購入',
-                        detail: ``,
+                        text: '価格'
                     },
                     {
-                        title: '2年目更新',
-                        detail: ``,
+                        text: '$96 / active user\n(VAT 込み価格 $105.60)'
                     },
                     {
-                        title: '3年目以降の更新',
-                        detail: ``,
+                        text: '$240 / active user\n(VAT 込み価格 $264)'
                     },
                     {
-                        title: 'すべての機能',
+                        text: '$1,188 / active user\n(VAT 込み価格 $1,306.80)'
+                    },
+                ],
+                [
+                    {
+                        text: '購入可能数量'
+                    },
+                    {
+                        text: '制限なし'
+                    },
+                    {
+                        text: '5 active user以上購入可能'
+                    },
+                    {
+                        text: '10 active user以上購入可能'
+                    },
+                ],
+                [
+                    {
+                        text: 'General Credit'
+                    },
+                    {
+                        text: '$1.00',
+                        col: 3
+                    },
+                ],
+                [
+                    {
+                        text: 'Computation Credit*'
+                    },
+                    {
+                        text: '4,000'
+                    },
+                    {
+                        text: '10,000'
+                    },
+                    {
+                        text: '50,000'
+                    },
+                ],
+                [
+                    {
+                        text: 'Storage容量*'
+                    },
+                    {
+                        text: '10GB'
+                    },
+                    {
+                        text: '25GB'
+                    },
+                    {
+                        text: '100GB'
+                    },
+                ],
+                [
+                    {
+                        text: 'データ転送量*'
+                    },
+                    {
+                        text: '50GB'
+                    },
+                    {
+                        text: '125GB'
+                    },
+                    {
+                        text: '500GB'
+                    },
+                ],
+                [
+                    {
+                        text: 'dev環境制限* 開発環境制限'
+                    },
+                    {
+                        text: '2'
+                    },
+                    {
+                        text: '無制限'
+                    },
+                    {
+                        text: '無制限'
+                    },
+                ],
+                [
+                    {
+                        text: 'All Products Pack提供'
+                    },
+                    {
+                        include: false
+                    },
+                    {
+                        include: false
+                    },
+                    {
                         include: true
                     },
-                    {
-                        title: 'フォールバックライセンス',
-                        include: true
-                    },
-                    {
-                        title: 'ライセンス共有',
-                    },
-                    {
-                        title: '技術お問い合わせ',
-                    },
-                    {
-                        title: 'ライセンス所有',
-                        detail: '個人',
-                    }
-                ]
-            }
-        ],
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -2442,71 +3095,100 @@ export const iconList = [
                 description: 'QodanaはJenkins、GitHub Actions、GitLab、TeamCityなどのCI/CDツールと統合することができます。Qodanaの実行を自動化し、開発プロセスにコード品質チェックを自然に溶け込ませることができます。'
             }
         ],
-        purchase: [
-            {
-                title: 'Ultimate',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '価格',
-                        detail: `$60 / active contributor\n(VAT 込み価格 $66)`,
+                        text: ''
                     },
                     {
-                        title: '購入可能数量',
-                        detail: `3 active contributors以上購入可能`,
+                        text: 'Ultimate'
                     },
                     {
-                        title: 'さまざまなCIの統合',
-                        include: true
-                    },
-                    {
-                        title: 'IDE統合',
-                        include: true
-                    },
-                    {
-                        title: 'オープンソースライセンス監査',
-                    },
-                    {
-                        title: '存続性とAPI検査',
-                    },
-                    {
-                        title: 'Taint分析',
-                    },
+                        text: 'Ultimate Plus'
+                    }
                 ]
-            },
-            {
-                title: 'Ultimate Plus',
-                details: [
+            ],
+            details: [
+                [
                     {
-                        title: '価格',
-                        detail: `$180 / active contributor\n(VAT 込み価格 $198)`,
+                        text: '価格'
                     },
                     {
-                        title: '購入可能数量',
-                        detail: `3 active contributors以上購入可能`,
+                        text: '$60 / active contributor\n(VAT 込み価格 $66)'
                     },
                     {
-                        title: 'さまざまなCIの統合',
+                        text: '$180 / active contributor\n(VAT 込み価格 $198)'
+                    },
+                ],
+                [
+                    {
+                        text: '購入可能数量'
+                    },
+                    {
+                        text: '3 active contributors以上購入可能'
+                    },
+                    {
+                        text: '3 active contributors以上購入可能'
+                    },
+                ],
+                [
+                    {
+                        text: 'さまざまなCIの統合'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'IDE統合',
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'IDE統合'
+                    },
+                    {
                         include: true
                     },
                     {
-                        title: 'オープンソースライセンス監査',
                         include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'オープンソースライセンス監査'
                     },
                     {
-                        title: '存続性とAPI検査',
-                        include: true
+                        include: false
                     },
                     {
-                        title: 'Taint分析',
                         include: true
                     },
-                ]
-            }
-        ],
+                ],
+                [
+                    {
+                        text: '存続性とAPI検査'
+                    },
+                    {
+                        include: false
+                    },
+                    {
+                        include: true
+                    },
+                ],
+                [
+                    {
+                        text: 'Taint分析'
+                    },
+                    {
+                        include: false
+                    },
+                    {
+                        include: true
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -2547,25 +3229,42 @@ export const iconList = [
                 description: 'TeamCityは、GitHub、GitLab、SpaceなどのVCSはもちろん、Amazon Web Services、Kubernetes、Google Cloud Platformなどのクラウドなど、さまざまな技術スタックをサポートしています。 特に、TeamCityとDockerの統合により、ビルドからDockerイメージを作成したり、Dockerコンテナでビルドを実行することができます。'
             }
         ],
-        purchase: [
-            {
-                title: 'Cloud',
-                details: [
+        purchase: {
+            title: [
+                [
                     {
-                        title: '価格',
-                        detail: `$180 / committer\n(VAT 込み価格 $198)`,
-                    },
-                    {
-                        title: '購入可能数量',
-                        detail: `3 committer以上購入可能`,
-                    },
-                    {
-                        title: 'Build Credit',
-                        detail: `$20 / 25,000 build credits`,
+                        text: 'Cloud',
+                        col: 2
                     },
                 ]
-            },
-        ],
+            ],
+            details: [
+                [
+                    {
+                        text: '価格'
+                    },
+                    {
+                        text: '$180 / committer\n(VAT 込み価格 $198)'
+                    },
+                ],
+                [
+                    {
+                        text: '購入可能数量'
+                    },
+                    {
+                        text: '3 committer以上購入可能'
+                    },
+                ],
+                [
+                    {
+                        text: 'Build Credit'
+                    },
+                    {
+                        text: '$20 / 25,000 build credits'
+                    },
+                ],
+            ]
+        },
         subscribe: commonSubscribe,
         FAQ: [
             {

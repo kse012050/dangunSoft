@@ -34,39 +34,26 @@ export default function ProductDetail() {
 
             <section className='purchaseBox-white'>
                 <h3>구매 옵션</h3>
-                { productData.purchase.map((data, i)=>
-                    <div key={i}>
-                        <b>
-                            <span>
-                                { data.title }
-                                { data.subTitle && data.subTitle.map((data, i)=>
-                                    <span key={i}>{ data }</span>
+                <table>
+                    <thead>
+                        {productData.purchase.title.map((data, i)=>
+                            <Fragment key={i}>
+                                {data.map((data, i)=>
+                                    <th key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text || 'aa' }</th>
                                 )}
-                            </span>
-                        </b>
-                        { !Array.isArray(data.details[0]) ? 
-                            <ul>
-                                {data.details.map((detailData, i)=>
-                                    <li title={ detailData.title } key={i}>
-                                        <span title={ detailData.include ? '포함': ''}>{ detailData.detail }</span>
-                                    </li>
-                                )}
-                                <li><span><Link to='/estimate' className='btn-border-black'>견적요청</Link></span></li>
-                                <li><span><Link to='/buy' className='btn-bg'>구매하기</Link></span></li>
-                            </ul> :
-                            data.details.map((list, i)=>
-                            <ul key={i}>
-                                    {list.map((detailData, i)=>
-                                        <li title={ detailData.title } key={i}>
-                                            <span title={ detailData.include ? '포함': ''}>{ detailData.detail }</span>
-                                        </li>
-                                    )}
-                                <li><span><Link to='/estimate' className='btn-border-black'>견적요청</Link></span></li>
-                                <li><span><Link to='/buy' className='btn-bg'>구매하기</Link></span></li>
-                            </ul>
+                            </Fragment>
                         )}
-                    </div>
-                )}
+                    </thead>
+                    <tbody>
+                        {productData.purchase.details.map((data, i)=>
+                            <Fragment key={i}>
+                            {data.map((data, i)=>
+                                <tr key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text || 'aa'}</tr>
+                            )}
+                            </Fragment>
+                        )}
+                    </tbody>
+                </table>
             </section>
 
             { productData.subscribe &&
