@@ -26,6 +26,10 @@ textarea{padding-block: 14px;}
 [class*="purchaseBox"] > div b span{font-size: 24px;}
 [class*="purchaseBox"] > div ul li{font-size: 16px; line-height: 22px;}
 [class*="purchaseBox"] > div ul li span a{width: 100%;}
+.purchaseBox2 table thead{font-size: 24px;}
+.purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}
+.purchaseBox2 table tr > *:first-child{padding-inline: 10px;}
+.purchaseBox2 table tr > *{min-width: 250px;}
 
 
 /* FAQ */

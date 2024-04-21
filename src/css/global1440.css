@@ -43,6 +43,10 @@ textarea{height: 180px; font-size: 16px;}
 [class*="purchaseBox"] > div b > span{font-size: 28px;}
 [class*="purchaseBox"] > div ul li{font-size: 20px; line-height: 26px;}
 [class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 40px;}
+.purchaseBox2 table tr{height: 80px;}
+.purchaseBox2 table thead{font-size: 28px;}
+.purchaseBox2 table tbody{font-size: 20px; line-height: 26px;}
+.purchaseBox2 table tbody tr td[title="포함"]::after{width: 40px;}
 
 
 /* FAQ */

@@ -17,6 +17,8 @@ br[class]:not([class*="tablet"]){display: none;}
 [class*="purchaseBox"] > div:nth-of-type(2){width: 303px;}
 [class*="purchaseBox"] > div b span{font-size: 26px;}
 [class*="purchaseBox"] > div ul li{font-size: 18px; line-height: 24px;}
+.purchaseBox2 table thead{font-size: 26px;}
+.purchaseBox2 table tbody{font-size: 18px; line-height: 24px;}
 
 
 /* FAQ */

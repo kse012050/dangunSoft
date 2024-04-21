@@ -32,28 +32,35 @@ export default function ProductDetail() {
                 </ul>
             </section>
 
-            <section className='purchaseBox-white'>
+            <section>
                 <h3>구매 옵션</h3>
-                <table>
-                    <thead>
-                        {productData.purchase.title.map((data, i)=>
-                            <Fragment key={i}>
-                                {data.map((data, i)=>
-                                    <th key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text || 'aa' }</th>
-                                )}
-                            </Fragment>
-                        )}
-                    </thead>
-                    <tbody>
-                        {productData.purchase.details.map((data, i)=>
-                            <Fragment key={i}>
-                            {data.map((data, i)=>
-                                <tr key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text || 'aa'}</tr>
+                <div className="purchaseBox2">
+                    <table>
+                        <thead>
+                            {productData.purchase.title.map((data, i)=>
+                                <tr key={i}>
+                                    {data.map((data, i)=>
+                                        <th key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text }</th>
+                                    )}
+                                </tr>
                             )}
-                            </Fragment>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {productData.purchase.details.map((data, i)=>
+                                <tr key={i}>
+                                    {data.map((data, i)=>
+                                        <td 
+                                            key={i}
+                                            colSpan={data?.col ? data.col: 1}
+                                            rowSpan={data?.row ? data.row : 1}
+                                            title={data.include ? '포함' : ''}
+                                        >{ data.text }</td>
+                                    )}
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             { productData.subscribe &&

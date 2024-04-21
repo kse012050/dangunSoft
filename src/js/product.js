@@ -3126,10 +3126,10 @@ export const iconList = [
                         text: '購入可能数量'
                     },
                     {
-                        text: '3 active contributors以上購入可能'
+                        text: '3 active contributors\n以上購入可能'
                     },
                     {
-                        text: '3 active contributors以上購入可能'
+                        text: '3 active contributors\n以上購入可能'
                     },
                 ],
                 [

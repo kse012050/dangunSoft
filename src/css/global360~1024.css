@@ -26,6 +26,8 @@ textarea{height: 150px;}
 /* 구매 옵션 테이블 */
 [class*="purchaseBox"] > div :is(b, ul li) span{height: 70px;}
 [class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 36px;}
+.purchaseBox2 table tr{height: 70px;}
+.purchaseBox2 table tbody tr td[title="포함"]::after{width: 36px;}
 
 
 /* FAQ */
