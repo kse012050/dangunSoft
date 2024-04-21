@@ -47,6 +47,7 @@ textarea{height: 180px; font-size: 16px;}
 .purchaseBox2 table thead{font-size: 28px;}
 .purchaseBox2 table tbody{font-size: 20px; line-height: 26px;}
 .purchaseBox2 table tbody tr td[title="포함"]::after{width: 40px;}
+.purchaseBox2 ~ .purchaseBox2{margin-top: 40px;}
 
 
 /* FAQ */

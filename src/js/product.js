@@ -2021,6 +2021,7 @@ export const iconList = [
                 ],
             ]
         },
+        purchaseText: ['ReSharper C++ は ReSharper と dotUltimate で購入可能です。'],
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -2152,8 +2153,9 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
-            ]
+            ],
         },
+        purchaseText: ['dotCoverは dotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -2284,8 +2286,9 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
-            ]
+            ],
         },
+        purchaseText: ['dotTraceは dotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -2416,8 +2419,9 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
-            ]
+            ],
         },
+        purchaseText: ['dotMemoryはdotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
         FAQ: commonFAQ
     },
@@ -2663,8 +2667,9 @@ export const iconList = [
                         include: false
                     },
                 ],
-            ]
+            ],
         },
+        purchaseText: ['Code With Me Enterpriseは10 hostから購入可能です。'],
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -2784,6 +2789,7 @@ export const iconList = [
                 ]
             ]
         },
+        purchaseText: ['Datalore TeamおよびDatalore Enterpriseは年間サブスクリプションライセンスです。'],
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -2857,8 +2863,193 @@ export const iconList = [
                         text: '$54 / agent\n(VAT 込み価格 $59.40)'
                     },
                 ],
+            ],
+        },
+        purchase2: {
+            title: [
+                [
+                    {
+                        text: 'Server',
+                        col: 4
+                    }
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: 'user'
+                    },
+                    {
+                        text: '新規購入'
+                    },
+                    {
+                        text: '有効期限内の更新'
+                    },
+                    {
+                        text: '有効期限後の更新'
+                    }
+                ],
+                [
+                    {
+                        text: '10'
+                    },
+                    {
+                        text: '$0'
+                    },
+                    {
+                        text: '$0'
+                    },
+                    {
+                        text: '$0'
+                    }
+                ],
+                [
+                    {
+                        text: '15'
+                    },
+                    {
+                        text: '600\n(VAT込み価格 $660)'
+                    },
+                    {
+                        text: '$300\n(VAT 込み価格 $330)'
+                    },
+                    {
+                        text: '$450\n(VAT 込み価格 $495)'
+                    }
+                ],
+                [
+                    {
+                        text: '25'
+                    },
+                    {
+                        text: '$1,100\n(VAT 込み価格 $1,210)'
+                    },
+                    {
+                        text: '$550\n(VAT 込み価格 $605)'
+                    },
+                    {
+                        text: '$825\n(VAT 込み価格 $907.50)'
+                    }
+                ],
+                [
+                    {
+                        text: '50'
+                    },
+                    {
+                        text: '$2,000\n(VAT 込み価格 $2,200)'
+                    },
+                    {
+                        text: '$1,000\n(VAT 込み価格 $1,100)'
+                    },
+                    {
+                        text: '$1,500\n(VAT 込み価格 $1,650)'
+                    }
+                ],
+                [
+                    {
+                        text: '100'
+                    },
+                    {
+                        text: '$4,000\n(VAT 込み価格 $4,400)'
+                    },
+                    {
+                        text: '$2,000\n(VAT 込み価格 $2,200)'
+                    },
+                    {
+                        text: '$3,000\n(VAT 込み価格 $3,300)'
+                    }
+                ],
+                [
+                    {
+                        text: '250'
+                    },
+                    {
+                        text: '$9,000\n(VAT 込み価格 $9,900)'
+                    },
+                    {
+                        text: '$4,500\n(VAT 込み価格 $4,950)'
+                    },
+                    {
+                        text: '$6,750\n(VAT 込み価格 $7,425)'
+                    }
+                ],
+                [
+                    {
+                        text: '500'
+                    },
+                    {
+                        text: '$12,000\n(VAT 込み価格 $13,200)'
+                    },
+                    {
+                        text: '$6,000\n(VAT 込み価格 $6,600)'
+                    },
+                    {
+                        text: '$9,000\n(VAT 込み価格 $9,900)'
+                    }
+                ],
+                [
+                    {
+                        text: '750'
+                    },
+                    {
+                        text: '$14,000\n(VAT 込み価格 $15,400)'
+                    },
+                    {
+                        text: '$7,000\n(VAT 込み価格 $7,700)'
+                    },
+                    {
+                        text: '$10,500\n(VAT 込み価格 $11,550)'
+                    }
+                ],
+                [
+                    {
+                        text: '1000'
+                    },
+                    {
+                        text: '$16,000\n(VAT 込み価格 $17,600)'
+                    },
+                    {
+                        text: '$8,000\n(VAT 込み価格 $8,800)'
+                    },
+                    {
+                        text: '$12,000\n(VAT 込み価格 $13,200)'
+                    }
+                ],
+                [
+                    {
+                        text: '2000'
+                    },
+                    {
+                        text: '$20,000\n(VAT 込み価格 $22,000)'
+                    },
+                    {
+                        text: '$10,000\n(VAT 込み価格 $11,000)'
+                    },
+                    {
+                        text: '$15,000\n(VAT 込み価格 $16,500)'
+                    }
+                ],
+                [
+                    {
+                        text: 'Agent'
+                    },
+                    {
+                        text: '$60\n(VAT 込み価格 $66)'
+                    },
+                    {
+                        text: '$30\n(VAT 込み価格 $33)'
+                    },
+                    {
+                        text: '$45\n(VAT 込み価格 $49.5)'
+                    }
+                ]
             ]
         },
+        purchaseText: [
+            'YouTrack Cloudは年間サブスクリプションライセンス、YouTrack Serverは永久ライセンスです。',
+            'YouTrack Cloudは、User数が増えるほどUserあたりの価格が下がります。',
+            'YouTrack Serverのライセンスをアップグレードする場合は、別途お問い合わせください。'
+        ],
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -3042,6 +3233,90 @@ export const iconList = [
                 ],
             ]
         },
+        purchase2: {
+            title: [
+                [
+                    {
+                        text: '',
+                        row: 2
+                    },
+                    {
+                        text: 'On-Premises',
+                        col: 2
+                    }
+                ],
+                [
+                    {
+                        text: 'Organization'
+                    },
+                    {
+                        text: 'Enterprise'
+                    }
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: '価格'
+                    },
+                    {
+                        text: '$300 / active user\n(VAT 込み価格 $330)'
+                    },
+                    {
+                        text: '$1,500 / active user\n(VAT 込み価格 $1,650)'
+                    }
+                ],
+                [
+                    {
+                        text: '購入可能数量'
+                    },
+                    {
+                        text: '5 active user以上購入可能'
+                    },
+                    {
+                        text: '50 active user以上購入可能'
+                    }
+                ],
+                [
+                    {
+                        text: 'automation worker 価格'
+                    },
+                    {
+                        text: '$420\n(VAT 込み価格 $462)',
+                        col: 2
+                    }
+                ],
+                [
+                    {
+                        text: 'automation worker 数量'
+                    },
+                    {
+                        text: '10'
+                    },
+                    {
+                        text: '50'
+                    }
+                ],
+                [
+                    {
+                        text: 'All Products Pack 提供'
+                    },
+                    {
+                        include: false
+                    },
+                    {
+                        include: true
+                    }
+                ]
+            ]
+        },
+        purchaseText: [
+            'Space CloudとOn-Premisesは永久ライセンスです。',
+            'Computation Credit* は毎月提供されるクレジットです。',
+            'Storage容量* は、ユーザーごとに提供されるストレージスペースです。',
+            'データ転送* は毎月提供され、ユーザーごとに制限されるデータ転送量です。',
+            'dev environment limit* は、ユーザーごとに使用可能な開発環境の数です。'
+        ],
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -3189,6 +3464,10 @@ export const iconList = [
                 ],
             ]
         },
+        purchaseText: [
+            'Qodana UltimateおよびUltimate Plusは年間サブスクリプションライセンスです。',
+            'Ultimate Plusは2024.7.19まで50%割引の$90で購入可能です。'
+        ],
         subscribe: commonSubscribe,
         FAQ: [
             {
@@ -3265,6 +3544,139 @@ export const iconList = [
                 ],
             ]
         },
+        purchase2: {
+            title: [
+                [
+                    {
+                        text: 'On-Premises (TeamCity Enterprise)',
+                        col: 7
+                    }
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: '新規購入',
+                        col: 2
+                    },
+                    {
+                        text: 'Agent in Server',
+                        row: 2
+                    },
+                    {
+                        text: '有効期限内の更新',
+                        col: 2
+                    },
+                    {
+                        text: '有効期限後の更新',
+                        col: 2
+                    },
+                ],
+                [
+                    {
+                        text: 'Server'
+                    },
+                    {
+                        text: 'Agent'
+                    },
+                    {
+                        text: 'Server'
+                    },
+                    {
+                        text: 'Agent'
+                    },
+                    {
+                        text: 'Server'
+                    },
+                    {
+                        text: 'Agent'
+                    }
+                ],
+                [
+                    {
+                        text: '$2,399\n(VAT 込み価格 $2,638.90)',
+                        row: 6
+                    },
+                    {
+                        text: '$359\n(VAT 込み価格 $394.90)',
+                        row: 6
+                    },
+                    {
+                        text: '3',
+                    },
+                    {
+                        text: '$1,199\n(VAT 込み価格 $1,318.90)',
+                    },
+                    {
+                        text: '$179\n(VAT 込み価格 $196.90)',
+                        row: 6
+                    },
+                    {
+                        text: '$1,799\n(VAT 込み価格 $1,978.90)',
+                    },
+                    {
+                        text: '$275\n(VAT 込み価格 $302.50)',
+                        row: 6
+                    }
+                ],
+                [
+                    {
+                        text: '5'
+                    },
+                    {
+                        text: '$1,499\n(VAT 込み価格 $1,648.90)'
+                    },
+                    {
+                        text: '$2,279\n(VAT 込み価格 $2,506.90)'
+                    }
+                ],
+                [
+                    {
+                        text: '10'
+                    },
+                    {
+                        text: '$2,219\n(VAT 込み価格 $2,440.90)'
+                    },
+                    {
+                        text: '$3,359\n(VAT 込み価格 $3,694.90)'
+                    }
+                ],
+                [
+                    {
+                        text: '20'
+                    },
+                    {
+                        text: '$3,599\n(VAT 込み価格 $3,958.90)'
+                    },
+                    {
+                        text: '$5,399\n(VAT 込み価格 $5,938.90)'
+                    }
+                ],
+                [
+                    {
+                        text: '50'
+                    },
+                    {
+                        text: '$7,799\n(VAT 込み価格 $8,578.90)'
+                    },
+                    {
+                        text: '$11,759\n(VAT 込み価格 $12,934.90)'
+                    }
+                ],
+                [
+                    {
+                        text: '100'
+                    },
+                    {
+                        text: '$13,199\n(VAT 込み価格 $14,518.90)'
+                    },
+                    {
+                        text: '$19,799\n(VAT 込み価格 $21,778.90)'
+                    }
+                ]
+            ]
+        },
+        purchaseText: ['TeamCity Cloudは年間サブスクリプションライセンス、TeamCity On-Premisesは永久ライセンスです。'],
         subscribe: commonSubscribe,
         FAQ: [
             {

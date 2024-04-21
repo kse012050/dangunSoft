@@ -29,7 +29,6 @@ textarea{height: 150px;}
 .purchaseBox2 table tr{height: 70px;}
 .purchaseBox2 table tbody tr td[title="포함"]::after{width: 36px;}
 
-
 /* FAQ */
 .FAQBox > li details summary{padding-inline: 20px;}
 .FAQBox > li details div{padding: 20px;}

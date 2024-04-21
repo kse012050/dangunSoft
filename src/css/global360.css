@@ -30,6 +30,7 @@ textarea{padding-block: 14px;}
 .purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}
 .purchaseBox2 table tr > *:first-child{padding-inline: 10px;}
 .purchaseBox2 table tr > *{min-width: 250px;}
+.purchaseBox2 ~ .purchaseBox2{margin-top: 20px;}
 
 
 /* FAQ */

@@ -32,7 +32,7 @@ export default function ProductDetail() {
                 </ul>
             </section>
 
-            <section>
+            <section className='purchaseArea'>
                 <h3>구매 옵션</h3>
                 <div className="purchaseBox2">
                     <table>
@@ -61,6 +61,41 @@ export default function ProductDetail() {
                         </tbody>
                     </table>
                 </div>
+                { productData.purchase2 &&
+                    <div className="purchaseBox2">
+                        <table>
+                            <thead>
+                                {productData.purchase2.title.map((data, i)=>
+                                    <tr key={i}>
+                                        {data.map((data, i)=>
+                                            <th key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text }</th>
+                                        )}
+                                    </tr>
+                                )}
+                            </thead>
+                            <tbody>
+                                {productData.purchase2.details.map((data, i)=>
+                                    <tr key={i}>
+                                        {data.map((data, i)=>
+                                            <td 
+                                                key={i}
+                                                colSpan={data?.col ? data.col: 1}
+                                                rowSpan={data?.row ? data.row : 1}
+                                                title={data.include ? '포함' : ''}
+                                            >{ data.text }</td>
+                                        )}
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                { productData.purchaseText &&
+                    productData.purchaseText.map((data, i)=>
+                        <p key={i}>{ data }</p>
+                    )
+                }
             </section>
 
             { productData.subscribe &&

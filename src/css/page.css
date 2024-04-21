@@ -150,6 +150,7 @@
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
+.productDetailPage .purchaseArea > p{color: var(--color-font02);}
 
 
 /* 제품 상세 페이지 - 구독 옵션 */

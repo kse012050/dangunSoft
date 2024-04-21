@@ -75,10 +75,10 @@ label{cursor: pointer;}
 .purchaseBox2 table{font-weight: 700; min-width: 100%;}
 .purchaseBox2 table thead{background-color: var(--color-face); border-top: 1px solid black;}
 .purchaseBox2 table tr{border-bottom: 1px solid var(--color-line); box-sizing: border-box;}
+.purchaseBox2 table:is(:not(:has(tr *:nth-child(3))), :has(tr *:nth-child(7))){text-align: center;}
 .purchaseBox2 table tr > *:first-child{box-sizing: border-box;}
 .purchaseBox2 table tr > *:not(:last-child){border-right: 1px solid var(--color-line);}
 .purchaseBox2 table tr:has(:nth-child(3)) > *{width: 100%;}
-.purchaseBox2 table tr:not(:has(:nth-child(3))) > *:first-child{text-align: center;}
 .purchaseBox2 table tr :is(th, td){vertical-align: middle; white-space: pre-wrap;}
 .purchaseBox2 table tbody tr *:not(:first-child){text-align: center;}
 .purchaseBox2 table tbody tr td[title="포함"]::after{display: inline-block; content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url(../images/icon-check-black.png);}
