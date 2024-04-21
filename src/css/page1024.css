@@ -34,6 +34,7 @@
 .mainPage .nattoArea div{max-width: 880px;}
 .mainPage .nattoArea div::before{right: 0; top: 0; width: 362px;}
 .mainPage .nattoArea div strong{font-size: 28px; line-height: 36px;}
+.mainPage .nattoArea div dl{max-width: 420px;}
 .mainPage .nattoArea div dl dt{font-size: 22px; line-height: 30px;}
 
 
@@ -97,6 +98,9 @@
 
 /* 제품 상세 페이지 - 구매 옵션 */
 .productDetailPage .purchaseArea > p{font-size: 16px; line-height: 22px;}
+.productDetailPage .purchaseBox2 table thead{font-size: 26px;}
+.productDetailPage .purchaseBox2 table tbody{font-size: 18px; line-height: 24px;}
+.productDetailPage .purchaseBox2 ~ .purchaseBox2{margin-top: 30px;}
 
 
 /* 제품 상세 페이지 - 구독 옵션 */

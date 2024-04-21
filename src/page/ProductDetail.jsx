@@ -6,7 +6,7 @@ import EstimateLink from '../components/EstimateLink';
 export default function ProductDetail() {
     const { productIdx } = useParams()
     const productData = iconList[productIdx]
-    console.log(productData);
+    // console.log(productData);
     return (
         <>
             <section className='topArea' style={{'--styleTotal': iconList.length, '--styleIdx': productData.idx}}>

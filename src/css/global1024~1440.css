@@ -28,7 +28,6 @@ textarea{padding-block: 20px;}
 .purchaseBox-white > div :is(b > span, ul li span){border-left-color: var(--color-line);}
 .purchaseBox-black > div :is(b > span, ul li span){border-left-color: #444;}
 .purchaseBox2 table tr > *:first-child{padding-inline: 20px;}
-.purchaseBox2 table tr > *{min-width: 300px;}
 
 
 /* FAQ */

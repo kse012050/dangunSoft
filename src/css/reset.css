@@ -27,7 +27,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: 'Pretendard';
+	/* font-family: 'Pretendard'; */
+	font-family: "Noto Sans JP", sans-serif;
 }
 ol, ul {
 	list-style: none;

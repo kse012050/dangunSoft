@@ -44,15 +44,12 @@ textarea{height: 180px; font-size: 16px;}
 [class*="purchaseBox"] > div ul li{font-size: 20px; line-height: 26px;}
 [class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 40px;}
 .purchaseBox2 table tr{height: 80px;}
-.purchaseBox2 table thead{font-size: 28px;}
-.purchaseBox2 table tbody{font-size: 20px; line-height: 26px;}
 .purchaseBox2 table tbody tr td[title="포함"]::after{width: 40px;}
-.purchaseBox2 ~ .purchaseBox2{margin-top: 40px;}
 
 
 /* FAQ */
 .FAQBox > li details summary{font-size: 20px; line-height: 26px; min-height: 80px; padding-inline: 30px;}
-.FAQBox > li details div{font-size: 18px; line-height: 24px; padding: 30px;}
+.FAQBox > li details > div{font-size: 18px; line-height: 24px; padding: 30px;}
 
 
 /* 상품 정보 */
@@ -82,7 +79,7 @@ input[type="checkbox"] + label::before{width: 24px;}
 /* 해더 */
 header h1{width: 249px;}
 header nav ul{display: flex;}
-header nav ul li > a{line-height: 90px; width: 140px; color: var(--color-font03);}
+header nav ul li > a{line-height: 90px; width: 180px; color: var(--color-font03);}
 header nav ul li:last-child > a{display: flex; justify-content: center; align-items: center;}
 header nav ul li:last-child > a::after{--styleIdx: 0; margin-left: 6px; content: ''; width: 26px; aspect-ratio: 1; background: url(../images/gnb-arrow.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
 header nav ul li > a:is(:hover, .active){color: inherit;}

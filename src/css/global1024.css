@@ -17,14 +17,11 @@ br[class]:not([class*="tablet"]){display: none;}
 [class*="purchaseBox"] > div:nth-of-type(2){width: 303px;}
 [class*="purchaseBox"] > div b span{font-size: 26px;}
 [class*="purchaseBox"] > div ul li{font-size: 18px; line-height: 24px;}
-.purchaseBox2 table thead{font-size: 26px;}
-.purchaseBox2 table tbody{font-size: 18px; line-height: 24px;}
-.purchaseBox2 ~ .purchaseBox2{margin-top: 30px;}
 
 
 /* FAQ */
 .FAQBox > li details summary{font-size: 18px; line-height: 24px; min-height: 70px;}
-.FAQBox > li details div{font-size: 16px; line-height: 22px;}
+.FAQBox > li details > div{font-size: 16px; line-height: 22px;}
 
 
 /* 상품 정보 */

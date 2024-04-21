@@ -7,18 +7,18 @@ export default function Estimate() {
 
     return (
         <section>
-            <h2>견적요청</h2>
+            <h2>お見積もり</h2>
             <form>
                 <fieldset className='inputBox-product'>
                     <ul>
                         <li>
-                            <label htmlFor="">제조사</label>
+                            <label htmlFor="">メーカー</label>
                             <div>
                                 <Select />
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">제품명</label>
+                            <label htmlFor="">製品</label>
                             <div>
                                 <div>
                                     <Select />
@@ -26,7 +26,7 @@ export default function Estimate() {
                             </div>
                         </li>
                         <li className='half'>
-                            <label htmlFor="">옵션</label>
+                            <label htmlFor="">オプション</label>
                             <div>
                                 <div>
                                     <Select />
@@ -34,25 +34,25 @@ export default function Estimate() {
                             </div>
                         </li>
                         <li className='half'>
-                            <label htmlFor="">수량</label>
+                            <label htmlFor="">数量</label>
                             <div>
                                 <input type="number" />
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">구독옵션</label>
+                            <label htmlFor="">サブスクリプション·オプション</label>
                             <div>
                                 <input type="radio" defaultChecked={true}/>
-                                <label htmlFor="">신규</label>
+                                <label htmlFor="">新規</label>
                                 <input type="radio" />
-                                <label htmlFor="">갱신</label>
+                                <label htmlFor="">更新</label>
                                 <input type="radio" />
-                                <label htmlFor="">업그레이드</label>
+                                <label htmlFor="">アップグレード</label>
                             </div>
                         </li>
                     </ul>
                     <div>
-                        <button type='button'>+ 제품 추가</button>
+                        <button type='button'>+ 製品追加</button>
                         <button type='button'>- 삭제</button>
                     </div>
                 </fieldset>
@@ -60,55 +60,49 @@ export default function Estimate() {
                 <fieldset className='inputBox'>
                     <ul>
                         <li>
-                            <label htmlFor="">이름(성/이름)</label>
+                            <label htmlFor="">企業名</label>
                             <div>
-                                <input type="text" placeholder='성' required/>
-                                <input type="text" placeholder='이름' required/>
+                                <input type="text" placeholder='企業名を入力してください'/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">후리가나</label>
+                            <label htmlFor="">名前(姓/名)</label>
                             <div>
-                                <input type="text" placeholder='성' required/>
-                                <input type="text" placeholder='이름' required/>
+                                <input type="text" placeholder='姓' required/>
+                                <input type="text" placeholder='名' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">기업명</label>
+                            <label htmlFor="">ふりがな</label>
                             <div>
-                                <input type="text" placeholder='기업명을 입력해 주세요'/>
-                            </div>
-                        </li>
-                        <li>
-                            <label htmlFor="">연락처</label>
-                            <div>
-                                <input type="text" placeholder='연락처를 입력해 주세요' required/>
+                                <input type="text" placeholder='姓' required/>
+                                <input type="text" placeholder='名' required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="">Email</label>
                             <div>
-                                <input type="text" placeholder='이메일 주소를 입력해 주세요' required/>
+                                <input type="text" placeholder='メールアドレスを入力してください' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">제목</label>
+                            <label htmlFor="">電話番号</label>
                             <div>
-                                <input type="text" placeholder='제목을 입력해 주세요'/>
+                                <input type="text" placeholder='電話番号を入力してください' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">문의내용</label>
+                            <label htmlFor="">お問い合わせ</label>
                             <div>
-                                <textarea name="" id="" placeholder='문의를 남겨주세요'></textarea>
+                                <textarea name="" id="" placeholder='内容'></textarea>
                             </div>
                         </li>
                     </ul>
                     <p>견적 문의 시 <button type='button'>개인정보보호정책</button>에 동의하는 것으로 간주합니다.</p>
                 </fieldset>
                 <div className='submitBox'>
-                    <input type="reset" className='btn-border-black' value='취소'/>
-                    <input type="submit" className='btn-bg' value='확인' onClick={()=>navigate('/estimateResult')}/>
+                    <input type="reset" className='btn-border-black' value='初期化'/>
+                    <input type="submit" className='btn-bg' value='確認' onClick={()=>navigate('/estimateResult')}/>
                 </div>
             </form>
         </section>

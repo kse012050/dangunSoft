@@ -6,9 +6,8 @@ import { urlParams } from '../js/common'
 
 export default function FAQ() {
     const navigation = useNavigate()
-    const [tabActive, setTabActive] = useState(tab()[0])
-    const tabList = tab()
     const { search, page } = urlParams(useLocation())
+    const tabList = tab()
     const {totalCount} = list(search, page)
     const [faqList, setFaqList] = useState(list(search, page).faqList)
     const pageInfo = {
@@ -17,51 +16,45 @@ export default function FAQ() {
         currentPage: parseInt(page) || 1,
     }
     pageInfo.test = (index) =>  index + 1 + parseInt((pageInfo.currentPage - 1) / 5) *  5;
+    const [searchValue, setSearchValue] = useState()
 
-    // console.log(totalCount);
-
-    const searchRef = useRef()
 
     useEffect(()=>{
         setFaqList(list(search, page).faqList)
     },[search, page])
 
     const onSearch = () => {
-        navigation(`?search=${searchRef.current.value}`)
+        navigation(`?search=${searchValue}`)
+    }
+    const onSearchReset = () => {
+        navigation(``)
+        setSearchValue('')
     }
 
     const onTabClick = (data) => {
-        setTabActive(data)
-        searchRef.current.value = data
+        setSearchValue(data)
         navigation(`?search=${data}`)
     }
     
     return (
         <section>
             <h2>FAQ</h2>
-            <p>키워드를 검색하고 자주 묻는 질문을 확인하세요.</p>
+            <p>キーワードを検索して、よくある質問を確認してください。</p>
             <div className='searchBox'>
-                <input type="search" placeholder='ex) 라이선싱 모델 개요' ref={searchRef}/>
+                <input type="search" placeholder='ex) 라이선싱 모델 개요' onChange={(e)=>setSearchValue(e.target.value)} defaultValue={searchValue}/>
                 <button onClick={onSearch}>검색</button>
-                {/* { searchRef.current?.value &&
-                    <button>검색 지우기</button>
-                } */}
+                { searchValue &&
+                    <button onClick={onSearchReset}>검색 지우기</button>
+                }
             </div>
             <div className='tabArea'>
                 {tabList.map((data, i)=>
                     <button 
                         key={i}
-                        className={tabActive === data ? 'active' : ''} 
+                        className={searchValue === data ? 'active' : ''} 
                         onClick={()=>onTabClick(data)}
                     >{ data }</button>
                 )}
-                {/* <button className='active'>전체</button>
-                <button>구매</button>
-                <button>지원</button>
-                <button>라이선싱 모델 개요</button>
-                <button>JetBrains 계정 도움말</button>
-                <button>관리자 가이드</button>
-                <button>기타</button> */}
             </div>
 
             {faqList.map(({type, list}, i)=>
@@ -75,6 +68,9 @@ export default function FAQ() {
                                     <div>
                                         {description.map(({type, detail}, i)=>
                                             <Fragment key={i}>
+                                                {(type === 'title' &&
+                                                    <strong>{ detail }</strong>
+                                                )}
                                                 {(type === 'text' &&
                                                     <p>{ detail }</p>
                                                 )}
@@ -86,14 +82,40 @@ export default function FAQ() {
                                                         { detail.map((data, i)=><li key={i}>{ data }</li>) }
                                                     </ul>
                                                 )}
-                                                {(type === 'title' &&
-                                                    <strong>{ detail }</strong>
+                                                {(type === 'table' &&
+                                                    <div className="purchaseBox2">
+                                                        <table>
+                                                            <thead>
+                                                                {detail.title.map((data, i)=>
+                                                                    <tr key={i}>
+                                                                        {data.map((data, i)=>
+                                                                            <th key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text }</th>
+                                                                        )}
+                                                                    </tr>
+                                                                )}
+                                                            </thead>
+                                                            <tbody>
+                                                                {detail.details.map((data, i)=>
+                                                                    <tr key={i}>
+                                                                        {data.map((data, i)=>
+                                                                            <td 
+                                                                                key={i}
+                                                                                colSpan={data?.col ? data.col: 1}
+                                                                                rowSpan={data?.row ? data.row : 1}
+                                                                                title={data.include ? '포함' : ''}
+                                                                            >{ data.text }</td>
+                                                                        )}
+                                                                    </tr>
+                                                                )}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 )}
                                                 {(type === 'img' &&
                                                     <img src={require(`../images/faq/${detail}.png`)} alt="" />
                                                 )}
                                                 {(type === 'video' &&
-                                                    <iframe src={detail} frameborder="0" title='test'></iframe>
+                                                    <iframe src={detail} title='test'></iframe>
                                                 )}
                                             </Fragment>
                                         )}

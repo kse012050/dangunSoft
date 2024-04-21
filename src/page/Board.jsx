@@ -12,19 +12,19 @@ export default function Board() {
 
     return (
         <section>
-            <h2>게시판</h2>
+            <h2>お問い合わせ掲示板</h2>
             <div className='searchBox'>
-                <input type="search" placeholder='글 제목 검색'/>
+                <input type="search" placeholder='タイトル検索'/>
                 <button>검색</button>
             </div>
             <div className='boardBox'>
                 <div>
                     <span>No</span>
-                    <span>제목</span>
-                    <span>이름</span>
-                    <span>작성시간</span>
+                    <span>タイトル</span>
+                    <span>名前</span>
+                    <span>作成時間</span>
                 </div>
-                <ul>
+                <ul data-none='登録されたお問い合わせはありません。'>
                     <li>
                         <Link to='' onClick={isLock && test} className='lack'>
                             <span>999</span>
@@ -53,12 +53,12 @@ export default function Board() {
                 <Link to=''>다음</Link>
             </div>
 
-            <Link to='/support/inquiry' className='btn-bg'>문의하기</Link>
+            <Link to='/support/inquiry' className='btn-bg'>お問い合わせ</Link>
 
             { popup &&
                 <div className='popupBox' onClick={()=>setPopup(false)}>
                     <div onClick={(e)=>e.stopPropagation()}>
-                        <p>비밀번호를 입력하세요.</p>
+                        <p>パスワードを入力してください。</p>
                         <input type="password" />
                         <button onClick={()=>setPopup(false)}>확인</button>
                         <button onClick={()=>setPopup(false)}>닫기</button>

@@ -375,7 +375,6 @@ export const iconList = [
                 ],
             ]
         },
-        subscribe: commonSubscribe,
         FAQ: [
             {
                 title: 'JetBrains AI Serviceとは何ですか？',
@@ -2670,23 +2669,22 @@ export const iconList = [
             ],
         },
         purchaseText: ['Code With Me Enterpriseは10 hostから購入可能です。'],
-        subscribe: commonSubscribe,
         FAQ: [
             {
                 title: 'Code With Me Premiumライセンスはどのように使用するのですか？',
                 description: 'Code With Me Premiumライセンスは、ホスト(ゲストとコーディング環境を共有するユーザー)に割り当てます。ホストは一度に1つのセッションしか開始できません。 したがって、複数のホストが同時にセッションをホストする必要がある場合、ホストはそれぞれのCode With Me Premiumライセンスを保有する必要があります。セッションに参加するゲストは、Code With Me Premiumライセンスは必要ありません。'
             },
             {
-                title: '"Code With Me Enterpriseライセンスはどのような方法で使用するのですか？',
-                description: 'Code With Me Enterpriseライセンスは、ホスト（ゲストとコーディング環境を共有するユーザー）に割り当てます。ホストは一度に1つのセッションのみをホストすることができます。Code With Me Enterpriseライセンスは、複数のユーザーが一緒に使用するFloatingライセンスです。したがって、もしホストがすべてのCode With Me Enterpriseライセンスを使用している場合、他のユーザーは待機する必要があります。 そして、Code With Meセッションが終了すると、他のユーザーがこのCode With Me Enterpriseライセンスを使用することができます。セッションに参加するゲストは、Code With Me Enterpriseライセンスは必要ありません。"'
+                title: 'Code With Me Enterpriseライセンスはどのような方法で使用するのですか？',
+                description: 'Code With Me Enterpriseライセンスは、ホスト（ゲストとコーディング環境を共有するユーザー）に割り当てます。ホストは一度に1つのセッションのみをホストすることができます。Code With Me Enterpriseライセンスは、複数のユーザーが一緒に使用するFloatingライセンスです。したがって、もしホストがすべてのCode With Me Enterpriseライセンスを使用している場合、他のユーザーは待機する必要があります。 そして、Code With Meセッションが終了すると、他のユーザーがこのCode With Me Enterpriseライセンスを使用することができます。セッションに参加するゲストは、Code With Me Enterpriseライセンスは必要ありません。'
             },
             {
-                title: '"どんなIDEでCode With Meを使用できますか？',
-                description: 'Code With Meは、2020.2.1以降のバージョンのIDEで使用できます。Code With Meプラグインは、2021.1バージョン以降のIDEでは基本的に有効化されるため、Code With Meプラグインを手動でインストールする必要はありません。しかし、2021.1バージョン未満のIDEはCode With Meプラグインを手動でインストールする必要があります。Code With Meは、IntelliJ IDEA、WebStorm、PyCharm、PhpStorm、GoLand、RubyMine、CLion、Android Studioで使用できます。"'
+                title: 'どんなIDEでCode With Meを使用できますか？',
+                description: 'Code With Meは、2020.2.1以降のバージョンのIDEで使用できます。Code With Meプラグインは、2021.1バージョン以降のIDEでは基本的に有効化されるため、Code With Meプラグインを手動でインストールする必要はありません。しかし、2021.1バージョン未満のIDEはCode With Meプラグインを手動でインストールする必要があります。Code With Meは、IntelliJ IDEA、WebStorm、PyCharm、PhpStorm、GoLand、RubyMine、CLion、Android Studioで使用できます。'
             },
             {
-                title: '"ゲストもIDEが必要ですか？',
-                description: 'セッションに参加するゲストはIDE(統合開発環境)は必要なく、招待リンクがあれば大丈夫です。ゲストは招待リンクに移動してクライアントプログラムをダウンロードし、このクライアントプログラムを通じてCode With Meセッションに参加することができます。Code With MeがサポートされているJetBrains IDEを使用している場合は、IDEから直接セッションに参加できます。"'
+                title: 'ゲストもIDEが必要ですか？',
+                description: 'セッションに参加するゲストはIDE(統合開発環境)は必要なく、招待リンクがあれば大丈夫です。ゲストは招待リンクに移動してクライアントプログラムをダウンロードし、このクライアントプログラムを通じてCode With Meセッションに参加することができます。Code With MeがサポートされているJetBrains IDEを使用している場合は、IDEから直接セッションに参加できます。'
             }
         ]
     },
@@ -2790,19 +2788,18 @@ export const iconList = [
             ]
         },
         purchaseText: ['Datalore TeamおよびDatalore Enterpriseは年間サブスクリプションライセンスです。'],
-        subscribe: commonSubscribe,
         FAQ: [
             {
-                title: '"Datalore Teamトライアルの機能に違いはありますか？',
-                description: 'Datalore Teamプランを購入する前に14日間、Datalore Teamトライアルを使用することができます。Datalore Teamトライアルは、Datalore Teamプランに比べて機能が制限されます。Datalore Teamトライアルは最大3ユーザーまで利用可能で、ユーザーあたり10GBのストレージを提供します。また、ユーザーあたり336時間のコンピューティング時間が提供されます。また、Datalore Teamトライアルには5つのDataloreクレジットが提供され、別途Dataloreクレジットを購入することはできません。"'
+                title: 'Datalore Teamトライアルの機能に違いはありますか？',
+                description: 'Datalore Teamプランを購入する前に14日間、Datalore Teamトライアルを使用することができます。Datalore Teamトライアルは、Datalore Teamプランに比べて機能が制限されます。Datalore Teamトライアルは最大3ユーザーまで利用可能で、ユーザーあたり10GBのストレージを提供します。また、ユーザーあたり336時間のコンピューティング時間が提供されます。また、Datalore Teamトライアルには5つのDataloreクレジットが提供され、別途Dataloreクレジットを購入することはできません。'
             },
             {
-                title: '"CPU時間とGPU時間とは何ですか？',
-                description: 'Dataloreはデータサイエンス作業のためにノートパソコンを作成し、各ノートパソコンごとにAWS EC2システムを通じて作業を処理します。DataloreのCPUおよびGPU時間とは、AWS EC2システムリソースを使用できる時間です。CPUおよびGPU時間は各ユーザーに月単位で提供され、Datalore Teamは750時間、Datalore Enterpriseは無制限に提供されます。"'
+                title: 'CPU時間とGPU時間とは何ですか？',
+                description: 'Dataloreはデータサイエンス作業のためにノートパソコンを作成し、各ノートパソコンごとにAWS EC2システムを通じて作業を処理します。DataloreのCPUおよびGPU時間とは、AWS EC2システムリソースを使用できる時間です。CPUおよびGPU時間は各ユーザーに月単位で提供され、Datalore Teamは750時間、Datalore Enterpriseは無制限に提供されます。'
             },
             {
-                title: '"Dataloreを社内サーバーにインストールできますか？',
-                description: 'はい、Datalore Enterpriseを利用すれば、KubernetesまたはDocker技術を介して社内サーバーにDataloreをインストールすることができます。"'
+                title: 'Dataloreを社内サーバーにインストールできますか？',
+                description: 'はい、Datalore Enterpriseを利用すれば、KubernetesまたはDocker技術を介して社内サーバーにDataloreをインストールすることができます。'
             }
         ]
     },
@@ -3050,7 +3047,6 @@ export const iconList = [
             'YouTrack Cloudは、User数が増えるほどUserあたりの価格が下がります。',
             'YouTrack Serverのライセンスをアップグレードする場合は、別途お問い合わせください。'
         ],
-        subscribe: commonSubscribe,
         FAQ: [
             {
                 title: 'YouTrack Cloudでディスク容量を追加するにはどうすればよいですか？',
@@ -3317,7 +3313,6 @@ export const iconList = [
             'データ転送* は毎月提供され、ユーザーごとに制限されるデータ転送量です。',
             'dev environment limit* は、ユーザーごとに使用可能な開発環境の数です。'
         ],
-        subscribe: commonSubscribe,
         FAQ: [
             {
                 title: 'Space Cloudのリソース(コンピューティングクレジット、ストレージなど)が不足している場合、リソースを追加するにはどうすればよいですか？',
@@ -3468,7 +3463,6 @@ export const iconList = [
             'Qodana UltimateおよびUltimate Plusは年間サブスクリプションライセンスです。',
             'Ultimate Plusは2024.7.19まで50%割引の$90で購入可能です。'
         ],
-        subscribe: commonSubscribe,
         FAQ: [
             {
                 title: 'Qodanaでコードを分析する場合、データは安全ですか？',
@@ -3677,7 +3671,6 @@ export const iconList = [
             ]
         },
         purchaseText: ['TeamCity Cloudは年間サブスクリプションライセンス、TeamCity On-Premisesは永久ライセンスです。'],
-        subscribe: commonSubscribe,
         FAQ: [
             {
                 title: 'Build Agentライセンスを購入せずに、Build Configurationだけを別途購入することはできますか？',

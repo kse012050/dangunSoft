@@ -109,6 +109,11 @@
 
 /* 제품 상세 페이지 - 구매 옵션 */
 .productDetailPage .purchaseArea > p{font-size: 14px; line-height: 20px;}
+.productDetailPage .purchaseBox2 table thead{font-size: 24px;}
+.productDetailPage .purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}
+.productDetailPage .purchaseBox2 table tr > *:first-child{padding-inline: 10px;}
+.productDetailPage .purchaseBox2 table tr > *{min-width: 250px;}
+.productDetailPage .purchaseBox2 ~ .purchaseBox2{margin-top: 20px;}
 
 
 /* 제품 상세 페이지 - 구독 옵션 */

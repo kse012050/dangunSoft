@@ -55,6 +55,7 @@
 
 /* 제품 상세 페이지 - 구매 옵션 */
 .productDetailPage .purchaseArea > p:first-of-type{margin-top: 10px;}
+.productDetailPage .purchaseBox2::-webkit-scrollbar{height: 8px;}
 
 
 /* 제품 상세 페이지 - 구독 옵션 */

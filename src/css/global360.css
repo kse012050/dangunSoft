@@ -26,17 +26,17 @@ textarea{padding-block: 14px;}
 [class*="purchaseBox"] > div b span{font-size: 24px;}
 [class*="purchaseBox"] > div ul li{font-size: 16px; line-height: 22px;}
 [class*="purchaseBox"] > div ul li span a{width: 100%;}
-.purchaseBox2 table thead{font-size: 24px;}
-.purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}
-.purchaseBox2 table tr > *:first-child{padding-inline: 10px;}
-.purchaseBox2 table tr > *{min-width: 250px;}
-.purchaseBox2 ~ .purchaseBox2{margin-top: 20px;}
+.productDetailPage .purchaseBox2 table thead{font-size: 24px;}
+.productDetailPage .purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}
+.productDetailPage .purchaseBox2 table tr > *:first-child{padding-inline: 10px;}
+.productDetailPage .purchaseBox2 table tr > *{min-width: 250px;}
+.productDetailPage .purchaseBox2 ~ .purchaseBox2{margin-top: 20px;}
 
 
 /* FAQ */
 .FAQBox > li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
 .FAQBox > li details summary::after{width: 26px;}
-.FAQBox > li details div{font-size: 14px; line-height: 20px;}
+.FAQBox > li details > div{font-size: 14px; line-height: 20px;}
 
 
 /* 상품 정보 */

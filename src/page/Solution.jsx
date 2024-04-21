@@ -18,7 +18,7 @@ export default function Solution() {
             <section className='aboutArea'>
                 <h3>About JetBrains AI</h3>
                 <p>JetBrains AIは、IDE(統合開発環境)内部にAIチャット、リファクタリング、自動補完、ランタイムエラー説明などの強力なAI機能を提供するプラグインです。JetBrains AI ServiceがIDEとLLM（大規模言語モデル）を安全に接続し、IDE内部に多様なAIサービスを提供します。JetBrains AIは、IDEに開かれたプロジェクトのコンテキストを深く理解しており、これにより、ユーザーに最適化された情報と機能を提供することができます。JetBrainsの商用IDEライセンスをお持ちの場合は、トライアル版でJetBrains AIを体験することができます。</p>
-                <Link to='/estimate' className='btn-border-white'>견적요청</Link>
+                <Link to='/estimate' className='btn-border-white'>お見積もり</Link>
                 <ul>
                     <li>
                         <strong>リファクタリング</strong>
@@ -72,7 +72,7 @@ export default function Solution() {
                         <li title='ライセンスの共有'><span title='포함'></span></li>
                         <li title='技術的なお問い合わせ'><span title='포함'></span></li>
                         <li title='ライセンス所有'><span>法人</span></li>
-                        <li><span><Link to='/estimate' className='btn-border-white'>견적요청</Link></span></li>
+                        <li><span><Link to='/estimate' className='btn-border-white'>お見積もり</Link></span></li>
                     </ul>
                 </div>
                 <div>
@@ -88,7 +88,7 @@ export default function Solution() {
                         <li title='ライセンスの共有'><span></span></li>
                         <li title='技術的なお問い合わせ'><span></span></li>
                         <li title='ライセンス所有'><span>個人</span></li>
-                        <li><span><Link to='/estimate' className='btn-border-white'>견적요청</Link></span></li>
+                        <li><span><Link to='/estimate' className='btn-border-white'>お見積もり</Link></span></li>
                     </ul>
                 </div>
             </section>

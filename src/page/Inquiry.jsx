@@ -6,69 +6,69 @@ export default function Inquiry() {
 
     return (
         <section>
-            <h2>문의하기</h2>
-            <p>질문이 있으신가요? 문의를 남겨보세요.</p>
+            <h2>お問い合わせ</h2>
+            <p>お問い合わせの依頼です。</p>
             <form>
                 <fieldset className='inputBox'>
                     <ul>
                         <li>
-                            <label htmlFor="">이름(성/이름)</label>
+                            <label htmlFor="">名前(姓 / 名)</label>
                             <div>
-                                <input type="text" placeholder='성' required/>
-                                <input type="text" placeholder='이름' required/>
+                                <input type="text" placeholder='姓' required/>
+                                <input type="text" placeholder='名' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">후리가나</label>
+                            <label htmlFor="">ふりがな</label>
                             <div>
-                                <input type="text" placeholder='성' required/>
-                                <input type="text" placeholder='이름' required/>
+                                <input type="text" placeholder='姓' required/>
+                                <input type="text" placeholder='名' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">기업명</label>
+                            <label htmlFor="">会社名</label>
                             <div>
-                                <input type="text" placeholder='기업명을 입력해 주세요'/>
+                                <input type="text" placeholder='企業名を入力してください'/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">연락처</label>
+                            <label htmlFor="">電話番号</label>
                             <div>
-                                <input type="text" placeholder='연락처를 입력해 주세요' required/>
+                                <input type="text" placeholder='電話番号を入力してください' required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="">Email</label>
                             <div>
-                                <input type="text" placeholder='이메일 주소를 입력해 주세요' required/>
+                                <input type="text" placeholder='メールアドレスを入力してください' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">제목</label>
+                            <label htmlFor="">タイトル</label>
                             <div>
-                                <input type="text" placeholder='제목을 입력해 주세요'/>
+                                <input type="text" placeholder='タイトルを入力してください'/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">문의내용</label>
+                            <label htmlFor="">お問い合わせ</label>
                             <div>
-                                <textarea name="" id="" placeholder='문의를 남겨주세요'></textarea>
+                                <textarea name="" id="" placeholder='内容'></textarea>
                             </div>
                         </li>
                         <li>
                             <input type="checkbox" />
-                            <label htmlFor="">미팅 요청</label>
+                            <label htmlFor="">ミーティング要請</label>
                         </li>
                     </ul>
                     <div>
                         <input type="checkbox" />
-                        <label htmlFor="">비밀글</label>
-                        <input type="password" placeholder='비밀번호를 입력해주세요'/>
+                        <label htmlFor="">秘密文書</label>
+                        <input type="password" placeholder='パスワードを入力してください' autoComplete="off"/>
                     </div>
                 </fieldset>
                 <div className='submitBox'>
-                    <input type="reset" className='btn-border-black' value='취소'/>
-                    <input type="submit" className='btn-bg' value='확인' onClick={()=>navigate('/support/inquiry')}/>
+                    <input type="reset" className='btn-border-black' value='キャンセル'/>
+                    <input type="submit" className='btn-bg' value='確認' onClick={()=>navigate('/support/inquiry')}/>
                 </div>
             </form>
         </section>

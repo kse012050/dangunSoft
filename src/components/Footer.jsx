@@ -8,18 +8,18 @@ export default function Footer() {
             <b>개인정보보호정책</b>
             <address>
                 <dl>
-                    <dt>법인번호</dt>
+                    <dt>法人番号</dt>
                     <dd>4010601064570</dd>
                 </dl>
                 <dl>
-                    <dt>대표명</dt>
-                    <dd>이승현</dd>
+                    <dt>代表取締役</dt>
+                    <dd>LEE SEUNG HYUN</dd>
                 </dl>
                 <dl>
-                    <dt>대표 전화</dt>
+                    <dt>電話番号</dt>
                     <dd>82-10-3951-6206</dd>
                 </dl>
-                <p>東京都江東区豊洲六丁目２番３１－１９１７号</p>
+                <p>東京都港区南 青山 2-2-8 DF ビル 6F</p>
             </address>
             <p>http://www.nattosystem.com</p>
             <ul data-styleidx>

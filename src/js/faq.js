@@ -267,7 +267,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスモデルとJetBrains Toolboxについて',
-        title: '',
+        title: 'JetBrains製品のサブスクリプション型と永久型はどのように分かれていますか？',
         description: [
             {
                 type: 'text',
@@ -628,10 +628,33 @@ export const faqList = [
             {
                 type: 'table',
                 detail: {
-                    title: ['使用サブスクリプション数', '割引'],
+                    title: [
+                        [
+                            {
+                                text: '使用サブスクリプション数'
+                            },
+                            {
+                                text: '割引'
+                            }
+                        ]
+                    ],
                     details: [
-                        ['10個以上', '5%']
-                        ['20個以上', '7%']
+                        [
+                            {
+                                text: '10個以上'
+                            },
+                            {
+                                text: '5%'
+                            }
+                        ],
+                        [
+                            {
+                                text: '20個以上'
+                            },
+                            {
+                                text: '7%'
+                            }
+                        ]
                     ]
                 }
             },
@@ -929,7 +952,7 @@ export const faqList = [
         title: '複数のメールアドレスをJetBrainsアカウントに接続するにはどうすればよいですか',
         description: [
             {
-                type: 'text',
+                type: 'title',
                 detail: '(JetBrainsアカウントに別のメールアドレスを接続する方法)'
             },
             {
@@ -1055,7 +1078,7 @@ export const faqList = [
         title: 'ライセンスオプション',
         description: [
             {
-                type: 'text',
+                type: 'title',
                 detail: '1.JetBrainsアカウント'
             },
             {
@@ -1071,7 +1094,7 @@ export const faqList = [
                 detail: 'ライセンスオプション02'
             },
             {
-                type: 'text',
+                type: 'title',
                 detail: '2. アクティベーションコード'
             },
             {
@@ -1870,18 +1893,196 @@ export const faqList = [
             {
                 type: 'table',
                 detail: {
-                    title: ['個人用ライセンス所有者', 'チームマネージャー', '組織管理者', '할당된 라이선스 사용자'],
+                    title: [
+                        [
+                            {
+                                text: ''
+                            },
+                            {
+                                text: '個人用ライセンス所有者'
+                            },
+                            {
+                                text: 'チームマネージャー'
+                            },
+                            {
+                                text: '組織管理者'
+                            },
+                            {
+                                text: '할당된 라이선스 사용자'
+                            }
+                        ]
+                    ],
                     details: [
-                        ['JetBrainsアカウントでJetBrains製品をアクティベーションする', '', '', '', ''],
-                        ['ライセンスの返却', '', '', '', ''],
-                        ['ライセンスの割り当てと取り消し', '', '', '', ''],
-                        ['レガシーライセンスキーの生成', '', '', '', ''],
-                        ['オフラインアクティベーションコードの生成', '', '', '', ''],
-                        ['チームの生成', '', '', '', ''],
-                        ['チームの統合', '', '', '', ''],
-                        ['チーム間のライセンス移動', '', '', '', ''],
-                        ['チーム管理者の招待', '', '', '', ''],
-                        ['組織管理者の招待', '', '', '', '']
+                        [
+                            {
+                                text: 'JetBrainsアカウントでJetBrains製品をアクティベーションする'
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            }
+                        ],
+                        [
+                            {
+                                text: 'ライセンスの返却'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            }
+                        ],
+                        [
+                            {
+                                text: 'ライセンスの割り当てと取り消し'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: false
+                            }
+                        ],
+                        [
+                            {
+                                text: 'レガシーライセンスキーの生成'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            }
+                        ],
+                        [
+                            {
+                                text: 'オフラインアクティベーションコードの生成'
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: true
+                            }
+                        ],
+                        [
+                            {
+                                text: 'チームの生成'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: false
+                            }
+                        ],
+                        [
+                            {
+                                text: 'チームの統合'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: false
+                            }
+                        ],
+                        [
+                            {
+                                text: 'チーム間のライセンス移動'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: false
+                            }
+                        ],
+                        [
+                            {
+                                text: 'チーム管理者の招待'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: false
+                            }
+                        ],
+                        [
+                            {
+                                text: '組織管理者の招待'
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: false
+                            },
+                            {
+                                include: true
+                            },
+                            {
+                                include: false
+                            }
+                        ]
                     ]
                 }
             },

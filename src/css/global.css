@@ -82,19 +82,26 @@ label{cursor: pointer;}
 .purchaseBox2 table tr :is(th, td){vertical-align: middle; white-space: pre-wrap;}
 .purchaseBox2 table tbody tr *:not(:first-child){text-align: center;}
 .purchaseBox2 table tbody tr td[title="포함"]::after{display: inline-block; content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url(../images/icon-check-black.png);}
+.purchaseBox2::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
 
 
 /* FAQ */
 .FAQBox > li:not(:last-child){margin-bottom: 10px;}
 .FAQBox > li details summary::-webkit-details-marker{display: none;}
 .FAQBox > li details summary{list-style-type: none; background-color: var(--color-face); font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;}
-.FAQBox > li details summary::after{content: ''; aspect-ratio: 1; background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
+.FAQBox > li details summary::after{content: ''; aspect-ratio: 1; background: url(../images/icon-arrow-down.png) no-repeat center / cover; flex-shrink: 0;}
 .FAQBox > li details[open] summary::after{transform: rotate(180deg);}
-.FAQBox > li details div{color: var(--color-font02);}
-.FAQBox > li details div strong{font-size: 1.5em; color: var(--color-font01); font-weight: 700; display: block; margin-bottom: 20px;}
-.FAQBox > li details div p:has( + strong){margin-bottom: 30px;}
-.FAQBox > li details div ul li::before{content: '- ';}
-.FAQBox > li details div :is(img, iframe){width: 100%; margin-block: 20px;}
+.FAQBox > li details > div{color: var(--color-font02);}
+.FAQBox > li details > div strong{font-size: 1.5em; color: var(--color-font01); line-height: 1.2; font-weight: 700; display: block; margin-bottom: 0.5em;}
+.FAQBox > li details > div p:has( + strong){margin-bottom: 30px;}
+.FAQBox > li details > div ul{margin-block: .5em;}
+.FAQBox > li details > div ul li::before{content: '- ';}
+.FAQBox > li details > div :is(img, iframe){width: 100%; margin-block: 1em;}
+.FAQBox > li details > div iframe{aspect-ratio: 1 / 0.5;}
+.FAQBox > li details > div .purchaseBox2{margin-block: 1em;}
+.FAQBox > li details > div .purchaseBox2 table thead{text-align: center; color: black; font-size: 1.2em;}
+.FAQBox > li details > div .purchaseBox2 table tr > *{min-width: 320px;}
+.FAQBox > li details > div .purchaseBox2::-webkit-scrollbar{height: 7px;}
 
 
 /* 상품 정보 */
@@ -146,7 +153,7 @@ input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 .resultBox strong{font-weight: 700; display: block;}
 .resultBox dl{line-height: 22px; display: flex; border-bottom: 1px solid var(--color-line);}
 .resultBox dl :is(dt, dd){box-sizing: border-box;}
-.resultBox dl dt{flex-shrink: 0; background-color: var(--color-face); color: var(--color-font03); word-break: keep-all;}
+.resultBox dl dt{flex-shrink: 0; background-color: var(--color-face); color: var(--color-font03);}
 .resultBox dl dd{flex: 1;}
 
 

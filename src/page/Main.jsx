@@ -14,10 +14,12 @@ export default function Main() {
                     NATTOSYSTEM
                 </h2>
                 <p>
-                    NATTOSYSTEM은 JetBrains 공식 공급 기업입니다.
+                    {/* NATTOSYSTEM은 JetBrains 공식 공급 기업입니다.
                     당사는 제품에 대한 전문적인 지식을 바탕으로<br className='pc_tablet'/>
                     고객들의 개발 환경, 고객이 당면한 문제점 등을 파악하여 
-                    그에 맞는 제품과 서비스를 합리적인 가격으로 제공합니다. 
+                    그에 맞는 제품과 서비스를 합리적인 가격으로 제공합니다.  */}
+                    NATTOSYSTEMはJetBrains公式代理店です。弊社は製品に関する専門的な知識をもとに <br className='pc_tablet'/>
+                    お客様の開発環境、直面している問題点などを把握し、それらに合った製品とサービスをリーズナブルな価格で提供します。 
                 </p>
                 <EstimateLink />
             </section>
@@ -116,7 +118,7 @@ export default function Main() {
 
             <section className='functionArea'>
                 <h3>主な機能</h3>
-                <p>JetBrains는 더욱 편리한 코딩 환경 및 협업 환경을 제공합니다.</p>
+                <p>JetBrainsは、より便利なコーディング環境と協業環境を提供します。</p>
                 <ul data-styleidx>
                     <li>
                         <strong>コーディングサポート</strong>
@@ -144,19 +146,19 @@ export default function Main() {
             <section className='nattoArea'>
                 <h3><img src={require('../images/main-logo.png')} alt="NATTOSYSYEM" /></h3>
                 <div>
-                    <strong>마스코트</strong>
+                    <strong>マスコット</strong>
                     <dl>
-                        <dt>누루</dt>
+                        <dt>ヌル</dt>
                         <dd>
-                            윤기나는 건강한 낫또가 되는게 목표인 낫또 마을의 1등 노란 콩 누루.<br/>
-                            누루는 끈적임이 강해 그 누구든 누루에게 착! 붙는 순간 누루와 친해질 수 있습니다.
+                        つややかで健康な納豆になるのが目標の納豆村の1位黄色い豆ヌル。<br/>
+                        ヌルはべたつきが強く、誰でもヌルにぴったり！ くっついた瞬間、ヌルと仲良くなれます。
                         </dd>
                     </dl>
                     <dl>
-                        <dt>츠루</dt>
+                        <dt>ツル</dt>
                         <dd>
-                            아직 작은 완두콩에 불과한 츠루지만 누구보다 현명하고 밝은 성격을 가지고 있습니다.<br className='mobile'/>
-                            츠루는 누루가 어떠한 어려움에 빠져서 척척 해결해주는 고마운 해결사이자 둘도 없는 친구 입니다.
+                            まだ小さい枝豆に過ぎない鶴ですが誰よりも賢くて明るい性格を持っています。<br/>
+                            ツルはヌルがどんな困難に陥ってもてきぱき解決してくれるありがたい解決師でありかけがえのない友達です。
                         </dd>
                     </dl>
                 </div>
@@ -164,33 +166,33 @@ export default function Main() {
 
             <div className='snsArea'>
                 <strong>Friends with <mark>NATTOSYSTEM</mark></strong>
-                <p>지금 NATTOSYSTEM과 친구 맺고 최신 소식과 할인 혜택을 받아보세요!</p>
+                <p>今すぐNATTOSYSTEMと友達になって、最新ニュースと割引特典をお楽しみください ! </p>
                 <ul data-styleidx>
                     <li>
                         @Twitter
-                        <Link to=''>+ 친구</Link>
+                        <Link to=''>+Follow</Link>
                     </li>
                     <li>
                         @Line_ID
-                        <Link to=''>+ 친구</Link>
+                        <Link to=''>+友達登録</Link>
                     </li>
                 </ul>
             </div>
 
             <section className='inquiryArea'>
-                <h3>문의하기</h3>
+                <h3>お問い合わせ</h3>
                 <ul data-styleidx>
                     <li>
                         <b>Phone</b>
-                        <Link to=''>+82-10-3951-6206</Link>
+                        <Link to=''>070-8080-5970</Link>
                     </li>
                     <li>
                         <b>Email</b>
-                        <Link to=''>info@nattosystem.com</Link>
+                        <Link to=''>sales@nattosystem.com</Link>
                     </li>
                     <li>
                         <b>Address</b>
-                        <p>東京都江東区豊洲六丁目２番<br className='tablet_mobile'/>３１－１９１７号</p>
+                        <p>東京都港区南 青山 2-2-8 DF ビル 6F</p>
                     </li>
                 </ul>
                 <form>
@@ -198,32 +200,32 @@ export default function Main() {
                         <strong>Get in Touch</strong>
                         <ul>
                             <li>
-                                <label htmlFor="">이름</label>
+                                <label htmlFor="">名前</label>
                                 <div>
-                                    <input type="text" placeholder='성'/>
-                                    <input type="text" placeholder='이름'/>
+                                    <input type="text" placeholder='姓'/>
+                                    <input type="text" placeholder='名'/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="">会社</label>
+                                <div>
+                                    <input type="text" placeholder='会社名を入力してください'/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="">Email</label>
                                 <div>
-                                    <input type="text" placeholder='이메일 주소를 입력해 주세요'/>
+                                    <input type="text" placeholder='メールアドレスを入力してください'/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="">주소</label>
+                                <label htmlFor="">備考</label>
                                 <div>
-                                    <input type="text" placeholder='주소를 입력해 주세요'/>
-                                </div>
-                            </li>
-                            <li>
-                                <label htmlFor="">비고</label>
-                                <div>
-                                    <input type="text" placeholder='문의를 남겨주세요'/>
+                                    <input type="text" placeholder='お問い合わせの内容'/>
                                 </div>
                             </li>
                         </ul>
-                         <input type="submit"  value='확인'/>
+                         <input type="submit"  value='確認'/>
                     </fieldset>
                 </form>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.208763150456!2d139.78802818820756!3d35.64722786119988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018899618e75f09%3A0x9024041a7f367e9a!2z5pel5pys44CB44CSMTM1LTAwNjEg5p2x5Lqs6YO95rGf5p2x5Yy66LGK5rSy77yW5LiB55uu77yS4oiS77yT77yRIOOCueOCq-OCpOOCuuOCv-ODr-ODvCbjgqzjg7zjg4fjg7MgMTkxNw!5e0!3m2!1sja!2skr!4v1712521574682!5m2!1sja!2skr" title='東京都江東区豊洲六丁目２番３１－１９１７号' loading="lazy" referrerPolicy="no-referrer-when-downgrade" />

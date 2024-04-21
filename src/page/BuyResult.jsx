@@ -4,40 +4,40 @@ import { Link } from 'react-router-dom';
 export default function BuyResult() {
     return (
         <section>
-            <h2>구매가 완료되었습니다.</h2>
-            <p>라이센스는 기재하신 이메일로 영업일 기준 1~2일 이내로 납품됩니다.</p>
+            <h2>ご購入が完了しました。</h2>
+            <p>ライセンスは確認後、記載のメールでにお伝えします。</p>
 
             <div className='productBox'>
                 <figure>
                     <img src="https://placehold.co/120x120" alt="임시 이미지" />
                     <figcaption>
                         <strong>Mindiet MindManager Single New License</strong>
-                        <p>475,000원</p>
-                        <div>1개</div>
+                        <p>475,000円</p>
+                        <div>1つ</div>
                     </figcaption>
                 </figure>
                 <dl className='deliveryArea'>
-                    <dt>배송비</dt>
-                    <dd>0원</dd>
+                    <dt>税</dt>
+                    <dd>0円</dd>
                 </dl>
                 <dl className="amountBox">
-                    <dt>최종 결제 금액</dt>
-                    <dd>475,000원</dd>
+                    <dt>合計 (税込み)</dt>
+                    <dd>475,000円</dd>
                 </dl>
             </div>
             
             <div className='resultBox'>
-                <strong>주문자 정보</strong>
+                <strong>ご注文者情報</strong>
                 <dl>
-                    <dt>주문자 이름</dt>
+                    <dt>名前</dt>
                     <dd>홍길동</dd>
                 </dl>
                 <dl>
-                    <dt>주문자 회사명</dt>
+                    <dt>会社名</dt>
                     <dd>일구팔오 / 개인</dd>
                 </dl>
                 <dl>
-                    <dt>연락처</dt>
+                    <dt>電話番号</dt>
                     <dd>010-5555-8888</dd>
                 </dl>
                 <dl>
@@ -45,41 +45,37 @@ export default function BuyResult() {
                     <dd>dykang@tangunsoft.com</dd>
                 </dl>
 
-                <strong>라이선스 사용자 정보</strong>
+                <strong>ライセンスユーザー情報</strong>
                 <dl>
-                    <dt>사용자 이름</dt>
+                    <dt>名前</dt>
                     <dd>홍길동</dd>
                 </dl>
                 <dl>
-                    <dt>사용자 이름(영문)</dt>
+                    <dt>名前(英語)</dt>
                     <dd>Hong Gil Dong</dd>
                 </dl>
                 <dl>
-                    <dt>사용자 회사명</dt>
+                    <dt>会社名</dt>
                     <dd>홍길동 / 개인</dd>
                 </dl>
                 <dl>
-                    <dt>사용자 회사명(영문)</dt>
+                    <dt>会社名(英語)</dt>
                     <dd>Hong Gil Dong / 개인</dd>
                 </dl>
                 <dl>
-                    <dt>우편번호</dt>
+                    <dt>郵便番号</dt>
                     <dd>우편번호</dd>
                 </dl>
                 <dl>
-                    <dt>사용자 주소</dt>
+                    <dt>住所</dt>
                     <dd>서울시 서초구 서초대로 67 성령빌딩 2층</dd>
                 </dl>
                 <dl>
-                    <dt>우편번호(영문)</dt>
-                    <dd>우편번호</dd>
-                </dl>
-                <dl>
-                    <dt>사용자 주소(영문)</dt>
+                    <dt>住所(英語)</dt>
                     <dd>67, Seocho-daero, Seocho-gu, Seoul, Republic of Korea</dd>
                 </dl>
                 <dl>
-                    <dt>연락처</dt>
+                    <dt>電話番号</dt>
                     <dd>010-5555-8888</dd>
                 </dl>
                 <dl>
@@ -87,7 +83,7 @@ export default function BuyResult() {
                     <dd>dykang@tangunsoft.com</dd>
                 </dl>
                 <dl>
-                    <dt>주문 시 요구사항</dt>
+                    <dt>要求事項</dt>
                     <dd>
                         프로모션으로 제품을 구매했는데요~ 문의드려요~ 프로모션으로 제품을 구매했는데요~<br/>
                         문의드려요~ 프로모션으로 제품을 구매했는데요~<br/>
@@ -102,14 +98,14 @@ export default function BuyResult() {
                     </dd>
                 </dl>
 
-                <strong>결제 정보</strong>
+                <strong>決済情報</strong>
                 <dl>
-                    <dt>결제 방법</dt>
-                    <dd>신용카드 (OO카드 / 5555)</dd>
+                    <dt>決済方法</dt>
+                    <dd>クレジットカード</dd>
                 </dl>
             </div>
 
-            <Link to='/' className='btn-bg'>확인</Link>
+            <Link to='/' className='btn-bg'>確認</Link>
         </section>
     );
 }
