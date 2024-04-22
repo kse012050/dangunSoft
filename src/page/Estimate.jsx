@@ -53,7 +53,7 @@ export default function Estimate() {
                     </ul>
                     <div>
                         <button type='button'>+ 製品追加</button>
-                        <button type='button'>- 삭제</button>
+                        <button type='button'>- 削除</button>
                     </div>
                 </fieldset>
 
@@ -98,7 +98,7 @@ export default function Estimate() {
                             </div>
                         </li>
                     </ul>
-                    <p>견적 문의 시 <button type='button'>개인정보보호정책</button>에 동의하는 것으로 간주합니다.</p>
+                    <p>お見積もりを求める場合は、<button type='button'>プライバシーポリシー</button>に同意するものとみなします。</p>
                 </fieldset>
                 <div className='submitBox'>
                     <input type="reset" className='btn-border-black' value='初期化'/>

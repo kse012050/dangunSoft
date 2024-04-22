@@ -82,6 +82,7 @@ label{cursor: pointer;}
 .purchaseBox2 table tr :is(th, td){vertical-align: middle; white-space: pre-wrap;}
 .purchaseBox2 table tbody tr *:not(:first-child){text-align: center;}
 .purchaseBox2 table tbody tr td[title="포함"]::after{display: inline-block; content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url(../images/icon-check-black.png);}
+.purchaseBox2 table tbody tr td :is(button, a){width: 100%; max-width: 223px; margin-inline: auto;}
 .purchaseBox2::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
 
 

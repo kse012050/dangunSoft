@@ -51,7 +51,7 @@ export default function Solution() {
                         <p>JetBrains AIは、JetBrains IDE（統合開発環境）のUIと完璧に統合されているため、ユーザーはIDE内で様々なAI機能を快適に使用することができます。</p>
                     </li>
                     <li>
-                        <b>안전성</b>
+                        <b>安全性</b>
                         <p>JetBrainsは、データとコードのセキュリティを何よりも重要視しています。 JetBrains AIは、必要以上のデータをLLMに送信しません。 また、JetBrainsとLLMプロバイダーは、お客様のデータをモデルトレーニングに使用することは絶対にありません。</p>
                     </li>
                 </ul>

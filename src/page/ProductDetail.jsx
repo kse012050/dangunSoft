@@ -33,7 +33,7 @@ export default function ProductDetail() {
             </section>
 
             <section className='purchaseArea'>
-                <h3>구매 옵션</h3>
+                <h3>ご購入オプション</h3>
                 <div className="purchaseBox2">
                     <table>
                         <thead>
@@ -58,6 +58,16 @@ export default function ProductDetail() {
                                     )}
                                 </tr>
                             )}
+                            <tr>
+                                <td></td>
+                                <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
+                                <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><Link to='/buy' className='btn-bg'>購入</Link></td>
+                                <td><Link to='/buy' className='btn-bg'>購入</Link></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -86,6 +96,16 @@ export default function ProductDetail() {
                                         )}
                                     </tr>
                                 )}
+                                <tr>
+                                    <td></td>
+                                    <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
+                                    <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><Link to='/buy' className='btn-bg'>購入</Link></td>
+                                    <td><Link to='/buy' className='btn-bg'>購入</Link></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

@@ -1,6 +1,7 @@
 export const faqList = [
     {
         type: '購入について',
+        search: '購入について',
         title: 'ライセンス購入の手順を教えてください。',
         description: [
             {
@@ -15,6 +16,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: 'ライセンス発行はどのくらいかかりますか？',
         description: [
             {
@@ -25,6 +27,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '支払い方法はクレジットカードしかできませんか？',
         description: [
             {
@@ -35,6 +38,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '商品の価格の確認方法を教えてください。',
         description: [
             {
@@ -45,6 +49,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '支払いの期限が過ぎてしまいました。',
         description: [
             {
@@ -59,6 +64,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '見積書の有効期限が過ぎてしまった場合の解決方法を教えてください。',
         description: [
             {
@@ -69,6 +75,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '領収書は発行してもらえますか？',
         description: [
             {
@@ -79,6 +86,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '納品書の発行可能でしょうか？',
         description: [
             {
@@ -89,6 +97,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '後払いでの購入はできませんか？',
         description: [
             {
@@ -99,6 +108,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '数量(金額)が多いのですが、個別に相談できますか？',
         description: [
             {
@@ -109,6 +119,7 @@ export const faqList = [
     },
     {
         type: '購入について',
+        search: '購入について',
         title: '注文をキャンセルすることはできますか？',
         description: [
             {
@@ -123,6 +134,7 @@ export const faqList = [
     },
     {
         type: 'サポート',
+        search: 'サポート',
         title: 'LINEで問い合わせました。回答はいつ届きますか？',
         description: [
             {
@@ -137,6 +149,7 @@ export const faqList = [
     },
     {
         type: 'サポート',
+        search: 'サポート',
         title: 'メールで問い合わせました。回答はいつ届きますか？',
         description: [
             {
@@ -147,6 +160,7 @@ export const faqList = [
     },
     {
         type: 'サポート',
+        search: 'サポート',
         title: '他の代理店から購入したライセンスもサポート可能ですか？',
         description: [
             {
@@ -157,6 +171,7 @@ export const faqList = [
     },
     {
         type: 'サポート',
+        search: 'サポート',
         title: 'JetBrains製品のトレーニングは可能ですか？',
         description: [
             {
@@ -167,6 +182,7 @@ export const faqList = [
     },
     {
         type: 'その他',
+        search: 'その他',
         title: 'ライセンス証書をなくしてしまったのですが、再発行できますか？',
         description: [
             {
@@ -177,6 +193,7 @@ export const faqList = [
     },
     {
         type: 'その他',
+        search: 'その他',
         title: 'ライセンスの譲渡・譲受は可能ですか？',
         description: [
             {
@@ -187,6 +204,7 @@ export const faqList = [
     },
     {
         type: 'その他',
+        search: 'その他',
         title: '月額ライセンスは購入できませんか？',
         description: [
             {
@@ -197,6 +215,7 @@ export const faqList = [
     },
     {
         type: 'その他',
+        search: 'その他',
         title: 'スタートアップ割引条件はありますか？',
         description: [
             {
@@ -219,6 +238,7 @@ export const faqList = [
     },
     {
         type: 'その他',
+        search: 'その他',
         title: '数量割引はありますか？',
         description: [
             {
@@ -237,6 +257,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスモデルとJetBrains Toolboxについて',
+        search: 'ライセンシングモデルの概要',
         title: 'JetBrains Toolboxとは何ですか？',
         description: [
             {
@@ -267,6 +288,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスモデルとJetBrains Toolboxについて',
+        search: 'ライセンシングモデルの概要',
         title: 'JetBrains製品のサブスクリプション型と永久型はどのように分かれていますか？',
         description: [
             {
@@ -315,6 +337,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスモデルとJetBrains Toolboxについて',
+        search: 'ライセンシングモデルの概要',
         title: '永久フォールバックライセンスとは何ですか？',
         description: [
             {
@@ -325,6 +348,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスモデルとJetBrains Toolboxについて',
+        search: 'ライセンシングモデルの概要',
         title: 'Toolbox サブスクリプション契約書に記載されている「再配布可能な製品」とは何ですか？ ',
         description: [
             {
@@ -335,6 +359,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスモデルとJetBrains Toolboxについて',
+        search: 'ライセンシングモデルの概要',
         title: 'JetBrains のライセンスモデルは何ですか？',
         description: [
             {
@@ -345,6 +370,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: 'Community EditionのJetBrains IDEを通じて商用ソフトウェア開発が可能ですか？',
         description: [
             {
@@ -355,6 +381,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '商用ライセンスと個人用ライセンスの違いは何ですか？ ',
         description: [
             {
@@ -369,6 +396,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '個人用ライセンスを商業的な開発作業に使用できますか？',
         description: [
             {
@@ -387,6 +415,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '個人用ライセンスは商用ライセンスに比べて機能が制限されますか？',
         description: [
             {
@@ -397,6 +426,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '会社が個人用ライセンスを購入したり、その費用を処理することはできますか？',
         description: [
             {
@@ -407,6 +437,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '個人用ライセンスは会社でも自宅でも使えますか？ ',
         description: [
             {
@@ -417,6 +448,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '会社が個人用ライセンスを使用することはできますか？',
         description: [
             {
@@ -427,6 +459,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '会社で購入した商用ライセンスを自宅で使用できますか？',
         description: [
             {
@@ -437,6 +470,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '一つのライセンスで複数のデバイスでIDEを使用できますか？',
         description: [
             {
@@ -447,6 +481,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '複数のユーザーが同じ商用ライセンスを使用できますか？',
         description: [
             {
@@ -457,6 +492,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '使用していた商用ライセンスを他の従業員に割り当てることはできますか？',
         description: [
             {
@@ -467,6 +503,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '10人の開発者がいる場合、何個の商用ライセンスを購入する必要がありますか？',
         description: [
             {
@@ -477,6 +514,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '複数のユーザーが同時に使用できるライセンスはありますか？',
         description: [
             {
@@ -487,6 +525,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '商用ライセンスを他社に譲渡することはできますか？',
         description: [
             {
@@ -497,6 +536,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '試用版を使用する場合、クレジットカードは必要ですか？',
         description: [
             {
@@ -507,6 +547,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの種類とユーザー',
+        search: 'ライセンシングモデルの概要',
         title: '個人ユーザーがDatalore、Space、YouTrackなどのJetBrainsチームツールを購入できますか？',
         description: [
             {
@@ -517,6 +558,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: '教室用ライセンスとは何ですか、また利用資格は何ですか？',
         description: [
             {
@@ -531,6 +573,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: 'OSS開発ライセンスとは何か、OSS開発ライセンスの利用資格は何ですか？',
         description: [
             {
@@ -549,6 +592,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: '連続サブスクリプション割引とは何ですか？',
         description: [
             {
@@ -575,6 +619,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: '学生と教師には教育用ライセンスを無料で提供していますか？',
         description: [
             {
@@ -589,6 +634,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: 'スタートアップ企業に割引はありますか？',
         description: [
             {
@@ -599,6 +645,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: '政府機関に特別価格を提供していますか？',
         description: [
             {
@@ -609,6 +656,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: '競合他社製品を使用していた後にJetBrains製品を購入した場合、割引はありますか？',
         description: [
             {
@@ -619,6 +667,7 @@ export const faqList = [
     },
     {
         type: '割引・特別プログラム',
+        search: 'ライセンシングモデルの概要',
         title: 'JetBrains製品を大量に購入した場合、割引はありますか？',
         description: [
             {
@@ -666,6 +715,7 @@ export const faqList = [
     },
     {
         type: 'ライセンス提供',
+        search: 'ライセンシングモデルの概要',
         title: 'ライセンスはどのように提供されますか？',
         description: [
             {
@@ -684,6 +734,7 @@ export const faqList = [
     },
     {
         type: 'ライセンス提供',
+        search: 'ライセンシングモデルの概要',
         title: '実物の製品は発送されますか？',
         description: [
             {
@@ -694,6 +745,7 @@ export const faqList = [
     },
     {
         type: 'ライセンス提供',
+        search: 'ライセンシングモデルの概要',
         title: 'JetBrainsは実際に商品を発送しないのに、なぜ住所が必要なのですか？',
         description: [
             {
@@ -704,6 +756,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスおよび製品情報管理',
+        search: 'ライセンシングモデルの概要',
         title: '永続フォールバックライセンスをアクティベーションさせながら使用するにはどうすればよいですか？',
         description: [
             {
@@ -758,6 +811,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスおよび製品情報管理',
+        search: 'ライセンシングモデルの概要',
         title: 'ReSharperまたはReSharper C++のみ購入できますか？',
         description: [
             {
@@ -776,6 +830,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスおよび製品情報管理',
+        search: 'ライセンシングモデルの概要',
         title: 'All Productsライセンスで利用できる製品は何ですか？',
         description: [
             {
@@ -786,6 +841,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスおよび製品情報管理',
+        search: 'ライセンシングモデルの概要',
         title: 'All Productsライセンスで複数の製品を同時に使用できますか？',
         description: [
             {
@@ -796,6 +852,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスおよび製品情報管理',
+        search: 'ライセンシングモデルの概要',
         title: 'JetBrains製品を使用するにはインターネットが必要ですか？',
         description: [
             {
@@ -806,6 +863,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスおよび製品情報管理',
+        search: 'ライセンシングモデルの概要',
         title: 'ライセンスとライセンス情報はどこで確認できますか？',
         description: [
             {
@@ -816,6 +874,7 @@ export const faqList = [
     },
     {
         type: 'アップグレードと更新',
+        search: 'ライセンシングモデルの概要',
         title: 'JetBrains製品はどこでダウンロードできますか？',
         description: [
             {
@@ -829,6 +888,7 @@ export const faqList = [
     },
     {
         type: 'アップグレードと更新',
+        search: 'ライセンシングモデルの概要',
         title: '他のIDEにアップグレードするにはどうすればいいですか？',
         description: [
             {
@@ -911,6 +971,7 @@ export const faqList = [
     },
     {
         type: '始める',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'どのメールアドレスでJetBrainsアカウントを作成する必要がありますか？',
         description: [
             {
@@ -949,6 +1010,7 @@ export const faqList = [
     },
     {
         type: '始める',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '複数のメールアドレスをJetBrainsアカウントに接続するにはどうすればよいですか',
         description: [
             {
@@ -1051,6 +1113,7 @@ export const faqList = [
     },
     {
         type: '購入後のライセンス提供',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'ライセンス証明書はどのように受け取るのですか？',
         description: [
             {
@@ -1061,6 +1124,7 @@ export const faqList = [
     },
     {
         type: '購入後のライセンス提供',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '個人用ライセンスの取得と使用方法を教えてください。',
         description: [
             {
@@ -1075,6 +1139,7 @@ export const faqList = [
     },
     {
         type: '購入後のライセンス提供',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'ライセンスオプション',
         description: [
             {
@@ -1113,6 +1178,7 @@ export const faqList = [
     },
     {
         type: 'JetBrainsソフトウェアのアクティベーション',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'JetBrains 製品をアクティベーションするにはどうすればいいですか？',
         description: [
             {
@@ -1167,6 +1233,7 @@ export const faqList = [
     },
     {
         type: 'JetBrainsソフトウェアのアクティベーション',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'オフラインアクティベーションコードでJetBrains IDEをアクティベーション',
         description: [
             {
@@ -1225,6 +1292,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '2 段階認証とは何ですか？',
         description: [
             {
@@ -1235,6 +1303,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '2段階認証をアクティベーションするにはどうすればよいですか？',
         description: [
             {
@@ -1297,6 +1366,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '2段階認証でログインするには',
         description: [
             {
@@ -1327,6 +1397,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'リカバリコードでログインするにはどうすればよいですか？',
         description: [
             {
@@ -1421,6 +1492,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '2段階認証に対応していない古いバージョンのJetBrains製品をアクティベーションするにはどうすればいいですか？',
         description: [
             {
@@ -1530,6 +1602,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '2段階認証を無効にするには？',
         description: [
             {
@@ -1572,6 +1645,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '',
         description: [
             {
@@ -1582,6 +1656,7 @@ export const faqList = [
     },
     {
         type: '2 段階認証 (2FA)',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'アカウントがロックされるとどうなりますか？',
         description: [
             {
@@ -1596,6 +1671,7 @@ export const faqList = [
     },
     {
         type: '組織でのJetBrainsアカウントの使用',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'JetBrainsアカウントAPIとは何ですか、どのように使うのですか？',
         description: [
             {
@@ -1710,6 +1786,7 @@ export const faqList = [
     },
     {
         type: '組織でのJetBrainsアカウントの使用',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '他のユーザーが使用できるようにライセンスを返却',
         description: [
             {
@@ -1728,6 +1805,7 @@ export const faqList = [
     },
     {
         type: 'JetBrainsアカウントに関するFAQ',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'JetBrainsアカウントに送信される通知メールの言語を変更できますか？',
         description: [
             {
@@ -1754,6 +1832,7 @@ export const faqList = [
     },
     {
         type: 'JetBrainsアカウントに関するFAQ',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'なぜJetBrainsアカウントを使用する必要があるのですか？',
         description: [
             {
@@ -1820,6 +1899,7 @@ export const faqList = [
     },
     {
         type: 'JetBrainsアカウントに関するFAQ',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'JetBrainsアカウントでJetBrains製品を アクティベーションするには、インターネット接続が必要ですか？',
         description: [
             {
@@ -1830,6 +1910,7 @@ export const faqList = [
     },
     {
         type: 'JetBrainsアカウントに関するFAQ',
+        search: 'JetBrainsアカウントのヘルプ',
         title: 'JetBrainsアカウントでアクティベーションされたJetBrains製品を使用するには、常にインターネット接続が必要ですか？',
         description: [
             {
@@ -1840,6 +1921,7 @@ export const faqList = [
     },
     {
         type: 'JetBrainsアカウントに関するFAQ',
+        search: 'JetBrainsアカウントのヘルプ',
         title: '個人用ライセンスと商業用ライセンスの両方で同じJetBrainsアカウントを使用できますか？',
         description: [
             {
@@ -1854,6 +1936,7 @@ export const faqList = [
     },
     {
         type: '役割と権限',
+        search: '管理者ガイド',
         title: 'JetBrainsのサブスクリプション更新通知は誰が受け取りますか？',
         description: [
             {
@@ -1888,6 +1971,7 @@ export const faqList = [
     },
     {
         type: '役割と権限',
+        search: '管理者ガイド',
         title: 'JetBrainsアカウントの管理者とユーザーの役割は何ですか？',
         description: [
             {
@@ -2090,6 +2174,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの割り当てと取り消し',
+        search: '管理者ガイド',
         title: '商業用ライセンスをユーザーに手動で割り当てるにはどうすればよいですか？',
         description: [
             {
@@ -2120,6 +2205,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの割り当てと取り消し',
+        search: '管理者ガイド',
         title: '商業用ライセンスを一括招待状に割り当てるにはどうすればよいですか？',
         description: [
             {
@@ -2198,6 +2284,7 @@ export const faqList = [
     },
     {
         type: 'ライセンスの割り当てと取り消し',
+        search: '管理者ガイド',
         title: 'ライセンスを回収した後、新しいユーザーに割り当てる方法は何ですか？',
         description: [
             {
@@ -2224,6 +2311,7 @@ export const faqList = [
     },
     {
         type: 'サブスクリプション管理',
+        search: '管理者ガイド',
         title: 'アクティベーションされたサブスクリプションまたはサービスに接続されたお支払い方法を削除するにはどうすればよいですか？ ',
         description: [
             {
@@ -2245,6 +2333,7 @@ export const faqList = [
     },
     {
         type: 'サブスクリプション管理',
+        search: '管理者ガイド',
         title: 'サブスクリプションパックとは何ですか？',
         description: [
             {
@@ -2287,6 +2376,7 @@ export const faqList = [
     },
     {
         type: 'チーム利用',
+        search: '管理者ガイド',
         title: 'Teamとは何ですか？',
         description: [
             {
@@ -2309,6 +2399,7 @@ export const faqList = [
     },
     {
         type: 'チーム利用',
+        search: '管理者ガイド',
         title: 'Organization プロフィールと Team プロフィールの違いは何ですか？',
         description: [
             {
@@ -2322,6 +2413,7 @@ export const faqList = [
     },
     {
         type: 'チーム利用',
+        search: '管理者ガイド',
         title: '新しいチームを作成するにはどうすればよいですか？',
         description: [
             {
@@ -2352,6 +2444,7 @@ export const faqList = [
     },
     {
         type: 'チーム利用',
+        search: '管理者ガイド',
         title: '2つのチームを統合するにはどうすればよいですか？',
         description: [
             {
@@ -2382,6 +2475,7 @@ export const faqList = [
     },
     {
         type: 'チーム利用',
+        search: '管理者ガイド',
         title: 'チーム間でライセンスを移動するにはどうすればよいですか？',
         description: [
             {
@@ -2408,6 +2502,7 @@ export const faqList = [
     },
     {
         type: 'チーム利用',
+        search: '管理者ガイド',
         title: 'チーム管理者を追加または削除するにはどうすればいいですか？',
         description: [
             {
@@ -2442,6 +2537,7 @@ export const faqList = [
     },
     {
         type: '組織プロファイルの管理',
+        search: '管理者ガイド',
         title: '組織プロファイルに管理者を追加するにはどうすればよいですか？',
         description: [
             {
@@ -2472,6 +2568,7 @@ export const faqList = [
     },
     {
         type: '組織プロファイルの管理',
+        search: '管理者ガイド',
         title: '組織プロファイルから管理者を削除するにはどうすればよいですか？',
         description: [
             {
@@ -2500,7 +2597,7 @@ export const faqList = [
 
 export function tab(){
     let tabList = [...faqList];
-    tabList = [...new Set(tabList.map((data)=>data.type))]
+    tabList = [...new Set(tabList.map((data)=>data.search))]
     return tabList;
 }
 
@@ -2510,7 +2607,7 @@ export function list(search, page = 1){
     let result = []
 
     if(search){
-        list = list.filter((data)=> data.type.includes(search));
+        list = list.filter((data)=> data.search.includes(search));
         // console.log(list);
     }
     // console.log(list);

@@ -41,7 +41,7 @@ export default function FAQ() {
             <h2>FAQ</h2>
             <p>キーワードを検索して、よくある質問を確認してください。</p>
             <div className='searchBox'>
-                <input type="search" placeholder='ex) 라이선싱 모델 개요' onChange={(e)=>setSearchValue(e.target.value)} defaultValue={searchValue}/>
+                <input type="search" placeholder='ex) ライセンシングモデルの概要' onChange={(e)=>setSearchValue(e.target.value)} defaultValue={searchValue}/>
                 <button onClick={onSearch}>검색</button>
                 { searchValue &&
                     <button onClick={onSearchReset}>검색 지우기</button>
