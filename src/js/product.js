@@ -273,8 +273,37 @@ export const iconList = [
                         text: '個人'
                     },
                 ]
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
-            
         },
         subscribe: commonSubscribe,
         FAQ: commonFAQ
@@ -373,6 +402,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         FAQ: [
@@ -529,6 +588,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -665,6 +754,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -801,6 +920,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -936,6 +1085,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -1072,6 +1251,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -1208,6 +1417,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -1343,6 +1582,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -1479,6 +1748,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -1615,6 +1914,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -1752,6 +2081,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -1886,6 +2245,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -2018,6 +2407,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         purchaseText: ['ReSharper C++ は ReSharper と dotUltimate で購入可能です。'],
@@ -2153,6 +2572,36 @@ export const iconList = [
                     },
                 ],
             ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
+            ]
         },
         purchaseText: ['dotCoverは dotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
@@ -2286,6 +2735,36 @@ export const iconList = [
                     },
                 ],
             ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
+            ]
         },
         purchaseText: ['dotTraceは dotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
@@ -2419,6 +2898,36 @@ export const iconList = [
                     },
                 ],
             ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
+            ]
         },
         purchaseText: ['dotMemoryはdotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
@@ -2543,6 +3052,36 @@ export const iconList = [
                         text: '個人'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         subscribe: commonSubscribe,
@@ -2667,6 +3206,44 @@ export const iconList = [
                     },
                 ],
             ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
+            ]
         },
         purchaseText: ['Code With Me Enterpriseは10 hostから購入可能です。'],
         FAQ: [
@@ -2785,6 +3362,36 @@ export const iconList = [
                         include: true
                     },
                 ]
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         purchaseText: ['Datalore TeamおよびDatalore Enterpriseは年間サブスクリプションライセンスです。'],
@@ -2861,6 +3468,28 @@ export const iconList = [
                     },
                 ],
             ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    }
+                ]
+            ]
         },
         purchase2: {
             title: [
@@ -3039,6 +3668,44 @@ export const iconList = [
                     {
                         text: '$45\n(VAT 込み価格 $49.5)'
                     }
+                ]
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
                 ]
             ]
         },
@@ -3227,6 +3894,36 @@ export const iconList = [
                         include: true
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         purchase2: {
@@ -3303,6 +4000,36 @@ export const iconList = [
                     {
                         include: true
                     }
+                ]
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
                 ]
             ]
         },
@@ -3457,6 +4184,36 @@ export const iconList = [
                         include: true
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    },
+                ]
             ]
         },
         purchaseText: [
@@ -3536,6 +4293,28 @@ export const iconList = [
                         text: '$20 / 25,000 build credits'
                     },
                 ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: '購入',
+                        link: '/buy'
+                    }
+                ]
             ]
         },
         purchase2: {
@@ -3668,6 +4447,9 @@ export const iconList = [
                         text: '$19,799\n(VAT 込み価格 $21,778.90)'
                     }
                 ]
+            ],
+            bottom: [
+                
             ]
         },
         purchaseText: ['TeamCity Cloudは年間サブスクリプションライセンス、TeamCity On-Premisesは永久ライセンスです。'],

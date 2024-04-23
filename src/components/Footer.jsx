@@ -17,7 +17,7 @@ export default function Footer() {
                 </dl>
                 <dl>
                     <dt>電話番号</dt>
-                    <dd>82-10-3951-6206</dd>
+                    <dd>070-8080-5970</dd>
                 </dl>
                 <p>東京都港区南 青山 2-2-8 DF ビル 6F</p>
             </address>

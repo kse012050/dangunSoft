@@ -58,16 +58,21 @@ export default function ProductDetail() {
                                     )}
                                 </tr>
                             )}
-                            <tr>
-                                <td></td>
-                                <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
-                                <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><Link to='/buy' className='btn-bg'>購入</Link></td>
-                                <td><Link to='/buy' className='btn-bg'>購入</Link></td>
-                            </tr>
+                            {productData.purchase.bottom.map((data, a)=>
+                                <tr key={a}>
+                                    {data.map((data, i)=> 
+                                        <td 
+                                            key={i}
+                                            colSpan={data?.col ? data.col: 1}
+                                            rowSpan={data?.row ? data.row : 1}
+                                        >
+                                            {data.link &&
+                                                <Link to={data.link} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                            }
+                                        </td>
+                                    )}
+                                </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
@@ -96,16 +101,21 @@ export default function ProductDetail() {
                                         )}
                                     </tr>
                                 )}
-                                <tr>
-                                    <td></td>
-                                    <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
-                                    <td><Link to='/estimate' className='btn-border-black'>お見積もり</Link></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><Link to='/buy' className='btn-bg'>購入</Link></td>
-                                    <td><Link to='/buy' className='btn-bg'>購入</Link></td>
-                                </tr>
+                                {productData.purchase2?.bottom.map((data, a)=>
+                                    <tr key={a}>
+                                        {data.map((data, i)=> 
+                                            <td 
+                                                key={i}
+                                                colSpan={data?.col ? data.col: 1}
+                                                rowSpan={data?.row ? data.row : 1}
+                                            >
+                                                {data.link &&
+                                                    <Link to={data.link} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                                }
+                                            </td>
+                                        )}
+                                    </tr>
+                                )}
                             </tbody>
                         </table>
                     </div>

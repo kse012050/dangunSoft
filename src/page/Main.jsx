@@ -50,7 +50,7 @@ export default function Main() {
                 >
                     {/* 슬라이드 추가 */}
                     <SwiperSlide>
-                        <Link to='/product/0'>
+                        <Link to='/product/2'>
                             <strong>IntelliJ IDEA</strong>
                             <p>IntelliJ IDEAは、JavaとKotlin開発者のためのIDE(統合開発環境)です。IntelliJ IDEAのスマートなコード完成により、開発者の生産性が向上します。 また、IntelliJ IDEAの多様なフレームワークのサポートにより、開発者が自由に開発することができます。</p>
                         </Link>
@@ -62,19 +62,19 @@ export default function Main() {
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to='/product/0'>
+                        <Link to='/product/22'>
                             <strong>Qodana</strong>
                             <p>Qodanaはコード品質検査プラットフォームです。Qodanaの2,500以上のコード検査は、コード品質をさらに向上させます。 また、Qodanaのライセンスチェック機能は、不適切なライセンスの使用を防止します。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to='/product/0'>
+                        <Link to='/product/8'>
                             <strong>WebStorm</strong>
                             <p>WebStormはJavaScriptとTypeScriptのためのIDE(統合開発環境)です。WebStormはReactをはじめ、Vue、Angular、NodeJSまでさまざまな技術スタックを完全にサポートします。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to='/product/0'>
+                        <Link to='/product/1'>
                             <strong>JetBrains AI</strong>
                             <p>JetBrains AIは、IDE(統合開発環境) 内部で強力なAI機能を提供するJetBrainsのプラグインです。JetBrains AIは、AIチャットからリファクタリング、ランタイムエラーの説明、コード完成まで、数多くのAI機能を提供します。</p>
                         </Link>
