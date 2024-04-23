@@ -167,7 +167,8 @@ export const iconList = [
         function: [
             {
                 title: '経済的なコストと簡単なライセンス管理',
-                description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。'
+                description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。',
+                img: 'AllProductsPack01'
             }
         ],
         purchase: {
@@ -295,11 +296,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -321,15 +322,18 @@ export const iconList = [
         function: [
             {
                 title: 'AIチャット',
-                description: 'JetBrains AIのAIチャットは、現在のプロジェクトに最適な回答を提供します。IDE(統合開発環境)とウェブブラウザを切り替えることなく、IDE内で直接AIチャット機能を使用することができます。'
+                description: 'JetBrains AIのAIチャットは、現在のプロジェクトに最適な回答を提供します。IDE(統合開発環境)とウェブブラウザを切り替えることなく、IDE内で直接AIチャット機能を使用することができます。',
+                img: 'jetBrainsAI01'
             },
             {
                 title: 'リファクタリング',
-                description: 'JetBrains AIはプロジェクトを分析し、最適なリファクタリングを提案します。JetBrains AIのリファクタリングを使用すると、必要な部分に対して迅速かつ安全にコードを変更することができます。'
+                description: 'JetBrains AIはプロジェクトを分析し、最適なリファクタリングを提案します。JetBrains AIのリファクタリングを使用すると、必要な部分に対して迅速かつ安全にコードを変更することができます。',
+                img: 'jetBrainsAI02'
             },
             {
                 title: 'Commitメッセージの作成',
-                description: 'JetBrains AIは、プロジェクトのすべての変更内容を把握しており、これに基づいてCommitメッセージを作成します。JetBrains AIが提供するCommitメッセージにより、より迅速かつ正確にCommit作業を進めることができます。'
+                description: 'JetBrains AIは、プロジェクトのすべての変更内容を把握しており、これに基づいてCommitメッセージを作成します。JetBrains AIが提供するCommitメッセージにより、より迅速かつ正確にCommit作業を進めることができます。',
+                img: 'jetBrainsAI03'
             }
         ],
         purchase: {
@@ -424,11 +428,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -474,15 +478,18 @@ export const iconList = [
         function: [
             {
                 title: 'インテリジェントなコード補完',
-                description: 'IntelliJ IDEAはコード補完機能を提供します。IntelliJ IDEAでコード入力を開始すると、プロジェクト全体のインデックスに基づいて正確なコード補完を提案します。これにより、開発時間を節約することができます。'
+                description: 'IntelliJ IDEAはコード補完機能を提供します。IntelliJ IDEAでコード入力を開始すると、プロジェクト全体のインデックスに基づいて正確なコード補完を提案します。これにより、開発時間を節約することができます。',
+                img: 'intelliJIDEA01'
             },
             {
                 title: 'ダイアグラム',
-                description: 'IntelliJ IDEAはダイアグラムをサポートします。IntelliJ IDEAで大型プロジェクトを開発する時、ダイアグラムを使用すると、プロジェクトの構造を簡単に設計して把握することができます。'
+                description: 'IntelliJ IDEAはダイアグラムをサポートします。IntelliJ IDEAで大型プロジェクトを開発する時、ダイアグラムを使用すると、プロジェクトの構造を簡単に設計して把握することができます。',
+                img: 'intelliJIDEA02'
             },
             {
                 title: 'JVMフレームワーク',
-                description: 'IntelliJ IDEAはSpring、Spring Boot、Jakarta EE、JPA、Reactorなどさまざまなフレームワークをサポートします。'
+                description: 'IntelliJ IDEAはSpring、Spring Boot、Jakarta EE、JPA、Reactorなどさまざまなフレームワークをサポートします。',
+                img: 'intelliJIDEA03'
             }
         ],
         purchase: {
@@ -610,11 +617,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -640,15 +647,18 @@ export const iconList = [
         function: [
             {
                 title: 'コーディングサポート',
-                description: 'PyCharmはコード補完、リファクタリング、コード検査、エラー表示など、さまざまなコーディングサポート機能を提供します。'
+                description: 'PyCharmはコード補完、リファクタリング、コード検査、エラー表示など、さまざまなコーディングサポート機能を提供します。',
+                img: 'pyCharm01'
             },
             {
                 title: 'Jupyter Notebookの統合',
-                description: 'PyCharmはJupyter Notebookをサポートします。Jupyter NotebookとPyCharmのコードサポート機能が合わさってPython開発環境を向上させます。'
+                description: 'PyCharmはJupyter Notebookをサポートします。Jupyter NotebookとPyCharmのコードサポート機能が合わさってPython開発環境を向上させます。',
+                img: 'pyCharm02'
             },
             {
                 title: 'ウィジェットレンダリング',
-                description: 'PyCharmは、Matplotlib、Bokeh、Plotly、TensorBoardなどの可視化ライブラリに対してインタラクティブなグラフィックを表示します。'
+                description: 'PyCharmは、Matplotlib、Bokeh、Plotly、TensorBoardなどの可視化ライブラリに対してインタラクティブなグラフィックを表示します。',
+                img: 'pyCharm03'
             }
         ],
         purchase: {
@@ -776,11 +786,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -806,15 +816,18 @@ export const iconList = [
         function: [
             {
                 title: '主なフレームワークのサポート',
-                description: 'PhpStormはSymfony、Laravel、Drupal、WordPress、Zend Framework、Magento、Joomla！、CakePHP、Yiiなどさまざまなフレームワークをサポートしています。'
+                description: 'PhpStormはSymfony、Laravel、Drupal、WordPress、Zend Framework、Magento、Joomla！、CakePHP、Yiiなどさまざまなフレームワークをサポートしています。',
+                img: 'phpStorm01'
             },
             {
                 title: 'デバッガ',
-                description: 'PhpStormはXdebugとZend Debuggerと互換性のあるビジュアルデバッガを提供します。視覚的なデバッガを使用して、アプリケーションの状態を詳細に把握することができます。'
+                description: 'PhpStormはXdebugとZend Debuggerと互換性のあるビジュアルデバッガを提供します。視覚的なデバッガを使用して、アプリケーションの状態を詳細に把握することができます。',
+                img: 'phpStorm02'
             },
             {
                 title: 'コードテスト',
-                description: 'PhpStormはPHPテストフレームワークであるPHPUnit、Pest、Behat、PHPSpec、Codeceptionと統合されます。PhpStormでテストを生成して管理することができます。'
+                description: 'PhpStormはPHPテストフレームワークであるPHPUnit、Pest、Behat、PHPSpec、Codeceptionと統合されます。PhpStormでテストを生成して管理することができます。',
+                img: 'phpStorm03'
             }
         ],
         purchase: {
@@ -942,11 +955,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -971,15 +984,18 @@ export const iconList = [
         function: [
             {
                 title: 'デバッガー',
-                description: 'GoLandは完璧なデバッガを提供します。GoLandデバッガは、追加の設定やプラグインをインストールすることなく、すぐにテストやアプリケーションで使用することができます。'
+                description: 'GoLandは完璧なデバッガを提供します。GoLandデバッガは、追加の設定やプラグインをインストールすることなく、すぐにテストやアプリケーションで使用することができます。',
+                img: 'goLand01'
             },
             {
                 title: 'Goツール',
-                description: 'Code → Go Toolsメニューを使用すると、コマンドラインに切り替えることなく、プロジェクトでGoツールを実行することができます。'
+                description: 'Code → Go Toolsメニューを使用すると、コマンドラインに切り替えることなく、プロジェクトでGoツールを実行することができます。',
+                img: 'goLand02'
             },
             {
                 title: 'フロントエンドとバックエンドの開発',
-                description: 'GoLandはさまざまなフロントエンド技術をサポートしています。JavaScript、TypeScript、Dart、Reactなど多様な言語をサポートし、プラグインを通じてAngular、NodeJS技術を使うことができます。'
+                description: 'GoLandはさまざまなフロントエンド技術をサポートしています。JavaScript、TypeScript、Dart、Reactなど多様な言語をサポートし、プラグインを通じてAngular、NodeJS技術を使うことができます。',
+                img: 'goLand03'
             }
         ],
         purchase: {
@@ -1107,11 +1123,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -1137,15 +1153,18 @@ export const iconList = [
         function: [
             {
                 title: 'コード検査',
-                description: 'Riderは基本的なIDE(統合開発環境)機能だけでなく、ReSharperが提供する数千種類のコード検査機能もサポートしています。Riderは数多くの機能にも非常に高速かつ軽快に動作します。'
+                description: 'Riderは基本的なIDE(統合開発環境)機能だけでなく、ReSharperが提供する数千種類のコード検査機能もサポートしています。Riderは数多くの機能にも非常に高速かつ軽快に動作します。',
+                img: 'rider01'
             },
             {
                 title: 'リファクタリング',
-                description: 'Riderは数百種類のリファクタリング機能を提供します。これにより、関数名変更、コード構造変更などの作業を安全に行うことができます。'
+                description: 'Riderは数百種類のリファクタリング機能を提供します。これにより、関数名変更、コード構造変更などの作業を安全に行うことができます。',
+                img: 'rider02'
             },
             {
                 title: 'Unity用Rider',
-                description: 'RiderはUnity開発をサポートします。Unityを開くと、エディタとしてRiderを使用するように自動設定されます。Riderを離れることなく、プレイモードに切り替えたり、画面を停止して次のフレームを確認することができます。'
+                description: 'RiderはUnity開発をサポートします。Unityを開くと、エディタとしてRiderを使用するように自動設定されます。Riderを離れることなく、プレイモードに切り替えたり、画面を停止して次のフレームを確認することができます。',
+                img: 'rider03'
             }
         ],
         purchase: {
@@ -1273,11 +1292,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -1303,15 +1322,18 @@ export const iconList = [
         function: [
             {
                 title: '探索と検索',
-                description: 'CLionでは、コード、ユーザーアクション、UI要素など、あらゆる要素を見つけることができます。CLion内部でほぼすべての情報をどこでも簡単に検索することができます。'
+                description: 'CLionでは、コード、ユーザーアクション、UI要素など、あらゆる要素を見つけることができます。CLion内部でほぼすべての情報をどこでも簡単に検索することができます。',
+                img: 'CLion01'
             },
             {
                 title: 'デバッガ',
-                description: 'CLionでアプリケーションとユニットテストを実行し、デバッグします。コードの問題を見つけて解決する上で、最高のデバッグを提供します。'
+                description: 'CLionでアプリケーションとユニットテストを実行し、デバッグします。コードの問題を見つけて解決する上で、最高のデバッグを提供します。',
+                img: 'CLion02'
             },
             {
                 title: 'CMakeサポート',
-                description: 'CMakeは、CとC++プロジェクトに広く使われているクロスプラットフォームのビルドシステムです。CLionは、Cmakeのコード生成、自動アップデートなどさまざまな機能により、開発者の生産性を向上させます。'
+                description: 'CMakeは、CとC++プロジェクトに広く使われているクロスプラットフォームのビルドシステムです。CLionは、Cmakeのコード生成、自動アップデートなどさまざまな機能により、開発者の生産性を向上させます。',
+                img: 'CLion03'
             }
         ],
         purchase: {
@@ -1439,11 +1461,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -1468,16 +1490,19 @@ export const iconList = [
         function: [
             {
                 title: 'JavaScript専用環境',
-                description: 'WebStormはJavaScript、TypeScript、React、React Native、Electron、Vue、Angular、NodeJS、HTML、CSSなどさまざまな技術をサポートします。 そのため、WebStormを使えば、別途インストールせずにすぐにJavaScript開発を始めることができます。'
+                description: 'WebStormはJavaScript、TypeScript、React、React Native、Electron、Vue、Angular、NodeJS、HTML、CSSなどさまざまな技術をサポートします。 そのため、WebStormを使えば、別途インストールせずにすぐにJavaScript開発を始めることができます。',
+                img: 'webStorm01'
             },
             {
                 title: 'リファクタリング',
-                description: 'WebStormは最高のリファクタリング機能を提供します。WebStormのリファクタリングにより、ファイル、フォルダ名を変更することができるだけでなく、コンポーネント、メソッド、変数を抽出することができます。'
+                description: 'WebStormは最高のリファクタリング機能を提供します。WebStormのリファクタリングにより、ファイル、フォルダ名を変更することができるだけでなく、コンポーネント、メソッド、変数を抽出することができます。',
+                img: 'webStorm02'
             },
             {
                 title: 'デバッガ',
-                description: 'WebStormは柔軟なデバッグをサポートします。Vanilla JavaScriptからTypeScript、Vueまでさまざまな種類のアプリケーションでデバッグを行うことができます。'
-            }
+                description: 'WebStormは柔軟なデバッグをサポートします。Vanilla JavaScriptからTypeScript、Vueまでさまざまな種類のアプリケーションでデバッグを行うことができます。',
+                img: 'webStorm03'
+            },
         ],
         purchase: {
             title: [
@@ -1604,11 +1629,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -1634,15 +1659,18 @@ export const iconList = [
         function: [
             {
                 title: 'リファクタリング',
-                description: 'RubyMineのすべてのリファクタリングはRuby on Railsを認識するので、コントローラの名前を変更すると、関連する名前も変更されます。これにより、RubyMineで安全なコード修正が可能です。'
+                description: 'RubyMineのすべてのリファクタリングはRuby on Railsを認識するので、コントローラの名前を変更すると、関連する名前も変更されます。これにより、RubyMineで安全なコード修正が可能です。',
+                img: 'rubyMine01'
             },
             {
                 title: 'MVCベースの探索',
-                description: 'RubyMineはMVCベースの探索をサポートするので、RubyMineでRailsのコントローラー、アクション、ビュー、モデル、データベース間の迅速な探索が可能です。'
+                description: 'RubyMineはMVCベースの探索をサポートするので、RubyMineでRailsのコントローラー、アクション、ビュー、モデル、データベース間の迅速な探索が可能です。',
+                img: 'rubyMine02'
             },
             {
                 title: 'さまざまなRuby関連の技術サポート',
-                description: 'RubyMineはRails、RBS、Rake、RubocopなどRuby開発のための多様な技術をサポートします。'
+                description: 'RubyMineはRails、RBS、Rake、RubocopなどRuby開発のための多様な技術をサポートします。',
+                img: 'rubyMine03'
             }
         ],
         purchase: {
@@ -1770,11 +1798,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -1800,15 +1828,18 @@ export const iconList = [
         function: [
             {
                 title: 'ダイアグラム',
-                description: 'DataGripでオブジェクトをダイアグラムに視覚化することができます。ダイアグラムを通じてテーブル間の関係を一目で把握します。必要であれば、ダイアグラムを画像ファイルとして保存することもできます。'
+                description: 'DataGripでオブジェクトをダイアグラムに視覚化することができます。ダイアグラムを通じてテーブル間の関係を一目で把握します。必要であれば、ダイアグラムを画像ファイルとして保存することもできます。',
+                img: 'dataGrip01'
             },
             {
                 title: 'スマートテキストエディタ',
-                description: 'DataGripには生産性を高めてくれるコードエディタが含まれています。 その中の一つであるDataGripのマルチカーソル機能は、SQLコードを修正するときに効果的です。'
+                description: 'DataGripには生産性を高めてくれるコードエディタが含まれています。 その中の一つであるDataGripのマルチカーソル機能は、SQLコードを修正するときに効果的です。',
+                img: 'dataGrip02'
             },
             {
                 title: 'コード分析と修正',
-                description: 'DataGripは、コードでバグが発生する可能性がある部分を検出して解決方法を提案します。'
+                description: 'DataGripは、コードでバグが発生する可能性がある部分を検出して解決方法を提案します。',
+                img: 'dataGrip03'
             }
         ],
         purchase: {
@@ -1936,11 +1967,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -1967,15 +1998,18 @@ export const iconList = [
         function: [
             {
                 title: 'SQLセル',
-                description: 'DataSpellはSQLセルをサポートしています。DataSpellのSQLセルを通じてデータを簡単にインポートし、簡単にPython開発を始めることができます。'
+                description: 'DataSpellはSQLセルをサポートしています。DataSpellのSQLセルを通じてデータを簡単にインポートし、簡単にPython開発を始めることができます。',
+                img: 'dataSpell01'
             },
             {
                 title: 'dbt Core',
-                description: 'DataSpellはdbt Coreをサポートします。DataSpellで事前構成されたテンプレートを通じて簡単にdbtプロジェクトを開始することができます。'
+                description: 'DataSpellはdbt Coreをサポートします。DataSpellで事前構成されたテンプレートを通じて簡単にdbtプロジェクトを開始することができます。',
+                img: 'dataSpell02'
             },
             {
                 title: 'インタラクティブテーブル',
-                description: 'DataSpellでデータを扱う時、インタラクティブテーブルを使うことができます。DataSpellのインタラクティブテーブルを通じて、頻繁に発生する値のリストとパーセンテージを一目で把握することができます。'
+                description: 'DataSpellでデータを扱う時、インタラクティブテーブルを使うことができます。DataSpellのインタラクティブテーブルを通じて、頻繁に発生する値のリストとパーセンテージを一目で把握することができます。',
+                img: 'dataSpell03'
             }
         ],
         purchase: {
@@ -2103,11 +2137,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -2131,15 +2165,18 @@ export const iconList = [
         function: [
             {
                 title: 'コード検査',
-                description: 'ReSharperはC#、VB.NET、ASP.NETなど.NET開発のための2,200種類以上のコードチェックをサポートします。'
+                description: 'ReSharperはC#、VB.NET、ASP.NETなど.NET開発のための2,200種類以上のコードチェックをサポートします。',
+                img: 'reSharper01'
             },
             {
                 title: 'リファクタリング',
-                description: 'ReSharperは60種類以上のリファクタリングと450種類以上のコンテキストアクションをサポートしています。これにより、コードを安全に修正することができます。'
+                description: 'ReSharperは60種類以上のリファクタリングと450種類以上のコンテキストアクションをサポートしています。これにより、コードを安全に修正することができます。',
+                img: 'reSharper02'
             },
             {
                 title: 'コード形式指定',
-                description: 'ReSharperは、C#、VB.NET、ASP.NETなどの言語にコードをフォーマットを指定することができます。これにより、コードの一貫性が向上します。'
+                description: 'ReSharperは、C#、VB.NET、ASP.NETなどの言語にコードをフォーマットを指定することができます。これにより、コードの一貫性が向上します。',
+                img: 'reSharper03'
             }
         ],
         purchase: {
@@ -2267,11 +2304,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -2293,15 +2330,18 @@ export const iconList = [
         function: [
             {
                 title: 'コード分析',
-                description: 'ReSharper C++は、Visual Studioのプロジェクトに対してさまざまなコード分析を行います。ReSharper C++は、コード分析だけでなく、40種類以上のクイックフィックス機能により、問題を即座に解決します。'
+                description: 'ReSharper C++は、Visual Studioのプロジェクトに対してさまざまなコード分析を行います。ReSharper C++は、コード分析だけでなく、40種類以上のクイックフィックス機能により、問題を即座に解決します。',
+                img: 'reSharperC++01'
             },
             {
                 title: 'リファクタリング',
-                description: 'ReSharper C++のリファクタリングにより、C++のような複雑な言語でも安全にコードを変更することができます。ReSharper C++ は、Rename (名前の変更)、Extract Method (メソッドの抽出)、Change Signature (シグネチャの変更) などの完全なリファクタリングを提供します。'
+                description: 'ReSharper C++のリファクタリングにより、C++のような複雑な言語でも安全にコードを変更することができます。ReSharper C++ は、Rename (名前の変更)、Extract Method (メソッドの抽出)、Change Signature (シグネチャの変更) などの完全なリファクタリングを提供します。',
+                img: 'reSharperC++02'
             },
             {
                 title: 'Unreal Engine開発サポート',
-                description: 'ReSharper C++はUnreal Engine開発をサポートします。ReSharper C++ はリフレクションメカニズムを理解し、マクロ内のリフレクション指定子に対してコード補完を提供します。'
+                description: 'ReSharper C++はUnreal Engine開発をサポートします。ReSharper C++ はリフレクションメカニズムを理解し、マクロ内のリフレクション指定子に対してコード補完を提供します。',
+                img: 'reSharperC++03'
             }
         ],
         purchase: {
@@ -2429,11 +2469,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -2457,15 +2497,18 @@ export const iconList = [
         function: [
             {
                 title: 'ユニットテスト',
-                description: 'dotCoverはMSTest、NUnit、xUnit、MSpecなどの多様なユニットテストフレームワークをサポートします。 また、dotCoverはテストが必要なコードを自動的に検出して実行します。'
+                description: 'dotCoverはMSTest、NUnit、xUnit、MSpecなどの多様なユニットテストフレームワークをサポートします。 また、dotCoverはテストが必要なコードを自動的に検出して実行します。',
+                img: 'dotCover01'
             },
             {
                 title: 'Hot Spotを見る',
-                description: 'dotCoverは、コードカバレッジを一目で確認できるHot Spotビューを提供します。これにより、簡単にコードカバレッジを分析することができます。'
+                description: 'dotCoverは、コードカバレッジを一目で確認できるHot Spotビューを提供します。これにより、簡単にコードカバレッジを分析することができます。',
+                img: 'dotCover02'
             },
             {
                 title: 'Visual StudioおよびRiderとの統合',
-                description: 'Visual StudioとRiderでdotCoverをプラグインとして使用することができます。 dotCoverを使用すると、IDE(統合開発環境)で直接ユニットテストを実行し、コードカバレッジを分析することができます。'
+                description: 'Visual StudioとRiderでdotCoverをプラグインとして使用することができます。 dotCoverを使用すると、IDE(統合開発環境)で直接ユニットテストを実行し、コードカバレッジを分析することができます。',
+                img: 'dotCover03'
             }
         ],
         purchase: {
@@ -2593,11 +2636,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -2620,15 +2663,18 @@ export const iconList = [
         function: [
             {
                 title: '.NETおよびUnityアプリケーションのプロファイリング',
-                description: 'dotTraceを使用すると、デスクトップアプリケーション、.NET Core、IIS、Unityアプリケーションなど様々な.NETアプリケーションのボトルネックの原因を見つけることができます。'
+                description: 'dotTraceを使用すると、デスクトップアプリケーション、.NET Core、IIS、Unityアプリケーションなど様々な.NETアプリケーションのボトルネックの原因を見つけることができます。',
+                img: 'dotTrace01'
             },
             {
                 title: 'タイムラインプロファイリング',
-                description: 'dotTraceのタイムラインプロファイリングは、メソッドの呼び出し順序と持続時間を時間順に表示します。これにより、さまざまなパフォーマンスの問題を把握することができます。'
+                description: 'dotTraceのタイムラインプロファイリングは、メソッドの呼び出し順序と持続時間を時間順に表示します。これにより、さまざまなパフォーマンスの問題を把握することができます。',
+                img: 'dotTrace02'
             },
             {
                 title: 'Visual StudioおよびRiderとの統合',
-                description: 'Visual StudioとRiderでdotTraceをプラグインとして使用することができます。 dotTraceを使用すると、IDE(統合開発環境)ですぐにさまざまな性能プロファイリングを開始することができます。'
+                description: 'Visual StudioとRiderでdotTraceをプラグインとして使用することができます。 dotTraceを使用すると、IDE(統合開発環境)ですぐにさまざまな性能プロファイリングを開始することができます。',
+                img: 'dotTrace03'
             }
         ],
         purchase: {
@@ -2756,11 +2802,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -2783,15 +2829,18 @@ export const iconList = [
         function: [
             {
                 title: 'あらゆるタイプのメモリ問題の処理',
-                description: 'dotMemoryを使用すると、デスクトップアプリケーション、Windowsサービス、ASP.NET Webアプリケーション、IISなどさまざまな.NETアプリケーションのメモリ使用状況を分析することができます。'
+                description: 'dotMemoryを使用すると、デスクトップアプリケーション、Windowsサービス、ASP.NET Webアプリケーション、IISなどさまざまな.NETアプリケーションのメモリ使用状況を分析することができます。',
+                img: 'dotMemory01'
             },
             {
                 title: '自動スナップショット',
-                description: 'dotMemoryの自動スナップショットにより、特定の状況にスナップショットを撮ることができます。自動スナップショットは、アプリケーションのメモリ使用量が大幅に増加したり、手動でスナップショットを撮影するのが難しい場合に便利です。'
+                description: 'dotMemoryの自動スナップショットにより、特定の状況にスナップショットを撮ることができます。自動スナップショットは、アプリケーションのメモリ使用量が大幅に増加したり、手動でスナップショットを撮影するのが難しい場合に便利です。',
+                img: 'dotMemory02'
             },
             {
                 title: 'ダイアグラム',
-                description: 'dotMemoryのダイアグラムでアプリケーション要素のメモリ占有率を一目で把握することができます。 dotMemoryのダイアグラムは、アプリケーションのメモリ最適化を支援します。'
+                description: 'dotMemoryのダイアグラムでアプリケーション要素のメモリ占有率を一目で把握することができます。 dotMemoryのダイアグラムは、アプリケーションのメモリ最適化を支援します。',
+                img: 'dotMemory03'
             }
         ],
         purchase: {
@@ -2919,11 +2968,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -2946,7 +2995,8 @@ export const iconList = [
         function: [
             {
                 title: '完全な.NET開発パッケージ',
-                description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。'
+                description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。',
+                img: 'dotUltimate01'
             }
         ],
         purchase: {
@@ -3074,11 +3124,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -3100,11 +3150,13 @@ export const iconList = [
         function: [
             {
                 title: 'リモートペアプログラミング',
-                description: 'Code With Meセッションに参加すると、他の開発者と一緒にコーディングをすることができます。リアルタイムで一緒にコードを作成して、修正するリモートペアプログラミングを体験することができます。'
+                description: 'Code With Meセッションに参加すると、他の開発者と一緒にコーディングをすることができます。リアルタイムで一緒にコードを作成して、修正するリモートペアプログラミングを体験することができます。',
+                img: 'codeWithMe01'
             },
             {
                 title: 'リアルタイムリモートコードレビュー',
-                description: 'Code With Meセッションでは、チームメンバーと一緒にコードレビューを行うことができます。リアルタイムで一緒にコードを見ながら、ビデオ通話で問題について議論することもできます。'
+                description: 'Code With Meセッションでは、チームメンバーと一緒にコードレビューを行うことができます。リアルタイムで一緒にコードを見ながら、ビデオ通話で問題について議論することもできます。',
+                img: 'codeWithMe02'
             }
         ],
         purchase: {
@@ -3231,15 +3283,15 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -3281,15 +3333,18 @@ export const iconList = [
         function: [
             {
                 title: 'JupyterとPython ノートパソコン',
-                description: 'DataloreはJupyterノートパソコンとPythonノートパソコンをサポートします。DataloreのJupyterノートパソコンでIPYNBファイル作業が可能で、Pythonノートパソコンではコード自動補完、リファクタリングなど多様なコーディングサポート機能を提供します。'
+                description: 'DataloreはJupyterノートパソコンとPythonノートパソコンをサポートします。DataloreのJupyterノートパソコンでIPYNBファイル作業が可能で、Pythonノートパソコンではコード自動補完、リファクタリングなど多様なコーディングサポート機能を提供します。',
+                img: 'datalore01'
             },
             {
                 title: '可視化資料',
-                description: 'また、Dataloreでは簡単に視覚化資料を作成することができます。 さらに、DataloreはMatplotlib、plotly、altair、seabornなどさまざまな視覚化ライブラリをサポートしています。Dataloreの視覚化された資料を通じて、データを簡単に理解することができます。'
+                description: 'また、Dataloreでは簡単に視覚化資料を作成することができます。 さらに、DataloreはMatplotlib、plotly、altair、seabornなどさまざまな視覚化ライブラリをサポートしています。Dataloreの視覚化された資料を通じて、データを簡単に理解することができます。',
+                img: 'datalore02'
             },
             {
                 title: 'チームワークスペース',
-                description: 'Dataloreはチームのためのワークスペースを提供します。チームメンバーはこのワークスペースでノートパソコン、データ、報告書などの資料を共有します。Dataloreが提供するワークスペースを通じて、簡単かつ活発にコラボレーションすることができます。'
+                description: 'Dataloreはチームのためのワークスペースを提供します。チームメンバーはこのワークスペースでノートパソコン、データ、報告書などの資料を共有します。Dataloreが提供するワークスペースを通じて、簡単かつ活発にコラボレーションすることができます。',
+                img: 'datalore03'
             }
         ],
         purchase: {
@@ -3384,11 +3439,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -3424,15 +3479,18 @@ export const iconList = [
         function: [
             {
                 title: 'プロジェクト管理',
-                description: 'YouTrackでチーム別または業務別のプロジェクトを作成します。作成したプロジェクトにユーザーを追加し、それぞれのユーザーに適切な権限を付与することができます。'
+                description: 'YouTrackでチーム別または業務別のプロジェクトを作成します。作成したプロジェクトにユーザーを追加し、それぞれのユーザーに適切な権限を付与することができます。',
+                img: 'youTrack01'
             },
             {
                 title: '知識ベース',
-                description: 'YouTrackは会議メモ、お知らせなどの内部情報を作成し、これを公開することができます。YouTrackのナレッジベースを通じてチームメンバーが知っておくべき情報を簡単に作成し、これを共有します。'
+                description: 'YouTrackは会議メモ、お知らせなどの内部情報を作成し、これを公開することができます。YouTrackのナレッジベースを通じてチームメンバーが知っておくべき情報を簡単に作成し、これを共有します。',
+                img: 'youTrack02'
             },
             {
                 title: '報告書',
-                description: 'YouTrackはイシュー分析を簡単にできるさまざまなレポートを提供します。その中の一つであるタイムラインレポートは、指定された期間中の課題の進行状況を一目で見ることができます。'
+                description: 'YouTrackはイシュー分析を簡単にできるさまざまなレポートを提供します。その中の一つであるタイムラインレポートは、指定された期間中の課題の進行状況を一目で見ることができます。',
+                img: 'youTrack03'
             }
         ],
         purchase: {
@@ -3485,7 +3543,7 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     }
                 ]
@@ -3695,15 +3753,15 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -3751,15 +3809,18 @@ export const iconList = [
         function: [
             {
                 title: 'Gitリポジトリホスティング',
-                description: 'SpaceはGitリポジトリをホストします。Spaceで新しいリポジトリを作成したり、他のGitサービスを使ってリポジトリを作成することができます。'
+                description: 'SpaceはGitリポジトリをホストします。Spaceで新しいリポジトリを作成したり、他のGitサービスを使ってリポジトリを作成することができます。',
+                img: 'space01'
             },
             {
                 title: 'Space Automation',
-                description: 'Space AutomationはSpaceが提供するCI/CDツールです。Space Automationを使ってプロジェクトをビルド、テスト、デプロイします。Space Automationはスクリプトで構成し、Kotlin言語で作成することができます。'
+                description: 'Space AutomationはSpaceが提供するCI/CDツールです。Space Automationを使ってプロジェクトをビルド、テスト、デプロイします。Space Automationはスクリプトで構成し、Kotlin言語で作成することができます。',
+                img: 'space02'
             },
             {
                 title: '開発環境',
-                description: 'SpaceはDev Environmentというリモート開発環境を提供します。Spaceクラウドで実行される仮想マシンがコード処理、コンパイル、ビルドなどのすべての作業を代行します。ユーザーはSpaceクラウドの仮想マシンに接続してIDE(統合開発環境)を使用することができます。'
+                description: 'SpaceはDev Environmentというリモート開発環境を提供します。Spaceクラウドで実行される仮想マシンがコード処理、コンパイル、ビルドなどのすべての作業を代行します。ユーザーはSpaceクラウドの仮想マシンに接続してIDE(統合開発環境)を使用することができます。',
+                img: 'space03'
             }
         ],
         purchase: {
@@ -3916,11 +3977,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -4023,11 +4084,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -4081,15 +4142,18 @@ export const iconList = [
         function: [
             {
                 title: 'コード検査',
-                description: 'Qodanaは、パフォーマンスの問題、コード構造、潜在的なバグなど、さまざまな分野に対して多数のコードチェックを提供します。'
+                description: 'Qodanaは、パフォーマンスの問題、コード構造、潜在的なバグなど、さまざまな分野に対して多数のコードチェックを提供します。',
+                img: 'qodana01'
             },
             {
                 title: 'ライセンス監査',
-                description: 'Qodanaは、プロジェクト開発に使用したフレームワーク、ライブラリのライセンスがプロジェクトのライセンスと互換性がない場合、それを検出してお知らせします。これにより、ライセンスに関する法的な問題を予防することができます。'
+                description: 'Qodanaは、プロジェクト開発に使用したフレームワーク、ライブラリのライセンスがプロジェクトのライセンスと互換性がない場合、それを検出してお知らせします。これにより、ライセンスに関する法的な問題を予防することができます。',
+                img: 'qodana02'
             },
             {
                 title: 'CI/CDツールとの統合',
-                description: 'QodanaはJenkins、GitHub Actions、GitLab、TeamCityなどのCI/CDツールと統合することができます。Qodanaの実行を自動化し、開発プロセスにコード品質チェックを自然に溶け込ませることができます。'
+                description: 'QodanaはJenkins、GitHub Actions、GitLab、TeamCityなどのCI/CDツールと統合することができます。Qodanaの実行を自動化し、開発プロセスにコード品質チェックを自然に溶け込ませることができます。',
+                img: 'qodana03'
             }
         ],
         purchase: {
@@ -4206,11 +4270,11 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     },
                 ]
@@ -4248,15 +4312,18 @@ export const iconList = [
         function: [
             {
                 title: 'ビルド自動化',
-                description: 'TeamCityを使うと、ビルドが特定の条件で自動的に開始するように設定することができます。TeamCityに連動されたVCSに変更を検知するたびに自動的にビルドを開始することができます。 そして、ビルド間の依存関係を構成して、次のビルドが順次実行されるように構成することができます。'
+                description: 'TeamCityを使うと、ビルドが特定の条件で自動的に開始するように設定することができます。TeamCityに連動されたVCSに変更を検知するたびに自動的にビルドを開始することができます。 そして、ビルド間の依存関係を構成して、次のビルドが順次実行されるように構成することができます。',
+                img: 'teamCity01'
             },
             {
                 title: '並列テスト',
-                description: 'TeamCityはテストを複数のビルドエージェントに分散させることができます。これにより、テストを並列に実行することができ、結果として全体的なテスト時間を節約することができます。'
+                description: 'TeamCityはテストを複数のビルドエージェントに分散させることができます。これにより、テストを並列に実行することができ、結果として全体的なテスト時間を節約することができます。',
+                img: 'teamCity02'
             },
             {
                 title: '多様な技術スタックのサポート',
-                description: 'TeamCityは、GitHub、GitLab、SpaceなどのVCSはもちろん、Amazon Web Services、Kubernetes、Google Cloud Platformなどのクラウドなど、さまざまな技術スタックをサポートしています。 特に、TeamCityとDockerの統合により、ビルドからDockerイメージを作成したり、Dockerコンテナでビルドを実行することができます。'
+                description: 'TeamCityは、GitHub、GitLab、SpaceなどのVCSはもちろん、Amazon Web Services、Kubernetes、Google Cloud Platformなどのクラウドなど、さまざまな技術スタックをサポートしています。 特に、TeamCityとDockerの統合により、ビルドからDockerイメージを作成したり、Dockerコンテナでビルドを実行することができます。',
+                img: 'teamCity03'
             }
         ],
         purchase: {
@@ -4311,7 +4378,7 @@ export const iconList = [
                         link: ''
                     },
                     {
-                        text: '購入',
+                        text: 'ご購入',
                         link: '/buy'
                     }
                 ]

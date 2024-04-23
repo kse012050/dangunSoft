@@ -104,7 +104,8 @@
 
 /* 제품 상세 페이지 - 제품 정보 */
 .productDetailPage .infoArea ul li:not(:last-child){margin-bottom: 60px;}
-.productDetailPage .infoArea ul li::before{display: block; margin-bottom: 20px;}
+/* .productDetailPage .infoArea ul li::before{display: block; margin-bottom: 20px;} */
+.productDetailPage .infoArea ul li img{width: 100%; display: block; margin-bottom: 20px;}
 
 
 /* 제품 상세 페이지 - 구매 옵션 */

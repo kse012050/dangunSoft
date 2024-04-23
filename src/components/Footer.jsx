@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer>
             <strong>NATTOSYSTEM</strong>
-            <b>개인정보보호정책</b>
+            <b>プライバシーポリシー</b>
             <address>
                 <dl>
                     <dt>法人番号</dt>

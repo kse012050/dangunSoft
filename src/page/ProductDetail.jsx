@@ -22,7 +22,8 @@ export default function ProductDetail() {
                 <p>{ productData.info }</p>
                 <ul>
                     {productData.function.map((data, i)=>
-                        <li key={i}>
+                        <li key={i} style={{'--img': `../images/productFeatures/${data.img}.png`}}>
+                            <img src={require(`../images/productFeatures/${data.img}.png`)} alt={data.img} />
                             <div>
                                 <strong>{ data.title }</strong>
                                 <p>{ data.description }</p>

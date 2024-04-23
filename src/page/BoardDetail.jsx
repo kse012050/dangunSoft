@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 export default function BoardDetail() {
     return (
         <section>
-            <h2>게시판</h2>
+            <h2>お問い合わせ掲示板</h2>
             <strong>프로모션으로 제품을 구매했는데요~ 문의드려요~ 프로모션으로 제품을 구매했는데요~</strong>
             <dl>
-                <dt>이름</dt>
+                <dt>名前</dt>
                 <dd>홍길동</dd>
             </dl>
             <dl>
-                <dt>기업명</dt>
+                <dt>企業名</dt>
                 <dd>기업명명</dd>
             </dl>
             <div className='detailArea'>
@@ -37,7 +37,7 @@ export default function BoardDetail() {
                 <br/>
                 감사합니다.
             </div>
-            <Link to='/support/board' className='btn-border-black'>목록</Link>
+            <Link to='/support/board' className='btn-border-black'>リスト</Link>
         </section>
     );
 }

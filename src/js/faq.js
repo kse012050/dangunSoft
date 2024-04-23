@@ -10,7 +10,27 @@ export const faqList = [
             },
             {
                 type: 'text',
-                detail: '1. 上記の見積依頼からご希望の商品と数量を選択し、記入します。2.お客様の情報を入力します。3.更新やアップグレードの場合、備考欄にCustomer ID、License IDなどを一緒に入力します。4.確認ボタンをクリックします。5.入力されたメールに見積書と決済リンクをお送りします。6.そのリンクから決済すると、注文が完了します。'
+                detail: '1. 上記の見積依頼からご希望の商品と数量を選択し、記入します。'
+            },
+            {
+                type: 'text',
+                detail: '2.お客様の情報を入力します。'
+            },
+            {
+                type: 'text',
+                detail: '3.更新やアップグレードの場合、備考欄にCustomer ID、License IDなどを一緒に入力します。'
+            },
+            {
+                type: 'text',
+                detail: '4.確認ボタンをクリックします。'
+            },
+            {
+                type: 'text',
+                detail: '5.入力されたメールに見積書と決済リンクをお送りします。'
+            },
+            {
+                type: 'text',
+                detail: '6.そのリンクから決済すると、注文が完了します。'
             }
         ]
     },
@@ -1623,7 +1643,7 @@ export const faqList = [
             },
             {
                 type: 'img',
-                detail: '2段階認証に対応していない古いバージョンのJetBrains製品をアクティベーションするにはどうすればいいですか？01'
+                detail: '2段階認証を無効にするには？01'
             },
             {
                 type: 'text',
@@ -1631,7 +1651,7 @@ export const faqList = [
             },
             {
                 type: 'img',
-                detail: '2段階認証に対応していない古いバージョンのJetBrains製品をアクティベーションするにはどうすればいいですか？02'
+                detail: '2段階認証を無効にするには？02'
             },
             {
                 type: 'text',
@@ -1640,17 +1660,6 @@ export const faqList = [
             {
                 type: 'text',
                 detail: '6. Disable 2FA(2段階認証解除)をクリックします。'
-            },
-        ]
-    },
-    {
-        type: '2 段階認証 (2FA)',
-        search: 'JetBrainsアカウントのヘルプ',
-        title: '',
-        description: [
-            {
-                type: 'text',
-                detail: ''
             },
         ]
     },
@@ -2289,7 +2298,10 @@ export const faqList = [
         description: [
             {
                 type: 'link',
-                detail: '1. https://account.jetbrains.com/에 にログインします。'
+                detail: {
+                    text: '1. https://account.jetbrains.com/에 にログインします。',
+                    link: 'https://account.jetbrains.com/'
+                }
             },
             {
                 type: 'text',
@@ -2573,7 +2585,10 @@ export const faqList = [
         description: [
             {
                 type: 'link',
-                detail: '1. https://account.jetbrains.com/에 にログインします。'
+                detail: {
+                    text: '1. https://account.jetbrains.com/에 にログインします。',
+                    link: 'https://account.jetbrains.com/'
+                }
             },
             {
                 type: 'text',
@@ -2590,6 +2605,400 @@ export const faqList = [
             {
                 type: 'text',
                 detail: '5.Remove(削除)をクリックして不要な管理者を削除することができます。自分の管理者権限を削除するには、Leave(出る)をクリックします。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'JetBrainsのライセンスモデルは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrainsの製品には、サブスクリプションライセンスまたは永久ライセンスが適用されます。まず、サブスクリプションライセンスの場合、お客様はJetBrains製品の月額または年間サブスクリプションを購入することができます。サブスクリプションを更新することで、最新バージョンのJetBrains製品を継続的に使用することができます。 特にIDE（統合開発環境）製品については、365日連続でサブスクリプションを購入すると、フォールバックライセンスを取得することができます。次に、永久ライセンスの場合、お客様は特定のバージョンのJetBrains製品を永久に購入することになります。サポートされていない最新バージョンのJetBrains製品を使用したい場合は、ライセンスのアップグレードが必要です。サブスクリプションライセンスモデルはDatalore Team、Datalore Enterprise、YouTrack Cloud、Space、Qodana、TeamCity Cloudに適用され、永久ライセンスモデルはYouTrack Server、TeamCity On-Premisesに適用されます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'JetBrains Toolboxとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrains Toolboxは、JetBrainsのデスクトップ開発者向けツールです。JetBrains Toolboxは、月額または年間サブスクリプションで利用でき、以下の製品が含まれています。'
+            },
+            {
+                type: 'list',
+                detail: [
+                    'CLion',
+                    'DataGrip',
+                    'dotCover',
+                    'dotMemory',
+                    'dotTrace',
+                    'DataSpell',
+                    'GoLand',
+                    'IntelliJ IDEA',
+                    'PhpStorm',
+                    'PyCharm',
+                    'ReSharper',
+                    'ReSharper C++',
+                    'Rider',
+                    'RubyMine',
+                    'WebStorm',
+                ]
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: '永久フォールバックライセンスとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: '永久フォールバックライセンスは、JetBrains Toolbox（JetBrains Desktop Developer Tools）製品を1年間サブスクリプションした場合に提供されるライセンスです。永久フォールバックライセンスにより、特定のバージョンの製品を永久に使用することができます。JetBrains Toolbox製品の年間サブスクリプションを購入すると、購入時に最新バージョンの永久フォールバックライセンスが提供されます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: '複数のユーザーが同じ商用ライセンスを使用できますか？',
+        description: [
+            {
+                type: 'text',
+                detail: '複数のユーザーが同時に1つのライセンスを使用することはできません。 2人のユーザーが同時に製品を使用する必要がある場合は、それぞれのライセンスを保持する必要がありますが、同時に製品を使用しない場合は、複数のユーザーが1つのライセンスを共有することができます'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'JetBrains AI Serviceとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrains製品のAI機能は、JetBrains AI Serviceを通じて有効になります。JetBrains AI Serviceは、JetBrains製品とLLM（大規模言語モデル）を接続する役割を果たします。 これにより、JetBrains製品内でAI機能を使用することができます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'JetBrains AI Assistantとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrains AI Assistantは、JetBrains AI Serviceを通じて、ユーザーがIDE（統合開発環境）などの製品で利用できるAI機能のコレクションです。JetBrains AI Assistantは、JetBrains製品ごとに異なり、さまざまな機能で開発者を支援します。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'JetBrains AIはどのようなデータをLLMに転送しますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrains AI機能を使用するJetBrains製品は、LLM（大規模言語モデル）にさまざまな情報を送信します。ユーザーが入力したプロンプトだけでなく、コード、ファイル、フレームワークなど、さまざまな情報が含まれます。LLMプロバイダーは、収集したデータを外部と共有することはなく、乱用や誤用がないかどうかを検討するためだけに使用します。JetBrainsは、収集したデータでコードやテキストを作成するモデルを学習させることはなく、JetBrainsはモデルの教育に顧客データを使用するLLMプロバイダーと協力することはありません。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'JetBrains AIのサーバーはどこにありますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrains AIはAWSサーバーを使用しています。現在、JetBrains AIのサーバーはEU（eu-central-1）にあります。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'JetBrains AIのライセンスは、JetBrains製品ごとに購入する必要がありますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrains AIライセンスを購入すると、同じアカウントのすべてのJetBrains製品で使用できます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Code With Me Premiumライセンスはどのように使用するのですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Code With Me Premiumライセンスは、ホスト(ゲストとコーディング環境を共有するユーザー)に割り当てます。ホストは一度に1つのセッションしか開始できません。 したがって、複数のホストが同時にセッションをホストする必要がある場合、ホストはそれぞれのCode With Me Premiumライセンスを保有する必要があります。セッションに参加するゲストは、Code With Me Premiumライセンスは必要ありません。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Code With Me Enterpriseライセンスはどのような方法で使用するのですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Code With Me Enterpriseライセンスは、ホスト（ゲストとコーディング環境を共有するユーザー）に割り当てます。ホストは一度に1つのセッションのみをホストすることができます。Code With Me Enterpriseライセンスは、複数のユーザーが一緒に使用するFloatingライセンスです。したがって、もしホストがすべてのCode With Me Enterpriseライセンスを使用している場合、他のユーザーは待機する必要があります。 そして、Code With Meセッションが終了すると、他のユーザーがこのCode With Me Enterpriseライセンスを使用することができます。セッションに参加するゲストは、Code With Me Enterpriseライセンスは必要ありません。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'どんなIDEでCode With Meを使用できますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Code With Meは、2020.2.1以降のバージョンのIDEで使用できます。Code With Meプラグインは、2021.1バージョン以降のIDEでは基本的に有効化されるため、Code With Meプラグインを手動でインストールする必要はありません。しかし、2021.1バージョン未満のIDEはCode With Meプラグインを手動でインストールする必要があります。Code With Meは、IntelliJ IDEA、WebStorm、PyCharm、PhpStorm、GoLand、RubyMine、CLion、Android Studioで使用できます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'ゲストもIDEが必要ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'セッションに参加するゲストはIDE(統合開発環境)は必要なく、招待リンクがあれば大丈夫です。ゲストは招待リンクに移動してクライアントプログラムをダウンロードし、このクライアントプログラムを通じてCode With Meセッションに参加することができます。Code With MeがサポートされているJetBrains IDEを使用している場合は、IDEから直接セッションに参加できます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Datalore Teamトライアルの機能に違いはありますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Datalore Teamプランを購入する前に14日間、Datalore Teamトライアルを使用することができます。Datalore Teamトライアルは、Datalore Teamプランに比べて機能が制限されます。Datalore Teamトライアルは最大3ユーザーまで利用可能で、ユーザーあたり10GBのストレージを提供します。また、ユーザーあたり336時間のコンピューティング時間が提供されます。また、Datalore Teamトライアルには5つのDataloreクレジットが提供され、別途Dataloreクレジットを購入することはできません。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'CPU時間とGPU時間とは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Dataloreはデータサイエンス作業のためにノートパソコンを作成し、各ノートパソコンごとにAWS EC2システムを通じて作業を処理します。DataloreのCPUおよびGPU時間とは、AWS EC2システムリソースを使用できる時間です。CPUおよびGPU時間は各ユーザーに月単位で提供され、Datalore Teamは750時間、Datalore Enterpriseは無制限に提供されます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Dataloreを社内サーバーにインストールできますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'はい、Datalore Enterpriseを利用すれば、KubernetesまたはDocker技術を介して社内サーバーにDataloreをインストールすることができます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'YouTrack Cloudでディスク容量を追加するにはどうすればよいですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'YouTrack Cloudのディスク容量を追加するには、YouTrack Cloudにユーザーを追加してサブスクリプションをアップグレードする必要があります。YouTrack Cloudにユーザーが1人追加されるごとに3GBのディスク容量が追加されます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'YouTrack Cloudでは、追加ユーザーの料金はどのように計算されますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'YouTrack Cloudは、1年間の使用期間中、毎月最大ユーザー数を確認します。YouTrack Cloudのサブスクリプションが終了する時点で、毎月の超過ユーザー数をすべて合計します。 そして、YouTrack Cloudの月額価格に基づいて追加料金を請求します。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'YouTrack Serverライセンスをアップグレードする場合、価格はどのように計算されますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'YouTrack Serverのライセンスをアップグレードする場合、新しいライセンス価格から既存のライセンス価格を差し引きます。例えば、YouTrack Server 15-User PackからYouTrack Server 100-User Packにアップグレードする場合、YouTrack Server 100-User Packのライセンス価格からYouTrack Server 15-User Packのライセンス価格を差し引いた価格になります。YouTrack Serverライセンスのアップグレードの際は、別途お問い合わせください。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: '1つのYouTrack Serverライセンスで複数のサーバーを設置できますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'YouTrackライセンス契約により、1つのYouTrack Serverライセンスで1つのサーバーのみ実行することができます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Helpdeskエージェントの購入',
+        description: [
+            {
+                type: 'text',
+                detail: 'YouTrack Serverは3人のHelpdeskエージェントを無料で提供します。YouTrack Serverで4人以上のHelpdeskエージェントが必要な場合は、Helpdeskエージェントを購入する必要があります。Helpdeskエージェントを購入する際に注意すべき点は、YouTrack Serverサブスクリプションのユーザー数にHelpdeskエージェントの数も含める必要があるということです。例えば、25人のユーザーのうち20人が一般ユーザーで5人がHelpdeskエージェントである場合、YouTrack Server 25-user packサブスクリプションと5人のHelpdeskエージェントを購入する必要があります。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Space Cloudのリソース(コンピューティングクレジット、ストレージなど)が不足している場合、リソースを追加するにはどうすればよいですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Space Cloudアカウントで超過使用オプションを有効にさせることで、制限を超えてリソースを使用することができます。 そして、翌月に超過使用したリソースに対して料金を支払うことになります。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Space Cloudで非アクティブユーザーの基準は何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Space Cloudは有効なユーザーに対してのみ料金を請求します。有効なユーザーとは、Space Cloudでコンテンツの作成や編集、GitリポジトリへのPush、プロファイルの編集などを行っているユーザーを意味します。もしユーザーが14日間作業を行わない場合、非アクティブユーザーとみなされます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Computation Creditとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Space Cloudは、サブスクリプションオプションごとに一定量のComputation Creditを提供しています。Computation Creditを使用すると、Space CloudでCI/CD作業を行うことができます。Space Cloudで1 Computation Creditは、基本リソースのランナー(ビルドを実行するプログラム)で実行される作業1分に相当します。Space Cloudランナーの基本リソースは2 vCPUsと7800MBメモリであり、この基本リソースで多く使用したリソースを基準にクレジットを請求します。例えば、Space Cloudランナーが0.5 vCPUsと3900MBのメモリを使用している場合、Space Cloudは、より多く使用したリソースであるメモリを基準に1分あたり0.5クレジットを請求します。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'General Creditとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'General CreditはSpace Cloudで使用可能な支払い方法です。General Creditを使用すると、Space Cloudにユーザーを追加することができます。 また、General CreditでComputation Credit、ストレージ、データ転送の超過使用料金を処理することができます。General CreditはJetBrainsで購入できますが、再販、取引、譲渡、交換、払い戻しはできません。 General Creditは実際のお金（""法定通貨"")ではなく、Spaceの使用を停止すると消滅します。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Automation workerとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Automation workerは、Space On-PremisesでCI/CDタスクを実行するデバイスです。Automation workerは、JetBrainsアカウントからSpace On-Premisesサブスクリプションに追加購入することができます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Space EnterpriseサブスクリプションオプションにAll Products Packライセンスは含まれていますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Space EnterpriseのサブスクリプションオプションにはAll Products Packライセンスが含まれており、Space EnterpriseのアクティブなすべてのユーザーにAll Products Packライセンスを提供します。提供したAll Products Packライセンスには、永久フォールバックライセンス(特定のバージョンの製品を永続的に使用できるライセンス)が含まれており、All Products Packライセンスのサブスクリプション期間はSpace Enterpriseのサブスクリプション期間と同様です。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Qodanaでコードを分析する場合、データは安全ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Qodanaの分析は、JetBrainsがホスティング環境では実行されません。 Qodanaの分析はすべてユーザーのCI/CDシステムで実行されるため、CI/CDシステムが適切に保護されていれば、データは安全です。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Qodana Cloudはコード品質チェックを実行しますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'いいえ、コード品質チェックはCIサーバーで実行されます。Qodana Cloudは検査レポートのみを提供します。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Qodanaの請求基準は何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Qodanaは、アクティブコントリビューター(active contributor)の数に応じて費用を支払います。アクティブコントリビューターとは、90日以内にQodana Cloudに登録されたプロジェクトにコミットしたユーザーを意味します。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Build Agentライセンスを購入せずに、Build Configurationだけを別途購入することはできますか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'いいえ、Build ConfigurationはBuild Agentライセンスの一部です。 そのため、Build Agentライセンスを購入しなければ、Build Configurationを取得することはできません。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Commiterとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'TeamCity CloudはCommiterの数量に応じて料金を支払います。TeamCity CloudでCommiterとは、プロジェクトでVCSの変更を作成したユーザーを意味します。TeamCity Cloudのユーザーがプロジェクトで10個のVCS変更を作成するとCommiterとみなされ、30日間活動しない場合、Commiterは回収されます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Build Agentとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'Build Agentは、TeamCityサーバーのコマンドを受信し、実際にビルドプロセスを実行するソフトウェアです。Build Agentはコードを確認し、Build Artifactをダウンロードし、ビルドプロセスを実行します。Build AgentはTeamCityサーバーとは別にインストール、構成されます。'
+            },
+        ]
+    },
+    {
+        type: 'JetBrains製品FAQ',
+        search: 'JetBrains製品FAQ',
+        title: 'Build Creditとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'TeamCity Cloudで購入した各Commiterに対してBuild Creditが提供されます。TeamCity CloudでBuild Creditは、ビルドエージェントを使用するための「通貨」のような役割を果たします。Build Creditは、エージェントがビルドを実行している間、自動的に差し引かれます。'
             },
         ]
     },
@@ -2611,7 +3020,7 @@ export function list(search, page = 1){
         // console.log(list);
     }
     // console.log(list);
-    let totalCount = list.length + 1
+    let totalCount = list.length
 
     list = list.slice(((page - 1) * 10) , page * 10)
     const type = [...new Set(list.map((data)=>data.type))]

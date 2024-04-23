@@ -8,7 +8,7 @@ export default function Buy() {
 
     return (
         <section>
-            <h2>購入</h2>
+            <h2>ご購入</h2>
             <div className='productBox'>
                 <figure>
                     <img src="https://placehold.co/120x120" alt="임시 이미지" />
@@ -90,8 +90,8 @@ export default function Buy() {
                             <label htmlFor="">会社名(英語)</label>
                             <div>
                                 <input type="text" placeholder='会社名(英語)を入力してください'/>
-                                <input type="checkbox" />
-                                <label htmlFor="">個人</label>
+                                {/* <input type="checkbox" />
+                                <label htmlFor="">個人</label> */}
                             </div>
                         </li>
                         <li>

@@ -11,7 +11,7 @@ export default function FAQ() {
     const {totalCount} = list(search, page)
     const [faqList, setFaqList] = useState(list(search, page).faqList)
     const pageInfo = {
-        totalPage: parseInt(totalCount / 10) + 1,
+        totalPage: Number.isInteger(totalCount / 10) ? parseInt(totalCount / 10) : parseInt(totalCount / 10) + 1,
         // totalPage: 12,
         currentPage: parseInt(page) || 1,
     }

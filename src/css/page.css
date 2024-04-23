@@ -142,10 +142,12 @@
 
 /* 제품 상세 페이지 - 제품 정보 */
 .productDetailPage .infoArea h3 + p{color: var(--color-font01);}
-.productDetailPage .infoArea ul li::before{content: ''; aspect-ratio: 740 / 400; background-position: center; background-size: cover;}
-.productDetailPage .infoArea ul li:nth-child(1)::before{background-image: url(../images/productDetail-info01.png);}
+/* .productDetailPage .infoArea ul li::before{content: ''; aspect-ratio: 740 / 400; background-image: var(--img); background-position: center; background-size: cover;} */
+/* .productDetailPage .infoArea ul li:nth-child(1)::before{background-image: url(../images/productFeatures/);}
 .productDetailPage .infoArea ul li:nth-child(2)::before{background-image: url(../images/productDetail-info02.png);}
-.productDetailPage .infoArea ul li:nth-child(3)::before{background-image: url(../images/productDetail-info03.png);}
+.productDetailPage .infoArea ul li:nth-child(3)::before{background-image: url(../images/productDetail-info03.png);} */
+/* .productDetailPage .infoArea ul li img{aspect-ratio: 740 / 400; object-fit: cover;} */
+.productDetailPage .infoArea ul li img{width: 0%; border-radius: 20px;}
 .productDetailPage strong + p{color: var(--color-font02);}
 
 

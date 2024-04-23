@@ -184,11 +184,11 @@ export default function Main() {
                 <ul data-styleidx>
                     <li>
                         <b>Phone</b>
-                        <Link to=''>070-8080-5970</Link>
+                        <Link to='tel:+8207080805970'>070-8080-5970</Link>
                     </li>
                     <li>
                         <b>Email</b>
-                        <Link to=''>sales@nattosystem.com</Link>
+                        <Link to='mailto:sales@nattosystem.com'>sales@nattosystem.com</Link>
                     </li>
                     <li>
                         <b>Address</b>
