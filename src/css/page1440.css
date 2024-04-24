@@ -96,7 +96,8 @@
 
 /* 제품 상세 페이지 - 상단 */
 .productDetailPage .topArea{padding-block: 170px;}
-.productDetailPage .topArea::after{width: 300px; right: calc(var(--contentPadding) + 140px);}
+/* .productDetailPage .topArea::after{width: 300px; right: calc(var(--contentPadding) + 140px);} */
+.productDetailPage .topArea img{width: 300px; right: calc(var(--contentPadding) + 140px);}
 
 
 /* 제품 상세 페이지 - 제품 정보 */

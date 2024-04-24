@@ -51,6 +51,7 @@ export default function Product() {
                     { list.map((data)=>
                         <li style={{'--styleIdx': data.idx}} key={data.idx}>
                             <Link to={`/product/${data.idx}`}>
+                                <img src={require(`../images/products/${data.idx}.svg`)} alt="" />
                                 <b>{ data.title }</b>
                                 <p>{ data.detail }</p>
                                 <ul>

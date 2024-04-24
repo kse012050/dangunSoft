@@ -22,8 +22,11 @@ label{cursor: pointer;}
 :is(input, textarea)::placeholder{color: var(--color-font04);}
 .selectBox{position: relative;}
 .selectBox > button::after{content: ''; aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
+.selectBox > button.placeholder{color: var(--color-font04);}
 .selectBox button{width: 100%; text-align: left;}
-.selectBox div{position: absolute; left: 0; top: calc(100% + 4px); width: 100%; padding-block: 10px; background-color: white; border: 1px solid black; border-radius: 6px; z-index: 1;}
+.selectBox div{max-height: 300px; overflow: auto; position: absolute; left: 0; top: calc(100% + 4px); width: 100%; padding-block: 10px; background-color: white; border: 1px solid black; border-radius: 6px; z-index: 1;}
+.selectBox div::-webkit-scrollbar{width: 8px;}
+.selectBox div::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
 .selectBox div button{line-height: 42px;}
 
 

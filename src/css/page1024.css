@@ -87,7 +87,8 @@
 /* 제품 상세 페이지 - 상단 */
 .productDetailPage .topArea{padding-block: 80px 96px;}
 .productDetailPage .topArea p{max-width: 400px;}
-.productDetailPage .topArea::after{width: max(21.484375%, 220px); right: calc(var(--contentPadding) + 80px);}
+/* .productDetailPage .topArea::after{width: max(21.484375%, 220px); right: calc(var(--contentPadding) + 80px);} */
+.productDetailPage .topArea img{width: max(21.484375%, 220px); right: calc(var(--contentPadding) + 80px);}
 
 
 /* 제품 상세 페이지 - 제품 정보 */

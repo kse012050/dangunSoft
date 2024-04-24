@@ -133,7 +133,7 @@ export const faqList = [
         description: [
             {
                 type: 'text',
-                detail: 'お問い合わせのフォームやメールでお問い合わせください。 (salesメール追加)'
+                detail: 'お問い合わせのフォームやメールでお問い合わせください。 Sales@nattosystem.com'
             }
         ]
     },
@@ -148,7 +148,7 @@ export const faqList = [
             },
             {
                 type: 'text',
-                detail: '(JetBrains年間サブスクリプションの購入日から30日以内の注文に限り、払い戻しが可能です。)'
+                detail: 'JetBrains年間サブスクリプションの購入日から30日以内の注文に限り、払い戻しが可能です。)'
             }
         ]
     },
@@ -273,36 +273,38 @@ export const faqList = [
                 type: 'text',
                 detail: 'アクティブなサブスクリプションの数が20個以上 - 7%割引'
             },
-        ]
-    },
-    {
-        type: 'ライセンスモデルとJetBrains Toolboxについて',
-        search: 'ライセンシングモデルの概要',
-        title: 'JetBrains Toolboxとは何ですか？',
-        description: [
             {
-                type: 'text',
-                detail: 'JetBrains Toolboxは、JetBrainsのデスクトップ開発者向けツールです。JetBrains Toolboxは、月刊または年刊サブスクリプションで利用でき、以下の製品が含まれています。'
-            },
-            {
-                type: 'list',
-                detail: [
-                    'CLion',
-                    'DataGrip',
-                    'dotCover',
-                    'dotMemory',
-                    'dotTrace',
-                    'DataSpell',
-                    'GoLand',
-                    'IntelliJ IDEA',
-                    'PhpStorm',
-                    'PyCharm',
-                    'ReSharper',
-                    'ReSharper C++',
-                    'Rider',
-                    'RubyMine',
-                    'WebStorm',
-                ]
+                type: 'table',
+                detail: {
+                    title: [
+                        [
+                            {
+                                text: '使用サブスクリプション数'
+                            },
+                            {
+                                text: '割引'
+                            }
+                        ]
+                    ],
+                    details: [
+                        [
+                            {
+                                text: '10個以上'
+                            },
+                            {
+                                text: '5%'
+                            }
+                        ],
+                        [
+                            {
+                                text: '20個以上'
+                            },
+                            {
+                                text: '7%'
+                            }
+                        ]
+                    ]
+                }
             },
         ]
     },
@@ -785,7 +787,7 @@ export const faqList = [
             },
             {
                 type: 'text',
-                detail: '(使用中のフォールバックバージョンの確認)'
+                detail: '使用中のフォールバックバージョンの確認)'
             },
             {
                 type: 'img',
@@ -801,7 +803,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(フォールバックバージョンのダウンロード)'
+                detail: 'フォールバックバージョンのダウンロード'
             },
             {
                 type: 'text',
@@ -809,7 +811,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(最新バージョンの削除)'
+                detail: '最新バージョンの削除'
             },
             {
                 type: 'text',
@@ -817,7 +819,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(永続フォールバックバージョンのインストールとアクティベーション)'
+                detail: '永続フォールバックバージョンのインストールとアクティベーション'
             },
             {
                 type: 'text',
@@ -990,6 +992,37 @@ export const faqList = [
         ]
     },
     {
+        type: 'ライセンスモデルとJetBrains Toolboxについて',
+        search: 'ライセンシングモデルの概要',
+        title: 'JetBrains Toolboxとは何ですか？',
+        description: [
+            {
+                type: 'text',
+                detail: 'JetBrains Toolboxは、JetBrainsのデスクトップ開発者向けツールです。JetBrains Toolboxは、月刊または年刊サブスクリプションで利用でき、以下の製品が含まれています。'
+            },
+            {
+                type: 'list',
+                detail: [
+                    'CLion',
+                    'DataGrip',
+                    'dotCover',
+                    'dotMemory',
+                    'dotTrace',
+                    'DataSpell',
+                    'GoLand',
+                    'IntelliJ IDEA',
+                    'PhpStorm',
+                    'PyCharm',
+                    'ReSharper',
+                    'ReSharper C++',
+                    'Rider',
+                    'RubyMine',
+                    'WebStorm',
+                ]
+            },
+        ]
+    },
+    {
         type: '始める',
         search: 'JetBrainsアカウントのヘルプ',
         title: 'どのメールアドレスでJetBrainsアカウントを作成する必要がありますか？',
@@ -1035,7 +1068,7 @@ export const faqList = [
         description: [
             {
                 type: 'title',
-                detail: '(JetBrainsアカウントに別のメールアドレスを接続する方法)'
+                detail: 'JetBrainsアカウントに別のメールアドレスを接続する方法'
             },
             {
                 type: 'text',
@@ -1091,7 +1124,7 @@ export const faqList = [
             },
             {
                 type: 'text',
-                detail: '(アカウントからメールアドレスの紐付けを解除する方法)'
+                detail: 'アカウントからメールアドレスの紐付けを解除する方法)'
             },
             {
                 type: 'text',
@@ -1103,7 +1136,7 @@ export const faqList = [
             },
             {
                 type: 'text',
-                detail: '(接続がアカウントに与える影響)'
+                detail: '接続がアカウントに与える影響)'
             },
             {
                 type: 'text',
@@ -1167,12 +1200,12 @@ export const faqList = [
                 detail: '1.JetBrainsアカウント'
             },
             {
-                type: 'text',
-                detail: '組織のライセンスがユーザーに割り当てられると、ユーザーは新しいJetBrainsアカウントを作成するか、既存のJetBrainsアカウントを使用してJetBrainsアカウントWebサイトでライセンスを確認することができます。個人顧客が所有するライセンスも同様にJetBrainsアカウントのウェブサイトに表示されます。 そのため、個人顧客は、製品を購入したJetBrainsアカウントにログインしてライセンスを確認することができます。'
-            },
-            {
                 type: 'img',
                 detail: 'ライセンスオプション01'
+            },
+            {
+                type: 'text',
+                detail: '組織のライセンスがユーザーに割り当てられると、ユーザーは新しいJetBrainsアカウントを作成するか、既存のJetBrainsアカウントを使用してJetBrainsアカウントWebサイトでライセンスを確認することができます。個人顧客が所有するライセンスも同様にJetBrainsアカウントのウェブサイトに表示されます。 そのため、個人顧客は、製品を購入したJetBrainsアカウントにログインしてライセンスを確認することができます。'
             },
             {
                 type: 'img',
@@ -1332,7 +1365,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '1 段階 - 2FA の設定'
+                detail: 'ステップ1 - 2FA の設定'
             },
             {
                 type: 'text',
@@ -1376,7 +1409,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '2 段階 - 代替のログイン方法を保存する'
+                detail: 'ステップ2 - 代替のログイン方法を保存する'
             },
             {
                 type: 'text',
@@ -1473,8 +1506,8 @@ export const faqList = [
                 detail: '7.リカバリコードを安全な位置に保存します。'
             },
             {
-                type: 'text',
-                detail: '( リカバリコードでログイン)'
+                type: 'title',
+                detail: 'リカバリコードでログイン'
             },
             {
                 type: 'text',
@@ -1490,7 +1523,7 @@ export const faqList = [
             },
             {
                 type: 'text',
-                detail: '(新しいリカバリコードの作成)'
+                detail: '新しいリカバリコードの作成)'
             },
             {
                 type: 'text',
@@ -1521,7 +1554,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(製品が2FAをサポートしていることを確認する)'
+                detail: '製品が2FAをサポートしていることを確認する'
             },
             {
                 type: 'text',
@@ -1552,7 +1585,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(アプリパスワードのコピー)'
+                detail: 'アプリパスワードのコピー'
             },
             {
                 type: 'text',
@@ -1596,7 +1629,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(アプリパスワードでログイン)'
+                detail: 'アプリパスワードでログイン'
             },
             {
                 type: 'text',
@@ -1689,7 +1722,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(役割)'
+                detail: '役割'
             },
             {
                 type: 'text',
@@ -1705,7 +1738,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(APIをアクティベーションする方法)'
+                detail: 'APIをアクティベーションする方法'
             },
             {
                 type: 'text',
@@ -1733,7 +1766,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(APIを無効にする方法)'
+                detail: 'APIを無効にする方法'
             },
             {
                 type: 'text',
@@ -1745,7 +1778,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(APIメソッドにアクセスする方法)'
+                detail: 'APIメソッドにアクセスする方法'
             },
             {
                 type: 'text',
@@ -1785,7 +1818,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(トークンの寿命)'
+                detail: 'トークンの寿命'
             },
             {
                 type: 'text',
@@ -2188,7 +2221,7 @@ export const faqList = [
         description: [
             {
                 type: 'title',
-                detail: '(利用可能なライセンスを割り当てるには)'
+                detail: '利用可能なライセンスを割り当てるには'
             },
             {
                 type: 'text',
@@ -2219,7 +2252,7 @@ export const faqList = [
         description: [
             {
                 type: 'title',
-                detail: '(一括招待を作成するには)'
+                detail: '一括招待を作成するには'
             },
             {
                 type: 'text',
@@ -2259,7 +2292,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(招待リンクを使用してライセンスをリクエストする方法)'
+                detail: '招待リンクを使用してライセンスをリクエストする方法'
             },
             {
                 type: 'text',
@@ -2275,7 +2308,7 @@ export const faqList = [
             },
             {
                 type: 'title',
-                detail: '(ライセンスが割り当てられたチームを確認する方法)'
+                detail: 'ライセンスが割り当てられたチームを確認する方法'
             },
             {
                 type: 'text',
@@ -2605,70 +2638,6 @@ export const faqList = [
             {
                 type: 'text',
                 detail: '5.Remove(削除)をクリックして不要な管理者を削除することができます。自分の管理者権限を削除するには、Leave(出る)をクリックします。'
-            },
-        ]
-    },
-    {
-        type: 'JetBrains製品FAQ',
-        search: 'JetBrains製品FAQ',
-        title: 'JetBrainsのライセンスモデルは何ですか？',
-        description: [
-            {
-                type: 'text',
-                detail: 'JetBrainsの製品には、サブスクリプションライセンスまたは永久ライセンスが適用されます。まず、サブスクリプションライセンスの場合、お客様はJetBrains製品の月額または年間サブスクリプションを購入することができます。サブスクリプションを更新することで、最新バージョンのJetBrains製品を継続的に使用することができます。 特にIDE（統合開発環境）製品については、365日連続でサブスクリプションを購入すると、フォールバックライセンスを取得することができます。次に、永久ライセンスの場合、お客様は特定のバージョンのJetBrains製品を永久に購入することになります。サポートされていない最新バージョンのJetBrains製品を使用したい場合は、ライセンスのアップグレードが必要です。サブスクリプションライセンスモデルはDatalore Team、Datalore Enterprise、YouTrack Cloud、Space、Qodana、TeamCity Cloudに適用され、永久ライセンスモデルはYouTrack Server、TeamCity On-Premisesに適用されます。'
-            },
-        ]
-    },
-    {
-        type: 'JetBrains製品FAQ',
-        search: 'JetBrains製品FAQ',
-        title: 'JetBrains Toolboxとは何ですか？',
-        description: [
-            {
-                type: 'text',
-                detail: 'JetBrains Toolboxは、JetBrainsのデスクトップ開発者向けツールです。JetBrains Toolboxは、月額または年間サブスクリプションで利用でき、以下の製品が含まれています。'
-            },
-            {
-                type: 'list',
-                detail: [
-                    'CLion',
-                    'DataGrip',
-                    'dotCover',
-                    'dotMemory',
-                    'dotTrace',
-                    'DataSpell',
-                    'GoLand',
-                    'IntelliJ IDEA',
-                    'PhpStorm',
-                    'PyCharm',
-                    'ReSharper',
-                    'ReSharper C++',
-                    'Rider',
-                    'RubyMine',
-                    'WebStorm',
-                ]
-            },
-        ]
-    },
-    {
-        type: 'JetBrains製品FAQ',
-        search: 'JetBrains製品FAQ',
-        title: '永久フォールバックライセンスとは何ですか？',
-        description: [
-            {
-                type: 'text',
-                detail: '永久フォールバックライセンスは、JetBrains Toolbox（JetBrains Desktop Developer Tools）製品を1年間サブスクリプションした場合に提供されるライセンスです。永久フォールバックライセンスにより、特定のバージョンの製品を永久に使用することができます。JetBrains Toolbox製品の年間サブスクリプションを購入すると、購入時に最新バージョンの永久フォールバックライセンスが提供されます。'
-            },
-        ]
-    },
-    {
-        type: 'JetBrains製品FAQ',
-        search: 'JetBrains製品FAQ',
-        title: '複数のユーザーが同じ商用ライセンスを使用できますか？',
-        description: [
-            {
-                type: 'text',
-                detail: '複数のユーザーが同時に1つのライセンスを使用することはできません。 2人のユーザーが同時に製品を使用する必要がある場合は、それぞれのライセンスを保持する必要がありますが、同時に製品を使用しない場合は、複数のユーザーが1つのライセンスを共有することができます'
             },
         ]
     },

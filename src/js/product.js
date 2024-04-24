@@ -91,6 +91,7 @@ export const tabList = [
         type: [
             'AI Assistant',
             'Code With Me',
+            'JetBrains AI'
         ]
     },
     {
@@ -167,7 +168,7 @@ export const iconList = [
         function: [
             {
                 title: '経済的なコストと簡単なライセンス管理',
-                description: 'dotUltimateは、Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ製品です。 dotUltimateを使用すると、.NET Framework、.NET Core、Unityなど、すべての.NET開発分野でサポートを受けることができます。',
+                description: 'All Products Packは、JetBrainsのすべてのデスクトップツールをまとめたパッケージ製品です。All Products Packでは、JetBrainsのすべてのデスクトップツールを2つの製品価格でご利用いただけます。',
                 img: 'AllProductsPack01'
             }
         ],
@@ -3514,7 +3515,7 @@ export const iconList = [
                         text: 'User'
                     },
                     {
-                        text: '최대 $44 / user\n(VAT 込み価格 $48.40)'
+                        text: '$44 / user\n(VAT 込み価格 $48.40)'
                     },
                 ],
                 [

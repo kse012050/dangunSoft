@@ -228,7 +228,7 @@ export default function Main() {
                          <input type="submit"  value='確認'/>
                     </fieldset>
                 </form>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.208763150456!2d139.78802818820756!3d35.64722786119988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018899618e75f09%3A0x9024041a7f367e9a!2z5pel5pys44CB44CSMTM1LTAwNjEg5p2x5Lqs6YO95rGf5p2x5Yy66LGK5rSy77yW5LiB55uu77yS4oiS77yT77yRIOOCueOCq-OCpOOCuuOCv-ODr-ODvCbjgqzjg7zjg4fjg7MgMTkxNw!5e0!3m2!1sja!2skr!4v1712521574682!5m2!1sja!2skr" title='東京都江東区豊洲六丁目２番３１－１９１７号' loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.24431736511!2d139.72150827625802!3d35.670985730535854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c82fbd6ae09%3A0xee70acf788450c72!2z5pel5pys44CB44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yS5LiB55uu77yS4oiS77yYIERG44OT44Or!5e0!3m2!1sja!2skr!4v1713921721212!5m2!1sja!2skr"></iframe>
             </section>
         </>
     );

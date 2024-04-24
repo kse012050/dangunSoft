@@ -60,7 +60,7 @@ export default function Solution() {
             <section className='purchaseBox-black'>
                 <h3>購入オプション</h3>
                 <div>
-                    <b><span>業務用	個人用</span></b>
+                    <b><span>業務用</span></b>
                     <ul>
                         <li title='新規購入'>
                             <span>
@@ -76,7 +76,7 @@ export default function Solution() {
                     </ul>
                 </div>
                 <div>
-                    <b><span>業務用	個人用</span></b>
+                    <b><span>個人用</span></b>
                     <ul>
                         <li title='新規購入'>
                             <span>

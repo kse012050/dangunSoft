@@ -14,6 +14,7 @@ export default function ProductDetail() {
                 <p>
                     { productData.summary }
                 </p>
+                <img src={require(`../images/products/${productIdx}.svg`)} alt="" />
                 <EstimateLink />
             </section>
 

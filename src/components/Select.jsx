@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Select() {
+export default function Select({ placeholder, list }) {
     const [isActive, setIsActive] = useState(false);
+    const [selected, setSelected] = useState()
 
     useEffect(()=>{
         document.querySelector('body').addEventListener('click',bodyClick)
@@ -23,11 +24,12 @@ export default function Select() {
 
     return (
         <div className='selectBox'>
-            <button type="button" onClick={selectOpen}>test</button>
+            <button type="button" onClick={selectOpen} className={selected ? '' : 'placeholder'}>{ selected || placeholder}</button>
             { isActive && 
                 <div>
-                    <button type="button" onClick={()=>setIsActive(false)}>test</button>
-                    <button type="button" onClick={()=>setIsActive(false)}>test</button>
+                    {list.map((data, i)=>
+                        <button key={i} type="button" onClick={()=>{setIsActive(false);setSelected(data)}}>{ data }</button>
+                    )}
                 </div>
             }
         </div>
