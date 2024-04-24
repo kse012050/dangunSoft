@@ -11,10 +11,10 @@ export default function Buy() {
             <h2>ご購入</h2>
             <div className='productBox'>
                 <figure>
-                    <img src="https://placehold.co/120x120" alt="임시 이미지" />
+                    <img src={require('../images/intelliJ.png')} alt="임시 이미지" />
                     <figcaption>
-                        <strong>Mindiet MindManager Single New License</strong>
-                        <p>475,000원</p>
+                        <strong>IntelliJ IDEA商業用2年</strong>
+                        <p>475,000円</p>
                         <div>
                             <button>-</button>
                             1

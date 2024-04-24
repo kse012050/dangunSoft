@@ -21,7 +21,7 @@ export default function Footer() {
                 </dl>
                 <p>東京都港区南 青山 2-2-8 DF ビル 6F</p>
             </address>
-            <p>http://www.nattosystem.com</p>
+            <p>https://www.nattosystem.com</p>
             <ul data-styleidx>
                 <li><Link to=''>TWITTER</Link></li>
                 <li><Link to=''>LINE</Link></li>

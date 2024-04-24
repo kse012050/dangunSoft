@@ -26,32 +26,32 @@ export default function Board() {
                 </div>
                 <ul data-none='登録されたお問い合わせはありません。'>
                     <li>
-                        <Link to='' onClick={isLock && test} className='lack'>
-                            <span>999</span>
-                            <p>프로모션으로 제품을 구매했는데요~ 문의드려요~ </p>
-                            <span>홍길동</span>
+                        <Link to='' onClick={isLock && test} className='lack answer'>
+                            <span>1</span>
+                            <p>ライセンスはいつ発行されますか？</p>
+                            <span>山田</span>
                             <time>2024-03-27</time>
                         </Link>
                     </li>
                     <li>
-                        <Link to='/support/board/0'>
-                            <span>999</span>
-                            <p>프로모션으로 제품을 구매했는데요~ 문의드려요~ </p>
-                            <span>홍길동</span>
+                        <Link to='/support/board/0' onClick={isLock && test} className='lack'>
+                            <span>2</span>
+                            <p>キャンセル要請</p>
+                            <span>田中</span>
                             <time>2024-03-27</time>
                         </Link>
                     </li>
                 </ul>
             </div>
 
-            <div className='paginationBox'>
+            {/* <div className='paginationBox'>
                 <Link to=''>이전</Link>
                 <ol>
                     <li><Link to='' className='active'>1</Link></li>
                     <li><Link to=''>2</Link></li>
                 </ol>
                 <Link to=''>다음</Link>
-            </div>
+            </div> */}
 
             <Link to='/support/inquiry' className='btn-bg'>お問い合わせ</Link>
 
@@ -60,7 +60,7 @@ export default function Board() {
                     <div onClick={(e)=>e.stopPropagation()}>
                         <p>パスワードを入力してください。</p>
                         <input type="password" />
-                        <button onClick={()=>setPopup(false)}>확인</button>
+                        <button onClick={()=>setPopup(false)}>確認</button>
                         <button onClick={()=>setPopup(false)}>닫기</button>
                     </div>
                 </div>

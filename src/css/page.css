@@ -212,6 +212,7 @@
 .boardPage section .boardBox :where(div, ul li a){display: flex;}
 .boardPage section .boardBox :is(div, ul li a) > *:not(p){text-align: center;}
 .boardPage section .boardBox > ul li a.lack p{background: url(../images/icon-lock.png) no-repeat right center / 22px;}
+.boardPage section .boardBox > ul li a.answer p::after{content: ' 回答済み'; color: var(--color-point); word-break: keep-all;}
 .boardPage section .btn-bg{display: block;}
 
 
