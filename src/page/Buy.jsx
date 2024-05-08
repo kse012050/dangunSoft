@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Buy() {
     const navigate = useNavigate();
     const [test, setTest] = useState(true)
+    const [test2, setTest2] = useState()
 
     return (
         <section>
@@ -97,7 +98,7 @@ export default function Buy() {
                         <li>
                             <label htmlFor="">郵便番号</label>
                             <div>
-                                <Select />
+                                <Select set={setTest2} disabled placeholder='郵便番号検索'/>
                             </div>
                         </li>
                         <li>

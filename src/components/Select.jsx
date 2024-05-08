@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Select({ placeholder, list }) {
+export default function Select({ placeholder, list, set, name, disabled}) {
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState()
 
@@ -12,11 +12,16 @@ export default function Select({ placeholder, list }) {
         }
     },[])
 
+    useEffect(()=>{
+        set((prev)=> ({...prev, [name]: ''}))
+    },[])
+
     const bodyClick = () =>{
         setIsActive(false)
     }
 
     const selectOpen = (e)=>{
+        if(disabled) return;
         e.preventDefault();
         e.stopPropagation();
         setIsActive((prev)=>!prev)
@@ -28,7 +33,11 @@ export default function Select({ placeholder, list }) {
             { isActive && 
                 <div>
                     {list.map((data, i)=>
-                        <button key={i} type="button" onClick={()=>{setIsActive(false);setSelected(data)}}>{ data }</button>
+                        <button key={i} type="button" onClick={()=>{
+                            setIsActive(false);
+                            setSelected(data); 
+                            set((prev)=> ({...prev, [name]: data}))}
+                        }>{ data }</button>
                     )}
                 </div>
             }

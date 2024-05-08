@@ -1,70 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from '../components/Select';
 import { useNavigate } from 'react-router-dom';
 
+import { productsList } from '../js/product'
+
 export default function Estimate() {
     const navigate = useNavigate();
+    const [productSelect, setProductSelect] = useState({
+        'company': '',
+        'product': '',
+        'option': '',
+        'quantity': '',
+    })
+
+    const arr = productsList.filter((data)=> data.name === productSelect.product)[0]
+    const option = arr?.option
+    const test = arr?.quantity?.[productSelect.option] ? arr?.quantity[productSelect.option].min : '1'
+
+    useEffect(()=>{
+        setProductSelect((prev)=>({...prev, 'quantity': arr?.quantity?.[productSelect.option] ? arr?.quantity[productSelect.option].min : '1'}))
+    },[productSelect.option])
+
+    const test01 = arr?.quantity ? arr?.quantity[productSelect.option]?.text : '';
+    // useEffect(()=>{
+
+    // },[productSelect.quantity])
 
     return (
         <section>
-            <h2>お見積もり</h2>
+            <h2 onClick={()=>console.log(productSelect)}>お見積もり</h2>
             <form>
                 <fieldset className='inputBox-product'>
                     <ul>
                         <li>
                             <label htmlFor="">メーカー</label>
                             <div>
-                                <Select placeholder="メーカー選択" list={['JetBrains']}/>
+                                <Select placeholder="メーカー選択" list={['JetBrains']} set={setProductSelect} name='company'/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="">製品</label>
                             <div>
                                 <div>
-                                    <Select placeholder="製品選択" list={
-                                        [
-                                            'Clion 商業用',
-                                            'DataGrip 商業用',
-                                            'DataSpell 商業用',
-                                            'GoLand 商業用',
-                                            'IntelliJ IDEA 商業用',
-                                            'PhpStorm 商業用',
-                                            'PyCharm 商業用',
-                                            'Rider 商業用',
-                                            'RubyMine 商業用',
-                                            'WebStorm 商業用',
-                                            'ReSharper 商業用',
-                                            'ReSharper C++ 商業用dotCover 商業用',
-                                            'dotMemory 商業用',
-                                            'dotTrace 商業用',
-                                            'All Products Pack 商業用',
-                                            'dotUltimate 商業用',
-                                            'JetBrains AI 商業用',
-                                            'Code With Me 商業用Datalore 商業用YouTrack Cloud',
-                                            'YouTrack ServerYouTrack Server 有効期限内の更新YouTrack Server 有効期限後の更新Space CloudSpace On-Premises',
-                                            'Qodana Ultimate',
-                                            'Qodana Ultimate Plus',
-                                            'TeamCity CloudTeamCity EnterpriseTeamCity Enterprise 有効期限内の更新TeamCity Enterprise 有効期限後の更新Clion 個人用',
-                                            'DataGrip 個人用',
-                                            'DataSpell 個人用',
-                                            'GoLand 個人用',
-                                            'IntelliJ IDEA 個人用',
-                                            'PhpStorm 個人用',
-                                            'PyCharm 個人用',
-                                            'Rider 個人用',
-                                            'RubyMine 個人用',
-                                            'WebStorm 個人用',
-                                            'ReSharper 個人用',
-                                            'ReSharper C++ 個人用',
-                                            'dotCover 個人用',
-                                            'dotMemory 個人用',
-                                            'dotTrace 個人用',
-                                            'All Products Pack 個人用',
-                                            'dotUltimate 個人用',
-                                            'JetBrains AI 個人用',
-                                            'Code With Me 個人用',
-                                        ]
-                                    }/>
+                                    <Select placeholder="製品選択" list={productsList.map((data)=>data.name)} set={setProductSelect} name='product' disabled={!productSelect.company}/>
                                 </div>
                             </div>
                         </li>
@@ -72,21 +50,18 @@ export default function Estimate() {
                             <label htmlFor="">オプション</label>
                             <div>
                                 <div>
-                                    <Select placeholder="選択" list={
-                                        [
-                                            '1年',
-                                            '2年',
-                                            '3年',
-                                        ]
-                                    }/>
+                                    <Select placeholder="選択" key={productSelect.product} list={option} set={setProductSelect} name='option' disabled={!productSelect.product}/>
                                 </div>
                             </div>
                         </li>
                         <li className='half'>
                             <label htmlFor="">数量</label>
                             <div>
-                                <input type="number" min="1" defaultValue="1"/>
+                                <input type="number" min={productSelect.option && productSelect?.quantity} value={productSelect.option && productSelect?.quantity} onChange={(e)=>setProductSelect((prev)=>({...prev, 'quantity': e.target.value}))} disabled={!productSelect.option}/>
                             </div>
+                            { test01 && 
+                                <small>{ test01 }</small>
+                            }
                         </li>
                         <li>
                             <label htmlFor="">サブスクリプション·オプション</label>

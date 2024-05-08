@@ -4541,3 +4541,518 @@ export const iconList = [
         ]
     }
 ]
+
+
+
+const commonProductOption = [
+    '1年',
+    '2年',
+    '3年'
+]
+
+const productOptionDotUltimate = commonProductOption.map((data)=> 'dotUltimate' + data)
+
+export const productsList = [
+    {
+        name: 'Clion 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'DataGrip 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'DataSpell 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'GoLand 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'IntelliJ IDEA 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'PhpStorm 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'PyCharm 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'Rider 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'RubyMine 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'WebStorm 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'ReSharper 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'ReSharper C++ 商業用',
+        option: [
+            'ReSharper 1年',
+            'ReSharper 2年',
+            'ReSharper 3年',
+            'dotUltimate 1年',
+            'dotUltimate 2年',
+            'dotUltimate 3年',
+        ]
+    }, 
+    {
+        name: 'dotCover 商業用',
+        option: productOptionDotUltimate,
+        min: 1
+    }, 
+    {
+        name: 'dotMemory 商業用',
+        option: productOptionDotUltimate,
+        min: 1
+    }, 
+    {
+        name: 'dotTrace 商業用',
+        option: productOptionDotUltimate,
+        min: 1
+    }, 
+    {
+        name: 'All Products Pack 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'dotUltimate 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'JetBrains AI 商業用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'Code With Me 商業用',
+        option: [
+            'Premium 1年',
+            'Premium 2年',
+            'Premium 3年',
+            'Enterprise 1年',
+            'Enterprise 2年',
+            'Enterprise 3年',
+        ],
+        quantity: {
+            'Enterprise 1年': {
+                min: 10,
+                text: '호스트'
+            },
+            'Enterprise 2年': {
+                min: 10,
+                text: '호스트'
+            },
+            'Enterprise 3年': {
+                min: 10,
+                text: '호스트'
+            },
+        }
+    }, 
+    {
+        name: 'Datalore 商業用',
+        option: [
+            'Team 1年',
+            'Enterprise 1年',
+            'Enterprise 2年',
+            'Enterprise 3年',
+        ],
+        quantity: {
+            'Team 1年': {
+                min: 3,
+                text: '유저'
+            },
+            'Enterprise 1年': {
+                min: 5,
+                text: '유저'
+            },
+            'Enterprise 2年': {
+                min: 5,
+                text: '유저'
+            },
+            'Enterprise 3年': {
+                min: 5,
+                text: '유저'
+            },
+        }
+    }, 
+    {
+        name: 'YouTrack Cloud',
+        option: [
+            'User',
+            'Agent',
+        ],
+        quantity: {
+            'User': {
+                min: 11,
+                text: '유저'
+            },
+            'Agent': {
+                min: 3,
+                text: '에이전트'
+            },
+        }
+    }, 
+    {
+        name: 'YouTrack Server',
+        option: [
+            '15ユーザー 1年',
+            '25ユーザー 1年',
+            '50ユーザー 1年',
+            '100ユーザー 1年',
+            '250ユーザー 1年',
+            '500ユーザー 1年',
+            '750ユーザー 1年',
+            '1000ユーザー 1年',
+            '2000ユーザー 1年',
+            '15ユーザー 2年',
+            '25ユーザー 2年',
+            '50ユーザー 2年',
+            '100ユーザー 2年',
+            '250ユーザー 2年',
+            '500ユーザー 2年',
+            '750ユーザー 2年',
+            '1000ユーザー 2年',
+            '2000ユーザー 2年',
+            '15ユーザー 3年',
+            '25ユーザー 3年',
+            '50ユーザー 3年',
+            '100ユーザー 3年',
+            '250ユーザー 3年',
+            '500ユーザー 3年',
+            '750ユーザー 3年',
+            '1000ユーザー 3年',
+            '2000ユーザー 3年',
+            'Agent',
+        ],
+        quantity: {
+            'Agent': {
+                min: 3,
+                text: '에이전트'
+            },
+        }
+    }, 
+    {
+        name: 'YouTrack Server 有効期限内の更新',
+        option: [
+            '15ユーザー 1年',
+            '25ユーザー 1年',
+            '50ユーザー 1年',
+            '100ユーザー 1年',
+            '250ユーザー 1年',
+            '500ユーザー 1年',
+            '750ユーザー 1年',
+            '1000ユーザー 1年',
+            '2000ユーザー 1年',
+            '15ユーザー 2年',
+            '25ユーザー 2年',
+            '50ユーザー 2年',
+            '100ユーザー 2年',
+            '250ユーザー 2年',
+            '500ユーザー 2年',
+            '750ユーザー 2年',
+            '1000ユーザー 2年',
+            '2000ユーザー 2年',
+            '15ユーザー 3年',
+            '25ユーザー 3年',
+            '50ユーザー 3年',
+            '100ユーザー 3年',
+            '250ユーザー 3年',
+            '500ユーザー 3年',
+            '750ユーザー 3年',
+            '1000ユーザー 3年',
+            '2000ユーザー 3年',
+            'Agent',
+        ],
+        quantity: {
+            'Agent': {
+                min: 3,
+                text: '에이전트'
+            },
+        }
+    }, 
+    {
+        name: 'YouTrack Server 有効期限後の更新',
+        option: [
+            '15ユーザー 1年',
+            '25ユーザー 1年',
+            '50ユーザー 1年',
+            '100ユーザー 1年',
+            '250ユーザー 1年',
+            '500ユーザー 1年',
+            '750ユーザー 1年',
+            '1000ユーザー 1年',
+            '2000ユーザー 1年',
+            '15ユーザー 2年',
+            '25ユーザー 2年',
+            '50ユーザー 2年',
+            '100ユーザー 2年',
+            '250ユーザー 2年',
+            '500ユーザー 2年',
+            '750ユーザー 2年',
+            '1000ユーザー 2年',
+            '2000ユーザー 2年',
+            '15ユーザー 3年',
+            '25ユーザー 3年',
+            '50ユーザー 3年',
+            '100ユーザー 3年',
+            '250ユーザー 3年',
+            '500ユーザー 3年',
+            '750ユーザー 3年',
+            '1000ユーザー 3年',
+            '2000ユーザー 3年',
+            'Agent',
+        ],
+        quantity: {
+            'Agent': {
+                min: 3,
+                text: '에이전트'
+            },
+        }
+    }, 
+    {
+        name: 'Space Cloud',
+        option: [
+            'Team 1年',
+            'Organization 1年',
+            'Enterprise 1年',
+            'General Credit',
+        ],
+        quantity: {
+            'Organization 1年': {
+                min: 5,
+                text: '유저'
+            },
+            'Enterprise 1年': {
+                min: 10,
+                text: '유저'
+            },
+        }
+    }, 
+    {
+        name: 'Space On-Premises',
+        option: [
+            'Organization 1年',
+            'Enterprise 1年',
+            'Worker',
+        ],
+        quantity: {
+            'Organization 1年': {
+                min: 5,
+                text: '유저'
+            },
+            'Enterprise 1年': {
+                min: 50,
+                text: '유저'
+            },
+        }
+    }, 
+    {
+        name: 'Qodana Ultimate',
+        option: commonProductOption,
+        quantity: {
+            '1年': {
+                min: 3,
+                text: 'contributor'
+            },
+            '2年': {
+                min: 3,
+                text: 'contributor'
+            },
+            '3年': {
+                min: 3,
+                text: 'contributor'
+            },
+        }
+    }, 
+    {
+        name: 'Qodana Ultimate Plus',
+        option: commonProductOption,
+        quantity: {
+            '1年': {
+                min: 3,
+                text: 'contributor'
+            },
+            '2年': {
+                min: 3,
+                text: 'contributor'
+            },
+            '3年': {
+                min: 3,
+                text: 'contributor'
+            },
+        }
+    }, 
+    {
+        name: 'TeamCity Cloud',
+        option: [
+            '1年',
+            '25000 Build Credits Pack',
+        ],
+        quantity: {
+            '1年': {
+                min: 3,
+                text: 'commiter'
+            },
+        }
+    }, 
+    {
+        name: 'TeamCity Enterprise',
+        option: [
+            '1年',
+            'Agent',
+        ],
+        quantity: {
+            'Agent': {
+                min: 3,
+                text: 'agent'
+            },
+        }
+    }, 
+    {
+        name: 'TeamCity Enterprise 有効期限内の更新',
+        option: [
+            '3 Build Agent',
+            '5 Build Agent',
+            '10 Build Agent',
+            '20 Build Agent',
+            '50 Build Agent',
+            '100 Build Agent',
+        ],
+        min: 1
+    }, 
+    {
+        name: 'TeamCity Enterprise 有効期限後の更新',
+        option: [
+            '3 Build Agent',
+            '5 Build Agent',
+            '10 Build Agent',
+            '20 Build Agent',
+            '50 Build Agent',
+            '100 Build Agent',
+        ],
+        min: 1
+    }, 
+    {
+        name: 'Clion 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'DataGrip 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'DataSpell 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'GoLand 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'IntelliJ IDEA 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'PhpStorm 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'PyCharm 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'Rider 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'RubyMine 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'WebStorm 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'ReSharper 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'ReSharper C++ 個人用',
+        option: [
+            'ReSharper 1年',
+            'ReSharper 2年',
+            'ReSharper 3年',
+            'dotUltimate 1年',
+            'dotUltimate 2年',
+            'dotUltimate 3年',
+        ],
+        min: 1
+    }, 
+    {
+        name: 'dotCover 個人用',
+        option: productOptionDotUltimate,
+        min: 1
+    }, 
+    {
+        name: 'dotMemory 個人用',
+        option: productOptionDotUltimate,
+        min: 1
+    }, 
+    {
+        name: 'dotTrace 個人用',
+        option: productOptionDotUltimate,
+        min: 1
+    }, 
+    {
+        name: 'All Products Pack 個人用',
+        option: commonProductOption,
+        min: 1
+    }, 
+    {
+        name: 'dotUltimate 個人用',
+        option: commonProductOption,
+        min: 1
+    },
+    {
+        name: 'Code With Me 個人用',
+        option: commonProductOption,
+        min: 1
+    }
+]
