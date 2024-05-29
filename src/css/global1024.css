@@ -45,6 +45,13 @@ br[class]:not([class*="tablet"]){display: none;}
 
 /* 푸터 */
 footer strong{font-size: 20px;}
-footer b{font-size: 15px;}
-footer address{font-weight: 14px; margin-bottom: 9px;}
+/* footer b{font-size: 15px;} */
+footer ul.privacyBox{font-size: 15px;}
+footer address{font-size: 14px; margin-bottom: 9px;}
 footer > p{font-size: 14px; line-height: 22px;}
+
+:is(.privacyPage, .commercePage) > div{padding-block: 110px;}
+:is(.privacyPage, .commercePage) > div h2{font-size: 44px; line-height: 54px; margin-bottom: 30px;}
+:is(.privacyPage, .commercePage) > div strong{font-size: 28px; line-height: 36px; margin-block: 20px 10px;}
+:is(.privacyPage, .commercePage) > div p{font-size: 18px; line-height: 26px; margin-block: 5px;}
+:is(.privacyPage, .commercePage) > div ol{font-size: 18px; line-height: 26px;}

@@ -63,6 +63,7 @@ textarea{padding-block: 20px;}
 
 /* 푸터 */
 footer{--minSpacing: 24px; display: flex; flex-wrap: wrap; justify-content: space-between;}
-footer strong{margin-bottom: 15px;}
+footer strong{margin-bottom: 15px; width: 50%;}
+footer ul.privacyBox{width: 50%; justify-content: flex-end;}
 footer address{width: 100%; line-height: 22px;}
 footer > p{align-self: flex-end;}

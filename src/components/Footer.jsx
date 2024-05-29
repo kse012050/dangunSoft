@@ -5,7 +5,11 @@ export default function Footer() {
     return (
         <footer>
             <strong>NATTOSYSTEM</strong>
-            <b>プライバシーポリシー</b>
+            {/* <b>プライバシーポリシー</b> */}
+            <ul className='privacyBox'>
+                <li><Link to='/privacy'>プライバシーポリシー</Link></li>
+                <li><Link to='/commerce'>特定商取引に関する法律に基づく表示</Link></li>
+            </ul>
             <address>
                 <dl>
                     <dt>法人番号</dt>
@@ -22,7 +26,7 @@ export default function Footer() {
                 <p>東京都港区南 青山 2-2-8 DF ビル 6F</p>
             </address>
             <p>https://www.nattosystem.com</p>
-            <ul data-styleidx>
+            <ul className='snsBox' data-styleidx>
                 <li><Link to=''>TWITTER</Link></li>
                 <li><Link to=''>LINE</Link></li>
             </ul>

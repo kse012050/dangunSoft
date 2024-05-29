@@ -104,3 +104,9 @@ footer strong{font-size: 24px; line-height: 30px;}
 footer b{font-size: 16px; line-height: 20px;}
 footer address{font-size: 15px; margin-bottom: 3px;}
 footer > p{font-size: 15px; line-height: 20px;}
+
+:is(.privacyPage, .commercePage) > div{padding-block: 170px;}
+:is(.privacyPage, .commercePage) > div h2{font-size: 50px; line-height: 60px; margin-bottom: 40px;}
+:is(.privacyPage, .commercePage) > div strong{font-size: 32px; line-height: 40px; margin-block: 30px 15px;}
+:is(.privacyPage, .commercePage) > div p{font-size: 20px; line-height: 29px; margin-block: 10px;}
+:is(.privacyPage, .commercePage) > div ol{font-size: 20px; line-height: 29px;}

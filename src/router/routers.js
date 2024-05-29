@@ -11,6 +11,8 @@ import Estimate from "../page/Estimate";
 import Buy from "../page/Buy";
 import EstimateResult from "../page/EstimateResult";
 import BuyResult from "../page/BuyResult";
+import Privacy from "../page/Privacy";
+import Commerce from "../page/Commerce";
 
 export const routers = [
     {
@@ -73,6 +75,20 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <BuyResult/> },
+        ]
+    },
+    {
+        path: '/privacy',
+        element: <Root />,
+        children: [
+            { index: true, element: <Privacy/> },
+        ]
+    },
+    {
+        path: '/commerce',
+        element: <Root />,
+        children: [
+            { index: true, element: <Commerce/> },
         ]
     },
 ]

@@ -66,9 +66,17 @@ textarea{padding-block: 14px;}
 /* 푸터 */
 footer{--minSpacing: 12px;}
 footer strong{font-size: 18px; margin-bottom: 30px; display: block;}
-footer b{font-size: 14px; margin-bottom: 10px; display: block;}
+/* footer b{font-size: 14px; margin-bottom: 10px; display: block;} */
+footer ul.privacyBox{font-size: 14px; margin-bottom: 10px;}
 footer address{font-size: 13px; line-height: 20px; margin-bottom: 60px;}
 footer address dl:nth-of-type(3){width: 100%;}
 footer address dl:nth-of-type(2)::after{display: none;}
 footer > p{font-size: 13px; line-height: 20px; margin-bottom: 56px;}
-footer ul{justify-content: flex-end;}
+footer ul.snsBox{justify-content: flex-end;}
+
+
+:is(.privacyPage, .commercePage) > div{padding-block: 60px;}
+:is(.privacyPage, .commercePage) > div h2{font-size: 36px; line-height: 46px; margin-bottom: 20px;}
+:is(.privacyPage, .commercePage) > div strong{font-size: 20px; line-height: 28px; margin-block: 20px 10px;}
+:is(.privacyPage, .commercePage) > div p{font-size: 14px; line-height: 20px; margin-block: 5px;}
+:is(.privacyPage, .commercePage) > div ol{font-size: 14px; line-height: 20px;}
