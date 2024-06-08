@@ -13,6 +13,9 @@ import EstimateResult from "../page/EstimateResult";
 import BuyResult from "../page/BuyResult";
 import Privacy from "../page/Privacy";
 import Commerce from "../page/Commerce";
+import AdminSignIn from '../admin/page/SignIn'
+import AdminRoot from '../admin/page/Root'
+import Dashboard from '../admin/page/Dashboard'
 
 export const routers = [
     {
@@ -89,6 +92,19 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <Commerce/> },
+        ]
+    },
+    {
+        path: "/admin",
+        element: <AdminSignIn />,
+    },
+    {
+        path: "/admin/dashboard",
+        element: <AdminRoot />,
+        children: [
+            { 
+                index: true, element: <Dashboard />
+            },
         ]
     },
 ]

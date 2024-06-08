@@ -1,0 +1,88 @@
+
+mark.point{color: var(--color-point);}
+
+
+.adminPage header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+
+
+/* 버튼 */
+.adminPage [class|="btn"]{text-align: center; border-radius: 4px; box-sizing: border-box;}
+.adminPage [class*="btn-point"], .btn-border-gray-big{font-weight: 700;}
+.adminPage .btn-point{color: white; background-color: var(--color-point); /* border: 1px solid var(--color-point); */}
+.adminPage .btn-point-border{border: 1px solid var(--color-point); color: var(--color-point);}
+.adminPage .btn-border-gray{/* width: 100%; */ padding-inline: 20px; display: flex; justify-content: center; border: 1px solid #DCDCDC; color: #BBB;}
+.adminPage .btn-border-gray-big{border: 1px solid #DCDCDC; color: #BBB;}
+.adminPage [class|="btn"]:disabled{background-color: #DCDCDC;}
+.adminPage [class*="btn-point"], .adminPage .btn-border-gray-big{font-size: 15px; line-height: 40px;}
+.adminPage [class*="btn-point"], .adminPage .btn-border-gray-big{padding-inline: 20px;}
+
+.adminPage input:not([type="submit"]), textarea{font-size: 15px; line-height: 19px; padding-left: 15px; height: 40px; width: 100%; font-weight: 400; border: 1px solid var(--color-line); border-radius: 4px; box-sizing: border-box;}
+
+/* 셀렉트 박스 */
+.adminPage .selectBox{position: relative;}
+.adminPage .selectBox button{font-size: 15px; padding-inline: 15px; height: 40px; font-weight: 400; text-align: left;}
+.adminPage .selectBox > button{border: 1px solid var(--color-line); color: #BBB; border-radius: 4px; box-sizing: border-box; position: relative;}
+.adminPage .selectBox > button::after{width: 18px; right: 15px; content: ''; aspect-ratio: 1; position: absolute; top: 50%; translate: 0 -50%; background: url(../images/icon-down.png) no-repeat center / cover;}
+.adminPage .selectBox > div{position: absolute; left: 0; top: calc(100% + 6px); width: 100%; padding-inline: 5px; background-color: white; border: 1px solid var(--color-font01); border-radius: 4px; box-sizing: border-box; z-index: 1;}
+.adminPage .selectBox > div button{display: block; width: 100%;}
+.adminPage .selectBox > div button:hover{background-color: var(--color-face01);}
+.adminPage .selectBox.active > div{display: block;}
+.adminPage .selectBox.active > button{border-color: var(--color-font01);}
+.adminPage .selectBox.active > button::after{rotate: 180deg;}
+.adminPage .selectBox.selected > button{color: var(--color-font01);}
+
+
+.adminPage{min-width: 1600px;}
+
+.adminPage .board-search{margin-bottom: 30px;}
+.adminPage .board-search fieldset ul li{display: flex; align-items: center; gap: 10px;}
+.adminPage .board-search fieldset ul li > label{font-size: 18px;}
+.adminPage .board-search fieldset ul li > button.active{color: var(--color-point); border: 1px solid var(--color-point);}
+.adminPage .board-search fieldset ul li:not(:last-of-type){margin-bottom: 10px;}
+.adminPage .board-total{margin-bottom: 15px; display: flex; align-items: center; gap: 10px;}
+.adminPage .board-total strong.total{font-size: 20px;}
+.adminPage .board-total strong.total::before{content: '총 ';}
+.adminPage .board-total strong.total::after{content: '건';}
+.adminPage .board-total > div:nth-child(2){margin-left: auto;}
+.adminPage [class*="boardBox"] .board-title{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 56px; font-weight: 700; padding-inline: 70px; border-top: 1px solid var(--color-font01); background-color: #F7F7F7; box-sizing: border-box;}
+.adminPage [class*="boardBox"] .board-detail:not(:has(:nth-child(1)))::after{content: '게시물이 없습니다.'; height: 300px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #DCDCDC;}
+.adminPage .boardBox-member :is(.board-title, .board-detail li) > *{flex: 60; text-align: center;}
+.adminPage .boardBox-member :is(.board-title, .board-detail li) > a{color: var(--color-point); text-decoration: underline;}
+.adminPage .boardBox-member .board-detail li{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 50px; padding-inline: 70px; border-bottom: 1px solid #DCDCDC;}
+.adminPage .boardBox-costomer .board-detail li a{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 50px; padding-inline: 70px; border-bottom: 1px solid #DCDCDC;}
+.adminPage .boardBox-costomer .board-title > *{text-align: center;}
+.adminPage .boardBox-costomer :is(.board-title, .board-detail li a) > *:not(p){flex: 60; text-align: center; min-width: 60px;}
+.adminPage .boardBox-costomer :is(.board-title, .board-detail li a) > p{flex: 400;}
+.adminPage .boardBox-costomer .board-detail li a p{min-width: 100px;}
+.adminPage .boardBox-costomer .board-detail li a p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.adminPage .boardBox-costomer .board-detail li a p:has(i){font-weight: 700; position: relative;}
+.adminPage .boardBox-costomer .board-detail li a p i{position: absolute; left: 0; top: 50%; transform: translate(calc(-100% - 8px), calc(-50% - 1px)); width: 20px; aspect-ratio: 1; background: url(../images/icon-new.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage .boardBox-board .board-detail li a{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 70px; padding-inline: 70px; border-bottom: 1px solid #DCDCDC;}
+.adminPage .boardBox-board .board-title > *{text-align: center;}
+.adminPage .boardBox-board :is(.board-title, .board-detail li a) > *:not(p){flex: 60; text-align: center; min-width: 60px;}
+.adminPage .boardBox-board :is(.board-title, .board-detail li a) > p{flex: 200;}
+.adminPage .boardBox-board .board-detail li a p{min-width: 100px;}
+.adminPage .boardBox-board .board-detail li a p:has(i){font-weight: 700; position: relative;}
+.adminPage .boardBox-board .board-detail li a p i{position: absolute; left: 0; top: 50%; transform: translate(calc(-100% - 8px), calc(-50% - 1px)); width: 20px; aspect-ratio: 1; background: url(../images/icon-new.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage .boardBox-board :is(.board-title, .board-detail li a) > div{}
+.adminPage .boardBox-board :is(.board-title, .board-detail li a) > div img{width: 60px; height: 60px; object-fit: cover;}
+.adminPage .boardBox-board .board-detail li a p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+
+/* 페이저 */
+.adminPage .board-pager{margin-top: 30px;}
+
+
+/* 해더 */
+.adminPage{--adminHeaderHeight: 60px;}
+.adminPage header{position: sticky; top: 0; width: 100%; height: var(--adminHeaderHeight); display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: white; box-sizing: border-box; box-shadow: 0px 5px 21px -5px #cdd1e1; z-index: 100;}
+.adminPage header h1 a{display: block; width: 150px; --styleIdx: 0;}
+.adminPage > div{display: flex;}
+.adminPage > div .menuArea{position: sticky; top: var(--adminHeaderHeight); width: 200px; height: calc(100vh - var(--adminHeaderHeight)); flex-shrink: 0; padding: 40px 20px; box-shadow: 0px 5px 21px -5px #cdd1e1; box-sizing: border-box;}
+.adminPage > div .menuArea li button{font-size: 20px; font-weight: 700;}
+.adminPage > div .menuArea li div{padding: 20px;}
+.adminPage > div .menuArea li div a{display: block; font-size: 16px; font-weight: 700; padding-block: 10px; color: rgba(22, 22, 22, 0.5);}
+.adminPage > div .menuArea li div a.active{color: #222;}
+.adminPage > div > [class*="Page"]{/* flex: 1; */ width: calc(100% - 200px); padding: 40px; box-sizing: border-box;}
+.adminPage > div > [class*="Page"] > h2{font-size: 32px; line-height: 40px; padding-bottom: 15px; margin-bottom: 30px; font-weight: 700; border-bottom: 2px solid #DCDCDC;}
+.adminPage > div > [class*="Page"] > h2:has(:is(button, a)){display: flex; justify-content: space-between; align-items: center;}

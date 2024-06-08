@@ -1,4 +1,4 @@
-body{zoom: 0.67;}
+body:not(:has(.adminPage)){zoom: 0.67;}
 /* 줄바꿈 */
 br[class]:not([class*="pc"]){display: none;}
 
@@ -78,25 +78,25 @@ input[type="checkbox"] + label::before{width: 24px;}
 
 
 /* 해더 */
-header h1{width: 249px;}
-header nav ul{display: flex;}
-header nav ul li > a{line-height: 90px; width: 180px; color: var(--color-font03);}
-header nav ul li:last-child > a{display: flex; justify-content: center; align-items: center;}
-header nav ul li:last-child > a::after{--styleIdx: 0; margin-left: 6px; content: ''; width: 26px; aspect-ratio: 1; background: url(../images/gnb-arrow.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
-header nav ul li > a:is(:hover, .active){color: inherit;}
-header nav ul li > a.active{position: relative;}
-header nav ul li > a.active::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 5px; background-color: var(--color-point);}
-header:has(nav ul li a.active + div){padding-bottom: 60px;}
-header:has(nav ul li a.active + div)::after{bottom: 60px;}
-header nav ul li:has(div){position: relative;}
-header nav ul li div{display: none; position: absolute; left: 50%; top: 100%; transform: translateX(-50%);}
-header nav ul li:has(div) > a.active + div{display: flex;}
-header nav ul li div a{font-size: 16px; line-height: 60px; padding-inline: 20px; font-weight: 700; white-space: nowrap;}
-header nav ul li a.active:has(+ div) + div:not(:has( .active)) a:first-child,
-header nav ul li div a.active{color: var(--color-point);}
-header > a{width: 156px; line-height: 50px; font-size: 16px; font-weight: 700; color: white; text-align: center; background-color: var(--color-point); border-radius: 6px;}
-header > div{display: none;}
-header button{display: none;}
+.userPage header h1{width: 249px;}
+.userPage header nav ul{display: flex;}
+.userPage header nav ul li > a{line-height: 90px; width: 180px; color: var(--color-font03);}
+.userPage header nav ul li:last-child > a{display: flex; justify-content: center; align-items: center;}
+.userPage header nav ul li:last-child > a::after{--styleIdx: 0; margin-left: 6px; content: ''; width: 26px; aspect-ratio: 1; background: url(../images/gnb-arrow.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
+.userPage header nav ul li > a:is(:hover, .active){color: inherit;}
+.userPage header nav ul li > a.active{position: relative;}
+.userPage header nav ul li > a.active::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 5px; background-color: var(--color-point);}
+.userPage header:has(nav ul li a.active + div){padding-bottom: 60px;}
+.userPage header:has(nav ul li a.active + div)::after{bottom: 60px;}
+.userPage header nav ul li:has(div){position: relative;}
+.userPage header nav ul li div{display: none; position: absolute; left: 50%; top: 100%; transform: translateX(-50%);}
+.userPage header nav ul li:has(div) > a.active + div{display: flex;}
+.userPage header nav ul li div a{font-size: 16px; line-height: 60px; padding-inline: 20px; font-weight: 700; white-space: nowrap;}
+.userPage header nav ul li a.active:has(+ div) + div:not(:has( .active)) a:first-child,
+.userPage header nav ul li div a.active{color: var(--color-point);}
+.userPage header > a{width: 156px; line-height: 50px; font-size: 16px; font-weight: 700; color: white; text-align: center; background-color: var(--color-point); border-radius: 6px;}
+.userPage header > div{display: none;}
+.userPage header button{display: none;}
 
 
 /* 푸터 */

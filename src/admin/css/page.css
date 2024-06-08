@@ -1,0 +1,128 @@
+
+/* 로그인 */
+.page-body-wrapper{height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f8f8f8;}
+.form-signin{max-width: 380px; padding: 1.875rem 2.5rem; margin: 0 auto; border-radius: 4px; background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.1); box-sizing: border-box;}
+.form-signin h2{font-size: 2em; margin-bottom: 30px; text-align: center;}
+.form-signin ul{margin-bottom: 20px;}
+.form-signin ul li:not(:last-child){margin-bottom: 10px;}
+.form-signin .btn-point{width: 100%; font-weight: 700; background-color: var(--color-point); color: white; line-height: 40px;}
+
+
+.adminPage .adminDashboardPage{display: flex; flex-wrap: wrap; justify-content: space-between; align-content: flex-start; gap: 80px;}
+.adminPage .adminDashboardPage h2{font-size: 32px; line-height: 40px; font-weight: 700; margin-bottom: 20px; display: block;}
+.adminPage .adminDashboardPage h2:has(a){display: flex; justify-content: space-between; align-items: center;}
+.adminPage .adminDashboardPage h2 a{height: 20px; aspect-ratio: 1; background: url(../images/icon-more.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage .adminDashboardPage > [class*="dashboard"] :is(ol, ul){border-top: 1px solid black; font-size: 15px;}
+.adminPage .adminDashboardPage > [class*="dashboard"] :is(ol, ul) li{border-bottom: 1px solid #dcdcdc;}
+.adminPage .adminDashboardPage .dashboard-board{width: calc((100% - 80px) / 2);}
+.adminPage .adminDashboardPage .dashboard-board ol li a{display: flex; align-items: center; min-height: 50px;}
+.adminPage .adminDashboardPage .dashboard-board ol li a p{display: flex; flex: 1; min-width: 100px; margin-right: 0.4em;}
+.adminPage .adminDashboardPage .dashboard-board ol li a p span{max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.adminPage .adminDashboardPage .dashboard-board ol li a i{flex-shrink: 0; width: 20px; aspect-ratio: 1; background: url(../images/icon-new.png) no-repeat center / cover; text-indent: -9999px; margin-right: 10px;}
+.adminPage .adminDashboardPage .dashboard-board ol li a:has(i) p{font-weight: 700;}
+.adminPage .adminDashboardPage .dashboard-board ol li a time{color: var(--color-font03);}
+.adminPage .adminDashboardPage .dashboard-currentSituation{width: 100%;}
+.adminPage .adminDashboardPage .dashboard-currentSituation > div strong{display: block; font-size: 25px; margin-bottom: 20px; font-weight: 700;}
+.adminPage .adminDashboardPage .dashboard-currentSituation > div:not(:last-child){margin-bottom: 25px;}
+.adminPage .adminDashboardPage .dashboard-currentSituation .userArea ul{display: flex;}
+.adminPage .adminDashboardPage .dashboard-currentSituation .userArea ul li{flex: 1;}
+.adminPage .adminDashboardPage .dashboard-currentSituation .userArea ul li dl dt{line-height: 55px; text-align: center; font-weight: 700; background-color: #f7f7f7;}
+.adminPage .adminDashboardPage .dashboard-currentSituation .userArea ul li dl dd{line-height: 80px; text-align: center;}
+.adminPage .adminDashboardPage .dashboard-currentSituation .statisticsArea > div{display: flex; gap: 80px; flex: 1;}
+.adminPage .adminDashboardPage .dashboard-currentSituation .statisticsArea > div > div{width: calc((100% - 80px) / 2); height: 300px;}
+
+
+.adminPage [class*="detail"] ul{border-top: 1px solid #dcdcdc;}
+.adminPage [class*="detail"] ul li{font-size: 15px; line-height: 18px;}
+.adminPage [class*="detail"] ul li{display: flex; border-bottom: 1px solid #dcdcdc;}
+.adminPage [class*="detail"] ul li > b{width: 150px; padding-block: 16px; font-weight: 700; flex-shrink: 0; background-color: #F7F7F7; display: flex; align-items: center; justify-content: center;}
+.adminPage [class*="detail"] ul li > div{flex: 1; display: flex; align-items: center; padding: 10px 20px;}
+.adminPage [class*="detail"] ul li div .radioBox{display: flex; gap: 10px;}
+
+.adminPage .detail-id strong{display: block; font-size: 25px; font-weight: 700; margin-bottom: 20px;}
+.adminPage .detail-id ul li > div .mobileBox{display: flex; align-items: center;}
+.adminPage .detail-id ul li > div div small{display: block; margin-top: 10px;}
+
+.adminPage .reply-customer{background-color: #F7F7F7; border-bottom: 1px solid #DCDCDC; position: relative; margin-top: 30px;}
+.adminPage .reply-customer span{color: var(--color-point); font-weight: 700; display: block;}
+.adminPage .reply-customer span::before{content: attr(title) ' '; color: var(--color-font01);}
+.adminPage .reply-customer span:empty::after{content: '0'; color: var(--color-font03);}
+.adminPage .reply-customer > ul > li{position: relative;}
+.adminPage .reply-customer > ul > li:not(:last-child){border-bottom: 1px dashed var(--color-line);}
+.adminPage .reply-customer > ul > li b{font-weight: 700; display: block; margin-bottom: 10px;}
+.adminPage .reply-customer > ul > li b[data-lock="true"]{display: flex; align-items: center;}
+.adminPage .reply-customer > ul > li b[data-lock="true"]::after{content: ''; width: 18px; aspect-ratio: 1; background: url(../images/icon-lock.png) no-repeat center / cover; margin-left: 5px;}
+.adminPage .reply-customer > ul > li p{line-height: 20px; font-weight: 400;}
+.adminPage .reply-customer > ul > li time{color: var(--color-font03); font-weight: 400; display: block;}
+.adminPage .reply-customer > ul > li > div div{white-space: pre-line;}
+.adminPage .reply-customer > ul > li > div img{margin-top: 10px; display: block; width: auto; max-width: 300px;}
+.adminPage .reply-customer > ul > li mark.gray{color: #999;}
+.adminPage .modifyBox{/* display: none; */ position: absolute; right: 0px; top: 0px;}
+.adminPage .modifyBox > button{width: 16px; aspect-ratio: 1; background: url(../images/icon-modify.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage .modifyBox div{/* display: none;  */position: absolute; right: 0; top: calc(100% + 10px); padding-inline: 6px; border: 1px solid #DEDEDE; background-color: white; border-radius: 4px; box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.15);}
+.adminPage .modifyBox div :is(button, input[type="submit"]){width: 70px; height: 43px; background-color: white;}
+.adminPage .modifyBox div :not(:last-child){border-bottom: 1px solid #DEDEDE;}
+.adminPage .reply-customer{padding: 30px 50px 30px; font-size: 15px; line-height: 18px;}
+.adminPage .reply-customer span:has(+ ul){margin-bottom: 20px;}
+.adminPage .reply-customer > ul > li:not(:last-child){margin-bottom: 30px; padding-bottom: 30px;}
+.adminPage .reply-customer > ul > li time{margin-top: 12px;}
+
+.adminPage .reply-create-customer{display: block; border: 1px solid var(--color-line); padding-block: 30px 20px; background-color: white; border-radius: 4px;}
+.adminPage .reply-create-customer b{font-size: 15px; line-height: 18px; font-weight: 700; margin-bottom: 20px; display: block;}
+.adminPage .reply-create-customer textarea{min-height: 100px; padding: 0; border: none;}
+.adminPage .reply-create-customer ul{display: flex; flex-wrap: wrap; gap: 10px;}
+.adminPage .reply-create-customer ul li{aspect-ratio: 1; line-height: 0; object-fit: cover; position: relative;}
+.adminPage .reply-create-customer ul li img{border-radius: 4px; aspect-ratio: 1; object-fit: cover;}
+.adminPage .reply-create-customer ul li button{width: 20px; aspect-ratio: 1; position: absolute; right: 0; top: 0; transform: translate(50%, -50%); background: url(../images/icon-img-close.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage .reply-create-customer{margin-top: 40px; padding-inline: 50px;}
+.adminPage .reply-create-customer ul:not(:empty){margin-top: 25px;}
+.adminPage .reply-create-customer ul li{width: 100px;}
+
+.adminPage .detail-notice ul li div ul.imgBox{display: flex; flex-wrap: wrap; gap: 10px;}
+.adminPage .detail-notice ul li div ul.imgBox li{aspect-ratio: 1; line-height: 0; object-fit: cover; position: relative;}
+.adminPage .detail-notice ul li div ul.imgBox li img{border-radius: 4px; aspect-ratio: 1; object-fit: cover; width: 100px;}
+.adminPage .detail-notice ul li div ul.imgBox li button{width: 20px; aspect-ratio: 1; position: absolute; right: 0; top: 0; transform: translate(50%, -50%); background: url(../images/icon-img-close.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage .detail-notice ul li div textarea{min-height: 300px; padding: 10px;}
+.adminPage .detail-notice ul li div ul.imgBox + input[type="file"] + label{margin-left: 10px;}
+.adminPage .buttonArea{display: flex; justify-content: center; gap: 10px; margin-top: 30px;}
+.adminPage input[type="file"].icon-file + label{display: block; aspect-ratio: 1; width: 100px; border: 1px dotted #dcdcdc; box-sizing: border-box; text-indent: -9999px; background: url(../images/icon-plus.png) no-repeat center / 30px;}
+
+.adminPage .editorBox{margin-top: 30px;}
+.adminPage .editorBox strong{display: block; font-size: 25px; font-weight: 700; margin-bottom: 20px;}
+.adminPage .editorBox strong:has(button){display: flex; align-items: center; gap: 10px;}
+.adminPage .editorBox .ck-editor__editable_inline{min-height: 300px;}
+.adminPage .editorBox .ck-content .table{margin-inline: 0;}
+.adminPage .editorBox .ck-content a{color: rgb(0, 0, 238);}
+
+
+.popup-reply{position: fixed; left: 0; top: 0; width: 100%; min-width: 1600px; height: 100vh; display: none; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 101;}
+.popup-reply > div{width: 70%; max-height: 90%; border-radius: 10px; padding: 20px; border: 1px solid var(--color-point); background-color: white; display: flex; flex-direction: column; overflow: hidden;}
+.popup-reply > div .titleArea{flex-shrink: 0; display: flex; align-items: center; height: 70px; padding-inline: 20px;}
+.popup-reply > div .titleArea strong{font-size: 25px; font-weight: 700;}
+.popup-reply > div .titleArea time{margin-left: 10px;}
+.popup-reply > div .titleArea button{margin-left: auto; width: 30px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
+.popup-reply > div .countArea{display: flex; align-items: center; gap: 10px; margin-bottom: 10px;}
+.popup-reply > div :is(.board-title, .board-detail li){font-size: 15px; display: flex; gap: 20px; position: relative; padding-inline: 40px;}
+.popup-reply > div :is(.board-title, .board-detail li) > *{display: flex; justify-content: center; align-items: center;}
+.popup-reply > div :is(.board-title, .board-detail li) > *:nth-child(-n + 2){width: 50px;}
+.popup-reply > div :is(.board-title, .board-detail li) > *:nth-child(3){flex: 1; text-align: left;}
+.popup-reply > div :is(.board-title, .board-detail li) > *:nth-child(4){width: 100px; text-align: center;}
+.popup-reply > div :is(.board-title, .board-detail li) > *:nth-child(5){width: 80px;}
+.popup-reply > div .board-title{height: 55px; font-weight: 700; border-top: 1px solid black; background-color: #f7f7f7;}
+.popup-reply > div .board-detail{overflow: auto;}
+.popup-reply > div .board-detail li{padding-block: 20px; border-bottom: 1px solid var(--color-line);}
+.popup-reply > div .board-detail li > *:nth-child(3){justify-content: flex-start;}
+.popup-reply > div .board-detail li > *:nth-child(5){flex-direction: column; border: 1px solid #dedede; border-radius: 4px;}
+.popup-reply > div .board-detail li > *:nth-child(5) button{width: 70px; height: 43px; background-color: white;}
+.popup-reply > div .board-detail li > *:nth-child(5) :not(:last-child){border-bottom: 1px solid #DEDEDE;}
+.popup-reply > div .createArea{flex-shrink: 0;}
+.popup-reply > div .createArea .ck-editor__editable_inline{height: 150px;}
+.popup-reply > div .createArea .buttonArea{margin-top: 10px; display: flex; justify-content: flex-end; gap: 10px;}
+
+
+.adminPage [class*="adminBoardStock"][class*="Page"] .adminFileBox{margin-top: 30px;}
+.adminPage [class*="adminBoardStock"][class*="Page"] .adminFileBox strong{display: block; font-size: 25px; font-weight: 700; margin-bottom: 20px;}
+.adminPage [class*="adminBoardStock"][class*="Page"] .adminFileBox div{position: relative; display: inline-block;}
+.adminPage [class*="adminBoardStock"][class*="Page"] .adminFileBox div img{width: 100%; max-width: 100px; aspect-ratio: 1; object-fit: cover;}
+.adminPage [class*="adminBoardStock"][class*="Page"] .adminFileBox div button{width: 20px; aspect-ratio: 1; position: absolute; right: 0; top: 0; transform: translate(50%, -50%); background: url(../images/icon-img-close.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage [class*="adminBoardStock"][class*="Page"] .adminFileBox:has(div) input[type="file"].icon-file + label{display: none;}

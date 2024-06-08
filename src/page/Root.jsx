@@ -19,7 +19,7 @@ export default function Root() {
     },[location])
 
     return (
-        <div className={`${className}Page`}>
+        <div className={`userPage ${className}Page`}>
             <Header />
             <Outlet />
             <Footer />

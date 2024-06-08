@@ -1,0 +1,24 @@
+:root{
+    --color-font01: #222222;
+    --color-font02: #666666;
+    --color-font03: #999999;
+    --color-point: #EC4A47;
+    --color-face01: #F8F8F8;
+    --color-face02: #F2F3F8;
+    --color-line01: #DEDEDE;
+    --color-line02: #000000;
+    --contentSize: 1240px;
+    --spacing: 20px;
+}
+
+@media screen and (1280px < width) {
+    :root{
+        --headerHeight: 100px;
+    }
+}
+
+@media screen and (width <= 1280px) {
+    :root{
+        --headerHeight: 56px;
+    }
+}
