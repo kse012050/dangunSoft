@@ -1,4 +1,4 @@
-const adminApiUrl = 'http://52.79.158.32:8080/api/admin/'
+const adminApiUrl =  process.env.REACT_APP_ADMIN_API_URL
 
 function commonOptions(type, data){
     const myHeaders = new Headers();

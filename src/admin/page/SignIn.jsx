@@ -3,9 +3,11 @@ import '../css/import.css';
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import { adminApi, isSubmit } from '../api/api';
 import { useNavigate } from 'react-router-dom';
+import Popup from '../components/popup/Popup';
 
 export default function SignIn() {
     const [inputs, setInputs] = useState()
+    const [popup, setPopup] = useState()
     const navigate = useNavigate()
 
     useEffect(()=>{
@@ -26,6 +28,8 @@ export default function SignIn() {
                 if(result.result){
                     sessionStorage.setItem('adminToken', result.data.token);
                     navigate('/admin/dashboard')
+                }else{
+                    setPopup({type: 'signIn'})
                 }
             })
     }
@@ -39,9 +43,10 @@ export default function SignIn() {
                         <li><input type="text" name="id" id="id" placeholder="id" data-formet="id" required autoFocus /></li>
                         <li><input type="password" name="password" id="password" placeholder="password" required onKeyDown={(e)=> e.key === 'Enter' && onSubmit(e)} autoComplete="off"/></li>
                     </ul>
-                    <button className="btn-point" type="button" onClick={onSubmit}>로그인</button>
+                    <button className="btn-point" type="button" onClick={onSubmit} popovertarget="signIn">로그인</button>
                 </form>
             </div>
+        { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </div>
     );
 }

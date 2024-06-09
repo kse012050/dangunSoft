@@ -13,9 +13,11 @@ import EstimateResult from "../page/EstimateResult";
 import BuyResult from "../page/BuyResult";
 import Privacy from "../page/Privacy";
 import Commerce from "../page/Commerce";
+// 관리자
 import AdminSignIn from '../admin/page/SignIn'
 import AdminRoot from '../admin/page/Root'
 import Dashboard from '../admin/page/Dashboard'
+import MyInfo from "../admin/page/MyInfo";
 
 export const routers = [
     {
@@ -104,6 +106,15 @@ export const routers = [
         children: [
             { 
                 index: true, element: <Dashboard />
+            },
+        ]
+    },
+    {
+        path: "/admin/myInfo",
+        element: <AdminRoot />,
+        children: [
+            { 
+                index: true, element: <MyInfo />
             },
         ]
     },

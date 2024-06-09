@@ -8,6 +8,17 @@
 .form-signin .btn-point{width: 100%; font-weight: 700; background-color: var(--color-point); color: white; line-height: 40px;}
 
 
+/* 내 정보 관리 */
+.adminPage .myInfoArea{font-size: 15px;}
+.adminPage .myInfoArea ul li{display: flex;}
+.adminPage .myInfoArea ul li:not(:last-child){margin-bottom: 10px;}
+.adminPage .myInfoArea ul li label{width: 150px; flex-shrink: 0;}
+.adminPage .myInfoArea ul li div{flex: 1;}
+.adminPage .myInfoArea > input[type="submit"]{display: block; margin-top: 30px; margin-left: auto; background-color: var(--color-point); color: white;}
+
+
+/* ------------------------------------------------------- */
+
 .adminPage .adminDashboardPage{display: flex; flex-wrap: wrap; justify-content: space-between; align-content: flex-start; gap: 80px;}
 .adminPage .adminDashboardPage h2{font-size: 32px; line-height: 40px; font-weight: 700; margin-bottom: 20px; display: block;}
 .adminPage .adminDashboardPage h2:has(a){display: flex; justify-content: space-between; align-items: center;}
