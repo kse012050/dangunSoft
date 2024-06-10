@@ -15,7 +15,7 @@ export default function Root() {
             pageName = pageName.map((data, i)=> i ? data.replace(/^\w/, c => c.toUpperCase()) : data).join('') + 'Page'
         }
     }
-    const adminToken = sessionStorage.getItem('adminToken');
+    const adminToken = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
 
     
 

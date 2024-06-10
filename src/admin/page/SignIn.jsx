@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../css/import.css';
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import { adminApi, isSubmit } from '../api/api';
@@ -9,8 +9,11 @@ export default function SignIn() {
     const [inputs, setInputs] = useState()
     const [popup, setPopup] = useState()
     const navigate = useNavigate()
+    const rememberIDRef = useRef()
+    const adminToken = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
 
     useEffect(()=>{
+        adminToken && navigate('/admin/dashboard')
         inputsRequiredAdd(setInputs);
     },[])
 
@@ -26,7 +29,9 @@ export default function SignIn() {
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
-                    sessionStorage.setItem('adminToken', result.data.token);
+                    rememberIDRef.current.checked ? 
+                        localStorage.setItem('adminToken', result.data.token) :
+                        sessionStorage.setItem('adminToken', result.data.token);
                     navigate('/admin/dashboard')
                 }else{
                     setPopup({type: 'signIn'})
@@ -42,6 +47,7 @@ export default function SignIn() {
                     <ul>
                         <li><input type="text" name="id" id="id" placeholder="id" data-formet="id" required autoFocus /></li>
                         <li><input type="password" name="password" id="password" placeholder="password" required onKeyDown={(e)=> e.key === 'Enter' && onSubmit(e)} autoComplete="off"/></li>
+                        <li><input type="checkbox" id='rememberID' ref={rememberIDRef}/><label htmlFor="rememberID">아이디 기억하기</label></li>
                     </ul>
                     <button className="btn-point" type="button" onClick={onSubmit} popovertarget="signIn">로그인</button>
                 </form>
