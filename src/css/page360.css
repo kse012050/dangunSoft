@@ -166,7 +166,7 @@
 .boardPage section .boardBox > div{display: none;}
 .boardPage section .boardBox > ul li a{flex-wrap: wrap;}
 .boardPage section .boardBox > ul li a > :first-child{display: none;}
-.boardPage section .boardBox > ul li a p{width: 100%; line-height: 22px; padding-right: 30px;}
+.boardPage section .boardBox > ul li a p{width: 100%; line-height: 22px; min-height: 22px; padding-right: 30px;}
 .boardPage section .boardBox > ul li a p ~ *{font-size: 14px; color: var(--color-font03);}
 
 

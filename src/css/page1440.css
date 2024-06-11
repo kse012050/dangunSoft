@@ -167,7 +167,7 @@
 .boardPage section .boardBox{font-size: 16px;}
 .boardPage section .boardBox :is(div, ul li a){gap: 40px; height: 70px;}
 .boardPage section .boardBox :is(div, ul li a) > *:nth-child(1){flex: 100;}
-.boardPage section .boardBox :is(div, ul li a) > *:nth-child(2){flex: 720;}
+.boardPage section .boardBox :is(div, ul li a) > *:nth-child(2){flex: 720; min-height: 16px;}
 .boardPage section .boardBox :is(div, ul li a) > *:nth-child(3){flex: 140;}
 .boardPage section .boardBox :is(div, ul li a) > *:nth-child(4){flex: 140;}
 .boardPage section .btn-bg{margin-top: 80px;}

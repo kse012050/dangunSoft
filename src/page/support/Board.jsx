@@ -1,18 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { userApi } from '../../api/api';
+import { inputChange } from '../../api/validation';
 
 export default function Board() {
     const [inputs, setInputs] = useState({page: '1', board_type: 'inquiry'})
+    const [searchInputs, setSearchInputs] = useState()
     const [board, setBoard] = useState()
     const navigate = useNavigate();
     const [popup, setPopup] = useState(false);
     const passwordRef = useRef()
 
     useEffect(()=>{
+        console.log(inputs);
         userApi('board', '', inputs)
             .then((result)=>{
-                // console.log(result);
+                console.log(result.list);
                 if(result.result){
                     setBoard({
                         list: result.list
@@ -38,15 +41,18 @@ export default function Board() {
                     passwordRef.current.focus();
                 }
             })
+    }
 
+    const onSearch = () =>{
+        setInputs(prev => ({...prev, ...searchInputs}))
     }
 
     return (
         <section>
             <h2>お問い合わせ掲示板</h2>
             <div className='searchBox'>
-                <input type="search" placeholder='タイトル検索'/>
-                <button>검색</button>
+                <input type="search" placeholder='タイトル検索' name='search_text' onChange={(e)=>inputChange(e, setSearchInputs)}/>
+                <button onClick={onSearch}>검색</button>
             </div>
             <div className='boardBox'>
                 <div>
@@ -58,7 +64,7 @@ export default function Board() {
                 <ul data-none='登録されたお問い合わせはありません。'>
                     {board?.list && board.list.map((data)=>
                         <li key={data.board_id}>
-                            <Link to={`/support/board/${data.board_id}`} onClick={(e)=>data.secret_yn === 'y' && lack(e, data.board_id)} className={`${data.secret_yn === 'y' ? 'lack' : ''} answer`}>
+                            <Link to={`/support/board/${data.board_id}`} onClick={(e)=>data.secret_yn === 'y' && lack(e, data.board_id)} className={`${data.secret_yn === 'y' ? 'lack' : ''} ${data.answer_date === 'y' ? 'answer' : ''}`}>
                                 <span>{ data.board_id }</span>
                                 <p>{ data.title }</p>
                                 <span>{ data.write_name }</span>

@@ -150,7 +150,7 @@
 /* 지원 페이지 - 게시판 */
 .boardPage section .boardBox :is(div, ul li a){gap: 20px; height: 60px;}
 .boardPage section .boardBox :is(div, ul li a) > *:nth-child(1){flex: 60;}
-.boardPage section .boardBox :is(div, ul li a) > *:nth-child(2){flex: 616;}
+.boardPage section .boardBox :is(div, ul li a) > *:nth-child(2){flex: 616; min-height: 16px;}
 .boardPage section .boardBox :is(div, ul li a) > *:nth-child(3){flex: 100;}
 .boardPage section .boardBox :is(div, ul li a) > *:nth-child(4){flex: 100;}
 
