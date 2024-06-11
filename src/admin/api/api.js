@@ -1,4 +1,4 @@
-const adminApiUrl =  process.env.REACT_APP_ADMIN_API_URL
+const adminApiUrl =  `${process.env.REACT_APP_API_URL}admin/`;
 
 // function commonOptions(type, data){
 //     const myHeaders = new Headers();

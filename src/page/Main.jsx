@@ -1,11 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import EstimateLink from '../components/EstimateLink';
 import { Pagination } from 'swiper/modules';
+import { inputChange, inputsRequiredAdd } from '../api/validation';
+import { userApi, isSubmit } from '../api/api';
+import Popup from '../components/popup/Popup';
 
 export default function Main() {
+    const [inputs, setInputs] = useState({title: ''})
+    const [popup, setPopup] = useState()
+
+    useEffect(()=>{
+        inputsRequiredAdd(setInputs);
+    },[])
+
+    const onSubmit = (e) =>{
+        e.preventDefault();
+        // console.log(inputs);
+
+        if(isSubmit(inputs)){
+            return;
+        }
+        
+        const copyInputs = {
+            board_type: 'simple_inquiry',
+            write_name: inputs.write_name_last_name + inputs.write_name_first_name,
+            company_name: inputs.company_name,
+            email: inputs.email
+        }
+
+        if(inputs.title){
+            copyInputs.title = inputs.title
+        }
+        // console.log(copyInputs);
+      
+        userApi('board/manage', 'insert', copyInputs)
+            .then((result)=>{
+                if(result.result){
+                    setPopup({
+                        type: 'confirm',
+                        description: [
+                            '견적 문의가 완료되었습니다.',
+                            '담당자 확인 후 회신드리겠습니다.'
+                        ],
+                        func: () => {
+                            document.querySelectorAll('input[name]').forEach((selector)=>{
+                                selector.value = ''
+                            })
+                            Object.keys(inputs).forEach((key) => {
+                                setInputs(prev => ({...prev, [key]: ''}))
+                            })
+                        }
+                    })
+                }
+            })
+    }
+
     return (
         <>
             <section className='welcomeArea'>
@@ -195,41 +247,43 @@ export default function Main() {
                         <p>東京都港区南 青山 2-2-8 DF ビル 6F</p>
                     </li>
                 </ul>
-                <form>
+                <form onChange={(e)=>inputChange(e, setInputs)}>
                     <fieldset>
                         <strong>Get in Touch</strong>
                         <ul>
                             <li>
-                                <label htmlFor="">名前</label>
+                                <label htmlFor="write_name_last_name">名前</label>
                                 <div>
-                                    <input type="text" placeholder='姓'/>
-                                    <input type="text" placeholder='名'/>
+                                    <input type="text" placeholder='姓' name='write_name_last_name' id='write_name_last_name' required/>
+                                    <input type="text" placeholder='名' name='write_name_first_name' required/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="">会社</label>
+                                <label htmlFor="company_name">会社</label>
                                 <div>
-                                    <input type="text" placeholder='会社名を入力してください'/>
+                                    <input type="text" placeholder='会社名を入力してください' name='company_name' id='company_name' required/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="">Email</label>
+                                <label htmlFor="email">Email</label>
                                 <div>
-                                    <input type="text" placeholder='メールアドレスを入力してください'/>
+                                    <input type="text" placeholder='メールアドレスを入力してください' name='email' id='email' required/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="">備考</label>
+                                <label htmlFor="title">備考</label>
                                 <div>
-                                    <input type="text" placeholder='お問い合わせの内容'/>
+                                    <input type="text" placeholder='お問い合わせの内容' name='title' id='title'/>
                                 </div>
                             </li>
                         </ul>
-                         <input type="submit"  value='確認'/>
+                         <input type="submit"  value='確認' onClick={onSubmit}/>
                     </fieldset>
                 </form>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.24431736511!2d139.72150827625802!3d35.670985730535854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c82fbd6ae09%3A0xee70acf788450c72!2z5pel5pys44CB44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yS5LiB55uu77yS4oiS77yYIERG44OT44Or!5e0!3m2!1sja!2skr!4v1713921721212!5m2!1sja!2skr"></iframe>
             </section>
+
+            { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </>
     );
 }
