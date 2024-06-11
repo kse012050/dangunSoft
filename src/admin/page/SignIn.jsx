@@ -52,7 +52,7 @@ export default function SignIn() {
                     <button className="btn-point" type="button" onClick={onSubmit} popovertarget="signIn">로그인</button>
                 </form>
             </div>
-        { popup && <Popup popup={popup} setPopup={setPopup}/>}
+            { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </div>
     );
 }

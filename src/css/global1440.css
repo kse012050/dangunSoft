@@ -13,10 +13,10 @@ br[class]:not([class*="pc"]){display: none;}
 
 
 /* 입력 */
-:is(input, .selectBox > button){height: 60px; font-size: 16px;}
-textarea{height: 180px; font-size: 16px;}
-.selectBox > button::after{right: 15px;}
-.inputBox-product ul li div input[type="radio"] + label{font-size: 15px; height: 50px;}
+.userPage :is(input, .selectBox > button){height: 60px; font-size: 16px;}
+.userPage textarea{height: 180px; font-size: 16px;}
+.userPage .selectBox > button::after{right: 15px;}
+.userPage .inputBox-product ul li div input[type="radio"] + label{font-size: 15px; height: 50px;}
 
 
 /* 검색 */

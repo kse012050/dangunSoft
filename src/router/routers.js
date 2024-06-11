@@ -18,6 +18,7 @@ import AdminSignIn from '../admin/page/SignIn'
 import AdminRoot from '../admin/page/Root'
 import Dashboard from '../admin/page/Dashboard'
 import MyInfo from "../admin/page/MyInfo";
+import Vendor from "../admin/page/product/Vendor";
 
 export const routers = [
     {
@@ -118,4 +119,15 @@ export const routers = [
             },
         ]
     },
+    {
+        path: "/admin/product",
+        element: <AdminRoot />,
+        children: [
+            {
+                path: 'vendor', element: <Vendor />
+            },
+        ]
+    },
+
+    
 ]

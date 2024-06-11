@@ -5,7 +5,14 @@ export default function Menu() {
     return (
         <ul className='menuArea'>
             <li><div><NavLink to=''>관리자 통계</NavLink></div></li>
-            <li><div><NavLink to=''>상품 관리</NavLink></div></li>
+            <li>
+                <NavLink to=''>상품 관리</NavLink>
+                <div>
+                    <NavLink to='/admin/product/vendor'>벤더사 관리</NavLink>
+                    <NavLink to=''>제품 관리</NavLink>
+                    <NavLink to=''>제품 상세 관리</NavLink>
+                </div>
+            </li>
             <li><div><NavLink to=''>견적 관리</NavLink></div></li>
             <li><div><NavLink to=''>구매 관리</NavLink></div></li>
             <li><div><NavLink to=''>관리 문의</NavLink></div></li>
