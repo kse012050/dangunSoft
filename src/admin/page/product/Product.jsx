@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { adminApi } from '../../api/api';
 
 export default function Product() {
@@ -18,7 +18,7 @@ export default function Product() {
             })
     },[])
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         boardFunc()
     },[boardFunc])
 
@@ -54,7 +54,7 @@ export default function Product() {
                             <p>
                                 <span>{ data.product_name }</span>
                             </p>
-                            <div>
+                            <div className='exposure'>
                                 <input type="checkbox" id='test'/>
                                 <label htmlFor="test">노출 여부</label>
                             </div>

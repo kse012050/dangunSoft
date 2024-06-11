@@ -6,7 +6,7 @@
 /* 입력 */
 :is(input, textarea, .selectBox button){padding-inline: 15px;}
 textarea{padding-block: 20px;}
-.selectBox > button::after{width: 32px;}
+.userPage .selectBox > button::after{width: 32px;}
 .inputBox-product > div button{font-size: 16px;}
 
 

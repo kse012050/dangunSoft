@@ -62,8 +62,8 @@ br[class]:not([class*="pc"]){display: none;}
 
 /* 인풋 */
 form:has([class*="inputBox"]){margin-top: 80px;}
-input[type="checkbox"] + label{font-size: 16px;}
-input[type="checkbox"] + label::before{width: 24px;}
+input:is([type="checkbox"], [type="radio"]) + label{font-size: 16px;}
+input:is([type="checkbox"], [type="radio"]) + label::before{width: 24px;}
 .inputBox-product > div{gap: 40px;}
 
 

@@ -26,15 +26,38 @@ body:has(.adminPage [data-popup]){overflow: hidden;}
 .adminPage [data-popup] > div p{font-size: 15px; line-height: 18px; font-weight: 400;}
 .adminPage [data-popup] > div p:not(:last-of-type){margin-bottom: 10px;}
 .adminPage [data-popup] > div input:not([type="submit"]){margin-block: 10px;}
+.adminPage [data-popup] > div .selectBox{margin-block: 10px;}
 .adminPage [data-popup] > div mark{font-size: 13px;}
+.adminPage [data-popup] > div .radio{display: flex; gap: 10px;}
 .adminPage [data-popup] > div input[type="submit"]{display: block; margin-top: 20px; margin-left: auto; background-color: var(--color-point); color: white;}
 .adminPage [data-popup] > div input[type="submit"]:disabled{background-color: #DCDCDC;}
 .adminPage [data-popup] button.close{position: absolute; right: 10px; top: 10px; width: 25px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
 
-.adminPage [data-popup] > div div{display: flex; justify-content: center; gap: 10px; margin-top: 30px;}
+/* .adminPage [data-popup] > div div{display: flex; justify-content: center; gap: 10px; margin-top: 30px;} */
+
+
+/* 셀렉트 박스 */
+.adminPage .selectBox{position: relative;}
+.adminPage .selectBox button{font-size: 15px; padding-inline: 15px; height: 40px; font-weight: 400; text-align: left;}
+.adminPage .selectBox > button{width: 100%; border: 1px solid var(--color-line); color: #BBB; border-radius: 4px; box-sizing: border-box; position: relative;}
+.adminPage .selectBox > button::after{width: 18px; right: 15px; content: ''; aspect-ratio: 1; position: absolute; top: 50%; translate: 0 -50%; background: url(../images/icon-down.png) no-repeat center / cover;}
+.adminPage .selectBox > div{position: absolute; left: 0; top: calc(100% + 6px); width: 100%; padding-inline: 5px; background-color: white; border: 1px solid var(--color-font01); border-radius: 4px; box-sizing: border-box; z-index: 1;}
+.adminPage .selectBox > div button{display: block; width: 100%;}
+.adminPage .selectBox > div button:hover{background-color: var(--color-face01);}
+.adminPage .selectBox.active > div{display: block;}
+.adminPage .selectBox.active > button{border-color: var(--color-font01);}
+.adminPage .selectBox.active > button::after{rotate: 180deg;}
+.adminPage .selectBox.selected > button{color: var(--color-font01);}
 
 
 /* 게시물 */
+.adminPage .board-count{margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; gap: 10px;}
+.adminPage .board-count strong.total{font-size: 20px;}
+.adminPage .board-count strong.total::before{content: '총 ';}
+.adminPage .board-count strong.total::after{content: '건';}
+.adminPage .board-count > div:nth-child(2){margin-left: auto;}
+.adminPage .board-tab{margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; gap: 10px;}
+.adminPage .board-tab button{margin-left: auto;}
 .adminPage [class*="boardBox"] .board-title{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 56px; font-weight: 700; padding-inline: 70px; border-top: 1px solid var(--color-font01); background-color: #F7F7F7; box-sizing: border-box;}
 .adminPage [class*="boardBox"] .board-title > b{text-align: center;}
 .adminPage [class*="boardBox"] .board-detail:not(:has(:nth-child(1)))::after{content: '게시물이 없습니다.'; height: 300px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #DCDCDC;}
@@ -43,14 +66,15 @@ body:has(.adminPage [data-popup]){overflow: hidden;}
 .adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > *:not(p){width: 70px; flex-shrink: 0;}
 .adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > p{flex: 1; min-width: 100px;}
 .adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.adminPage [class*="boardBox"] .board-detail .exposure{display: flex; justify-content: center; align-items: center;}
+.adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"] + label{all: inherit; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; text-indent: -9999px;}
+.adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"] + label::before{display: none;}
+.adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
+.adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail:not(:has(:nth-child(1)))::after{content: '벤더사가 없습니다.';}
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail p{text-align: left;}
 .adminPage [class*="boardBox"].boardBox-product .board-detail:not(:has(:nth-child(1)))::after{content: '제품이 없습니다.';}
-.adminPage [class*="boardBox"].boardBox-product .board-detail div{display: flex; justify-content: center; align-items: center;}
-.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"] + label{all: inherit; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; text-indent: -9999px;}
-.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"] + label::before{display: none;}
-.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
-.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
+.adminPage [class*="boardBox"].boardBox-suppot-faq .board-detail p{text-align: left;}
 
 
 /* 해더 */
@@ -72,18 +96,6 @@ body:has(.adminPage [data-popup]){overflow: hidden;}
 
 .adminPage input:not([type="submit"]), textarea{font-size: 15px; line-height: 19px; padding-left: 15px; height: 40px; width: 100%; font-weight: 400; border: 1px solid var(--color-line); border-radius: 4px; box-sizing: border-box;}
 
-/* 셀렉트 박스 */
-.adminPage .selectBox{position: relative;}
-.adminPage .selectBox button{font-size: 15px; padding-inline: 15px; height: 40px; font-weight: 400; text-align: left;}
-.adminPage .selectBox > button{border: 1px solid var(--color-line); color: #BBB; border-radius: 4px; box-sizing: border-box; position: relative;}
-.adminPage .selectBox > button::after{width: 18px; right: 15px; content: ''; aspect-ratio: 1; position: absolute; top: 50%; translate: 0 -50%; background: url(../images/icon-down.png) no-repeat center / cover;}
-.adminPage .selectBox > div{position: absolute; left: 0; top: calc(100% + 6px); width: 100%; padding-inline: 5px; background-color: white; border: 1px solid var(--color-font01); border-radius: 4px; box-sizing: border-box; z-index: 1;}
-.adminPage .selectBox > div button{display: block; width: 100%;}
-.adminPage .selectBox > div button:hover{background-color: var(--color-face01);}
-.adminPage .selectBox.active > div{display: block;}
-.adminPage .selectBox.active > button{border-color: var(--color-font01);}
-.adminPage .selectBox.active > button::after{rotate: 180deg;}
-.adminPage .selectBox.selected > button{color: var(--color-font01);}
 
 
 .adminPage{min-width: 1600px;}
@@ -94,12 +106,6 @@ body:has(.adminPage [data-popup]){overflow: hidden;}
 .adminPage .board-search fieldset ul li > button.active{color: var(--color-point); border: 1px solid var(--color-point);}
 .adminPage .board-search fieldset ul li:not(:last-of-type){margin-bottom: 10px;}
 
-
-.adminPage .board-count{margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; gap: 10px;}
-.adminPage .board-count strong.total{font-size: 20px;}
-.adminPage .board-count strong.total::before{content: '총 ';}
-.adminPage .board-count strong.total::after{content: '건';}
-.adminPage .board-count > div:nth-child(2){margin-left: auto;}
 
 
 

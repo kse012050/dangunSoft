@@ -10,8 +10,8 @@ br[class]:not([class*="mobile"]){display: none;}
 /* 입력 */
 :is(input, textarea, .selectBox button){padding-inline: 12px;}
 textarea{padding-block: 14px;}
-.selectBox > button::after{width: 26px;}
-.inputBox-product > div button{font-size: 15px;}
+.userPage .selectBox > button::after{width: 26px;}
+.userPage .inputBox-product > div button{font-size: 15px;}
 
 
 /* 검색 */

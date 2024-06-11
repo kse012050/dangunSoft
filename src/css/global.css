@@ -18,16 +18,16 @@ section:has(.estimateLink){position: relative;}
 
 /* 입력 */
 label{cursor: pointer;}
-:is(input, textarea, .selectBox > button){border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
+:is(input, textarea, .userPage .selectBox > button){border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
 :is(input, textarea)::placeholder{color: var(--color-font04);}
-.selectBox{position: relative;}
-.selectBox > button::after{content: ''; aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
-.selectBox > button.placeholder{color: var(--color-font04);}
-.selectBox button{width: 100%; text-align: left;}
-.selectBox div{max-height: 300px; overflow: auto; position: absolute; left: 0; top: calc(100% + 4px); width: 100%; padding-block: 10px; background-color: white; border: 1px solid black; border-radius: 6px; z-index: 1;}
-.selectBox div::-webkit-scrollbar{width: 8px;}
-.selectBox div::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
-.selectBox div button{line-height: 42px;}
+.userPage .selectBox{position: relative;}
+.userPage .selectBox > button::after{content: ''; aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
+.userPage .selectBox > button.placeholder{color: var(--color-font04);}
+.userPage .selectBox button{width: 100%; text-align: left;}
+.userPage .selectBox div{max-height: 300px; overflow: auto; position: absolute; left: 0; top: calc(100% + 4px); width: 100%; padding-block: 10px; background-color: white; border: 1px solid black; border-radius: 6px; z-index: 1;}
+.userPage .selectBox div::-webkit-scrollbar{width: 8px;}
+.userPage .selectBox div::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
+.userPage .selectBox div button{line-height: 42px;}
 
 
 /* 검색 */
@@ -125,9 +125,9 @@ label{cursor: pointer;}
 
 /* 인풋 */
 form:has([class*="inputBox"]){max-width: 600px; margin-inline: auto;}
-input[type="checkbox"] + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
-input[type="checkbox"] + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background: url(../images/icon-checkbox.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
-input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
+input:is([type="checkbox"], [type="radio"]) + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
+input:is([type="checkbox"], [type="radio"]) + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background: url(../images/icon-checkbox.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
+input:is([type="checkbox"], [type="radio"]):checked + label::before{--styleIdx: 1;}
 [class*="inputBox"] ul{display: flex; flex-wrap: wrap; column-gap: 10px;}
 [class*="inputBox"] ul li:not(.half){width: 100%;}
 [class*="inputBox"] ul li.half{width: calc((100% - 10px) / 2);}

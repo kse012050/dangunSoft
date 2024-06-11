@@ -5,6 +5,7 @@ import SignIn from './SignIn';
 import SignInError from './SignInError';
 import VendorCreate from './VendorCreate';
 import VendorUpdate from './VendorUpdate';
+import SupportFAQCreate from './support/FAQ/Create';
 
 
 export default function Popup({ popup, setPopup }) {
@@ -39,6 +40,7 @@ export default function Popup({ popup, setPopup }) {
             { popup.type === 'signInError' && <SignInError popup={popup} close={close}/>}
             { popup.type === 'vendorCreate' && <VendorCreate setPopup={setPopup} close={close}/>}
             { popup.type === 'vendorUpdate' && <VendorUpdate popup={popup} setPopup={setPopup} close={close}/>}
+            { popup.type === 'supportFAQCreate' && <SupportFAQCreate popup={popup} setPopup={setPopup} close={close}/>}
         </div>
     );
 }
