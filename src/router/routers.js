@@ -19,6 +19,9 @@ import AdminRoot from '../admin/page/Root'
 import Dashboard from '../admin/page/Dashboard'
 import MyInfo from "../admin/page/MyInfo";
 import Vendor from "../admin/page/product/Vendor";
+import AdminProduct from "../admin/page/product/Product";
+import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
+import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
 
 export const routers = [
     {
@@ -125,6 +128,21 @@ export const routers = [
         children: [
             {
                 path: 'vendor', element: <Vendor />
+            },
+            {
+                path: 'product', element: <AdminProduct />
+            },
+        ]
+    },
+    {
+        path: "/admin/support",
+        element: <AdminRoot />,
+        children: [
+            {
+                path: 'faq', element: <FAQCategory />
+            },
+            {
+                path: 'qna', element: <CategoryQnA />
             },
         ]
     },

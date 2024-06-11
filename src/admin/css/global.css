@@ -39,9 +39,18 @@ body:has(.adminPage [data-popup]){overflow: hidden;}
 .adminPage [class*="boardBox"] .board-title > b{text-align: center;}
 .adminPage [class*="boardBox"] .board-detail:not(:has(:nth-child(1)))::after{content: '게시물이 없습니다.'; height: 300px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"] :is(.board-detail li:not(:has(a)), .board-detail li a){font-size: 15px; display: flex; align-items: center; gap: 80px; height: 50px; padding-inline: 70px; border-bottom: 1px solid #DCDCDC;}
-.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > *:not(p){width: 70px; text-align: center; flex-shrink: 0;}
-.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > p{flex: 1;}
-.adminPage .boardBox-ventor .board-detail:not(:has(:nth-child(1)))::after{content: '벤더사가 없습니다.';}
+.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > *{text-align: center;}
+.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > *:not(p){width: 70px; flex-shrink: 0;}
+.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > p{flex: 1; min-width: 100px;}
+.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.adminPage [class*="boardBox"].boardBox-ventor .board-detail:not(:has(:nth-child(1)))::after{content: '벤더사가 없습니다.';}
+.adminPage [class*="boardBox"].boardBox-ventor .board-detail p{text-align: left;}
+.adminPage [class*="boardBox"].boardBox-product .board-detail:not(:has(:nth-child(1)))::after{content: '제품이 없습니다.';}
+.adminPage [class*="boardBox"].boardBox-product .board-detail div{display: flex; justify-content: center; align-items: center;}
+.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"] + label{all: inherit; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; text-indent: -9999px;}
+.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"] + label::before{display: none;}
+.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
+.adminPage [class*="boardBox"].boardBox-product .board-detail input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
 
 
 /* 해더 */
@@ -49,11 +58,13 @@ body:has(.adminPage [data-popup]){overflow: hidden;}
 .adminPage header{position: sticky; top: 0; width: 100%; height: var(--adminHeaderHeight); display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: white; box-sizing: border-box; box-shadow: 0px 5px 21px -5px #cdd1e1; z-index: 100;}
 .adminPage header h1 a{--styleIdx: 0; display: block; width: 150px; aspect-ratio: 249 / 40; background: url(../../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
 .adminPage > div{display: flex;}
-.adminPage > div .menuArea{position: sticky; top: var(--adminHeaderHeight); width: 200px; height: calc(100vh - var(--adminHeaderHeight)); flex-shrink: 0; padding: 40px 20px; box-shadow: 0px 5px 21px -5px #cdd1e1; box-sizing: border-box;}
+.adminPage > div .menuArea{ /* width: 220px; */ flex-shrink: 0; padding: 40px 20px; box-shadow: 0px 5px 21px -5px #cdd1e1; box-sizing: border-box;}
 .adminPage > div .menuArea li > :is(button, a){font-size: 20px; font-weight: 700;}
+.adminPage > div .menuArea li a{color: rgba(22, 22, 22, 0.5);}
+.adminPage > div .menuArea li a.active{color: #222;}
 .adminPage > div .menuArea li div{padding: 20px;}
-.adminPage > div .menuArea li div a{display: block; font-size: 16px; font-weight: 700; padding-block: 10px; color: rgba(22, 22, 22, 0.5);}
-.adminPage > div .menuArea li div a.active{color: #222;}
+.adminPage > div .menuArea li div a{display: block; font-size: 16px; font-weight: 700; padding-block: 10px;}
+/* .adminPage > div .menuArea li div a.active{color: #222;} */
 
 
 /* ------------------------------------------------------- */

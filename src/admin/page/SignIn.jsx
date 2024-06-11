@@ -15,7 +15,7 @@ export default function SignIn() {
     useEffect(()=>{
         adminToken && navigate('/admin/dashboard')
         inputsRequiredAdd(setInputs);
-    },[])
+    },[adminToken, navigate])
 
     const onSubmit = (e) =>{
         e.preventDefault();
