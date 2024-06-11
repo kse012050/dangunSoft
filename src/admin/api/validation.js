@@ -6,7 +6,7 @@ export const inputsRequiredAdd = (setInputs) =>{
                 setInputs((input)=>({...input, [name]: value}))
             }
         }else{
-            setInputs((input)=>({...input, [name]: ''}))
+            setInputs((input)=>({...input, [name]: value || ''}))
         }
     })
 }

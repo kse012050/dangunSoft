@@ -9,7 +9,7 @@ export default function Vendor() {
     const boardFunc = useCallback(()=>{
         adminApi('vendor', '', {page: '1'/* , limit: '100' */, all_yn: 'n'})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     setBoard({
                         page: result.data,
@@ -22,6 +22,7 @@ export default function Vendor() {
     useEffect(()=>{
         boardFunc()
     },[boardFunc])
+
     return (
         <>
             <h2>벤더사 관리</h2>
@@ -47,7 +48,7 @@ export default function Vendor() {
                                 <span>{ data.vendor_name }</span>
                             </p>
                             <div>
-                                <button className='btn-point'>수정</button>
+                                <button className='btn-point' onClick={()=>setPopup({type: 'vendorUpdate', id: data.vendor_id, name: data.vendor_name, finFunc: boardFunc})}>수정</button>
                             </div>
                         </li>
                     )}

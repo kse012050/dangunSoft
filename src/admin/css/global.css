@@ -28,6 +28,7 @@ body:has(.adminPage [data-popup]){overflow: hidden;}
 .adminPage [data-popup] > div input:not([type="submit"]){margin-block: 10px;}
 .adminPage [data-popup] > div mark{font-size: 13px;}
 .adminPage [data-popup] > div input[type="submit"]{display: block; margin-top: 20px; margin-left: auto; background-color: var(--color-point); color: white;}
+.adminPage [data-popup] > div input[type="submit"]:disabled{background-color: #DCDCDC;}
 .adminPage [data-popup] button.close{position: absolute; right: 10px; top: 10px; width: 25px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
 
 .adminPage [data-popup] > div div{display: flex; justify-content: center; gap: 10px; margin-top: 30px;}
