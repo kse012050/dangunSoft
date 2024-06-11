@@ -211,6 +211,7 @@
 .boardPage section .boardBox{border-top: 1px solid black;}
 .boardPage section .boardBox > div{font-weight: 700; border-bottom: 1px solid var(--color-line);}
 .boardPage section .boardBox > ul li{border-bottom: 1px solid var(--color-line);}
+.boardPage section .boardBox > ul:not(:has(:nth-child(1)))::after{content: '게시물이 없습니다.'; height: 300px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #DCDCDC;}
 .boardPage section .boardBox :where(div, ul li a){display: flex;}
 .boardPage section .boardBox :is(div, ul li a) > *:not(p){text-align: center;}
 .boardPage section .boardBox > ul li a.lack p{background: url(../images/icon-lock.png) no-repeat right center / 22px;}

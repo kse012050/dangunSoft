@@ -1,5 +1,5 @@
-import Board from "../page/Board";
-import BoardDetail from "../page/BoardDetail";
+import Board from "../page/support/Board";
+import BoardDetail from "../page/support/BoardDetail";
 import FAQ from "../page/FAQ";
 import Inquiry from "../page/support/Inquiry";
 import InquiryResult from "../page/support/InquiryResult";
