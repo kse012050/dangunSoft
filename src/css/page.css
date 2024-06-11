@@ -197,8 +197,8 @@
 
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimatePage, .buyPage, .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimateResultPage, .buyResultPage ) section h2 + p{color: var(--color-font01); text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, .buyPage, .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimateResultPage, .buyResultPage ) section h2 + p{color: var(--color-font01); text-align: center;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
 
@@ -265,4 +265,4 @@
 
 
 /* 견적 요청, 구매 완료 페이지 공통 */
-:is(.estimateResultPage, .buyResultPage) section > .btn-bg{display: block; margin-inline: auto;}
+:is(.inquiryResultPage, .estimateResultPage, .buyResultPage) section > .btn-bg{display: block; margin-inline: auto;}

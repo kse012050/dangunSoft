@@ -9,7 +9,7 @@ import { userApi, isSubmit } from '../api/api';
 import Popup from '../components/popup/Popup';
 
 export default function Main() {
-    const [inputs, setInputs] = useState({title: ''})
+    const [inputs, setInputs] = useState()
     const [popup, setPopup] = useState()
 
     useEffect(()=>{
@@ -26,7 +26,7 @@ export default function Main() {
         
         const copyInputs = {
             board_type: 'simple_inquiry',
-            write_name: inputs.write_name_last_name + inputs.write_name_first_name,
+            write_name: `${inputs.write_name_last}/${inputs.write_name_first}`,
             company_name: inputs.company_name,
             email: inputs.email
         }
@@ -252,10 +252,10 @@ export default function Main() {
                         <strong>Get in Touch</strong>
                         <ul>
                             <li>
-                                <label htmlFor="write_name_last_name">名前</label>
+                                <label htmlFor="write_name_last">名前</label>
                                 <div>
-                                    <input type="text" placeholder='姓' name='write_name_last_name' id='write_name_last_name' required/>
-                                    <input type="text" placeholder='名' name='write_name_first_name' required/>
+                                    <input type="text" placeholder='姓' name='write_name_last' id='write_name_last' required/>
+                                    <input type="text" placeholder='名' name='write_name_first' required/>
                                 </div>
                             </li>
                             <li>

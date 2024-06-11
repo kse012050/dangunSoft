@@ -1,7 +1,8 @@
 import Board from "../page/Board";
 import BoardDetail from "../page/BoardDetail";
 import FAQ from "../page/FAQ";
-import Inquiry from "../page/Inquiry";
+import Inquiry from "../page/support/Inquiry";
+import InquiryResult from "../page/support/InquiryResult";
 import Main from "../page/Main";
 import Product from "../page/Product";
 import ProductDetail from "../page/ProductDetail";
@@ -54,6 +55,7 @@ export const routers = [
             { path: 'board', element: <Board/>  },
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
+            { path: 'inquiryResult', element: <InquiryResult/>  },
             { path: 'faq', element: <FAQ/>  },
             { path: 'faq/:search', element: <FAQ/>  },
         ]
