@@ -133,6 +133,7 @@
 
 /* 제품 상세 페이지, 솔루션 페이지 공통 */
 :is(.productDetailPage, .solutionPage) strong{font-weight: 700;}
+:is(.productDetailPage, .solutionPage) .topArea a.linkArea{font-weight: 700; display: flex; justify-content: center; align-items: center; border: 1px solid #fff; border-radius: 6px;}
 
 /* 제품 상세 페이지 공통 */
 /* 제품 상세 페이지 - 상단 */

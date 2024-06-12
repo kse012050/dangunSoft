@@ -71,6 +71,7 @@
 :is(.productDetailPage, .solutionPage) h3{margin-bottom: 20px;}
 :is(.productDetailPage, .solutionPage) strong{font-size: 20px; line-height: 28px;}
 :is(.productDetailPage, .solutionPage) strong + p{font-size: 14px; line-height: 20px;}
+:is(.productDetailPage, .solutionPage) .topArea a.linkArea{width: 176px;}
 
 
 /* 제품 페이지 */
@@ -131,13 +132,12 @@
 /* 솔루션 페이지 - 상단 */
 .solutionPage .topArea{padding-block: 110px 128px; text-align: center;}
 .solutionPage .topArea b{font-size: 22px; line-height: 32px;}
-.solutionPage .topArea p{font-size: 14px; line-height: 20px;}
+.solutionPage .topArea p{font-size: 14px; line-height: 20px; margin-bottom: 40px;}
 
 
 /* 솔루션 페이지 - about */
-.solutionPage .aboutArea h3 + p{margin-bottom: 30px;}
+.solutionPage .aboutArea h3 + p{margin-bottom: 90px;}
 .solutionPage .aboutArea h3 + p:after{margin-top: 30px; display: block;}
-.solutionPage .aboutArea h3 ~ a{margin-bottom: 60px;}
 .solutionPage .aboutArea ul li:not(:last-child){margin-bottom: 60px;}
 
 

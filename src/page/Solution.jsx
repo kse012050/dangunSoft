@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import EstimateLink from '../components/EstimateLink';
 
 export default function Solution() {
     return (
@@ -12,13 +11,13 @@ export default function Solution() {
                     JetBrains AIを使用することで、これまでとは異なる<br/>
                     IDE（統合開発環境）でより多くの情報と機能を利用できるようになります。
                 </p>
-                <EstimateLink />
+                <Link to='/estimate' className='linkArea'>お見積もり</Link>
             </section>
 
             <section className='aboutArea'>
                 <h3>About JetBrains AI</h3>
                 <p>JetBrains AIは、IDE(統合開発環境)内部にAIチャット、リファクタリング、自動補完、ランタイムエラー説明などの強力なAI機能を提供するプラグインです。JetBrains AI ServiceがIDEとLLM（大規模言語モデル）を安全に接続し、IDE内部に多様なAIサービスを提供します。JetBrains AIは、IDEに開かれたプロジェクトのコンテキストを深く理解しており、これにより、ユーザーに最適化された情報と機能を提供することができます。JetBrainsの商用IDEライセンスをお持ちの場合は、トライアル版でJetBrains AIを体験することができます。</p>
-                <Link to='/estimate' className='btn-border-white'>お見積もり</Link>
+                {/* <Link to='/estimate' className='btn-border-white'>お見積もり</Link> */}
                 <ul>
                     <li>
                         <strong>リファクタリング</strong>
@@ -60,12 +59,12 @@ export default function Solution() {
             <section className='purchaseBox-black'>
                 <h3>購入オプション</h3>
                 <div>
-                    <b><span>業務用</span></b>
+                    <b><span>商業用</span></b>
                     <ul>
                         <li title='新規購入'>
                             <span>
                                 $200<br/>
-                                (incl. VAT $220)
+                                (VAT 込み価格 $220)
                             </span>
                         </li>
                         <li title='すべての機能'><span title='포함'></span></li>
@@ -73,6 +72,7 @@ export default function Solution() {
                         <li title='技術的なお問い合わせ'><span title='포함'></span></li>
                         <li title='ライセンス所有'><span>法人</span></li>
                         <li><span><Link to='/estimate' className='btn-border-white'>お見積もり</Link></span></li>
+                        <li><span><Link to='/buy' className='btn-white'>ご購入</Link></span></li>
                     </ul>
                 </div>
                 <div>
@@ -89,6 +89,7 @@ export default function Solution() {
                         <li title='技術的なお問い合わせ'><span></span></li>
                         <li title='ライセンス所有'><span>個人</span></li>
                         <li><span><Link to='/estimate' className='btn-border-white'>お見積もり</Link></span></li>
+                        <li><span><Link to='/buy' className='btn-white'>ご購入</Link></span></li>
                     </ul>
                 </div>
             </section>

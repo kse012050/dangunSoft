@@ -5,7 +5,7 @@ br[class]:not([class*="pc"]){display: none;}
 /* 버튼 */
 [class*='btn']{font-size: 18px;}
 [class*='btn-border']{line-height: 58px;}
-.btn-bg{line-height: 60px;}
+.btn-bg, .btn-white{line-height: 60px;}
 
 
 /* 견적 링크 */

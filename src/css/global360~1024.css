@@ -1,7 +1,7 @@
 /* 버튼 */
 [class*='btn']{font-size: 16px;}
 [class *= 'btn-border']{line-height: 48px;}
-.btn-bg{line-height: 50px;}
+.btn-bg, .btn-white{line-height: 50px;}
 
 
 /* 입력 */

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { tabList, iconList } from '../js/product'
-import EstimateLink from '../components/EstimateLink';
 
 export default function Product() {
     const [activeTab, setActiveTab] = useState(tabList[0].name)
@@ -31,7 +30,6 @@ export default function Product() {
                 </h2>
                 <p>JetBrainsは、個人とチームの両方のために、さまざまなツールを提供しています。</p>
                 <Link to='/estimate' className='btn-border-white'>お見積もり</Link>
-                <EstimateLink />
             </section>
 
             <section className='productArea'>

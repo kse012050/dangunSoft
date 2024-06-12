@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { iconList } from '../js/product'
 import { Link, useParams } from 'react-router-dom';
-import EstimateLink from '../components/EstimateLink';
 
 export default function ProductDetail() {
     const { productIdx } = useParams()
@@ -15,7 +14,7 @@ export default function ProductDetail() {
                     { productData.summary }
                 </p>
                 <img src={require(`../images/products/${productIdx}.svg`)} alt="" />
-                <EstimateLink />
+                <Link to='/estimate' className='linkArea'>お見積もり</Link>
             </section>
 
             <section className='infoArea'>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import EstimateLink from '../components/EstimateLink';
 import { Pagination } from 'swiper/modules';
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import { userApi, isSubmit } from '../api/api';
@@ -73,7 +72,6 @@ export default function Main() {
                     NATTOSYSTEMはJetBrains公式代理店です。弊社は製品に関する専門的な知識をもとに <br className='pc_tablet'/>
                     お客様の開発環境、直面している問題点などを把握し、それらに合った製品とサービスをリーズナブルな価格で提供します。 
                 </p>
-                <EstimateLink />
             </section>
 
             <section className='productArea'>
@@ -236,7 +234,7 @@ export default function Main() {
                 <ul data-styleidx>
                     <li>
                         <b>Phone</b>
-                        <Link to='tel:+8207080805970'>070-8080-5970</Link>
+                        <Link to='tel:+8207080805970'>82-070-8080-5970</Link>
                     </li>
                     <li>
                         <b>Email</b>
@@ -244,7 +242,7 @@ export default function Main() {
                     </li>
                     <li>
                         <b>Address</b>
-                        <p>東京都港区南 青山 2-2-8 DF ビル 6F</p>
+                        <p>東京都港区南青山2-2-8 DFビル6F</p>
                     </li>
                 </ul>
                 <form onChange={(e)=>inputChange(e, setInputs)}>
@@ -259,9 +257,9 @@ export default function Main() {
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="company_name">会社</label>
+                                <label htmlFor="company_name">企業名</label>
                                 <div>
-                                    <input type="text" placeholder='会社名を入力してください' name='company_name' id='company_name' required/>
+                                    <input type="text" placeholder='企業名を入力してください' name='company_name' id='company_name' required/>
                                 </div>
                             </li>
                             <li>
@@ -271,7 +269,7 @@ export default function Main() {
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="title">備考</label>
+                                <label htmlFor="title">内容</label>
                                 <div>
                                     <input type="text" placeholder='お問い合わせの内容' name='title' id='title'/>
                                 </div>
