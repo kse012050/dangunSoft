@@ -1,6 +1,6 @@
 import Board from "../page/support/Board";
 import BoardDetail from "../page/support/BoardDetail";
-import FAQ from "../page/FAQ";
+import FAQ from "../page/support/FAQ";
 import Inquiry from "../page/support/Inquiry";
 import InquiryResult from "../page/support/InquiryResult";
 import Main from "../page/Main";

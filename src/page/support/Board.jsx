@@ -12,10 +12,10 @@ export default function Board() {
     const passwordRef = useRef()
 
     useEffect(()=>{
-        console.log(inputs);
+        // console.log(inputs);
         userApi('board', '', inputs)
             .then((result)=>{
-                console.log(result.list);
+                // console.log(result.list);
                 if(result.result){
                     setBoard({
                         list: result.list

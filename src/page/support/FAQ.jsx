@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { tab, list } from '../js/faq'
-import { urlParams } from '../js/common'
+import { tab, list } from '../../js/faq'
+import { urlParams } from '../../js/common'
 
 
 export default function FAQ() {
@@ -112,7 +112,7 @@ export default function FAQ() {
                                                     </div>
                                                 )}
                                                 {(type === 'img' &&
-                                                    <img src={require(`../images/faq/${detail}.png`)} alt="" />
+                                                    <img src={require(`../../images/faq/${detail}.png`)} alt="" />
                                                 )}
                                                 {(type === 'video' &&
                                                     <iframe src={detail} title='test'></iframe>
