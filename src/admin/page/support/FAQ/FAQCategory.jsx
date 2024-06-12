@@ -1,20 +1,39 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { adminApi } from '../../../api/api';
+// import { adminApi } from '../../../api/api';
 import Popup from '../../../components/popup/Popup';
+import { userApi } from '../../../../api/api';
 
 export default function FAQCategory() {
     const [board, setBoard] = useState()
     const [popup, setPopup] = useState()
 
     const boardFunc = useCallback(()=>{
-        adminApi('board', '', {board_type: 'faq', page: '1'/* , limit: '100' */})
+        // adminApi('board', '', {board_type: 'faq', page: '1'/* , limit: '100' */})
+        //     .then((result)=>{
+        //         // console.log(result);
+        //         if(result.result){
+        //             setBoard({
+        //                 page: result.data,
+        //                 list: result.list
+        //             })
+        //         }
+        //     })
+
+        userApi('category', '', {depth: '1', all_yn: 'n'})
             .then((result)=>{
-                console.log(result);
+                const arr = []
+                const parentArr = result.list.filter((data)=> data.parent_category_id === 0)
+                const childArr = result.list.filter((data)=> data.parent_category_id !== 0)
+                parentArr.forEach((data)=>{
+                    arr.push(data)
+                    childArr.filter((data2)=> data.category_id === data2.parent_category_id).forEach((data2)=>{
+                        arr.push(data2)
+                    })
+                })
                 if(result.result){
                     setBoard({
-                        page: result.data,
-                        list: result.list
+                        list: arr
                     })
                 }
             })
@@ -24,6 +43,10 @@ export default function FAQCategory() {
         boardFunc()
     },[boardFunc])
 
+    const onExposure = () => {
+
+    }
+
     return (
         <>
             <h2>FAQ 카테고리</h2>
@@ -32,7 +55,7 @@ export default function FAQCategory() {
                 <div className="board-tab">
                     <NavLink to='/admin/support/faq'>카테고리 관리</NavLink>
                     <NavLink to='/admin/support/qna'>문답 관리</NavLink>
-                    <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQCreate'})}>등록</button>
+                    <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQCreate', func: boardFunc})}>등록</button>
                 </div>
 
                 <div className="board-title">
@@ -48,16 +71,16 @@ export default function FAQCategory() {
 
                 <ol className="board-detail">
                     { board?.list.map((data)=>
-                        <li key={ data.board_id }>
-                            <b>1 depth</b>
-                            <b>2 depth</b>
+                        <li key={ data.category_id }>
+                            <b>{ !data.parent_category_id ? data.category_id : '' }</b>
+                            <b>{ data.parent_category_id ? data.category_id : ''}</b>
                             <p>
-                                <span>{ data.title }</span>
+                                <span>{ data.name }</span>
                             </p>
                             <b>문답 수</b>
                             <div className='exposure'>
-                                <input type="checkbox" id='test'/>
-                                <label htmlFor="test">노출 여부</label>
+                                <input type="checkbox" id={`check_${data.category_id}`} checked={data.exposure_yn === 'y'} onChange={onExposure}/>
+                                <label htmlFor={`check_${data.category_id}`}>노출 여부</label>
                             </div>
                             <div>
                                 <button className='btn-point'>수정</button>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function SelectBox({ text, value, name/* , setTypeInputs */ }) {
+export default function SelectBox({ text, value, name, setInputs, nextRef }) {
     const [isOpen, setIsOpen] = useState(false);
     const [select, setSelect] = useState(text[0]);
     const dropdownRef = useRef(null);
@@ -21,8 +21,9 @@ export default function SelectBox({ text, value, name/* , setTypeInputs */ }) {
     const listClick = (e, type) =>{
         setSelect(e.target.innerHTML)
         // setTypeInputs(prev => ({...prev, [name]: type}))
+        setInputs(prev => ({...prev, [name]: type}))
         setIsOpen(false)
-
+        nextRef && nextRef.current.focus()
     }
 
     return (
