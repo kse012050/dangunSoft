@@ -78,7 +78,6 @@ function adminOptions(type, data){
 }
 
 export function adminApi(url, type, data){
-    console.log('?');
     const options = adminOptions(type, data);
     return fetch(`${adminApiUrl}${url}`, options)
             .then(response => response.json())

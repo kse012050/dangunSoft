@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function SelectBox({ text, value, name, setInputs, nextRef }) {
+export default function SelectBox({ text, value, firstText, name, setInputs, nextRef, placeholder }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [select, setSelect] = useState(text[0]);
+    const [select, setSelect] = useState(firstText || (!placeholder ? text[0] : ''));
     const dropdownRef = useRef(null);
 
     const handleClickOutside = (event) => {
@@ -12,6 +12,8 @@ export default function SelectBox({ text, value, name, setInputs, nextRef }) {
     };
 
     useEffect(() => {
+        // console.log(text);
+        // console.log(value);
         document.addEventListener('click', handleClickOutside);
         return () => {
             document.removeEventListener('click', handleClickOutside);
@@ -32,7 +34,7 @@ export default function SelectBox({ text, value, name, setInputs, nextRef }) {
                 onClick={()=> setIsOpen(prev => !prev)}
                 className={isOpen ? 'active': ''}
             >
-                { select || '분류' }
+                { select || (placeholder || '분류') }
             </button>
             {isOpen && 
                 <div>

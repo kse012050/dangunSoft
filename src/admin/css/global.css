@@ -24,13 +24,14 @@ mark.point{color: var(--color-point);}
 .adminPage [data-popup] > div{width: 270px; padding: 50px 30px 30px; border: 1px solid var(--color-point); border-radius: 10px; background-color: white; position: relative;}
 .adminPage [data-popup] > div strong{display: block; font-size: 18px; line-height: 21px; margin-bottom: 20px; font-weight: 700;}
 .adminPage [data-popup] > div p{font-size: 15px; line-height: 18px; font-weight: 400;}
-.adminPage [data-popup] > div p:not(:last-of-type){margin-bottom: 10px;}
+/* .adminPage [data-popup] > div p:last-of-type{margin-bottom: 30px;} */
 .adminPage [data-popup] > div input[type="text"]{display: block; margin-block: 10px;}
 .adminPage [data-popup] > div .selectBox{margin-block: 10px;}
 .adminPage [data-popup] > div mark{font-size: 13px;}
 .adminPage [data-popup] > div .radio{display: flex; gap: 10px;}
 .adminPage [data-popup] > div input[type="submit"]{display: block; margin-top: 20px; margin-left: auto; background-color: var(--color-point); color: white;}
 .adminPage [data-popup] > div input[type="submit"]:disabled{background-color: #DCDCDC;}
+.adminPage [data-popup] > div div.buttonArea{margin-top: 20px; display: flex; justify-content: flex-end;}
 .adminPage [data-popup] button.close{position: absolute; right: 10px; top: 10px; width: 25px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
 
 /* .adminPage [data-popup] > div div{display: flex; justify-content: center; gap: 10px; margin-top: 30px;} */

@@ -2,7 +2,7 @@ import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 // import { adminApi } from '../../../api/api';
 import Popup from '../../../components/popup/Popup';
-import { userApi } from '../../../../api/api';
+import { adminApi } from '../../../api/api';
 
 export default function FAQCategory() {
     const [board, setBoard] = useState()
@@ -20,18 +20,21 @@ export default function FAQCategory() {
         //         }
         //     })
 
-        userApi('category', '', {depth: '1', all_yn: 'n'})
+        adminApi('category', '', {depth: '1', all_yn: 'n'})
             .then((result)=>{
-                const arr = []
-                const parentArr = result.list.filter((data)=> data.parent_category_id === 0)
-                const childArr = result.list.filter((data)=> data.parent_category_id !== 0)
-                parentArr.forEach((data)=>{
-                    arr.push(data)
-                    childArr.filter((data2)=> data.category_id === data2.parent_category_id).forEach((data2)=>{
-                        arr.push(data2)
-                    })
-                })
+                // console.log(result);
                 if(result.result){
+                    const arr = []
+                    const parentArr = result.list.filter((data)=> data.parent_category_id === 0)
+                    const childArr = result.list.filter((data)=> data.parent_category_id !== 0)
+                    // console.log(parentArr);
+                    // console.log(childArr);
+                    parentArr.forEach((data)=>{
+                        arr.push(data)
+                        childArr.filter((data2)=> data.category_id === data2.parent_category_id).forEach((data2)=>{
+                            arr.push(data2)
+                        })
+                    })
                     setBoard({
                         list: arr
                     })
@@ -43,13 +46,20 @@ export default function FAQCategory() {
         boardFunc()
     },[boardFunc])
 
-    const onExposure = () => {
+    const onExposure = (e, category_id) => {
+        const { checked } = e.target
+        adminApi('category/manage', 'update', {category_id: category_id, exposure_yn: checked ? 'y' : 'n'})
+            .then((result)=>{
+                // console.log(result);
+                if(result.result){
 
+                }
+            })
     }
 
     return (
         <>
-            <h2>FAQ 카테고리</h2>
+            <h2 onClick={()=>console.log(board)}>FAQ 카테고리</h2>
             
             <div className="boardBox-suppot-faq">
                 <div className="board-tab">
@@ -79,11 +89,11 @@ export default function FAQCategory() {
                             </p>
                             <b>문답 수</b>
                             <div className='exposure'>
-                                <input type="checkbox" id={`check_${data.category_id}`} checked={data.exposure_yn === 'y'} onChange={onExposure}/>
+                                <input type="checkbox" id={`check_${data.category_id}`} defaultChecked={data.exposure_yn === 'y'} onChange={(e)=>onExposure(e, data.category_id)}/>
                                 <label htmlFor={`check_${data.category_id}`}>노출 여부</label>
                             </div>
                             <div>
-                                <button className='btn-point'>수정</button>
+                                <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQUpdate', data: data, func: boardFunc})}>수정</button>
                             </div>
                         </li>
                     )}

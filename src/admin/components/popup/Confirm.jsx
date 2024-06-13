@@ -6,7 +6,7 @@ export default function Confirm({ popup, close }) {
             <strong>{ popup.title }</strong>
             {popup.description && <p>{ popup.description }</p>}
             {popup.description2 && <p>{ popup.description2 }</p>}
-            <div>
+            <div className='buttonArea'>
                 <button className="btn-point" type="button" onClick={close}>확인</button>
             </div>
         </div>
