@@ -59,7 +59,7 @@ export default function FAQCategory() {
 
     return (
         <>
-            <h2 onClick={()=>console.log(board)}>FAQ 카테고리</h2>
+            <h2>FAQ 관리</h2>
             
             <div className="boardBox-suppot-faq">
                 <div className="board-tab">

@@ -4,12 +4,12 @@
 
 
 /* 버튼 */
-[class*='btn']{border-radius: 6px; font-weight: 700; text-align: center;}
-[class*='btn-border']{display: block; border-width: 1px; border-style: solid;}
-.btn-border-white{border-color: white; color: white;}
-.btn-border-black{border-color: black;}
-.btn-bg{background-color: black; color: white;}
-.btn-white{background-color: white; color: black;}
+.userPage [class*='btn']{border-radius: 6px; font-weight: 700; text-align: center;}
+.userPage [class*='btn-border']{display: block; border-width: 1px; border-style: solid;}
+.userPage .btn-border-white{border-color: white; color: white;}
+.userPage .btn-border-black{border-color: black;}
+.userPage .btn-bg{background-color: black; color: white;}
+.userPage .btn-white{background-color: white; color: black;}
 
 
 /* 견적 링크 */

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function SelectBox({ text, value, firstText, name, setInputs, nextRef, placeholder }) {
+export default function SelectBox({ text, value, firstText, name, setInputs, func, nextRef, placeholder }) {
     const [isOpen, setIsOpen] = useState(false);
     const [select, setSelect] = useState(firstText || (!placeholder ? text[0] : ''));
     const dropdownRef = useRef(null);
@@ -25,6 +25,7 @@ export default function SelectBox({ text, value, firstText, name, setInputs, nex
         // setTypeInputs(prev => ({...prev, [name]: type}))
         setInputs(prev => ({...prev, [name]: type}))
         setIsOpen(false)
+        func && func()
         nextRef && nextRef.current.focus()
     }
 

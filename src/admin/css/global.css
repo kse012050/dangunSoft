@@ -57,8 +57,13 @@ mark.point{color: var(--color-point);}
 .adminPage .board-count strong.total::before{content: '총 ';}
 .adminPage .board-count strong.total::after{content: '건';}
 .adminPage .board-count > div:nth-child(2){margin-left: auto;}
-.adminPage .board-tab{margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; gap: 10px;}
+.adminPage .board-tab{font-size: 15px; margin-bottom: 15px; display: flex; align-items: center;}
+.adminPage .board-tab a{height: 40px; padding-inline: 20px; border-width: 1px; border-style: solid; border-color: #DCDCDC; box-sizing: border-box; display: flex; align-items: center;}
+.adminPage .board-tab a.active{color: var(--color-point); border-width: 2px; border-color: var(--color-point); font-weight: 700;}
 .adminPage .board-tab button{margin-left: auto;}
+.adminPage .board-selectBox{display: flex; gap: 10px; margin-bottom: 15px;}
+.adminPage .board-selectBox .selectBox{width: 230px;}
+.adminPage .board-selectBox > a{margin-left: auto;}
 .adminPage [class*="boardBox"] .board-title{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 56px; font-weight: 700; padding-inline: 70px; border-top: 1px solid var(--color-font01); background-color: #F7F7F7; box-sizing: border-box;}
 .adminPage [class*="boardBox"] .board-title > b{text-align: center;}
 .adminPage [class*="boardBox"] .board-detail:not(:has(:nth-child(1)))::after{content: '게시물이 없습니다.'; height: 300px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #DCDCDC;}
@@ -76,6 +81,8 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail p{text-align: left;}
 .adminPage [class*="boardBox"].boardBox-product .board-detail:not(:has(:nth-child(1)))::after{content: '제품이 없습니다.';}
 .adminPage [class*="boardBox"].boardBox-suppot-faq .board-detail p{text-align: left;}
+.adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-title, .board-detail li:not(:has(a)), .board-detail li:has(a) a) > *:last-child{width: 140px;}
+.adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-detail li:not(:has(a)), .board-detail li:has(a) a) > *:last-child{display: flex; justify-content: center; gap: 5px;}
 
 
 /* 해더 */
