@@ -81,8 +81,8 @@ export default function FAQCategory() {
                                 <label htmlFor={`check_${data.category_id}`}>노출 여부</label>
                             </div>
                             <div>
-                                {/* <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQUpdate', data: data, func: boardFunc})}>수정</button> */}
-                                <button className='btn-point' 
+                                <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQUpdate', data: data, func: boardFunc})}>수정</button>
+                                <button className='btn-point-border' 
                                     onClick={()=>setPopup({
                                         type: 'cancel', 
                                         title: '삭제',

@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import SelectBox from '../../../components/SelectBox';
 import { adminApi } from '../../../api/api';
 
@@ -97,7 +97,7 @@ export default function CategoryQnA() {
                                         <label htmlFor={`check_${data.board_id}`}>노출 여부</label>
                                     </div>
                                     <div className='button'>
-                                        <button className='btn-point'>수정</button>
+                                        <Link to={`/admin/support/qna/${data.board_id}`} className='btn-point'>수정</Link>
                                         <button className='btn-point-border'>삭제</button>
                                     </div>
                                 </li>

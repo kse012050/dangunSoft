@@ -1,11 +1,12 @@
 import React, { useLayoutEffect, useState } from 'react';
 import SelectBox from '../../../components/SelectBox';
 import { adminApi, isSubmit } from '../../../api/api';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { inputChange, inputsRequiredAdd } from '../../../api/validation';
 import Popup from '../../../components/popup/Popup';
 
 export default function Create() {
+    const { id } = useParams();
     const [inputs, setInputs] = useState({board_type: 'faq', category1: '', category2: ''})
     const [category, setCategory] = useState()
     const [firstDepth, setFirstDepth] = useState()
@@ -24,7 +25,16 @@ export default function Create() {
                     })
                 }
             })
-    },[])
+
+        if(id){
+            adminApi('board/detail', '', {board_id: id})
+                .then((result)=>{
+                    if(result.result){
+                        setInputs(prev => ({...prev, board_id: id, title: result.data.title, comment: result.data.comment }))
+                    }
+                })
+        }
+    },[id])
 
     const onSubmit = (e) =>{
         e.preventDefault();
@@ -37,15 +47,16 @@ export default function Create() {
         if(isSubmit(inputs)){
             return;
         }
-        console.log('완료'); 
-        adminApi('board/manage', 'insert', inputs)
+       
+        const funcType = id ? 'update' : 'insert'
+
+        adminApi('board/manage', funcType, inputs)
             .then((result)=>{
-                console.log(result);
                 if(result.result){
                     setPopup({
                         type: 'confirm',
                         title: '알림',
-                        description: ['등록되었습니다.'],
+                        description: id ? ['수정되었습니다.'] : ['등록되었습니다.'],
                         func: () =>{
                             navigate('/admin/support/qna')
                         }
@@ -72,13 +83,13 @@ export default function Create() {
                         <li>
                             <label htmlFor='title'>제목</label>
                             <div>
-                                <input type="text" id='title' name='title' required/>
+                                <input type="text" id='title' name='title' defaultValue={inputs?.title} required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor='comment'>내용</label>
                             <div>
-                                <textarea name="comment" id="comment" required></textarea>
+                                <textarea name="comment" id="comment" defaultValue={inputs?.comment} required></textarea>
                             </div>
                         </li>
                     </ul>

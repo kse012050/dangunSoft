@@ -150,6 +150,9 @@ export const routers = [
             {
                 path: 'qna/create', element: <CategoryQnACreate />
             },
+            {
+                path: 'qna/:id', element: <CategoryQnACreate />
+            },
         ]
     },
 
