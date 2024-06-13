@@ -6,6 +6,11 @@
 mark.point{color: var(--color-point);}
 
 
+.adminPage input:not([type="submit"]), textarea{font-size: 15px; line-height: 19px; padding-left: 15px; height: 40px; width: 100%; font-weight: 400; border: 1px solid var(--color-line); border-radius: 4px; box-sizing: border-box;}
+.adminPage textarea{padding-block: 15px;}
+.adminPage input[type="submit"]{border: none;}
+
+
 /* 버튼 */
 .adminPage [class|="btn"]{text-align: center; border-radius: 4px; box-sizing: border-box;}
 .adminPage [class*="btn-point"], .btn-border-gray-big{font-weight: 700;}
@@ -29,7 +34,7 @@ mark.point{color: var(--color-point);}
 .adminPage [data-popup] > div .selectBox{margin-block: 10px;}
 .adminPage [data-popup] > div mark{font-size: 13px;}
 .adminPage [data-popup] > div .radio{display: flex; gap: 10px;}
-.adminPage [data-popup] > div input[type="submit"]{display: block; margin-top: 20px; margin-left: auto; background-color: var(--color-point); color: white;}
+.adminPage [data-popup] > div input[type="submit"]{display: block; margin-top: 20px; margin-left: auto;}
 .adminPage [data-popup] > div input[type="submit"]:disabled{background-color: #DCDCDC;}
 .adminPage [data-popup] > div div.buttonArea{margin-top: 20px; display: flex; justify-content: flex-end;}
 .adminPage [data-popup] button.close{position: absolute; right: 10px; top: 10px; width: 25px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
@@ -85,6 +90,17 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-detail li:not(:has(a)), .board-detail li:has(a) a) > *:last-child{display: flex; justify-content: center; gap: 5px;}
 
 
+/* 입력 박스 */
+.adminPage .inputBox ul{border-top: 1px solid #dcdcdc;}
+.adminPage .inputBox ul li{font-size: 15px; line-height: 18px;}
+.adminPage .inputBox ul li{display: flex; border-bottom: 1px solid #dcdcdc;}
+.adminPage .inputBox ul li > label{width: 150px; padding-block: 16px; font-weight: 700; flex-shrink: 0; background-color: #F7F7F7; display: flex; align-items: center; justify-content: center;}
+.adminPage .inputBox ul li > div{flex: 1; display: flex; align-items: center; padding: 10px 20px;}
+.adminPage .inputBox ul li > div textarea{height: 300px;}
+.adminPage .inputBox ul li div .radioBox{display: flex; gap: 10px;}
+.adminPage .inputBox .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
+
+
 /* 해더 */
 .adminPage{--adminHeaderHeight: 60px;}
 .adminPage header{position: sticky; top: 0; width: 100%; height: var(--adminHeaderHeight); display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: white; box-sizing: border-box; box-shadow: 0px 5px 21px -5px #cdd1e1; z-index: 100;}
@@ -102,7 +118,6 @@ mark.point{color: var(--color-point);}
 /* ------------------------------------------------------- */
 
 
-.adminPage input:not([type="submit"]), textarea{font-size: 15px; line-height: 19px; padding-left: 15px; height: 40px; width: 100%; font-weight: 400; border: 1px solid var(--color-line); border-radius: 4px; box-sizing: border-box;}
 
 
 

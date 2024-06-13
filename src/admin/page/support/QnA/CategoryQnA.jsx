@@ -70,7 +70,7 @@ export default function CategoryQnA() {
                     {inputs?.category1 &&
                         <SelectBox text={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.name)} value={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.category_id)} name='category2' setInputs={setInputs} placeholder='2차 카테고리를 선택하세요.' key={inputs.category1}/>
                     }
-                    <NavLink to='/' className='btn-point'>등록</NavLink>
+                    <NavLink to='/admin/support/qna/create' className='btn-point'>등록</NavLink>
                 </div>
 
                 {board && 

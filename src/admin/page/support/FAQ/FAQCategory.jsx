@@ -1,6 +1,5 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-// import { adminApi } from '../../../api/api';
 import Popup from '../../../components/popup/Popup';
 import { adminApi } from '../../../api/api';
 
@@ -9,17 +8,6 @@ export default function FAQCategory() {
     const [popup, setPopup] = useState()
 
     const boardFunc = useCallback(()=>{
-        // adminApi('board', '', {board_type: 'faq', page: '1'/* , limit: '100' */})
-        //     .then((result)=>{
-        //         // console.log(result);
-        //         if(result.result){
-        //             setBoard({
-        //                 page: result.data,
-        //                 list: result.list
-        //             })
-        //         }
-        //     })
-
         adminApi('category', '', {depth: '1', all_yn: 'n'})
             .then((result)=>{
                 // console.log(result);

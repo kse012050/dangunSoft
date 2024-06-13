@@ -4,60 +4,60 @@ br[class]:not([class*="mobile"]){display: none;}
 
 /* 컨텐츠 사이즈 */
 .contentSize{--minSpacing: 30px;}
-[class$="Page"] > *:not(header, footer){--minSpacing: 30px;}
+.userPage [class$="Page"] > *:not(header, footer){--minSpacing: 30px;}
 
 
 /* 입력 */
-:is(input, textarea, .selectBox button){padding-inline: 12px;}
-textarea{padding-block: 14px;}
+.userPage :is(input, textarea, .selectBox button){padding-inline: 12px;}
+.userPage textarea{padding-block: 14px;}
 .userPage .selectBox > button::after{width: 26px;}
 .userPage .inputBox-product > div button{font-size: 15px;}
 
 
 /* 검색 */
-.searchBox button:first-of-type{width: 30px; right: 10px;}
+.userPage .searchBox button:first-of-type{width: 30px; right: 10px;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"] > div:not(:last-of-type){margin-bottom: 40px;}
-[class*="purchaseBox"] > div ul li{display: flex; justify-content: space-between; padding-inline: 10px;}
-[class*="purchaseBox"] > div ul li:not(:has(a)):before{content: attr(title); flex: 1;}
-[class*="purchaseBox"] > div ul li span{flex: 1;}
-[class*="purchaseBox"] > div b span{font-size: 24px;}
-[class*="purchaseBox"] > div ul li{font-size: 16px; line-height: 22px;}
-[class*="purchaseBox"] > div ul li span a{width: 100%;}
-.productDetailPage .purchaseBox2 table thead{font-size: 24px;}
-.productDetailPage .purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}
-.productDetailPage .purchaseBox2 table tr > *:first-child{padding-inline: 10px;}
-.productDetailPage .purchaseBox2 table tr > *{min-width: 250px;}
-.productDetailPage .purchaseBox2 ~ .purchaseBox2{margin-top: 20px;}
+.userPage [class*="purchaseBox"] > div:not(:last-of-type){margin-bottom: 40px;}
+.userPage [class*="purchaseBox"] > div ul li{display: flex; justify-content: space-between; padding-inline: 10px;}
+.userPage [class*="purchaseBox"] > div ul li:not(:has(a)):before{content: attr(title); flex: 1;}
+.userPage [class*="purchaseBox"] > div ul li span{flex: 1;}
+.userPage [class*="purchaseBox"] > div b span{font-size: 24px;}
+.userPage [class*="purchaseBox"] > div ul li{font-size: 16px; line-height: 22px;}
+.userPage [class*="purchaseBox"] > div ul li span a{width: 100%;}
+.userPage .productDetailPage .purchaseBox2 table thead{font-size: 24px;}
+.userPage .productDetailPage .purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}
+.userPage .productDetailPage .purchaseBox2 table tr > *:first-child{padding-inline: 10px;}
+.userPage .productDetailPage .purchaseBox2 table tr > *{min-width: 250px;}
+.userPage .productDetailPage .purchaseBox2 ~ .purchaseBox2{margin-top: 20px;}
 
 
 /* FAQ */
-.FAQBox > li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
-.FAQBox > li details summary::after{width: 26px;}
-.FAQBox > li details > div{font-size: 14px; line-height: 20px;}
+.userPage .FAQBox > li details summary{font-size: 16px; line-height: 22px; min-height: 60px;}
+.userPage .FAQBox > li details summary::after{width: 26px;}
+.userPage .FAQBox > li details > div{font-size: 14px; line-height: 20px;}
 
 
 /* 상품 정보 */
-.productBox{padding-top: 20px; --imgWidth: 80px; --gap: 20px;}
-.productBox figure figcaption div{margin-top: 20px;}
-.productBox .deliveryArea{padding-right: 12px;}
-.productBox .deliveryArea{margin-top: 20px;}
+.userPage .productBox{padding-top: 20px; --imgWidth: 80px; --gap: 20px;}
+.userPage .productBox figure figcaption div{margin-top: 20px;}
+.userPage .productBox .deliveryArea{padding-right: 12px;}
+.userPage .productBox .deliveryArea{margin-top: 20px;}
 
 
 /* 인풋 */
-[class*="inputBox"] ul li label:first-child{font-size: 13px;}
+.userPage [class*="inputBox"] ul li label:first-child{font-size: 13px;}
 
 
 /* 최종 결제 금액 */
-.amountBox{height: 60px; padding-inline: 12px;}
+.userPage .amountBox{height: 60px; padding-inline: 12px;}
 
 
 /* 완료 */
-.resultBox strong{font-size: 16px; line-height: 22px; margin-top: 40px; margin-bottom: 15px;}
-.resultBox dl :is(dt, dd){padding-inline: 12px;}
-.resultBox dl dt{width: 120px;}
+.userPage .resultBox strong{font-size: 16px; line-height: 22px; margin-top: 40px; margin-bottom: 15px;}
+.userPage .resultBox dl :is(dt, dd){padding-inline: 12px;}
+.userPage .resultBox dl dt{width: 120px;}
 
 
 /* 해더 */

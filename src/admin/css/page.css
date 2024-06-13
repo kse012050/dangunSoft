@@ -12,7 +12,7 @@
 .adminPage .myInfoArea{font-size: 15px;}
 .adminPage .myInfoArea ul li{display: flex;}
 .adminPage .myInfoArea ul li:not(:last-child){margin-bottom: 10px;}
-.adminPage .myInfoArea ul li label{width: 150px; flex-shrink: 0;}
+.adminPage .myInfoArea ul li label{width: 150px; flex-shrink: 0; display: flex; align-items: center;}
 .adminPage .myInfoArea ul li div{flex: 1;}
 .adminPage .myInfoArea > input[type="submit"]{display: block; margin-top: 30px; margin-left: auto; background-color: var(--color-point); color: white;}
 
@@ -43,12 +43,7 @@
 .adminPage .adminDashboardPage .dashboard-currentSituation .statisticsArea > div > div{width: calc((100% - 80px) / 2); height: 300px;}
 
 
-.adminPage [class*="detail"] ul{border-top: 1px solid #dcdcdc;}
-.adminPage [class*="detail"] ul li{font-size: 15px; line-height: 18px;}
-.adminPage [class*="detail"] ul li{display: flex; border-bottom: 1px solid #dcdcdc;}
-.adminPage [class*="detail"] ul li > b{width: 150px; padding-block: 16px; font-weight: 700; flex-shrink: 0; background-color: #F7F7F7; display: flex; align-items: center; justify-content: center;}
-.adminPage [class*="detail"] ul li > div{flex: 1; display: flex; align-items: center; padding: 10px 20px;}
-.adminPage [class*="detail"] ul li div .radioBox{display: flex; gap: 10px;}
+
 
 .adminPage .detail-id strong{display: block; font-size: 25px; font-weight: 700; margin-bottom: 20px;}
 .adminPage .detail-id ul li > div .mobileBox{display: flex; align-items: center;}

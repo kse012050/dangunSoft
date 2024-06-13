@@ -14,13 +14,13 @@
 
 /* 견적 링크 */
 section:has(.estimateLink){position: relative;}
-.estimateLink{position: absolute; aspect-ratio: 1; right: var(--contentPadding); bottom: 0; transform: translateY(50%); background: url(../images/icon-rfq.png) no-repeat center / cover; text-indent: -9999px; border-radius: 100%; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); z-index: 1; box-sizing: border-box;}
+.userPage .estimateLink{position: absolute; aspect-ratio: 1; right: var(--contentPadding); bottom: 0; transform: translateY(50%); background: url(../images/icon-rfq.png) no-repeat center / cover; text-indent: -9999px; border-radius: 100%; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); z-index: 1; box-sizing: border-box;}
 
 
 /* 입력 */
 label{cursor: pointer;}
-:is(input, textarea, .userPage .selectBox > button){border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
-:is(input, textarea)::placeholder{color: var(--color-font04);}
+.userPage :is(input, textarea, .selectBox > button){border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
+.userPage :is(input, textarea)::placeholder{color: var(--color-font04);}
 .userPage .selectBox{position: relative;}
 .userPage .selectBox > button::after{content: ''; aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
 .userPage .selectBox > button.placeholder{color: var(--color-font04);}
@@ -32,30 +32,30 @@ label{cursor: pointer;}
 
 
 /* 검색 */
-.searchBox{position: relative;}
-.searchBox input{width: 100%;}
-.searchBox button{aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); text-indent: -9999px;}
-.searchBox button:first-of-type{background: url(../images/icon-search.png) no-repeat center / cover;}
+.userPage .searchBox{position: relative;}
+.userPage .searchBox input{width: 100%;}
+.userPage .searchBox button{aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); text-indent: -9999px;}
+.userPage .searchBox button:first-of-type{background: url(../images/icon-search.png) no-repeat center / cover;}
 
 
 /* 페이지네이션 */
-.paginationBox{display: flex; justify-content: center; align-items: center;}
-.paginationBox > a{width: 30px; aspect-ratio: 1; background: url(../images/icon-pagination.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
-.paginationBox > a:nth-of-type(1){--styleIdx: 0;}
-.paginationBox > a:nth-of-type(2){--styleIdx: 1;}
-.paginationBox > a.unActive{background: none; pointer-events: none;}
-.paginationBox ol{display: flex; justify-content: center; align-items: center; margin-inline: 10px;}
-.paginationBox ol li a{font-size: 15px; width: 40px; line-height: 20px; color: var(--color-font03); text-align: center;}
-.paginationBox ol li a.active{color: black; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px;}
+.userPage .paginationBox{display: flex; justify-content: center; align-items: center;}
+.userPage .paginationBox > a{width: 30px; aspect-ratio: 1; background: url(../images/icon-pagination.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+.userPage .paginationBox > a:nth-of-type(1){--styleIdx: 0;}
+.userPage .paginationBox > a:nth-of-type(2){--styleIdx: 1;}
+.userPage .paginationBox > a.unActive{background: none; pointer-events: none;}
+.userPage .paginationBox ol{display: flex; justify-content: center; align-items: center; margin-inline: 10px;}
+.userPage .paginationBox ol li a{font-size: 15px; width: 40px; line-height: 20px; color: var(--color-font03); text-align: center;}
+.userPage .paginationBox ol li a.active{color: black; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px;}
 
 
 /* 팝업 */
-.popupBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
-.popupBox > div{padding: 40px; max-width: 380px; margin-inline: 20px; background-color: white; border: 1px solid black; text-align: center; position: relative;}
-.popupBox > div p{font-size: 16px; line-height: 22px; margin-bottom: 30px;}
-.popupBox > div input{width: 100%; margin-bottom: 30px;}
-.popupBox > div button:first-of-type{width: 148px; height: 50px; font-weight: 700; background-color: var(--color-point); color: white; border: none; border-radius: 6px;}
-.popupBox > div button:last-of-type{position: absolute; right: 10px; top: 10px; width: 38px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
+.userPage .popupBox{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.userPage .popupBox > div{padding: 40px; max-width: 380px; margin-inline: 20px; background-color: white; border: 1px solid black; text-align: center; position: relative;}
+.userPage .popupBox > div p{font-size: 16px; line-height: 22px; margin-bottom: 30px;}
+.userPage .popupBox > div input{width: 100%; margin-bottom: 30px;}
+.userPage .popupBox > div button:first-of-type{width: 148px; height: 50px; font-weight: 700; background-color: var(--color-point); color: white; border: none; border-radius: 6px;}
+.userPage .popupBox > div button:last-of-type{position: absolute; right: 10px; top: 10px; width: 38px; aspect-ratio: 1; background: url(../images/icon-close.png) no-repeat center / cover; text-indent: -9999px;}
 
 /* 팝업 */
 body:has([data-popup]){overflow: hidden;}
@@ -69,120 +69,120 @@ body:has([data-popup]){overflow: hidden;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"]{font-weight: 700;}
-[class*="purchaseBox"] > div b > span, 
-[class*="purchaseBox"] > div b::before{border-top-width: 1px; border-top-style: solid;}
-[class*="purchaseBox"] > div :is(b, ul li){border-bottom-width: 1px; border-bottom-style: solid;}
-[class*="purchaseBox"] > div :is(b span, ul li span),
-[class*="purchaseBox"] > div ul li::before{text-align: center; display: flex; align-items: center; white-space: pre-wrap;}
-[class*="purchaseBox"] > div :is(b span, ul li span){justify-content: center;}
-[class*="purchaseBox"] > div ul li span[title="포함"]::after{content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
-.purchaseBox-white > div b > span, 
-.purchaseBox-white > div b::before{background-color: var(--color-face); border-top-color: black;}
-.purchaseBox-white > div :is(b, ul li){border-bottom-color: var(--color-line);}
-.purchaseBox-white > div ul li span[title="포함"]::after{background-image: url(../images/icon-check-black.png);}
-.purchaseBox-black > div b span, 
-.purchaseBox-black > div b::before{background-color: #1C1C1C; border-top-color: white;}
-.purchaseBox-black > div :is(b, ul li){border-bottom-color: #444;}
-.purchaseBox-black > div ul li span[title="포함"]::after{background-image: url(../images/icon-check-white.png);}
-.purchaseBox2{overflow: auto;}
-.purchaseBox2 table{font-weight: 700; min-width: 100%;}
-.purchaseBox2 table thead{background-color: var(--color-face); border-top: 1px solid black;}
-.purchaseBox2 table tr{border-bottom: 1px solid var(--color-line); box-sizing: border-box;}
-.purchaseBox2 table:is(:not(:has(tr *:nth-child(3))), :has(tr *:nth-child(7))){text-align: center;}
-.purchaseBox2 table tr > *:first-child{box-sizing: border-box;}
-.purchaseBox2 table tr > *:not(:last-child){border-right: 1px solid var(--color-line);}
-.purchaseBox2 table tr:has(:nth-child(3)) > *{width: 100%;}
-.purchaseBox2 table tr :is(th, td){vertical-align: middle; white-space: pre-wrap;}
-.purchaseBox2 table tbody tr *:not(:first-child){text-align: center;}
-.purchaseBox2 table tbody tr td[title="포함"]::after{display: inline-block; content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url(../images/icon-check-black.png);}
-.purchaseBox2 table tbody tr td :is(button, a){width: 100%; max-width: 223px; margin-inline: auto;}
-.purchaseBox2::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
+.userPage [class*="purchaseBox"]{font-weight: 700;}
+.userPage [class*="purchaseBox"] > div b > span, 
+.userPage [class*="purchaseBox"] > div b::before{border-top-width: 1px; border-top-style: solid;}
+.userPage [class*="purchaseBox"] > div :is(b, ul li){border-bottom-width: 1px; border-bottom-style: solid;}
+.userPage [class*="purchaseBox"] > div :is(b span, ul li span),
+.userPage [class*="purchaseBox"] > div ul li::before{text-align: center; display: flex; align-items: center; white-space: pre-wrap;}
+.userPage [class*="purchaseBox"] > div :is(b span, ul li span){justify-content: center;}
+.userPage [class*="purchaseBox"] > div ul li span[title="포함"]::after{content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
+.userPage .purchaseBox-white > div b > span, 
+.userPage .purchaseBox-white > div b::before{background-color: var(--color-face); border-top-color: black;}
+.userPage .purchaseBox-white > div :is(b, ul li){border-bottom-color: var(--color-line);}
+.userPage .purchaseBox-white > div ul li span[title="포함"]::after{background-image: url(../images/icon-check-black.png);}
+.userPage .purchaseBox-black > div b span, 
+.userPage .purchaseBox-black > div b::before{background-color: #1C1C1C; border-top-color: white;}
+.userPage .purchaseBox-black > div :is(b, ul li){border-bottom-color: #444;}
+.userPage .purchaseBox-black > div ul li span[title="포함"]::after{background-image: url(../images/icon-check-white.png);}
+.userPage .purchaseBox2{overflow: auto;}
+.userPage .purchaseBox2 table{font-weight: 700; min-width: 100%;}
+.userPage .purchaseBox2 table thead{background-color: var(--color-face); border-top: 1px solid black;}
+.userPage .purchaseBox2 table tr{border-bottom: 1px solid var(--color-line); box-sizing: border-box;}
+.userPage .purchaseBox2 table:is(:not(:has(tr *:nth-child(3))), :has(tr *:nth-child(7))){text-align: center;}
+.userPage .purchaseBox2 table tr > *:first-child{box-sizing: border-box;}
+.userPage .purchaseBox2 table tr > *:not(:last-child){border-right: 1px solid var(--color-line);}
+.userPage .purchaseBox2 table tr:has(:nth-child(3)) > *{width: 100%;}
+.userPage .purchaseBox2 table tr :is(th, td){vertical-align: middle; white-space: pre-wrap;}
+.userPage .purchaseBox2 table tbody tr *:not(:first-child){text-align: center;}
+.userPage .purchaseBox2 table tbody tr td[title="포함"]::after{display: inline-block; content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url(../images/icon-check-black.png);}
+.userPage .purchaseBox2 table tbody tr td :is(button, a){width: 100%; max-width: 223px; margin-inline: auto;}
+.userPage .purchaseBox2::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
 
 
 /* FAQ */
-.FAQBox > li:not(:last-child){margin-bottom: 10px;}
-.FAQBox > li details summary::-webkit-details-marker{display: none;}
-.FAQBox > li details summary{list-style-type: none; background-color: var(--color-face); font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;}
-.FAQBox > li details summary::after{content: ''; aspect-ratio: 1; background: url(../images/icon-arrow-down.png) no-repeat center / cover; flex-shrink: 0;}
-.FAQBox > li details[open] summary::after{transform: rotate(180deg);}
-.FAQBox > li details > div{color: var(--color-font02);}
-.FAQBox > li details > div strong{font-size: 1.5em; color: var(--color-font01); line-height: 1.2; font-weight: 700; display: block; margin-bottom: 0.5em;}
-.FAQBox > li details > div p:has( + strong){margin-bottom: 30px;}
-.FAQBox > li details > div ul{margin-block: .5em;}
-.FAQBox > li details > div ul li::before{content: '- ';}
-.FAQBox > li details > div :is(img, iframe){width: 100%; margin-block: 1em;}
-.FAQBox > li details > div iframe{aspect-ratio: 1 / 0.5;}
-.FAQBox > li details > div .purchaseBox2{margin-block: 1em;}
-.FAQBox > li details > div .purchaseBox2 table thead{text-align: center; color: black; font-size: 1.2em;}
-.FAQBox > li details > div .purchaseBox2 table tr > *{min-width: 320px;}
-.FAQBox > li details > div .purchaseBox2::-webkit-scrollbar{height: 7px;}
+.userPage .FAQBox > li:not(:last-child){margin-bottom: 10px;}
+.userPage .FAQBox > li details summary::-webkit-details-marker{display: none;}
+.userPage .FAQBox > li details summary{list-style-type: none; background-color: var(--color-face); font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center;}
+.userPage .FAQBox > li details summary::after{content: ''; aspect-ratio: 1; background: url(../images/icon-arrow-down.png) no-repeat center / cover; flex-shrink: 0;}
+.userPage .FAQBox > li details[open] summary::after{transform: rotate(180deg);}
+.userPage .FAQBox > li details > div{color: var(--color-font02);}
+.userPage .FAQBox > li details > div strong{font-size: 1.5em; color: var(--color-font01); line-height: 1.2; font-weight: 700; display: block; margin-bottom: 0.5em;}
+.userPage .FAQBox > li details > div p:has( + strong){margin-bottom: 30px;}
+.userPage .FAQBox > li details > div ul{margin-block: .5em;}
+.userPage .FAQBox > li details > div ul li::before{content: '- ';}
+.userPage .FAQBox > li details > div :is(img, iframe){width: 100%; margin-block: 1em;}
+.userPage .FAQBox > li details > div iframe{aspect-ratio: 1 / 0.5;}
+.userPage .FAQBox > li details > div .purchaseBox2{margin-block: 1em;}
+.userPage .FAQBox > li details > div .purchaseBox2 table thead{text-align: center; color: black; font-size: 1.2em;}
+.userPage .FAQBox > li details > div .purchaseBox2 table tr > *{min-width: 320px;}
+.userPage .FAQBox > li details > div .purchaseBox2::-webkit-scrollbar{height: 7px;}
 
 
 /* 상품 정보 */
-.productBox{max-width: 600px; margin-inline: auto; border-top: 1px solid black;}
-.productBox figure{display: flex; gap: var(--gap);}
-.productBox figure img{width: var(--imgWidth); flex-shrink: 0; object-fit: cover; align-self: flex-start;}
-.productBox figure figcaption{flex: 1;}
-.productBox figure figcaption strong{margin-bottom: 20px; font-weight: 700; display: block;}
-.productBox figure figcaption div:has(button){display: flex; justify-content: space-between; align-items: center; font-size: 15px; width: 150px; height: 50px; padding: 12px 10px; border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
-.productBox figure figcaption div:has(button) button{width: 26px; aspect-ratio: 1; background: url(../images/icon-minusPlus.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
-.productBox figure figcaption div:has(button) button:nth-of-type(1){--styleIdx: 0;}
-.productBox figure figcaption div:has(button) button:nth-of-type(2){--styleIdx: 1;}
-.productBox .deliveryArea{height: 60px; margin-left: calc(var(--imgWidth) + var(--gap)); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee;}
-.productBox .deliveryArea dt{color: var(--color-font04);}
-.productBox .deliveryArea dd{font-weight: 700;}
+.userPage .productBox{max-width: 600px; margin-inline: auto; border-top: 1px solid black;}
+.userPage .productBox figure{display: flex; gap: var(--gap);}
+.userPage .productBox figure img{width: var(--imgWidth); flex-shrink: 0; object-fit: cover; align-self: flex-start;}
+.userPage .productBox figure figcaption{flex: 1;}
+.userPage .productBox figure figcaption strong{margin-bottom: 20px; font-weight: 700; display: block;}
+.userPage .productBox figure figcaption div:has(button){display: flex; justify-content: space-between; align-items: center; font-size: 15px; width: 150px; height: 50px; padding: 12px 10px; border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
+.userPage .productBox figure figcaption div:has(button) button{width: 26px; aspect-ratio: 1; background: url(../images/icon-minusPlus.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+.userPage .productBox figure figcaption div:has(button) button:nth-of-type(1){--styleIdx: 0;}
+.userPage .productBox figure figcaption div:has(button) button:nth-of-type(2){--styleIdx: 1;}
+.userPage .productBox .deliveryArea{height: 60px; margin-left: calc(var(--imgWidth) + var(--gap)); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee;}
+.userPage .productBox .deliveryArea dt{color: var(--color-font04);}
+.userPage .productBox .deliveryArea dd{font-weight: 700;}
 
 
 /* 인풋 */
-form:has([class*="inputBox"]){max-width: 600px; margin-inline: auto;}
-input:is([type="checkbox"], [type="radio"]) + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
-input:is([type="checkbox"], [type="radio"]) + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background-repeat: no-repeat; background-position: left top calc(100% * var(--styleIdx)); background-size: 100%;}
-input[type="checkbox"] + label::before{background-image: url(../images/icon-checkbox.png);}
-input[type="radio"] + label::before{background-image: url(../images/icon-radio.png);}
-input:is([type="checkbox"], [type="radio"]):checked + label::before{--styleIdx: 1;}
-[class*="inputBox"] ul{display: flex; flex-wrap: wrap; column-gap: 10px;}
-[class*="inputBox"] ul li:not(.half){width: 100%;}
-[class*="inputBox"] ul li.half{width: calc((100% - 10px) / 2);}
-[class*="inputBox"] ul li:not(:last-child){margin-bottom: 30px;}
-[class*="inputBox"] ul li label:first-child{display: block; font-weight: 700; margin-bottom: 10px; line-height: 20px;}
-[class*="inputBox"] ul li:has(:required) label:first-child::after{content: '*'; color: #F00;}
-[class*="inputBox"] ul li > div{display: flex; gap: 10px;}
-[class*="inputBox"] ul li > div:not(:last-of-type){margin-bottom: 10px;}
-[class*="inputBox"] ul li > div > *:not(label){flex: 1; width: 100%;}
-[class*="inputBox"] ul li > small{font-size: 14px; color: var(--color-font02);}
-.submitBox{display: flex; gap: 10px;}
-.submitBox input{flex: 1;}
-.submitBox input[type="reset"]{background-color: transparent;}
-.inputBox-product ul li div:has(input[type="radio"]){display: flex; gap: 10px;}
-.inputBox-product ul li div input[type="radio"] + label{flex: 1; color: var(--color-font02); background-color: var(--color-face); border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
-.inputBox-product ul li div input[type="radio"] + label::before{display: none;}
-.inputBox-product ul li div input[type="radio"]:checked + label{font-weight: 700; background-color: black; color: white; border: none;}
-.inputBox-product > div{margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--color-line); display: flex; justify-content: flex-end;}
-.inputBox-product > div button{line-height: 22px; font-weight: 700;}
+.userPage form:has([class*="inputBox"]){max-width: 600px; margin-inline: auto;}
+.userPage input:is([type="checkbox"], [type="radio"]) + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
+.userPage input:is([type="checkbox"], [type="radio"]) + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background-repeat: no-repeat; background-position: left top calc(100% * var(--styleIdx)); background-size: 100%;}
+.userPage input[type="checkbox"] + label::before{background-image: url(../images/icon-checkbox.png);}
+.userPage input[type="radio"] + label::before{background-image: url(../images/icon-radio.png);}
+.userPage input:is([type="checkbox"], [type="radio"]):checked + label::before{--styleIdx: 1;}
+.userPage [class*="inputBox"] ul{display: flex; flex-wrap: wrap; column-gap: 10px;}
+.userPage [class*="inputBox"] ul li:not(.half){width: 100%;}
+.userPage [class*="inputBox"] ul li.half{width: calc((100% - 10px) / 2);}
+.userPage [class*="inputBox"] ul li:not(:last-child){margin-bottom: 30px;}
+.userPage [class*="inputBox"] ul li label:first-child{display: block; font-weight: 700; margin-bottom: 10px; line-height: 20px;}
+.userPage [class*="inputBox"] ul li:has(:required) label:first-child::after{content: '*'; color: #F00;}
+.userPage [class*="inputBox"] ul li > div{display: flex; gap: 10px;}
+.userPage [class*="inputBox"] ul li > div:not(:last-of-type){margin-bottom: 10px;}
+.userPage [class*="inputBox"] ul li > div > *:not(label){flex: 1; width: 100%;}
+.userPage [class*="inputBox"] ul li > small{font-size: 14px; color: var(--color-font02);}
+.userPage .submitBox{display: flex; gap: 10px;}
+.userPage .submitBox input{flex: 1;}
+.userPage .submitBox input[type="reset"]{background-color: transparent;}
+.userPage .inputBox-product ul li div:has(input[type="radio"]){display: flex; gap: 10px;}
+.userPage .inputBox-product ul li div input[type="radio"] + label{flex: 1; color: var(--color-font02); background-color: var(--color-face); border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
+.userPage .inputBox-product ul li div input[type="radio"] + label::before{display: none;}
+.userPage .inputBox-product ul li div input[type="radio"]:checked + label{font-weight: 700; background-color: black; color: white; border: none;}
+.userPage .inputBox-product > div{margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--color-line); display: flex; justify-content: flex-end;}
+.userPage .inputBox-product > div button{line-height: 22px; font-weight: 700;}
 
 
 /* 최종 결제 금액 */
-.amountBox{display: flex; justify-content: space-between; align-items: center; background-color: var(--color-face); border-block: 1px solid var(--color-line); font-weight: 700; box-sizing: border-box;}
+.userPage .amountBox{display: flex; justify-content: space-between; align-items: center; background-color: var(--color-face); border-block: 1px solid var(--color-line); font-weight: 700; box-sizing: border-box;}
 
 
 /* 완료 */
-.resultBox{max-width: 600px; margin-inline: auto;}
-.resultBox:has(strong) strong + dl{border-top: 1px solid black;}
-.resultBox:not(:has(strong)){border-top: 1px solid black;}
-.resultBox strong{font-weight: 700; display: block;}
-.resultBox dl{line-height: 22px; display: flex; border-bottom: 1px solid var(--color-line);}
-.resultBox dl :is(dt, dd){box-sizing: border-box;}
-.resultBox dl dt{flex-shrink: 0; background-color: var(--color-face); color: var(--color-font03);}
-.resultBox dl dd{flex: 1;}
+.userPage .resultBox{max-width: 600px; margin-inline: auto;}
+.userPage .resultBox:has(strong) strong + dl{border-top: 1px solid black;}
+.userPage .resultBox:not(:has(strong)){border-top: 1px solid black;}
+.userPage .resultBox strong{font-weight: 700; display: block;}
+.userPage .resultBox dl{line-height: 22px; display: flex; border-bottom: 1px solid var(--color-line);}
+.userPage .resultBox dl :is(dt, dd){box-sizing: border-box;}
+.userPage .resultBox dl dt{flex-shrink: 0; background-color: var(--color-face); color: var(--color-font03);}
+.userPage .resultBox dl dd{flex: 1;}
 
 
 /* 해더 */
-.userPage header{background-color: white; position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
-.userPage header::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background-color: #e6e6e6;}
-.userPage header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
-.userPage header nav ul li > a{font-size: 20px; font-weight: 700; text-align: center; display: block; }
-.userPage header nav ul li div a{color: var(--color-font03);}
+.userPage .userPage header{background-color: white; position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
+.userPage .userPage header::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background-color: #e6e6e6;}
+.userPage .userPage header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+.userPage .userPage header nav ul li > a{font-size: 20px; font-weight: 700; text-align: center; display: block; }
+.userPage .userPage header nav ul li div a{color: var(--color-font03);}
 /* header nav ul li:has(div) > a.active + div{display: flex;} */
 
 
@@ -204,5 +204,5 @@ footer ul.snsBox{display: flex; gap: 20px;}
 footer ul.snsBox li a{width: 48px; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: var(--color-font01); border-radius: 100%; text-indent: -9999px;}
 footer ul.snsBox li a::before{content: ''; width: 30px; aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}
 
-:is(.privacyPage, .commercePage) > div h2{font-weight: 700; text-align: center;}
-:is(.privacyPage, .commercePage) > div strong{font-weight: 700; display: block;}
+.userPage :is(.privacyPage, .commercePage) > div h2{font-weight: 700; text-align: center;}
+.userPage :is(.privacyPage, .commercePage) > div strong{font-weight: 700; display: block;}

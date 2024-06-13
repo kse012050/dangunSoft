@@ -5,38 +5,38 @@
 
 
 /* 입력 */
-:is(input, .selectBox > button){font-size: 15px; height: 50px;}
-textarea{height: 150px;}
+.userPage :is(input, .selectBox > button){font-size: 15px; height: 50px;}
+.userPage textarea{height: 150px;}
 .userPage .selectBox > button::after{right: 10px;}
-.inputBox-product ul li div input[type="radio"] + label{font-size: 14px; height: 44px;}
-.inputBox-product > div{gap: 30px;}
+.userPage .inputBox-product ul li div input[type="radio"] + label{font-size: 14px; height: 44px;}
+.userPage .inputBox-product > div{gap: 30px;}
 
 
 /* 견적 링크 */
-.estimateLink{width: 60px;}
+.userPage .estimateLink{width: 60px;}
 
 
 /* 검색 */
 
 
 /* 페이지네이션 */
-.paginationBox{margin-top: 40px;}
+.userPage .paginationBox{margin-top: 40px;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"] > div :is(b, ul li) span{height: 70px;}
-[class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 36px;}
-.purchaseBox2 table tr{height: 70px;}
-.purchaseBox2 table tbody tr td[title="포함"]::after{width: 36px;}
+.userPage [class*="purchaseBox"] > div :is(b, ul li) span{height: 70px;}
+.userPage [class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 36px;}
+.userPage .purchaseBox2 table tr{height: 70px;}
+.userPage .purchaseBox2 table tbody tr td[title="포함"]::after{width: 36px;}
 
 /* FAQ */
-.FAQBox > li details summary{padding-inline: 20px;}
-.FAQBox > li details > div{padding: 20px;}
+.userPage .FAQBox > li details summary{padding-inline: 20px;}
+.userPage .FAQBox > li details > div{padding: 20px;}
 
 
 /* 상품 정보 */
-.productBox figure figcaption :is(strong, p, div:not(:has(button))){font-size: 16px; line-height: 22px;}
-.productBox .deliveryArea{font-size: 14px;}
+.userPage .productBox figure figcaption :is(strong, p, div:not(:has(button))){font-size: 16px; line-height: 22px;}
+.userPage .productBox .deliveryArea{font-size: 14px;}
 
 
 /* 인풋 */
@@ -46,12 +46,12 @@ input[type="checkbox"] + label::before{width: 22px;}
 
 
 /* 최종 결제 금액 */
-.amountBox{font-size: 16px; line-height: 22px;}
+.userPage .amountBox{font-size: 16px; line-height: 22px;}
 
 
 /* 완료 */
-.resultBox dl{font-size: 15px;}
-.resultBox dl :is(dt, dd){padding-block: 19px;}
+.userPage .resultBox dl{font-size: 15px;}
+.userPage .resultBox dl :is(dt, dd){padding-block: 19px;}
 
 
 /* 해더 */

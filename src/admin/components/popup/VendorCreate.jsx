@@ -45,7 +45,7 @@ export default function VendorCreate({ setPopup, close }) {
                 해당 정보는 제품 등록을 위한 정보로<br/>
                 웹사이트에 직접 반영되지 않습니다.
             </mark>
-            <input type="submit" value='등록' onClick={onSubmit}/>
+            <input type="submit" value='등록' className='btn-point' onClick={onSubmit}/>
             <button className='close' onClick={close}>닫기</button>
         </div>
     );

@@ -23,6 +23,7 @@ import Vendor from "../admin/page/product/Vendor";
 import AdminProduct from "../admin/page/product/Product";
 import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
 import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
+import CategoryQnACreate from "../admin/page/support/QnA/Create";
 
 export const routers = [
     {
@@ -145,6 +146,9 @@ export const routers = [
             },
             {
                 path: 'qna', element: <CategoryQnA />
+            },
+            {
+                path: 'qna/create', element: <CategoryQnACreate />
             },
         ]
     },

@@ -4,58 +4,58 @@
 
 
 /* 입력 */
-:is(input, textarea, .selectBox button){padding-inline: 15px;}
-textarea{padding-block: 20px;}
+.userPage :is(input, textarea, .selectBox button){padding-inline: 15px;}
+.userPage textarea{padding-block: 20px;}
 .userPage .selectBox > button::after{width: 32px;}
-.inputBox-product > div button{font-size: 16px;}
+.userPage .inputBox-product > div button{font-size: 16px;}
 
 
 /* 검색 */
-.searchBox button:first-of-type{right: 15px;}
+.userPage .searchBox button:first-of-type{right: 15px;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"]::after{content: ''; clear: both; display: block; visibility: hidden;}
-[class*="purchaseBox"] > div{float: left;}
-[class*="purchaseBox"] > div :is(b, ul li){display: flex;}
-[class*="purchaseBox"] > div:first-of-type b::before, 
-[class*="purchaseBox"] > div:first-of-type ul:first-of-type li::before{content: attr(title); padding-inline: 20px; box-sizing: border-box;}
-[class*="purchaseBox"] > div:first-of-type:has(ul:nth-of-type(2))::after{content: ''; display: block; clear: both;}
-[class*="purchaseBox"] > div:first-of-type:has(ul:nth-of-type(2)) ul{float: left;}
-[class*="purchaseBox"] > div:nth-of-type(2) :is(b, ul li) span{width: 100%;}
-[class*="purchaseBox"] > div :is(b > span, ul li span){border-left-width: 1px; border-left-style: solid;}
-[class*="purchaseBox"] > div ul li span a{width: 223px;}
-.purchaseBox-white > div :is(b > span, ul li span){border-left-color: var(--color-line);}
-.purchaseBox-black > div :is(b > span, ul li span){border-left-color: #444;}
-.purchaseBox2 table tr > *:first-child{padding-inline: 20px;}
+.userPage [class*="purchaseBox"]::after{content: ''; clear: both; display: block; visibility: hidden;}
+.userPage [class*="purchaseBox"] > div{float: left;}
+.userPage [class*="purchaseBox"] > div :is(b, ul li){display: flex;}
+.userPage [class*="purchaseBox"] > div:first-of-type b::before, 
+.userPage [class*="purchaseBox"] > div:first-of-type ul:first-of-type li::before{content: attr(title); padding-inline: 20px; box-sizing: border-box;}
+.userPage [class*="purchaseBox"] > div:first-of-type:has(ul:nth-of-type(2))::after{content: ''; display: block; clear: both;}
+.userPage [class*="purchaseBox"] > div:first-of-type:has(ul:nth-of-type(2)) ul{float: left;}
+.userPage [class*="purchaseBox"] > div:nth-of-type(2) :is(b, ul li) span{width: 100%;}
+.userPage [class*="purchaseBox"] > div :is(b > span, ul li span){border-left-width: 1px; border-left-style: solid;}
+.userPage [class*="purchaseBox"] > div ul li span a{width: 223px;}
+.userPage .purchaseBox-white > div :is(b > span, ul li span){border-left-color: var(--color-line);}
+.userPage .purchaseBox-black > div :is(b > span, ul li span){border-left-color: #444;}
+.userPage .purchaseBox2 table tr > *:first-child{padding-inline: 20px;}
 
 
 /* FAQ */
-.FAQBox > li details summary::after{width: 34px;}
+.userPage .FAQBox > li details summary::after{width: 34px;}
 
 
 /* 상품 정보 */
-.productBox{padding-top: 30px; --gap: 30px;}
-.productBox .deliveryArea{padding-right: 30px;}
-.productBox figure figcaption{position: relative;}
-.productBox figure figcaption div{position: absolute; top: 50%; transform: translateY(-50%);}
-.productBox figure figcaption div:has(button){right: 0;}
-.productBox figure figcaption div:not(:has(button)){right: 30px;}
-.productBox .deliveryArea{margin-top: 30px;}
+.userPage .productBox{padding-top: 30px; --gap: 30px;}
+.userPage .productBox .deliveryArea{padding-right: 30px;}
+.userPage .productBox figure figcaption{position: relative;}
+.userPage .productBox figure figcaption div{position: absolute; top: 50%; transform: translateY(-50%);}
+.userPage .productBox figure figcaption div:has(button){right: 0;}
+.userPage .productBox figure figcaption div:not(:has(button)){right: 30px;}
+.userPage .productBox .deliveryArea{margin-top: 30px;}
 
 
 /* 인풋 */
-[class*="inputBox"] ul li label:first-child{font-size: 14px;}
+.userPage [class*="inputBox"] ul li label:first-child{font-size: 14px;}
 
 
 /* 최종 결제 금액 */
-.amountBox{padding-inline: 30px;}
+.userPage .amountBox{padding-inline: 30px;}
 
 
 /* 완료 */
-.resultBox strong{margin-top: 60px; margin-bottom: 20px;}
-.resultBox dl :is(dt, dd){padding-inline: 20px;}
-.resultBox dl dt{width: 160px;}
+.userPage .resultBox strong{margin-top: 60px; margin-bottom: 20px;}
+.userPage .resultBox dl :is(dt, dd){padding-inline: 20px;}
+.userPage .resultBox dl dt{width: 160px;}
 
 
 /* 해더 */

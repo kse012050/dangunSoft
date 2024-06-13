@@ -9,7 +9,7 @@ br[class]:not([class*="pc"]){display: none;}
 
 
 /* 견적 링크 */
-.estimateLink{width: 80px;}
+.userPage .estimateLink{width: 80px;}
 
 
 /* 입력 */
@@ -20,61 +20,61 @@ br[class]:not([class*="pc"]){display: none;}
 
 
 /* 검색 */
-.searchBox button:first-of-type{width: 36px;}
+.userPage .searchBox button:first-of-type{width: 36px;}
 
 
 /* 페이지네이션 */
-.paginationBox{margin-top: 60px;}
+.userPage .paginationBox{margin-top: 60px;}
 
 
 /* 구매 옵션 테이블 */
-[class*="purchaseBox"] > div :is(b, ul li) > span{height: 80px; width: 100%;}
-[class*="purchaseBox"] > div:first-of-type b::before, 
-[class*="purchaseBox"] > div:first-of-type ul li::before{width: calc(100% - 360px);}
-[class*="purchaseBox"] > div:nth-of-type(1){width: calc(100% - 360px);}
-[class*="purchaseBox"] > :is(div:first-of-type b span, div:first-of-type ul li span, div:nth-of-type(2)){width: 360px;}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:nth-of-type(1){width: calc(100% - 250px);}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:nth-of-type(2){width: 250px;}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type{width: calc(100% - 250px);}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type b::before{width: calc(100% - 500px);}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type b > span{width: 500px;}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type li::before{width: calc(100% - 250px);}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type li span{width: 250px;}
-[class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:nth-of-type(2){width: 250px;}
-[class*="purchaseBox"] > div b > span{font-size: 28px;}
-[class*="purchaseBox"] > div ul li{font-size: 20px; line-height: 26px;}
-[class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 40px;}
-.purchaseBox2 table tr{height: 80px;}
-.purchaseBox2 table tbody tr td[title="포함"]::after{width: 40px;}
+.userPage [class*="purchaseBox"] > div :is(b, ul li) > span{height: 80px; width: 100%;}
+.userPage [class*="purchaseBox"] > div:first-of-type b::before, 
+.userPage [class*="purchaseBox"] > div:first-of-type ul li::before{width: calc(100% - 360px);}
+.userPage [class*="purchaseBox"] > div:nth-of-type(1){width: calc(100% - 360px);}
+.userPage [class*="purchaseBox"] > :is(div:first-of-type b span, div:first-of-type ul li span, div:nth-of-type(2)){width: 360px;}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:nth-of-type(1){width: calc(100% - 250px);}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:nth-of-type(2){width: 250px;}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type{width: calc(100% - 250px);}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type b::before{width: calc(100% - 500px);}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type b > span{width: 500px;}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type li::before{width: calc(100% - 250px);}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:first-of-type li span{width: 250px;}
+.userPage [class*="purchaseBox"]:has(div:first-of-type ul:nth-of-type(2)) > div:first-of-type ul:nth-of-type(2){width: 250px;}
+.userPage [class*="purchaseBox"] > div b > span{font-size: 28px;}
+.userPage [class*="purchaseBox"] > div ul li{font-size: 20px; line-height: 26px;}
+.userPage [class*="purchaseBox"] > div ul li span[title="포함"]::after{width: 40px;}
+.userPage .purchaseBox2 table tr{height: 80px;}
+.userPage .purchaseBox2 table tbody tr td[title="포함"]::after{width: 40px;}
 
 
 /* FAQ */
-.FAQBox > li details summary{font-size: 20px; line-height: 26px; min-height: 80px; padding-inline: 30px;}
-.FAQBox > li details > div{font-size: 18px; line-height: 24px; padding: 30px;}
+.userPage .FAQBox > li details summary{font-size: 20px; line-height: 26px; min-height: 80px; padding-inline: 30px;}
+.userPage .FAQBox > li details > div{font-size: 18px; line-height: 24px; padding: 30px;}
 
 
 /* 상품 정보 */
-.productBox{--imgWidth: 120px;}
-.productBox figure figcaption :is(strong, p, div:not(:has(button))){font-size: 18px; line-height: 24px;}
-.productBox figure figcaption :is(strong, p){padding-right: 190px;}
-.productBox .deliveryArea{font-size: 16px;}
+.userPage .productBox{--imgWidth: 120px;}
+.userPage .productBox figure figcaption :is(strong, p, div:not(:has(button))){font-size: 18px; line-height: 24px;}
+.userPage .productBox figure figcaption :is(strong, p){padding-right: 190px;}
+.userPage .productBox .deliveryArea{font-size: 16px;}
 
 
 /* 인풋 */
-form:has([class*="inputBox"]){margin-top: 80px;}
-input:is([type="checkbox"], [type="radio"]) + label{font-size: 16px;}
-input:is([type="checkbox"], [type="radio"]) + label::before{width: 24px;}
-.inputBox-product > div{gap: 40px;}
+.userPage form:has([class*="inputBox"]){margin-top: 80px;}
+.userPage input:is([type="checkbox"], [type="radio"]) + label{font-size: 16px;}
+.userPage input:is([type="checkbox"], [type="radio"]) + label::before{width: 24px;}
+.userPage .inputBox-product > div{gap: 40px;}
 
 
 /* 최종 결제 금액 */
-.amountBox{font-size: 18px; line-height: 24px; height: 80px;}
+.userPage .amountBox{font-size: 18px; line-height: 24px; height: 80px;}
 
 
 /* 완료 */
-.resultBox strong{font-size: 20px; line-height: 26px;}
-.resultBox dl :is(dt, dd){padding-block: 24px;}
-.resultBox dl{font-size: 16px;}
+.userPage .resultBox strong{font-size: 20px; line-height: 26px;}
+.userPage .resultBox dl :is(dt, dd){padding-block: 24px;}
+.userPage .resultBox dl{font-size: 16px;}
 
 
 /* 해더 */
