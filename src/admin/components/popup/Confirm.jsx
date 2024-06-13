@@ -3,9 +3,12 @@ import React from 'react';
 export default function Confirm({ popup, close }) {
     return (
         <div onClick={(e)=> e.stopPropagation()}>
-            <strong>{ popup.title }</strong>
-            {popup.description && <p>{ popup.description }</p>}
-            {popup.description2 && <p>{ popup.description2 }</p>}
+            {popup.title && <strong>{ popup.title }</strong>}
+            {/* {popup.description && <p>{ popup.description }</p>}
+            {popup.description2 && <p>{ popup.description2 }</p>} */}
+            {popup.description && popup.description.map((data, i)=>
+                <p key={i}>{ data }</p>
+            )}
             <div className='buttonArea'>
                 <button className="btn-point" type="button" onClick={close}>확인</button>
             </div>

@@ -93,7 +93,32 @@ export default function FAQCategory() {
                                 <label htmlFor={`check_${data.category_id}`}>노출 여부</label>
                             </div>
                             <div>
-                                <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQUpdate', data: data, func: boardFunc})}>수정</button>
+                                {/* <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQUpdate', data: data, func: boardFunc})}>수정</button> */}
+                                <button className='btn-point' 
+                                    onClick={()=>setPopup({
+                                        type: 'cancel', 
+                                        title: '삭제',
+                                        description: [
+                                            '해당 정보를 삭제하겠습니까?',
+                                            '삭제 후에는 복구할 수 없으며 상위 카테고리를 삭제 시 하단 내용이 없어질 수 있으니 주의하세요.'
+                                        ],
+                                        func: () => {
+                                            adminApi('category/manage', 'delete', {category_id: data.category_id})
+                                                .then((result)=>{
+                                                    if(result.result){
+                                                        setPopup({
+                                                            type: 'confirm',
+                                                            title: '알림',
+                                                            description: ['완료되었습니다.'],
+                                                            func: () =>{
+                                                                boardFunc()
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                        }
+                                    })}
+                                >삭제</button>
                             </div>
                         </li>
                     )}

@@ -48,7 +48,7 @@ export default function Update({ popup, setPopup, close }) {
                     setPopup(prev => ({
                         type: 'confirm',
                         title: '알림',
-                        description: '완료되었습니다.',
+                        description: ['완료되었습니다.'],
                         func: () =>{
                             prev.func()
                         }

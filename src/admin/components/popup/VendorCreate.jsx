@@ -24,7 +24,7 @@ export default function VendorCreate({ setPopup, close }) {
                     setPopup(prev => ({
                         type: 'confirm',
                         title: '알림',
-                        description: '저장되었습니다',
+                        description: ['저장되었습니다'],
                         func: ()=> {
                             prev.finFunc()
                             setPopup()

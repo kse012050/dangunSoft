@@ -95,7 +95,7 @@
 .adminPage .detail-notice ul li div ul.imgBox li button{width: 20px; aspect-ratio: 1; position: absolute; right: 0; top: 0; transform: translate(50%, -50%); background: url(../images/icon-img-close.png) no-repeat center / cover; text-indent: -9999px;}
 .adminPage .detail-notice ul li div textarea{min-height: 300px; padding: 10px;}
 .adminPage .detail-notice ul li div ul.imgBox + input[type="file"] + label{margin-left: 10px;}
-.adminPage .buttonArea{display: flex; justify-content: center; gap: 10px; margin-top: 30px;}
+/* .adminPage .buttonArea{display: flex; justify-content: center; gap: 10px; margin-top: 30px;} */
 .adminPage input[type="file"].icon-file + label{display: block; aspect-ratio: 1; width: 100px; border: 1px dotted #dcdcdc; box-sizing: border-box; text-indent: -9999px; background: url(../images/icon-plus.png) no-repeat center / 30px;}
 
 .adminPage .editorBox{margin-top: 30px;}
