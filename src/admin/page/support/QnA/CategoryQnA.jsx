@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import SelectBox from '../../../components/SelectBox';
 import { adminApi } from '../../../api/api';
+import Popup from '../../../components/popup/Popup';
 
 export default function CategoryQnA() {
     const [inputs, setInputs] = useState()
     const [category, setCategory] = useState()
     const [firstDepth, setFirstDepth] = useState()
     const [board, setBoard] = useState()
+    const [popup, setPopup] = useState()
 
     useEffect(()=>{
         adminApi('category', '', {depth: '1', all_yn: 'n'})
@@ -28,7 +30,7 @@ export default function CategoryQnA() {
     }
 
 
-    useEffect(()=>{
+    const boardFunc = useCallback(()=>{
         if(inputs?.category2){
             adminApi('board', '', {board_type: 'faq', ...inputs})
                 .then((result)=>{
@@ -41,6 +43,10 @@ export default function CategoryQnA() {
                 })
         }
     },[inputs])
+
+    useEffect(()=>{
+        boardFunc()
+    },[boardFunc])
 
     const onExposure = (e, data) => {
         const { checked } = e.target
@@ -98,7 +104,31 @@ export default function CategoryQnA() {
                                     </div>
                                     <div className='button'>
                                         <Link to={`/admin/support/qna/${data.board_id}`} className='btn-point'>수정</Link>
-                                        <button className='btn-point-border'>삭제</button>
+                                        <button className='btn-point-border'
+                                            onClick={()=>setPopup({
+                                                type: 'cancel', 
+                                                title: '삭제',
+                                                description: [
+                                                    '해당 정보를 삭제하겠습니까?',
+                                                    '삭제 후에는 복구할 수 없으며 상위 카테고리를 삭제 시 하단 내용이 없어질 수 있으니 주의하세요.'
+                                                ],
+                                                func: () => {
+                                                    adminApi('board/manage', 'delete', {board_id: data.board_id})
+                                                        .then((result)=>{
+                                                            if(result.result){
+                                                                setPopup({
+                                                                    type: 'confirm',
+                                                                    title: '알림',
+                                                                    description: ['완료되었습니다.'],
+                                                                    func: () =>{
+                                                                        boardFunc()
+                                                                    }
+                                                                })
+                                                            }
+                                                        })
+                                                }
+                                            })}
+                                        >삭제</button>
                                     </div>
                                 </li>
                             )}
@@ -106,6 +136,7 @@ export default function CategoryQnA() {
                     </>
                 }
             </div>
+            { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </>
     );
 }
