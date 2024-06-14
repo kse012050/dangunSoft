@@ -22,6 +22,7 @@ import Dashboard from '../admin/page/Dashboard'
 import MyInfo from "../admin/page/MyInfo";
 import Vendor from "../admin/page/product/Vendor";
 import AdminProduct from "../admin/page/product/Product";
+import AdminInquiry from "../admin/page/inquiry/Inquiry";
 import Account from "../admin/page/site/account/Account";
 import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
 import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
@@ -120,15 +121,6 @@ export const routers = [
         ]
     },
     {
-        path: "/admin/myInfo",
-        element: <AdminRoot />,
-        children: [
-            { 
-                index: true, element: <MyInfo />
-            },
-        ]
-    },
-    {
         path: "/admin/product",
         element: <AdminRoot />,
         children: [
@@ -137,6 +129,15 @@ export const routers = [
             },
             {
                 path: 'product', element: <AdminProduct />
+            },
+        ]
+    },
+    {
+        path: "/admin/inquiry",
+        element: <AdminRoot />,
+        children: [
+            { 
+                index: true, element: <AdminInquiry />
             },
         ]
     },
@@ -164,6 +165,15 @@ export const routers = [
             },
             {
                 path: 'qna/:id', element: <CategoryQnACreate />
+            },
+        ]
+    },
+    {
+        path: "/admin/myInfo",
+        element: <AdminRoot />,
+        children: [
+            { 
+                index: true, element: <MyInfo />
             },
         ]
     },

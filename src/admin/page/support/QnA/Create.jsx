@@ -17,6 +17,7 @@ export default function Create() {
         inputsRequiredAdd(setInputs);
         adminApi('category', '', {depth: '1', all_yn: 'n'})
             .then((result)=>{
+                // console.log(result);
                 if(result.result){
                     setCategory(result.list)
                     setFirstDepth({
@@ -29,6 +30,7 @@ export default function Create() {
         if(id){
             adminApi('board/detail', '', {board_id: id})
                 .then((result)=>{
+                    // console.log(result);
                     if(result.result){
                         setInputs(prev => ({...prev, board_id: id, title: result.data.title, comment: result.data.comment }))
                     }

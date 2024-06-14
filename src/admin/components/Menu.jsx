@@ -38,8 +38,8 @@ export default function Menu() {
                 <div><NavLink to='/'>구매 내역</NavLink></div>
             </li>
             <li>
-                <button>관리 문의</button>
-                <div><NavLink to='/'>문의 내역</NavLink></div>
+                <button>문의 관리</button>
+                <div><NavLink to='/admin/inquiry'>문의 내역</NavLink></div>
             </li>
             <li>
                 <button>지원 관리</button>
