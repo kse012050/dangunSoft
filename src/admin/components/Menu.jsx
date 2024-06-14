@@ -54,7 +54,7 @@ export default function Menu() {
                     {superYN === 'y' &&
                         <NavLink to='/admin/site/account'>계정 관리</NavLink>
                     }
-                    <NavLink to='/'>팝업 관리</NavLink>
+                    <NavLink to='/admin/site/popup'>팝업 관리</NavLink>
                 </div>
             </li>
             <li>

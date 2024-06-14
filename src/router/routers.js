@@ -24,7 +24,8 @@ import Vendor from "../admin/page/product/Vendor";
 import AdminProduct from "../admin/page/product/Product";
 import AdminInquiry from "../admin/page/inquiry/Inquiry";
 import AdminInquiryDetail from "../admin/page/inquiry/Detail";
-import Account from "../admin/page/site/account/Account";
+import AdminSiteAccount from "../admin/page/site/account/Account";
+import AdminSitePopupManagement from "../admin/page/site/popupManagement/PopupManagement";
 import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
 import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
 import CategoryQnACreate from "../admin/page/support/QnA/Create";
@@ -150,7 +151,10 @@ export const routers = [
         element: <AdminRoot />,
         children: [
             {
-                path: 'account', element: <Account />
+                path: 'account', element: <AdminSiteAccount />
+            },
+            {
+                path: 'popup', element: <AdminSitePopupManagement />
             },
         ]
     },
