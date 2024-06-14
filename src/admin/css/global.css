@@ -9,6 +9,7 @@ mark.point{color: var(--color-point);}
 .adminPage input:not([type="submit"]), textarea{font-size: 15px; line-height: 19px; padding-left: 15px; height: 40px; width: 100%; font-weight: 400; border: 1px solid var(--color-line); border-radius: 4px; box-sizing: border-box;}
 .adminPage textarea{padding-block: 15px;}
 .adminPage input[type="submit"]{border: none;}
+.adminPage input:read-only{background-color: #dcdcdc;}
 
 
 /* 버튼 */

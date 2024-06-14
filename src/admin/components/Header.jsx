@@ -10,6 +10,7 @@ export default function Header() {
                 // console.log(result);
                 if(result.result){
                     sessionStorage.removeItem('adminToken')
+                    localStorage.removeItem('adminToken')
                     navigate('/admin')
                 }
             })
