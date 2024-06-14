@@ -1,5 +1,6 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { adminApi } from '../../../api/api';
+import Popup from '../../../components/popup/Popup';
 
 export default function Account() {
     const [board, setBoard] = useState()
@@ -38,7 +39,12 @@ export default function Account() {
 
             <div className="boardBox-site-account">
 
-                <button className='btn-point'>등록</button>
+                <button className='btn-point' onClick={()=>{
+                    setPopup({
+                        type: 'siteAccountCreate',
+                        func: boardFunc
+                    })
+                }}>등록</button>
                 <div className="board-title">
                     <b>No.</b>
                     <b>ID</b>
@@ -77,13 +83,37 @@ export default function Account() {
                             </div>
                             <div className='button'>
                                 <button className='btn-point'>수정</button>
-                                <button className='btn-point-border'>삭제</button>
+                                <button className='btn-point-border'
+                                    onClick={()=>setPopup({
+                                        type: 'cancel', 
+                                        title: '알림',
+                                        description: [
+                                            '해당 계정를 삭제하겠습니까?',
+                                            '삭제된 정보는 복구할 수 없습니다.',
+                                        ],
+                                        func: () => {
+                                            adminApi('manage', 'delete', {admin_id: data.admin_id})
+                                                .then((result)=>{
+                                                    if(result.result){
+                                                        setPopup({
+                                                            type: 'confirm',
+                                                            title: '알림',
+                                                            description: ['해당 계정이 삭제 되었습니다.'],
+                                                            func: () =>{
+                                                                boardFunc()
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                        }
+                                    })}
+                                >삭제</button>
                             </div>
                         </li>
                     )}
                 </ol>
-
             </div>
+            { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </>
     );
 }
