@@ -39,12 +39,14 @@ export default function Account() {
 
             <div className="boardBox-site-account">
 
-                <button className='btn-point' onClick={()=>{
-                    setPopup({
-                        type: 'siteAccountCreate',
-                        func: boardFunc
-                    })
-                }}>등록</button>
+                <button className='btn-point' 
+                    onClick={()=>{
+                        setPopup({
+                            type: 'siteAccount',
+                            func: boardFunc
+                        })
+                    }}
+                >등록</button>
                 <div className="board-title">
                     <b>No.</b>
                     <b>ID</b>
@@ -82,7 +84,15 @@ export default function Account() {
                                 <label htmlFor={`check_${data.admin_id}`}>노출 여부</label>
                             </div>
                             <div className='button'>
-                                <button className='btn-point'>수정</button>
+                                <button className='btn-point'
+                                    onClick={()=>{
+                                        setPopup({
+                                            type: 'siteAccount',
+                                            data: data,
+                                            func: boardFunc
+                                        })
+                                    }}
+                                >수정</button>
                                 <button className='btn-point-border'
                                     onClick={()=>setPopup({
                                         type: 'cancel', 

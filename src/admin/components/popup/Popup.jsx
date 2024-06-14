@@ -7,7 +7,7 @@ import VendorCreate from './VendorCreate';
 import VendorUpdate from './VendorUpdate';
 import SupportFAQCreate from './support/FAQ/Create';
 import SupportFAQUpdate from './support/FAQ/Update';
-import SiteAccountCreate from './site/account/Create';
+import SiteAccount from './site/account/Account';
 
 
 export default function Popup({ popup, setPopup }) {
@@ -44,7 +44,7 @@ export default function Popup({ popup, setPopup }) {
             { popup.type === 'vendorUpdate' && <VendorUpdate popup={popup} setPopup={setPopup} close={close}/>}
             { popup.type === 'supportFAQCreate' && <SupportFAQCreate popup={popup} setPopup={setPopup} close={close}/>}
             { popup.type === 'supportFAQUpdate' && <SupportFAQUpdate popup={popup} setPopup={setPopup} close={close}/>}
-            { popup.type === 'siteAccountCreate' && <SiteAccountCreate popup={popup} setPopup={setPopup} close={close}/>}
+            { popup.type === 'siteAccount' && <SiteAccount popup={popup} setPopup={setPopup} close={close}/>}
         </div>
     );
 }
