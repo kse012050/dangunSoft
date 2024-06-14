@@ -12,6 +12,9 @@ mark.point{color: var(--color-point);}
 .adminPage input:not([type="submit"]):read-only{background-color: #dcdcdc;}
 
 
+.adminPage > div > [class*="Page"] > h2{font-size: 32px; line-height: 40px; padding-bottom: 15px; margin-bottom: 30px; font-weight: 700; border-bottom: 2px solid #DCDCDC;}
+
+
 /* 버튼 */
 .adminPage [class|="btn"]{text-align: center; border-radius: 4px; box-sizing: border-box;}
 .adminPage [class*="btn-point"], .btn-border-gray-big{font-weight: 700;}
@@ -55,6 +58,13 @@ mark.point{color: var(--color-point);}
 .adminPage .selectBox.active > button{border-color: var(--color-font01);}
 .adminPage .selectBox.active > button::after{rotate: 180deg;}
 .adminPage .selectBox.selected > button{color: var(--color-font01);}
+
+
+/* 검색 박스 */
+.adminPage .searchBox{position: relative;}
+.adminPage .searchBox input{width: 100%; padding-right: 40px;}
+.adminPage .searchBox button{width: 20px; aspect-ratio: 1; position: absolute; top: 50%; right: 15px; transform: translateY(-50%); text-indent: -9999px;}
+.adminPage .searchBox button:first-of-type{background: url(../images/icon-search.png) no-repeat center / cover;}
 
 
 /* 게시물 */
@@ -107,13 +117,34 @@ mark.point{color: var(--color-point);}
 
 /* 입력 박스 */
 .adminPage .inputBox ul{border-top: 1px solid #dcdcdc;}
-.adminPage .inputBox ul li{font-size: 15px; line-height: 18px;}
-.adminPage .inputBox ul li{display: flex; border-bottom: 1px solid #dcdcdc;}
+.adminPage .inputBox ul li{font-size: 15px; line-height: 18px; display: flex; border-bottom: 1px solid #dcdcdc;}
 .adminPage .inputBox ul li > label{width: 150px; padding-block: 16px; font-weight: 700; flex-shrink: 0; background-color: #F7F7F7; display: flex; align-items: center; justify-content: center;}
 .adminPage .inputBox ul li > div{flex: 1; display: flex; align-items: center; padding: 10px 20px;}
 .adminPage .inputBox ul li > div textarea{height: 300px;}
 .adminPage .inputBox ul li div .radioBox{display: flex; gap: 10px;}
 .adminPage .inputBox .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
+
+
+/* 정보 박스 */
+.adminPage .infoBox strong{display: block; font-size: 25px; margin-bottom: 20px; font-weight: 700;}
+.adminPage .infoBox ul:not(:last-of-type){margin-bottom: 30px;}
+.adminPage .infoBox ul{display: flex; flex-wrap: wrap; border-top: 1px solid #dcdcdc;}
+.adminPage .infoBox ul li:not(.full){width: 50%;}
+.adminPage .infoBox ul li.full{width: 100%;}
+.adminPage .infoBox ul li{font-size: 15px; line-height: 18px; display: flex; border-bottom: 1px solid #dcdcdc;}
+.adminPage .infoBox ul li > span{width: 150px; padding-block: 16px; font-weight: 700; flex-shrink: 0; background-color: #F7F7F7; display: flex; align-items: center; justify-content: center;}
+.adminPage .infoBox ul li > div{flex: 1; display: flex; align-items: center; padding: 10px 20px;}
+.adminPage .infoBox ul li > div textarea{height: 300px;}
+.adminPage .infoBox ul li div .radioBox{display: flex; gap: 10px;}
+
+
+/* 답변 박스 */
+.adminPage .answerBox{margin-top: 50px;}
+.adminPage .answerBox strong{display: block; font-size: 25px; margin-bottom: 20px; font-weight: 700;}
+.adminPage .answerBox .registration textarea{height: 200px;}
+.adminPage .answerBox .registration textarea::placeholder{white-space: pre-line;}
+.adminPage .answerBox .registration .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
+
 
 
 /* 해더 */
@@ -173,5 +204,4 @@ mark.point{color: var(--color-point);}
 
 /* 해더 */
 .adminPage > div > [class*="Page"]{/* flex: 1; */ width: calc(100% - 200px); padding: 40px; box-sizing: border-box;}
-.adminPage > div > [class*="Page"] > h2{font-size: 32px; line-height: 40px; padding-bottom: 15px; margin-bottom: 30px; font-weight: 700; border-bottom: 2px solid #DCDCDC;}
 .adminPage > div > [class*="Page"] > h2:has(:is(button, a)){display: flex; justify-content: space-between; align-items: center;}

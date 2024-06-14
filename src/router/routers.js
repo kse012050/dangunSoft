@@ -23,6 +23,7 @@ import MyInfo from "../admin/page/MyInfo";
 import Vendor from "../admin/page/product/Vendor";
 import AdminProduct from "../admin/page/product/Product";
 import AdminInquiry from "../admin/page/inquiry/Inquiry";
+import AdminInquiryDetail from "../admin/page/inquiry/Detail";
 import Account from "../admin/page/site/account/Account";
 import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
 import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
@@ -138,6 +139,9 @@ export const routers = [
         children: [
             { 
                 index: true, element: <AdminInquiry />
+            },
+            {
+                path: ':id', element: <AdminInquiryDetail />
             },
         ]
     },

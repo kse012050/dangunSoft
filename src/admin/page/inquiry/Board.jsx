@@ -23,7 +23,7 @@ export default function Board({ board }) {
             <ol className="board-detail">
                 { board?.list.map((data)=>
                     <li key={data.board_id}>
-                        <Link to=''>
+                        <Link to={`/admin/inquiry/${data.board_id}`}>
                             <b>{ data.board_id }</b>
                             <p>
                                 <span>{ data.title }</span>
