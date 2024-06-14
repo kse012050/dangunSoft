@@ -94,6 +94,7 @@ export const inputChange = (e, setInputs) => {
     }else if(type === 'radio'){
         setInputs((input)=> ({...input, [name]: value}))
     }else{
+        console.log(e.target.value);
         setInputs((input)=> ({...input, [name]: e.target.value}))
     }
 }

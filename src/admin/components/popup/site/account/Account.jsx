@@ -6,7 +6,6 @@ export default function Account({ popup, setPopup, close }) {
     const [inputs, setInputs] = useState()
 
     useEffect(()=>{
-        console.log(popup.data);
         if(!popup.data){
             inputsRequiredAdd(setInputs);
         }else{

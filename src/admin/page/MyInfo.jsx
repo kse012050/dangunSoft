@@ -18,9 +18,9 @@ export default function MyInfo() {
                         id: result.data.id || 'admin',
                         name: result.data.name,
                         branch_department: result.data.branch_department,
-                        contact_Information: result.data.contact_Information,
+                        contact_information: result.data.contact_information,
                         email: result.data.email,
-                        passwords: result.data.passwords
+                        password: result.data.password
                     })
                 }
             })
@@ -33,6 +33,7 @@ export default function MyInfo() {
         if(isSubmit(inputs)){
             return;
         }
+        // console.log('완료');
         
         adminApi('profile/update', '', inputs)
             .then((result)=>{
@@ -74,31 +75,31 @@ export default function MyInfo() {
                         <li>
                             <label htmlFor="name">이름</label>
                             <div>
-                                <input type="text" id='name' name='name' defaultValue={inputs?.name}/>
+                                <input type="text" id='name' name='name' defaultValue={inputs?.name} required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="branch_department">지사/부서</label>
                             <div>
-                                <input type="text" id='branch_department' name='branch_department' defaultValue={inputs?.branch_department}/>
+                                <input type="text" id='branch_department' name='branch_department' defaultValue={inputs?.branch_department} required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="contact_Information">연락처(내선)</label>
+                            <label htmlFor="contact_information">연락처(내선)</label>
                             <div>
-                                <input type="text" id='contact_Information' name='contact_Information' defaultValue={inputs?.contact_Information} data-formet='numb' maxLength='11'/>
+                                <input type="text" id='contact_information' name='contact_information' defaultValue={inputs?.contact_information} data-formet='numb' maxLength='11' required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="email">이메일</label>
                             <div>
-                                <input type="text" id='email' name='email' defaultValue={inputs?.email}/>
+                                <input type="text" id='email' name='email' defaultValue={inputs?.email} required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="password">비번</label>
                             <div>
-                                <input type="password" id='password' name='password' defaultValue={inputs?.passwords} autoComplete="off"/>
+                                <input type="password" id='password' name='password' defaultValue={inputs?.password} autoComplete="off" required/>
                             </div>
                         </li>
                     </ul>
