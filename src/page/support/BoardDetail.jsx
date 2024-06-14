@@ -23,7 +23,7 @@ export default function BoardDetail() {
         return () => {
             sessionStorage.removeItem('boardPassword')
         }
-    },[id, boardPassword])
+    },[id, boardPassword, navigate])
 
     return (
         <section>

@@ -14,7 +14,7 @@ export default function Select({ placeholder, list, set, name, disabled}) {
 
     useEffect(()=>{
         set((prev)=> ({...prev, [name]: ''}))
-    },[])
+    },[name, set])
 
     const bodyClick = () =>{
         setIsActive(false)

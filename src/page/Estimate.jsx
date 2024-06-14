@@ -15,11 +15,11 @@ export default function Estimate() {
 
     const arr = productsList.filter((data)=> data.name === productSelect.product)[0]
     const option = arr?.option
-    const test = arr?.quantity?.[productSelect.option] ? arr?.quantity[productSelect.option].min : '1'
+    // const test = arr?.quantity?.[productSelect.option] ? arr?.quantity[productSelect.option].min : '1'
 
     useEffect(()=>{
         setProductSelect((prev)=>({...prev, 'quantity': arr?.quantity?.[productSelect.option] ? arr?.quantity[productSelect.option].min : '1'}))
-    },[productSelect.option])
+    },[productSelect.option, arr?.quantity])
 
     const test01 = arr?.quantity ? arr?.quantity[productSelect.option]?.text : '';
     // useEffect(()=>{

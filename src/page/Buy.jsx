@@ -6,6 +6,8 @@ export default function Buy() {
     const navigate = useNavigate();
     const [test, setTest] = useState(true)
     const [test2, setTest2] = useState()
+    console.log(test);
+    console.log(test2);
 
     return (
         <section>

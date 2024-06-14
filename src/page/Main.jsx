@@ -278,7 +278,7 @@ export default function Main() {
                          <input type="submit"  value='確認' onClick={onSubmit}/>
                     </fieldset>
                 </form>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.24431736511!2d139.72150827625802!3d35.670985730535854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c82fbd6ae09%3A0xee70acf788450c72!2z5pel5pys44CB44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yS5LiB55uu77yS4oiS77yYIERG44OT44Or!5e0!3m2!1sja!2skr!4v1713921721212!5m2!1sja!2skr"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.24431736511!2d139.72150827625802!3d35.670985730535854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c82fbd6ae09%3A0xee70acf788450c72!2z5pel5pys44CB44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yS5LiB55uu77yS4oiS77yYIERG44OT44Or!5e0!3m2!1sja!2skr!4v1713921721212!5m2!1sja!2skr" title='동영상'></iframe>
             </section>
 
             { popup && <Popup popup={popup} setPopup={setPopup}/>}

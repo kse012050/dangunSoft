@@ -20,7 +20,7 @@ export default function Account({ popup, setPopup, close }) {
                 etc_information: popup.data.etc_information,
             })
         }
-    },[])
+    },[popup.data])
 
     const onSubmit = (e) =>{
         e.preventDefault();

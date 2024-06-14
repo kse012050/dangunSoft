@@ -4,6 +4,7 @@ import { adminApi } from '../../api/api';
 export default function Product() {
     const [board, setBoard] = useState()
     const [popup, setPopup] = useState()
+    popup()
 
     const boardFunc = useCallback(()=>{
         adminApi('product', '', {page: '1'/* , limit: '100' */, all_yn: 'n'})
