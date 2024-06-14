@@ -136,11 +136,11 @@ body:has([data-popup]){overflow: hidden;}
 
 /* 인풋 */
 .userPage form:has([class*="inputBox"]){max-width: 600px; margin-inline: auto;}
-.userPage input:is([type="checkbox"], [type="radio"]) + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
-.userPage input:is([type="checkbox"], [type="radio"]) + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background-repeat: no-repeat; background-position: left top calc(100% * var(--styleIdx)); background-size: 100%;}
-.userPage input[type="checkbox"] + label::before{background-image: url(../images/icon-checkbox.png);}
-.userPage input[type="radio"] + label::before{background-image: url(../images/icon-radio.png);}
-.userPage input:is([type="checkbox"], [type="radio"]):checked + label::before{--styleIdx: 1;}
+input:is([type="checkbox"], [type="radio"]) + label{line-height: 22px; display: flex; align-items: center; flex-shrink: 0;}
+input:is([type="checkbox"], [type="radio"]) + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background-repeat: no-repeat; background-position: left top calc(100% * var(--styleIdx)); background-size: 100%;}
+input[type="checkbox"] + label::before{background-image: url(../images/icon-checkbox.png);}
+input[type="radio"] + label::before{background-image: url(../images/icon-radio.png);}
+input:is([type="checkbox"], [type="radio"]):checked + label::before{--styleIdx: 1;}
 .userPage [class*="inputBox"] ul{display: flex; flex-wrap: wrap; column-gap: 10px;}
 .userPage [class*="inputBox"] ul li:not(.half){width: 100%;}
 .userPage [class*="inputBox"] ul li.half{width: calc((100% - 10px) / 2);}
@@ -178,11 +178,11 @@ body:has([data-popup]){overflow: hidden;}
 
 
 /* 해더 */
-.userPage .userPage header{background-color: white; position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
-.userPage .userPage header::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background-color: #e6e6e6;}
-.userPage .userPage header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
-.userPage .userPage header nav ul li > a{font-size: 20px; font-weight: 700; text-align: center; display: block; }
-.userPage .userPage header nav ul li div a{color: var(--color-font03);}
+.userPage header{background-color: white; position: sticky; top: 0; width: 100%; padding-inline: max(calc((100% - 1340px) / 2), 12px); box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
+.userPage header::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background-color: #e6e6e6;}
+.userPage header h1 a{--styleIdx: 0; display: block; aspect-ratio: 249 / 40; background: url(../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
+.userPage header nav ul li > a{font-size: 20px; font-weight: 700; text-align: center; display: block; }
+.userPage header nav ul li div a{color: var(--color-font03);}
 /* header nav ul li:has(div) > a.active + div{display: flex;} */
 
 

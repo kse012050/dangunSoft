@@ -1,4 +1,5 @@
 import Board from "../page/support/Board";
+import Board2 from "../page/support/Board2";
 import BoardDetail from "../page/support/BoardDetail";
 import FAQ from "../page/support/FAQ";
 import Inquiry from "../page/support/Inquiry";
@@ -52,8 +53,9 @@ export const routers = [
         path: '/support',
         element: <Root />,
         children: [
-            { index: true, element: <Board/> },
-            { path: 'board', element: <Board/>  },
+            { index: true, element: <Board2/> },
+            { path: 'board', element: <Board2/>  },
+            { path: 'board2', element: <Board/>  },
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
             { path: 'inquiryResult', element: <InquiryResult/>  },
