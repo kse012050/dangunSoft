@@ -87,7 +87,7 @@ export default function CategoryQnA() {
                                 <span>제목</span>
                             </p>
                             <b>노출 여부</b>
-                            <b>관리</b>
+                            <b className='button'>관리</b>
                         </div>
 
 

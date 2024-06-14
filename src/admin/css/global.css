@@ -74,22 +74,27 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"] .board-title > b{text-align: center;}
 .adminPage [class*="boardBox"] .board-detail:not(:has(:nth-child(1)))::after{content: '게시물이 없습니다.'; height: 300px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li > a){font-size: 15px; display: flex; align-items: center; gap: 80px; height: 50px; padding-inline: 70px; border-bottom: 1px solid #DCDCDC;}
-.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *{text-align: center;}
-.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:not(p){width: 70px; flex-shrink: 0;}
-.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > p{flex: 1; min-width: 100px;}
-.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > *{text-align: center;}
+.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > *:not(p){width: 70px; flex-shrink: 0;}
+.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p{flex: 1; min-width: 100px;}
+.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > *:not(div){flex: 1;}
+.adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > div{flex-shrink: 0;}
 .adminPage [class*="boardBox"] .board-detail .exposure{display: flex; justify-content: center; align-items: center;}
 .adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"] + label{all: inherit; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; text-indent: -9999px;}
 .adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"] + label::before{display: none;}
 .adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
 .adminPage [class*="boardBox"] .board-detail .exposure input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
+.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{width: 140px; flex-shrink: 0;}
+.adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{display: flex; justify-content: center; gap: 5px;}
+.adminPage [class*="boardBox"] > :is(a, button){display: block; margin-left: auto; margin-bottom: 10px;}
 /* .adminPage [class*="boardBox"] .board-detail .button{display: flex; justify-content: center; gap: 10px; width: 150px;} */
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail:not(:has(:nth-child(1)))::after{content: '벤더사가 없습니다.';}
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail p{text-align: left;}
 .adminPage [class*="boardBox"].boardBox-product .board-detail:not(:has(:nth-child(1)))::after{content: '제품이 없습니다.';}
 .adminPage [class*="boardBox"].boardBox-suppot-faq .board-detail p{text-align: left;}
-.adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{width: 140px;}
-.adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{display: flex; justify-content: center; gap: 5px;}
+/* .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{width: 140px;}
+.adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{display: flex; justify-content: center; gap: 5px;} */
 
 
 /* 입력 박스 */

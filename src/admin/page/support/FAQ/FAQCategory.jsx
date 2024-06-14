@@ -64,7 +64,7 @@ export default function FAQCategory() {
                     </p>
                     <b>문답 수</b>
                     <b>노출 여부</b>
-                    <b>관리</b>
+                    <b className='button'>관리</b>
                 </div>
 
                 <ol className="board-detail">
@@ -80,7 +80,7 @@ export default function FAQCategory() {
                                 <input type="checkbox" id={`check_${data.category_id}`} defaultChecked={data.exposure_yn === 'y'} onChange={(e)=>onExposure(e, data.category_id)}/>
                                 <label htmlFor={`check_${data.category_id}`}>노출 여부</label>
                             </div>
-                            <div>
+                            <div className='button'>
                                 <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQUpdate', data: data, func: boardFunc})}>수정</button>
                                 <button className='btn-point-border' 
                                     onClick={()=>setPopup({

@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { adminApi } from '../api/api';
 
 export default function Menu() {
+    const [superYN, setSuperYN] = useState()
+
+    useLayoutEffect(()=>{
+        adminApi('profile')
+            .then((result)=>{
+                // console.log(result.data);
+                if(result.result){
+                    setSuperYN(result.data.super_admin_yn)
+                }
+            })
+    },[])
+
     return (
         <ul className='menuArea'>
             <li>
@@ -38,7 +51,9 @@ export default function Menu() {
             <li>
                 <button>사이트 관리</button>
                 <div>
-                    <NavLink to='/'>계정 관리</NavLink>
+                    {superYN === 'y' &&
+                        <NavLink to='/admin/site/account'>계정 관리</NavLink>
+                    }
                     <NavLink to='/'>팝업 관리</NavLink>
                 </div>
             </li>
