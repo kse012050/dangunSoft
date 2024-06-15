@@ -32,7 +32,7 @@ export default function Create() {
                 .then((result)=>{
                     // console.log(result);
                     if(result.result){
-                        setInputs(prev => ({...prev, board_id: id, title: result.data.title, comment: result.data.comment }))
+                        setInputs(prev => ({...prev, board_id: id, category1: result.data.category1, category2: result.data.category2, title: result.data.title, comment: result.data.comment }))
                     }
                 })
         }
@@ -74,8 +74,8 @@ export default function Create() {
             <div className='board-selectBox'>
                 {firstDepth &&
                     <>
-                        <SelectBox text={firstDepth.name} value={firstDepth.category_id} name='category1' setInputs={setInputs} /* func={firstDepthFunc} */ placeholder='1차 카테고리를 선택하세요.'/>
-                        <SelectBox text={category.filter((data)=> data.parent_category_id === inputs?.category1).map((data)=> data.name)} value={category.filter((data)=> data.parent_category_id === inputs?.category1).map((data)=> data.category_id)} name='category2' setInputs={setInputs} placeholder='2차 카테고리를 선택하세요.' key={inputs?.category1}/>
+                        <SelectBox text={firstDepth.name} value={firstDepth.category_id}  name='category1' setInputs={setInputs} firstText={category.filter((data)=> data.category_id === inputs.category1)[0].name} placeholder='1차 카테고리를 선택하세요.'/>
+                        <SelectBox text={category.filter((data)=> data.parent_category_id === inputs?.category1).map((data)=> data.name)} value={category.filter((data)=> data.parent_category_id === inputs?.category1).map((data)=> data.category_id)} name='category2' firstText={category.filter((data)=> data.category_id === inputs.category2)[0].name} setInputs={setInputs} placeholder='2차 카테고리를 선택하세요.' key={inputs?.category1}/>
                     </>
                 }
             </div>

@@ -11,7 +11,7 @@ export default function Detail() {
     const detailFunc = useCallback(()=>{
         adminApi('board/detail', '', {board_id: id})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     setDetail(result.data)
                 }
@@ -128,16 +128,39 @@ export default function Detail() {
 
             <div className='answerBox'>
                 <strong>답변</strong>
-                <div className='registration'>
-                    <textarea name="answer" id="answer" onChange={(e)=>inputChange(e, setInputs)}
-                    placeholder='답변을 입력하세요. 
-                        작성한 답변은 게시판 하단에 노출되며 고객에게 메일로 함께 전송됩니다.
-                        메일 발송 완료 후에는 내용을 수정할 수 없습니다.'
-                    ></textarea>
-                    <div className='buttonArea'>
-                        <button className='btn-point' onClick={onSubmit}>등록</button>
-                    </div>
-                </div>
+                {!detail?.answer ?
+                    <div className='registration'>
+                        <textarea name="answer" id="answer" onChange={(e)=>inputChange(e, setInputs)}
+                        placeholder='답변을 입력하세요. 
+                            작성한 답변은 게시판 하단에 노출되며 고객에게 메일로 함께 전송됩니다.
+                            메일 발송 완료 후에는 내용을 수정할 수 없습니다.'
+                        ></textarea>
+                        <div className='buttonArea'>
+                            <button className='btn-point' onClick={onSubmit}>등록</button>
+                        </div>
+                    </div> :
+                    <>
+                        <div className='answer'>
+                            {detail.answer}
+                        </div>
+                        <div className='infoBox'>
+                            <ul className='infoBox'>
+                                <li>
+                                    <span>작성자</span>
+                                    <div>
+                                        {detail.answer_write_name}
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>작성시간</span>
+                                    <div>
+                                        {detail.answer_date}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </>
+                }
             </div>
         </>
     );

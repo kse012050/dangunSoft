@@ -150,6 +150,7 @@ mark.point{color: var(--color-point);}
 .adminPage .answerBox .registration textarea{height: 200px;}
 .adminPage .answerBox .registration textarea::placeholder{white-space: pre-line;}
 .adminPage .answerBox .registration .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
+.adminPage .answerBox .answer{padding: 15px; min-height: 100px; background-color: #F7F7F7;}
 
 
 
