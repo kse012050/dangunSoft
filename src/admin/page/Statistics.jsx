@@ -1,34 +1,47 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Period from '../components/Period';
 import BarChart from '../components/chart/BarChart';
 import PieChart from '../components/chart/PieChart';
 import { adminApi } from '../api/api';
+import { Link } from 'react-router-dom';
 
 export default function Statistics() {
     const [inputs, setInputs] = useState({start_date: '2024-06-01', end_date: '2024-06-11'})
     const [count, setCount] = useState();
     const [board, setBoard] = useState()
+    const [excelDown, setExcelDown] = useState();
 
     useLayoutEffect(()=>{
         adminApi('stat', '', inputs)
             .then((result)=>{
-                console.log(result);
-                setCount({
-                    state_date: result.list.map((data)=> data.stat_date ),
-                    estimate_cnt: result.list.map((data)=> data.estimate_cnt ),
-                    inquiry_cnt: result.list.map((data)=> data.inquiry_cnt ),
-                    simple_inquiry_cnt: result.list.map((data)=> data.simple_inquiry_cnt ),
-                    visit_cnt: result.list.map((data)=> data.visit_cnt ),
-                    total: [
-                        result.list.map((data)=> data.estimate_cnt ).reduce((prev, next)=> prev + next),
-                        result.list.map((data)=> data.inquiry_cnt ).reduce((prev, next)=> prev + next),
-                        result.list.map((data)=> data.simple_inquiry_cnt ).reduce((prev, next)=> prev + next),
-                        result.list.map((data)=> data.visit_cnt ).reduce((prev, next)=> prev + next),
-                    ]
-                })
-                setBoard({
-                    list: result.list
-                })
+                // console.log(result);
+                if(result.result){
+                    setCount({
+                        state_date: result.list.map((data)=> data.stat_date ),
+                        estimate_cnt: result.list.map((data)=> data.estimate_cnt ),
+                        inquiry_cnt: result.list.map((data)=> data.inquiry_cnt ),
+                        simple_inquiry_cnt: result.list.map((data)=> data.simple_inquiry_cnt ),
+                        visit_cnt: result.list.map((data)=> data.visit_cnt ),
+                        total: [
+                            result.list.map((data)=> data.estimate_cnt ).reduce((prev, next)=> prev + next),
+                            result.list.map((data)=> data.inquiry_cnt ).reduce((prev, next)=> prev + next),
+                            result.list.map((data)=> data.simple_inquiry_cnt ).reduce((prev, next)=> prev + next),
+                            result.list.map((data)=> data.visit_cnt ).reduce((prev, next)=> prev + next),
+                        ]
+                    })
+                    setBoard({
+                        list: result.list
+                    })
+                }
+            })
+
+        
+        adminApi('stat/download', '', inputs)
+            .then((result)=>{
+                // console.log(result);
+                if(result.result){
+                    setExcelDown(result.data.download_url)
+                }
             })
     },[])
 
@@ -55,7 +68,11 @@ export default function Statistics() {
                 </div>
             }
 
-            <strong>내역</strong>
+
+            <strong>
+                내역
+                <Link to={excelDown} className='btn-point-border'>엑셀 다운로드</Link>
+            </strong>
             
             <div className="boardBox-statistics">
                 <div className="board-title">

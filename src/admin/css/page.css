@@ -19,6 +19,8 @@
 
 /* 관리자 통계 */
 .adminStatisticsPage > strong{display: block; font-size: 18px; line-height: 21px; margin-bottom: 20px; font-weight: 700;}
+.adminStatisticsPage > strong:has(a){position: relative;}
+.adminStatisticsPage > strong:has(a) a{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
 .adminStatisticsPage .chartArea{display: flex; align-items: center; gap: 50px; width: 1400px; position: relative; margin-bottom: 50px;}
 .adminStatisticsPage .chartArea .barArea{width: calc(100% - 550px);}
 .adminStatisticsPage .chartArea .pieArea{width: 350px;}
