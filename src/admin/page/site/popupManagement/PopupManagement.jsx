@@ -34,7 +34,7 @@ export default function PopupManagement() {
             <h2>팝업 관리</h2>
             
             <div className="boardBox-site-popup">
-                <Link to='' className='btn-point'>등록</Link>
+                <Link to='/admin/site/popup/create' className='btn-point'>등록</Link>
 
                 <div className="board-title">
                     <b>No.</b>
@@ -50,7 +50,7 @@ export default function PopupManagement() {
                 <ol className="board-detail">
                     { board?.list.map((data)=>
                         <li key={data.admin_id}>
-                            <Link to='test'>
+                            <Link to={`/admin/site/popup/${data.admin_id}`}>
                                 <span>{ data.admin_id }</span>
                                 <div className='img'>
                                     <img src={data.board_picture_list[0].file_url} alt="" />

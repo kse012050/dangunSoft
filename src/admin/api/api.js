@@ -1,4 +1,5 @@
 const adminApiUrl =  `${process.env.REACT_APP_API_URL}admin/`;
+const userApiUrl =  `${process.env.REACT_APP_API_URL}`;
 
 // function commonOptions(type, data){
 //     const myHeaders = new Headers();
@@ -19,20 +20,21 @@ const adminApiUrl =  `${process.env.REACT_APP_API_URL}admin/`;
 //     }
 // }
 
-// function fileOptions(data){
-//     const myHeaders = new Headers();
-//     myHeaders.append("Cookie", "PHPSESSID=1952e743d076ecac736e8d3afcb92d06");
+function fileOptions(data){
+    const myHeaders = new Headers();
+    const token = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
+    myHeaders.append("Cookie", `Bearer ${token}`);
     
-//     const formdata = new FormData();
-//     formdata.append("file", data);
+    const formdata = new FormData();
+    formdata.append("file", data);
 
-//     return {
-//         method: "POST",
-//         headers: myHeaders,
-//         body: formdata,
-//         redirect: "follow"
-//     };
-// }
+    return {
+        method: "POST",
+        headers: myHeaders,
+        body: formdata,
+        redirect: "follow"
+    };
+}
 
 
 export function isSubmit(inputs){
@@ -53,6 +55,29 @@ export function isSubmit(inputs){
         });
     }
     
+}
+
+export function adminFileApi(data){
+    const fetchData = async () => {
+        try{
+            let array = []
+            for(let a = 0; a < data.length; a++){
+                if(typeof(data[a]) === 'object'){
+                    await fetch(`${userApiUrl}imageUploadS3`, fileOptions(data[a]))
+                        .then((response) => response.json())
+                        .then((result) => array.push(result.data.file_id))
+                }
+
+                if(typeof(data[a]) === 'string'){
+                    array.push(data[a])
+                }
+            }
+            return array.join(',')
+        } catch(err){
+            console.error('Error fetching data:', err);
+        }
+    }
+    return fetchData().then((result)=>result)
 }
 
 

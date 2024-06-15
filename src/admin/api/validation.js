@@ -1,10 +1,8 @@
 // 필수 입력 학목 추가
 export const inputsRequiredAdd = (setInputs) =>{
     document.querySelectorAll('[required]').forEach(({ name, type, value, checked })=>{
-        if(type === 'radio'){
-            if(checked){
-                setInputs((input)=>({...input, [name]: value}))
-            }
+        if(type === 'radio' || type === 'checkbox'){
+            setInputs((input)=>({...input, [name]: checked ? 'y': 'n'}))
         }else{
             setInputs((input)=>({...input, [name]: value || ''}))
         }

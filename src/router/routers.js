@@ -26,6 +26,7 @@ import AdminInquiry from "../admin/page/inquiry/Inquiry";
 import AdminInquiryDetail from "../admin/page/inquiry/Detail";
 import AdminSiteAccount from "../admin/page/site/account/Account";
 import AdminSitePopupManagement from "../admin/page/site/popupManagement/PopupManagement";
+import AdminSitePopupManagementCreate from "../admin/page/site/popupManagement/Create";
 import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
 import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
 import CategoryQnACreate from "../admin/page/support/QnA/Create";
@@ -155,6 +156,12 @@ export const routers = [
             },
             {
                 path: 'popup', element: <AdminSitePopupManagement />
+            },
+            {
+                path: 'popup/create', element: <AdminSitePopupManagementCreate />
+            },
+            {
+                path: 'popup/:id', element: <AdminSitePopupManagementCreate />
             },
         ]
     },
