@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { inputChange, inputsRequiredAdd } from '../../../api/validation';
 import { adminApi, adminFileApi, isSubmit } from '../../../api/api';
@@ -7,14 +7,27 @@ import Popup from '../../../components/popup/Popup';
 export default function Create() {
     const { id } = useParams()
     const [inputs, setInputs] = useState({board_type: 'popup'})
+    const [detail, setDetail] = useState()
     const [imgUrl, setImgUrl] = useState([])
     const [imgFile, setImgFIle] = useState([])
     const [popup, setPopup] = useState()
     const navigate = useNavigate()
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         inputsRequiredAdd(setInputs);
-    },[])
+
+        if(id){
+            adminApi('board/detail', '', {board_id: id})
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        setInputs(prev => ({...prev, title: result.data.title, link: result.data.link, exposure_yn: result.data.exposure_yn, board_picture_ids: result.data.board_picture_list[0].file_id }))
+                        setDetail(result.data)
+                        setImgUrl([result.data.board_picture_list[0].file_url])
+                    }
+                })
+        }
+    },[id])
 
     const fileUpload = (e) => {
         e.stopPropagation()
@@ -22,7 +35,9 @@ export default function Create() {
             return
         } */
         const { files } = e.target;
+
         if(files){
+            setInputs(prev=>({...prev, board_picture_ids: ''}))
             // console.log(files[0]);
             // for(let a = 0; a < (files.length < 6 ? files.length : 5); a++){
                 const reader = new FileReader();
@@ -44,23 +59,31 @@ export default function Create() {
         if(isSubmit(inputs)){
             return;
         }
-
-        if(!imgFile.length){
+        // console.log(imgFile);
+        if(!imgFile.length && !inputs.board_picture_ids){
             return
         }
 
         let apiInputs = {...inputs}
         // console.log(imgFile);
-        await adminFileApi(imgFile)
-            .then((result)=>{
-                console.log(result);
-                if(result){
-                    apiInputs = {...apiInputs, board_picture_ids: result}
-                }
-            })
-        // console.log(apiInputs);
+        if(imgFile.length && typeof(imgFile[0]) === 'object'){
+            await adminFileApi(imgFile)
+                .then((result)=>{
+                    // console.log(result);
+                    if(result){
+                        apiInputs = {...apiInputs, board_picture_ids: result}
+                    }
+                })
+            // console.log(apiInputs);
+        }
 
-        adminApi('board/manage', 'insert', apiInputs)
+        if(id){
+            apiInputs = {...apiInputs, board_id: id}
+        }
+
+        const funcType = !id ? 'insert' : 'update';
+
+        adminApi('board/manage', funcType, apiInputs)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
@@ -83,12 +106,14 @@ export default function Create() {
             <form onChange={(e)=>inputChange(e, setInputs)}>
                 <fieldset className='inputBox'>
                     <ul>
-                        <li>
-                            <label htmlFor="">No.</label>
-                            <div>
-                                3
-                            </div>
-                        </li>
+                        {detail &&
+                            <li>
+                                <label htmlFor="">No.</label>
+                                <div>
+                                    { detail.board_id }
+                                </div>
+                            </li>
+                        }
                         <li>
                             <label htmlFor="">썸네일</label>
                             {!!imgUrl.length &&
@@ -116,31 +141,33 @@ export default function Create() {
                         <li>
                             <label htmlFor="title">설명</label>
                             <div>
-                                <input type="text" id='title' name='title' placeholder='설명을 입력하세요. (해당 정보는 웹사이트에 노출되지 않습니다.)' required/>
+                                <input type="text" id='title' name='title' defaultValue={inputs.title} placeholder='설명을 입력하세요. (해당 정보는 웹사이트에 노출되지 않습니다.)' required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="link">페이지 링크</label>
                             <div>
-                                <input type="link" id='link' name='link' placeholder='링크할 페이지 URL를 입력하세요.' required/>
+                                <input type="link" id='link' name='link' defaultValue={inputs.link} placeholder='링크할 페이지 URL를 입력하세요.' required/>
                             </div>
                         </li>
                         <li>
                             <label htmlFor="">노출여부</label>
                             <div className='exposure'>
-                                <input type="checkbox" id='exposure_yn' name='exposure_yn' required/>
+                                <input type="checkbox" id='exposure_yn' name='exposure_yn' checked={inputs.exposure_yn === 'y' || ''} required onChange={(e)=>inputChange(e, setInputs)}/>
                                 <label htmlFor='exposure_yn'>노출 여부</label>
                             </div>
                         </li>
-                        <li>
-                            <label htmlFor="">등록일시</label>
-                            <div>
-                                190230918
-                            </div>
-                        </li>
+                        {detail &&
+                            <li>
+                                <label htmlFor="">등록일시</label>
+                                <div>
+                                    { detail.reg_date }
+                                </div>
+                            </li>
+                        }
                     </ul>
                     <div className='buttonArea'>
-                        <input type="submit" className='btn-point' value='등록' onClick={onSubmit}/>
+                        <input type="submit" className='btn-point' value={!id ?'등록' : '수정'} onClick={onSubmit}/>
                     </div>
                 </fieldset>
             </form>

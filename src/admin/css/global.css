@@ -92,7 +92,6 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p{flex: 1; min-width: 100px;}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .time{width: 100px;}
-.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .link{width: 200px;}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .img img{width: 50px; aspect-ratio: 1 / 0.8; object-fit: cover;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > *:not(div){flex: 1;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > div{flex-shrink: 0;}
