@@ -17,6 +17,20 @@
 .adminPage .myInfoArea > input[type="submit"]{display: block; margin-top: 30px; margin-left: auto; background-color: var(--color-point); color: white;}
 
 
+/* 관리자 통계 */
+.adminStatisticsPage > strong{display: block; font-size: 18px; line-height: 21px; margin-bottom: 20px; font-weight: 700;}
+.adminStatisticsPage .chartArea{display: flex; align-items: center; gap: 50px; width: 1400px; position: relative; margin-bottom: 50px;}
+.adminStatisticsPage .chartArea .barArea{width: calc(100% - 550px);}
+.adminStatisticsPage .chartArea .pieArea{width: 350px;}
+.adminStatisticsPage .chartArea ul{position: absolute; right: 0; bottom: 0; font-size: 15px;}
+.adminStatisticsPage .chartArea ul li{display: flex; align-items: center; gap: 10px;}
+.adminStatisticsPage .chartArea ul li::before{content: ''; width: 15px; aspect-ratio: 1; border-width: 1px; border-style: solid; border-radius: 100%;}
+.adminStatisticsPage .chartArea ul li:not(:last-child){ margin-bottom: 5px;}
+.adminStatisticsPage .chartArea ul li:nth-child(1)::before{background-color: rgba(255, 206, 86, 0.2); border-color: rgba(255, 206, 86, 1);}
+.adminStatisticsPage .chartArea ul li:nth-child(2)::before{background-color: rgba(255, 159, 64, 0.2); border-color: rgba(255, 159, 64, 1);}
+.adminStatisticsPage .chartArea ul li:nth-child(3)::before{background-color: rgba(255, 99, 132, 0.2); border-color: rgba(255, 99, 132, 1);}
+.adminStatisticsPage .chartArea ul li:nth-child(4)::before{background-color: rgba(255, 99, 132, 0.2); border-color: rgba(255, 99, 132, 1);}
+
 /* ------------------------------------------------------- */
 
 .adminPage .adminDashboardPage{display: flex; flex-wrap: wrap; justify-content: space-between; align-content: flex-start; gap: 80px;}

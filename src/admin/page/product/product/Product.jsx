@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Product() {
     const [board, setBoard] = useState()
-    const [popup, setPopup] = useState()
+    // const [popup, setPopup] = useState()
 
     const boardFunc = useCallback(()=>{
         adminApi('product', '', {page: '1'/* , limit: '100' */, all_yn: 'n'})

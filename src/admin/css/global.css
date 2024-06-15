@@ -8,9 +8,9 @@ mark.point{color: var(--color-point);}
 
 .adminPage input:not([type="submit"]), textarea{font-size: 15px; line-height: 19px; padding-left: 15px; height: 40px; width: 100%; font-weight: 400; border: 1px solid var(--color-line); border-radius: 4px; box-sizing: border-box;}
 .adminPage textarea{padding-block: 15px;}
+.adminPage input:is([type="checkbox"], [type="radio"]) + label::before{width: 24px;}
 .adminPage input[type="submit"]{border: none;}
 .adminPage input:not([type="submit"]):read-only{background-color: #dcdcdc;}
-
 
 .adminPage > div > [class*="Page"] > h2{font-size: 32px; line-height: 40px; padding-bottom: 15px; margin-bottom: 30px; font-weight: 700; border-bottom: 2px solid #DCDCDC;}
 
@@ -113,6 +113,7 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .test01{width: 110px;}
 .adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .test02{width: 60px;}
 .adminPage [class*="boardBox"].boardBox-suppot-inquiry-inquiry :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p{flex: none; width: 100px;}
+.adminPage [class*="boardBox"].boardBox-statistics .board-detail li > *{text-align: center;}
 /* .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{width: 140px;}
 .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{display: flex; justify-content: center; gap: 5px;} */
 

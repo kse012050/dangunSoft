@@ -19,6 +19,7 @@ import Commerce from "../page/Commerce";
 import AdminSignIn from '../admin/page/SignIn'
 import AdminRoot from '../admin/page/Root'
 import Dashboard from '../admin/page/Dashboard'
+import AdminStatistics from '../admin/page/Statistics'
 import MyInfo from "../admin/page/MyInfo";
 import Vendor from "../admin/page/product/Vendor";
 import AdminProduct from "../admin/page/product/product/Product";
@@ -121,6 +122,15 @@ export const routers = [
         children: [
             { 
                 index: true, element: <Dashboard />
+            },
+        ]
+    },
+    {
+        path: "/admin/statistics",
+        element: <AdminRoot />,
+        children: [
+            { 
+                index: true, element: <AdminStatistics />
             },
         ]
     },

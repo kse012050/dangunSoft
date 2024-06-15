@@ -19,7 +19,7 @@ export default function Menu() {
         <ul className='menuArea'>
             <li>
                 <button>관리자 통계</button>
-                <div><NavLink to='/'>통계</NavLink></div>
+                <div><NavLink to='/admin/statistics'>통계</NavLink></div>
             </li>
             <li>
                 <button>상품 관리</button>
