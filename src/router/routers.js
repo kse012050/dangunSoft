@@ -2,6 +2,7 @@ import Board from "../page/support/Board";
 import Board2 from "../page/support/Board2";
 import BoardDetail from "../page/support/BoardDetail";
 import FAQ from "../page/support/FAQ";
+import FAQ2 from "../page/support/FAQ2";
 import Inquiry from "../page/support/Inquiry";
 import InquiryResult from "../page/support/InquiryResult";
 import Main from "../page/Main";
@@ -18,7 +19,6 @@ import Commerce from "../page/Commerce";
 // 관리자
 import AdminSignIn from '../admin/page/SignIn'
 import AdminRoot from '../admin/page/Root'
-import Dashboard from '../admin/page/Dashboard'
 import AdminStatistics from '../admin/page/Statistics'
 import MyInfo from "../admin/page/MyInfo";
 import Vendor from "../admin/page/product/Vendor";
@@ -66,7 +66,8 @@ export const routers = [
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
             { path: 'inquiryResult', element: <InquiryResult/>  },
-            { path: 'faq', element: <FAQ/>  },
+            { path: 'faq', element: <FAQ2/>  },
+            { path: 'faq2', element: <FAQ/>  },
             { path: 'faq/:search', element: <FAQ/>  },
         ]
     },
@@ -115,15 +116,6 @@ export const routers = [
     {
         path: "/admin",
         element: <AdminSignIn />,
-    },
-    {
-        path: "/admin/dashboard",
-        element: <AdminRoot />,
-        children: [
-            { 
-                index: true, element: <Dashboard />
-            },
-        ]
     },
     {
         path: "/admin/statistics",

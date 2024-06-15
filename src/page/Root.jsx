@@ -13,6 +13,15 @@ export default function Root() {
                             (isNaN(Number(location.at(-1))) ? location.at(-1) : `${location.at(-2)}Detail`)
     className === 'support' && (className = 'board')
 
+    // 나중에 삭제
+    if(className === 'board2'){
+        className = 'board'
+    }
+
+    if(className === 'faq2'){
+        className = 'faq'
+    }
+
     useEffect(()=>{
         return(
             document.querySelectorAll('[data-styleidx]').length ? styleIdx() : undefined

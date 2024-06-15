@@ -17,7 +17,7 @@ export default function Header() {
     }
     return (
         <header>
-            <h1><Link to='/admin/dashboard' className='logo'>단군 소프트 </Link></h1>
+            <h1><Link to='/admin/statistics' className='logo'>단군 소프트 </Link></h1>
             <div>
                 <button className='btn-point' onClick={onLogout}>로그아웃</button>
             </div>

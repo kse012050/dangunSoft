@@ -51,7 +51,7 @@ export default function Board() {
         <section>
             <h2>お問い合わせ掲示板</h2>
             <div className='searchBox'>
-                <input type="search" placeholder='タイトル検索' name='search_text' onChange={(e)=>inputChange(e, setSearchInputs)}/>
+                <input type="search" placeholder='タイトル検索' name='search_text' onChange={(e)=>inputChange(e, setSearchInputs)}  onKeyDown={(e)=> e.key === 'Enter' && onSearch(e)}/>
                 <button onClick={onSearch}>검색</button>
             </div>
             <div className='boardBox'>

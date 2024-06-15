@@ -32,7 +32,7 @@ export default function SignIn() {
                     rememberIDRef.current.checked ? 
                         localStorage.setItem('adminToken', result.data.token) :
                         sessionStorage.setItem('adminToken', result.data.token);
-                    navigate('/admin/dashboard')
+                    navigate('/admin/statistics')
                 }else{
                     setPopup({type: 'signIn'})
                 }

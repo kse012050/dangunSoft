@@ -1,14 +1,12 @@
-import React, { Fragment, useEffect, useLayoutEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { tab, list } from '../../js/faq'
 import { urlParams } from '../../js/common'
-import { userApi } from '../../api/api';
 
 
 export default function FAQ() {
     const navigation = useNavigate()
     const { search, page } = urlParams(useLocation())
-    const [inputs, setInputs] = useState({board_type: 'faq'})
     const tabList = tab()
     const {totalCount} = list(search, page)
     const [faqList, setFaqList] = useState(list(search, page).faqList)
@@ -20,17 +18,6 @@ export default function FAQ() {
     pageInfo.test = (index) =>  index + 1 + parseInt((pageInfo.currentPage - 1) / 5) *  5;
     const [searchValue, setSearchValue] = useState()
 
-    useLayoutEffect(()=>{
-        userApi('category')
-            .then((result)=>{
-                // console.log(result);
-            })
-
-        userApi('faq', '', inputs)
-            .then((result)=>{
-                console.log(result);
-            })
-    },[])
 
     useEffect(()=>{
         setFaqList(list(search, page).faqList)
