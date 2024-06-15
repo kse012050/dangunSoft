@@ -47,7 +47,7 @@ mark.point{color: var(--color-point);}
 
 
 /* 셀렉트 박스 */
-.adminPage .selectBox{position: relative;}
+.adminPage .selectBox{position: relative; width: 100%;}
 .adminPage .selectBox button{font-size: 15px; padding-inline: 15px; height: 40px; font-weight: 400; text-align: left;}
 .adminPage .selectBox > button{width: 100%; border: 1px solid var(--color-line); color: #BBB; border-radius: 4px; box-sizing: border-box; position: relative;}
 .adminPage .selectBox > button::after{width: 18px; right: 15px; content: ''; aspect-ratio: 1; position: absolute; top: 50%; translate: 0 -50%; background: url(../images/icon-down.png) no-repeat center / cover;}

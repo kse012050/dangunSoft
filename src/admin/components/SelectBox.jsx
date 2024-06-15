@@ -28,7 +28,7 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
         func && func()
         nextRef && nextRef.current.focus()
     }
-
+    
     return (
         <div className={`selectBox ${isOpen ? 'active': ''} ${select ? 'selected' : ''}`} ref={dropdownRef}>
             <button 

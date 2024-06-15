@@ -19,8 +19,9 @@ export default function Header() {
                     <li>
                         <NavLink to='/support'>サポート</NavLink>
                         <div>
-                            <NavLink to='/support/board'>掲示板</NavLink>
-                            <NavLink to='/support/inquiry'>お問い合わせ</NavLink>
+                            {/* <NavLink to='/support/board'>掲示板</NavLink>
+                            <NavLink to='/support/inquiry'>お問い合わせ</NavLink> */}
+                            <NavLink to='/support/board'>お問い合わせ</NavLink>
                             <NavLink to='/support/faq'>FAQ</NavLink>
                         </div>
                     </li>

@@ -1,10 +1,10 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
-import { adminApi } from '../../api/api';
+import { adminApi } from '../../../api/api';
+import { Link } from 'react-router-dom';
 
 export default function Product() {
     const [board, setBoard] = useState()
     const [popup, setPopup] = useState()
-    popup()
 
     const boardFunc = useCallback(()=>{
         adminApi('product', '', {page: '1'/* , limit: '100' */, all_yn: 'n'})
@@ -29,7 +29,8 @@ export default function Product() {
             <div className="boardBox-product">
                 <div className="board-count">
                     <strong className='total'>{ board?.page.totalCount }</strong>
-                    <button className='btn-point' onClick={()=>setPopup({type: 'vendorCreate', finFunc: boardFunc})}>등록</button>
+                    {/* <button className='btn-point' onClick={()=>setPopup({type: 'vendorCreate', finFunc: boardFunc})}>등록</button> */}
+                    <Link to='/admin/product/product/create' className='btn-point'>등록</Link>
                 </div>
 
                 <div className="board-title">

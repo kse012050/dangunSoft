@@ -21,7 +21,8 @@ import AdminRoot from '../admin/page/Root'
 import Dashboard from '../admin/page/Dashboard'
 import MyInfo from "../admin/page/MyInfo";
 import Vendor from "../admin/page/product/Vendor";
-import AdminProduct from "../admin/page/product/Product";
+import AdminProduct from "../admin/page/product/product/Product";
+import AdminProductCreate from "../admin/page/product/product/Create";
 import AdminInquiry from "../admin/page/inquiry/Inquiry";
 import AdminInquiryDetail from "../admin/page/inquiry/Detail";
 import AdminSiteAccount from "../admin/page/site/account/Account";
@@ -132,6 +133,9 @@ export const routers = [
             },
             {
                 path: 'product', element: <AdminProduct />
+            },
+            {
+                path: 'product/create', element: <AdminProductCreate />
             },
         ]
     },
