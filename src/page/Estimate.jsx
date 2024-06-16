@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Select from '../components/Select';
 import { useNavigate } from 'react-router-dom';
-
 import { productsList } from '../js/product'
+import { inputChange, inputsRequiredAdd } from '../api/validation';
 
 export default function Estimate() {
     const navigate = useNavigate();
+    const [inputs, setInputs] = useState({board_type: 'estimate'})
+
+    useEffect(()=>{
+        inputsRequiredAdd(setInputs);
+    },[])
     const [productSelect, setProductSelect] = useState({
         'company': '',
         'product': '',
@@ -28,8 +33,8 @@ export default function Estimate() {
 
     return (
         <section>
-            <h2 onClick={()=>console.log(productSelect)}>お見積もり</h2>
-            <form>
+            <h2 onClick={()=>console.log(inputs)}>お見積もり</h2>
+            <form onChange={(e)=>inputChange(e, setInputs)}>
                 <fieldset className='inputBox-product'>
                     <ul>
                         <li>
@@ -84,41 +89,41 @@ export default function Estimate() {
                 <fieldset className='inputBox'>
                     <ul>
                         <li>
-                            <label htmlFor="">企業名</label>
+                            <label htmlFor="company_name">企業名</label>
                             <div>
-                                <input type="text" placeholder='企業名を入力してください'/>
+                                <input type="text" name='company_name' id='company_name' placeholder='企業名を入力してください'/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">名前(姓/名)</label>
+                            <label htmlFor="write_name_last">名前(姓/名)</label>
                             <div>
-                                <input type="text" placeholder='姓' required/>
-                                <input type="text" placeholder='名' required/>
+                                <input type="text" name='write_name_last' id='write_name_last' placeholder='姓' required/>
+                                <input type="text" name='write_name_first' id='write_name_first' placeholder='名' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">ふりがな</label>
+                            <label htmlFor="phonetic_guide_last">ふりがな</label>
                             <div>
-                                <input type="text" placeholder='姓' required/>
-                                <input type="text" placeholder='名' required/>
+                                <input type="text" name='phonetic_guide_last' id='phonetic_guide_last' placeholder='姓' required/>
+                                <input type="text" name='phonetic_guide_first' id='phonetic_guide_first' placeholder='名' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">Email</label>
+                            <label htmlFor="email">Email</label>
                             <div>
-                                <input type="text" placeholder='メールアドレスを入力してください' required/>
+                                <input type="text" name='email' id='email' placeholder='メールアドレスを入力してください' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">電話番号</label>
+                            <label htmlFor="contact_information">電話番号</label>
                             <div>
-                                <input type="text" placeholder='電話番号を入力してください' required/>
+                                <input type="text" name='contact_information' id='contact_information' placeholder='電話番号を入力してください' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">お問い合わせ</label>
+                            <label htmlFor="comment">お問い合わせ</label>
                             <div>
-                                <textarea name="" id="" placeholder='内容'></textarea>
+                                <textarea name="comment" id="comment" placeholder='内容'></textarea>
                             </div>
                         </li>
                     </ul>

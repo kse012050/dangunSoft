@@ -13,7 +13,7 @@ export default function SignIn() {
     const adminToken = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
 
     useEffect(()=>{
-        adminToken && navigate('/admin/dashboard')
+        adminToken && navigate('/admin/statistics')
         inputsRequiredAdd(setInputs);
     },[adminToken, navigate])
 
