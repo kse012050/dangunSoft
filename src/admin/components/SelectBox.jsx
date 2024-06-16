@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export default function SelectBox({ text, value, firstText, name, setInputs, func, nextRef, placeholder }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [select, setSelect] = useState(firstText || (!placeholder ? text[0] : ''));
+    // const [select, setSelect] = useState(firstText || (!placeholder ? text[0] : ''));
+    const [select, setSelect] = useState(/* firstText || (!placeholder ? text[0] : '') */);
     const dropdownRef = useRef(null);
 
     const handleClickOutside = (event) => {
@@ -19,6 +20,10 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
             document.removeEventListener('click', handleClickOutside);
         };
     }, []);
+
+    useEffect(()=>{
+        setSelect(firstText || (!placeholder ? text[0] : ''))
+    },[firstText])
 
     const listClick = (e, type) =>{
         setSelect(e.target.innerHTML)

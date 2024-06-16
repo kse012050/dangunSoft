@@ -139,6 +139,9 @@ export const routers = [
             {
                 path: 'product/create', element: <AdminProductCreate />
             },
+            {
+                path: 'product/:id', element: <AdminProductCreate />
+            },
         ]
     },
     {

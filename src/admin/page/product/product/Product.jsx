@@ -9,7 +9,7 @@ export default function Product() {
     const boardFunc = useCallback(()=>{
         adminApi('product', '', {page: '1'/* , limit: '100' */, all_yn: 'n'})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     setBoard({
                         page: result.data,
@@ -22,6 +22,15 @@ export default function Product() {
     useLayoutEffect(()=>{
         boardFunc()
     },[boardFunc])
+
+    const onExposure = (e, data) => {
+        const { checked } = e.target
+        adminApi('product/manage', 'update', {product_id: data.product_id, exposure_yn: checked ? 'y' : 'n', vendor_id: data.vendor_id, product_name: data.product_name})
+            .then((result)=>{
+                if(result.result){
+                }
+            })
+    }
 
     return (
         <>
@@ -41,7 +50,7 @@ export default function Product() {
                     <p>
                         <span>제품명</span>
                     </p>
-                    <b>노출 여부</b>
+                    <b className='exposure'>노출 여부</b>
                     <b>관리</b>
                 </div>
 
@@ -57,11 +66,11 @@ export default function Product() {
                                 <span>{ data.product_name }</span>
                             </p>
                             <div className='exposure'>
-                                <input type="checkbox" id='test'/>
-                                <label htmlFor="test">노출 여부</label>
+                                <input type="checkbox" id={`check_${data.product_id}`} defaultChecked={data.exposure_yn === 'y'} onChange={(e)=>onExposure(e, data)}/>
+                                <label htmlFor={`check_${data.product_id}`}>노출 여부</label>
                             </div>
                             <div>
-                                <button className='btn-point'>수정</button>
+                                <Link to={`/admin/product/product/${data.product_id}`} className='btn-point'>수정</Link>
                             </div>
                         </li>
                     )}
