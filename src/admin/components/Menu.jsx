@@ -26,7 +26,7 @@ export default function Menu() {
                 <div>
                     <NavLink to='/admin/product/vendor'>벤더사 관리</NavLink>
                     <NavLink to='/admin/product/product'>제품 관리</NavLink>
-                    <NavLink to='/'>제품 상세 관리</NavLink>
+                    <NavLink to='/admin/product/detailManagement'>제품 상세 관리</NavLink>
                 </div>
             </li>
             <li>

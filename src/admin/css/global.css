@@ -129,6 +129,12 @@ mark.point{color: var(--color-point);}
 .adminPage .inputBox > ul > li ul.imgBox li{position: relative; display: inline-block;}
 .adminPage .inputBox > ul > li ul.imgBox li img{width: 100%; max-width: 100px; aspect-ratio: 1; object-fit: cover;}
 .adminPage .inputBox > ul > li ul.imgBox li button{width: 20px; aspect-ratio: 1; position: absolute; right: 0; top: 0; transform: translate(50%, -50%); background: url(../images/icon-img-close.png) no-repeat center / cover; text-indent: -9999px;}
+.adminPage .inputBox > ul > li.optionArea > div{display: block;}
+.adminPage .inputBox > ul > li.optionArea > div > div{display: flex; align-items: center; gap: 10px;}
+.adminPage .inputBox > ul > li.optionArea > div > div:not(:last-of-type){margin-bottom: 10px;}
+.adminPage .inputBox > ul > li.optionArea > div > div > *:not(input){flex-shrink: 0;}
+.adminPage .inputBox > ul > li.optionArea > div > div > :is(input, .selectBox){width: auto; flex: 1;}
+.adminPage .inputBox > ul > li.optionArea > div > div p{width: 100px;}
 .adminPage .inputBox .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
 
 

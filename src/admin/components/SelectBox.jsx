@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function SelectBox({ text, value, firstText, name, setInputs, func, nextRef, placeholder }) {
+export default function SelectBox({ text, value, firstText, name, setInputs, func, nextRef, placeholder, setOptions, optionIdx }) {
     const [isOpen, setIsOpen] = useState(false);
     // const [select, setSelect] = useState(firstText || (!placeholder ? text[0] : ''));
     const [select, setSelect] = useState(/* firstText || (!placeholder ? text[0] : '') */);
@@ -28,7 +28,12 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
     const listClick = (e, type) =>{
         setSelect(e.target.innerHTML)
         // setTypeInputs(prev => ({...prev, [name]: type}))
-        setInputs(prev => ({...prev, [name]: type}))
+        setInputs && setInputs(prev => ({...prev, [name]: type}))
+        setOptions && setOptions(prev => {
+            const arr = [...prev]
+            arr[optionIdx][name] = type;
+            return arr
+        })
         setIsOpen(false)
         func && func()
         nextRef && nextRef.current.focus()
@@ -37,6 +42,7 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
     return (
         <div className={`selectBox ${isOpen ? 'active': ''} ${select ? 'selected' : ''}`} ref={dropdownRef}>
             <button 
+                type='button'
                 onClick={()=> setIsOpen(prev => !prev)}
                 className={isOpen ? 'active': ''}
             >
@@ -45,7 +51,7 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
             {isOpen && 
                 <div>
                     {text.map((data, i)=>
-                        <button key={i} onClick={(e)=>listClick(e, value[i])}>{ data }</button>
+                        <button key={i} type='button' onClick={(e)=>listClick(e, value[i])}>{ data }</button>
                     )}
                     {/* <button onClick={(e)=>listClick(e, 'free')}>무료</button>
                     <button onClick={(e)=>listClick(e, 'vip')}>VIP</button> */}

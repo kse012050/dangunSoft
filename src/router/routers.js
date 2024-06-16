@@ -24,6 +24,8 @@ import MyInfo from "../admin/page/MyInfo";
 import Vendor from "../admin/page/product/Vendor";
 import AdminProduct from "../admin/page/product/product/Product";
 import AdminProductCreate from "../admin/page/product/product/Create";
+import AdminDetailedManagement from "../admin/page/product/detailedManagement/DetailedManagement";
+import AdminDetailedManagementCreate from "../admin/page/product/detailedManagement/Create";
 import AdminInquiry from "../admin/page/inquiry/Inquiry";
 import AdminInquiryDetail from "../admin/page/inquiry/Detail";
 import AdminSiteAccount from "../admin/page/site/account/Account";
@@ -141,6 +143,12 @@ export const routers = [
             },
             {
                 path: 'product/:id', element: <AdminProductCreate />
+            },
+            {
+                path: 'detailManagement', element: <AdminDetailedManagement />
+            },
+            {
+                path: 'detailManagement/create', element: <AdminDetailedManagementCreate />
             },
         ]
     },
