@@ -32,6 +32,7 @@ export default function CategoryQnA() {
 
     const boardFunc = useCallback(()=>{
         if(inputs?.category2){
+            // console.log(inputs);
             adminApi('board', '', {board_type: 'faq', ...inputs})
                 .then((result)=>{
                     // console.log(result);

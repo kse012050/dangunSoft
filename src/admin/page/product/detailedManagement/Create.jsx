@@ -279,10 +279,10 @@ export default function Create() {
                                     <label htmlFor="">옵션</label>
                                     <div>
                                         <div>
-                                            <input type="checkbox" name='payment_exposure_yn' id='payment_exposure_yn' defaultChecked={data.payment_exposure_yn === 'y'}/>
-                                            <label htmlFor="payment_exposure_yn">구매</label>
-                                            <input type="checkbox" name='estimate_exposure_yn' id='estimate_exposure_yn' defaultChecked={data.estimate_exposure_yn === 'y'}/>
-                                            <label htmlFor="estimate_exposure_yn">견적</label>
+                                            <input type="checkbox" name='payment_exposure_yn' id={`payment_exposure_yn${i}`} checked={data.payment_exposure_yn === 'y' || ''} onChange={(e)=>optionChange(e, i)}/>
+                                            <label htmlFor={`payment_exposure_yn${i}`}>구매</label>
+                                            <input type="checkbox" name='estimate_exposure_yn' id={`estimate_exposure_yn${i}`} checked={data.estimate_exposure_yn === 'y' || ''} onChange={(e)=>optionChange(e, i)}/>
+                                            <label htmlFor={`estimate_exposure_yn${i}`}>견적</label>
                                         </div>
                                         <div>
                                             <input type="text" placeholder='옵션명을 입력하세요.' name='option_name' defaultValue={data.option_name} required/>

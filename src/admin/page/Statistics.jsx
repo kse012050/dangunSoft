@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Period from '../components/Period';
 import BarChart from '../components/chart/BarChart';
 import PieChart from '../components/chart/PieChart';
@@ -30,7 +30,7 @@ export default function Statistics() {
                         ]
                     })
                     setBoard({
-                        list: result.list
+                        list: result.list.reverse()
                     })
                 }
             })
@@ -43,7 +43,7 @@ export default function Statistics() {
                     setExcelDown(result.data.download_url)
                 }
             })
-    },[])
+    },[inputs])
 
     return (
         <>

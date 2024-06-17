@@ -35,7 +35,7 @@ export default function Popup({ popup, setPopup }) {
 
 
     return (
-        <div data-popup onClick={close}>
+        <div data-popup /* onClick={close} */>
             { popup.type === 'confirm' && <Confirm popup={popup} close={close}/>}
             { popup.type === 'cancel' && <Cancel popup={popup} close={close}/>}
             { popup.type === 'signIn' && <SignIn popup={popup} close={close}/>}

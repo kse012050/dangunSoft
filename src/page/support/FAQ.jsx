@@ -8,7 +8,7 @@ import { userApi } from '../../api/api';
 export default function FAQ() {
     const navigation = useNavigate()
     const { search, page } = urlParams(useLocation())
-    const [inputs, setInputs] = useState({board_type: 'faq'})
+    // const [inputs, setInputs] = useState({board_type: 'faq'})
     const tabList = tab()
     const {totalCount} = list(search, page)
     const [faqList, setFaqList] = useState(list(search, page).faqList)
@@ -26,7 +26,7 @@ export default function FAQ() {
                 // console.log(result);
             })
 
-        userApi('faq', '', inputs)
+        userApi('faq', '', {board_type: 'faq'})
             .then((result)=>{
                 console.log(result);
             })

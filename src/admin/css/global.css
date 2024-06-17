@@ -96,8 +96,8 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .img img{width: 50px; aspect-ratio: 1 / 0.8; object-fit: cover;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > *:not(div){flex: 1;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > div{flex-shrink: 0;}
-.adminPage .exposure{display: flex; justify-content: center; align-items: center; max-width: 62px;}
-.adminPage .exposure input[type="checkbox"] + label{all: inherit; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; padding: 0; text-indent: -9999px;}
+.adminPage .exposure{display: flex; justify-content: center; align-items: center;}
+.adminPage .exposure input[type="checkbox"] + label{all: inherit; max-width: 62px; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; padding: 0; text-indent: -9999px;}
 .adminPage .exposure input[type="checkbox"] + label::before{display: none;}
 .adminPage .exposure input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
 .adminPage .exposure input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
@@ -115,7 +115,10 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .test02{width: 60px;}
 .adminPage [class*="boardBox"].boardBox-suppot-inquiry-inquiry :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p{flex: none; width: 100px;}
 .adminPage [class*="boardBox"].boardBox-statistics .board-detail li > *{text-align: center;}
-.adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li{height: auto;}
+.adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a){gap: 0;}
+.adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:not(:last-child):not(.option){margin-inline: 40px;}
+.adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .option{width: 150px;}
+.adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li{height: auto; min-height: 50px;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li{height: 50px; display: flex; justify-content: center; align-items: center; border-left: 1px solid #DCDCDC; border-right: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li:not(:last-child){border-bottom: 1px solid #DCDCDC;}
 /* .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{width: 140px;}

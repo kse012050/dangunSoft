@@ -91,6 +91,7 @@ function adminOptions(type, data){
     // myHeaders.append("Cookie", "PHPSESSID=8c75d3d6131afd93f802cda5dc841fd4");
 
     data = {...data, 'func_type': type}
+    // console.log(data);
     data = JSON.stringify(data)
 
 
@@ -103,6 +104,7 @@ function adminOptions(type, data){
 }
 
 export function adminApi(url, type, data){
+    // console.log(adminApiUrl);
     const options = adminOptions(type, data);
     return fetch(`${adminApiUrl}${url}`, options)
             .then(response => response.json())

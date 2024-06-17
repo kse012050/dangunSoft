@@ -23,6 +23,18 @@ export default function Vendor() {
         boardFunc()
     },[boardFunc])
 
+    const onExposure = (e, data) => {
+        // console.log(data);
+        const { checked } = e.target
+        // console.log({vendor_id: data.vendor_id, vendor_name: data.vendor_name, exposure_yn: checked ? 'y' : 'n' });
+        adminApi('vendor/manage', 'update', {vendor_id: 2, exposure_yn: checked ? 'y' : 'n' })
+            .then((result)=>{
+                console.log(result);
+                if(result.result){
+                }
+            })
+    }
+
     return (
         <>
             <h2>벤더사 관리</h2>
@@ -37,7 +49,8 @@ export default function Vendor() {
                     <p>
                         <span>벤더사 명</span>
                     </p>
-                    <b>관리</b>
+                    <b className='exposure'>노출 여부</b>
+                    <b className='button'>관리</b>
                 </div>
 
                 <ol className="board-detail">
@@ -47,8 +60,37 @@ export default function Vendor() {
                             <p>
                                 <span>{ data.vendor_name }</span>
                             </p>
-                            <div>
+                            <div className='exposure'>
+                                <input type="checkbox" id={`check_${data.vendor_id}`} defaultChecked={data.exposure_yn === 'y'} onChange={(e)=>onExposure(e, data)}/>
+                                <label htmlFor={`check_${data.vendor_id}`}>노출 여부</label>
+                            </div>
+                            <div className='button'>
                                 <button className='btn-point' onClick={()=>setPopup({type: 'vendorUpdate', id: data.vendor_id, name: data.vendor_name, finFunc: boardFunc})}>수정</button>
+                                <button className='btn-point-border'
+                                    onClick={()=>setPopup({
+                                        type: 'cancel', 
+                                        title: '알림',
+                                        description: [
+                                            '해당 계정를 삭제하겠습니까?',
+                                            '삭제된 정보는 복구할 수 없습니다.',
+                                        ],
+                                        func: () => {
+                                            adminApi('vendor/manage', 'delete', {vendor_id: data.vendor_id})
+                                                .then((result)=>{
+                                                    if(result.result){
+                                                        setPopup({
+                                                            type: 'confirm',
+                                                            title: '알림',
+                                                            description: ['해당 계정이 삭제 되었습니다.'],
+                                                            func: () =>{
+                                                                boardFunc()
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                        }
+                                    })}
+                                >삭제</button>
                             </div>
                         </li>
                     )}

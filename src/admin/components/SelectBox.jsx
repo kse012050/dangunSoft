@@ -22,7 +22,7 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
     }, []);
 
     useEffect(()=>{
-        setSelect(firstText || (!placeholder ? text[0] : ''))
+        setSelect((prev)=> prev || (firstText || (!placeholder ? text[0] : '')))
     },[firstText, placeholder, text])
 
     const listClick = (e, type) =>{
