@@ -150,6 +150,9 @@ export const routers = [
             {
                 path: 'detailManagement/create', element: <AdminDetailedManagementCreate />
             },
+            {
+                path: 'detailManagement/:id', element: <AdminDetailedManagementCreate />
+            },
         ]
     },
     {

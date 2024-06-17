@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { adminApi } from '../../api/api';
 import Board from './Board';
 import Simple from './Simple';
-import { inputChange } from '../../api/validation';
 import Period from '../../components/Period';
 
 export default function Inquiry() {

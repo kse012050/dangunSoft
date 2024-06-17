@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import {styleIdx} from '../js/style.js';
+import { adminApi } from '../api/api.js';
 
 export default function Root() {
     const location = useLocation().pathname;
@@ -20,6 +21,14 @@ export default function Root() {
     
 
     useEffect(()=>{
+        adminApi('profile')
+            .then((result)=>{
+                if(!result.result){
+                    sessionStorage.removeItem('adminToken')
+                    localStorage.removeItem('adminToken')
+                    navigate('/admin')
+                }
+            })
         adminToken || navigate('/admin')
     },[adminToken, navigate])
 

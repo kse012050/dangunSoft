@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function SelectBox({ text, value, firstText, name, setInputs, func, nextRef, placeholder, setOptions, optionIdx }) {
+export default function SelectBox({ text, value, firstText, name, setInputs, func, nextRef, placeholder, setOptions, optionIdx, disabled }) {
     const [isOpen, setIsOpen] = useState(false);
     // const [select, setSelect] = useState(firstText || (!placeholder ? text[0] : ''));
     const [select, setSelect] = useState(/* firstText || (!placeholder ? text[0] : '') */);
@@ -23,9 +23,12 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
 
     useEffect(()=>{
         setSelect(firstText || (!placeholder ? text[0] : ''))
-    },[firstText])
+    },[firstText, placeholder, text])
 
     const listClick = (e, type) =>{
+        if(disabled){
+            return
+        }
         setSelect(e.target.innerHTML)
         // setTypeInputs(prev => ({...prev, [name]: type}))
         setInputs && setInputs(prev => ({...prev, [name]: type}))
@@ -40,10 +43,10 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
     }
     
     return (
-        <div className={`selectBox ${isOpen ? 'active': ''} ${select ? 'selected' : ''}`} ref={dropdownRef}>
+        <div className={`selectBox ${isOpen ? 'active': ''} ${select ? 'selected' : ''} ${disabled? 'disabled' : ''}`} ref={dropdownRef}>
             <button 
                 type='button'
-                onClick={()=> setIsOpen(prev => !prev)}
+                onClick={()=> !disabled && setIsOpen(prev => !prev)}
                 className={isOpen ? 'active': ''}
             >
                 { select || (placeholder || '분류') }

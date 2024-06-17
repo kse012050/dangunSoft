@@ -1,11 +1,29 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { inputChange } from '../../../api/validation';
 import SelectBox from '../../../components/SelectBox';
-import { adminApi, isSubmit } from '../../../api/api';
+import { adminApi } from '../../../api/api';
 import { useNavigate, useParams } from 'react-router-dom';
 import Popup from '../../../components/popup/Popup';
 
 const standard = ['수량', '사용자', '작업자', '에이전트', '커미터']
+
+const optionPriceList = [
+    {
+        price_type: '신규',
+        vat_include_price: '',
+        vat_exclude_price: '',
+    },
+    {
+        price_type: '갱신',
+        vat_include_price: '',
+        vat_exclude_price: '',
+    },
+    {
+        price_type: '업데이트',
+        vat_include_price: '',
+        vat_exclude_price: '',
+    }
+]
 
 const optionForm = {
     option_name: '',
@@ -14,27 +32,12 @@ const optionForm = {
     payment_exposure_yn: 'y',
     estimate_exposure_yn: 'n',
     exposure_yn: 'y',
-    option_price_list: [
-        {
-            price_type: '신규',
-            vat_include_price: '',
-            vat_exclude_price: '',
-        },
-        {
-            price_type: '갱신',
-            vat_include_price: '',
-            vat_exclude_price: '',
-        },
-        {
-            price_type: '업데이트',
-            vat_include_price: '',
-            vat_exclude_price: '',
-        }
-    ]
+    option_price_list: [...optionPriceList]
 }
 export default function Create() {
     const { id } = useParams()
     const [inputs, setInputs] = useState({vendor_id: '', product_name: ''})
+    const [detail, setDetail] = useState()
     const [vendor, setVendor] = useState()
     const [product, setProduct] = useState()
     const [options, setOptions] = useState([{...optionForm}])
@@ -56,35 +59,119 @@ export default function Create() {
                 }
             })
 
-        adminApi('product', '', {all_yn: 'y'})
-            .then((result)=>{
-                // console.log(result);
-                if(result.result){
-                    setProduct({
-                        text: result.list.map((data)=>data.product_name),
-                        value: result.list.map((data)=>data.product_id),
-                    })
-                }
-            })
-    },[])
+        
+
+        if(id){
+            adminApi('product/detail', '', {product_id: id})
+                .then((result)=>{
+                    if(result.result){
+                        setInputs(prev => ({...prev, product_id: result.data.product_id, vendor_id: result.data.vendor_id, product_name: result.data.product_name}))
+                        setDetail(result.data)
+                        // if(!!result.data.optionList.length){
+                        //     const optionArr = result.data.optionList.map((data)=>{
+                        //         const obj = {
+                        //             product_option_id: data.product_option_id,
+                        //             option_name: data.option_name,
+                        //             standard: data.standard,
+                        //             minimum_quantiry: data.minimum_quantiry,
+                        //             payment_exposure_yn: data.payment_exposure_yn,
+                        //             estimate_exposure_yn: data.estimate_exposure_yn,
+                        //             exposure_yn: data.exposure_yn,
+                        //         }
+                                
+                        //         const priceArr = []
+                        //         for(let a = 0; a < 3; a++){
+                        //             if(data.optionPriceList[a]){
+                        //                 priceArr.push({
+                        //                     price_type: data.optionPriceList[a].price_type,
+                        //                     vat_include_price: data.optionPriceList[a].vat_include_price,
+                        //                     vat_exclude_price: data.optionPriceList[a].vat_exclude_price,
+                        //                 })
+                        //             }else{
+                        //                 priceArr.push({...optionPriceList[a]})
+                        //             }
+                        //         }
+                        //         return {...obj, option_price_list: [...priceArr]}
+                        //     })
+                        //     setOptions(optionArr)
+                        // }
+                    }
+                })
+        }
+    },[id])
+
+    useEffect(()=>{
+        if(inputs.vendor_id){
+            adminApi('product', '', {all_yn: 'y'})
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        setProduct({
+                            text: result.list.filter((data)=> data.vendor_id === inputs.vendor_id && data.exposure_yn === 'y').map((data)=>data.product_name),
+                            value: result.list.filter((data)=> data.vendor_id === inputs.vendor_id && data.exposure_yn === 'y').map((data)=>data.product_id),
+                        })
+                    }
+                })
+        }
+    },[inputs.vendor_id])
+
+    useEffect(()=>{
+        if(inputs.product_id){
+            adminApi('product/detail', '', {product_id: inputs.product_id})
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        // setInputs(prev => ({...prev, product_id: result.data.product_id, vendor_id: result.data.vendor_id, product_name: result.data.product_name}))
+                        // setDetail(result.data)
+                        if(!!result.data.optionList.length){
+                            const optionArr = result.data.optionList.map((data)=>{
+                                const obj = {
+                                    product_option_id: data.product_option_id,
+                                    option_name: data.option_name,
+                                    standard: data.standard,
+                                    minimum_quantiry: data.minimum_quantiry,
+                                    payment_exposure_yn: data.payment_exposure_yn,
+                                    estimate_exposure_yn: data.estimate_exposure_yn,
+                                    exposure_yn: data.exposure_yn,
+                                }
+                                
+                                const priceArr = []
+                                for(let a = 0; a < 3; a++){
+                                    if(data.optionPriceList[a]){
+                                        priceArr.push({
+                                            price_type: data.optionPriceList[a].price_type,
+                                            vat_include_price: data.optionPriceList[a].vat_include_price,
+                                            vat_exclude_price: data.optionPriceList[a].vat_exclude_price,
+                                        })
+                                    }else{
+                                        priceArr.push({...optionPriceList[a]})
+                                    }
+                                }
+                                return {...obj, option_price_list: [...priceArr]}
+                            })
+                            setOptions(optionArr)
+                        }
+                    }
+                })
+        }
+    },[inputs.product_id])
 
     const optionChange = (e, i) =>{
         e.stopPropagation()
-        const { value, name, checked, type, dataset: { parents, formet, validation } } = e.target;
+        const { value, name, checked, type, dataset: { parents, formet } } = e.target;
 
-        if(formet === 'decimal'){
+        if(formet === 'decimal' && value){
             if(!/^\d+(\.\d{1,2})?$/.test(value)){
+                const cur = /[^0-9.]/.test(value) ? e.target.selectionStart - 1 : e.target.selectionStart;
                 let decimal = value.replace(/[^0-9.]/g, '')
                 if(decimal.includes('.')){
-                    console.log(decimal);
                     decimal = decimal.split('.')
                     decimal = decimal[0] + '.' + decimal.slice(1).join('');
                     decimal = decimal.replace(/(\.\d{2})\d+/, '$1');
-                }/* else{
-                    decimal = decimal[0]
-                } */
+                }
+
+                // console.log(1);
                 
-                const cur = e.target.selectionStart - 1;
                 e.target.value = decimal
                 e.target.setSelectionRange(cur, cur);
                 return
@@ -114,10 +201,12 @@ export default function Create() {
 
     const onSubmit = (e) => {
         e.preventDefault()
+        // console.log(inputs);
         // console.log(options);
         if(!inputs.vendor_id || !inputs.product_name){
             return
         }
+
         const isOptions = options.some((data)=>{
             return Object.entries(data).some(([key, value]) =>{
                 if(!value){
@@ -128,6 +217,8 @@ export default function Create() {
                     return Object.entries(value[0]).some(([key, value]) =>{
                         if(!value){
                             return true
+                        }else{
+                            return false
                         }
                     })
                 }
@@ -135,14 +226,18 @@ export default function Create() {
             })
         })
 
+        // console.log(isOptions);
         if(isOptions){
             return
         }
 
-        const test = {...inputs, option_price_list: [...options]}
+        const test = {...inputs, option_list: [...options]}
+        // console.log(test);
+        // const funcType = !id ? 'insert' : 'update';
 
-        adminApi('product/manage', 'insert', test)
+        adminApi('product/manage', 'update', test)
             .then((result)=>{
+                // console.log(result);
                 if(result.result){
                     setPopup({
                         type: 'confirm',
@@ -166,16 +261,16 @@ export default function Create() {
                             <label htmlFor='title'>벤더사명</label>
                             <div>
                                 { vendor &&
-                                    <SelectBox text={vendor.text} value={vendor.value} name='vendor_id' firstText={vendor.text.length === 1 && vendor.text[0]} setInputs={setInputs} placeholder='벤더사명을 선택하세요.'/>
+                                    <SelectBox text={vendor.text} value={vendor.value} name='vendor_id' firstText={vendor.text.length === 1 ? vendor.text[0] : (detail?.vendor_name)} setInputs={setInputs} placeholder='벤더사명을 선택하세요.' disabled={id}/>
                                 }
                             </div>
                         </li>
                         <li>
                             <label htmlFor='comment'>제품명</label>
                             <div>
-                                {product &&
-                                    <SelectBox text={product.text} value={product.value} name='product_name' setInputs={setInputs} placeholder='제품명을 선택하세요.'/>
-                                }
+                                {/* {product && */}
+                                    <SelectBox text={product?.text} value={product?.value} name='product_id' firstText={detail?.product_name} setInputs={setInputs} placeholder='제품명을 선택하세요.' key={inputs.vendor_id} disabled={!product || id}/>
+                                {/* } */}
                             </div>
                         </li>
                         { !!options.length && 
@@ -186,34 +281,34 @@ export default function Create() {
                                         <div>
                                             <input type="checkbox" name='payment_exposure_yn' id='payment_exposure_yn' defaultChecked={data.payment_exposure_yn === 'y'}/>
                                             <label htmlFor="payment_exposure_yn">구매</label>
-                                            <input type="checkbox" name='estimate_exposure_yn' id='estimate_exposure_yn'/>
+                                            <input type="checkbox" name='estimate_exposure_yn' id='estimate_exposure_yn' defaultChecked={data.estimate_exposure_yn === 'y'}/>
                                             <label htmlFor="estimate_exposure_yn">견적</label>
                                         </div>
                                         <div>
-                                            <input type="text" placeholder='옵션명을 입력하세요.' name='option_name' required/>
-                                            <SelectBox text={standard} value={standard} name='standard' setOptions={setOptions} optionIdx={i}/>
-                                            <input type="number" name='minimum_quantiry' min='0' required/>
+                                            <input type="text" placeholder='옵션명을 입력하세요.' name='option_name' defaultValue={data.option_name} required/>
+                                            <SelectBox text={standard} value={standard} name='standard' setOptions={setOptions} firstText={data.standard} optionIdx={i}/>
+                                            <input type="number" name='minimum_quantiry' min='0' defaultValue={data.minimum_quantiry} required/>
                                         </div>
                                         <div>
                                             <p htmlFor="">신규</p>
-                                            <label>VATを含まない</label>
-                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' required/>
-                                            <label>VAT 込み価格</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' required/>
+                                            <label>기본가</label>
+                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_include_price} required/>
+                                            <label>VAT 포함가</label>
+                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_exclude_price} required/>
                                         </div>
                                         <div>
                                             <p htmlFor="">갱신</p>
-                                            <label>VATを含まない</label>
-                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal'/>
-                                            <label>VAT 込み価格</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal'/>
+                                            <label>기본가</label>
+                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && data.option_price_list[1].vat_include_price}/>
+                                            <label>VAT 포함가</label>
+                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && data.option_price_list[1].vat_exclude_price}/>
                                         </div>
                                         <div>
                                             <p htmlFor="">업데이트</p>
-                                            <label>VATを含まない</label>
-                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal'/>
-                                            <label>VAT 込み価格</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal'/>
+                                            <label>기본가</label>
+                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && data.option_price_list[2].vat_include_price}/>
+                                            <label>VAT 포함가</label>
+                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && data.option_price_list[2].vat_exclude_price}/>
                                         </div>
                                     </div>
                                     <button className='btn-point-border' type='button'
@@ -227,7 +322,7 @@ export default function Create() {
                         onClick={()=>setOptions(prev=>[...prev, {...optionForm}])}
                     >옵션 추가</button>
                     <div className='buttonArea'>
-                        <input type="submit" className='btn-point' value='등록' onClick={onSubmit}/>
+                        <input type="submit" className='btn-point' value={id ? '수정' : '등록'} onClick={onSubmit}/>
                     </div>
                 </fieldset>
             </form>
