@@ -109,10 +109,10 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail p{text-align: left;}
 .adminPage [class*="boardBox"].boardBox-product .board-detail:not(:has(:nth-child(1)))::after{content: '제품이 없습니다.';}
 .adminPage [class*="boardBox"].boardBox-suppot-faq .board-detail p{text-align: left;}
-.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a){padding-inline: 20px;}
-.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > *{flex-shrink: 1;}
-.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .test01{width: 110px;}
-.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .test02{width: 60px;}
+.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a){padding-inline: 20px; gap: 20px;}
+.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > *{flex-shrink: 1; flex: 1;}
+.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .test01{max-width: 110px;}
+.adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .test02{max-width: 60px;}
 .adminPage [class*="boardBox"].boardBox-suppot-inquiry-inquiry :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p{flex: none; width: 100px;}
 .adminPage [class*="boardBox"].boardBox-statistics .board-detail li > *{text-align: center;}
 .adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a){gap: 0;}

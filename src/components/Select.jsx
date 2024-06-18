@@ -38,11 +38,12 @@ export default function Select({ placeholder, list, set, name, value, setProduct
                             setSelected(data); 
                             set && set((prev)=> ({...prev, [name]: data}))
                             if(setProducts){
-                                setProducts(prev=>{
-                                    const arr = [...prev]
-                                    arr[productIdx][name] = value[i]
-                                    return arr
-                                })
+                                setProducts((prev)=> ({...prev, [name]: value[i]}))
+                                // setProducts(prev=>{
+                                //     const arr = [...prev]
+                                //     arr[productIdx][name] = value[i]
+                                //     return arr
+                                // })
                             }
                         }}>{ data }</button>
                     )}

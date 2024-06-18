@@ -5,14 +5,35 @@ import PieChart from '../components/chart/PieChart';
 import { adminApi } from '../api/api';
 import { Link } from 'react-router-dom';
 
+function allDate(){
+    function getFormattedDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1 필요
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+    
+    // 오늘 날짜 구하기
+    const today = new Date();
+    const formattedToday = getFormattedDate(today);
+    
+    // 한 달 전 날짜 구하기
+    const oneMonthAgo = new Date();
+    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+    const formattedOneMonthAgo = getFormattedDate(oneMonthAgo);
+
+    return {start_date: formattedOneMonthAgo, end_date: formattedToday}
+}
+
 export default function Statistics() {
-    const [inputs, setInputs] = useState({start_date: '2024-06-01', end_date: '2024-06-11'})
+    const [inputs, setInputs] = useState()
     const [count, setCount] = useState();
     const [board, setBoard] = useState()
     const [excelDown, setExcelDown] = useState();
 
     useLayoutEffect(()=>{
-        adminApi('stat', '', inputs)
+        const parameter = !inputs?.start_date ? allDate() : inputs;
+        adminApi('stat', '', parameter)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
@@ -36,7 +57,7 @@ export default function Statistics() {
             })
 
         
-        adminApi('stat/download', '', inputs)
+        adminApi('stat/download', '', parameter)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){

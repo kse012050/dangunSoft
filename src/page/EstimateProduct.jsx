@@ -4,6 +4,7 @@ import { userApi } from '../api/api';
 
 export default function EstimateProduct({ orderProductList, products, setProducts, productIdx}) {
     const uuid = useId()
+    const [inputs, setInputs] = useState({...orderProductList})
     const [vender, setVender] = useState()
     const [product, setProduct] = useState()
     const [option, setOption] = useState()
@@ -21,8 +22,8 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     },[])
 
     useEffect(()=>{
-        if(products[productIdx].vendor_id){
-            userApi('product', '', {vendor_id: products[productIdx].vendor_id})
+        if(inputs.vendor_id){
+            userApi('product', '', {vendor_id: inputs.vendor_id})
                 .then((result)=>{
                     console.log(result);
                     if(result.result){
@@ -34,17 +35,17 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     }
                 })
         }
-    },[products[productIdx].vendor_id])
+    },[inputs.vendor_id])
 
     useEffect(()=>{
-        if(products[productIdx].product_id){
-            // console.log(product.data);
+        if(inputs.product_id){
+            console.log(product.data);
             setOption({
-                list: product.data.filter((data)=> data.product_id === products[productIdx].product_id)[0].optionList.map((data)=> data.option_name),
-                value: product.data.filter((data)=> data.product_id === products[productIdx].product_id)[0].optionList.map((data)=> data.product_option_id),
+                list: product.data.filter((data)=> data.product_id === products[productIdx].product_id)[0]?.optionList.map((data)=> data.option_name),
+                value: product.data.filter((data)=> data.product_id === products[productIdx].product_id)[0]?.optionList.map((data)=> data.product_option_id)
             })
         }
-    },[products[productIdx].product_id])
+    },[inputs.product_id, product])
 
     useEffect(()=>{
         if(products[productIdx].product_option_id){
@@ -61,20 +62,24 @@ export default function EstimateProduct({ orderProductList, products, setProduct
         products[productIdx][name] = value
     }
 
+    useEffect(()=>{
+        // console.log(inputs);
+    },[inputs])
+
     return (
         <fieldset className='inputBox-product' onChange={(e)=>e.stopPropagation()}>
             <ul>
                 <li>
                     <label htmlFor="">メーカー</label>
                     <div>
-                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} setProducts={setProducts} productIdx={productIdx} name='vendor_id'/>
+                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} setProducts={setInputs} name='vendor_id'/>
                     </div>
                 </li>
                 <li>
                     <label htmlFor="">製品</label>
                     <div>
                         <div>
-                            <Select placeholder="製品選択" list={product?.list} value={product?.value} setProducts={setProducts} productIdx={productIdx} name='product_id' disabled={!products[productIdx].vendor_id} key={products[productIdx].vendor_id}/>
+                            <Select placeholder="製品選択" list={product?.list} value={product?.value} setProducts={setInputs} name='product_id' disabled={!inputs.vendor_id} key={inputs.vendor_id}/>
                         </div>
                     </div>
                 </li>

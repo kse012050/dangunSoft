@@ -65,7 +65,7 @@ export default function Create() {
             adminApi('product/detail', '', {product_id: id})
                 .then((result)=>{
                     if(result.result){
-                        setInputs(prev => ({...prev, product_id: result.data.product_id, vendor_id: result.data.vendor_id, product_name: result.data.product_name}))
+                        setInputs(prev => ({...prev, product_id: result.data.product_id, vendor_id: result.data.vendor_id/* , product_name: result.data.product_name */}))
                         setDetail(result.data)
                         // if(!!result.data.optionList.length){
                         //     const optionArr = result.data.optionList.map((data)=>{
@@ -150,6 +150,7 @@ export default function Create() {
                                 return {...obj, option_price_list: [...priceArr]}
                             })
                             setOptions(optionArr)
+                            setInputs(prev => ({...prev, product_name: result.data.product_name}))
                         }
                     }
                 })
@@ -202,11 +203,11 @@ export default function Create() {
     const onSubmit = (e) => {
         e.preventDefault()
         // console.log(inputs);
-        console.log(options);
+        // console.log(options);
         if(!inputs.vendor_id || !inputs.product_name){
             return
         }
-
+        // console.log(1);
         const isOptions = options.some((data)=>{
             return Object.entries(data).some(([key, value]) =>{
                 if(!value){
@@ -227,6 +228,7 @@ export default function Create() {
         })
 
         // console.log(isOptions);
+        // console.log(2);
         if(isOptions){
             return
         }
@@ -285,30 +287,30 @@ export default function Create() {
                                             <label htmlFor={`estimate_exposure_yn${i}`}>견적</label>
                                         </div>
                                         <div>
-                                            <input type="text" placeholder='옵션명을 입력하세요.' name='option_name' defaultValue={data.option_name} required/>
+                                            <input type="text" placeholder='옵션명을 입력하세요.' name='option_name' value={data.option_name} onChange={(e)=>optionChange(e, i)} required/>
                                             <SelectBox text={standard} value={standard} name='standard' setOptions={setOptions} firstText={data.standard} optionIdx={i} key={options.length}/>
-                                            <input type="number" name='minimum_quantiry' min='0' defaultValue={data.minimum_quantiry} required/>
+                                            <input type="number" name='minimum_quantiry' min='0' value={data.minimum_quantiry} onChange={(e)=>optionChange(e, i)} required/>
                                         </div>
                                         <div>
                                             <p htmlFor="">신규</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_include_price} required/>
+                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_include_price} onChange={(e)=>optionChange(e, i)} required/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_exclude_price} required/>
+                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_exclude_price} onChange={(e)=>optionChange(e, i)} required/>
                                         </div>
                                         <div>
                                             <p htmlFor="">갱신</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && data.option_price_list[1].vat_include_price}/>
+                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_include_price} onChange={(e)=>optionChange(e, i)} />
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && data.option_price_list[1].vat_exclude_price}/>
+                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_exclude_price} onChange={(e)=>optionChange(e, i)} />
                                         </div>
                                         <div>
                                             <p htmlFor="">업데이트</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && data.option_price_list[2].vat_include_price}/>
+                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_include_price} onChange={(e)=>optionChange(e, i)} />
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && data.option_price_list[2].vat_exclude_price}/>
+                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_exclude_price} onChange={(e)=>optionChange(e, i)} />
                                         </div>
                                     </div>
                                     { options.length > 1 &&

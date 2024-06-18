@@ -29,13 +29,12 @@ export default function Period({ inputs, setInputs }) {
             const formattedToday = formatDate(today);
             
             // 현재 년도와 월의 시작 날을 구하는 방법
-            const year = today.getFullYear();
-            const month = today.getMonth(); // 0이 1월, 11이 12월
-            const firstDayOfMonth = new Date(year, month, 1);
-            const formattedFirstDayOfMonth = formatDate(firstDayOfMonth);
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(today.getDate() - 7);
+            const formattedOneWeekAgo = formatDate(oneWeekAgo);
             
             // 출력
-            setInputs(prev=>({...prev, start_date: formattedFirstDayOfMonth, end_date: formattedToday}))
+            setInputs(prev=>({...prev, start_date: formattedOneWeekAgo, end_date: formattedToday}))
             return
         }
     }
