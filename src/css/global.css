@@ -21,6 +21,7 @@ section:has(.estimateLink){position: relative;}
 label{cursor: pointer;}
 .userPage :is(input, textarea, .selectBox > button){border: 1px solid var(--color-line); border-radius: 6px; box-sizing: border-box;}
 .userPage :is(input, textarea)::placeholder{color: var(--color-font04);}
+.userPage :is(input:not([type="submit"]):disabled, .selectBox > button.disabled){background-color: #dcdcdc;}
 .userPage .selectBox{position: relative;}
 .userPage .selectBox > button::after{content: ''; aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
 .userPage .selectBox > button.placeholder{color: var(--color-font04);}
@@ -160,6 +161,7 @@ input:is([type="checkbox"], [type="radio"]):checked + label::before{--styleIdx: 
 .userPage .inputBox-product ul li div input[type="radio"]:checked + label{font-weight: 700; background-color: black; color: white; border: none;}
 .userPage .inputBox-product > div{margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--color-line); display: flex; justify-content: flex-end;}
 .userPage .inputBox-product > div button{line-height: 22px; font-weight: 700;}
+.userPage .inputBox-product > div button.disabled{color: #dcdcdc;}
 
 
 /* 최종 결제 금액 */

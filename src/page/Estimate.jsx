@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Select from '../components/Select';
+// import Select from '../components/Select';
 import { useNavigate } from 'react-router-dom';
-import { productsList } from '../js/product'
+// import { productsList } from '../js/product'
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import { isSubmit, userApi } from '../api/api';
 import EstimateProduct from './EstimateProduct';
@@ -14,10 +14,19 @@ const orderProductList = {
     option_price_id: '5',
 }
 
+const firstTextList = {
+    vendor_id: '',
+    product_id: '',
+    product_option_id: '',
+    order_quantiry: '',
+    option_price_id: '5',
+}
+
 export default function Estimate() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({board_type: 'estimate'})
     const [products, setProducts] = useState([{...orderProductList}])
+    const [firstTexts, setFirstTexts] = useState([{...firstTextList}])
 
     useEffect(()=>{
         inputsRequiredAdd(setInputs);
@@ -26,7 +35,8 @@ export default function Estimate() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(inputs);
+        // console.log(inputs);
+        // console.log(products);
         
         if(isSubmit(inputs)){
             return;
@@ -53,11 +63,10 @@ export default function Estimate() {
         delete test.phonetic_guide_last
         delete test.phonetic_guide_first
         
-        console.log('완료');
-
+        // console.log(test);
         userApi('board/manage', 'insert', test)
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     sessionStorage.setItem('estimateDetail', JSON.stringify(result.data));
                     navigate('/estimateResult')
@@ -67,11 +76,14 @@ export default function Estimate() {
 
     return (
         <section>
-            <h2 onClick={()=>console.log(products)}>お見積もり</h2>
+            <h2 onClick={()=>{
+                console.log(products)
+                console.log(firstTexts)
+            }}>お見積もり</h2>
             <form onChange={(e)=>inputChange(e, setInputs)}>
                 {!!products.length && products.map((_, i)=>
                     <React.Fragment key={i}>
-                        <EstimateProduct orderProductList={orderProductList} products={products} setProducts={setProducts} productIdx={i}/>
+                        <EstimateProduct orderProductList={orderProductList} products={products} setProducts={setProducts} firstTextList={firstTextList} firstTexts={firstTexts} setFirstTexts={setFirstTexts} productIdx={i} /* key={products.length} *//>
                     </React.Fragment>
                 )}
                 <fieldset className='inputBox'>

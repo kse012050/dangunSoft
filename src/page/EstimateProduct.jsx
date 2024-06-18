@@ -2,14 +2,19 @@ import React, { useEffect, useId, useLayoutEffect, useState } from 'react';
 import Select from '../components/Select';
 import { userApi } from '../api/api';
 
-export default function EstimateProduct({ orderProductList, products, setProducts, productIdx}) {
+export default function EstimateProduct({ orderProductList, products, setProducts, firstTextList, firstTexts, setFirstTexts, productIdx}) {
     const uuid = useId()
     const [inputs, setInputs] = useState({...orderProductList})
+    const [firstText, setFirstText] = useState({...firstTextList})
     const [vender, setVender] = useState()
     const [product, setProduct] = useState()
     const [option, setOption] = useState()
+    if(productIdx === 1){
+        // console.log(products?.[productIdx]);
+    }
 
     useLayoutEffect(()=>{
+        // setInputs(prev=> !prev ? {...orderProductList} : {...prev})
         userApi('vendor')
             .then((result)=>{
                 if(result.result){
@@ -22,64 +27,80 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     },[])
 
     useEffect(()=>{
-        if(inputs.vendor_id){
+        setInputs(!products?.[productIdx] ? {...orderProductList} : {...products[productIdx]})
+        setFirstText(!firstTexts?.[productIdx] ? {...firstTextList} : {...firstTexts[productIdx]})
+    },[products.length])
+
+    useEffect(()=>{
+        if(inputs?.vendor_id){
             userApi('product', '', {vendor_id: inputs.vendor_id})
                 .then((result)=>{
-                    console.log(result);
                     if(result.result){
                         setProduct({
                             list: result.list.map((data)=> data.product_name),
                             value: result.list.map((data)=> data.product_id),
                             data: result.list
                         })
+
+                        setInputs((prev)=>({...prev, product_id: ''}))
+                        setFirstText((prev)=>({...prev, product_id: ''}))
                     }
                 })
         }
-    },[inputs.vendor_id])
+    },[inputs?.vendor_id])
 
     useEffect(()=>{
-        if(inputs.product_id){
-            console.log(product.data);
+        if(inputs?.product_id){
             setOption({
-                list: product.data.filter((data)=> data.product_id === products[productIdx].product_id)[0]?.optionList.map((data)=> data.option_name),
-                value: product.data.filter((data)=> data.product_id === products[productIdx].product_id)[0]?.optionList.map((data)=> data.product_option_id)
+                list: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.option_name),
+                value: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.product_option_id)
             })
+
+            setInputs((prev)=>({...prev, product_option_id: ''}))
+            setFirstText((prev)=>({...prev, product_option_id: ''}))
         }
-    },[inputs.product_id, product])
+    },[inputs?.product_id, product])
 
     useEffect(()=>{
-        if(products[productIdx].product_option_id){
-            setProducts((prev)=>{
-                const arr = [...prev]
-                arr[productIdx].order_quantiry = 1
-                return arr
-            })
+        if(inputs?.product_option_id){
+            setInputs((prev)=>({...prev, order_quantiry: '1'}))
         }
-    },[products[productIdx].product_option_id])
+    },[inputs?.product_option_id])
 
     const productChange = (e) =>{
-        const { name, value } = e.target
-        products[productIdx][name] = value
+        const { value } = e.target
+        setInputs((prev)=>({...prev, order_quantiry: value}))
     }
 
     useEffect(()=>{
         // console.log(inputs);
-    },[inputs])
+        setProducts(prev=>{
+            const arr = [...prev]
+            arr[productIdx] = {...inputs}
+            return arr
+        })
+
+        setFirstTexts(prev=>{
+            const arr = [...prev]
+            arr[productIdx] = {...firstText}
+            return arr
+        })
+    },[inputs, productIdx, setProducts, firstText, setFirstTexts])
 
     return (
         <fieldset className='inputBox-product' onChange={(e)=>e.stopPropagation()}>
             <ul>
                 <li>
-                    <label htmlFor="">メーカー</label>
+                    <label htmlFor="" onClick={()=>console.log(inputs)}>メーカー</label>
                     <div>
-                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} setProducts={setInputs} name='vendor_id'/>
+                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} firstText={firstText?.vendor_id} setInputs={setInputs} setFirstText={setFirstText} name='vendor_id'/>
                     </div>
                 </li>
                 <li>
-                    <label htmlFor="">製品</label>
+                    <label htmlFor="" onClick={()=>console.log(firstText)}>製品</label>
                     <div>
                         <div>
-                            <Select placeholder="製品選択" list={product?.list} value={product?.value} setProducts={setInputs} name='product_id' disabled={!inputs.vendor_id} key={inputs.vendor_id}/>
+                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs.vendor_id} key={inputs.vendor_id}/>
                         </div>
                     </div>
                 </li>
@@ -87,18 +108,15 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     <label htmlFor="">オプション</label>
                     <div>
                         <div>
-                            <Select placeholder="選択" list={option?.list} value={option?.value} setProducts={setProducts} productIdx={productIdx} name='product_option_id'  disabled={!products[productIdx].product_id} key={products[productIdx].product_id}/>
+                            <Select placeholder="選択" list={option?.list} value={option?.value} firstText={firstText?.product_option_id} setInputs={setInputs} setFirstText={setFirstText} name='product_option_id'  disabled={!inputs.product_id} key={inputs.product_id}/>
                         </div>
                     </div>
                 </li>
                 <li className='half'>
                     <label htmlFor="order_quantiry">数量</label>
                     <div>
-                        <input type="number" min='1' name='order_quantiry' id='order_quantiry' disabled={!products[productIdx].product_option_id} defaultValue={products[productIdx].product_option_id ? '1' : ''} onChange={productChange}/>
+                        <input type="number" min='1' name='order_quantiry' id='order_quantiry' disabled={!inputs.product_option_id} value={inputs.order_quantiry} onChange={productChange}/>
                     </div>
-                    {/* { test01 && 
-                        <small>{ test01 }</small>
-                    } */}
                 </li>
                 <li>
                     <label htmlFor="">サブスクリプション·オプション</label>
@@ -113,14 +131,22 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                 </li>
             </ul>
             <div>
-                { products.length - 1 === productIdx &&
-                    <button type='button'
-                        onClick={()=>setProducts(prev=>[...prev, {...orderProductList}])}
+                {products.length - 1 === productIdx &&
+                    <button type='button' className={!inputs?.order_quantiry ? 'disabled' : ''}
+                        onClick={()=>{
+                            if(inputs?.order_quantiry){
+                                setProducts(prev=>[...prev, {...orderProductList}])
+                                setFirstTexts(prev=>[...prev, {...firstTextList}])
+                            }
+                        }}
                     >+ 製品追加</button>
                 }
                 { products.length > 1 &&
                     <button type='button'
-                        onClick={()=>setProducts(prev=> prev.filter((_, i)=> i !== productIdx))}   
+                        onClick={()=>{
+                            setProducts(prev=> prev.filter((_, i)=> i !== productIdx))
+                            setFirstTexts(prev=> prev.filter((_, i)=> i !== productIdx))
+                        }}   
                     >- 削除</button>
                 }
             </div>
