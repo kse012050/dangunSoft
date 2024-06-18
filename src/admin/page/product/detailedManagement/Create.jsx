@@ -311,9 +311,11 @@ export default function Create() {
                                             <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && data.option_price_list[2].vat_exclude_price}/>
                                         </div>
                                     </div>
-                                    <button className='btn-point-border' type='button'
-                                        onClick={()=> options.length > 1 && setOptions((prev)=> prev.filter((_, j)=> i !== j))}
-                                    >삭제</button>
+                                    { options.length > 1 &&
+                                        <button className='btn-point-border' type='button'
+                                            onClick={()=> options.length > 1 && setOptions((prev)=> prev.filter((_, j)=> i !== j))}
+                                        >삭제</button>
+                                    }
                                 </li>
                             )
                         }

@@ -43,7 +43,7 @@ export default function SignIn() {
         <div className="adminPage">
             <div className="page-body-wrapper">
                 <form className="form-signin" id="adminInfo" onChange={(e)=>inputChange(e, setInputs)}>
-                    <h2>단군 소프트</h2>
+                    <h2>나토 시스템 관리자</h2>
                     <ul>
                         <li><input type="text" name="id" id="id" placeholder="id" data-formet="id" required autoFocus /></li>
                         <li><input type="password" name="password" id="password" placeholder="password" required onKeyDown={(e)=> e.key === 'Enter' && onSubmit(e)} autoComplete="off"/></li>

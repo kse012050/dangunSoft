@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Select({ placeholder, list, set, name, disabled}) {
+export default function Select({ placeholder, list, set, name, value, setProducts, productIdx, disabled}) {
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState()
 
@@ -13,7 +13,7 @@ export default function Select({ placeholder, list, set, name, disabled}) {
     },[])
 
     useEffect(()=>{
-        set((prev)=> ({...prev, [name]: ''}))
+        set && set((prev)=> ({...prev, [name]: ''}))
     },[name, set])
 
     const bodyClick = () =>{
@@ -36,8 +36,15 @@ export default function Select({ placeholder, list, set, name, disabled}) {
                         <button key={i} type="button" onClick={()=>{
                             setIsActive(false);
                             setSelected(data); 
-                            set((prev)=> ({...prev, [name]: data}))}
-                        }>{ data }</button>
+                            set && set((prev)=> ({...prev, [name]: data}))
+                            if(setProducts){
+                                setProducts(prev=>{
+                                    const arr = [...prev]
+                                    arr[productIdx][name] = value[i]
+                                    return arr
+                                })
+                            }
+                        }}>{ data }</button>
                     )}
                 </div>
             }

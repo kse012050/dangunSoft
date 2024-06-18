@@ -3,89 +3,77 @@ import Select from '../components/Select';
 import { useNavigate } from 'react-router-dom';
 import { productsList } from '../js/product'
 import { inputChange, inputsRequiredAdd } from '../api/validation';
+import { isSubmit, userApi } from '../api/api';
+import EstimateProduct from './EstimateProduct';
+
+const orderProductList = {
+    vendor_id: '',
+    product_id: '',
+    product_option_id: '',
+    order_quantiry: '',
+    option_price_id: '5',
+}
 
 export default function Estimate() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({board_type: 'estimate'})
+    const [products, setProducts] = useState([{...orderProductList}])
 
     useEffect(()=>{
         inputsRequiredAdd(setInputs);
     },[])
-    const [productSelect, setProductSelect] = useState({
-        'company': '',
-        'product': '',
-        'option': '',
-        'quantity': '',
-    })
 
-    const arr = productsList.filter((data)=> data.name === productSelect.product)[0]
-    const option = arr?.option
-    // const test = arr?.quantity?.[productSelect.option] ? arr?.quantity[productSelect.option].min : '1'
 
-    useEffect(()=>{
-        setProductSelect((prev)=>({...prev, 'quantity': arr?.quantity?.[productSelect.option] ? arr?.quantity[productSelect.option].min : '1'}))
-    },[productSelect.option, arr?.quantity])
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(inputs);
+        
+        if(isSubmit(inputs)){
+            return;
+        }
 
-    const test01 = arr?.quantity ? arr?.quantity[productSelect.option]?.text : '';
-    // useEffect(()=>{
+        const isProducts = products.some((data)=>{
+            return Object.entries(data).some(([_, value]) =>{
+                if(!value){
+                    return true
+                }
+                return false;
+            })
+        })
 
-    // },[productSelect.quantity])
+        if(isProducts){
+            return
+        }
+
+        const test = {...inputs, order_product_list: [...products]}
+        test.write_name = `${test.write_name_last}/${test.write_name_first}`
+        delete test.write_name_last
+        delete test.write_name_first
+        test.phonetic_guide = `${test.phonetic_guide_last}/${test.phonetic_guide_first}`
+        delete test.phonetic_guide_last
+        delete test.phonetic_guide_first
+        
+        console.log('완료');
+
+        userApi('board/manage', 'insert', test)
+            .then((result)=>{
+                console.log(result);
+                if(result.result){
+                    sessionStorage.setItem('estimateDetail', JSON.stringify(result.data));
+                    navigate('/estimateResult')
+                }
+            })
+    }
 
     return (
         <section>
-            <h2 onClick={()=>console.log(inputs)}>お見積もり</h2>
+            <h2 onClick={()=>console.log(products)}>お見積もり</h2>
             <form onChange={(e)=>inputChange(e, setInputs)}>
-                <fieldset className='inputBox-product'>
-                    <ul>
-                        <li>
-                            <label htmlFor="">メーカー</label>
-                            <div>
-                                <Select placeholder="メーカー選択" list={['JetBrains']} set={setProductSelect} name='company'/>
-                            </div>
-                        </li>
-                        <li>
-                            <label htmlFor="">製品</label>
-                            <div>
-                                <div>
-                                    <Select placeholder="製品選択" list={productsList.map((data)=>data.name)} set={setProductSelect} name='product' disabled={!productSelect.company}/>
-                                </div>
-                            </div>
-                        </li>
-                        <li className='half'>
-                            <label htmlFor="">オプション</label>
-                            <div>
-                                <div>
-                                    <Select placeholder="選択" key={productSelect.product} list={option} set={setProductSelect} name='option' disabled={!productSelect.product}/>
-                                </div>
-                            </div>
-                        </li>
-                        <li className='half'>
-                            <label htmlFor="">数量</label>
-                            <div>
-                                <input type="number" min={productSelect.option && productSelect?.quantity} value={productSelect.option && productSelect?.quantity} onChange={(e)=>setProductSelect((prev)=>({...prev, 'quantity': e.target.value}))} disabled={!productSelect.option}/>
-                            </div>
-                            { test01 && 
-                                <small>{ test01 }</small>
-                            }
-                        </li>
-                        <li>
-                            <label htmlFor="">サブスクリプション·オプション</label>
-                            <div>
-                                <input type="radio" defaultChecked={true}/>
-                                <label htmlFor="">新規</label>
-                                <input type="radio" />
-                                <label htmlFor="">更新</label>
-                                <input type="radio" />
-                                <label htmlFor="">アップグレード</label>
-                            </div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button type='button'>+ 製品追加</button>
-                        <button type='button'>- 削除</button>
-                    </div>
-                </fieldset>
-
+                {!!products.length && products.map((_, i)=>
+                    <React.Fragment key={i}>
+                        <EstimateProduct orderProductList={orderProductList} products={products} setProducts={setProducts} productIdx={i}/>
+                    </React.Fragment>
+                )}
                 <fieldset className='inputBox'>
                     <ul>
                         <li>
@@ -131,7 +119,7 @@ export default function Estimate() {
                 </fieldset>
                 <div className='submitBox'>
                     <input type="reset" className='btn-border-black' value='初期化'/>
-                    <input type="submit" className='btn-bg' value='確認' onClick={()=>navigate('/estimateResult')}/>
+                    <input type="submit" className='btn-bg' value='確認' onClick={onSubmit}/>
                 </div>
             </form>
         </section>

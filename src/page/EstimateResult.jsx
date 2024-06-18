@@ -1,7 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function EstimateResult() {
+    const navigate = useNavigate();
+
+    const estimateDetail = JSON.parse(sessionStorage.getItem('estimateDetail'))
+
+    useEffect(()=>{
+        estimateDetail || navigate('/estimate')
+
+        sessionStorage.setItem('estimateDetail', sessionStorage.getItem('estimateDetail'))
+        return () => {
+            sessionStorage.removeItem('estimateDetail')
+        }
+    },[estimateDetail, navigate])
     return (
         <section>
             <h2>見積もり依頼が完了しました。</h2>
@@ -12,57 +24,69 @@ export default function EstimateResult() {
             <div className='resultBox'>
                 <dl>
                     <dt>メーカー</dt>
-                    <dd>제조사명 노출</dd>
+                    <div>
+                        { estimateDetail?.order_product_list.map((data, i)=>
+                            <dd key={i}>{ data.vendor_name }</dd>
+                        ) }
+                    </div>
                 </dl>
                 <dl>
                     <dt>製品</dt>
-                    <dd>제품명 노출</dd>
+                    <div>
+                        { estimateDetail?.order_product_list.map((data, i)=>
+                            <dd key={i}>{ data.product_name }</dd>
+                        ) }
+                    </div>
                 </dl>
                 <dl>
                     <dt>オプション</dt>
-                    <dd>옵션 선택 노출</dd>
+                    <div>
+                        { estimateDetail?.order_product_list.map((data, i)=>
+                            <dd key={i}>{ data.option_name }</dd>
+                        ) }
+                    </div>
                 </dl>
                 <dl>
                     <dt>数量</dt>
-                    <dd>5</dd>
+                    <div>
+                        { estimateDetail?.order_product_list.map((data, i)=>
+                            <dd key={i}>{ data.order_quantiry }</dd>
+                        ) }
+                    </div>
                 </dl>
                 <dl>
                     <dt>サブスクリプションオプション</dt>
-                    <dd>신규</dd>
+                    <div>
+                        { estimateDetail?.order_product_list.map((data, i)=>
+                            // <dd key={i}>{ data.product_name }</dd>
+                            <dd key={i}>신규</dd>
+                        ) }
+                    </div>
                 </dl>
                 <dl>
                     <dt>企業名</dt>
-                    <dd>기업명 노출</dd>
+                    <dd>{ estimateDetail?.company_name }</dd>
                 </dl>
                 <dl>
                     <dt>名前</dt>
-                    <dd>홍길동</dd>
+                    <dd>{ estimateDetail?.write_name }</dd>
                 </dl>
                 <dl>
                     <dt>ふりがな</dt>
-                    <dd>홍길동</dd>
+                    <dd>{ estimateDetail?.phonetic_guide }</dd>
                 </dl>
                 <dl>
                     <dt>Email</dt>
-                    <dd>dykang@tangunsoft.com</dd>
+                    <dd>{ estimateDetail?.email }</dd>
                 </dl>
                 <dl>
                     <dt>電話番号</dt>
-                    <dd>010-5555-5555</dd>
+                    <dd>{ estimateDetail?.contact_information }</dd>
                 </dl>
                 <dl>
                     <dt>備考</dt>
                     <dd>
-                        프로모션으로 제품을 구매했는데요~ 문의드려요~ 프로모션으로 제품을 구매했는데요~<br/>
-                        문의드려요~ 프로모션으로 제품을 구매했는데요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~
+                        { estimateDetail?.comment }
                     </dd>
                 </dl>
             </div>
