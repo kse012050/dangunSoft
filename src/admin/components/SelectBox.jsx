@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export default function SelectBox({ text, value, firstText, name, setInputs, func, nextRef, placeholder, setOptions, optionIdx, disabled }) {
     const [isOpen, setIsOpen] = useState(false);
-    // const [select, setSelect] = useState(firstText || (!placeholder ? text[0] : ''));
-    const [select, setSelect] = useState(/* firstText || (!placeholder ? text[0] : '') */);
+    const [select, setSelect] = useState();
     const dropdownRef = useRef(null);
 
     const handleClickOutside = (event) => {
@@ -13,8 +12,6 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
     };
 
     useEffect(() => {
-        // console.log(text);
-        // console.log(value);
         document.addEventListener('click', handleClickOutside);
         return () => {
             document.removeEventListener('click', handleClickOutside);
@@ -29,17 +26,18 @@ export default function SelectBox({ text, value, firstText, name, setInputs, fun
         if(disabled){
             return
         }
-        setSelect(e.target.innerHTML)
-        // setTypeInputs(prev => ({...prev, [name]: type}))
-        setInputs && setInputs(prev => ({...prev, [name]: type}))
-        setOptions && setOptions(prev => {
-            const arr = [...prev]
-            arr[optionIdx][name] = type;
-            return arr
-        })
+        if(select !== e.target.innerHTML){
+            setSelect(e.target.innerHTML)
+            setInputs && setInputs(prev => ({...prev, [name]: type}))
+            setOptions && setOptions(prev => {
+                const arr = [...prev]
+                arr[optionIdx][name] = type;
+                return arr
+            })
+            func && func()
+            nextRef && nextRef.current.focus()
+        }
         setIsOpen(false)
-        func && func()
-        nextRef && nextRef.current.focus()
     }
     
     return (

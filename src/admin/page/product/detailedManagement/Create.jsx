@@ -202,7 +202,7 @@ export default function Create() {
     const onSubmit = (e) => {
         e.preventDefault()
         // console.log(inputs);
-        // console.log(options);
+        console.log(options);
         if(!inputs.vendor_id || !inputs.product_name){
             return
         }
@@ -286,7 +286,7 @@ export default function Create() {
                                         </div>
                                         <div>
                                             <input type="text" placeholder='옵션명을 입력하세요.' name='option_name' defaultValue={data.option_name} required/>
-                                            <SelectBox text={standard} value={standard} name='standard' setOptions={setOptions} firstText={data.standard} optionIdx={i}/>
+                                            <SelectBox text={standard} value={standard} name='standard' setOptions={setOptions} firstText={data.standard} optionIdx={i} key={options.length}/>
                                             <input type="number" name='minimum_quantiry' min='0' defaultValue={data.minimum_quantiry} required/>
                                         </div>
                                         <div>

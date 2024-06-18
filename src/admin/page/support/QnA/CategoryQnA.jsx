@@ -11,7 +11,25 @@ export default function CategoryQnA() {
     const [board, setBoard] = useState()
     const [popup, setPopup] = useState()
 
+    const boardFunc = useCallback(()=>{
+        let parameter = {board_type: 'faq'}
+        if(inputs?.category2){
+            parameter = {...parameter, ...inputs}
+        }
+        adminApi('board', '', {...parameter})
+            .then((result)=>{
+                // console.log(result);
+                if(result.result){
+                    setBoard({
+                        list: result.list
+                    })
+                }
+            })
+    },[inputs])
+
     useEffect(()=>{
+        boardFunc()
+
         adminApi('category', '', {depth: '1', all_yn: 'n'})
             .then((result)=>{
                 if(result.result){
@@ -22,32 +40,12 @@ export default function CategoryQnA() {
                     })
                 }
             })
-    },[])
+    },[boardFunc])
 
     const firstDepthFunc = () => {
-        setBoard()
+        boardFunc()
         setInputs(prev=>({...prev, category2: ''}))
     }
-
-
-    const boardFunc = useCallback(()=>{
-        if(inputs?.category2){
-            // console.log(inputs);
-            adminApi('board', '', {board_type: 'faq', ...inputs})
-                .then((result)=>{
-                    // console.log(result);
-                    if(result.result){
-                        setBoard({
-                            list: result.list
-                        })
-                    }
-                })
-        }
-    },[inputs])
-
-    useEffect(()=>{
-        boardFunc()
-    },[boardFunc])
 
     const onExposure = (e, data) => {
         const { checked } = e.target
