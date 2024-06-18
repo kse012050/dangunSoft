@@ -1,10 +1,11 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { adminApi } from '../../../api/api';
 import { Link } from 'react-router-dom';
+import Popup from '../../../components/popup/Popup';
 
 export default function Product() {
     const [board, setBoard] = useState()
-    // const [popup, setPopup] = useState()
+    const [popup, setPopup] = useState()
 
     const boardFunc = useCallback(()=>{
         adminApi('product', '', {page: '1'/* , limit: '100' */, all_yn: 'n'})
@@ -51,7 +52,7 @@ export default function Product() {
                         <span>제품명</span>
                     </p>
                     <b className='exposure'>노출 여부</b>
-                    <b>관리</b>
+                    <b className='button'>관리</b>
                 </div>
 
                 
@@ -69,13 +70,39 @@ export default function Product() {
                                 <input type="checkbox" id={`check_${data.product_id}`} defaultChecked={data.exposure_yn === 'y'} onChange={(e)=>onExposure(e, data)}/>
                                 <label htmlFor={`check_${data.product_id}`}>노출 여부</label>
                             </div>
-                            <div>
+                            <div className='button'>
                                 <Link to={`/admin/product/product/${data.product_id}`} className='btn-point'>수정</Link>
+                                <button className='btn-point-border'
+                                    onClick={()=>setPopup({
+                                        type: 'cancel', 
+                                        title: '알림',
+                                        description: [
+                                            '해당 계정를 삭제하겠습니까?',
+                                            '삭제된 정보는 복구할 수 없습니다.',
+                                        ],
+                                        func: () => {
+                                            adminApi('product/manage', 'delete', {product_id: data.product_id})
+                                                .then((result)=>{
+                                                    if(result.result){
+                                                        setPopup({
+                                                            type: 'confirm',
+                                                            title: '알림',
+                                                            description: ['해당 계정이 삭제 되었습니다.'],
+                                                            func: () =>{
+                                                                boardFunc()
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                        }
+                                    })}
+                                >삭제</button>
                             </div>
                         </li>
                     )}
                 </ol>
             </div>
+            { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </>
     );
 }

@@ -123,8 +123,9 @@ export default function Create() {
                     if(result.result){
                         // setInputs(prev => ({...prev, product_id: result.data.product_id, vendor_id: result.data.vendor_id, product_name: result.data.product_name}))
                         // setDetail(result.data)
+                        let optionArr = [{...optionForm}]
                         if(!!result.data.optionList.length){
-                            const optionArr = result.data.optionList.map((data)=>{
+                            optionArr = result.data.optionList.map((data)=>{
                                 const obj = {
                                     product_option_id: data.product_option_id,
                                     option_name: data.option_name,
@@ -149,9 +150,9 @@ export default function Create() {
                                 }
                                 return {...obj, option_price_list: [...priceArr]}
                             })
-                            setOptions(optionArr)
-                            setInputs(prev => ({...prev, product_name: result.data.product_name}))
                         }
+                        setOptions(optionArr)
+                        setInputs(prev => ({...prev, product_name: result.data.product_name}))
                     }
                 })
         }
@@ -228,10 +229,10 @@ export default function Create() {
         })
 
         // console.log(isOptions);
-        // console.log(2);
         if(isOptions){
             return
         }
+        // console.log(2);
 
         const test = {...inputs, option_list: [...options]}
         // console.log(test);
@@ -294,23 +295,23 @@ export default function Create() {
                                         <div>
                                             <p htmlFor="">신규</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_include_price} onChange={(e)=>optionChange(e, i)} required/>
+                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} required/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_exclude_price} onChange={(e)=>optionChange(e, i)} required/>
+                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} required/>
                                         </div>
                                         <div>
                                             <p htmlFor="">갱신</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_include_price} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} />
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_exclude_price} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} />
                                         </div>
                                         <div>
                                             <p htmlFor="">업데이트</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_include_price} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} />
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_exclude_price} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} />
                                         </div>
                                     </div>
                                     { options.length > 1 &&

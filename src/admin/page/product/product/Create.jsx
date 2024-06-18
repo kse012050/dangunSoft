@@ -16,12 +16,15 @@ export default function Create() {
     useLayoutEffect(()=>{
         adminApi('vendor', '', {page: '1'/* , limit: '100' */, all_yn: 'n'})
             .then((result)=>{
-                // console.log(result);
                 if(result.result){
                     setVendor({
                         text: result.list.map((data)=> data.vendor_name),
                         value: result.list.map((data)=> data.vendor_id),
                     })
+
+                    if(result.list.length === 1){
+                        setInputs(prev => ({...prev, vendor_id: result.list[0].vendor_id}))
+                    }
                 }
             })
 
@@ -63,6 +66,12 @@ export default function Create() {
                             navigate('/admin/product/product')
                         }
                     })
+                }else{
+                    setPopup({
+                        type: 'confirm',
+                        title: '알림',
+                        description: [result.error_message],
+                    })
                 }
             })
     }
@@ -82,7 +91,7 @@ export default function Create() {
                         <li>
                             <label>벤더사명</label>
                             <div onClick={(e)=> e.preventDefault()}>
-                                <SelectBox text={vendor?.text} value={vendor?.value} name='vendor_id' setInputs={setInputs} firstText={detail && detail.vendor_name} placeholder='벤더사명을 선택하세요.'/>
+                                <SelectBox text={vendor?.text} value={vendor?.value} name='vendor_id' firstText={vendor?.text.length === 1 && vendor?.text[0]} setInputs={setInputs} placeholder='벤더사명을 선택하세요.'/>
                             </div>
                         </li>
                         <li>
