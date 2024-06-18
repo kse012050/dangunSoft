@@ -302,16 +302,16 @@ export default function Create() {
                                         <div>
                                             <p htmlFor="">갱신</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && (data.option_price_list[1].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} />
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && data.option_price_list[1].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && (data.option_price_list[1].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} />
                                         </div>
                                         <div>
                                             <p htmlFor="">업데이트</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && (data.option_price_list[2].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} />
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && data.option_price_list[2].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && (data.option_price_list[2].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} />
                                         </div>
                                     </div>
                                     { options.length > 1 &&
