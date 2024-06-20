@@ -65,7 +65,7 @@ export default function Detail() {
                     <>
                         <strong>견적 요청 제품</strong>
                         {detail?.order_product_list.map((data)=>
-                            <ul data-count key={ data.board_id }>
+                            <ul data-count key={ data.product_option_id }>
                                 <li>
                                     <span>벤더사</span>
                                     <div>

@@ -1,4 +1,11 @@
 :root{
+    /* == */
+    /* --border-color: #DCDCDC;
+    --background-color:  #F7F7F7*/
+}
+
+
+/* :root{
     --color-font01: #222222;
     --color-font02: #666666;
     --color-font03: #999999;
@@ -21,4 +28,5 @@
     :root{
         --headerHeight: 56px;
     }
-}
+} */
+ 
