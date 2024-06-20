@@ -35,6 +35,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
         if(inputs?.vendor_id){
             userApi('product', '', {vendor_id: inputs.vendor_id})
                 .then((result)=>{
+                    console.log(result);
                     if(result.result){
                         setProduct({
                             list: result.list.map((data)=> data.product_name),
@@ -51,6 +52,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
 
     useEffect(()=>{
         if(inputs?.product_id){
+            // console.log(product);
             setOption({
                 list: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.option_name),
                 value: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.product_option_id)

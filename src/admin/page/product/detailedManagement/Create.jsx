@@ -12,25 +12,15 @@ const optionPriceList = [
         price_type: '신규',
         vat_include_price: '',
         vat_exclude_price: '',
-    },
-    {
-        price_type: '갱신',
-        vat_include_price: '',
-        vat_exclude_price: '',
-    },
-    {
-        price_type: '업데이트',
-        vat_include_price: '',
-        vat_exclude_price: '',
     }
 ]
 
 const optionForm = {
     option_name: '',
     standard: standard[0],
-    minimum_quantiry: '',
+    minimum_quantiry: '1',
     payment_exposure_yn: 'y',
-    estimate_exposure_yn: 'n',
+    estimate_exposure_yn: 'y',
     exposure_yn: 'y',
     option_price_list: [...optionPriceList]
 }
@@ -67,34 +57,6 @@ export default function Create() {
                     if(result.result){
                         setInputs(prev => ({...prev, product_id: result.data.product_id, vendor_id: result.data.vendor_id/* , product_name: result.data.product_name */}))
                         setDetail(result.data)
-                        // if(!!result.data.optionList.length){
-                        //     const optionArr = result.data.optionList.map((data)=>{
-                        //         const obj = {
-                        //             product_option_id: data.product_option_id,
-                        //             option_name: data.option_name,
-                        //             standard: data.standard,
-                        //             minimum_quantiry: data.minimum_quantiry,
-                        //             payment_exposure_yn: data.payment_exposure_yn,
-                        //             estimate_exposure_yn: data.estimate_exposure_yn,
-                        //             exposure_yn: data.exposure_yn,
-                        //         }
-                                
-                        //         const priceArr = []
-                        //         for(let a = 0; a < 3; a++){
-                        //             if(data.optionPriceList[a]){
-                        //                 priceArr.push({
-                        //                     price_type: data.optionPriceList[a].price_type,
-                        //                     vat_include_price: data.optionPriceList[a].vat_include_price,
-                        //                     vat_exclude_price: data.optionPriceList[a].vat_exclude_price,
-                        //                 })
-                        //             }else{
-                        //                 priceArr.push({...optionPriceList[a]})
-                        //             }
-                        //         }
-                        //         return {...obj, option_price_list: [...priceArr]}
-                        //     })
-                        //     setOptions(optionArr)
-                        // }
                     }
                 })
         }
@@ -121,7 +83,6 @@ export default function Create() {
                 .then((result)=>{
                     // console.log(result);
                     if(result.result){
-                        // setInputs(prev => ({...prev, product_id: result.data.product_id, vendor_id: result.data.vendor_id, product_name: result.data.product_name}))
                         // setDetail(result.data)
                         let optionArr = [{...optionForm}]
                         if(!!result.data.optionList.length){
@@ -137,6 +98,7 @@ export default function Create() {
                                 }
                                 
                                 const priceArr = []
+                                // console.log(data.optionPriceList);
                                 for(let a = 0; a < 3; a++){
                                     if(data.optionPriceList[a]){
                                         priceArr.push({
@@ -151,7 +113,7 @@ export default function Create() {
                                 return {...obj, option_price_list: [...priceArr]}
                             })
                         }
-                        setOptions(optionArr)
+                        setOptions([...optionArr])
                         setInputs(prev => ({...prev, product_name: result.data.product_name}))
                     }
                 })
@@ -163,23 +125,62 @@ export default function Create() {
         const { value, name, checked, type, dataset: { parents, formet } } = e.target;
 
         if(formet === 'decimal' && value){
-            if(!/^\d+(\.\d{1,2})?$/.test(value)){
-                const cur = /[^0-9.]/.test(value) ? e.target.selectionStart - 1 : e.target.selectionStart;
-                let decimal = value.replace(/[^0-9.]/g, '')
-                if(decimal.includes('.')){
-                    decimal = decimal.split('.')
-                    decimal = decimal[0] + '.' + decimal.slice(1).join('');
-                    decimal = decimal.replace(/(\.\d{2})\d+/, '$1');
-                }
-
-                // console.log(1);
-                
-                e.target.value = decimal
-                e.target.setSelectionRange(cur, cur);
-                return
+            
+            console.log(value);
+            let decimal = value;
+            let cur = e.target.selectionStart;
+            // console.log('-------------------------');
+            // console.log(cur);
+            // console.log(value.includes(','));
+            if(decimal.includes(',')){
+                console.log(parseInt(cur / 3));
             }
-        }
+            // cur += parseInt(cur / 4)
+            decimal = decimal.replace(/[^0-9.]/g, '')
+            // if(!/^\d+(\.\d{1,2})?$/.test(decimal)){
+            //     cur = /[^0-9.]/.test(decimal) ? e.target.selectionStart - 1 : e.target.selectionStart;
+            //     decimal = decimal.replace(/[^0-9.]/g, '')
+            //     if(decimal.includes('.')){
+            //         decimal = decimal.split('.')
+            //         decimal = Number(decimal[0]).toLocaleString() + '.' + decimal.slice(1);
+            //         decimal = decimal.replace(/(\.\d{2})\d+/, '$1');
+            //     }
 
+            //     // console.log(2);
+                
+            //     e.target.value = decimal
+            //     // cur = cur + decimal.split(',').length - 1
+            //     e.target.setSelectionRange(cur, cur);
+            //     return
+            // }
+
+            if(decimal.includes('.')){
+                decimal = decimal.split('.')
+                decimal = Number(decimal[0])/* .toLocaleString() */ + '.' + decimal.slice(1);
+                decimal = decimal.replace(/(\.\d{2})\d+/, '$1');
+            }else{
+                decimal = Number(decimal)/* .toLocaleString() */
+                // cur = cur + 1
+            }
+            
+            e.target.value = decimal
+            // cur = cur + decimal.split(',').length - 1
+            e.target.setSelectionRange(cur, cur);
+
+            setOptions((prev)=> {
+                const arr = [...prev]
+                if(parents === undefined){
+                    arr[i][name] = value
+                }else{
+                    arr[i].option_price_list[parents][name] = decimal
+                }
+                return arr
+            })
+            return
+        }
+        console.log('?');
+        
+        
         if(type === 'checkbox'){
             setOptions((prev)=> {
                 const arr = [...prev]
@@ -196,6 +197,34 @@ export default function Create() {
                 }else{
                     arr[i].option_price_list[parents][name] = value
                 }
+                return arr
+            })
+        }
+    }
+
+    const optionListChange = (e, i)=>{
+        e.stopPropagation()
+        const { name, checked } = e.target
+        // console.log(name);
+        // console.log(checked);
+        if(checked){
+            setOptions((prev)=> {
+                const arr = [...prev]
+                // console.log(arr);
+                // 함수는 한번 실행하는데 setOptions 가 두번 실행 됨 확인해야 함
+                if(!arr[i].option_price_list.filter((data)=>data.price_type === name).length){
+                    arr[i].option_price_list = [...arr[i].option_price_list, {
+                        price_type: name,
+                        vat_include_price: '',
+                        vat_exclude_price: '',
+                    }]
+                }
+                return arr
+            })
+        }else{
+            setOptions((prev)=> {
+                const arr = [...prev]
+                arr[i].option_price_list = [...arr[i].option_price_list.filter((data)=> data.price_type !== name) ]
                 return arr
             })
         }
@@ -279,7 +308,7 @@ export default function Create() {
                         { !!options.length && 
                             options.map((data, i)=>
                                 <li className='optionArea' key={i} onChange={(e)=>optionChange(e, i)}>
-                                    <label htmlFor="">옵션</label>
+                                    <label htmlFor="" onClick={()=>console.log(options)}>옵션</label>
                                     <div>
                                         <div>
                                             <input type="checkbox" name='payment_exposure_yn' id={`payment_exposure_yn${i}`} checked={data.payment_exposure_yn === 'y' || ''} onChange={(e)=>optionChange(e, i)}/>
@@ -295,23 +324,27 @@ export default function Create() {
                                         <div>
                                             <p htmlFor="">신규</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} required/>
+                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} required/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' value={data.option_price_list?.[0].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} required/>
+                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} required/>
                                         </div>
                                         <div>
+                                            <input type="checkbox" id={`renewal_${i}`} name='갱신' checked={!!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length} onChange={(e)=>optionListChange(e, i)}/>
+                                            <label htmlFor={`renewal_${i}`}></label>
                                             <p htmlFor="">갱신</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && (data.option_price_list[1].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && (data.option_price_list[1].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length}/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' value={data.option_price_list?.[1] && (data.option_price_list[1].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && (data.option_price_list[1].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length}/>
                                         </div>
                                         <div>
+                                            <input type="checkbox" id={`update_${i}`} name='업데이트' checked={!!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length} onChange={(e)=>optionListChange(e, i)}/>
+                                            <label htmlFor={`update_${i}`}></label>
                                             <p htmlFor="">업데이트</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && (data.option_price_list[2].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && (data.option_price_list[2].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length}/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' value={data.option_price_list?.[2] && (data.option_price_list[2].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} />
+                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && (data.option_price_list[2].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length}/>
                                         </div>
                                     </div>
                                     { options.length > 1 &&
@@ -324,7 +357,14 @@ export default function Create() {
                         }
                     </ul>
                     <button className='btn-point' type='button'
-                        onClick={()=>setOptions(prev=>[...prev, {...optionForm}])}
+                        onClick={()=>setOptions(prev=>{
+                            console.log(optionForm);
+                            return [...prev, {...optionForm, option_price_list : [{
+                                price_type: '신규',
+                                vat_include_price: '',
+                                vat_exclude_price: '',
+                            }]}]
+                        })}
                     >옵션 추가</button>
                     <div className='buttonArea'>
                         <input type="submit" className='btn-point' value={id ? '수정' : '등록'} onClick={onSubmit}/>

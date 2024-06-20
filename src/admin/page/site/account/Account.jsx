@@ -93,31 +93,33 @@ export default function Account() {
                                         })
                                     }}
                                 >수정</button>
-                                <button className='btn-point-border'
-                                    onClick={()=>setPopup({
-                                        type: 'cancel', 
-                                        title: '알림',
-                                        description: [
-                                            '해당 계정를 삭제하겠습니까?',
-                                            '삭제된 정보는 복구할 수 없습니다.',
-                                        ],
-                                        func: () => {
-                                            adminApi('manage', 'delete', {admin_id: data.admin_id})
-                                                .then((result)=>{
-                                                    if(result.result){
-                                                        setPopup({
-                                                            type: 'confirm',
-                                                            title: '알림',
-                                                            description: ['해당 계정이 삭제 되었습니다.'],
-                                                            func: () =>{
-                                                                boardFunc()
-                                                            }
-                                                        })
-                                                    }
-                                                })
-                                        }
-                                    })}
-                                >삭제</button>
+                                { data.delete_able_yn === 'y' &&
+                                    <button className='btn-point-border'
+                                        onClick={()=>setPopup({
+                                            type: 'cancel', 
+                                            title: '알림',
+                                            description: [
+                                                '해당 계정를 삭제하겠습니까?',
+                                                '삭제된 정보는 복구할 수 없습니다.',
+                                            ],
+                                            func: () => {
+                                                adminApi('manage', 'delete', {admin_id: data.admin_id})
+                                                    .then((result)=>{
+                                                        if(result.result){
+                                                            setPopup({
+                                                                type: 'confirm',
+                                                                title: '알림',
+                                                                description: ['해당 계정이 삭제 되었습니다.'],
+                                                                func: () =>{
+                                                                    boardFunc()
+                                                                }
+                                                            })
+                                                        }
+                                                    })
+                                            }
+                                        })}
+                                    >삭제</button>
+                                }
                             </div>
                         </li>
                     )}

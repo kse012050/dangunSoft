@@ -102,7 +102,7 @@ mark.point{color: var(--color-point);}
 .adminPage .exposure input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
 .adminPage .exposure input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
 .adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{width: 140px; flex-shrink: 0;}
-.adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{display: flex; justify-content: center; gap: 5px;}
+.adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{display: flex; justify-content: flex-start; gap: 5px;}
 .adminPage [class*="boardBox"] > :is(a, button){display: block; max-width: 65.94px; margin-left: auto; margin-bottom: 10px;}
 /* .adminPage [class*="boardBox"] .board-detail .button{display: flex; justify-content: center; gap: 10px; width: 150px;} */
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail:not(:has(:nth-child(1)))::after{content: '벤더사가 없습니다.';}
@@ -117,7 +117,7 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"].boardBox-statistics .board-detail li > *{text-align: center;}
 .adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a){gap: 0;}
 .adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:not(:last-child):not(.option){margin-inline: 40px;}
-.adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .option{width: 150px;}
+.adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .option{width: 200px;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li{height: auto; min-height: 50px;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li{height: 50px; display: flex; justify-content: center; align-items: center; border-left: 1px solid #DCDCDC; border-right: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li:not(:last-child){border-bottom: 1px solid #DCDCDC;}
@@ -141,7 +141,9 @@ mark.point{color: var(--color-point);}
 .adminPage .inputBox > ul > li.optionArea > div > div:not(:last-of-type){margin-bottom: 10px;}
 .adminPage .inputBox > ul > li.optionArea > div > div > *:not(input){flex-shrink: 0;}
 .adminPage .inputBox > ul > li.optionArea > div > div > :is(input, .selectBox){width: auto; flex: 1;}
-.adminPage .inputBox > ul > li.optionArea > div > div p{width: 100px;}
+.adminPage .inputBox > ul > li.optionArea > div > div:has(input[type="checkbox"]) p{width: 100px;}
+.adminPage .inputBox > ul > li.optionArea > div > div:not(:has(input[type="checkbox"])) p{width: 144px;}
+.adminPage .inputBox > ul > li.optionArea > button{align-self: center;}
 .adminPage .inputBox .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
 
 
