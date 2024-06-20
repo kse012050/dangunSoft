@@ -121,6 +121,11 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li{height: auto; min-height: 50px;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li{height: 50px; display: flex; justify-content: center; align-items: center; border-left: 1px solid #DCDCDC; border-right: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li:not(:last-child){border-bottom: 1px solid #DCDCDC;}
+.adminPage [class*="boardBox"].boardBox-estimate .board-detail > li a{text-align: center;}
+.adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a){gap: 20px; padding-inline: 20px;}
+.adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a) > *{flex: auto;}
+.adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a) > *:not([class]){max-width: 60px; flex-shrink: 0;}
+.adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a) > *.bigWidth{flex: 1;}
 /* .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{width: 140px;}
 .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{display: flex; justify-content: center; gap: 5px;} */
 

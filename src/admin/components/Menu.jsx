@@ -31,7 +31,7 @@ export default function Menu() {
             </li>
             <li>
                 <button>견적 관리</button>
-                <div><NavLink to='/'>견적 요청 내역</NavLink></div>
+                <div><NavLink to='/admin/estimate'>견적 요청 내역</NavLink></div>
             </li>
             <li>
                 <button>구매 관리</button>

@@ -26,6 +26,7 @@ import AdminProduct from "../admin/page/product/product/Product";
 import AdminProductCreate from "../admin/page/product/product/Create";
 import AdminDetailedManagement from "../admin/page/product/detailedManagement/DetailedManagement";
 import AdminDetailedManagementCreate from "../admin/page/product/detailedManagement/Create";
+import AdminEstimate from "../admin/page/estimate/Estimate";
 import AdminInquiry from "../admin/page/inquiry/Inquiry";
 import AdminInquiryDetail from "../admin/page/inquiry/Detail";
 import AdminSiteAccount from "../admin/page/site/account/Account";
@@ -125,6 +126,15 @@ export const routers = [
         children: [
             { 
                 index: true, element: <AdminStatistics />
+            },
+        ]
+    },
+    {
+        path: "/admin/estimate",
+        element: <AdminRoot />,
+        children: [
+            { 
+                index: true, element: <AdminEstimate />
             },
         ]
     },
