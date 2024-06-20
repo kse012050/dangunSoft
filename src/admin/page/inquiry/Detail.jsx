@@ -11,7 +11,7 @@ export default function Detail() {
     const detailFunc = useCallback(()=>{
         adminApi('board/detail', '', {board_id: id})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
                     setDetail(result.data)
                 }

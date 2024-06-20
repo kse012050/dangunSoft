@@ -62,7 +62,7 @@ export default function Estimate() {
                 <ol className="board-detail">
                     { board?.list.map((data)=>
                         <li key={data.board_id}>
-                            <Link to=''>
+                            <Link to={`/admin/estimate/${data.board_id}`}>
                                 <span>{ data.board_id }</span>
                                 <span className='bigWidth'>{ data.company_name }</span>
                                 <span>{ data.write_name }</span>

@@ -96,11 +96,12 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .img img{width: 50px; aspect-ratio: 1 / 0.8; object-fit: cover;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > *:not(div){flex: 1;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > div{flex-shrink: 0;}
-.adminPage .exposure{display: flex; justify-content: center; align-items: center;}
+.adminPage .exposure{display: flex; align-items: center;}
 .adminPage .exposure input[type="checkbox"] + label{all: inherit; max-width: 62px; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; padding: 0; text-indent: -9999px;}
 .adminPage .exposure input[type="checkbox"] + label::before{display: none;}
 .adminPage .exposure input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
 .adminPage .exposure input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
+.adminPage [class*="boardBox"] .board-detail li .exposure{justify-content: center;}
 .adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{width: 140px; flex-shrink: 0;}
 .adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{display: flex; justify-content: flex-start; gap: 5px;}
 .adminPage [class*="boardBox"] > :is(a, button){display: block; max-width: 65.94px; margin-left: auto; margin-bottom: 10px;}
@@ -163,6 +164,9 @@ mark.point{color: var(--color-point);}
 .adminPage .infoBox ul li > div{flex: 1; display: flex; align-items: center; padding: 10px 20px;}
 .adminPage .infoBox ul li > div textarea{height: 300px;}
 .adminPage .infoBox ul li div .radioBox{display: flex; gap: 10px;}
+.adminPage .infoBox ul[data-count]{position: relative; padding-left: 100px; counter-increment: infoCount;}
+.adminPage .infoBox ul[data-count]::before{content: counter(infoCount); position: absolute; left: 0; width: 100px; height: 100%; font-size: 20px; font-weight: 700; display: flex; justify-content: center; align-items: center; background-color: #f7f7f7; border-width: 0 1px 1px 0; border-style: solid; border-color: #dcdcdc;}
+.adminPage .infoBox .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
 
 
 /* 답변 박스 */
