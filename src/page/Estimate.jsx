@@ -11,7 +11,7 @@ const orderProductList = {
     product_id: '',
     product_option_id: '',
     order_quantiry: '',
-    option_price_id: '5',
+    option_price_id: '',
 }
 
 const firstTextList = {
@@ -36,7 +36,7 @@ export default function Estimate() {
     const onSubmit = (e) => {
         e.preventDefault();
         // console.log(inputs);
-        // console.log(products);
+        console.log(products);
         
         if(isSubmit(inputs)){
             return;

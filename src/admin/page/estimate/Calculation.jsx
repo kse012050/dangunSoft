@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import Products from './Product';
 import { useParams } from 'react-router-dom';
 import { adminApi } from '../../api/api';
@@ -10,11 +10,12 @@ const productObj = {
     order_quantiry: '',
     option_price_id: '',
     total_price: '',
-    final_pay_pric: ''
+    final_pay_price: ''
 }
 
 export default function Calculation() {
     const { id } = useParams()
+    const commentRef = useRef()
     const [productList, setProductList] = useState()
 
     useLayoutEffect(()=>{
@@ -36,12 +37,39 @@ export default function Calculation() {
             })
     },[id])
 
+    const onSubmit = (e) =>{
+        e.preventDefault()
+
+        if(!commentRef.current.value){
+            commentRef.current.focus()
+            return
+        }
+
+        const isProdect = productList.some((data)=>{
+            return Object.entries(data).some(([key, value]) =>{
+                if(!value){
+                    return true
+                }
+                return false;
+            })
+        })
+
+        if(isProdect){
+            return
+        }
+
+        adminApi('board/manage/estimate', '', {board_id: id, comment: commentRef.current.value, order_product_list: [...productList.map(({ option_price_type, ...rest }) => rest)]})
+            .then((result)=>{
+                console.log(result);
+            })
+    }
+
     return (
         <>
             <h2>견적 산정</h2>
 
             <div className='boardArea'>
-                <strong>견적 산정</strong>
+                <strong /* onClick={()=> console.log(productList)} */>견적 산정</strong>
                 <div className='board-title'>
                     <b>구분</b>
                     <b>벤더사</b>
@@ -56,7 +84,7 @@ export default function Calculation() {
                 <ol className="board-detail">
                     {productList?.map((data, i)=>
                         <li key={i}>
-                            <Products data={data}/>
+                            <Products data={data} productList={productList} setProductList={setProductList} productIdx={i} key={productList.lenght}/>
                         </li>
                     )}
                 </ol>
@@ -65,25 +93,34 @@ export default function Calculation() {
                 >제품 추가</button>
             </div>
 
-            <div>
+            <div className='finalArea'>
                 <strong>최종 견적</strong>
                 <dl>
-                    <dt></dt>
-                    <dd></dd>
+                    <dt>총 금액</dt>
+                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next})}</dd>
                 </dl>
                 <dl>
-                    <dt></dt>
-                    <dd></dd>
+                    <dt>할인 금액</dt>
+                    <dd>0</dd>
                 </dl>
                 <dl>
-                    <dt></dt>
-                    <dd></dd>
+                    <dt>최종 금액</dt>
+                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next})}</dd>
                 </dl>
             </div>
 
-            <div>
+            <div className='commentArea'>
                 <strong>내용</strong>
-                <textarea name="" id=""></textarea>
+                <textarea name="comment" ref={commentRef}></textarea>
+            </div>
+            
+            <div className="buttonArea">
+                <button className='btn-point'
+                    // onClick={onSave}
+                >저장</button>
+                <button className='btn-point-border'
+                    onClick={onSubmit}
+                >견적 전송</button>
             </div>
         </>
     );

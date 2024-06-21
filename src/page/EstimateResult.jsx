@@ -8,7 +8,7 @@ export default function EstimateResult() {
 
     useEffect(()=>{
         estimateDetail || navigate('/estimate')
-
+        console.log(estimateDetail);
         sessionStorage.setItem('estimateDetail', sessionStorage.getItem('estimateDetail'))
         return () => {
             sessionStorage.removeItem('estimateDetail')
@@ -59,7 +59,11 @@ export default function EstimateResult() {
                     <div>
                         { estimateDetail?.order_product_list.map((data, i)=>
                             // <dd key={i}>{ data.product_name }</dd>
-                            <dd key={i}>신규</dd>
+                            <dd key={i}>
+                                {data.option_price_type === '신규' && '新規'}
+                                {data.option_price_type === '갱신' && '更新'}
+                                {data.option_price_type === '업데이트' && 'アップグレード'}
+                            </dd>
                         ) }
                     </div>
                 </dl>

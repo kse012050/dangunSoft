@@ -51,7 +51,9 @@ mark.point{color: var(--color-point);}
 .adminPage .selectBox button{font-size: 15px; padding-inline: 15px; height: 40px; font-weight: 400; text-align: left;}
 .adminPage .selectBox > button{width: 100%; border: 1px solid var(--color-line); color: #BBB; border-radius: 4px; box-sizing: border-box; position: relative;}
 .adminPage .selectBox > button::after{width: 18px; right: 15px; content: ''; aspect-ratio: 1; position: absolute; top: 50%; translate: 0 -50%; background: url(../images/icon-down.png) no-repeat center / cover;}
-.adminPage .selectBox > div{position: absolute; left: 0; top: calc(100% + 6px); width: 100%; padding-inline: 5px; background-color: white; border: 1px solid var(--color-font01); border-radius: 4px; box-sizing: border-box; z-index: 1;}
+.adminPage .selectBox > div{max-height: 300px; overflow: auto; position: absolute; left: 0; top: calc(100% + 6px); width: 100%; padding-inline: 5px; background-color: white; border: 1px solid var(--color-font01); border-radius: 4px; box-sizing: border-box; z-index: 1;}
+.adminPage .selectBox > div::-webkit-scrollbar{ width: 5px;}
+.adminPage .selectBox > div::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
 .adminPage .selectBox > div button{display: block; width: 100%;}
 .adminPage .selectBox > div button:hover{background-color: var(--color-face01);}
 .adminPage .selectBox.active > div{display: block;}

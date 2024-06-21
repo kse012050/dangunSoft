@@ -1,16 +1,20 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import SelectBox from '../../components/SelectBox';
+import SelectBox from './SelectBox';
 import { adminApi } from '../../api/api';
 
-export default function Product({ data }) {
-    const [inputs, setInputs] = useState({...data})
+export default function Product({ data, productList, setProductList, productIdx }) {
+    const [inputs, setInputs] = useState()
     const [firstText, setFirstText] = useState({option_price_type: data.option_price_type})
     const [vendors, setVendors] = useState();
     const [products, setProducts] = useState();
     const [options, setOptions] = useState()
     const [optionPrices, setOptionPrices] = useState()
+    const [prices, setPrices] = useState()
     // console.log(data);
 
+    useEffect(()=>{
+        setInputs({...data})
+    },[productList.length])
     useLayoutEffect(()=>{
         // console.log(inputs);
         adminApi('vendor', '', {all_yn: 'y'})
@@ -43,7 +47,7 @@ export default function Product({ data }) {
             
         }
         
-        if(inputs.vendor_id && products?.list){
+        if(inputs?.vendor_id && products?.list){
             // console.log(inputs.vendor_id);
             setFirstText({
                 vendor_id: vendors.list.filter((data)=>data.vendor_id === inputs.vendor_id)[0]?.vendor_name
@@ -54,92 +58,109 @@ export default function Product({ data }) {
                 value: prev.list.filter((data)=>data.vendor_id === inputs.vendor_id).map((data)=>data.product_id)
             }))
         }
-    },[inputs.vendor_id, vendors, products?.list])
+    },[inputs?.vendor_id, vendors, products?.list])
 
     useEffect(()=>{
-        if(inputs.product_id && products){
-            setFirstText(prev=>({
-                ...prev,
-                product_id: products.list.filter((data)=>data.product_id === inputs.product_id)[0]?.product_name
-            }))
-            setOptions({
-                text: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList.map(data => data.option_name),
-                value: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList.map(data => data.product_option_id),
-                list: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList
-            })
+        if(inputs?.product_id && products){
+            if(products.list.filter(data=> data.product_id === inputs.product_id).length){
+                setFirstText(prev=>({
+                    vendor_id: prev.vendor_id,
+                    product_id: products.list.filter((data)=>data.product_id === inputs.product_id)[0]?.product_name,
+                }))
+                setOptions({
+                    text: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList.map(data => data.option_name),
+                    value: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList.map(data => data.product_option_id),
+                    list: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList
+                })
+            }else{
+
+            }
         }
-    },[inputs.product_id, products])
+    },[inputs?.product_id, products])
 
     useEffect(()=>{
         if(inputs?.product_option_id && options){
-            setFirstText(prev=>({
-                ...prev,
-                product_option_id: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.option_name
-            }))
-            setOptionPrices({
-                text: options.list.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.optionPriceList.map(data=> data.price_type),
-                value: options.list.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.optionPriceList.map(data=> data.option_price_id),
-                list: options.list.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.optionPriceList,
-            })
-            setInputs(prev=>({...prev, order_quantiry: '1'}))
+            if(products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList.filter(data=> data.product_option_id === inputs.product_option_id).length){
+                setFirstText(prev=>({
+                    ...prev,
+                    product_option_id: products.list.filter(data=> data.product_id === inputs.product_id)?.[0]?.optionList.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.option_name
+                }))
+                setOptionPrices({
+                    text: options.list.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.optionPriceList.map(data=> data.price_type),
+                    value: options.list.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.optionPriceList.map(data=> data.option_price_id),
+                    list: options.list.filter(data=> data.product_option_id === inputs.product_option_id)?.[0]?.optionPriceList,
+                })
+                if(!inputs?.order_quantiry){
+                    setInputs(prev=>({...prev, order_quantiry: '1'}))
+                }
+            }else{
+                setFirstText(prev=>({
+                    ...prev,
+                    product_option_id: ''
+                }))
+                setInputs(prev=>({...prev, product_option_id: ''}))
+            }
         }
-    },[inputs?.product_option_id, inputs.product_id, options])
+    },[inputs?.product_option_id, inputs?.product_id, options])
 
     useEffect(()=>{
-        if(inputs?.option_price_id && optionPrices){
-            console.log(optionPrices);
-            setFirstText(prev=>({
-                ...prev,
-                option_price_id: optionPrices.list.filter(data=> data.product_option_id === inputs.product_option_id)[0].option_name
-            }))
-            // setInputs(prev=>({...prev, final_pay_price: optionPrices.filter(data=>data.option_price_id === inputs.option_price_id)[0].}))
+        if((inputs?.option_price_id || inputs?.option_price_type) && optionPrices){
+                setFirstText(prev=>({
+                    ...prev,
+                    option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.price_type : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.price_type
+                }))
+                setInputs(prev=>({
+                    ...prev,
+                    option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.option_price_id
+                }))
+                setPrices( inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id)?.[0]?.vat_include_price : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.vat_include_price)
         }
-    },[inputs?.option_price_id])
+    },[inputs?.option_price_id, inputs?.option_price_type, optionPrices])
 
-    // useLayoutEffect(()=>{
-    //     if(inputs?.vendor_id){
-    //         adminApi('product', '', {all_yn: 'y'})
-    //             .then((result)=>{
-    //                 // console.log(result);
-    //                 if(result.result){
-    //                     console.log(result.list.filter((data)=>data.vendor_id === inputs.vendor_id));
-    //                     setProducts({
-    //                         text: result.list.filter((data)=>data.vendor_id === inputs.vendor_id).map((data)=>data.product_name),
-    //                         value: result.list.filter((data)=>data.vendor_id === inputs.vendor_id).map((data)=>data.product_id)
-    //                     })
-    //                     setFirstText({
-    //                         product_id: result.list.filter((data)=>data.product_id === inputs.product_id)[0]?.product_name
-    //                     })
-    //                 }
-    //             })
-    //     }
-    // },[inputs?.vendor_id, inputs.product_id])
+    useEffect(()=>{
+        if(prices && inputs?.order_quantiry){
+            setInputs(prev=>({...prev, total_price: inputs?.order_quantiry * prices, final_pay_price: inputs?.order_quantiry * prices}))
+        }
+    },[prices, inputs?.order_quantiry])
 
+    useEffect(()=>{
+        setProductList(prev=>{
+            const arr = [...prev]
+            arr[productIdx] = {...inputs}
+            return arr
+        })
+    },[inputs])
 
     return (
         <>
-            <span onClick={()=>console.log(inputs)}>제품1</span>
+            <span /* onClick={()=>console.log(inputs)} */>제품</span>
             <div>
                 <SelectBox text={vendors?.text} value={vendors?.value} setInputs={setInputs} firstText={firstText?.vendor_id} name='vendor_id' placeholder='벤더사를 선택해주세요.'/>
             </div>
             <div>
-                <SelectBox text={products?.text} value={products?.value} setInputs={setInputs} firstText={firstText?.product_id} name='product_id' placeholder='제품을 선택해주세요.'/>
+                <SelectBox text={products?.text} value={products?.value} setInputs={setInputs} firstText={firstText?.product_id} name='product_id' placeholder='제품을 선택해주세요.' disabled={!inputs?.vendor_id}/>
             </div>
             <div>
-                <SelectBox text={options?.text} value={options?.value} setInputs={setInputs} firstText={firstText?.product_option_id} name='product_option_id' placeholder='옵션을 선택해주세요.'/>
+                <SelectBox text={options?.text} value={options?.value} setInputs={setInputs} firstText={firstText?.product_option_id} name='product_option_id' placeholder='옵션을 선택해주세요.' disabled={!inputs?.product_id}/>
             </div>
             <div>
-                <input type="number" defaultValue={inputs?.order_quantiry} min='1'/>
+                <input type="number" defaultValue={inputs?.order_quantiry} min='1' onChange={(e)=>setInputs(prev=>({...prev, order_quantiry: e.target.value}))} disabled={!inputs?.product_option_id}/>
             </div>
             <div>
-                <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_type} name='option_price_id' placeholder='구독옵션을 선택해주세요.'/>
+                <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독옵션을 선택해주세요.' disabled={!inputs?.product_option_id}/>
             </div>
-            <p>{inputs?.final_pay_price}</p>
+            <p>{prices}</p>
             <div>
-                <input type="text" value={inputs?.order_quantiry * inputs?.final_pay_price || ''} readOnly/>
+                <input type="text" value={prices ? inputs?.order_quantiry * prices : '0'} readOnly/>
             </div>
             <div>
-                <button className='btn-point-border'>삭제</button>
+                {productList.length !== 1 &&
+                    <button className='btn-point-border'
+                        onClick={()=>{
+                            setProductList(prev=> prev.filter((_, i)=> i !== productIdx))
+                        }}
+                    >삭제</button>
+                }
             </div>
         </>
     );

@@ -9,7 +9,7 @@ export default function Detail() {
     useLayoutEffect(()=>{
         adminApi('board/detail', '', {board_id: id})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     setDetail(result.data)
                 }

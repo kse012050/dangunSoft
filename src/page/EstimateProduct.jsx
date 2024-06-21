@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useLayoutEffect, useState } from 'react';
+import React, { Fragment, useEffect, useId, useLayoutEffect, useState } from 'react';
 import Select from '../components/Select';
 import { userApi } from '../api/api';
 
@@ -9,6 +9,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     const [vender, setVender] = useState()
     const [product, setProduct] = useState()
     const [option, setOption] = useState()
+    const [optionPrice, setOptionPrice] = useState()
     if(productIdx === 1){
         // console.log(products?.[productIdx]);
     }
@@ -55,7 +56,8 @@ export default function EstimateProduct({ orderProductList, products, setProduct
             // console.log(product);
             setOption({
                 list: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.option_name),
-                value: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.product_option_id)
+                value: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.product_option_id),
+                data: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList
             })
 
             setInputs((prev)=>({...prev, product_option_id: ''}))
@@ -66,12 +68,14 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     useEffect(()=>{
         if(inputs?.product_option_id){
             setInputs((prev)=>({...prev, order_quantiry: '1'}))
+            console.log(option);
+            setOptionPrice(option.data.filter(data=>data.product_option_id === inputs.product_option_id)[0].optionPriceList)
         }
     },[inputs?.product_option_id])
 
     const productChange = (e) =>{
-        const { value } = e.target
-        setInputs((prev)=>({...prev, order_quantiry: value}))
+        const { name, value } = e.target
+        setInputs((prev)=>({...prev, [name]: value}))
     }
 
     useEffect(()=>{
@@ -121,14 +125,24 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     </div>
                 </li>
                 <li>
-                    <label htmlFor="">サブスクリプション·オプション</label>
+                    <label htmlFor="" onClick={()=>console.log(optionPrice)}>サブスクリプション·オプション</label>
                     <div>
-                        <input type="radio" name={`test_${uuid}`} id={`test01_${uuid}`} defaultChecked={true}/>
+                        {optionPrice && optionPrice.map((data, i)=>
+                            <React.Fragment key={data.option_price_id}>
+                                <input type="radio" name='option_price_id' id={`optionPrice_${uuid}_${data.option_price_id}`} value={data.option_price_id} defaultChecked={i === 0} onChange={productChange}/>
+                                <label htmlFor={`optionPrice_${uuid}_${data.option_price_id}`}>
+                                    {data.price_type === '신규' && '新規'}
+                                    {data.price_type === '갱신' && '更新'}
+                                    {data.price_type === '업데이트' && 'アップグレード'}
+                                </label>
+                            </React.Fragment>
+                        )}
+                        {/* <input type="radio" name={`test_${uuid}`} id={`test01_${uuid}`} defaultChecked={true}/>
                         <label htmlFor={`test01_${uuid}`}>新規</label>
                         <input type="radio" name={`test_${uuid}`} id={`test02_${uuid}`}/>
                         <label htmlFor={`test02_${uuid}`}>更新</label>
                         <input type="radio" name={`test_${uuid}`} id={`test03_${uuid}`}/>
-                        <label htmlFor={`test03_${uuid}`}>アップグレード</label>
+                        <label htmlFor={`test03_${uuid}`}>アップグレード</label> */}
                     </div>
                 </li>
             </ul>
