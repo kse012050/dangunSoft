@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import Products from './Product';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { adminApi } from '../../api/api';
+import Popup from '../../components/popup/Popup';
 
 const productObj = {
     vendor_id: '',
@@ -17,13 +18,16 @@ export default function Calculation() {
     const { id } = useParams()
     const commentRef = useRef()
     const [productList, setProductList] = useState()
+    const [popup, setPopup] = useState()
+    const navigate = useNavigate()
+
 
     useLayoutEffect(()=>{
         adminApi('board/detail', '', {board_id: id})
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
-                    setProductList(result.list.map(({ vendor_id, product_id, product_option_id, order_quantiry, option_price_id, option_price_type, total_price, final_pay_price })=>({
+                    setProductList(result.list.map(({ vendor_id, product_id, product_option_id, order_quantiry, option_price_info_obj: {option_price_id}, option_price_type, total_price, final_pay_price })=>({
                         vendor_id,
                         product_id,
                         product_option_id,
@@ -60,7 +64,17 @@ export default function Calculation() {
 
         adminApi('board/manage/estimate', '', {board_id: id, comment: commentRef.current.value, order_product_list: [...productList.map(({ option_price_type, ...rest }) => rest)]})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
+                if(result.result){
+                    setPopup({
+                        type: 'confirm',
+                        title: '알림',
+                        description: ['결제 링크가 발송되었습니다.', '결제 진행 상태는 구매 이력에서 확인해 주세요.'],
+                        func: () =>{
+                            navigate('/admin/estimate')
+                        }
+                    })
+                }
             })
     }
 
@@ -122,6 +136,7 @@ export default function Calculation() {
                     onClick={onSubmit}
                 >견적 전송</button>
             </div>
+            { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </>
     );
 }

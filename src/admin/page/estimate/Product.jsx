@@ -104,14 +104,19 @@ export default function Product({ data, productList, setProductList, productIdx 
     },[inputs?.product_option_id, inputs?.product_id, options])
 
     useEffect(()=>{
-        if((inputs?.option_price_id || inputs?.option_price_type) && optionPrices){
+        if((inputs?.option_price_id /* || inputs?.option_price_type */) && optionPrices){
+            // console.log(optionPrices.list);
+            // console.log(inputs);
+            // console.log(optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id ));
                 setFirstText(prev=>({
                     ...prev,
-                    option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.price_type : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.price_type
+                    // option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.price_type : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.price_type
+                    option_price_id: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.price_type
                 }))
                 setInputs(prev=>({
                     ...prev,
-                    option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.option_price_id
+                    // option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.option_price_id
+                    option_price_id: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id
                 }))
                 setPrices( inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id)?.[0]?.vat_include_price : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.vat_include_price)
         }
@@ -138,16 +143,16 @@ export default function Product({ data, productList, setProductList, productIdx 
                 <SelectBox text={vendors?.text} value={vendors?.value} setInputs={setInputs} firstText={firstText?.vendor_id} name='vendor_id' placeholder='벤더사를 선택해주세요.'/>
             </div>
             <div>
-                <SelectBox text={products?.text} value={products?.value} setInputs={setInputs} firstText={firstText?.product_id} name='product_id' placeholder='제품을 선택해주세요.' disabled={!inputs?.vendor_id}/>
+                <SelectBox text={products?.text} value={products?.value} setInputs={setInputs} firstText={firstText?.product_id} name='product_id' placeholder='제품을 선택해주세요.' disabled={!inputs?.vendor_id || !products}/>
             </div>
             <div>
-                <SelectBox text={options?.text} value={options?.value} setInputs={setInputs} firstText={firstText?.product_option_id} name='product_option_id' placeholder='옵션을 선택해주세요.' disabled={!inputs?.product_id}/>
+                <SelectBox text={options?.text} value={options?.value} setInputs={setInputs} firstText={firstText?.product_option_id} name='product_option_id' placeholder='옵션을 선택해주세요.' disabled={!inputs?.product_id || !options}/>
             </div>
             <div>
-                <input type="number" defaultValue={inputs?.order_quantiry} min='1' onChange={(e)=>setInputs(prev=>({...prev, order_quantiry: e.target.value}))} disabled={!inputs?.product_option_id}/>
+                <input type="number" defaultValue={inputs?.order_quantiry} min='1' onChange={(e)=>setInputs(prev=>({...prev, order_quantiry: e.target.value}))} disabled={!inputs?.product_option_id || !optionPrices}/>
             </div>
             <div>
-                <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독옵션을 선택해주세요.' disabled={!inputs?.product_option_id}/>
+                <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독옵션을 선택해주세요.' disabled={!inputs?.product_option_id || !optionPrices}/>
             </div>
             <p>{prices}</p>
             <div>
