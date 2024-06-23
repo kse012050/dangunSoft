@@ -135,10 +135,16 @@ export function userPageLog(pageName, page_link, user_agent, referer/* , ip */){
         page_name = '관리자 - 지원 관리 - 문답 등록 페이지'
     }else if(pageName.includes('/admin/support/qna/')){
         page_name = '관리자 - 지원 관리 - 문답 수정 페이지'
-    }else if(pageName === 'admin'){
-        page_name = ''
-    }else if(pageName === 'admin'){
-        page_name = ''
+    }else if(pageName === '/admin/site/account'){
+        page_name = '관리자 - 사이트 관리 - 계정 관리 페이지'
+    }else if(pageName === '/admin/site/popup'){
+        page_name = '관리자 - 사이트 관리 - 팝업 관리 페이지'
+    }else if(pageName === '/admin/site/popup/create'){
+        page_name = '관리자 - 사이트 관리 - 팝업 등록 페이지'
+    }else if(pageName.includes('/admin/site/popup/')){
+        page_name = '관리자 - 사이트 관리 - 팝업 수정 페이지'
+    }else if(pageName === '/admin/myInfo'){
+        page_name = '관리자 - 내 정보 관리'
     }else if(pageName === 'admin'){
         page_name = ''
     }
