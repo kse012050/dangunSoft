@@ -178,7 +178,7 @@ mark.point{color: var(--color-point);}
 
 
 /* 답변 박스 */
-.adminPage .answerBox{margin-top: 50px;}
+.adminPage .answerBox{margin-top: 50px; max-width: 1000px;}
 .adminPage .answerBox strong{display: block; font-size: 25px; margin-bottom: 20px; font-weight: 700;}
 .adminPage .answerBox .registration textarea{height: 200px;}
 .adminPage .answerBox .registration textarea::placeholder{white-space: pre-line;}

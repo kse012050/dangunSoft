@@ -1,17 +1,21 @@
 import React, { useLayoutEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { adminApi } from '../api/api';
 
 export default function Menu() {
+    const location = useLocation().pathname;
     const [superYN, setSuperYN] = useState()
-    const [isOpen, setIsOpen] = useState({
-        statistics: true,
-        product: false,
-        estimate: false,
-        purchase: false,
-        inquiry: false,
-        support: false,
-        site: false,
+    const [isOpen, setIsOpen] = useState(()=>{
+        const obj = {
+            statistics: location.includes('statistics') ? true: false,
+            product: location.includes('product') ? true: false,
+            estimate: location.includes('estimate') ? true: false,
+            purchase: location.includes('purchase') ? true: false,
+            inquiry: location.includes('inquiry') ? true: false,
+            support: location.includes('support') ? true: false,
+            site: location.includes('site') ? true: false,
+        }
+        return obj
     })
 
     useLayoutEffect(()=>{

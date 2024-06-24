@@ -25,14 +25,14 @@ export default function Calculation() {
     useLayoutEffect(()=>{
         adminApi('board/detail', '', {board_id: id})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
-                    setProductList(result.list.map(({ vendor_id, product_id, product_option_id, order_quantiry, option_price_info_obj: {option_price_id}, option_price_type, total_price, final_pay_price })=>({
+                    setProductList(result.list.map(({ vendor_id, product_id, product_option_id, order_quantiry, option_price_info_obj, option_price_type, total_price, final_pay_price })=>({
                         vendor_id,
                         product_id,
                         product_option_id,
                         order_quantiry,
-                        option_price_id,
+                        option_price_id: option_price_info_obj?.option_price_id ?? null,
                         option_price_type,
                         total_price,
                         final_pay_price
