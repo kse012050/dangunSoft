@@ -1,8 +1,10 @@
 import React, { Fragment, useEffect, useId, useLayoutEffect, useState } from 'react';
 import Select from '../components/Select';
 import { userApi } from '../api/api';
+import { useParams } from 'react-router-dom';
 
 export default function EstimateProduct({ orderProductList, products, setProducts, firstTextList, firstTexts, setFirstTexts, productIdx}) {
+    const { id } = useParams()
     const uuid = useId()
     const [inputs, setInputs] = useState({...orderProductList})
     const [firstText, setFirstText] = useState({...firstTextList})
@@ -16,20 +18,36 @@ export default function EstimateProduct({ orderProductList, products, setProduct
 
     useLayoutEffect(()=>{
         // setInputs(prev=> !prev ? {...orderProductList} : {...prev})
-        userApi('vendor')
-            .then((result)=>{
-                if(result.result){
-                    setVender({
-                        list: result.list.map((data)=> data.vendor_name),
-                        value: result.list.map((data)=> data.vendor_id)
-                    })
-
-                    if(result.list.length === 1){
-                        setInputs(prev=>({...prev, vendor_id: result.list[0].vendor_id}))
-                        setFirstText(prev=>({...prev, vendor_id: result.list[0].vendor_name}))
+        // console.log(id);
+        if(id){
+            userApi('product/detail', '', {option_price_id: id})
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        setInputs(prev=> ({...prev, vendor_id: result.data.vendor_id, product_id: result.data.product_id}))
+                        setFirstText(prev=> ({...prev, vendor_id: result.data.vendor_name, product_id: result.data.product_name}))
+                        setProduct({
+                            data: [...result.data.optionList]
+                        })
                     }
-                }
-            })
+                })
+        }else{
+            userApi('vendor')
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        setVender({
+                            list: result.list.map((data)=> data.vendor_name),
+                            value: result.list.map((data)=> data.vendor_id)
+                        })
+
+                        if(result.list.length === 1){
+                            setInputs(prev=>({...prev, vendor_id: result.list[0].vendor_id}))
+                            setFirstText(prev=>({...prev, vendor_id: result.list[0].vendor_name}))
+                        }
+                    }
+                })
+        }
     },[])
 
     useEffect(()=>{
@@ -38,7 +56,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     },[products.length])
 
     useEffect(()=>{
-        if(inputs?.vendor_id){
+        if(inputs?.vendor_id && !id){
             userApi('product', '', {vendor_id: inputs.vendor_id})
                 .then((result)=>{
                     // console.log(result);
@@ -54,14 +72,13 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     }
                 })
         }
-    },[inputs?.vendor_id])
+    },[inputs?.vendor_id, id])
 
     useEffect(()=>{
-        if(inputs?.product_id){
-            // console.log(product);
+        if(inputs?.product_id && product && !id){
             setOption({
-                list: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.option_name),
-                value: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList.map((data)=> data.product_option_id),
+                list: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data.option_name),
+                value: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data.product_option_id),
                 data: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList
             })
 
@@ -69,7 +86,17 @@ export default function EstimateProduct({ orderProductList, products, setProduct
             setFirstText((prev)=>({...prev, product_option_id: '', order_quantiry: ''}))
             setOptionPrice()
         }
-    },[inputs?.product_id, product])
+
+        if(product && id){
+            // console.log(product.data);
+            setOption({
+                list: product.data?.map((data)=> data.option_name),
+                value: product.data?.map((data)=> data.product_option_id),
+                data: product.data
+            })
+
+        }
+    },[inputs?.product_id, product, id])
 
     useEffect(()=>{
         if(inputs?.product_option_id){
@@ -104,14 +131,14 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                 <li>
                     <label htmlFor="" onClick={()=>console.log(inputs)}>メーカー</label>
                     <div>
-                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} firstText={firstText?.vendor_id} setInputs={setInputs} setFirstText={setFirstText} name='vendor_id'/>
+                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} firstText={firstText?.vendor_id} setInputs={setInputs} setFirstText={setFirstText} name='vendor_id' disabled={id}/>
                     </div>
                 </li>
                 <li>
                     <label htmlFor="" onClick={()=>console.log(firstText)}>製品</label>
                     <div>
                         <div>
-                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs.vendor_id || !product} key={inputs.vendor_id}/>
+                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs.vendor_id || !product || id} key={inputs.vendor_id} />
                         </div>
                     </div>
                 </li>
@@ -153,13 +180,14 @@ export default function EstimateProduct({ orderProductList, products, setProduct
             </ul>
             <div>
                 {products.length - 1 === productIdx &&
-                    <button type='button' className={!inputs?.order_quantiry ? 'disabled' : ''}
+                    <button type='button' className={(!inputs?.order_quantiry || id) ? 'disabled' : ''}
                         onClick={()=>{
                             if(inputs?.order_quantiry){
                                 setProducts(prev=>[...prev, {...orderProductList}])
                                 setFirstTexts(prev=>[...prev, {...firstTextList}])
                             }
                         }}
+                        disabled={id}
                     >+ 製品追加</button>
                 }
                 { products.length > 1 &&

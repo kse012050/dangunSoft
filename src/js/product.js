@@ -308,7 +308,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 1,
@@ -460,7 +461,8 @@ export const iconList = [
                 title: 'JetBrains AIのライセンスは、JetBrains製品ごとに購入する必要がありますか？',
                 description: 'JetBrains AIライセンスを購入すると、同じアカウントのすべてのJetBrains製品で使用できます。'
             }
-        ]
+        ],
+        productLink: ''
     },
     {
         idx: 2,
@@ -629,7 +631,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 3,
@@ -798,7 +801,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 4,
@@ -967,7 +971,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 5,
@@ -1135,7 +1140,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 6,
@@ -1304,7 +1310,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 7,
@@ -1473,7 +1480,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 8,
@@ -1641,7 +1649,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 9,
@@ -1810,7 +1819,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 10,
@@ -1979,7 +1989,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 11,
@@ -2149,7 +2160,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 12,
@@ -2316,7 +2328,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 13,
@@ -2515,7 +2528,8 @@ export const iconList = [
         },
         purchaseText: ['ReSharper C++ は ReSharper と dotUltimate で購入可能です。'],
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 14,
@@ -2682,7 +2696,8 @@ export const iconList = [
         },
         purchaseText: ['dotCoverは dotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 15,
@@ -2848,7 +2863,8 @@ export const iconList = [
         },
         purchaseText: ['dotTraceは dotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 16,
@@ -3014,7 +3030,8 @@ export const iconList = [
         },
         purchaseText: ['dotMemoryはdotUltimateで購入可能です。'],
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 17,
@@ -3169,7 +3186,8 @@ export const iconList = [
             ]
         },
         subscribe: commonSubscribe,
-        FAQ: commonFAQ
+        FAQ: commonFAQ,
+        productLink: ''
     },
     {
         idx: 18,
@@ -3349,7 +3367,8 @@ export const iconList = [
                 title: 'ゲストもIDEが必要ですか？',
                 description: 'セッションに参加するゲストはIDE(統合開発環境)は必要なく、招待リンクがあれば大丈夫です。ゲストは招待リンクに移動してクライアントプログラムをダウンロードし、このクライアントプログラムを通じてCode With Meセッションに参加することができます。Code With MeがサポートされているJetBrains IDEを使用している場合は、IDEから直接セッションに参加できます。'
             }
-        ]
+        ],
+        productLink: ''
     },
     {
         idx: 19,
@@ -3501,7 +3520,8 @@ export const iconList = [
                 title: 'Dataloreを社内サーバーにインストールできますか？',
                 description: 'はい、Datalore Enterpriseを利用すれば、KubernetesまたはDocker技術を介して社内サーバーにDataloreをインストールすることができます。'
             }
-        ]
+        ],
+        productLink: ''
     },
     {
         idx: 20,
@@ -3931,7 +3951,8 @@ export const iconList = [
                 title: 'Helpdeskエージェントの購入',
                 description: 'YouTrack Serverは3人のHelpdeskエージェントを無料で提供します。YouTrack Serverで4人以上のHelpdeskエージェントが必要な場合は、Helpdeskエージェントを購入する必要があります。Helpdeskエージェントを購入する際に注意すべき点は、YouTrack Serverサブスクリプションのユーザー数にHelpdeskエージェントの数も含める必要があるということです。例えば、25人のユーザーのうち20人が一般ユーザーで5人がHelpdeskエージェントである場合、YouTrack Server 25-user packサブスクリプションと5人のHelpdeskエージェントを購入する必要があります。'
             }
-        ]
+        ],
+        productLink: ''
     },
     {
         idx: 21,
@@ -4264,7 +4285,8 @@ export const iconList = [
                 title: 'Space EnterpriseサブスクリプションオプションにAll Products Packライセンスは含まれていますか？',
                 description: 'Space EnterpriseのサブスクリプションオプションにはAll Products Packライセンスが含まれており、Space EnterpriseのアクティブなすべてのユーザーにAll Products Packライセンスを提供します。提供したAll Products Packライセンスには、永久フォールバックライセンス(特定のバージョンの製品を永続的に使用できるライセンス)が含まれており、All Products Packライセンスのサブスクリプション期間はSpace Enterpriseのサブスクリプション期間と同様です。'
             }
-        ]
+        ],
+        productLink: ''
     },
     {
         idx: 22,
@@ -4435,7 +4457,8 @@ export const iconList = [
                 title: 'Qodanaの請求基準は何ですか？',
                 description: 'Qodanaは、アクティブコントリビューター(active contributor)の数に応じて費用を支払います。アクティブコントリビューターとは、90日以内にQodana Cloudに登録されたプロジェクトにコミットしたユーザーを意味します。'
             }
-        ]
+        ],
+        productLink: ''
     },
     {
         idx: 23,
