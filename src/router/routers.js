@@ -29,6 +29,8 @@ import AdminDetailedManagementCreate from "../admin/page/product/detailedManagem
 import AdminEstimate from "../admin/page/estimate/Estimate";
 import AdminEstimateDetail from "../admin/page/estimate/Detail";
 import AdminEstimateCalculation from "../admin/page/estimate/Calculation";
+import AdminPurchase from "../admin/page/purchase/Purchase";
+import AdminPurchaseDetail from "../admin/page/purchase/Detail";
 import AdminInquiry from "../admin/page/inquiry/Inquiry";
 import AdminInquiryDetail from "../admin/page/inquiry/Detail";
 import AdminSiteAccount from "../admin/page/site/account/Account";
@@ -143,6 +145,18 @@ export const routers = [
             },
             {
                 path: 'calculation/:id', element: <AdminEstimateCalculation />
+            },
+        ]
+    },
+    {
+        path: "/admin/purchase",
+        element: <AdminRoot />,
+        children: [
+            { 
+                index: true, element: <AdminPurchase />
+            },
+            {
+                path: ':id', element: <AdminPurchaseDetail />
             },
         ]
     },

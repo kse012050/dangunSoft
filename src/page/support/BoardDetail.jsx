@@ -9,13 +9,15 @@ export default function BoardDetail() {
     const boardPassword = sessionStorage.getItem('boardPassword')
 
     useEffect(()=>{
-        userApi('board/detail', '', {board_id: id, secret_password: boardPassword})
+        const parameter = {board_id: id}
+        boardPassword && (parameter.secret_password = boardPassword)
+        userApi('board/detail', '', parameter)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
                     setDetail(result.data)
                 }else{
-                    navigate('/support/board')
+                    navigate('/support/board2')
                 }
             })
 
@@ -51,7 +53,7 @@ export default function BoardDetail() {
                 <br/>
                 감사합니다.
             </div>
-            <Link to='/support/board' className='btn-border-black'>リスト</Link>
+            <Link to='/support/board2' className='btn-border-black'>リスト</Link>
         </section>
     );
 }

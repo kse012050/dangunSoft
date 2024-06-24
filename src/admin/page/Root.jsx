@@ -4,6 +4,7 @@ import Menu from '../components/Menu';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import {styleIdx} from '../js/style.js';
 import { adminApi } from '../api/api.js';
+import { userPageLog } from '../../api/api.js';
 
 export default function Root() {
     const location = useLocation().pathname;
@@ -33,6 +34,7 @@ export default function Root() {
     },[adminToken, navigate])
 
     useEffect(() => {
+        userPageLog(location, window.location.href, window.navigator.userAgent, document.referrer)
         return (
             document.querySelectorAll('[data-styleidx]').length ? styleIdx() : undefined
         )

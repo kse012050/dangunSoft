@@ -5,6 +5,7 @@ import {styleIdx} from '../js/style.js';
 import Header from '../components/Header'
 import Footer from '../components/Footer.jsx';
 import '../css/import.css';
+import { userPageLog } from '../api/api.js';
 
 export default function Root() {
     const location = useLocation().pathname.slice(1).split('/');
@@ -23,6 +24,7 @@ export default function Root() {
     }
 
     useEffect(()=>{
+        userPageLog(location.join('/'), window.location.href, window.navigator.userAgent, document.referrer)
         return(
             document.querySelectorAll('[data-styleidx]').length ? styleIdx() : undefined
         )

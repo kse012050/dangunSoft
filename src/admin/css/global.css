@@ -7,7 +7,7 @@ mark.point{color: var(--color-point);}
 
 
 .adminPage input:not([type="submit"]), textarea{font-size: 15px; line-height: 19px; padding-left: 15px; height: 40px; width: 100%; font-weight: 400; border: 1px solid var(--color-line); border-radius: 4px; box-sizing: border-box;}
-.adminPage textarea{padding-block: 15px;}
+.adminPage textarea{padding: 15px;}
 .adminPage input:is([type="checkbox"], [type="radio"]) + label::before{width: 24px;}
 .adminPage input[type="submit"]{border: none;}
 .adminPage input:not([type="submit"]):read-only{background-color: #dcdcdc;}
@@ -86,25 +86,26 @@ mark.point{color: var(--color-point);}
 .adminPage .board-period{display: flex; align-items: center; gap: 10px; margin-bottom: 10px;}
 .adminPage .board-period > label{width: 50px; flex-shrink: 0; font-size: 18px; font-weight: 700;}
 .adminPage .board-period > div{display: flex; align-items: center; gap: 10px;}
-.adminPage [class*="boardBox"] .board-title{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 56px; font-weight: 700; padding-inline: 70px; border-top: 1px solid var(--color-font01); background-color: #F7F7F7; box-sizing: border-box;}
+.adminPage [class*="boardBox"] .board-title{font-size: 15px; display: flex; align-items: center; gap: 80px; height: 46px; font-weight: 700; padding-inline: 70px; border-top: 1px solid var(--color-font01); background-color: #F7F7F7; box-sizing: border-box;}
 .adminPage [class*="boardBox"] .board-title > b{text-align: center;}
 .adminPage [class*="boardBox"] .board-detail:not(:has(:nth-child(1)))::after{content: '게시물이 없습니다.'; height: 300px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #DCDCDC;}
-.adminPage [class*="boardBox"] :is(.board-detail > li:not(:has( > a)), .board-detail > li > a){font-size: 15px; display: flex; align-items: center; gap: 80px; height: 50px; padding-inline: 70px; border-bottom: 1px solid #DCDCDC;}
+.adminPage [class*="boardBox"] :is(.board-detail > li:not(:has( > a)), .board-detail > li > a){font-size: 15px; display: flex; align-items: center; gap: 80px; height: 40px; padding-inline: 70px; border-bottom: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > *{text-align: center;}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > *:not(p){width: 80px; flex-shrink: 0;}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p{flex: 1; min-width: 100px;}
 .adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > p span{display: inline-block; max-width: 100%; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
-.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .time{width: 100px;}
-.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .img img{width: 50px; aspect-ratio: 1 / 0.8; object-fit: cover;}
+.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .time{width: 155px;}
+.adminPage [class*="boardBox"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a) > .img img{width: 40px; aspect-ratio: 1 / 0.8; object-fit: cover;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > *:not(div){flex: 1;}
 .adminPage [class*="boardBox"] :is(.board-title:not(:has(p)), .board-detail li:not(:has( > a)):not(:has(p)), .board-detail li:has(a):not(:has(p)) > a) > div{flex-shrink: 0;}
-.adminPage .exposure{display: flex; align-items: center;}
+.adminPage .exposure{display: flex; justify-content: center; align-items: center;}
 .adminPage .exposure input[type="checkbox"] + label{all: inherit; max-width: 62px; width: 60px; border: 1px solid #DCDCDC; height: 30px; border-radius: 100px; position: relative; cursor: pointer; padding: 0; text-indent: -9999px;}
 .adminPage .exposure input[type="checkbox"] + label::before{display: none;}
 .adminPage .exposure input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
 .adminPage .exposure input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
 .adminPage [class*="boardBox"] .board-detail li .exposure{justify-content: center;}
 .adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{width: 140px; flex-shrink: 0;}
+.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button > *{line-height: 30px;}
 .adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{display: flex; justify-content: flex-start; gap: 5px;}
 .adminPage [class*="boardBox"] > :is(a, button){display: block; max-width: 65.94px; margin-left: auto; margin-bottom: 10px;}
 /* .adminPage [class*="boardBox"] .board-detail .button{display: flex; justify-content: center; gap: 10px; width: 150px;} */
@@ -120,25 +121,28 @@ mark.point{color: var(--color-point);}
 .adminPage [class*="boardBox"].boardBox-statistics .board-detail li > *{text-align: center;}
 .adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a){gap: 0;}
 .adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:not(:last-child):not(.option){margin-inline: 40px;}
-.adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .option{width: 200px;}
-.adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li{height: auto; min-height: 50px;}
-.adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li{height: 50px; display: flex; justify-content: center; align-items: center; border-left: 1px solid #DCDCDC; border-right: 1px solid #DCDCDC;}
+.adminPage [class*="boardBox"].boardBox-productDetail :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .option{width: 140px;}
+.adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li{height: auto; min-height: 40px;}
+.adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li{height: 40px; display: flex; justify-content: center; align-items: center; border-left: 1px solid #DCDCDC; border-right: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"].boardBox-productDetail .board-detail > li .option li:not(:last-child){border-bottom: 1px solid #DCDCDC;}
 .adminPage [class*="boardBox"].boardBox-estimate .board-detail > li a{text-align: center;}
 .adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a){gap: 20px; padding-inline: 20px;}
 .adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a) > *{flex: auto;}
 .adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a) > *:not([class]){max-width: 60px; flex-shrink: 0;}
 .adminPage [class*="boardBox"].boardBox-estimate :is(.board-title, .board-detail li a) > *.bigWidth{flex: 1;}
+.adminPage [class*="boardBox"].boardBox-purchase :is(.board-title, .board-detail li a){gap: 20px; padding-inline: 20px; text-align: center;}
 /* .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{width: 140px;}
 .adminPage [class*="boardBox"][class*="boardBox-suppot"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > *:last-child{display: flex; justify-content: center; gap: 5px;} */
 
 
 /* 입력 박스 */
+.adminPage .inputBox{max-width: 700px;}
 .adminPage .inputBox > ul{border-top: 1px solid #dcdcdc;}
 .adminPage .inputBox > ul > li{font-size: 15px; line-height: 18px; display: flex; border-bottom: 1px solid #dcdcdc;}
 .adminPage .inputBox > ul > li > label{width: 150px; padding-block: 16px; font-weight: 700; flex-shrink: 0; background-color: #F7F7F7; display: flex; align-items: center; justify-content: center;}
 .adminPage .inputBox > ul > li > div{flex: 1; display: flex; align-items: center; padding: 10px 20px;}
 .adminPage .inputBox > ul > li > div textarea{height: 300px;}
+.adminPage .inputBox > ul > li > div.exposure{justify-content: flex-start;}
 .adminPage .inputBox > ul > li div .radioBox{display: flex; gap: 10px;}
 .adminPage .inputBox > ul > li ul.imgBox{padding: 10px 20px;}
 .adminPage .inputBox > ul > li ul.imgBox li{position: relative; display: inline-block;}
@@ -156,7 +160,9 @@ mark.point{color: var(--color-point);}
 
 
 /* 정보 박스 */
+.adminPage .infoBox{max-width: 1000px;}
 .adminPage .infoBox strong{display: block; font-size: 25px; margin-bottom: 20px; font-weight: 700;}
+.adminPage .infoBox > p{font-size: 20px; margin-bottom: 10px;}
 .adminPage .infoBox ul:not(:last-of-type){margin-bottom: 30px;}
 .adminPage .infoBox ul{display: flex; flex-wrap: wrap; border-top: 1px solid #dcdcdc;}
 .adminPage .infoBox ul li:not(.full){width: 50%;}
@@ -186,11 +192,15 @@ mark.point{color: var(--color-point);}
 .adminPage header{position: sticky; top: 0; width: 100%; height: var(--adminHeaderHeight); display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: white; box-sizing: border-box; box-shadow: 0px 5px 21px -5px #cdd1e1; z-index: 100;}
 .adminPage header h1 a{--styleIdx: 0; display: block; width: 150px; aspect-ratio: 249 / 40; background: url(../../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
 .adminPage > div{display: flex;}
-.adminPage > div .menuArea{ /* width: 220px; */ flex-shrink: 0; padding: 40px 20px; box-shadow: 0px 5px 21px -5px #cdd1e1; box-sizing: border-box;}
+.adminPage > div .menuArea{ width: 220px; min-height: 100vh; flex-shrink: 0; padding: 40px 20px; box-shadow: 0px 5px 21px -5px #cdd1e1; box-sizing: border-box;}
 .adminPage > div .menuArea li > :is(button, a){font-size: 20px; font-weight: 700;}
+.adminPage > div .menuArea li:not(:last-child){margin-bottom: 20px;}
+.adminPage > div .menuArea li button{color: rgba(22, 22, 22, 0.5);}
+.adminPage > div .menuArea li button:hover{color: black;}
+.adminPage > div .menuArea li button:has(+ div){color: black;}
 .adminPage > div .menuArea li a{color: rgba(22, 22, 22, 0.5);}
-.adminPage > div .menuArea li a.active{color: #222;}
-.adminPage > div .menuArea li div{padding: 20px;}
+.adminPage > div .menuArea li a:is(.active, :hover){color: #222;}
+.adminPage > div .menuArea li div{padding-inline: 20px; margin-top: 20px;}
 .adminPage > div .menuArea li div a{display: block; font-size: 16px; font-weight: 700; padding-block: 10px;}
 /* .adminPage > div .menuArea li div a.active{color: #222;} */
 

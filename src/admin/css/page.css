@@ -1,15 +1,19 @@
 
 /* 로그인 */
-.page-body-wrapper{height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f8f8f8;}
-.form-signin{max-width: 380px; padding: 1.875rem 2.5rem; margin: 0 auto; border-radius: 4px; background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.1); box-sizing: border-box;}
-.form-signin h2{font-size: 2em; margin-bottom: 30px; text-align: center;}
-.form-signin ul{margin-bottom: 20px;}
-.form-signin ul li:not(:last-child){margin-bottom: 10px;}
-.form-signin .btn-point{width: 100%; font-weight: 700; background-color: var(--color-point); color: white; line-height: 40px;}
+.adminPage .signInArea{height: 100vh; max-width: 360px; flex-direction: column; justify-content: center; align-items: center; margin-inline: auto;}
+.adminPage .signInArea::before{content: ''; width: 140px; aspect-ratio: 140 / 116; background: url(../images/symbol.png) no-repeat center / cover; margin-bottom: 60px;}
+.adminPage .signInArea form{width: 100%;}
+.adminPage .signInArea form h2{font-size: 26px; line-height: 32px; font-weight: 700; margin-bottom: 30px; text-align: center;}
+.adminPage .signInArea form ul{font-size: 16px; margin-bottom: 40px;}
+.adminPage .signInArea form ul li:not(:last-child){margin-bottom: 10px;}
+.adminPage .signInArea form ul li:last-child{margin-top: 20px;}
+.adminPage .signInArea form ul li input:not([type="checkbox"]){height: 60px;}
+.adminPage .signInArea form ul li input:not([type="checkbox"])::placeholder{color: #bbb;}
+.adminPage .signInArea form input[type="submit"]{width: 100%; height: 60px; font-size: 18px; font-weight: 700; color: white; background-color: black; border-radius: 6px;}
 
 
 /* 내 정보 관리 */
-.adminPage .myInfoArea{font-size: 15px;}
+.adminPage .myInfoArea{font-size: 15px; max-width: 500px;}
 .adminPage .myInfoArea ul li{display: flex;}
 .adminPage .myInfoArea ul li:not(:last-child){margin-bottom: 10px;}
 .adminPage .myInfoArea ul li label{width: 150px; flex-shrink: 0; display: flex; align-items: center;}
@@ -28,13 +32,22 @@
 .adminStatisticsPage .chartArea ul li{display: flex; align-items: center; gap: 10px;}
 .adminStatisticsPage .chartArea ul li::before{content: ''; width: 15px; aspect-ratio: 1; border-width: 1px; border-style: solid; border-radius: 100%;}
 .adminStatisticsPage .chartArea ul li:not(:last-child){ margin-bottom: 5px;}
-.adminStatisticsPage .chartArea ul li:nth-child(1)::before{background-color: rgba(255, 206, 86, 0.2); border-color: rgba(255, 206, 86, 1);}
+/* .adminStatisticsPage .chartArea ul li:nth-child(1)::before{background-color: rgba(255, 206, 86, 0.2); border-color: rgba(255, 206, 86, 1);}
 .adminStatisticsPage .chartArea ul li:nth-child(2)::before{background-color: rgba(255, 159, 64, 0.2); border-color: rgba(255, 159, 64, 1);}
 .adminStatisticsPage .chartArea ul li:nth-child(3)::before{background-color: rgba(255, 99, 132, 0.2); border-color: rgba(255, 99, 132, 1);}
-.adminStatisticsPage .chartArea ul li:nth-child(4)::before{background-color: rgba(255, 99, 132, 0.2); border-color: rgba(255, 99, 132, 1);}
+.adminStatisticsPage .chartArea ul li:nth-child(4)::before{background-color: rgba(255, 99, 132, 0.2); border-color: rgba(255, 99, 132, 1);} */
+.adminStatisticsPage .chartArea ul li:nth-child(1)::before{background-color: #FFFDC4; border-color: #F8B800;}
+.adminStatisticsPage .chartArea ul li:nth-child(2)::before{background-color: #FFE8A4; border-color: #F8B800;}
+.adminStatisticsPage .chartArea ul li:nth-child(3)::before{background-color: #FFE9D0; border-color: #F8B800;}
+.adminStatisticsPage .chartArea ul li:nth-child(4)::before{background-color: #E2F7AC; border-color: #96C51A;}
 
 
-/* 견적 관리 - 견적 요청 내역 - 견적 산정 */
+/* 관리자 - 상품 관리 - 제품 상세 관리 - 상세 */
+.adminProductDetailManagementDetailPage .inputBox{max-width: 1000px;}
+.adminProductDetailManagementDetailPage .inputBox > .btn-point{margin-top: 10px;}
+
+
+/* 관리자 - 견적 관리 - 견적 요청 내역 - 견적 산정 */
 .adminEstimateCalculationDetailPage > div > strong{display: block; font-size: 25px; margin-bottom: 20px; font-weight: 700;}
 .adminEstimateCalculationDetailPage > div:not(:last-of-type){margin-bottom: 30px;}
 .adminEstimateCalculationDetailPage .boardArea{}
@@ -60,6 +73,11 @@
 .adminEstimateCalculationDetailPage .finalArea dl:last-of-type{font-size: 25px; font-weight: 700; padding-top: 20px; border-top: 1px solid #DCDCDC;}
 .adminEstimateCalculationDetailPage .commentArea textarea{height: 300px; padding: 15px;}
 .adminEstimateCalculationDetailPage .buttonArea{display: flex; justify-content: flex-end; gap: 10px;}
+
+
+/* 관리자 - 구매 관리 - 구매 상세 */
+.adminPurchaseDetailPage .infoBox strong:has(+ .agreeArea){margin-top: 30px;}
+.adminPurchaseDetailPage .infoBox .agreeArea{display: flex; gap: 30px;}
 
 /* ------------------------------------------------------- */
 

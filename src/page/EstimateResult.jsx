@@ -8,7 +8,7 @@ export default function EstimateResult() {
 
     useEffect(()=>{
         estimateDetail || navigate('/estimate')
-        console.log(estimateDetail);
+        // console.log(estimateDetail);
         sessionStorage.setItem('estimateDetail', sessionStorage.getItem('estimateDetail'))
         return () => {
             sessionStorage.removeItem('estimateDetail')

@@ -23,6 +23,11 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                         list: result.list.map((data)=> data.vendor_name),
                         value: result.list.map((data)=> data.vendor_id)
                     })
+
+                    if(result.list.length === 1){
+                        setInputs(prev=>({...prev, vendor_id: result.list[0].vendor_id}))
+                        setFirstText(prev=>({...prev, vendor_id: result.list[0].vendor_name}))
+                    }
                 }
             })
     },[])
@@ -36,7 +41,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
         if(inputs?.vendor_id){
             userApi('product', '', {vendor_id: inputs.vendor_id})
                 .then((result)=>{
-                    console.log(result);
+                    // console.log(result);
                     if(result.result){
                         setProduct({
                             list: result.list.map((data)=> data.product_name),
@@ -60,15 +65,15 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                 data: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList
             })
 
-            setInputs((prev)=>({...prev, product_option_id: ''}))
-            setFirstText((prev)=>({...prev, product_option_id: ''}))
+            setInputs((prev)=>({...prev, product_option_id: '', order_quantiry: ''}))
+            setFirstText((prev)=>({...prev, product_option_id: '', order_quantiry: ''}))
+            setOptionPrice()
         }
     },[inputs?.product_id, product])
 
     useEffect(()=>{
         if(inputs?.product_option_id){
-            setInputs((prev)=>({...prev, order_quantiry: '1'}))
-            console.log(option);
+            setInputs((prev)=>({...prev, order_quantiry: option.data.filter(data=> data.product_option_id === inputs?.product_option_id)[0].minimum_quantiry}))
             setOptionPrice(option.data.filter(data=>data.product_option_id === inputs.product_option_id)[0].optionPriceList)
         }
     },[inputs?.product_option_id])
@@ -106,7 +111,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     <label htmlFor="" onClick={()=>console.log(firstText)}>製品</label>
                     <div>
                         <div>
-                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs.vendor_id} key={inputs.vendor_id}/>
+                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs.vendor_id || !product} key={inputs.vendor_id}/>
                         </div>
                     </div>
                 </li>
@@ -114,7 +119,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     <label htmlFor="">オプション</label>
                     <div>
                         <div>
-                            <Select placeholder="選択" list={option?.list} value={option?.value} firstText={firstText?.product_option_id} setInputs={setInputs} setFirstText={setFirstText} name='product_option_id'  disabled={!inputs.product_id} key={inputs.product_id}/>
+                            <Select placeholder="選択" list={option?.list} value={option?.value} firstText={firstText?.product_option_id} setInputs={setInputs} setFirstText={setFirstText} name='product_option_id'  disabled={!inputs.product_id || !option} key={inputs.product_id}/>
                         </div>
                     </div>
                 </li>

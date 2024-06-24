@@ -60,7 +60,7 @@ export default function InquiryResult () {
                     }
                 </div>
                 
-                <Link to='/support/inquiry' className='btn-bg'>確認</Link>
+                <Link to='/support/board' className='btn-bg'>確認</Link>
             </section>
         </>
     );

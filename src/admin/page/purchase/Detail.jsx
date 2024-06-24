@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { adminApi } from '../../api/api';
-import { Link, useParams } from 'react-router-dom';
 
 export default function Detail() {
     const { id } = useParams()
     const [detail, setDetail] = useState()
 
     useLayoutEffect(()=>{
-        adminApi('board/detail', '', {board_id: id})
+        adminApi('order/detail', '', {order_id: id})
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
@@ -18,7 +18,7 @@ export default function Detail() {
 
     return (
         <>
-            <h2>견적 요청 상세 정보</h2>
+            <h2>구매 상세 정보</h2>   
 
             <div className='infoBox'>
                 <strong>고객 정보</strong>
@@ -30,49 +30,49 @@ export default function Detail() {
                         </div>
                     </li>
                     <li>
-                        <span>작성시간</span>
+                        <span>주문번호</span>
+                        <div>
+                            <p>{ detail?.order_code }</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>결제금액</span>
+                        <div>
+                            <p>{ detail?.final_pay_price }</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>상태</span>
+                        <div>
+                            <p>{ detail?.state }</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>결제정보</span>
+                        <div>
+                            <p>{ detail?.pay_result_info }</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>구매일시</span>
                         <div>
                             <p>{ detail?.reg_date }</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span>글쓴이</span>
-                        <div>
-                            <p>{ detail?.write_name }</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span>기업명</span>
-                        <div>
-                            <p>{ detail?.company_name }</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span>이메일</span>
-                        <div>
-                            <p>{ detail?.email }</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span>연락처</span>
-                        <div>
-                            <p>{ detail?.contact_information }</p>
                         </div>
                     </li>
                 </ul>
 
                 {!!detail?.order_product_list.length &&
                     <>
-                        <strong>견적 요청 제품</strong>
+                        <strong>구매 상품 정보</strong>
                         <p>총 {detail?.order_product_list.length}건</p>
                         {detail?.order_product_list.map((data)=>
-                            <ul data-count key={ data.product_option_id }>
-                                <li>
-                                    <span>벤더사</span>
-                                    <div>
-                                        <p>{ data.vendor_name }</p>
-                                    </div>
-                                </li>
+                            <ul data-count key={data.order_id}>
+                            <li>
+                                <span>벤더사</span>
+                                <div>
+                                    <p>{ data.vendor_name }</p>
+                                </div>
+                            </li>
                                 <li>
                                     <span>제품명</span>
                                     <div>
@@ -98,7 +98,19 @@ export default function Detail() {
                                     </div>
                                 </li>
                                 <li>
-                                    <span>기본 견적</span>
+                                    <span>구독 기간</span>
+                                    <div>
+                                        <p>{ data.option_price_info_obj }</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>견적 금액</span>
+                                    <div>
+                                        <p>{ data.total_price }</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>최종 금액</span>
                                     <div>
                                         <p>{ data.total_price }</p>
                                     </div>
@@ -107,8 +119,13 @@ export default function Detail() {
                         )}
                     </>
                 }
-                <div className='buttonArea'>
-                    <Link to={`/admin/estimate/calculation/${id}`} className='btn-point'>견적 작성</Link>
+
+                <strong>동의 정보</strong>
+                <div className='agreeArea'>
+                    <input type="checkbox" id='order'/>
+                    <label htmlFor="order">주문 동의</label>
+                    <input type="checkbox" id='privacy'/>
+                    <label htmlFor="privacy">개인정보 취급위탁 동의</label>
                 </div>
             </div>
         </>

@@ -70,7 +70,7 @@ export default function Create() {
 
     return (
         <>
-            <h2>문답 등록</h2>
+            <h2>문답 {!id ? '등록': '수정'}</h2>
             <div className='board-selectBox'>
                 {firstDepth &&
                     <>
@@ -97,7 +97,7 @@ export default function Create() {
                     </ul>
                     <div className='buttonArea'>
                         <Link to='/admin/support/qna' className='btn-point-border'>취소</Link>
-                        <input type="submit" className='btn-point' value='등록' onClick={onSubmit}/>
+                        <input type="submit" className='btn-point' value={!id ? '등록': '수정'} onClick={onSubmit}/>
                     </div>
                 </fieldset>
             </form>

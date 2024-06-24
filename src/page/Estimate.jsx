@@ -117,7 +117,7 @@ export default function Estimate() {
                         <li>
                             <label htmlFor="contact_information">電話番号</label>
                             <div>
-                                <input type="text" name='contact_information' id='contact_information' placeholder='電話番号を入力してください' data-formet="numb" required/>
+                                <input type="text" name='contact_information' id='contact_information' placeholder='電話番号を入力してください' /* data-formet="numb" */ required/>
                             </div>
                         </li>
                         <li>
