@@ -59,7 +59,7 @@ export default function ProductDetail() {
                                     )}
                                 </tr>
                             )}
-                            {productData.purchase.bottom.map((data, a)=>
+                            {productData.purchase?.bottom && productData.purchase.bottom.map((data, a)=>
                                 <tr key={a}>
                                     {data.map((data, i)=> 
                                         <td 
@@ -102,7 +102,97 @@ export default function ProductDetail() {
                                         )}
                                     </tr>
                                 )}
-                                {productData.purchase2?.bottom.map((data, a)=>
+                                {productData.purchase2?.bottom && productData.purchase2?.bottom.map((data, a)=>
+                                    <tr key={a}>
+                                        {data.map((data, i)=> 
+                                            <td 
+                                                key={i}
+                                                colSpan={data?.col ? data.col: 1}
+                                                rowSpan={data?.row ? data.row : 1}
+                                            >
+                                                {data.link &&
+                                                    <Link to={data.link} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                                }
+                                            </td>
+                                        )}
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                { productData.purchase3 &&
+                    <div className="purchaseBox2">
+                        <table>
+                            <thead>
+                                {productData.purchase3.title.map((data, i)=>
+                                    <tr key={i}>
+                                        {data.map((data, i)=>
+                                            <th key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text }</th>
+                                        )}
+                                    </tr>
+                                )}
+                            </thead>
+                            <tbody>
+                                {productData.purchase3.details.map((data, i)=>
+                                    <tr key={i}>
+                                        {data.map((data, i)=>
+                                            <td 
+                                                key={i}
+                                                colSpan={data?.col ? data.col: 1}
+                                                rowSpan={data?.row ? data.row : 1}
+                                                title={data.include ? '포함' : ''}
+                                            >{ data.text }</td>
+                                        )}
+                                    </tr>
+                                )}
+                                {productData.purchase3?.bottom && productData.purchase3?.bottom.map((data, a)=>
+                                    <tr key={a}>
+                                        {data.map((data, i)=> 
+                                            <td 
+                                                key={i}
+                                                colSpan={data?.col ? data.col: 1}
+                                                rowSpan={data?.row ? data.row : 1}
+                                            >
+                                                {data.link &&
+                                                    <Link to={data.link} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                                }
+                                            </td>
+                                        )}
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                { productData.purchase4 &&
+                    <div className="purchaseBox2">
+                        <table>
+                            <thead>
+                                {productData.purchase4.title.map((data, i)=>
+                                    <tr key={i}>
+                                        {data.map((data, i)=>
+                                            <th key={i} colSpan={data?.col ? data.col: 1} rowSpan={data?.row ? data.row : 1}>{ data.text }</th>
+                                        )}
+                                    </tr>
+                                )}
+                            </thead>
+                            <tbody>
+                                {productData.purchase4.details.map((data, i)=>
+                                    <tr key={i}>
+                                        {data.map((data, i)=>
+                                            <td 
+                                                key={i}
+                                                colSpan={data?.col ? data.col: 1}
+                                                rowSpan={data?.row ? data.row : 1}
+                                                title={data.include ? '포함' : ''}
+                                            >{ data.text }</td>
+                                        )}
+                                    </tr>
+                                )}
+                                {productData.purchase4?.bottom && productData.purchase4?.bottom.map((data, a)=>
                                     <tr key={a}>
                                         {data.map((data, i)=> 
                                             <td 

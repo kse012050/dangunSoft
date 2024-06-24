@@ -198,7 +198,7 @@
 
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, .buyPage, .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
 :is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimateResultPage, .buyResultPage ) section h2 + p{color: var(--color-font01); text-align: center;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
@@ -252,18 +252,18 @@
 
 
 /* 구매하기 페이지 */
-.buyPage section form fieldset strong{display: block; font-weight: 700;}
-.buyPage section form .inputArea ul li label:first-child{font-weight: 700; line-height: 20px;}
-/* .buyPage section form .inputArea ul li label:first-child + div{margin-top: 20px;} */
-.buyPage section form .inputArea ul li label:first-child + p{margin-top: 10px; line-height: 22px;}
-.buyPage section form .inputArea ul li > div:has(input){display: flex; gap: 30px;}
-.buyPage section form .inputArea ul li > div:has(input) input[type="radio"] + label{display: flex; align-items: center;}
-.buyPage section form .inputArea ul li > div:has(input) input[type="radio"] + label::before{margin-right: 10px; content: ''; --styleIdx: 0; aspect-ratio: 1; background: url(../images/icon-radio.png) no-repeat left top calc(100% * var(--styleIdx))/ 100%;}
-.buyPage section form .inputArea ul li > div:has(input) input[type="radio"]:checked + label::before{--styleIdx: 1;}
-.buyPage section form .inputArea ul li > div:has(dl, p){color: var(--color-font02); margin-top: 20px;}
-.buyPage section form .inputArea ul li > div:has(dl, p) dl{display: flex; align-items: center;}
-.buyPage section form .inputArea ul li > div:has(dl, p) dl dt{display: flex; align-items: center;}
-.buyPage section form .inputArea ul li > div:has(dl, p) dl dt::after{content: ':';}
+[class*="buy"][class*="Page"] section form fieldset strong{display: block; font-weight: 700;}
+[class*="buy"][class*="Page"] section form .inputArea ul li label:first-child{font-weight: 700; line-height: 20px;}
+/* [class*="buy"][class*="Page"] section form .inputArea ul li label:first-child + div{margin-top: 20px;} */
+[class*="buy"][class*="Page"] section form .inputArea ul li label:first-child + p{margin-top: 10px; line-height: 22px;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(input){display: flex; gap: 30px;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(input) input[type="radio"] + label{display: flex; align-items: center;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(input) input[type="radio"] + label::before{margin-right: 10px; content: ''; --styleIdx: 0; aspect-ratio: 1; background: url(../images/icon-radio.png) no-repeat left top calc(100% * var(--styleIdx))/ 100%;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(input) input[type="radio"]:checked + label::before{--styleIdx: 1;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(dl, p){color: var(--color-font02); margin-top: 20px;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(dl, p) dl{display: flex; align-items: center;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(dl, p) dl dt{display: flex; align-items: center;}
+[class*="buy"][class*="Page"] section form .inputArea ul li > div:has(dl, p) dl dt::after{content: ':';}
 
 
 /* 견적 요청, 구매 완료 페이지 공통 */

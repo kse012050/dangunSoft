@@ -189,35 +189,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$779\n(税込み $856.90)'
+                        text: '¥101,270\n(税込み ¥111,397)'
                     },
                     {
-                        text: '$289\n(税込み $317.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$623\n(税込み $685.30)'
-                    },
-                    {
-                        text: '$231\n(税込み $254.10)'
+                        text: '¥37,570\n(税込み ¥41,327)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$467\n(税込み $513.70)'
+                        text: '¥81,016\n(税込み ¥89,118)'
                     },
                     {
-                        text: '$173\n(税込み $190.30)'
+                        text: '¥30,056\n(税込み ¥33,062)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥60,762\n(税込み ¥66,838)'
+                    },
+                    {
+                        text: '¥22,542\n(税込み ¥24,796)'
                     },
                 ],
                 [
@@ -284,11 +284,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/19'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/56'
                     }
                 ],
                 [
@@ -298,11 +298,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/19'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/56'
                     },
                 ]
             ]
@@ -354,13 +354,13 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$200\n(税込み $220)'
+                        text: '¥26,000\n(税込み ¥28,600)'
                     },
                     {
-                        text: '$100\n(税込み $110)'
+                        text: '¥13,000\n(税込み ¥14,300)'
                     },
                 ],
                 [
@@ -416,11 +416,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/34'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/58'
                     }
                 ],
                 [
@@ -430,11 +430,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/34'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/58'
                     },
                 ]
             ]
@@ -510,35 +510,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$599\n(税込み $658.90)'
+                        text: '¥77,870\n(税込み ¥85,657)'
                     },
                     {
-                        text: '$169\n(税込み $185.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$479\n(税込み $526.90)'
-                    },
-                    {
-                        text: '$135\n(税込み $148.50)'
+                        text: '¥21,970\n(税込み ¥24,167)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$359\n(税込み $394.90)'
+                        text: '¥62,296\n(税込み ¥68,526)'
                     },
                     {
-                        text: '$101\n(税込み $111.10)'
+                        text: '¥17,576\n(税込み ¥19,334)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥51,394\n(税込み ¥46,722)'
+                    },
+                    {
+                        text: '¥13,182\n(税込み ¥14,500)'
                     },
                 ],
                 [
@@ -605,11 +605,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/15'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/45'
                     }
                 ],
                 [
@@ -619,11 +619,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/15'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/45'
                     },
                 ]
             ]
@@ -679,35 +679,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$249\n(税込み $273.90)'
+                        text: '¥32,370\n(税込み ¥35,607)'
                     },
                     {
-                        text: '$99\n(税込み $108.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$199\n(税込み $218.90)'
-                    },
-                    {
-                        text: '$79\n(税込み $86.90)'
+                        text: '¥12,870\n(税込み ¥14,157)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$149\n(税込み $163.90)'
+                        text: '¥28,486\n(税込み ¥25,896)'
                     },
                     {
-                        text: '$59\n(税込み $64.90)'
+                        text: '¥10,296\n(税込み ¥11,326)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥19,422\n(税込み ¥21,364)'
+                    },
+                    {
+                        text: '¥7,722\n(税込み ¥8,494)'
                     },
                 ],
                 [
@@ -774,11 +774,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/25'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/47'
                     }
                 ],
                 [
@@ -788,11 +788,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/25'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/47'
                     },
                 ]
             ]
@@ -848,35 +848,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$249\n(税込み $273.90)'
+                        text: '¥32,370\n(税込み ¥35,607)'
                     },
                     {
-                        text: '$99\n(税込み $108.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$199\n(税込み $218.90)'
-                    },
-                    {
-                        text: '$79\n(税込み $86.90)'
+                        text: '¥12,870\n(税込み ¥14,157)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$149\n(税込み $163.90)'
+                        text: '¥28,486\n(税込み ¥25,896)'
                     },
                     {
-                        text: '$59\n(税込み $64.90)'
+                        text: '¥10,296\n(税込み ¥11,326)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥19,422\n(税込み ¥21,364)'
+                    },
+                    {
+                        text: '¥7,722\n(税込み ¥8,494)'
                     },
                 ],
                 [
@@ -943,11 +943,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/24'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/46'
                     }
                 ],
                 [
@@ -957,11 +957,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/24'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/46'
                     },
                 ]
             ]
@@ -1016,35 +1016,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$249\n(税込み $273.90)'
+                        text: '¥32,370\n(税込み ¥35,607)'
                     },
                     {
-                        text: '$99\n(税込み $108.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$199\n(税込み $218.90)'
-                    },
-                    {
-                        text: '$79\n(税込み $86.90)'
+                        text: '¥12,870\n(税込み ¥14,157)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$149\n(税込み $163.90)'
+                        text: '¥28,486\n(税込み ¥25,896)'
                     },
                     {
-                        text: '$59\n(税込み $64.90)'
+                        text: '¥10,296\n(税込み ¥11,326)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥19,422\n(税込み ¥21,364)'
+                    },
+                    {
+                        text: '¥7,722\n(税込み ¥8,494)'
                     },
                 ],
                 [
@@ -1111,11 +1111,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/23'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/44'
                     }
                 ],
                 [
@@ -1125,11 +1125,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/23'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/44'
                     },
                 ]
             ]
@@ -1185,35 +1185,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$419\n(税込み $460.90)'
+                        text: '¥54,470\n(税込み ¥59,917)'
                     },
                     {
-                        text: '$149\n(税込み $163.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$335\n(税込み $368.50)'
-                    },
-                    {
-                        text: '$119\n(税込み $130.90)'
+                        text: '¥19,370\n(税込み ¥21,307)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$251\n(税込み $276.10)'
+                        text: '¥43,576\n(税込み ¥47,934)'
                     },
                     {
-                        text: '$89\n(税込み $97.90)'
+                        text: '¥15,496\n(税込み ¥17,046)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥32,682\n(税込み ¥35,950)'
+                    },
+                    {
+                        text: '¥11,622\n(税込み ¥12,784)'
                     },
                 ],
                 [
@@ -1280,11 +1280,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/26'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/48'
                     }
                 ],
                 [
@@ -1294,11 +1294,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/26'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/48'
                     },
                 ]
             ]
@@ -1354,35 +1354,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$229\n(税込み $251.90)'
+                        text: '¥29,770\n(税込み ¥32,747)'
                     },
                     {
-                        text: '$99\n(税込み $108.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$183\n(税込み $201.30)'
-                    },
-                    {
-                        text: '$79\n(税込み $86.90)'
+                        text: '¥12,870\n(税込み ¥14,157)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$137\n(税込み $150.70)'
+                        text: '¥23,816\n(税込み ¥26,198)'
                     },
                     {
-                        text: '$59\n(税込み $64.90)'
+                        text: '¥10,296\n(税込み ¥11,326)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥17,862\n(税込み ¥19,648)'
+                    },
+                    {
+                        text: '¥7,722\n(税込み ¥8,494)'
                     },
                 ],
                 [
@@ -1449,11 +1449,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/12'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/41'
                     }
                 ],
                 [
@@ -1463,11 +1463,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/12'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/41'
                     },
                 ]
             ]
@@ -1522,35 +1522,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$159\n(税込み $174.90)'
+                        text: '¥20,670\n(税込み ¥22,737)'
                     },
                     {
-                        text: '$69\n(税込み $75.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$127\n(税込み $139.70)'
-                    },
-                    {
-                        text: '$55\n(税込み $60.50)'
+                        text: '¥8,970\n(税込み ¥9,867)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$95\n(税込み $104.50)'
+                        text: '¥16,536\n(税込み ¥18,190)'
                     },
                     {
-                        text: '$41\n(税込み $45.10)'
+                        text: '¥7,176\n(税込み ¥7,894)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥12,402\n(税込み ¥13,642)'
+                    },
+                    {
+                        text: '¥5,382\n(税込み ¥5,920)'
                     },
                 ],
                 [
@@ -1617,11 +1617,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/28'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/50'
                     }
                 ],
                 [
@@ -1631,11 +1631,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/28'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/50'
                     },
                 ]
             ]
@@ -1691,35 +1691,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$229\n(税込み $251.90)'
+                        text: '¥29,770\n(税込み ¥32,747)'
                     },
                     {
-                        text: '$99\n(税込み $108.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$183\n(税込み $201.30)'
-                    },
-                    {
-                        text: '$79\n(税込み $86.90)'
+                        text: '¥12,870\n(税込み ¥14,157)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$137\n(税込み $150.70)'
+                        text: '¥23,816\n(税込み ¥26,198)'
                     },
                     {
-                        text: '$59\n(税込み $64.90)'
+                        text: '¥10,296\n(税込み ¥11,326)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥17,862\n(税込み ¥19,648)'
+                    },
+                    {
+                        text: '¥7,722\n(税込み ¥8,494)'
                     },
                 ],
                 [
@@ -1786,11 +1786,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/27'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/49'
                     }
                 ],
                 [
@@ -1800,11 +1800,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/27'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/49'
                     },
                 ]
             ]
@@ -1860,35 +1860,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$229\n(税込み $251.90)'
+                        text: '¥29,770\n(税込み ¥32,747)'
                     },
                     {
-                        text: '$99\n(税込み $108.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$183\n(税込み $201.30)'
-                    },
-                    {
-                        text: '$79\n(税込み $86.90)'
+                        text: '¥12,870\n(税込み ¥14,157)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$137\n(税込み $150.70)'
+                        text: '¥23,816\n(税込み ¥26,198)'
                     },
                     {
-                        text: '$59\n(税込み $64.90)'
+                        text: '¥10,296\n(税込み ¥11,326)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥17,862\n(税込み ¥19,648)'
+                    },
+                    {
+                        text: '¥7,722\n(税込み ¥8,494)'
                     },
                 ],
                 [
@@ -1955,11 +1955,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/21'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/42'
                     }
                 ],
                 [
@@ -1969,11 +1969,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/21'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/42'
                     },
                 ]
             ]
@@ -2030,35 +2030,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$229\n(税込み $251.90)'
+                        text: '¥29,770\n(税込み ¥32,747)'
                     },
                     {
-                        text: '$99\n(税込み $108.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$183\n(税込み $201.30)'
-                    },
-                    {
-                        text: '$79\n(税込み $86.90)'
+                        text: '¥12,870\n(税込み ¥14,157)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$137\n(税込み $150.70)'
+                        text: '¥23,816\n(税込み ¥26,198)'
                     },
                     {
-                        text: '$59\n(税込み $64.90)'
+                        text: '¥10,296\n(税込み ¥11,326)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥17,862\n(税込み ¥19,648)'
+                    },
+                    {
+                        text: '¥7,722\n(税込み ¥8,494)'
                     },
                 ],
                 [
@@ -2125,11 +2125,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/22'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/43'
                     }
                 ],
                 [
@@ -2139,11 +2139,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/22'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/43'
                     },
                 ]
             ]
@@ -2197,35 +2197,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$349\n(税込み $383.90)'
+                        text: '¥45,370\n(税込み ¥49,907)'
                     },
                     {
-                        text: '$139\n(税込み $152.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$279\n(税込み $306.90)'
-                    },
-                    {
-                        text: '$111\n(税込み $122.10)'
+                        text: '¥18,070\n(税込み ¥19,877)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$209\n(税込み $229.90)'
+                        text: '¥36,296\n(税込み ¥39,926)'
                     },
                     {
-                        text: '$83\n(税込み $91.30)'
+                        text: '¥14,456\n(税込み ¥15,902)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥27,222\n(税込み ¥29,944)'
+                    },
+                    {
+                        text: '¥10,842\n(税込み ¥11,926)'
                     },
                 ],
                 [
@@ -2292,11 +2292,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/29'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/51'
                     }
                 ],
                 [
@@ -2306,11 +2306,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/29'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/51'
                     },
                 ]
             ]
@@ -2362,35 +2362,68 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: 'ReSharper 1年'
                     },
                     {
-                        text: '$349\n(税込み $383.90)'
+                        text: '¥45,370\n(税込み ¥49,907)'
                     },
                     {
-                        text: '$139\n(税込み $152.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$279\n(税込み $306.90)'
-                    },
-                    {
-                        text: '$111\n(税込み $122.10)'
+                        text: '¥18,070\n(税込み ¥19,877)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: 'ReSharper 2年'
                     },
                     {
-                        text: '$209\n(税込み $229.90)'
+                        text: '¥36,296\n(税込み ¥39,926)'
                     },
                     {
-                        text: '$83\n(税込み $91.30)'
+                        text: '¥14,456\n(税込み ¥15,902)'
+                    },
+                ],
+                [
+                    {
+                        text: 'ReSharper 3年'
+                    },
+                    {
+                        text: '¥27,222\n(税込み ¥29,944)'
+                    },
+                    {
+                        text: '¥10,842\n(税込み ¥11,926)'
+                    },
+                ],
+                [
+                    {
+                        text: 'dotUltimate 1年'
+                    },
+                    {
+                        text: '¥45,370\n(税込み ¥49,907)'
+                    },
+                    {
+                        text: '¥18,070\n(税込み ¥19,877)'
+                    },
+                ],
+                [
+                    {
+                        text: 'dotUltimate 2年'
+                    },
+                    {
+                        text: '¥36,296\n(税込み ¥39,926)'
+                    },
+                    {
+                        text: '¥14,456\n(税込み ¥15,902)'
+                    },
+                ],
+                [
+                    {
+                        text: 'dotUltimate 3年'
+                    },
+                    {
+                        text: '¥27,222\n(税込み ¥29,944)'
+                    },
+                    {
+                        text: '¥10,842\n(税込み ¥11,926)'
                     },
                 ],
                 [
@@ -2457,11 +2490,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/13'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/52'
                     }
                 ],
                 [
@@ -2471,11 +2504,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/13'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/52'
                     },
                 ]
             ]
@@ -2529,35 +2562,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: 'dotUltimate 1年'
                     },
                     {
-                        text: '$469\n(税込み $515.90)'
+                        text: '¥60,970\n(税込み ¥67,067)'
                     },
                     {
-                        text: '$169\n(税込み $185.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$375\n(税込み $412.50)'
-                    },
-                    {
-                        text: '$135\n(税込み $148.50)'
+                        text: '¥21,970\n(税込み ¥24,167)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: 'dotUltimate 2年'
                     },
                     {
-                        text: '$281\n(税込み $309.10)'
+                        text: '¥48,776\n(税込み ¥53,654)'
                     },
                     {
-                        text: '$101\n(税込み $111.10)'
+                        text: '¥17,576\n(税込み ¥19,334)'
+                    },
+                ],
+                [
+                    {
+                        text: 'dotUltimate 3年'
+                    },
+                    {
+                        text: '¥36,582\n(税込み ¥40,240)'
+                    },
+                    {
+                        text: '¥13,182\n(税込み ¥14,500)'
                     },
                 ],
                 [
@@ -2624,11 +2657,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/30'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/53'
                     }
                 ],
                 [
@@ -2638,11 +2671,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/30'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/53'
                     },
                 ]
             ]
@@ -2695,35 +2728,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: 'dotUltimate 1年'
                     },
                     {
-                        text: '$469\n(税込み $515.90)'
+                        text: '¥60,970\n(税込み ¥67,067)'
                     },
                     {
-                        text: '$169\n(税込み $185.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$375\n(税込み $412.50)'
-                    },
-                    {
-                        text: '$135\n(税込み $148.50)'
+                        text: '¥21,970\n(税込み ¥24,167)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: 'dotUltimate 2年'
                     },
                     {
-                        text: '$281\n(税込み $309.10)'
+                        text: '¥48,776\n(税込み ¥53,654)'
                     },
                     {
-                        text: '$101\n(税込み $111.10)'
+                        text: '¥17,576\n(税込み ¥19,334)'
+                    },
+                ],
+                [
+                    {
+                        text: 'dotUltimate 3年'
+                    },
+                    {
+                        text: '¥36,582\n(税込み ¥40,240)'
+                    },
+                    {
+                        text: '¥13,182\n(税込み ¥14,500)'
                     },
                 ],
                 [
@@ -2790,11 +2823,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/32'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/55'
                     }
                 ],
                 [
@@ -2804,11 +2837,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/32'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/55'
                     },
                 ]
             ]
@@ -2861,35 +2894,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: 'dotUltimate 1年'
                     },
                     {
-                        text: '$469\n(税込み $515.90)'
+                        text: '¥60,970\n(税込み ¥67,067)'
                     },
                     {
-                        text: '$169\n(税込み $185.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$375\n(税込み $412.50)'
-                    },
-                    {
-                        text: '$135\n(税込み $148.50)'
+                        text: '¥21,970\n(税込み ¥24,167)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: 'dotUltimate 2年'
                     },
                     {
-                        text: '$281\n(税込み $309.10)'
+                        text: '¥48,776\n(税込み ¥53,654)'
                     },
                     {
-                        text: '$101\n(税込み $111.10)'
+                        text: '¥17,576\n(税込み ¥19,334)'
+                    },
+                ],
+                [
+                    {
+                        text: 'dotUltimate 3年'
+                    },
+                    {
+                        text: '¥36,582\n(税込み ¥40,240)'
+                    },
+                    {
+                        text: '¥13,182\n(税込み ¥14,500)'
                     },
                 ],
                 [
@@ -2956,11 +2989,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/31'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/54'
                     }
                 ],
                 [
@@ -2970,11 +3003,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/31'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/54'
                     },
                 ]
             ]
@@ -3017,35 +3050,35 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$469\n(税込み $515.90)'
+                        text: '¥60,970\n(税込み ¥67,067)'
                     },
                     {
-                        text: '$169\n(税込み $185.90)'
-                    },
-                ],
-                [
-                    {
-                        text: '2年目更新'
-                    },
-                    {
-                        text: '$375\n(税込み $412.50)'
-                    },
-                    {
-                        text: '$135\n(税込み $148.50)'
+                        text: '¥21,970\n(税込み ¥24,167)'
                     },
                 ],
                 [
                     {
-                        text: '3年目以降の更新'
+                        text: '2年'
                     },
                     {
-                        text: '$281\n(税込み $309.10)'
+                        text: '¥48,776\n(税込み ¥53,654)'
                     },
                     {
-                        text: '$101\n(税込み $111.10)'
+                        text: '¥17,576\n(税込み ¥19,334)'
+                    },
+                ],
+                [
+                    {
+                        text: '3年'
+                    },
+                    {
+                        text: '¥36,582\n(税込み ¥40,240)'
+                    },
+                    {
+                        text: '¥13,182\n(税込み ¥14,500)'
                     },
                 ],
                 [
@@ -3112,11 +3145,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/33'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/53'
                     }
                 ],
                 [
@@ -3126,11 +3159,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/33'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/53'
                     },
                 ]
             ]
@@ -3165,11 +3198,11 @@ export const iconList = [
                 [
                     {
                         text: '',
-                        row: 2
+                        // row: 2
                     },
                     {
                         text: '商業用',
-                        col: 2
+                        // col: 2
                     },
                     {
                         text: '個人用'
@@ -3177,11 +3210,14 @@ export const iconList = [
                 ],
                 [
                     {
-                        text: 'Premium',
+                        text: '',
                     },
                     {
-                        text: 'Enterprise'
+                        text: 'Premium',
                     },
+                    // {
+                    //     text: 'Enterprise'
+                    // },
                     {
                         text: 'Premium'
                     }
@@ -3190,16 +3226,13 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '新規購入'
+                        text: '1年'
                     },
                     {
-                        text: '$110 / host\n(税込み $121)'
+                        text: '¥14,300 / host\n(税込み ¥15,730)'
                     },
                     {
-                        text: '$400 / host\n(税込み $440)'
-                    },
-                    {
-                        text: '$55 / host\n(税込み $60.50)'
+                        text: '¥7,150 / host\n(税込み ¥7,865)'
                     },
                 ],
                 [
@@ -3209,9 +3242,9 @@ export const iconList = [
                     {
                         text: '無制限'
                     },
-                    {
-                        text: '無制限'
-                    },
+                    // {
+                    //     text: '無制限'
+                    // },
                     {
                         text: '無制限'
                     },
@@ -3223,9 +3256,9 @@ export const iconList = [
                     {
                         text: '最大50名様まで'
                     },
-                    {
-                        text: '最大100名様まで'
-                    },
+                    // {
+                    //     text: '最大100名様まで'
+                    // },
                     {
                         text: '最大50名様まで'
                     },
@@ -3237,9 +3270,9 @@ export const iconList = [
                     {
                         include: false
                     },
-                    {
-                        include: true
-                    },
+                    // {
+                    //     include: true
+                    // },
                     {
                         include: false
                     },
@@ -3251,9 +3284,9 @@ export const iconList = [
                     {
                         include: true
                     },
-                    {
-                        include: true
-                    },
+                    // {
+                    //     include: true
+                    // },
                     {
                         include: false
                     },
@@ -3267,15 +3300,15 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/35'
                     },
+                    // {
+                    //     text: 'お見積もり',
+                    //     link: '/estimate'
+                    // },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
-                    },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/60'
                     }
                 ],
                 [
@@ -3285,15 +3318,15 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/35'
                     },
+                    // {
+                    //     text: 'ご購入',
+                    //     link: '/buy'
+                    // },
                     {
                         text: 'ご購入',
-                        link: '/buy'
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/60'
                     },
                 ]
             ]
@@ -3355,23 +3388,27 @@ export const iconList = [
                         text: ''
                     },
                     {
-                        text: '商業用'
+                        text: 'Datalore Team'
                     },
                     {
-                        text: '個人用'
+                        text: 'Datalore Enterprise'
                     }
                 ]
             ],
             details: [
                 [
                     {
-                        text: '価格'
+                        text: '1年'
                     },
                     {
-                        text: '$360 / user\n(税込み $396)'
+                        text: '¥45,500 / user\n(税込み ¥50,050)'
                     },
+                    // {
+                    //     text: '$1,500 / user\n(税込み $1,650)'
+                    // },
                     {
-                        text: '$1,500 / user\n(税込み $1,650)'
+                        text: 'カスタム価格',
+                        col: 2
                     },
                 ],
                 [
@@ -3427,11 +3464,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/37'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/38'
                     }
                 ],
                 [
@@ -3441,11 +3478,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/37'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/38'
                     },
                 ]
             ]
@@ -3512,43 +3549,43 @@ export const iconList = [
                 ],
                 [
                     {
-                        text: 'User'
+                        text: '1年'
                     },
                     {
-                        text: '$44 / user\n(税込み $48.40)'
+                        text: 'エージェント追加'
                     },
                 ],
                 [
                     {
-                        text: 'Agent'
+                        text: '¥5,720 / user\n(税込み ¥6,290)'
                     },
                     {
-                        text: '$54 / agent\n(税込み $59.40)'
+                        text: '¥7,020 / agent\n(税込み ¥7,720)'
                     },
                 ],
             ],
-            bottom: [
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
-                    }
-                ],
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy'
-                    }
-                ]
-            ]
+            // bottom: [
+            //     [
+            //         {
+            //             text: 'お見積もり',
+            //             link: '/estimate/14'
+            //         },
+            //         {
+            //             text: 'お見積もり',
+            //             link: '/estimate/14'
+            //         }
+            //     ],
+            //     [
+            //         {
+            //             text: 'ご購入',
+            //             link: '/buy/14'
+            //         },
+            //         {
+            //             text: 'ご購入',
+            //             link: '/buy/14'
+            //         }
+            //     ]
+            // ]
         },
         purchase2: {
             title: [
@@ -3562,211 +3599,311 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: 'user'
+                        text: '15ユーザー'
                     },
                     {
-                        text: '新規購入'
+                        text: '¥78,000\n(VAT込み価格 ¥85,800)'
                     },
-                    {
-                        text: '有効期限内の更新'
-                    },
-                    {
-                        text: '有効期限後の更新'
-                    }
                 ],
                 [
                     {
-                        text: '10'
+                        text: '25ユーザー'
                     },
                     {
-                        text: '$0'
+                        text: '¥143,000\n(VAT込み価格 ¥157,300)'
                     },
-                    {
-                        text: '$0'
-                    },
-                    {
-                        text: '$0'
-                    }
                 ],
                 [
                     {
-                        text: '15'
+                        text: '50ユーザー'
                     },
                     {
-                        text: '600\n(VAT込み価格 $660)'
+                        text: '¥260,000\n(VAT込み価格 ¥286,000)'
                     },
-                    {
-                        text: '$300\n(税込み $330)'
-                    },
-                    {
-                        text: '$450\n(税込み $495)'
-                    }
                 ],
                 [
                     {
-                        text: '25'
+                        text: '100ユーザー '
                     },
                     {
-                        text: '$1,100\n(税込み $1,210)'
+                        text: '¥520,000\n(VAT込み価格 ¥572,000)'
                     },
-                    {
-                        text: '$550\n(税込み $605)'
-                    },
-                    {
-                        text: '$825\n(税込み $907.50)'
-                    }
                 ],
                 [
                     {
-                        text: '50'
+                        text: '250ユーザー'
                     },
                     {
-                        text: '$2,000\n(税込み $2,200)'
+                        text: '¥1,170,000\n(VAT込み価格 ¥1,287,000)'
                     },
-                    {
-                        text: '$1,000\n(税込み $1,100)'
-                    },
-                    {
-                        text: '$1,500\n(税込み $1,650)'
-                    }
                 ],
                 [
                     {
-                        text: '100'
+                        text: '500ユーザー'
                     },
                     {
-                        text: '$4,000\n(税込み $4,400)'
+                        text: '¥1,560,000\n(VAT込み価格 ¥1,716,000)'
                     },
-                    {
-                        text: '$2,000\n(税込み $2,200)'
-                    },
-                    {
-                        text: '$3,000\n(税込み $3,300)'
-                    }
                 ],
                 [
                     {
-                        text: '250'
+                        text: '750ユーザー'
                     },
                     {
-                        text: '$9,000\n(税込み $9,900)'
+                        text: '¥1,820,000\n(VAT込み価格 ¥2,002,000)'
                     },
-                    {
-                        text: '$4,500\n(税込み $4,950)'
-                    },
-                    {
-                        text: '$6,750\n(税込み $7,425)'
-                    }
                 ],
                 [
                     {
-                        text: '500'
+                        text: '1000ユーザー'
                     },
                     {
-                        text: '$12,000\n(税込み $13,200)'
+                        text: '¥2,080,000\n(VAT込み価格 ¥2,288,000)'
                     },
-                    {
-                        text: '$6,000\n(税込み $6,600)'
-                    },
-                    {
-                        text: '$9,000\n(税込み $9,900)'
-                    }
                 ],
                 [
                     {
-                        text: '750'
+                        text: '2000ユーザー'
                     },
                     {
-                        text: '$14,000\n(税込み $15,400)'
+                        text: '¥2,600,000\n(VAT込み価格 ¥2,860,000)'
                     },
-                    {
-                        text: '$7,000\n(税込み $7,700)'
-                    },
-                    {
-                        text: '$10,500\n(税込み $11,550)'
-                    }
                 ],
+            ],
+            // bottom: [
+            //     [
+            //         {
+            //             text: '',
+            //             link: ''
+            //         },
+            //         {
+            //             text: 'お見積もり',
+            //             link: '/estimate/18'
+            //         },
+            //     ],
+            //     [
+            //         {
+            //             text: '',
+            //             link: ''
+            //         },
+            //         {
+            //             text: 'ご購入',
+            //             link: '/buy/18'
+            //         },
+            //     ]
+            // ]
+        },
+        purchase3: {
+            title: [
                 [
                     {
-                        text: '1000'
-                    },
-                    {
-                        text: '$16,000\n(税込み $17,600)'
-                    },
-                    {
-                        text: '$8,000\n(税込み $8,800)'
-                    },
-                    {
-                        text: '$12,000\n(税込み $13,200)'
-                    }
-                ],
-                [
-                    {
-                        text: '2000'
-                    },
-                    {
-                        text: '$20,000\n(税込み $22,000)'
-                    },
-                    {
-                        text: '$10,000\n(税込み $11,000)'
-                    },
-                    {
-                        text: '$15,000\n(税込み $16,500)'
-                    }
-                ],
-                [
-                    {
-                        text: 'Agent'
-                    },
-                    {
-                        text: '$60\n(税込み $66)'
-                    },
-                    {
-                        text: '$30\n(税込み $33)'
-                    },
-                    {
-                        text: '$45\n(税込み $49.5)'
+                        text: 'YouTrack Server 有効期限内の更新',
+                        col: 4
                     }
                 ]
             ],
-            bottom: [
+            details: [
                 [
                     {
-                        text: '',
-                        link: ''
+                        text: '15ユーザー'
                     },
                     {
-                        text: 'お見積もり',
-                        link: '/estimate'
+                        text: '¥39,000\n(VAT込み価格 ¥42,900)'
                     },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
-                    },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
-                    }
                 ],
                 [
                     {
-                        text: '',
-                        link: ''
+                        text: '25ユーザー'
                     },
                     {
-                        text: 'ご購入',
-                        link: '/buy'
+                        text: '¥71,500\n(VAT込み価格 ¥78,650)'
+                    },
+                ],
+                [
+                    {
+                        text: '50ユーザー'
                     },
                     {
-                        text: 'ご購入',
-                        link: '/buy'
+                        text: '¥130,000\n(VAT込み価格 ¥143,000)'
+                    },
+                ],
+                [
+                    {
+                        text: '100ユーザー '
                     },
                     {
-                        text: 'ご購入',
-                        link: '/buy'
+                        text: '¥260,000\n(VAT込み価格 ¥286,000)'
                     },
+                ],
+                [
+                    {
+                        text: '250ユーザー'
+                    },
+                    {
+                        text: '¥585,000\n(VAT込み価格 ¥643,500)'
+                    },
+                ],
+                [
+                    {
+                        text: '500ユーザー'
+                    },
+                    {
+                        text: '¥780,000\n(VAT込み価格 ¥858,000)'
+                    },
+                ],
+                [
+                    {
+                        text: '750ユーザー'
+                    },
+                    {
+                        text: '¥910,000\n(VAT込み価格 ¥1,001,000)'
+                    },
+                ],
+                [
+                    {
+                        text: '1000ユーザー'
+                    },
+                    {
+                        text: '¥1,040,000\n(VAT込み価格 ¥1,144,000)'
+                    },
+                ],
+                [
+                    {
+                        text: '2000ユーザー'
+                    },
+                    {
+                        text: '¥1,300,000\n(VAT込み価格 ¥1,430,000)'
+                    },
+                ],
+            ],
+            // bottom: [
+            //     [
+            //         {
+            //             text: '',
+            //             link: ''
+            //         },
+            //         {
+            //             text: 'お見積もり',
+            //             link: '/estimate/63'
+            //         },
+            //     ],
+            //     [
+            //         {
+            //             text: '',
+            //             link: ''
+            //         },
+            //         {
+            //             text: 'ご購入',
+            //             link: '/buy/63'
+            //         },
+            //     ]
+            // ]
+        },
+        purchase4: {
+            title: [
+                [
+                    {
+                        text: 'YouTrack Server 有効期限後の更新',
+                        col: 4
+                    }
                 ]
-            ]
+            ],
+            details: [
+                [
+                    {
+                        text: '15ユーザー'
+                    },
+                    {
+                        text: '¥58,500\n(VAT込み価格 ¥64,350)'
+                    },
+                ],
+                [
+                    {
+                        text: '25ユーザー'
+                    },
+                    {
+                        text: '¥107,250\n(VAT込み価格 ¥117,975)'
+                    },
+                ],
+                [
+                    {
+                        text: '50ユーザー'
+                    },
+                    {
+                        text: '¥195,000\n(VAT込み価格 ¥214,500)'
+                    },
+                ],
+                [
+                    {
+                        text: '100ユーザー '
+                    },
+                    {
+                        text: '¥390,000\n(VAT込み価格 ¥429,000)'
+                    },
+                ],
+                [
+                    {
+                        text: '250ユーザー'
+                    },
+                    {
+                        text: '¥877,500\n(VAT込み価格 ¥965,250)'
+                    },
+                ],
+                [
+                    {
+                        text: '500ユーザー'
+                    },
+                    {
+                        text: '¥1,170,000\n(VAT込み価格 ¥1,287,000)'
+                    },
+                ],
+                [
+                    {
+                        text: '750ユーザー'
+                    },
+                    {
+                        text: '¥1,365,000\n(VAT込み価格 ¥1,501,500)'
+                    },
+                ],
+                [
+                    {
+                        text: '1000ユーザー'
+                    },
+                    {
+                        text: '¥1,560,000\n(VAT込み価格 ¥1,716,000)'
+                    },
+                ],
+                [
+                    {
+                        text: '2000ユーザー'
+                    },
+                    {
+                        text: '¥1,950,000\n(VAT込み価格 ¥2,145,000)'
+                    },
+                ],
+            ],
+            // bottom: [
+            //     [
+            //         {
+            //             text: '',
+            //             link: ''
+            //         },
+            //         {
+            //             text: 'お見積もり',
+            //             link: '/estimate/64'
+            //         },
+            //     ],
+            //     [
+            //         {
+            //             text: '',
+            //             link: ''
+            //         },
+            //         {
+            //             text: 'ご購入',
+            //             link: '/buy/64'
+            //         },
+            //     ]
+            // ]
         },
         purchaseText: [
             'YouTrack Cloudは年間サブスクリプションライセンス、YouTrack Serverは永久ライセンスです。',
@@ -4174,13 +4311,13 @@ export const iconList = [
             details: [
                 [
                     {
-                        text: '価格'
+                        text: '1年'
                     },
                     {
-                        text: '$60 / active contributor\n(税込み $66)'
+                        text: '¥7,800\n(VAT込み価格 ¥8,580)'
                     },
                     {
-                        text: '$180 / active contributor\n(税込み $198)'
+                        text: '¥23,400\n(VAT込み価格 ¥25,740)'
                     },
                 ],
                 [
@@ -4258,11 +4395,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/39'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/40'
                     }
                 ],
                 [
@@ -4272,11 +4409,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/39'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/40'
                     },
                 ]
             ]

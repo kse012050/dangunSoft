@@ -83,6 +83,7 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <Estimate/> },
+            { path: ':id', element: <Estimate/> },
         ]
     },
     {
@@ -97,6 +98,7 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <Buy/> },
+            { path: ':id', element: <Buy/> },
         ]
     },
     {
