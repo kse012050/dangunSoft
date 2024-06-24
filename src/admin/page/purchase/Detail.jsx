@@ -106,13 +106,13 @@ export default function Detail() {
                                 <li>
                                     <span>견적 금액</span>
                                     <div>
-                                        <p>{ data.total_price }</p>
+                                        <p>{ data.total_price.toLocaleString() }</p>
                                     </div>
                                 </li>
                                 <li>
                                     <span>최종 금액</span>
                                     <div>
-                                        <p>{ data.total_price }</p>
+                                        <p>{ data.total_price.toLocaleString() }</p>
                                     </div>
                                 </li>
                             </ul>

@@ -154,9 +154,9 @@ export default function Product({ data, productList, setProductList, productIdx 
             <div>
                 <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독옵션을 선택해주세요.' disabled={!inputs?.product_option_id || !optionPrices}/>
             </div>
-            <p>{prices}</p>
+            <p>{prices.toLocaleString()}</p>
             <div>
-                <input type="text" value={prices ? inputs?.order_quantiry * prices : '0'} readOnly/>
+                <input type="text" value={prices ? (inputs?.order_quantiry * prices).toLocaleString(): '0'} readOnly/>
             </div>
             <div>
                 {productList.length !== 1 &&

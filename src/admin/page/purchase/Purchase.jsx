@@ -94,7 +94,7 @@ export default function Purchase() {
                                 <p>
                                     <span>{ data.product_name }</span>
                                 </p>
-                                <span>{ data.final_pay_price }</span>
+                                <span>{ data.final_pay_price.toLocaleString() }</span>
                                 <span>결제 정보</span>
                                 <span>결제 상태</span>
                                 <span>구매일시</span>

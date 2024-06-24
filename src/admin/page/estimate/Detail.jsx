@@ -100,7 +100,7 @@ export default function Detail() {
                                 <li>
                                     <span>기본 견적</span>
                                     <div>
-                                        <p>{ data.total_price }</p>
+                                        <p>{ data.total_price.toLocaleString() }</p>
                                     </div>
                                 </li>
                             </ul>

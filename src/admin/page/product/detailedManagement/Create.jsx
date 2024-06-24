@@ -126,46 +126,28 @@ export default function Create() {
 
         if(formet === 'decimal' && value){
             
-            console.log(value);
             let decimal = value;
             let cur = e.target.selectionStart;
-            // console.log('-------------------------');
-            // console.log(cur);
-            // console.log(value.includes(','));
-            if(decimal.includes(',')){
-                console.log(parseInt(cur / 3));
-            }
-            // cur += parseInt(cur / 4)
-            decimal = decimal.replace(/[^0-9.]/g, '')
-            // if(!/^\d+(\.\d{1,2})?$/.test(decimal)){
-            //     cur = /[^0-9.]/.test(decimal) ? e.target.selectionStart - 1 : e.target.selectionStart;
-            //     decimal = decimal.replace(/[^0-9.]/g, '')
-            //     if(decimal.includes('.')){
-            //         decimal = decimal.split('.')
-            //         decimal = Number(decimal[0]).toLocaleString() + '.' + decimal.slice(1);
-            //         decimal = decimal.replace(/(\.\d{2})\d+/, '$1');
-            //     }
 
-            //     // console.log(2);
-                
-            //     e.target.value = decimal
-            //     // cur = cur + decimal.split(',').length - 1
-            //     e.target.setSelectionRange(cur, cur);
-            //     return
-            // }
+            const prevCur = decimal.substring(0, cur).split(',').length;
+            decimal = decimal.replace(/[^0-9.]/g, '')
 
             if(decimal.includes('.')){
                 decimal = decimal.split('.')
-                decimal = Number(decimal[0])/* .toLocaleString() */ + '.' + decimal.slice(1);
+                decimal = Number(decimal[0]).toLocaleString() + '.' + decimal.slice(1);
                 decimal = decimal.replace(/(\.\d{2})\d+/, '$1');
             }else{
-                decimal = Number(decimal)/* .toLocaleString() */
-                // cur = cur + 1
+                decimal = Number(decimal).toLocaleString()
             }
             
+            const nextCur = decimal.substring(0, cur).split(',').length;
             e.target.value = decimal
-            // cur = cur + decimal.split(',').length - 1
+            if(prevCur !== nextCur){
+                cur += 1;
+            }
             e.target.setSelectionRange(cur, cur);
+            
+            decimal = decimal.split(',').join('')
 
             setOptions((prev)=> {
                 const arr = [...prev]
@@ -324,27 +306,27 @@ export default function Create() {
                                         <div>
                                             <p htmlFor="">신규</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_include_price || ''} onChange={(e)=>optionChange(e, i)} required/>
+                                            <input type="text" name='vat_include_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_include_price.toLocaleString() || ''} onChange={(e)=>optionChange(e, i)} required/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_exclude_price || ''} onChange={(e)=>optionChange(e, i)} required/>
+                                            <input type="text" name='vat_exclude_price' data-parents='0' data-formet='decimal' defaultValue={data.option_price_list?.[0].vat_exclude_price.toLocaleString() || ''} onChange={(e)=>optionChange(e, i)} required/>
                                         </div>
                                         <div>
                                             <input type="checkbox" id={`renewal_${i}`} name='갱신' checked={!!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length} onChange={(e)=>optionListChange(e, i)}/>
                                             <label htmlFor={`renewal_${i}`}></label>
                                             <p htmlFor="">갱신</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && (data.option_price_list[1].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length}/>
+                                            <input type="text" name='vat_include_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && (data.option_price_list[1].vat_include_price.toLocaleString() || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length}/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && (data.option_price_list[1].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length}/>
+                                            <input type="text" name='vat_exclude_price' data-parents='1' data-formet='decimal' defaultValue={data.option_price_list?.[1] && (data.option_price_list[1].vat_exclude_price.toLocaleString() || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '갱신').length}/>
                                         </div>
                                         <div>
                                             <input type="checkbox" id={`update_${i}`} name='업데이트' checked={!!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length} onChange={(e)=>optionListChange(e, i)}/>
                                             <label htmlFor={`update_${i}`}></label>
                                             <p htmlFor="">업데이트</p>
                                             <label>기본가</label>
-                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && (data.option_price_list[2].vat_include_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length}/>
+                                            <input type="text" name='vat_include_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && (data.option_price_list[2].vat_include_price.toLocaleString() || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length}/>
                                             <label>VAT 포함가</label>
-                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && (data.option_price_list[2].vat_exclude_price || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length}/>
+                                            <input type="text" name='vat_exclude_price' data-parents='2' data-formet='decimal' defaultValue={data.option_price_list?.[2] && (data.option_price_list[2].vat_exclude_price.toLocaleString() || '')} onChange={(e)=>optionChange(e, i)} disabled={!data.option_price_list.filter((data2)=>data2.price_type === '업데이트').length}/>
                                         </div>
                                     </div>
                                     { options.length > 1 &&

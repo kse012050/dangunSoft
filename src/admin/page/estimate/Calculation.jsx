@@ -25,7 +25,7 @@ export default function Calculation() {
     useLayoutEffect(()=>{
         adminApi('board/detail', '', {board_id: id})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
                     setProductList(result.list.map(({ vendor_id, product_id, product_option_id, order_quantiry, option_price_info_obj: {option_price_id}, option_price_type, total_price, final_pay_price })=>({
                         vendor_id,
@@ -111,7 +111,7 @@ export default function Calculation() {
                 <strong>최종 견적</strong>
                 <dl>
                     <dt>총 금액</dt>
-                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next})}</dd>
+                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next}).toLocaleString()}</dd>
                 </dl>
                 <dl>
                     <dt>할인 금액</dt>
@@ -119,7 +119,7 @@ export default function Calculation() {
                 </dl>
                 <dl>
                     <dt>최종 금액</dt>
-                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next})}</dd>
+                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next}).toLocaleString()}</dd>
                 </dl>
             </div>
 
