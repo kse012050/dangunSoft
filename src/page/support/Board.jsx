@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { userApi } from '../../api/api';
 import { inputChange } from '../../api/validation';
+import Pagination from '../../components/Pagination';
+import { urlParams } from '../../js/common';
 
 export default function Board() {
-    const [inputs, setInputs] = useState({page: '1', board_type: 'inquiry'})
+    const navigation = useNavigate()
+    const { search, page } = urlParams(useLocation())
     const [searchInputs, setSearchInputs] = useState()
     const [board, setBoard] = useState()
     const navigate = useNavigate();
@@ -13,16 +16,17 @@ export default function Board() {
 
     useEffect(()=>{
         // console.log(inputs);
-        userApi('board', '', inputs)
+        userApi('board', '', {board_type: 'inquiry', limit: 10, page: page || 1, search_text: search})
             .then((result)=>{
                 // console.log(result.list);
                 if(result.result){
                     setBoard({
+                        page: result.data,
                         list: result.list
                     })
                 }
             })
-    },[inputs])
+    },[page, search])
 
     const lack = (e, board_id) =>{
         e.preventDefault()
@@ -43,15 +47,15 @@ export default function Board() {
             })
     }
 
-    const onSearch = () =>{
-        setInputs(prev => ({...prev, ...searchInputs}))
+    const onSearch = (e) =>{
+        navigation(`?search=${searchInputs.search_text}`)
     }
 
     return (
         <section>
             <h2>お問い合わせ掲示板</h2>
             <div className='searchBox'>
-                <input type="search" placeholder='タイトル検索' name='search_text' onChange={(e)=>inputChange(e, setSearchInputs)}  onKeyDown={(e)=> e.key === 'Enter' && onSearch(e)}/>
+                <input type="search" placeholder='タイトル検索' name='search_text' defaultValue={search} onChange={(e)=>inputChange(e, setSearchInputs)}  onKeyDown={(e)=> e.key === 'Enter' && onSearch(e)}/>
                 <button onClick={onSearch}>검색</button>
             </div>
             <div className='boardBox'>
@@ -83,6 +87,10 @@ export default function Board() {
                 </ol>
                 <Link to=''>다음</Link>
             </div> */}
+
+            { board && 
+                <Pagination page={board.page}/>
+            }
 
             <Link to='/support/inquiry' className='btn-bg'>お問い合わせ</Link>
 
