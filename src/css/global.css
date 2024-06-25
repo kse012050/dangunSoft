@@ -92,7 +92,7 @@ body:has([data-popup]){overflow: hidden;}
 .userPage .purchaseBox2 table{font-weight: 700; min-width: 100%;}
 .userPage .purchaseBox2 table thead{background-color: var(--color-face); border-top: 1px solid black;}
 .userPage .purchaseBox2 table tr{border-bottom: 1px solid var(--color-line); box-sizing: border-box;}
-.userPage .purchaseBox2 table:is(:not(:has(tr *:nth-child(3))), :has(tr *:nth-child(7))){text-align: center;}
+.userPage .purchaseBox2 table:is(:not(:has(tr *:nth-child(3))), :has(tr *:nth-child(7)), :has(tr:nth-child(4))){text-align: center;}
 .userPage .purchaseBox2 table tr > *:first-child{box-sizing: border-box;}
 .userPage .purchaseBox2 table tr > *:not(:last-child){border-right: 1px solid var(--color-line);}
 .userPage .purchaseBox2 table tr:has(:nth-child(3)) > *{width: 100%;}

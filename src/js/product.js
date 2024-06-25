@@ -3471,9 +3471,20 @@ export const iconList = [
                         include: false
                     },
                     {
-                        include: true
+                        include: false
                     },
-                ]
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
+                    },
+                    {
+                        text: '法人'
+                    },
+                ],
             ],
             bottom: [
                 [
@@ -3569,21 +3580,40 @@ export const iconList = [
                 ],
                 [
                     {
-                        text: '1年'
+                        text: 'User'
                     },
                     {
-                        text: 'エージェント追加'
+                        text: '¥5,720 / user\n(税込み ¥6,290)'
                     },
                 ],
                 [
                     {
-                        text: '¥5,720 / user\n(税込み ¥6,290)'
+                        text: 'Agent'
                     },
                     {
-                        text: '¥7,020 / agent\n(税込み ¥7,720)'
+                        text: '¥7,020 / user\n(税込み ¥7,720)'
+                    },
+                ],
+                [
+                    {
+                        text: 'ライセンス所有'
+                    },
+                    {
+                        text: '法人'
                     },
                 ],
             ],
+            bottom: [
+                [
+                    {
+                        text: '',
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/871'
+                    }
+                ],
+            ]
             // bottom: [
             //     [
             //         {
