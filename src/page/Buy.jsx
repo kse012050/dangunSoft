@@ -12,7 +12,21 @@ export default function Buy() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState();
     const [orderProduct, setOrderProduct] = useState();
-    const [licenseInfo, setLicenseInfo] = useState();
+    const [licenseInfo, setLicenseInfo] = useState({
+        write_name:'',
+        write_name_en:'',
+        company_name:'',
+        company_name_en:'',
+        contact_information:'',
+        email:'',
+        individual_yn:'n',
+        address:"111",
+        address_en:"111",
+        address_detail:"111",
+        address_detail_en:"111",
+        post_code:"111",
+        post_code_en:"11",
+    });
     const [productInfo, setProductInfo] = useState()
     const sameRef = useRef()
     const [popup, setPopup] = useState()
@@ -35,8 +49,7 @@ export default function Buy() {
         if(id){
             userApi('product/detail', '', {option_price_id: id})
                 .then((result)=>{
-                    console.log(result);
-                    console.log(result.data.optionList[0].optionPriceList[0].vat_exclude_price);
+                    // console.log(result);
                     if(result.result){
                         setOrderProduct({
                             vendor_id: result.data.vendor_id,
@@ -74,38 +87,50 @@ export default function Buy() {
         e.preventDefault();
         // console.log(inputs);
         // console.log(licenseInfo);
-        // if(isSubmit(inputs)){
-        //     return;
-        // }
+        
+        if(isSubmit(inputs)){
+            return;
+        }
 
-        // if(!document.querySelector('input[type="hidden"][name="payjp-token"').value){
-        //     setPopup({
-        //         type: 'confirm',
-        //         title: '알림',
-        //         description: [
-        //             '카드정보를 입력해주세요.',
-        //         ],
-        //     })
-        //     return
-        // }
+        if(Object.entries(licenseInfo).some(([key, value]) => {
+            if (!value && document.querySelector(`[id="${key}_license"].required`)) {
+                document.querySelector(`[id="${key}_license"]`).focus()
+                return true; 
+            }
+            return false;
+        })){
+            return
+        }
 
-        const parameter = {
+        if(!document.querySelector('input[type="hidden"][name="payjp-token"').value){
+            setPopup({
+                type: 'confirm',
+                title: '알림',
+                description: [
+                    '카드정보를 입력해주세요.',
+                ],
+            })
+            return
+        }
+
+        let parameter = {
             ...inputs,
-            order_product_list: {
+            order_product_list: [{
                 ...orderProduct
-            },
+            }],
             license_info: {
                 ...licenseInfo
             },
             pay_token: document.querySelector('input[type="hidden"][name="payjp-token"').value
         }
-        console.log(parameter);
+        // console.log(parameter);
 
         userApi('order/manage', '', {...parameter})
             .then((result)=>{
                 console.log(result);
             })
-    }
+
+}
 
     return (
         <>
@@ -152,7 +177,7 @@ export default function Buy() {
                                 <label htmlFor="company_name">会社名</label>
                                 <div>
                                     <input type="text" id='company_name' name='company_name' placeholder='企業名を入力してください' required/>
-                                    <input type="checkbox" id='individual_yn' name='individual_yn'/>
+                                    <input type="checkbox" id='individual_yn' name='individual_yn' required/>
                                     <label htmlFor="individual_yn">個人</label>
                                 </div>
                             </li>
@@ -185,29 +210,29 @@ export default function Buy() {
                         </div>
                         <ul>
                             <li>
-                                <label htmlFor="write_name">名前</label>
+                                <label htmlFor="write_name_license">名前</label>
                                 <div>
-                                    <input type="text" id='write_name' name='write_name' placeholder='名前を入力してください' value={licenseInfo?.write_name || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked}/>
+                                    <input type="text" id='write_name_license' name='write_name' placeholder='名前を入力してください' value={licenseInfo?.write_name || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked} className='required'/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="write_name_en">名前(英語)</label>
+                                <label htmlFor="write_name_en_license">名前(英語)</label>
                                 <div>
-                                    <input type="text" id='write_name_en' name='write_name_en' placeholder='名前(英語)を入力してください'/>
+                                    <input type="text" id='write_name_en_license' name='write_name_en' placeholder='名前(英語)を入力してください' className='required'/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="company_name">会社名</label>
+                                <label htmlFor="company_name_license">会社名</label>
                                 <div>
-                                    <input type="text" id='company_name' name='company_name' placeholder='会社名を入力してください' value={licenseInfo?.company_name || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked}/>
+                                    <input type="text" id='company_name_license' name='company_name' placeholder='会社名を入力してください' value={licenseInfo?.company_name || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked} className='required'/>
                                     <input type="checkbox" name='individual_yn' id='individual_yn_license' checked={licenseInfo?.individual_yn_license === 'y'} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked}/>
                                     <label htmlFor="individual_yn_license">個人</label>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="company_name_en">会社名(英語)</label>
+                                <label htmlFor="company_name_en_license">会社名(英語)</label>
                                 <div>
-                                    <input type="text" id='company_name_en' name='company_name_en' placeholder='会社名(英語)を入力してください'/>
+                                    <input type="text" id='company_name_en_license' name='company_name_en' placeholder='会社名(英語)を入力してください' className='required'/>
                                     {/* <input type="checkbox" />
                                     <label htmlFor="">個人</label> */}
                                 </div>
@@ -245,13 +270,13 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="contact_information">電話番号</label>
                                 <div>
-                                    <input type="text" id='contact_information' name='contact_information' placeholder='電話番号を入力してください' value={licenseInfo?.contact_information || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked}/>
+                                    <input type="text" id='contact_information' name='contact_information' placeholder='電話番号を入力してください' value={licenseInfo?.contact_information || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked} className='required'/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="email">Email</label>
                                 <div>
-                                    <input type="text" id='email' name='email' placeholder='メールを入力してください' value={licenseInfo?.email || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked}/>
+                                    <input type="text" id='email' name='email' placeholder='メールを入力してください' value={licenseInfo?.email || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked} className='required'/>
                                 </div>
                             </li>
                             <li>

@@ -16,10 +16,6 @@ export default function BuyResult() {
                         <div>1つ</div>
                     </figcaption>
                 </figure>
-                <dl className='deliveryArea'>
-                    <dt>税</dt>
-                    <dd>0円</dd>
-                </dl>
                 <dl className="amountBox">
                     <dt>合計 (税込み)</dt>
                     <dd>475,000円</dd>
