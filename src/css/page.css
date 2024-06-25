@@ -252,6 +252,8 @@
 
 
 /* 구매하기 페이지 */
+[class*="buy"][class*="Page"] section form .inputBox:has(.sameArea){position: relative;}
+[class*="buy"][class*="Page"] section form .inputBox .sameArea{position: absolute; right: 0; top: 0;}
 [class*="buy"][class*="Page"] section form fieldset strong{display: block; font-weight: 700;}
 [class*="buy"][class*="Page"] section form .inputArea ul li label:first-child{font-weight: 700; line-height: 20px;}
 /* [class*="buy"][class*="Page"] section form .inputArea ul li label:first-child + div{margin-top: 20px;} */

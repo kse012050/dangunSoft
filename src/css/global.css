@@ -10,6 +10,8 @@
 .userPage .btn-border-black{border-color: black;}
 .userPage .btn-bg{background-color: black; color: white;}
 .userPage .btn-white{background-color: white; color: black;}
+.userPage #payjp_checkout_box input[type=button]{border: 1px solid var(--color-point); background: transparent; color: var(--color-point);}
+.userPage #payjp_checkout_box input[type=button].has-token{border: 1px solid var(--color-point); background-color: var(--color-point); color: white;}
 
 
 /* 견적 링크 */
@@ -130,9 +132,9 @@ body:has([data-popup]){overflow: hidden;}
 .userPage .productBox figure figcaption div:has(button) button{width: 26px; aspect-ratio: 1; background: url(../images/icon-minusPlus.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
 .userPage .productBox figure figcaption div:has(button) button:nth-of-type(1){--styleIdx: 0;}
 .userPage .productBox figure figcaption div:has(button) button:nth-of-type(2){--styleIdx: 1;}
-.userPage .productBox .deliveryArea{height: 60px; margin-left: calc(var(--imgWidth) + var(--gap)); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee;}
+/* .userPage .productBox .deliveryArea{height: 60px; margin-left: calc(var(--imgWidth) + var(--gap)); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee;}
 .userPage .productBox .deliveryArea dt{color: var(--color-font04);}
-.userPage .productBox .deliveryArea dd{font-weight: 700;}
+.userPage .productBox .deliveryArea dd{font-weight: 700;} */
 
 
 /* 인풋 */
@@ -141,6 +143,7 @@ input:is([type="checkbox"], [type="radio"]) + label{line-height: 22px; display: 
 input:is([type="checkbox"], [type="radio"]) + label::before{content: ''; margin-right: 10px; --styleIdx: 0; aspect-ratio: 1; background-repeat: no-repeat; background-position: left top calc(100% * var(--styleIdx)); background-size: 100%;}
 input[type="checkbox"] + label::before{background-image: url(../images/icon-checkbox.png);}
 input[type="radio"] + label::before{background-image: url(../images/icon-radio.png);}
+input[type="checkbox"]:disabled + label{color: #e6e6e6;}
 input:is([type="checkbox"], [type="radio"]):checked + label::before{--styleIdx: 1;}
 .userPage [class*="inputBox"] ul{display: flex; flex-wrap: wrap; column-gap: 10px;}
 .userPage [class*="inputBox"] ul li:not(.half){width: 100%;}

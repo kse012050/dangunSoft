@@ -284,11 +284,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/19'
+                        link: '/estimate/923'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/56'
+                        link: '/estimate/1247'
                     }
                 ],
                 [
@@ -298,11 +298,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/19'
+                        link: '/buy/923'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/56'
+                        link: '/buy/1247'
                     },
                 ]
             ]
@@ -417,11 +417,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/34'
+                        link: '/estimate/1076'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/58'
+                        link: '/estimate/1172'
                     }
                 ],
                 [
@@ -431,11 +431,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/34'
+                        link: '/buy/1076'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/58'
+                        link: '/buy/1172'
                     },
                 ]
             ]
@@ -607,11 +607,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/15'
+                        link: '/estimate/979'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/45'
+                        link: '/estimate/1134'
                     }
                 ],
                 [
@@ -621,11 +621,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/15'
+                        link: '/buy/979'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/45'
+                        link: '/buy/1134'
                     },
                 ]
             ]
@@ -777,11 +777,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/25'
+                        link: '/estimate/1004'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/47'
+                        link: '/estimate/1152'
                     }
                 ],
                 [
@@ -791,11 +791,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/25'
+                        link: '/buy/1004'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/47'
+                        link: '/buy/1152'
                     },
                 ]
             ]
@@ -947,11 +947,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/24'
+                        link: '/estimate/1001'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/46'
+                        link: '/estimate/1143'
                     }
                 ],
                 [
@@ -961,11 +961,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/24'
+                        link: '/buy/1001'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/46'
+                        link: '/buy/1143'
                     },
                 ]
             ]
@@ -1116,11 +1116,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/23'
+                        link: '/estimate/998'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/44'
+                        link: '/estimate/1125'
                     }
                 ],
                 [
@@ -1130,11 +1130,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/23'
+                        link: '/buy/998'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/44'
+                        link: '/buy/1125'
                     },
                 ]
             ]
@@ -1286,11 +1286,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/26'
+                        link: '/estimate/1161'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/48'
+                        link: '/estimate/1174'
                     }
                 ],
                 [
@@ -1300,11 +1300,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/26'
+                        link: '/buy/1161'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/48'
+                        link: '/buy/1174'
                     },
                 ]
             ]
@@ -1456,11 +1456,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/12'
+                        link: '/estimate/976'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/41'
+                        link: '/estimate/1305'
                     }
                 ],
                 [
@@ -1470,11 +1470,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/12'
+                        link: '/buy/976'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/41'
+                        link: '/buy/1305'
                     },
                 ]
             ]
@@ -1625,11 +1625,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/28'
+                        link: '/estimate/1022'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/50'
+                        link: '/estimate/1085'
                     }
                 ],
                 [
@@ -1639,11 +1639,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/28'
+                        link: '/buy/1022'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/50'
+                        link: '/buy/1085'
                     },
                 ]
             ]
@@ -1795,11 +1795,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/27'
+                        link: '/estimate/1013'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/49'
+                        link: '/estimate/1183'
                     }
                 ],
                 [
@@ -1809,11 +1809,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/27'
+                        link: '/buy/1013'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/49'
+                        link: '/buy/1183'
                     },
                 ]
             ]
@@ -1965,11 +1965,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/21'
+                        link: '/estimate/988'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/42'
+                        link: '/estimate/1107'
                     }
                 ],
                 [
@@ -1979,11 +1979,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/21'
+                        link: '/buy/988'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/42'
+                        link: '/buy/1107'
                     },
                 ]
             ]
@@ -2136,11 +2136,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/22'
+                        link: '/estimate/993'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/43'
+                        link: '/estimate/1116'
                     }
                 ],
                 [
@@ -2150,11 +2150,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/22'
+                        link: '/buy/993'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/43'
+                        link: '/buy/1116'
                     },
                 ]
             ]
@@ -2304,11 +2304,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/29'
+                        link: '/estimate/1031'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/51'
+                        link: '/estimate/1193'
                     }
                 ],
                 [
@@ -2318,11 +2318,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/29'
+                        link: '/buy/1031'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/51'
+                        link: '/buy/1193'
                     },
                 ]
             ]
@@ -2503,11 +2503,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/13'
+                        link: '/estimate/982'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/52'
+                        link: '/estimate/1202'
                     }
                 ],
                 [
@@ -2517,11 +2517,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/13'
+                        link: '/buy/982'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/52'
+                        link: '/buy/1202'
                     },
                 ]
             ]
@@ -2671,11 +2671,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/30'
+                        link: '/estimate/1040'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/53'
+                        link: '/estimate/1220'
                     }
                 ],
                 [
@@ -2685,11 +2685,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/30'
+                        link: '/buy/1040'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/53'
+                        link: '/buy/1220'
                     },
                 ]
             ]
@@ -2838,11 +2838,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/32'
+                        link: '/estimate/1058'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/55'
+                        link: '/estimate/1238'
                     }
                 ],
                 [
@@ -2852,11 +2852,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/32'
+                        link: '/buy/1058'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/55'
+                        link: '/buy/1238'
                     },
                 ]
             ]
@@ -3005,11 +3005,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/31'
+                        link: '/estimate/1049'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/54'
+                        link: '/estimate/1229'
                     }
                 ],
                 [
@@ -3019,11 +3019,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/31'
+                        link: '/buy/1049'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/54'
+                        link: '/buy/1229'
                     },
                 ]
             ]
@@ -3162,11 +3162,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/33'
+                        link: '/estimate/1067'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/53'
+                        link: '/estimate/1253'
                     }
                 ],
                 [
@@ -3176,11 +3176,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/33'
+                        link: '/buy/1067'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/53'
+                        link: '/buy/1253'
                     },
                 ]
             ]
@@ -3318,7 +3318,7 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/35'
+                        link: '/estimate/1314'
                     },
                     // {
                     //     text: 'お見積もり',
@@ -3326,7 +3326,7 @@ export const iconList = [
                     // },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/60'
+                        link: '/estimate/1081'
                     }
                 ],
                 [
@@ -3336,7 +3336,7 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/35'
+                        link: '/buy/1314'
                     },
                     // {
                     //     text: 'ご購入',
@@ -3344,7 +3344,7 @@ export const iconList = [
                     // },
                     {
                         text: 'ご購入',
-                        link: '/buy/60'
+                        link: '/buy/1081'
                     },
                 ]
             ]
@@ -3483,27 +3483,27 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/37'
+                        link: '/estimate/1316'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/38'
+                        link: '/estimate/1321'
                     }
                 ],
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy/37'
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy/38'
-                    },
-                ]
+                // [
+                //     {
+                //         text: '',
+                //         link: ''
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/1316'
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/1321'
+                //     },
+                // ]
             ]
         },
         purchaseText: ['Datalore TeamおよびDatalore Enterpriseは年間サブスクリプションライセンスです。'],
@@ -3588,21 +3588,21 @@ export const iconList = [
             //     [
             //         {
             //             text: 'お見積もり',
-            //             link: '/estimate/14'
+            //             link: '/estimate/871'
             //         },
             //         {
             //             text: 'お見積もり',
-            //             link: '/estimate/14'
+            //             link: '/estimate/872'
             //         }
             //     ],
             //     [
             //         {
             //             text: 'ご購入',
-            //             link: '/buy/14'
+            //             link: '/buy/871'
             //         },
             //         {
             //             text: 'ご購入',
-            //             link: '/buy/14'
+            //             link: '/buy/872'
             //         }
             //     ]
             // ]
@@ -3698,7 +3698,7 @@ export const iconList = [
             //         },
             //         {
             //             text: 'お見積もり',
-            //             link: '/estimate/18'
+            //             link: '/estimate/1323'
             //         },
             //     ],
             //     [
@@ -3708,7 +3708,7 @@ export const iconList = [
             //         },
             //         {
             //             text: 'ご購入',
-            //             link: '/buy/18'
+            //             link: '/buy/1323'
             //         },
             //     ]
             // ]
@@ -3804,7 +3804,7 @@ export const iconList = [
             //         },
             //         {
             //             text: 'お見積もり',
-            //             link: '/estimate/63'
+            //             link: '/estimate/1333'
             //         },
             //     ],
             //     [
@@ -3814,7 +3814,7 @@ export const iconList = [
             //         },
             //         {
             //             text: 'ご購入',
-            //             link: '/buy/63'
+            //             link: '/buy/1333'
             //         },
             //     ]
             // ]
@@ -3910,7 +3910,7 @@ export const iconList = [
             //         },
             //         {
             //             text: 'お見積もり',
-            //             link: '/estimate/64'
+            //             link: '/estimate/1351'
             //         },
             //     ],
             //     [
@@ -3920,7 +3920,7 @@ export const iconList = [
             //         },
             //         {
             //             text: 'ご購入',
-            //             link: '/buy/64'
+            //             link: '/buy/1351'
             //         },
             //     ]
             // ]
@@ -4417,11 +4417,11 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/39'
+                        link: '/estimate/1372'
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate/40'
+                        link: '/estimate/1369'
                     }
                 ],
                 [
@@ -4431,11 +4431,11 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/39'
+                        link: '/buy/1372'
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy/40'
+                        link: '/buy/1369'
                     },
                 ]
             ]
@@ -4549,8 +4549,8 @@ export const iconList = [
             title: [
                 [
                     {
-                        text: 'On-Premises (TeamCity Enterprise)',
-                        col: 7
+                        text: 'TeamCity On-Premises (TeamCity Enterprise)',
+                        col: 6
                     }
                 ]
             ],
@@ -4559,10 +4559,6 @@ export const iconList = [
                     {
                         text: '新規購入',
                         col: 2
-                    },
-                    {
-                        text: 'Agent in Server',
-                        row: 2
                     },
                     {
                         text: '有効期限内の更新',
@@ -4595,89 +4591,62 @@ export const iconList = [
                 ],
                 [
                     {
-                        text: '$2,399\n(税込み $2,638.90)',
-                        row: 6
+                        text: '¥311,870\n(税込み ¥343,057)',
                     },
                     {
-                        text: '$359\n(税込み $394.90)',
-                        row: 6
+                        text: '¥46,670\n(税込み ¥51,337)',
                     },
                     {
-                        text: '3',
+                        text: '¥155,870\n(税込み ¥171,457)',
                     },
                     {
-                        text: '$1,199\n(税込み $1,318.90)',
+                        text: '¥23,270\n(税込み ¥25,597)',
                     },
                     {
-                        text: '$179\n(税込み $196.90)',
-                        row: 6
+                        text: '¥233,870\n(税込み ¥257,257)',
                     },
                     {
-                        text: '$1,799\n(税込み $1,978.90)',
-                    },
-                    {
-                        text: '$275\n(税込み $302.50)',
-                        row: 6
+                        text: '¥35,750\n(税込み ¥39,325)',
                     }
                 ],
-                [
-                    {
-                        text: '5'
-                    },
-                    {
-                        text: '$1,499\n(税込み $1,648.90)'
-                    },
-                    {
-                        text: '$2,279\n(税込み $2,506.90)'
-                    }
-                ],
-                [
-                    {
-                        text: '10'
-                    },
-                    {
-                        text: '$2,219\n(税込み $2,440.90)'
-                    },
-                    {
-                        text: '$3,359\n(税込み $3,694.90)'
-                    }
-                ],
-                [
-                    {
-                        text: '20'
-                    },
-                    {
-                        text: '$3,599\n(税込み $3,958.90)'
-                    },
-                    {
-                        text: '$5,399\n(税込み $5,938.90)'
-                    }
-                ],
-                [
-                    {
-                        text: '50'
-                    },
-                    {
-                        text: '$7,799\n(税込み $8,578.90)'
-                    },
-                    {
-                        text: '$11,759\n(税込み $12,934.90)'
-                    }
-                ],
-                [
-                    {
-                        text: '100'
-                    },
-                    {
-                        text: '$13,199\n(税込み $14,518.90)'
-                    },
-                    {
-                        text: '$19,799\n(税込み $21,778.90)'
-                    }
-                ]
             ],
             bottom: [
-                
+                [
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1268'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1271'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1274'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1277'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1280'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1283'
+                    }
+                ],
+                // [
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy'
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy'
+                //     }
+                // ]
             ]
         },
         purchaseText: ['TeamCity Cloudは年間サブスクリプションライセンス、TeamCity On-Premisesは永久ライセンスです。'],

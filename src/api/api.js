@@ -56,6 +56,8 @@ export function isSubmit(inputs){
 
 export function userApi(url, type, data){
     const options = commonOptions(type, data);
+    // http://52.79.158.32:8080
+    console.log(`${userApiUrl}${url}`);
     return fetch(`${userApiUrl}${url}`, options)
             .then(response => response.json())
             .catch(error => console.log('error', error));

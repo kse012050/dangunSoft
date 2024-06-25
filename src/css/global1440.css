@@ -57,7 +57,7 @@ br[class]:not([class*="pc"]){display: none;}
 .userPage .productBox{--imgWidth: 120px;}
 .userPage .productBox figure figcaption :is(strong, p, div:not(:has(button))){font-size: 18px; line-height: 24px;}
 .userPage .productBox figure figcaption :is(strong, p){padding-right: 190px;}
-.userPage .productBox .deliveryArea{font-size: 16px;}
+/* .userPage .productBox .deliveryArea{font-size: 16px;} */
 
 
 /* 인풋 */

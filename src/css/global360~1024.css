@@ -36,7 +36,7 @@
 
 /* 상품 정보 */
 .userPage .productBox figure figcaption :is(strong, p, div:not(:has(button))){font-size: 16px; line-height: 22px;}
-.userPage .productBox .deliveryArea{font-size: 14px;}
+/* .userPage .productBox .deliveryArea{font-size: 14px;} */
 
 
 /* 인풋 */

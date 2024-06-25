@@ -36,12 +36,11 @@
 
 /* 상품 정보 */
 .userPage .productBox{padding-top: 30px; --gap: 30px;}
-.userPage .productBox .deliveryArea{padding-right: 30px;}
 .userPage .productBox figure figcaption{position: relative;}
 .userPage .productBox figure figcaption div{position: absolute; top: 50%; transform: translateY(-50%);}
 .userPage .productBox figure figcaption div:has(button){right: 0;}
 .userPage .productBox figure figcaption div:not(:has(button)){right: 30px;}
-.userPage .productBox .deliveryArea{margin-top: 30px;}
+/* .userPage .productBox .deliveryArea{padding-right: 30px; margin-top: 30px;} */
 
 
 /* 인풋 */
@@ -49,7 +48,7 @@
 
 
 /* 최종 결제 금액 */
-.userPage .amountBox{padding-inline: 30px;}
+.userPage .amountBox{padding-inline: 30px; margin-top: 30px;}
 
 
 /* 완료 */
