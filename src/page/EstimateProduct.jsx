@@ -12,9 +12,9 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     const [product, setProduct] = useState()
     const [option, setOption] = useState()
     const [optionPrice, setOptionPrice] = useState()
-    if(productIdx === 1){
+    // if(productIdx === 1){
         // console.log(products?.[productIdx]);
-    }
+    // }
 
     useLayoutEffect(()=>{
         // setInputs(prev=> !prev ? {...orderProductList} : {...prev})

@@ -1,27 +1,75 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Select from '../components/Select';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { isSubmit, userApi } from '../api/api';
+import { urlParams } from '../js/common';
+import { inputChange, inputsRequiredAdd } from '../api/validation';
 
 export default function Buy() {
+    const { id } = useParams()
+    const { idx } = urlParams(useLocation())
     const navigate = useNavigate();
+    const [inputs, setInputs] = useState();
+    const [orderProduct, setOrderProduct] = useState();
+    const [licenseInfo, setLicenseInfo] = useState();
+    const [productInfo, setProductInfo] = useState()
     const [test, setTest] = useState(true)
     const [test2, setTest2] = useState()
-    console.log(test);
-    console.log(test2);
+
+    useLayoutEffect(()=>{
+        inputsRequiredAdd(setInputs);
+        if(id){
+            userApi('product/detail', '', {option_price_id: id})
+                .then((result)=>{
+                    console.log(result);
+                    if(result.result){
+                        setOrderProduct({
+                            vendor_id: result.data.vendor_id,
+                            product_id: result.data.product_id,
+                            product_option_id: result.data.optionList[0].product_option_id,
+                            order_quantiry: result.data.optionList[0].minimum_quantiry,
+                            option_price_id: result.data.optionList[0].option_price_id,
+                        })
+                        setProductInfo({
+                            product_name: result.data.product_name,
+                            option_name: result.data.optionList[0].option_name,
+                            price: 12870
+                        })
+                    }
+                })
+        }
+
+    },[id])
+
+    const onsubmit = (e) =>{
+        e.preventDefault();
+        console.log(inputs);
+
+        if(isSubmit(inputs)){
+            return;
+        }
+
+        console.log('완료');
+    }
 
     return (
         <section>
             <h2>ご購入</h2>
             <div className='productBox'>
                 <figure>
-                    <img src={require('../images/intelliJ.png')} alt="임시 이미지" />
+                    <img src={require(`../images/products/${idx}.svg`)} alt="" />
                     <figcaption>
-                        <strong>IntelliJ IDEA商業用2年</strong>
-                        <p>475,000円</p>
+                        {/* <strong>IntelliJ IDEA商業用2年</strong> */}
+                        <strong>{ productInfo?.product_name }</strong>
+                        <p>{ productInfo?.price }円</p>
                         <div>
-                            <button>-</button>
-                            1
-                            <button>+</button>
+                            <button
+                                onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry > 2 ? prev.order_quantiry - 1 : prev.order_quantiry}))}
+                            >-</button>
+                            { orderProduct?.order_quantiry }
+                            <button
+                                onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry + 1}))}
+                            >+</button>
                         </div>
                     </figcaption>
                 </figure>
@@ -31,68 +79,68 @@ export default function Buy() {
                 </dl>
                 <dl className="amountBox">
                     <dt>合計 (税込み)</dt>
-                    <dd>475,000円</dd>
+                    <dd>{ orderProduct?.order_quantiry * productInfo?.price }円</dd>
                 </dl>
             </div>
             <form>
-                <fieldset className='inputBox'>
+                <fieldset className='inputBox' onChange={(e)=>inputChange(e, setInputs)}>
                     <strong>ご注文者の情報</strong>
                     <ul>
                         <li>
-                            <label htmlFor="">名前</label>
+                            <label htmlFor="write_name">名前</label>
                             <div>
-                                <input type="text" placeholder='名前を入力してください'/>
+                                <input type="text" id='write_name' name='write_name' placeholder='名前を入力してください' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">会社名</label>
+                            <label htmlFor="company_name">会社名</label>
                             <div>
-                                <input type="text" placeholder='企業名を入力してください'/>
-                                <input type="checkbox" />
-                                <label htmlFor="">個人</label>
+                                <input type="text" id='company_name' name='company_name' placeholder='企業名を入力してください' required/>
+                                <input type="checkbox" id='individual_yn' name='individual_yn'/>
+                                <label htmlFor="individual_yn">個人</label>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">電話番号</label>
+                            <label htmlFor="contact_information">電話番号</label>
                             <div>
-                                <input type="text" placeholder='電話番号を入力してください'/>
+                                <input type="text" id='contact_information' name='contact_information' placeholder='電話番号を入力してください' required/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">Email</label>
+                            <label htmlFor="email">Email</label>
                             <div>
-                                <input type="text" placeholder='メールを入力してください'/>
+                                <input type="text" id='email' name='email' placeholder='メールを入力してください' required/>
                             </div>
                         </li>
                     </ul>
                 </fieldset>
-                <fieldset className='inputBox'>
+                <fieldset className='inputBox' onChange={(e)=>inputChange(e, setLicenseInfo)}>
                     <strong>ライセンスユーザーの情報</strong>
                     <ul>
                         <li>
-                            <label htmlFor="">名前</label>
+                            <label htmlFor="write_name">名前</label>
                             <div>
-                                <input type="text" placeholder='名前を入力してください'/>
+                                <input type="text" id='write_name' name='write_name' placeholder='名前を入力してください'/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">名前(英語)</label>
+                            <label htmlFor="write_name_en">名前(英語)</label>
                             <div>
-                                <input type="text" placeholder='名前(英語)を入力してください'/>
+                                <input type="text" id='write_name_en' name='write_name_en' placeholder='名前(英語)を入力してください'/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">会社名</label>
+                            <label htmlFor="company_name">会社名</label>
                             <div>
-                                <input type="text" placeholder='会社名を入力してください'/>
-                                <input type="checkbox" />
-                                <label htmlFor="">個人</label>
+                                <input type="text" id='company_name' name='company_name' placeholder='会社名を入力してください'/>
+                                <input type="checkbox" name='individual_yn' id='individual_yn_license'/>
+                                <label htmlFor="individual_yn_license">個人</label>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">会社名(英語)</label>
+                            <label htmlFor="company_name_en">会社名(英語)</label>
                             <div>
-                                <input type="text" placeholder='会社名(英語)を入力してください'/>
+                                <input type="text" id='company_name_en' name='company_name_en' placeholder='会社名(英語)を入力してください'/>
                                 {/* <input type="checkbox" />
                                 <label htmlFor="">個人</label> */}
                             </div>
@@ -122,15 +170,15 @@ export default function Buy() {
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">電話番号</label>
+                            <label htmlFor="contact_information">電話番号</label>
                             <div>
-                                <input type="text" placeholder='電話番号を入力してください'/>
+                                <input type="text" id='contact_information' name='contact_information' placeholder='電話番号を入力してください'/>
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="">Email</label>
+                            <label htmlFor="email">Email</label>
                             <div>
-                                <input type="text" placeholder='メールを入力してください'/>
+                                <input type="text" id='email' name='email' placeholder='メールを入力してください'/>
                             </div>
                         </li>
                         <li>
@@ -198,7 +246,7 @@ export default function Buy() {
                 </dl>
                 <div className='submitBox'>
                     <input type="reset" className='btn-border-black' value='キャンセル'/>
-                    <input type="submit" className='btn-bg' value='決済する' onClick={()=>navigate('/buyResult')}/>
+                    <input type="submit" className='btn-bg' value='決済する' onClick={onsubmit}/>
                 </div>
             </form>
         </section>

@@ -68,7 +68,7 @@ export default function ProductDetail() {
                                             rowSpan={data?.row ? data.row : 1}
                                         >
                                             {data.link &&
-                                                <Link to={`${data.link}`} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                                <Link to={`${data.link}${data.link.includes('buy')? '?idx=' + productIdx: ''}`} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
                                             }
                                         </td>
                                     )}
