@@ -119,7 +119,7 @@
 
 
 /* 견적요청 페이지 */
-.estimatePage section form .inputBox > p{font-size: 15px; margin-top: 20px;}
+:is(.estimatePage, .estimateDetailPage) section form .inputBox > p{font-size: 15px; margin-top: 20px;}
 
 
 /* 구매하기 페이지 */

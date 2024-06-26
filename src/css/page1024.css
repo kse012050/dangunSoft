@@ -136,10 +136,10 @@
 /* 솔루션 페이지 - 구매 옵션 */
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section h2{font-size: 44px; line-height: 54px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, .estimateDetailPage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section h2{font-size: 44px; line-height: 54px;}
 :is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimateResultPage, .buyResultPage) section h2 + p{font-size: 16px;}
 /* 지원 페이지 - 게시판, 게시판 상세, 문의하기, FAQm 견적 요청 공통 */
-:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section{padding-block: 80px 100px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, .estimateDetailPage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section{padding-block: 80px 100px;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
 :is(.inquiryPage, .inquiryResultPage, .faqPage, .estimateResultPage, .buyResultPage) section h2{margin-bottom: 30px;}

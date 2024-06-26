@@ -198,7 +198,7 @@
 
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, .estimateDetailPage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
 :is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimateResultPage, .buyResultPage ) section h2 + p{color: var(--color-font01); text-align: center;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
@@ -246,9 +246,9 @@
 
 
 /* 견적요청 페이지 */
-.estimatePage section form fieldset:not(:last-of-type){margin-bottom: 40px;}
-.estimatePage section form .inputBox > p{line-height: 22px;}
-.estimatePage section form .inputBox > p button{font-weight: 700; text-decoration: underline;}
+:is(.estimatePage, .estimateDetailPage) section form fieldset:not(:last-of-type){margin-bottom: 40px;}
+:is(.estimatePage, .estimateDetailPage) section form .inputBox > p{line-height: 22px;}
+:is(.estimatePage, .estimateDetailPage) section form .inputBox > p button{font-weight: 700; text-decoration: underline;}
 
 
 /* 구매하기 페이지 */

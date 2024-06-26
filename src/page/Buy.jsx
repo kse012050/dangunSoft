@@ -30,17 +30,61 @@ export default function Buy() {
     const [productInfo, setProductInfo] = useState()
     const sameRef = useRef()
     const [popup, setPopup] = useState()
-    // const [test, setTest] = useState(true)
-    // const [test2, setTest2] = useState()
+    const inputsRef = useRef(inputs);
+    const orderProductRef = useRef(orderProduct);
+    const licenseInfoRef = useRef(licenseInfo);
+    const [isLoading, setIsLoading] = useState()
 
     useEffect(()=>{
         (id || idx) || navigate('/product')
     },[id, idx, navigate])
 
+    useEffect(() => {
+        inputsRef.current = inputs;
+    }, [inputs]);
+
+    useEffect(() => {
+        orderProductRef.current = orderProduct;
+    }, [orderProduct]);
+
+    useEffect(() => {
+        licenseInfoRef.current = licenseInfo;
+    }, [licenseInfo]);
+    
+    useEffect(()=>{
+        window.onTokenCreated = (response) => {
+            // console.log('Token created:', response.id);
+            // console.log(inputsRef.current);
+
+            let parameter = {
+                ...inputsRef.current,
+                order_product_list: [{
+                    ...orderProductRef.current
+                }],
+                license_info: {
+                    ...licenseInfoRef.current
+                },
+                pay_token: response.id
+            }
+            // console.log(parameter);
+
+            setIsLoading(true)
+
+            userApi('order/manage', '', {...parameter})
+                .then((result)=>{
+                    console.log(result);
+                    if(result.result){
+                        sessionStorage.setItem('buyDetail', JSON.stringify(result.data));
+                        navigate(`/buyResult?idx=${idx}`)
+                    }
+                })
+        };
+
+    },[inputs, orderProduct, licenseInfo, idx, navigate])
+
+
     useLayoutEffect(()=>{
-
         inputsRequiredAdd(setInputs);
-
 
         const script = document.createElement('script');
         script.type = 'text/javascript';
@@ -49,6 +93,7 @@ export default function Buy() {
         script.setAttribute('data-key', 'pk_test_f3267e4bac33429e65021689');
         script.setAttribute('data-submit-text', 'トークンを作成する');
         script.setAttribute('data-partial', 'true');
+        script.setAttribute('data-on-created', 'onTokenCreated');
         document.querySelector('.payjsArea').appendChild(script)
 
         if(id){
@@ -106,39 +151,41 @@ export default function Buy() {
             return
         }
 
-        if(!document.querySelector('input[type="hidden"][name="payjp-token"').value){
-            setPopup({
-                type: 'confirm',
-                title: '알림',
-                description: [
-                    '카드정보를 입력해주세요.',
-                ],
-            })
-            return
-        }
+        document.querySelector('#payjp_checkout_box input[type="button"]').click()
 
-        let parameter = {
-            ...inputs,
-            order_product_list: [{
-                ...orderProduct
-            }],
-            license_info: {
-                ...licenseInfo
-            },
-            pay_token: document.querySelector('input[type="hidden"][name="payjp-token"').value
-        }
-        // console.log(parameter);
+        // if(!document.querySelector('input[type="hidden"][name="payjp-token"]').value){
+        //     setPopup({
+        //         type: 'confirm',
+        //         title: '알림',
+        //         description: [
+        //             '카드정보를 입력해주세요.',
+        //         ],
+        //     })
+        //     return
+        // }
 
-        userApi('order/manage', '', {...parameter})
-            .then((result)=>{
-                // console.log(result);
-                if(result.result){
-                    sessionStorage.setItem('buyDetail', JSON.stringify(result.data));
-                    navigate(`/buyResult?idx=${idx}`)
-                }
-            })
+        // let parameter = {
+        //     ...inputs,
+        //     order_product_list: [{
+        //         ...orderProduct
+        //     }],
+        //     license_info: {
+        //         ...licenseInfo
+        //     },
+        //     pay_token: document.querySelector('input[type="hidden"][name="payjp-token"]').value
+        // }
+        // // console.log(parameter);
 
-}
+        // userApi('order/manage', '', {...parameter})
+        //     .then((result)=>{
+        //         // console.log(result);
+        //         if(result.result){
+        //             sessionStorage.setItem('buyDetail', JSON.stringify(result.data));
+        //             navigate(`/buyResult?idx=${idx}`)
+        //         }
+        //     })
+
+    }
 
     return (
         <>
@@ -297,18 +344,18 @@ export default function Buy() {
                             </li>
                         </ul>
                     </fieldset>
-                    <fieldset className='inputArea'>
+                    {/* <fieldset className='inputArea'>
                         <strong>決済情報</strong>
                         <ul>
                             <li>
                                 <label htmlFor="">決済方法</label>
                                 <div>
-                                    <input type="radio" defaultChecked id='test01' name='test'  /* onChange={()=>setTest(true)} *//>
+                                    <input type="radio" defaultChecked id='test01' name='test' onChange={()=>setTest(true)}/>
                                     <label htmlFor="test01">クレジットカード</label>
-                                    <input type="radio" /* id='test02' */ name='test' /* onChange={()=>setTest(false)} *//>
+                                    <input type="radio" id='test02' name='test' onChange={()=>setTest(false)}/>
                                     <label htmlFor="test02">銀行振込</label>
                                 </div>
-                                {/* <div>
+                                <div>
                                     { test ?
                                         <p>카드 : 현대카드, 국민카드, 롯데카드, 삼성카드, 비씨카드, 신한카드, 하나(외환)카드, NH농협카드</p> :
                                         <>
@@ -323,13 +370,13 @@ export default function Buy() {
                                             <p>입금 확인은 자동으로 진행되며 확인이 완료되면 영업일 기준 1-2일 이내로 라이선스 증서를 받아보실 수 있습니다.</p>
                                         </>
                                     }
-                                </div> */}
+                                </div>
                             </li>
                         </ul>
-                    </fieldset>
-                    <fieldset className='payjsArea'>
+                    </fieldset> */}
+                    <div className='payjsArea'>
 
-                    </fieldset>
+                    </div>
                     {/* <fieldset className='inputArea'>
                         <strong>最終注文確認</strong>
                         <ul>
@@ -362,6 +409,13 @@ export default function Buy() {
                 </form>
             </section>
             { popup && <Popup popup={popup} setPopup={setPopup}/>}
+            { isLoading &&
+                <div className='loading'>
+                    <svg className="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle className="path" fill="none" strokeWidth="6" strokeLinecap="round" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                </div>
+            }
         </>
     );
 }
