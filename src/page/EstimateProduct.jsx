@@ -12,9 +12,6 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     const [product, setProduct] = useState()
     const [option, setOption] = useState()
     const [optionPrice, setOptionPrice] = useState()
-    // if(productIdx === 1){
-        // console.log(products?.[productIdx]);
-    // }
 
     useLayoutEffect(()=>{
         // setInputs(prev=> !prev ? {...orderProductList} : {...prev})
@@ -26,9 +23,21 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     if(result.result){
                         setInputs(prev=> ({...prev, vendor_id: result.data.vendor_id, product_id: result.data.product_id}))
                         setFirstText(prev=> ({...prev, vendor_id: result.data.vendor_name, product_id: result.data.product_name}))
-                        setProduct({
-                            data: [...result.data.optionList]
-                        })
+
+                        // setProduct({
+                        //     data: [...result.data.optionList]
+                        // })
+                        
+                        const productId = result.data.product_id;
+                        userApi('product', '', {vendor_id: result.data.vendor_id})
+                            .then((result)=>{
+                                // console.log(result.list.filter((data)=>data.product_id === productId)[0].optionList);
+                                if(result.result){
+                                    setProduct({
+                                        data: [...result.list.filter((data)=>data.product_id === productId)[0].optionList]
+                                    })
+                                }
+                            })
                     }
                 })
         }else{
