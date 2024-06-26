@@ -9,7 +9,7 @@ export default function Detail() {
     useLayoutEffect(()=>{
         adminApi('order/detail', '', {order_id: id})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
                     setDetail(result.data)
                 }
@@ -50,7 +50,7 @@ export default function Detail() {
                     <li>
                         <span>결제정보</span>
                         <div>
-                            <p>{ detail?.pay_result_info }</p>
+                            <p>{ detail?.state }</p>
                         </div>
                     </li>
                     <li>

@@ -100,7 +100,11 @@ export default function EstimateProduct({ orderProductList, products, setProduct
 
     useEffect(()=>{
         if(inputs?.product_option_id){
-            setInputs((prev)=>({...prev, order_quantiry: option.data.filter(data=> data.product_option_id === inputs?.product_option_id)[0].minimum_quantiry}))
+            setInputs((prev)=>({
+                ...prev,
+                order_quantiry: option.data.filter(data=> data.product_option_id === inputs?.product_option_id)[0].minimum_quantiry,
+                option_price_id: option.data.filter(data=> data.product_option_id === inputs?.product_option_id)[0].optionPriceList[0].option_price_id
+            }))
             setOptionPrice(option.data.filter(data=>data.product_option_id === inputs.product_option_id)[0].optionPriceList)
         }
     },[inputs?.product_option_id])

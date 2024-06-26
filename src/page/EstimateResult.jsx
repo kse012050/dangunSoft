@@ -95,7 +95,7 @@ export default function EstimateResult() {
                 </dl>
             </div>
             
-            <Link to='/' className='btn-bg'>確認</Link>
+            <Link to='/estimate' className='btn-bg'>確認</Link>
         </section>
     );
 }

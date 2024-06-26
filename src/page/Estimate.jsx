@@ -36,7 +36,7 @@ export default function Estimate() {
     const onSubmit = (e) => {
         e.preventDefault();
         // console.log(inputs);
-        console.log(products);
+        // console.log(products);
         
         if(isSubmit(inputs)){
             return;
@@ -76,10 +76,7 @@ export default function Estimate() {
 
     return (
         <section>
-            <h2 onClick={()=>{
-                console.log(products)
-                console.log(firstTexts)
-            }}>お見積もり</h2>
+            <h2>お見積もり</h2>
             <form onChange={(e)=>inputChange(e, setInputs)}>
                 {!!products.length && products.map((_, i)=>
                     <React.Fragment key={i}>

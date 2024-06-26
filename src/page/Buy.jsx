@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Select from '../components/Select';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { isSubmit, userApi } from '../api/api';
@@ -33,7 +33,12 @@ export default function Buy() {
     // const [test, setTest] = useState(true)
     // const [test2, setTest2] = useState()
 
+    useEffect(()=>{
+        (id || idx) || navigate('/product')
+    },[id, idx, navigate])
+
     useLayoutEffect(()=>{
+
         inputsRequiredAdd(setInputs);
 
 
@@ -41,7 +46,7 @@ export default function Buy() {
         script.type = 'text/javascript';
         script.src = 'https://checkout.pay.jp/';
         script.className = 'payjp-button';
-        script.setAttribute('data-key', 'pk_test_0383a1b8f91e8a6e3ea0e2a9');
+        script.setAttribute('data-key', 'pk_test_f3267e4bac33429e65021689');
         script.setAttribute('data-submit-text', 'トークンを作成する');
         script.setAttribute('data-partial', 'true');
         document.querySelector('.payjsArea').appendChild(script)
@@ -66,7 +71,6 @@ export default function Buy() {
                     }
                 })
         }
-
     },[id])
 
     const onSame = (e) => {
@@ -127,7 +131,11 @@ export default function Buy() {
 
         userApi('order/manage', '', {...parameter})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
+                if(result.result){
+                    sessionStorage.setItem('buyDetail', JSON.stringify(result.data));
+                    navigate(`/buyResult?idx=${idx}`)
+                }
             })
 
 }
@@ -138,7 +146,9 @@ export default function Buy() {
                 <h2>ご購入</h2>
                 <div className='productBox'>
                     <figure>
-                        <img src={require(`../images/products/${idx}.svg`)} alt="" />
+                        {idx &&
+                            <img src={require(`../images/products/${idx}.svg`)} alt="" />
+                        }
                         <figcaption>
                             {/* <strong>IntelliJ IDEA商業用2年</strong> */}
                             <strong>{ productInfo?.product_name }</strong>
@@ -280,9 +290,9 @@ export default function Buy() {
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="">要求事項</label>
+                                <label htmlFor="comment">要求事項</label>
                                 <div>
-                                    <textarea name="" id=""></textarea>
+                                    <textarea name="comment" id="comment" onChange={(e)=>inputChange(e, setInputs)}></textarea>
                                 </div>
                             </li>
                         </ul>

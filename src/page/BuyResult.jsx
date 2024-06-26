@@ -1,7 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { urlParams } from '../js/common';
 
 export default function BuyResult() {
+    const { idx } = urlParams(useLocation())
+    const navigate = useNavigate();
+
+    const buyDetail = JSON.parse(sessionStorage.getItem('buyDetail'))
+
+    useEffect(()=>{
+        buyDetail || navigate('/product')
+        // console.log(buyDetail);
+        sessionStorage.setItem('buyDetail', sessionStorage.getItem('buyDetail'))
+        return () => {
+            sessionStorage.removeItem('buyDetail')
+        }
+    },[buyDetail, navigate])
+
     return (
         <section>
             <h2>ご購入が完了しました。</h2>
@@ -9,16 +24,18 @@ export default function BuyResult() {
 
             <div className='productBox'>
                 <figure>
-                    <img src="https://placehold.co/120x120" alt="임시 이미지" />
+                    {idx &&
+                        <img src={require(`../images/products/${idx}.svg`)} alt="" />
+                    }
                     <figcaption>
-                        <strong>Mindiet MindManager Single New License</strong>
-                        <p>475,000円</p>
-                        <div>1つ</div>
+                        <strong>{buyDetail?.order_product_list[0].product_name}</strong>
+                        <p>{buyDetail?.order_product_list[0].total_price.toLocaleString()}円</p>
+                        <div>{buyDetail?.order_product_list[0].order_quantiry}つ</div>
                     </figcaption>
                 </figure>
                 <dl className="amountBox">
                     <dt>合計 (税込み)</dt>
-                    <dd>475,000円</dd>
+                    <dd>{buyDetail?.order_product_list[0].total_price.toLocaleString()}円</dd>
                 </dl>
             </div>
             
@@ -26,82 +43,78 @@ export default function BuyResult() {
                 <strong>ご注文者情報</strong>
                 <dl>
                     <dt>名前</dt>
-                    <dd>홍길동</dd>
+                    <dd>{buyDetail?.write_name}</dd>
                 </dl>
                 <dl>
                     <dt>会社名</dt>
-                    <dd>일구팔오 / 개인</dd>
+                    <dd>{buyDetail?.company_name}</dd>
                 </dl>
                 <dl>
                     <dt>電話番号</dt>
-                    <dd>010-5555-8888</dd>
+                    <dd>{buyDetail?.contact_Information}</dd>
                 </dl>
                 <dl>
                     <dt>Email</dt>
-                    <dd>dykang@tangunsoft.com</dd>
+                    <dd>{buyDetail?.email}</dd>
                 </dl>
 
                 <strong>ライセンスユーザー情報</strong>
                 <dl>
                     <dt>名前</dt>
-                    <dd>홍길동</dd>
+                    <dd>{buyDetail?.license_info_obj.write_name}</dd>
                 </dl>
                 <dl>
                     <dt>名前(英語)</dt>
-                    <dd>Hong Gil Dong</dd>
+                    <dd>{buyDetail?.license_info_obj.write_name_en}</dd>
                 </dl>
                 <dl>
                     <dt>会社名</dt>
-                    <dd>홍길동 / 개인</dd>
+                    <dd>{buyDetail?.license_info_obj.company_name}</dd>
                 </dl>
                 <dl>
                     <dt>会社名(英語)</dt>
-                    <dd>Hong Gil Dong / 개인</dd>
+                    <dd>{buyDetail?.license_info_obj.company_name_en}</dd>
                 </dl>
                 <dl>
                     <dt>郵便番号</dt>
-                    <dd>우편번호</dd>
+                    <dd>{buyDetail?.license_info_obj.post_code}</dd>
                 </dl>
                 <dl>
                     <dt>住所</dt>
-                    <dd>서울시 서초구 서초대로 67 성령빌딩 2층</dd>
+                    <dd>{buyDetail?.license_info_obj.address} {buyDetail?.license_info_obj.address_detail}</dd>
+                </dl>
+                <dl>
+                    <dt>郵便番号(英語)</dt>
+                    <dd>{buyDetail?.license_info_obj.post_code_en}</dd>
                 </dl>
                 <dl>
                     <dt>住所(英語)</dt>
-                    <dd>67, Seocho-daero, Seocho-gu, Seoul, Republic of Korea</dd>
+                    <dd>{buyDetail?.license_info_obj.address_en} {buyDetail?.license_info_obj.address_detail_en}</dd>
                 </dl>
                 <dl>
                     <dt>電話番号</dt>
-                    <dd>010-5555-8888</dd>
+                    <dd>{buyDetail?.license_info_obj.contact_information}</dd>
                 </dl>
                 <dl>
                     <dt>Email</dt>
-                    <dd>dykang@tangunsoft.com</dd>
+                    <dd>{buyDetail?.license_info_obj.email}</dd>
                 </dl>
                 <dl>
                     <dt>要求事項</dt>
-                    <dd>
-                        프로모션으로 제품을 구매했는데요~ 문의드려요~ 프로모션으로 제품을 구매했는데요~<br/>
-                        문의드려요~ 프로모션으로 제품을 구매했는데요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~<br/>
-                        문의드려요~
-                    </dd>
+                    <dd>{buyDetail?.comment}</dd>
                 </dl>
 
                 <strong>決済情報</strong>
                 <dl>
                     <dt>決済方法</dt>
-                    <dd>クレジットカード</dd>
+                    <dd>
+                        クレジットカード
+                        {/* 결제 방법 */}
+                    </dd>
                 </dl>
             </div>
 
-            <Link to='/' className='btn-bg'>確認</Link>
+            <Link to='/product' className='btn-bg'>確認</Link>
         </section>
     );
 }
