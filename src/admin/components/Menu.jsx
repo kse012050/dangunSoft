@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState } from 'react';
-import { NavLink/* , useLocation */ } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { adminApi } from '../api/api';
 
 export default function Menu() {
-    // const location = useLocation().pathname;
+    const location = useLocation().pathname.slice(1).split('/')[1];
     const [superYN, setSuperYN] = useState()
     // const [isOpen, setIsOpen] = useState(()=>{
     //     const obj = {
@@ -17,7 +17,7 @@ export default function Menu() {
     //     }
     //     return obj
     // })
-    const [isOpen, setIsOpen] = useState('statistics')
+    const [isOpen, setIsOpen] = useState(location)
 
     useLayoutEffect(()=>{
         adminApi('profile')
