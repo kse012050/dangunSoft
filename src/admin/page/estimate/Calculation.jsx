@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Products from './Product';
 import { useNavigate, useParams } from 'react-router-dom';
 import { adminApi } from '../../api/api';
@@ -19,6 +19,7 @@ export default function Calculation() {
     const commentRef = useRef()
     const [productList, setProductList] = useState()
     const [popup, setPopup] = useState()
+    const [price, setPrice] = useState()
     const navigate = useNavigate()
 
 
@@ -41,10 +42,23 @@ export default function Calculation() {
             })
     },[id])
 
+    useEffect(()=>{
+        // console.log(productList);
+        if(productList){
+            setPrice(()=>{
+                const obj = {
+                    total : !!productList?.filter((data)=>data.total_price).length ? productList?.filter((data)=>data.total_price).map((data)=>data.total_price * data.order_quantiry).reduce((prev, next)=> { return prev + next}) : 0,
+                    final: !!productList?.filter((data)=>data.final_pay_price).length ? productList?.filter((data)=>data.final_pay_price).map((data)=>parseFloat(data.final_pay_price)).reduce((prev, next)=> { return prev + next}) : 0
+                }
+                return obj
+            })
+        }
+    },[productList])
+
     const onSubmit = (e) =>{
         e.preventDefault()
 
-        // console.log(productList);
+        console.log(productList);
         if(!commentRef.current.value){
             commentRef.current.focus()
             return
@@ -99,7 +113,7 @@ export default function Calculation() {
                 <ol className="board-detail">
                     {productList?.map((data, i)=>
                         <li key={i}>
-                            <Products data={data} productList={productList} setProductList={setProductList} productIdx={i} key={productList.lenght}/>
+                            <Products data={data} productList={productList} setProductList={setProductList} productIdx={i} key={productList.lenght} setPrice={setPrice}/>
                         </li>
                     )}
                 </ol>
@@ -110,18 +124,23 @@ export default function Calculation() {
 
             <div className='finalArea'>
                 <strong>최종 견적</strong>
-                <dl>
-                    <dt>총 금액</dt>
-                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next}).toLocaleString()}</dd>
-                </dl>
-                <dl>
-                    <dt>할인 금액</dt>
-                    <dd>0</dd>
-                </dl>
-                <dl>
-                    <dt>최종 금액</dt>
-                    <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price).reduce((prev, next)=> { return prev + next}).toLocaleString()}</dd>
-                </dl>
+                <div>
+                    <div>
+                        <dl>
+                            <dt>총 금액</dt>
+                            {/* <dd>{productList?.filter((data)=>data.total_price).map((data)=>data.total_price)?.length && productList?.filter((data)=>data.total_price).map((data)=>data.total_price * data.order_quantiry).reduce((prev, next)=> { return prev + next}).toLocaleString()}</dd> */}
+                            <dd>{price?.total ? (price?.total).toLocaleString() : 0}</dd>
+                        </dl>
+                        <dl>
+                            <dt>할인 금액</dt>
+                            <dd>{(price?.total && price?.final && price.total - price.final > 0) ? (price.total - price.final).toLocaleString() : 0 }</dd>
+                        </dl>
+                        <dl>
+                            <dt>최종 금액</dt>
+                            <dd>{price?.final ? price?.final.toLocaleString() : 0}</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
 
             <div className='commentArea'>

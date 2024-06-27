@@ -10,7 +10,6 @@ export default function Product({ data, productList, setProductList, productIdx 
     const [products, setProducts] = useState();
     const [options, setOptions] = useState()
     const [optionPrices, setOptionPrices] = useState()
-    const [prices, setPrices] = useState()
     // console.log(data);
 
     useEffect(()=>{
@@ -116,7 +115,6 @@ export default function Product({ data, productList, setProductList, productIdx 
                     option_price_id: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id,
                     total_price: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0].vat_include_price
                 }))
-                setPrices( inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id)?.[0]?.vat_include_price : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.vat_include_price)
         }
     },[inputs?.option_price_id, inputs?.option_price_type, optionPrices])
 
@@ -153,10 +151,10 @@ export default function Product({ data, productList, setProductList, productIdx 
                 <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독옵션을 선택해주세요.' disabled={!inputs?.product_option_id || !optionPrices}/>
             </div>
             <div>
-                <input type="text" value={String(inputs?.total_price) || ''} name='total_price' onChange={(e)=>inputChange(e, setInputs)}/>
+                <input type="text" value={String(inputs?.total_price) || ''} name='total_price' onChange={(e)=>inputChange(e, setInputs)} disabled={!inputs?.option_price_id || !optionPrices}/>
             </div>
             <div>
-                <input type="text" value={String(inputs?.final_pay_price) || ''} name='final_pay_price' onChange={(e)=>inputChange(e, setInputs)}/>
+                <input type="text" value={String(inputs?.final_pay_price) || ''} name='final_pay_price' onChange={(e)=>inputChange(e, setInputs)} disabled={!inputs?.option_price_id || !optionPrices}/>
             </div>
             <div>
                 {productList.length !== 1 &&

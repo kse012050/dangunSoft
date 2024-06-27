@@ -66,11 +66,13 @@
 .adminEstimateCalculationDetailPage .boardArea :is(.board-title, .board-detail li) > *:nth-child(7){width: 150px;}
 .adminEstimateCalculationDetailPage .boardArea :is(.board-title, .board-detail li) > *:nth-child(8){width: 200px;}
 .adminEstimateCalculationDetailPage .boardArea :is(.board-title, .board-detail li) > *:nth-child(9){max-width: 80px; flex-shrink: 0;}
-.adminEstimateCalculationDetailPage .finalArea dl{display: flex; justify-content: flex-end; width: 200px; margin-left: auto;}
-.adminEstimateCalculationDetailPage .finalArea dl dt{flex: 1;}
-.adminEstimateCalculationDetailPage .finalArea dl dd{width: 100px; text-align: right;}
-.adminEstimateCalculationDetailPage .finalArea dl:not(:last-of-type){font-size: 20px; margin-bottom: 20px;}
-.adminEstimateCalculationDetailPage .finalArea dl:last-of-type{font-size: 25px; font-weight: 700; padding-top: 20px; border-top: 1px solid #DCDCDC;}
+.adminEstimateCalculationDetailPage .finalArea > div{display: flex; justify-content: flex-end;}
+.adminEstimateCalculationDetailPage .finalArea > div dl{display: flex; margin-left: auto;}
+.adminEstimateCalculationDetailPage .finalArea > div dl dt{width: 130px; flex-shrink: 0;}
+.adminEstimateCalculationDetailPage .finalArea > div dl dd{flex: 1; text-align: right;}
+.adminEstimateCalculationDetailPage .finalArea > div dl:not(:last-of-type){font-size: 20px; margin-bottom: 20px;}
+.adminEstimateCalculationDetailPage .finalArea > div dl:last-of-type{font-size: 25px; font-weight: 700;}
+.adminEstimateCalculationDetailPage .finalArea > div dl:last-of-type > *{padding-top: 20px; border-top: 1px solid #DCDCDC;}
 .adminEstimateCalculationDetailPage .commentArea textarea{height: 300px; padding: 15px;}
 .adminEstimateCalculationDetailPage .buttonArea{display: flex; justify-content: flex-end; gap: 10px;}
 
