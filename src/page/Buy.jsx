@@ -6,6 +6,107 @@ import { urlParams } from '../js/common';
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import Popup from '../admin/components/popup/Popup';
 
+const addresList = [
+    '北海道',
+    '青森県',
+    '岩手県',
+    '宮城県',
+    '秋田県',
+    '山形県',
+    '福島県',
+    '茨城県',
+    '栃木県',
+    '群馬県',
+    '埼玉県',
+    '千葉県',
+    '東京都',
+    '神奈川県',
+    '新潟県',
+    '富山県',
+    '石川県',
+    '福井県',
+    '山梨県',
+    '長野県',
+    '岐阜県',
+    '静岡県',
+    '愛知県',
+    '三重県',
+    '滋賀県',
+    '京都府',
+    '大阪府',
+    '兵庫県',
+    '奈良県',
+    '和歌山県',
+    '鳥取県',
+    '島根県',
+    '岡山県',
+    '広島県',
+    '山口県',
+    '徳島県',
+    '香川県',
+    '愛媛県',
+    '高知県',
+    '福岡県',
+    '佐賀県',
+    '長崎県',
+    '熊本県',
+    '大分県',
+    '宮崎県',
+    '鹿児島県',
+    '沖縄県',
+]
+
+const addresEnList = [
+    'Hokkaido',
+    'Aomori Prefecture',
+    'Iwate Prefecture',
+    'Miyagi Prefecture',
+    'Akita Prefecture',
+    'Yamagata Prefecture',
+    'Fukushima Prefecture',
+    'Ibaraki Prefecture',
+    'Tochigi Prefecture',
+    'Gunma Prefecture',
+    'Saitama Prefecture',
+    'Chiba Prefecture',
+    'Tokyo',
+    'Kanagawa Prefecture',
+    'Niigata Prefecture',
+    'Toyama Prefecture',
+    'Ishikawa Prefecture',
+    'Fukui Prefecture',
+    'Yamanashi Prefecture',
+    'Nagano Prefecture',
+    'Gifu Prefecture',
+    'Shizuoka Prefecture',
+    'Aichi Prefecture',
+    'Mie Prefecture',
+    'Shiga Prefecture',
+    'Kyoto Prefecture',
+    'Osaka Prefecture',
+    'Hyogo Prefecture',
+    'Nara Prefecture',
+    'Wakayama Prefecture',
+    'Tottori Prefecture',
+    'Shimane Prefecture',
+    'Okayama Prefecture',
+    'Hiroshima Prefecture',
+    'Yamaguchi Prefecture',
+    'Tokushima Prefecture',
+    'Kagawa Prefecture',
+    'Ehime Prefecture',
+    'Kochi Prefecture',
+    'Fukuoka Prefecture',
+    'Saga Prefecture',
+    'Nagasaki Prefecture',
+    'Kumamoto Prefecture',
+    'Oita Prefecture',
+    'Miyazaki Prefecture',
+    'Kagoshima Prefecture',
+    'Okinawa Prefecture',
+]
+
+
 export default function Buy() {
     const { id } = useParams()
     const { idx } = urlParams(useLocation())
@@ -20,12 +121,12 @@ export default function Buy() {
         contact_information:'',
         email:'',
         individual_yn:'n',
-        address:"111",
-        address_en:"111",
-        address_detail:"111",
-        address_detail_en:"111",
-        post_code:"111",
-        post_code_en:"11",
+        address:"",
+        address_en:"",
+        address_detail:"",
+        address_detail_en:"",
+        post_code:"",
+        post_code_en:"",
     });
     const [productInfo, setProductInfo] = useState()
     const sameRef = useRef()
@@ -97,10 +198,10 @@ export default function Buy() {
         document.querySelector('.payjsArea').appendChild(script)
 
 
-        const script2 = document.createElement('script');
-        script2.src = 'https://yubinbango.github.io/yubinbango/yubinbango.js';
-        script2.async = true;
-        document.body.appendChild(script2);
+        // const script2 = document.createElement('script');
+        // script2.src = 'https://yubinbango.github.io/yubinbango/yubinbango.js';
+        // script2.async = true;
+        // document.body.appendChild(script2);
 
         if(id){
             userApi('product/detail', '', {option_price_id: id})
@@ -141,7 +242,7 @@ export default function Buy() {
     const onsubmit = (e) =>{
         e.preventDefault();
         // console.log(inputs);
-        // console.log(licenseInfo);
+        console.log(licenseInfo);
         
         if(isSubmit(inputs)){
             return;
@@ -193,69 +294,9 @@ export default function Buy() {
 
     }
 
-    const [address, setAddress] = useState({
-        postalCode: '',
-        address1: '',
-        address2: '',
-        address3: ''
-      });
-    const handlePostalCodeChange = (e) => {
-        setAddress({ ...address, postalCode: e.target.value });
-      };
-    
-      const handleAddress1Change = (e) => {
-        setAddress({ ...address, address1: e.target.value });
-      };
-    
-      const handleAddress2Change = (e) => {
-        setAddress({ ...address, address2: e.target.value });
-      };
-    
-      const handleAddress3Change = (e) => {
-        setAddress({ ...address, address3: e.target.value });
-      };
 
     return (
         <>
-        <form className="h-adr">
-        <span className="p-country-name" style={{ display: 'none' }}>Japan</span>
-        <div>
-          <label>郵便番号</label>
-          <input
-            type="text"
-            className="p-postal-code"
-            value={address.postalCode}
-            onChange={handlePostalCodeChange}
-          />
-        </div>
-        <div>
-          <label>都道府県</label>
-          <input
-            type="text"
-            className="p-region"
-            value={address.address1}
-            onChange={handleAddress1Change}
-          />
-        </div>
-        <div>
-          <label>市区町村</label>
-          <input
-            type="text"
-            className="p-locality"
-            value={address.address2}
-            onChange={handleAddress2Change}
-          />
-        </div>
-        <div>
-          <label>町域</label>
-          <input
-            type="text"
-            className="p-street-address"
-            value={address.address3}
-            onChange={handleAddress3Change}
-          />
-        </div>
-      </form>
             <section>
                 <h2>ご購入</h2>
                 <div className='productBox'>
@@ -364,31 +405,31 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="">郵便番号</label>
                                 <div>
-                                    <Select /* set={setTest2} */ disabled placeholder='郵便番号検索'/>
+                                    <input type="text" name='post_code' placeholder='郵便番号検索' value={licenseInfo?.post_code || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="">住所</label>
                                 <div>
-                                    <input type="text" placeholder='住所を入力してください' disabled/>
+                                    <Select set={setLicenseInfo} list={addresList} name='address' placeholder='住所を入力してください'/>
                                 </div>
                                 <div>
-                                    <input type="text" placeholder='残りの住所を入力してください' disabled/>
+                                    <input type="text" name='address_detail' placeholder='残りの住所を入力してください' value={licenseInfo?.address_detail || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="">郵便番号(英語)</label>
                                 <div>
-                                    <input type="text" placeholder='영문 도로명 및 우편번호를 입력해주세요' disabled/>
+                                    <input type="text" name='post_code_en' placeholder='郵便番号(英語)検索' value={licenseInfo?.post_code_en || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="">住所(英語)</label>
                                 <div>
-                                    <input type="text" placeholder='住所(英語)を入力してください' disabled/>
+                                    <Select set={setLicenseInfo} list={addresEnList} name='address_en' placeholder='住所(英語)を入力してください'/>
                                 </div>
                                 <div>
-                                    <input type="text" placeholder='残りの住所(英語)を入力してください' disabled/>
+                                    <input type="text" name='address_detail_en' placeholder='残りの住所(英語)を入力してください' value={licenseInfo?.address_detail_en || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
                                 </div>
                             </li>
                             <li>
