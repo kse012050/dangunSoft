@@ -63,7 +63,7 @@
 /* 제품 페이지, 제품 상세 페이지, 솔루션 페이지 공통 */
 :is(.productPage, .productDetailPage, .solutionPage) > :nth-child(2){margin-bottom: 60px;}
 :is(.productPage, .productDetailPage, .solutionPage) > :not(:nth-child(-n + 2), :last-child){margin-bottom: 80px;}  
-:is(.productPage .welcomeArea, .productDetailPage .topArea, .solutionPage .topArea) h2{font-size: 36px; line-height: 46px; margin-bottom: 20px;}
+:is(.productDetailPage .topArea, .solutionPage .topArea) h2{font-size: 36px; line-height: 46px; margin-bottom: 20px;}
 :is(.productPage, .productDetailPage, .solutionPage) h3{font-size: 36px; line-height: 46px;}
 :is(.productPage, .productDetailPage, .solutionPage) h3 + p{font-size: 16px; line-height: 22px;}
 
@@ -76,11 +76,13 @@
 
 /* 제품 페이지 */
 /* 제품 페이지, 제품 상세 페이지 공통 */
-:is(.productPage .welcomeArea, .productDetailPage .topArea) p{font-size: 16px; line-height: 22px; margin-bottom: 30px;}
+:is(.productDetailPage .topArea) p{font-size: 16px; line-height: 22px; margin-bottom: 30px;}
 /* 제품 페이지 - welcome */
-.productPage .welcomeArea{padding-block: 50px 60px; text-align: center;}
-.productPage .welcomeArea p::after{max-width: 220px; display: block; margin-inline: auto;}
-.productPage .welcomeArea .btn-border-white{margin-inline: auto;}
+.productPage .welcomeArea{padding-block: 50px 72px;}
+.productPage .welcomeArea::before{width: 186px; margin-bottom: 60px;}
+.productPage .welcomeArea h2{font-size: 40px; line-height: 50px; margin-bottom: 20px;}
+.productPage .welcomeArea p{font-size: 18px; line-height: 24px; margin-bottom: 40px;}
+.productPage .welcomeArea .btn-border-white{max-width: 176px;}
 
 
 /* 제품 페이지 - 주요제품 */
@@ -100,9 +102,10 @@
 
 
 /* 제품 상세 페이지 - 상단 */
-.productDetailPage .topArea{padding-block: 60px; text-align: center;}
-/* .productDetailPage .topArea::after{display: block; max-width: 160px; margin-inline: auto;} */
-.productDetailPage .topArea img{display: block; max-width: 160px; margin-inline: auto;}
+.productDetailPage .topArea{padding-block: 50px 60px; display: flex; flex-direction: column;}
+.productDetailPage .topArea h2{margin-bottom: 20px;}
+.productDetailPage .topArea p{font-size: 16px; line-height: 22px; margin-bottom: 40px;}
+.productDetailPage .topArea img{width: 80px; order: -1; margin-bottom: 40px;}
 
 
 /* 제품 상세 페이지 - 제품 정보 */
@@ -112,6 +115,7 @@
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
+.productDetailPage .purchaseArea h3 small{display: block;}
 .productDetailPage .purchaseArea > p{font-size: 14px; line-height: 20px;}
 .productDetailPage .purchaseBox2 table thead{font-size: 24px;}
 .productDetailPage .purchaseBox2 table tbody{font-size: 16px; line-height: 22px;}

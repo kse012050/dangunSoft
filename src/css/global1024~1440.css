@@ -1,6 +1,6 @@
 /* 컨텐츠 사이즈 */
 .contentSize{--minSpacing: 24px;}
-[class$="Page"] > *:not(header, footer){--minSpacing: 24px;}
+.userPage > *:not(header, footer){--minSpacing: 24px;}
 
 
 /* 입력 */

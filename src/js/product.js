@@ -99,7 +99,7 @@ export const tabList = [
         type: [
             'Datalore',
             'YouTrack',
-            'Space',
+            // 'Space',
             'Qodana',
             'TeamCity',
         ]
@@ -314,6 +314,7 @@ export const iconList = [
     {
         idx: 1,
         title: 'JetBrains AI',
+        topLink: '/estimate/1076',
         detail: 'IDE内部に強力なAI機能を提供するプラグイン',
         type: [
             'AI',
@@ -466,6 +467,7 @@ export const iconList = [
     },
     {
         idx: 2,
+        topLink: '/estimate/979',
         title: 'IntelliJ IDEA',
         detail: 'JavaとKotlin開発者向けのIDE',
         type: [
@@ -537,7 +539,7 @@ export const iconList = [
                         text: '3年'
                     },
                     {
-                        text: '¥51,394\n(税込み ¥46,722)'
+                        text: '¥46,722\n(税込み ¥51,394)'
                     },
                     {
                         text: '¥13,182\n(税込み ¥14,500)'
@@ -636,6 +638,7 @@ export const iconList = [
     },
     {
         idx: 3,
+        topLink: '/estimate/1004',
         title: 'PyCharm',
         detail: 'Python開発者向けIDE',
         type: [
@@ -696,7 +699,7 @@ export const iconList = [
                         text: '2年'
                     },
                     {
-                        text: '¥28,486\n(税込み ¥25,896)'
+                        text: '¥25,896\n(税込み ¥28,486)'
                     },
                     {
                         text: '¥10,296\n(税込み ¥11,326)'
@@ -806,6 +809,7 @@ export const iconList = [
     },
     {
         idx: 4,
+        topLink: '/estimate/1001',
         title: 'PhpStorm',
         detail: 'PHP開発者向けIDE',
         type: [
@@ -866,7 +870,7 @@ export const iconList = [
                         text: '2年'
                     },
                     {
-                        text: '¥28,486\n(税込み ¥25,896)'
+                        text: '¥25,896\n(税込み ¥28,486)'
                     },
                     {
                         text: '¥10,296\n(税込み ¥11,326)'
@@ -976,6 +980,7 @@ export const iconList = [
     },
     {
         idx: 5,
+        topLink: '/estimate/998',
         title: 'GoLand',
         detail: 'Go開発者向けIDE',
         type: [
@@ -1035,7 +1040,7 @@ export const iconList = [
                         text: '2年'
                     },
                     {
-                        text: '¥28,486\n(税込み ¥25,896)'
+                        text: '¥25,896\n(税込み ¥28,486)'
                     },
                     {
                         text: '¥10,296\n(税込み ¥11,326)'
@@ -1145,6 +1150,7 @@ export const iconList = [
     },
     {
         idx: 6,
+        topLink: '/estimate/1161',
         title: 'Rider',
         detail: '.NET開発者向けIDE',
         type: [
@@ -1315,6 +1321,7 @@ export const iconList = [
     },
     {
         idx: 7,
+        topLink: '/estimate/976',
         title: 'CLion',
         detail: 'CとC++の開発者向けIDE',
         type: [
@@ -1485,6 +1492,7 @@ export const iconList = [
     },
     {
         idx: 8,
+        topLink: '/estimate/1022',
         title: 'WebStorm',
         detail: 'JavaScriptとTypeScript開発者向けのIDE',
         type: [
@@ -1654,6 +1662,7 @@ export const iconList = [
     },
     {
         idx: 9,
+        topLink: '/estimate/1013',
         title: 'RubyMine',
         detail: 'RubyとRails開発者向けのIDE',
         type: [
@@ -1824,6 +1833,7 @@ export const iconList = [
     },
     {
         idx: 10,
+        topLink: '/estimate/988',
         title: 'DataGrip',
         detail: '多数のデータベースと完璧に接続するデータベースツール',
         type: [
@@ -1994,6 +2004,7 @@ export const iconList = [
     },
     {
         idx: 11,
+        topLink: '/estimate/993',
         title: 'DataSpell',
         detail: 'データサイエンティストのためのIDE',
         type: [
@@ -2165,6 +2176,7 @@ export const iconList = [
     },
     {
         idx: 12,
+        topLink: '/estimate/1031',
         title: 'ReSharper',
         detail: '.NET開発者向けのVisual Studio拡張プログラム',
         type: [
@@ -2333,6 +2345,7 @@ export const iconList = [
     },
     {
         idx: 13,
+        topLink: '/estimate/982',
         title: 'ReSharper C++',
         detail: 'C++開発者向けのVisual Studio拡張プログラム',
         type: [
@@ -2411,10 +2424,10 @@ export const iconList = [
                         text: 'dotUltimate 1年'
                     },
                     {
-                        text: '¥45,370\n(税込み ¥49,907)'
+                        text: '¥60,970\n(税込み ¥49,907)'
                     },
                     {
-                        text: '¥18,070\n(税込み ¥19,877)'
+                        text: '¥21,970\n(税込み ¥24,167)'
                     },
                 ],
                 [
@@ -2422,10 +2435,10 @@ export const iconList = [
                         text: 'dotUltimate 2年'
                     },
                     {
-                        text: '¥36,296\n(税込み ¥39,926)'
+                        text: '¥48,776\n(税込み ¥39,926)'
                     },
                     {
-                        text: '¥14,456\n(税込み ¥15,902)'
+                        text: '¥17,576\n(税込み ¥19,334)'
                     },
                 ],
                 [
@@ -2433,10 +2446,10 @@ export const iconList = [
                         text: 'dotUltimate 3年'
                     },
                     {
-                        text: '¥27,222\n(税込み ¥29,944)'
+                        text: '¥36,582\n(税込み ¥29,944)'
                     },
                     {
-                        text: '¥10,842\n(税込み ¥11,926)'
+                        text: '¥13,182\n(税込み ¥14,500)'
                     },
                 ],
                 [
@@ -2533,6 +2546,7 @@ export const iconList = [
     },
     {
         idx: 14,
+        topLink: '/estimate/1040',
         title: 'dotCover',
         detail: '.NETユニットテストランナーとコードカバレッジツール',
         type: [
@@ -2701,6 +2715,7 @@ export const iconList = [
     },
     {
         idx: 15,
+        topLink: '/estimate/1058',
         title: 'dotTrace',
         detail: '.NETパフォーマンスプロファイラ',
         type: [
@@ -2868,6 +2883,7 @@ export const iconList = [
     },
     {
         idx: 16,
+        topLink: '/estimate/1049',
         title: 'dotMemory',
         detail: '.NETメモリプロファイラ',
         type: [
@@ -3035,6 +3051,7 @@ export const iconList = [
     },
     {
         idx: 17,
+        topLink: '/estimate/1067',
         title: 'dotUltimate',
         detail: 'Rider、ReSharper C++、すべての.NETツールをまとめたパッケージ',
         type: [
@@ -3191,6 +3208,7 @@ export const iconList = [
     },
     {
         idx: 18,
+        topLink: '/estimate/1314',
         title: 'Code With Me',
         detail: 'リアルタイム遠隔コラボレーション向けソリューション',
         type: [
@@ -3349,7 +3367,7 @@ export const iconList = [
                 ]
             ]
         },
-        purchaseText: ['Code With Me Enterpriseは10 hostから購入可能です。'],
+        // purchaseText: ['Code With Me Enterpriseは10 hostから購入可能です。'],
         FAQ: [
             {
                 title: 'Code With Me Premiumライセンスはどのように使用するのですか？',
@@ -3372,7 +3390,9 @@ export const iconList = [
     },
     {
         idx: 19,
+        topLink: '/estimate/1316',
         title: 'Datalore',
+        h3Small: 'Teamtoolはお見積もりを通じて供給価格をご案内しております。 購入をご希望のお客様は、お見積もりのリクエストをお願いします。',
         detail: 'スマートコーディングでデータを分析し、スマートにコラボレートするデータサイエンスプラットフォーム',
         type: [
             'Jupyter',
@@ -3517,7 +3537,7 @@ export const iconList = [
                 // ]
             ]
         },
-        purchaseText: ['Datalore TeamおよびDatalore Enterpriseは年間サブスクリプションライセンスです。'],
+        // purchaseText: ['Datalore TeamおよびDatalore Enterpriseは年間サブスクリプションライセンスです。'],
         FAQ: [
             {
                 title: 'Datalore Teamトライアルの機能に違いはありますか？',
@@ -3536,7 +3556,9 @@ export const iconList = [
     },
     {
         idx: 20,
+        topLink: '/estimate/871',
         title: 'YouTrack',
+        h3Small: 'Teamtoolはお見積もりを通じて供給価格をご案内しております。 購入をご希望のお客様は、お見積もりのリクエストをお願いします。',
         detail: 'あらゆるチームのためのフレキシブルなプロジェクトおよび問題管理ツール',
         type: [
             'Project',
@@ -3984,343 +4006,345 @@ export const iconList = [
         ],
         productLink: ''
     },
-    {
-        idx: 21,
-        title: 'Space',
-        detail: '開発プロセスを向上させる全機能を備えたオールインワンコラボレーションプラットフォーム',
-        type: [
-            'Git Hosting',
-            'Development',
-            'CI/CD',
-        ],
-        summary: 'Spaceはソフトウェア開発向けのオールインワンコラボレーションプラットフォームです。\nSpaceはGitストレージのホスティングから、開発環境、コード品質検査、CI/CD、プロジェクト管理に至るまで、すべての開発段階に最高のツールを提供するコラボレーションプラットフォームです。',
-        info:  'Spaceはソフトウェア開発向けのオールインワンコラボレーションプラットフォームです。まず、SpaceはGitリポジトリホスティングを提供します。そのため、ユーザーは好きなコードリポジトリをSpaceに追加することができます。その後、JetBrains IDEと連動してコーディング作業を行います。 特に、Spaceが提供するリモート開発環境を使用すると、ユーザーは別のIDEをインストールすることなく、好きなIDEで作業することができます。Spaceはコード品質を高めるための機能も提供しており、Merge Requestを作成すると、Spaceで複数の担当者が簡単にコードレビューを行うことができます。CI/CD段階では、Space Automationを通じてシンプルかつ強力なCI/CDを実行します。 また、Spaceはプロジェクト進行中に発生するイシューを完全に管理できる機能も提供します。このように、SpaceはGitリポジトリホスティングから、開発環境、コード品質検査、CI/CD、プロジェクト管理に至るまで、すべての開発段階に最高の機能を提供するコラボレーションプラットフォームです。',
-        function: [
-            {
-                title: 'Gitリポジトリホスティング',
-                description: 'SpaceはGitリポジトリをホストします。Spaceで新しいリポジトリを作成したり、他のGitサービスを使ってリポジトリを作成することができます。',
-                img: 'space01'
-            },
-            {
-                title: 'Space Automation',
-                description: 'Space AutomationはSpaceが提供するCI/CDツールです。Space Automationを使ってプロジェクトをビルド、テスト、デプロイします。Space Automationはスクリプトで構成し、Kotlin言語で作成することができます。',
-                img: 'space02'
-            },
-            {
-                title: '開発環境',
-                description: 'SpaceはDev Environmentというリモート開発環境を提供します。Spaceクラウドで実行される仮想マシンがコード処理、コンパイル、ビルドなどのすべての作業を代行します。ユーザーはSpaceクラウドの仮想マシンに接続してIDE(統合開発環境)を使用することができます。',
-                img: 'space03'
-            }
-        ],
-        purchase: {
-            title: [
-                [
-                    {
-                        text: '',
-                        row: 2
-                    },
-                    {
-                        text: 'Cloud',
-                        col: 3
-                    }
-                ],
-                [
-                    {
-                        text: 'Team'
-                    },
-                    {
-                        text: 'Organization'
-                    },
-                    {
-                        text: 'Enterprise'
-                    }
-                ]
-            ],
-            details: [
-                [
-                    {
-                        text: '価格'
-                    },
-                    {
-                        text: '$96 / active user\n(税込み $105.60)'
-                    },
-                    {
-                        text: '$240 / active user\n(税込み $264)'
-                    },
-                    {
-                        text: '$1,188 / active user\n(税込み $1,306.80)'
-                    },
-                ],
-                [
-                    {
-                        text: '購入可能数量'
-                    },
-                    {
-                        text: '制限なし'
-                    },
-                    {
-                        text: '5 active user以上購入可能'
-                    },
-                    {
-                        text: '10 active user以上購入可能'
-                    },
-                ],
-                [
-                    {
-                        text: 'General Credit'
-                    },
-                    {
-                        text: '$1.00',
-                        col: 3
-                    },
-                ],
-                [
-                    {
-                        text: 'Computation Credit*'
-                    },
-                    {
-                        text: '4,000'
-                    },
-                    {
-                        text: '10,000'
-                    },
-                    {
-                        text: '50,000'
-                    },
-                ],
-                [
-                    {
-                        text: 'Storage容量*'
-                    },
-                    {
-                        text: '10GB'
-                    },
-                    {
-                        text: '25GB'
-                    },
-                    {
-                        text: '100GB'
-                    },
-                ],
-                [
-                    {
-                        text: 'データ転送量*'
-                    },
-                    {
-                        text: '50GB'
-                    },
-                    {
-                        text: '125GB'
-                    },
-                    {
-                        text: '500GB'
-                    },
-                ],
-                [
-                    {
-                        text: 'dev環境制限* 開発環境制限'
-                    },
-                    {
-                        text: '2'
-                    },
-                    {
-                        text: '無制限'
-                    },
-                    {
-                        text: '無制限'
-                    },
-                ],
-                [
-                    {
-                        text: 'All Products Pack提供'
-                    },
-                    {
-                        include: false
-                    },
-                    {
-                        include: false
-                    },
-                    {
-                        include: true
-                    },
-                ],
-            ],
-            bottom: [
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
-                    },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
-                    }
-                ],
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy'
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy'
-                    },
-                ]
-            ]
-        },
-        purchase2: {
-            title: [
-                [
-                    {
-                        text: '',
-                        row: 2
-                    },
-                    {
-                        text: 'On-Premises',
-                        col: 2
-                    }
-                ],
-                [
-                    {
-                        text: 'Organization'
-                    },
-                    {
-                        text: 'Enterprise'
-                    }
-                ]
-            ],
-            details: [
-                [
-                    {
-                        text: '価格'
-                    },
-                    {
-                        text: '$300 / active user\n(税込み $330)'
-                    },
-                    {
-                        text: '$1,500 / active user\n(税込み $1,650)'
-                    }
-                ],
-                [
-                    {
-                        text: '購入可能数量'
-                    },
-                    {
-                        text: '5 active user以上購入可能'
-                    },
-                    {
-                        text: '50 active user以上購入可能'
-                    }
-                ],
-                [
-                    {
-                        text: 'automation worker 価格'
-                    },
-                    {
-                        text: '$420\n(税込み $462)',
-                        col: 2
-                    }
-                ],
-                [
-                    {
-                        text: 'automation worker 数量'
-                    },
-                    {
-                        text: '10'
-                    },
-                    {
-                        text: '50'
-                    }
-                ],
-                [
-                    {
-                        text: 'All Products Pack 提供'
-                    },
-                    {
-                        include: false
-                    },
-                    {
-                        include: true
-                    }
-                ]
-            ],
-            bottom: [
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
-                    },
-                    {
-                        text: 'お見積もり',
-                        link: '/estimate'
-                    }
-                ],
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy'
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy'
-                    },
-                ]
-            ]
-        },
-        purchaseText: [
-            'Space CloudとOn-Premisesは永久ライセンスです。',
-            'Computation Credit* は毎月提供されるクレジットです。',
-            'Storage容量* は、ユーザーごとに提供されるストレージスペースです。',
-            'データ転送* は毎月提供され、ユーザーごとに制限されるデータ転送量です。',
-            'dev environment limit* は、ユーザーごとに使用可能な開発環境の数です。'
-        ],
-        FAQ: [
-            {
-                title: 'Space Cloudのリソース(コンピューティングクレジット、ストレージなど)が不足している場合、リソースを追加するにはどうすればよいですか？',
-                description: 'Space Cloudアカウントで超過使用オプションを有効にさせることで、制限を超えてリソースを使用することができます。 そして、翌月に超過使用したリソースに対して料金を支払うことになります。'
-            },
-            {
-                title: 'Space Cloudで非アクティブユーザーの基準は何ですか？',
-                description: 'Space Cloudは有効なユーザーに対してのみ料金を請求します。有効なユーザーとは、Space Cloudでコンテンツの作成や編集、GitリポジトリへのPush、プロファイルの編集などを行っているユーザーを意味します。もしユーザーが14日間作業を行わない場合、非アクティブユーザーとみなされます。'
-            },
-            {
-                title: 'Computation Creditとは何ですか？',
-                description: 'Space Cloudは、サブスクリプションオプションごとに一定量のComputation Creditを提供しています。Computation Creditを使用すると、Space CloudでCI/CD作業を行うことができます。Space Cloudで1 Computation Creditは、基本リソースのランナー(ビルドを実行するプログラム)で実行される作業1分に相当します。Space Cloudランナーの基本リソースは2 vCPUsと7800MBメモリであり、この基本リソースで多く使用したリソースを基準にクレジットを請求します。例えば、Space Cloudランナーが0.5 vCPUsと3900MBのメモリを使用している場合、Space Cloudは、より多く使用したリソースであるメモリを基準に1分あたり0.5クレジットを請求します。'
-            },
-            {
-                title: 'General Creditとは何ですか？',
-                description: 'General CreditはSpace Cloudで使用可能な支払い方法です。General Creditを使用すると、Space Cloudにユーザーを追加することができます。 また、General CreditでComputation Credit、ストレージ、データ転送の超過使用料金を処理することができます。General CreditはJetBrainsで購入できますが、再販、取引、譲渡、交換、払い戻しはできません。 General Creditは実際のお金（""法定通貨"")ではなく、Spaceの使用を停止すると消滅します。'
-            },
-            {
-                title: 'Automation workerとは何ですか？',
-                description: 'Automation workerは、Space On-PremisesでCI/CDタスクを実行するデバイスです。Automation workerは、JetBrainsアカウントからSpace On-Premisesサブスクリプションに追加購入することができます。'
-            },
-            {
-                title: 'Space EnterpriseサブスクリプションオプションにAll Products Packライセンスは含まれていますか？',
-                description: 'Space EnterpriseのサブスクリプションオプションにはAll Products Packライセンスが含まれており、Space EnterpriseのアクティブなすべてのユーザーにAll Products Packライセンスを提供します。提供したAll Products Packライセンスには、永久フォールバックライセンス(特定のバージョンの製品を永続的に使用できるライセンス)が含まれており、All Products Packライセンスのサブスクリプション期間はSpace Enterpriseのサブスクリプション期間と同様です。'
-            }
-        ],
-        productLink: ''
-    },
+    // {
+    //     idx: 21,
+    //     title: 'Space',
+    //     detail: '開発プロセスを向上させる全機能を備えたオールインワンコラボレーションプラットフォーム',
+    //     type: [
+    //         'Git Hosting',
+    //         'Development',
+    //         'CI/CD',
+    //     ],
+    //     summary: 'Spaceはソフトウェア開発向けのオールインワンコラボレーションプラットフォームです。\nSpaceはGitストレージのホスティングから、開発環境、コード品質検査、CI/CD、プロジェクト管理に至るまで、すべての開発段階に最高のツールを提供するコラボレーションプラットフォームです。',
+    //     info:  'Spaceはソフトウェア開発向けのオールインワンコラボレーションプラットフォームです。まず、SpaceはGitリポジトリホスティングを提供します。そのため、ユーザーは好きなコードリポジトリをSpaceに追加することができます。その後、JetBrains IDEと連動してコーディング作業を行います。 特に、Spaceが提供するリモート開発環境を使用すると、ユーザーは別のIDEをインストールすることなく、好きなIDEで作業することができます。Spaceはコード品質を高めるための機能も提供しており、Merge Requestを作成すると、Spaceで複数の担当者が簡単にコードレビューを行うことができます。CI/CD段階では、Space Automationを通じてシンプルかつ強力なCI/CDを実行します。 また、Spaceはプロジェクト進行中に発生するイシューを完全に管理できる機能も提供します。このように、SpaceはGitリポジトリホスティングから、開発環境、コード品質検査、CI/CD、プロジェクト管理に至るまで、すべての開発段階に最高の機能を提供するコラボレーションプラットフォームです。',
+    //     function: [
+    //         {
+    //             title: 'Gitリポジトリホスティング',
+    //             description: 'SpaceはGitリポジトリをホストします。Spaceで新しいリポジトリを作成したり、他のGitサービスを使ってリポジトリを作成することができます。',
+    //             img: 'space01'
+    //         },
+    //         {
+    //             title: 'Space Automation',
+    //             description: 'Space AutomationはSpaceが提供するCI/CDツールです。Space Automationを使ってプロジェクトをビルド、テスト、デプロイします。Space Automationはスクリプトで構成し、Kotlin言語で作成することができます。',
+    //             img: 'space02'
+    //         },
+    //         {
+    //             title: '開発環境',
+    //             description: 'SpaceはDev Environmentというリモート開発環境を提供します。Spaceクラウドで実行される仮想マシンがコード処理、コンパイル、ビルドなどのすべての作業を代行します。ユーザーはSpaceクラウドの仮想マシンに接続してIDE(統合開発環境)を使用することができます。',
+    //             img: 'space03'
+    //         }
+    //     ],
+    //     purchase: {
+    //         title: [
+    //             [
+    //                 {
+    //                     text: '',
+    //                     row: 2
+    //                 },
+    //                 {
+    //                     text: 'Cloud',
+    //                     col: 3
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'Team'
+    //                 },
+    //                 {
+    //                     text: 'Organization'
+    //                 },
+    //                 {
+    //                     text: 'Enterprise'
+    //                 }
+    //             ]
+    //         ],
+    //         details: [
+    //             [
+    //                 {
+    //                     text: '価格'
+    //                 },
+    //                 {
+    //                     text: '$96 / active user\n(税込み $105.60)'
+    //                 },
+    //                 {
+    //                     text: '$240 / active user\n(税込み $264)'
+    //                 },
+    //                 {
+    //                     text: '$1,188 / active user\n(税込み $1,306.80)'
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     text: '購入可能数量'
+    //                 },
+    //                 {
+    //                     text: '制限なし'
+    //                 },
+    //                 {
+    //                     text: '5 active user以上購入可能'
+    //                 },
+    //                 {
+    //                     text: '10 active user以上購入可能'
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'General Credit'
+    //                 },
+    //                 {
+    //                     text: '$1.00',
+    //                     col: 3
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'Computation Credit*'
+    //                 },
+    //                 {
+    //                     text: '4,000'
+    //                 },
+    //                 {
+    //                     text: '10,000'
+    //                 },
+    //                 {
+    //                     text: '50,000'
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'Storage容量*'
+    //                 },
+    //                 {
+    //                     text: '10GB'
+    //                 },
+    //                 {
+    //                     text: '25GB'
+    //                 },
+    //                 {
+    //                     text: '100GB'
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'データ転送量*'
+    //                 },
+    //                 {
+    //                     text: '50GB'
+    //                 },
+    //                 {
+    //                     text: '125GB'
+    //                 },
+    //                 {
+    //                     text: '500GB'
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'dev環境制限* 開発環境制限'
+    //                 },
+    //                 {
+    //                     text: '2'
+    //                 },
+    //                 {
+    //                     text: '無制限'
+    //                 },
+    //                 {
+    //                     text: '無制限'
+    //                 },
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'All Products Pack提供'
+    //                 },
+    //                 {
+    //                     include: false
+    //                 },
+    //                 {
+    //                     include: false
+    //                 },
+    //                 {
+    //                     include: true
+    //                 },
+    //             ],
+    //         ],
+    //         bottom: [
+    //             [
+    //                 {
+    //                     text: '',
+    //                     link: ''
+    //                 },
+    //                 {
+    //                     text: 'お見積もり',
+    //                     link: '/estimate'
+    //                 },
+    //                 {
+    //                     text: 'お見積もり',
+    //                     link: '/estimate'
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: '',
+    //                     link: ''
+    //                 },
+    //                 {
+    //                     text: 'ご購入',
+    //                     link: '/buy'
+    //                 },
+    //                 {
+    //                     text: 'ご購入',
+    //                     link: '/buy'
+    //                 },
+    //             ]
+    //         ]
+    //     },
+    //     purchase2: {
+    //         title: [
+    //             [
+    //                 {
+    //                     text: '',
+    //                     row: 2
+    //                 },
+    //                 {
+    //                     text: 'On-Premises',
+    //                     col: 2
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'Organization'
+    //                 },
+    //                 {
+    //                     text: 'Enterprise'
+    //                 }
+    //             ]
+    //         ],
+    //         details: [
+    //             [
+    //                 {
+    //                     text: '価格'
+    //                 },
+    //                 {
+    //                     text: '$300 / active user\n(税込み $330)'
+    //                 },
+    //                 {
+    //                     text: '$1,500 / active user\n(税込み $1,650)'
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: '購入可能数量'
+    //                 },
+    //                 {
+    //                     text: '5 active user以上購入可能'
+    //                 },
+    //                 {
+    //                     text: '50 active user以上購入可能'
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'automation worker 価格'
+    //                 },
+    //                 {
+    //                     text: '$420\n(税込み $462)',
+    //                     col: 2
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'automation worker 数量'
+    //                 },
+    //                 {
+    //                     text: '10'
+    //                 },
+    //                 {
+    //                     text: '50'
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: 'All Products Pack 提供'
+    //                 },
+    //                 {
+    //                     include: false
+    //                 },
+    //                 {
+    //                     include: true
+    //                 }
+    //             ]
+    //         ],
+    //         bottom: [
+    //             [
+    //                 {
+    //                     text: '',
+    //                     link: ''
+    //                 },
+    //                 {
+    //                     text: 'お見積もり',
+    //                     link: '/estimate'
+    //                 },
+    //                 {
+    //                     text: 'お見積もり',
+    //                     link: '/estimate'
+    //                 }
+    //             ],
+    //             [
+    //                 {
+    //                     text: '',
+    //                     link: ''
+    //                 },
+    //                 {
+    //                     text: 'ご購入',
+    //                     link: '/buy'
+    //                 },
+    //                 {
+    //                     text: 'ご購入',
+    //                     link: '/buy'
+    //                 },
+    //             ]
+    //         ]
+    //     },
+    //     purchaseText: [
+    //         'Space CloudとOn-Premisesは永久ライセンスです。',
+    //         'Computation Credit* は毎月提供されるクレジットです。',
+    //         'Storage容量* は、ユーザーごとに提供されるストレージスペースです。',
+    //         'データ転送* は毎月提供され、ユーザーごとに制限されるデータ転送量です。',
+    //         'dev environment limit* は、ユーザーごとに使用可能な開発環境の数です。'
+    //     ],
+    //     FAQ: [
+    //         {
+    //             title: 'Space Cloudのリソース(コンピューティングクレジット、ストレージなど)が不足している場合、リソースを追加するにはどうすればよいですか？',
+    //             description: 'Space Cloudアカウントで超過使用オプションを有効にさせることで、制限を超えてリソースを使用することができます。 そして、翌月に超過使用したリソースに対して料金を支払うことになります。'
+    //         },
+    //         {
+    //             title: 'Space Cloudで非アクティブユーザーの基準は何ですか？',
+    //             description: 'Space Cloudは有効なユーザーに対してのみ料金を請求します。有効なユーザーとは、Space Cloudでコンテンツの作成や編集、GitリポジトリへのPush、プロファイルの編集などを行っているユーザーを意味します。もしユーザーが14日間作業を行わない場合、非アクティブユーザーとみなされます。'
+    //         },
+    //         {
+    //             title: 'Computation Creditとは何ですか？',
+    //             description: 'Space Cloudは、サブスクリプションオプションごとに一定量のComputation Creditを提供しています。Computation Creditを使用すると、Space CloudでCI/CD作業を行うことができます。Space Cloudで1 Computation Creditは、基本リソースのランナー(ビルドを実行するプログラム)で実行される作業1分に相当します。Space Cloudランナーの基本リソースは2 vCPUsと7800MBメモリであり、この基本リソースで多く使用したリソースを基準にクレジットを請求します。例えば、Space Cloudランナーが0.5 vCPUsと3900MBのメモリを使用している場合、Space Cloudは、より多く使用したリソースであるメモリを基準に1分あたり0.5クレジットを請求します。'
+    //         },
+    //         {
+    //             title: 'General Creditとは何ですか？',
+    //             description: 'General CreditはSpace Cloudで使用可能な支払い方法です。General Creditを使用すると、Space Cloudにユーザーを追加することができます。 また、General CreditでComputation Credit、ストレージ、データ転送の超過使用料金を処理することができます。General CreditはJetBrainsで購入できますが、再販、取引、譲渡、交換、払い戻しはできません。 General Creditは実際のお金（""法定通貨"")ではなく、Spaceの使用を停止すると消滅します。'
+    //         },
+    //         {
+    //             title: 'Automation workerとは何ですか？',
+    //             description: 'Automation workerは、Space On-PremisesでCI/CDタスクを実行するデバイスです。Automation workerは、JetBrainsアカウントからSpace On-Premisesサブスクリプションに追加購入することができます。'
+    //         },
+    //         {
+    //             title: 'Space EnterpriseサブスクリプションオプションにAll Products Packライセンスは含まれていますか？',
+    //             description: 'Space EnterpriseのサブスクリプションオプションにはAll Products Packライセンスが含まれており、Space EnterpriseのアクティブなすべてのユーザーにAll Products Packライセンスを提供します。提供したAll Products Packライセンスには、永久フォールバックライセンス(特定のバージョンの製品を永続的に使用できるライセンス)が含まれており、All Products Packライセンスのサブスクリプション期間はSpace Enterpriseのサブスクリプション期間と同様です。'
+    //         }
+    //     ],
+    //     productLink: ''
+    // },
     {
         idx: 22,
+        topLink: '/estimate/1372',
         title: 'Qodana',
+        h3Small: 'Teamtoolはお見積もりを通じて供給価格をご案内しております。 購入をご希望のお客様は、お見積もりのリクエストをお願いします。',
         detail: 'コード品質検査プラットフォーム',
         type: [
             'Quality Gate',
@@ -4454,20 +4478,20 @@ export const iconList = [
                         link: '/estimate/1369'
                     }
                 ],
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy/1372'
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy/1369'
-                    },
-                ]
+                // [
+                //     {
+                //         text: '',
+                //         link: ''
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/1372'
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/1369'
+                //     },
+                // ]
             ]
         },
         purchaseText: [
@@ -4492,7 +4516,9 @@ export const iconList = [
     },
     {
         idx: 23,
+        topLink: '/estimate/1268',
         title: 'TeamCity',
+        h3Small: 'Teamtoolはお見積もりを通じて供給価格をご案内しております。 購入をご希望のお客様は、お見積もりのリクエストをお願いします。',
         detail: '強力で簡単なCI/CDサーバー',
         type: [
             'CI/CD',

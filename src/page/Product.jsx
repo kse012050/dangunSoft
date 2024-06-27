@@ -24,10 +24,7 @@ export default function Product() {
     return (
         <>
             <section className='welcomeArea'>
-                <h2>
-                    Welcome to<br/>
-                    JetBrains Tool!
-                </h2>
+                <h2>Welcome to JetBrains Tool!</h2>
                 <p>JetBrainsは、個人とチームの両方のために、さまざまなツールを提供しています。</p>
                 <Link to='/estimate' className='btn-border-white'>お見積もり</Link>
             </section>

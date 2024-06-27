@@ -43,7 +43,7 @@ export default function InquiryResult () {
                         <dd>{ inputsDetail?.contact_information }</dd>
                     </dl>
                     <dl>
-                        <dt>Email</dt>
+                        <dt>メール</dt>
                         <dd>{ inputsDetail?.email }</dd>
                     </dl>
                     {inputsDetail?.title &&

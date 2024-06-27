@@ -80,7 +80,7 @@ export default function EstimateResult() {
                     <dd>{ estimateDetail?.phonetic_guide }</dd>
                 </dl>
                 <dl>
-                    <dt>Email</dt>
+                    <dt>メール</dt>
                     <dd>{ estimateDetail?.email }</dd>
                 </dl>
                 <dl>

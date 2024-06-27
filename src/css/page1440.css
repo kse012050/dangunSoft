@@ -68,7 +68,7 @@
 /* 제품 페이지, 제품 상세 페이지, 솔루션 페이지 공통 */
 :is(.productPage, .productDetailPage, .solutionPage) > :nth-child(2){margin-bottom: 100px;}
 :is(.productPage, .productDetailPage, .solutionPage) > :not(:nth-child(-n + 2), :last-child){margin-bottom: 120px;}  
-:is(.productPage .welcomeArea, .productDetailPage .topArea, .solutionPage .topArea) h2{font-size: 64px; line-height: 74px;}
+:is(.productDetailPage .topArea, .solutionPage .topArea) h2{font-size: 64px; line-height: 74px;}
 :is(.productPage, .productDetailPage, .solutionPage) h3{font-size: 50px; line-height: 60px;}
 :is(.productPage, .productDetailPage, .solutionPage) h3 + p{font-size: 20px; line-height: 28px;}
 
@@ -83,10 +83,12 @@
 
 /* 제품 페이지 */
 /* 제품 페이지, 제품 상세 페이지 공통 */
-:is(.productPage .welcomeArea, .productDetailPage .topArea) p{font-size: 20px; line-height: 28px; max-width: 500px;}
 /* 제품 페이지 - welcome */
-.productPage .welcomeArea{padding-block: 170px 224px;}
-.productPage .welcomeArea p::after{width: 600px; --areaPadding: 30px;}
+.productPage .welcomeArea{padding-block: 117px 164px;}
+.productPage .welcomeArea::before{width: 372px; margin-bottom: 100px;}
+.productPage .welcomeArea h2{font-size: 74px; line-height: 84px; margin-bottom: 20px;}
+.productPage .welcomeArea p{font-size: 24px; line-height: 32px; margin-bottom: 60px;}
+.productPage .welcomeArea .btn-border-white{max-width: 263px;}
 
 
 /* 제품 페이지 - 주요제품 */
@@ -96,8 +98,9 @@
 
 
 /* 제품 상세 페이지 - 상단 */
-.productDetailPage .topArea{padding-block: 170px;}
-/* .productDetailPage .topArea::after{width: 300px; right: calc(var(--contentPadding) + 140px);} */
+.productDetailPage .topArea{padding-block: 120px 110px;}
+.productDetailPage .topArea h2{margin-bottom: 30px;}
+.productDetailPage .topArea p{font-size: 20px; line-height: 28px; max-width: 750px; margin-bottom: 50px;}
 .productDetailPage .topArea img{width: 300px; right: calc(var(--contentPadding) + 140px);}
 
 

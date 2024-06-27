@@ -43,17 +43,14 @@
 
 
 /* 제품 페이지, 제품 상세 페이지, 솔루션 페이지 공통 */
-:is(.productPage .welcomeArea, .productDetailPage .topArea, .solutionPage .topArea) h2{margin-bottom: 30px;}
+:is(.solutionPage .topArea) h2{margin-bottom: 30px;}
 
 /* 제품 상세 페이지, 솔루션 페이지 공통 */
 
 
 /* 제품 페이지 */
 /* 제품 페이지, 제품 상세 페이지 공통 */
-:is(.productPage .welcomeArea, .productDetailPage .topArea) p{margin-bottom: 60px;}
 /* 제품 페이지 - welcome */
-.productPage .welcomeArea{position: relative;}
-.productPage .welcomeArea p::after{position: absolute; right: calc(var(--contentPadding) + var(--areaPadding)); top: 50%; transform: translateY(-50%);}
 
 
 /* 제품 페이지 - 주요제품 */
@@ -83,6 +80,7 @@
 
 
 /* 제품 상세 페이지 - 구매 옵션 */
+.productDetailPage .purchaseArea h3 small{margin-left: 10px;}
 .productDetailPage .purchaseBox2 table tr > *{min-width: 300px;}
 
 

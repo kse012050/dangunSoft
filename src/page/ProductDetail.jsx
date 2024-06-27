@@ -4,8 +4,9 @@ import { Link, useParams } from 'react-router-dom';
 
 export default function ProductDetail() {
     const { productIdx } = useParams()
-    const productData = iconList[productIdx]
+    const productData = iconList.filter((data)=>data.idx === Number(productIdx))[0]
     // console.log(productData);
+ 
     return (
         <>
             <section className='topArea' style={{'--styleTotal': iconList.length, '--styleIdx': productData.idx}}>
@@ -14,7 +15,7 @@ export default function ProductDetail() {
                     { productData.summary }
                 </p>
                 <img src={require(`../images/products/${productIdx}.svg`)} alt="" />
-                <Link to='/estimate' className='linkArea'>お見積もり</Link>
+                <Link to={productData.topLink} className='linkArea'>お見積もり</Link>
             </section>
 
             <section className='infoArea'>
@@ -34,7 +35,11 @@ export default function ProductDetail() {
             </section>
 
             <section className='purchaseArea'>
-                <h3>ご購入オプション</h3>
+                <h3>ご購入オプション
+                    <small style={productData.h3Small && {display: 'block', lineHeight: '1.2', marginTop: '10px'}}>
+                        {productData.h3Small || 'ご購入は新規のみ可能です。 更新はお見積もりのリクエストをお願いします。'}
+                    </small>
+                </h3>
                 <div className="purchaseBox2">
                     <table>
                         <thead>
@@ -166,6 +171,7 @@ export default function ProductDetail() {
                         </table>
                     </div>
                 }
+                <p>以下の金額は消費者価格です。割引に関するお問い合わせは、「お見積もり」をクリックしてください。「ご購入」ボタンをクリックすると、消費者価格でご購入いただけます。</p>
 
                 { productData.purchase4 &&
                     <div className="purchaseBox2">

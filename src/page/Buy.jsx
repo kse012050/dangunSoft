@@ -312,7 +312,7 @@ export default function Buy() {
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">メール</label>
                                 <div>
                                     <input type="text" id='email' name='email' placeholder='メールを入力してください' required/>
                                 </div>

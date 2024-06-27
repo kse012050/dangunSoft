@@ -88,7 +88,7 @@ export default function Inquiry() {
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">メール</label>
                                 <div>
                                     <input type="text" placeholder='メールアドレスを入力してください' name='email' id='email' required/>
                                 </div>

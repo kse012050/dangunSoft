@@ -106,7 +106,7 @@ export default function Estimate() {
                             </div>
                         </li>
                         <li>
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">メール</label>
                             <div>
                                 <input type="text" name='email' id='email' placeholder='メールアドレスを入力してください' required/>
                             </div>

@@ -54,7 +54,7 @@ export default function BuyResult() {
                     <dd>{buyDetail?.contact_Information}</dd>
                 </dl>
                 <dl>
-                    <dt>Email</dt>
+                    <dt>メール</dt>
                     <dd>{buyDetail?.email}</dd>
                 </dl>
 
