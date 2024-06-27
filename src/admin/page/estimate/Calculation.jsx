@@ -44,20 +44,21 @@ export default function Calculation() {
     const onSubmit = (e) =>{
         e.preventDefault()
 
+        // console.log(productList);
         if(!commentRef.current.value){
             commentRef.current.focus()
             return
         }
-
         const isProdect = productList.some((data)=>{
             return Object.entries(data).some(([key, value]) =>{
-                if(!value){
+                if(!value && value !== 0){
                     return true
                 }
                 return false;
             })
         })
 
+        // console.log(isProdect);
         if(isProdect){
             return
         }

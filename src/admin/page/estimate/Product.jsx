@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import SelectBox from './SelectBox';
 import { adminApi } from '../../api/api';
+import { inputChange } from '../../api/validation';
 
 export default function Product({ data, productList, setProductList, productIdx }) {
     const [inputs, setInputs] = useState()
@@ -104,29 +105,26 @@ export default function Product({ data, productList, setProductList, productIdx 
     },[inputs?.product_option_id, inputs?.product_id, options])
 
     useEffect(()=>{
-        if((inputs?.option_price_id /* || inputs?.option_price_type */) && optionPrices){
-            // console.log(optionPrices.list);
-            // console.log(inputs);
-            // console.log(optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id ));
+        if((inputs?.option_price_id) && optionPrices){
+                // console.log(optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]);
                 setFirstText(prev=>({
                     ...prev,
-                    // option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.price_type : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.price_type
                     option_price_id: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.price_type
                 }))
                 setInputs(prev=>({
                     ...prev,
-                    // option_price_id: inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.option_price_id
-                    option_price_id: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id
+                    option_price_id: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0]?.option_price_id,
+                    total_price: optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id )?.[0].vat_include_price
                 }))
                 setPrices( inputs?.option_price_id ? optionPrices.list.filter(data=> data.option_price_id === inputs.option_price_id)?.[0]?.vat_include_price : optionPrices.list.filter(data=> data.price_type === inputs.option_price_type)?.[0]?.vat_include_price)
         }
     },[inputs?.option_price_id, inputs?.option_price_type, optionPrices])
 
     useEffect(()=>{
-        if(prices && inputs?.order_quantiry){
-            setInputs(prev=>({...prev, total_price: inputs?.order_quantiry * prices, final_pay_price: inputs?.order_quantiry * prices}))
+        if(String(inputs?.total_price) && inputs?.order_quantiry){
+            setInputs(prev=>({...prev, final_pay_price: inputs?.total_price * inputs?.order_quantiry}))
         }
-    },[prices, inputs?.order_quantiry])
+    },[inputs?.total_price, inputs?.order_quantiry])
 
     useEffect(()=>{
         setProductList(prev=>{
@@ -154,9 +152,11 @@ export default function Product({ data, productList, setProductList, productIdx 
             <div>
                 <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독옵션을 선택해주세요.' disabled={!inputs?.product_option_id || !optionPrices}/>
             </div>
-            <p>{prices ? prices.toLocaleString() : '0'}</p>
             <div>
-                <input type="text" value={prices ? (inputs?.order_quantiry * prices).toLocaleString(): '0'} readOnly/>
+                <input type="text" value={String(inputs?.total_price) || ''} name='total_price' onChange={(e)=>inputChange(e, setInputs)}/>
+            </div>
+            <div>
+                <input type="text" value={String(inputs?.final_pay_price) || ''} name='final_pay_price' onChange={(e)=>inputChange(e, setInputs)}/>
             </div>
             <div>
                 {productList.length !== 1 &&
