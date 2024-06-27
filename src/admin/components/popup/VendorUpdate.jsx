@@ -11,7 +11,7 @@ export default function VendorUpdate({ popup, setPopup, close }) {
 
     const onSubmit = (e) =>{
         e.preventDefault();
-        console.log(inputs);
+        // console.log(inputs);
 
         if(isSubmit(inputs)){
             return;

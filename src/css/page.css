@@ -238,12 +238,22 @@
 
 /* 지원 페이지 - FAQ */
 .faqPage section h2 + p{margin-bottom: 60px;}
-.faqPage section .searchBox{max-width: 600px; margin-inline: auto; margin-bottom: 30px;}
+.faqPage section .searchBox{max-width: 600px; margin-inline: auto; /* margin-bottom: 30px; */}
 .faqPage section .searchBox button:nth-of-type(2){background: url(../images/icon-delete.png) no-repeat center / cover;}
 .faqPage section .tabArea{display: flex; justify-content: center; flex-wrap: wrap;}
 .faqPage section .tabArea button{color: var(--color-font02); background-color: var(--color-face); border: 1px solid #eee; border-radius: 6px; box-sizing: border-box;}
 .faqPage section .tabArea button.active{background-color: black; color: white; border: none; font-weight: 700;}
 .faqPage section > strong{display: block; font-weight: 700;}
+.faqPage section .test{display: flex; flex-wrap: wrap;}
+.faqPage section .test div strong{font-weight: 700; display: block; border-bottom: 1px solid black;}
+.faqPage section .test div details{padding-block: 10px; padding-inline: 42px; position: relative;}
+.faqPage section .test div details:not(:last-of-type){margin-bottom: 10px;}
+.faqPage section .test div details[open]{background-color: #F8F8F8;}
+.faqPage section .test div details summary{font-weight: 700; list-style-type: none; cursor: pointer;}
+.faqPage section .test div details summary::after{width: 22px; left: 10px; top: 5px; content: ''; aspect-ratio: 1; background: url(../images/icon-arrow-down.png) no-repeat center / cover; flex-shrink: 0; position: absolute;}
+.faqPage section .test div details[open] summary::after{rotate: 180deg;}
+.faqPage section .test div details > div{font-weight: 400; color: #666; margin-top: 20px;}
+
 
 
 /* 견적요청 페이지 */

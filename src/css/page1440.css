@@ -190,9 +190,14 @@
 
 
 /* 지원 페이지 - FAQ */
+.faqPage section .searchBox{margin-bottom: 80px;}
 .faqPage section .searchBox button:nth-of-type(2){width: 22px;}
 .faqPage section > strong{font-size: 40px; line-height: 50px;}
 .faqPage section .FAQBox:not(:last-of-type){margin-bottom: 80px;}
+.faqPage section .test{gap: 70px 30px;}
+.faqPage section .test > div{width: calc((100% - 60px) / 3);}
+.faqPage section .test > div strong{font-size: 24px; line-height: 32px; padding-bottom: 20px; margin-bottom: 20px;}
+.faqPage section .test > div details > div{font-size: 15px; line-height: 20px; margin-top: 20px;}
 
 
 /* 견적요청 페이지 */

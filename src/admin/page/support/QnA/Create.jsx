@@ -15,7 +15,7 @@ export default function Create() {
 
     useLayoutEffect(()=>{
         inputsRequiredAdd(setInputs);
-        adminApi('category', '', {depth: '1', all_yn: 'n'})
+        adminApi('category', '', {/* depth: '1',  */all_yn: 'n'})
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
@@ -51,7 +51,7 @@ export default function Create() {
         }
        
         const funcType = id ? 'update' : 'insert'
-        console.log(inputs);
+        // console.log(inputs);
         adminApi('board/manage', funcType, inputs)
             .then((result)=>{
                 if(result.result){

@@ -164,6 +164,7 @@
 
 /* 지원 페이지 - FAQ */
 .faqPage section > strong{font-size: 36px; line-height: 46px;}
+.faqPage section .test > div{width: calc((100% - 30px) / 2);}
 
 
 /* 견적요청 페이지 */

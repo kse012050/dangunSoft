@@ -24,7 +24,7 @@ export default function Create({ setPopup, close }) {
 
     const onRadio = (e) => {
         setDepth(e.target.id === '1depth' ? '1차' : '2차')
-        const obj = {...currentInputs}
+        const obj = {...currentInputs, depth: e.target.id === '1depth' ? 1 : 2}
         if(e.target.id === '2depth'){
             obj.parent_category_id = ''
         }
@@ -34,7 +34,7 @@ export default function Create({ setPopup, close }) {
     }
 
     const onSubmit = () => {
-        // console.log(inputs);
+        console.log(inputs);
         if(inputs.parent_category_id === ''){
             console.log(inputs.parent_category_id);
             return
@@ -44,21 +44,21 @@ export default function Create({ setPopup, close }) {
             nameRef.current.focus()
             return
         }
-        console.log(inputs);
-        // adminApi('category/manage', 'insert', inputs)
-        //     .then((result)=>{
-        //         // console.log(result);
-        //         if(result.result){
-        //             setPopup(prev => ({
-        //                 type: 'confirm',
-        //                 title: '알림',
-        //                 description: ['완료되었습니다.'],
-        //                 func: () =>{
-        //                     prev.func()
-        //                 }
-        //             }))
-        //         }
-        //     })
+        // console.log(inputs);
+        adminApi('category/manage', 'insert', inputs)
+            .then((result)=>{
+                // console.log(result);
+                if(result.result){
+                    setPopup(prev => ({
+                        type: 'confirm',
+                        title: '알림',
+                        description: ['완료되었습니다.'],
+                        func: () =>{
+                            prev.func()
+                        }
+                    }))
+                }
+            })
     }
 
     return (
@@ -74,7 +74,7 @@ export default function Create({ setPopup, close }) {
                 <SelectBox text={firstDepth.name} value={firstDepth.category_id} name='parent_category_id' setInputs={setInputs} nextRef={nameRef} placeholder='1차 카테고리를 선택하세요.'/>
             }
             <input type="text" placeholder={`${depth} 카테고리명을 입력하세요`} name='name' onChange={(e)=>inputChange(e, setInputs)} ref={nameRef} onKeyDown={(e)=> e.key === 'Enter' && onSubmit(e)}/>
-            <input type="submit" value='등록' onClick={onSubmit}/>
+            <input type="submit" value='등록' className='btn-point' onClick={onSubmit}/>
             <button className='close' onClick={close}>닫기</button>
         </div>
     );

@@ -192,6 +192,8 @@
 .faqPage section .tabArea{gap: 10px; margin-bottom: 60px;}
 .faqPage section .tabArea button{font-size: 14px; height: 40px; padding-inline: 15px;}
 .faqPage section > strong{font-size: 30px; line-height: 40px; margin-bottom: 20px;}
+.faqPage section .test{flex-direction: column;}
+.faqPage section .test > div{width: 100%;}
 
 
 /* 견적요청 페이지 */
