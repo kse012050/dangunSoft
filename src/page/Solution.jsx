@@ -81,7 +81,7 @@ export default function Solution() {
                         <li title='新規購入'>
                             <span>
                                 $100<br/>
-                                (incl. VAT $110)
+                                (VAT 込み価格 $110)
                             </span>
                         </li>
                         <li title='すべての機能'><span title='포함'></span></li>

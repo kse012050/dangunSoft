@@ -8,9 +8,9 @@ export default function FAQCategory() {
     const [popup, setPopup] = useState()
 
     const boardFunc = useCallback(()=>{
-        adminApi('category', '', {depth: '1', all_yn: 'n'})
+        adminApi('category', '', {/* depth: '2', */ all_yn: 'n'})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
                     const arr = []
                     const parentArr = result.list.filter((data)=> data.parent_category_id === 0)

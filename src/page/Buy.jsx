@@ -96,10 +96,16 @@ export default function Buy() {
         script.setAttribute('data-on-created', 'onTokenCreated');
         document.querySelector('.payjsArea').appendChild(script)
 
+
+        const script2 = document.createElement('script');
+        script2.src = 'https://yubinbango.github.io/yubinbango/yubinbango.js';
+        script2.async = true;
+        document.body.appendChild(script2);
+
         if(id){
             userApi('product/detail', '', {option_price_id: id})
                 .then((result)=>{
-                    // console.log(result);
+                    console.log(result);
                     if(result.result){
                         setOrderProduct({
                             vendor_id: result.data.vendor_id,
@@ -187,8 +193,69 @@ export default function Buy() {
 
     }
 
+    const [address, setAddress] = useState({
+        postalCode: '',
+        address1: '',
+        address2: '',
+        address3: ''
+      });
+    const handlePostalCodeChange = (e) => {
+        setAddress({ ...address, postalCode: e.target.value });
+      };
+    
+      const handleAddress1Change = (e) => {
+        setAddress({ ...address, address1: e.target.value });
+      };
+    
+      const handleAddress2Change = (e) => {
+        setAddress({ ...address, address2: e.target.value });
+      };
+    
+      const handleAddress3Change = (e) => {
+        setAddress({ ...address, address3: e.target.value });
+      };
+
     return (
         <>
+        <form className="h-adr">
+        <span className="p-country-name" style={{ display: 'none' }}>Japan</span>
+        <div>
+          <label>郵便番号</label>
+          <input
+            type="text"
+            className="p-postal-code"
+            value={address.postalCode}
+            onChange={handlePostalCodeChange}
+          />
+        </div>
+        <div>
+          <label>都道府県</label>
+          <input
+            type="text"
+            className="p-region"
+            value={address.address1}
+            onChange={handleAddress1Change}
+          />
+        </div>
+        <div>
+          <label>市区町村</label>
+          <input
+            type="text"
+            className="p-locality"
+            value={address.address2}
+            onChange={handleAddress2Change}
+          />
+        </div>
+        <div>
+          <label>町域</label>
+          <input
+            type="text"
+            className="p-street-address"
+            value={address.address3}
+            onChange={handleAddress3Change}
+          />
+        </div>
+      </form>
             <section>
                 <h2>ご購入</h2>
                 <div className='productBox'>

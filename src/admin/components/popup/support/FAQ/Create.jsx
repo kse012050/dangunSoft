@@ -44,21 +44,21 @@ export default function Create({ setPopup, close }) {
             nameRef.current.focus()
             return
         }
-
-        adminApi('category/manage', 'insert', inputs)
-            .then((result)=>{
-                // console.log(result);
-                if(result.result){
-                    setPopup(prev => ({
-                        type: 'confirm',
-                        title: '알림',
-                        description: ['완료되었습니다.'],
-                        func: () =>{
-                            prev.func()
-                        }
-                    }))
-                }
-            })
+        console.log(inputs);
+        // adminApi('category/manage', 'insert', inputs)
+        //     .then((result)=>{
+        //         // console.log(result);
+        //         if(result.result){
+        //             setPopup(prev => ({
+        //                 type: 'confirm',
+        //                 title: '알림',
+        //                 description: ['완료되었습니다.'],
+        //                 func: () =>{
+        //                     prev.func()
+        //                 }
+        //             }))
+        //         }
+        //     })
     }
 
     return (

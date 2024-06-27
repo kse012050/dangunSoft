@@ -16,9 +16,10 @@ export default function CategoryQnA() {
         if(inputs?.category2){
             parameter = {...parameter, ...inputs}
         }
+        console.log(parameter);
         adminApi('board', '', {...parameter})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
                     setBoard({
                         list: result.list
@@ -49,9 +50,12 @@ export default function CategoryQnA() {
 
     const onExposure = (e, data) => {
         const { checked } = e.target
+        // console.log(inputs);
+        // console.log(data);
+        // console.log({board_id: data.board_id, title: data.title, comment: data.comment, category1: data.category1, category2: data.category2, exposure_yn: checked ? 'y' : 'n'});
         adminApi('board/manage', 'update', {board_id: data.board_id, title: data.title, comment: data.comment, category1: inputs.category1, category2: inputs.category2, exposure_yn: checked ? 'y' : 'n'})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
 
                 }

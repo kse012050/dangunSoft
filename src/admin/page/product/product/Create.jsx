@@ -53,27 +53,27 @@ export default function Create() {
         }
 
         const funcType = !id ? 'insert' : 'update';
-       
-        adminApi('product/manage', funcType, inputs)
-            .then((result)=>{
-                // console.log(result);
-                if(result.result){
-                    setPopup({
-                        type: 'confirm',
-                        title: '알림',
-                        description: id ? ['수정되었습니다.'] : ['등록되었습니다.'],
-                        func: () =>{
-                            navigate('/admin/product/product')
-                        }
-                    })
-                }else{
-                    setPopup({
-                        type: 'confirm',
-                        title: '알림',
-                        description: [result.error_message],
-                    })
-                }
-            })
+    //    console.log(inputs);
+        // adminApi('product/manage', funcType, inputs)
+        //     .then((result)=>{
+        //         // console.log(result);
+        //         if(result.result){
+        //             setPopup({
+        //                 type: 'confirm',
+        //                 title: '알림',
+        //                 description: id ? ['수정되었습니다.'] : ['등록되었습니다.'],
+        //                 func: () =>{
+        //                     navigate('/admin/product/product')
+        //                 }
+        //             })
+        //         }else{
+        //             setPopup({
+        //                 type: 'confirm',
+        //                 title: '알림',
+        //                 description: [result.error_message],
+        //             })
+        //         }
+        //     })
     }
 
     return (
