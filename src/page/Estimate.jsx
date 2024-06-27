@@ -56,10 +56,10 @@ export default function Estimate() {
         }
 
         const test = {...inputs, order_product_list: [...products]}
-        test.write_name = `${test.write_name_last}/${test.write_name_first}`
+        test.write_name = `${test.write_name_last} ${test.write_name_first}`
         delete test.write_name_last
         delete test.write_name_first
-        test.phonetic_guide = `${test.phonetic_guide_last}/${test.phonetic_guide_first}`
+        test.phonetic_guide = `${test.phonetic_guide_last} ${test.phonetic_guide_first}`
         delete test.phonetic_guide_last
         delete test.phonetic_guide_first
         

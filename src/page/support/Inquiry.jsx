@@ -29,10 +29,10 @@ export default function Inquiry() {
         }
 
         const copyInputs = {...inputs}
-        copyInputs.write_name = `${inputs.write_name_last}/${inputs.write_name_first}`
+        copyInputs.write_name = `${inputs.write_name_last} ${inputs.write_name_first}`
         delete copyInputs.write_name_last;
         delete copyInputs.write_name_first;
-        copyInputs.phonetic_guide = `${inputs.phonetic_guide_last}/${inputs.phonetic_guide_first}`
+        copyInputs.phonetic_guide = `${inputs.phonetic_guide_last} ${inputs.phonetic_guide_first}`
         delete copyInputs.phonetic_guide_last;
         delete copyInputs.phonetic_guide_first;
         copyInputs.contact_information = `+81 ${copyInputs.contact_information}`

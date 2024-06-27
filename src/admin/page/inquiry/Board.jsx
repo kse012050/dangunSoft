@@ -6,14 +6,20 @@ export default function Board({ board }) {
         <>
             <div className="board-title">
                 <b className='test02'>No.</b>
-                <p>
+                <p className='pTest'>
                     <span>제목</span>
                 </p>
                 <b className='test01'>글쓴이</b>
                 <b className='test01'>후라가나</b>
-                <b>기업명</b>
-                <b>연락처</b>
-                <b>이메일</b>
+                <p>
+                    <span>기업명</span>
+                </p>
+                <p>
+                    <span>연락처</span>
+                </p>
+                <p>
+                    <span>이메일</span>
+                </p>
                 <b className='test02'>미팅요청</b>
                 <b className='test02'>비밀글</b>
                 <b>작성시간</b>
@@ -25,14 +31,20 @@ export default function Board({ board }) {
                     <li key={data.board_id}>
                         <Link to={`/admin/inquiry/${data.board_id}`}>
                             <b className='test02'>{ data.board_id }</b>
-                            <p>
+                            <p className='pTest'>
                                 <span>{ data.title }</span>
                             </p>
                             <b className='test01'>{ data.write_name }</b>
                             <b className='test01'>{ data.phonetic_guide }</b>
-                            <b>{ data.company_name }</b>
-                            <b>{ data.contact_information }</b>
-                            <b>{ data.email }</b>
+                            <p>
+                                <span>{ data.company_name }</span>
+                            </p>
+                            <p>
+                                <span>{ data.contact_information }</span>
+                            </p>
+                            <p>
+                                <span>{ data.email }</span>
+                            </p>
                             <b className='test02'>{ data.meeting_request_yn }</b>
                             <b className='test02'>{ data.secret_yn }</b>
                             <b>{ data.reg_date }</b>

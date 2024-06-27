@@ -16,11 +16,26 @@ function allDate(){
     // 오늘 날짜 구하기
     const today = new Date();
     const formattedToday = getFormattedDate(today);
+
+    // 일주일 전 날짜 구하기
+    // const oneWeekAgo = new Date();
+    // oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+    // const formattedOneWeekAgo = getFormattedDate(oneWeekAgo);
     
     // 한 달 전 날짜 구하기
     const oneMonthAgo = new Date();
     oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
     const formattedOneMonthAgo = getFormattedDate(oneMonthAgo);
+
+    // 180일 전 날짜 구하기
+    // const oneEightyDaysAgo = new Date();
+    // oneEightyDaysAgo.setDate(oneEightyDaysAgo.getDate() - 180);
+    // const formattedOneEightyDaysAgo = getFormattedDate(oneEightyDaysAgo);
+
+    // 365일 전 날짜 구하기
+    // const oneYearAgo = new Date();
+    // oneYearAgo.setDate(oneYearAgo.getDate() - 365);
+    // const formattedOneYearAgo = getFormattedDate(oneYearAgo);
 
     return {start_date: formattedOneMonthAgo, end_date: formattedToday}
 }
@@ -56,7 +71,7 @@ export default function Statistics() {
                 }
             })
 
-        
+        // console.log(parameter);
         adminApi('stat/download', '', parameter)
             .then((result)=>{
                 // console.log(result);

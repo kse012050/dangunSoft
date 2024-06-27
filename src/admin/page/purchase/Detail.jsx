@@ -120,13 +120,13 @@ export default function Detail() {
                     </>
                 }
 
-                <strong>동의 정보</strong>
+                {/* <strong>동의 정보</strong>
                 <div className='agreeArea'>
                     <input type="checkbox" id='order'/>
                     <label htmlFor="order">주문 동의</label>
                     <input type="checkbox" id='privacy'/>
                     <label htmlFor="privacy">개인정보 취급위탁 동의</label>
-                </div>
+                </div> */}
             </div>
         </>
     );

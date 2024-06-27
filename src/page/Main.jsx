@@ -25,7 +25,7 @@ export default function Main() {
         
         const copyInputs = {
             board_type: 'simple_inquiry',
-            write_name: `${inputs.write_name_last}/${inputs.write_name_first}`,
+            write_name: `${inputs.write_name_last} ${inputs.write_name_first}`,
             company_name: inputs.company_name,
             email: inputs.email
         }

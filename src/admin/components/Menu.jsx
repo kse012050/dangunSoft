@@ -5,18 +5,19 @@ import { adminApi } from '../api/api';
 export default function Menu() {
     const location = useLocation().pathname;
     const [superYN, setSuperYN] = useState()
-    const [isOpen, setIsOpen] = useState(()=>{
-        const obj = {
-            statistics: location.includes('statistics') ? true: false,
-            product: location.includes('product') ? true: false,
-            estimate: location.includes('estimate') ? true: false,
-            purchase: location.includes('purchase') ? true: false,
-            inquiry: location.includes('inquiry') ? true: false,
-            support: location.includes('support') ? true: false,
-            site: location.includes('site') ? true: false,
-        }
-        return obj
-    })
+    // const [isOpen, setIsOpen] = useState(()=>{
+    //     const obj = {
+    //         statistics: location.includes('statistics') ? true: false,
+    //         product: location.includes('product') ? true: false,
+    //         estimate: location.includes('estimate') ? true: false,
+    //         purchase: location.includes('purchase') ? true: false,
+    //         inquiry: location.includes('inquiry') ? true: false,
+    //         support: location.includes('support') ? true: false,
+    //         site: location.includes('site') ? true: false,
+    //     }
+    //     return obj
+    // })
+    const [isOpen, setIsOpen] = useState('statistics')
 
     useLayoutEffect(()=>{
         adminApi('profile')
@@ -31,14 +32,14 @@ export default function Menu() {
     return (
         <ul className='menuArea'>
             <li>
-                <button onClick={()=>setIsOpen(prev=>({...prev, statistics: !prev.statistics}))}>관리자 통계</button>
-                {isOpen.statistics &&
+                <button onClick={()=>setIsOpen('statistics')}>관리자 통계</button>
+                {isOpen === 'statistics' &&
                     <div><NavLink to='/admin/statistics'>통계</NavLink></div>
                 }
             </li>
             <li>
-                <button onClick={()=>setIsOpen(prev=>({...prev, product: !prev.product}))}>상품 관리</button>
-                {isOpen.product &&
+                <button onClick={()=>setIsOpen('product')}>상품 관리</button>
+                {isOpen === 'product' &&
                     <div>
                         <NavLink to='/admin/product/vendor'>벤더사 관리</NavLink>
                         <NavLink to='/admin/product/product'>제품 관리</NavLink>
@@ -47,26 +48,26 @@ export default function Menu() {
                 }
             </li>
             <li>
-                <button onClick={()=>setIsOpen(prev=>({...prev, estimate: !prev.estimate}))}>견적 관리</button>
-                {isOpen.estimate &&
+                <button onClick={()=>setIsOpen('estimate')}>견적 관리</button>
+                {isOpen === 'estimate' &&
                     <div><NavLink to='/admin/estimate'>견적 요청 내역</NavLink></div>
                 }
             </li>
             <li>
-                <button onClick={()=>setIsOpen(prev=>({...prev, purchase: !prev.purchase}))}>구매 관리</button>
-                {isOpen.purchase &&
+                <button onClick={()=>setIsOpen('purchase')}>구매 관리</button>
+                {isOpen === 'purchase' &&
                     <div><NavLink to='/admin/purchase'>구매 내역</NavLink></div>
                 }
             </li>
             <li>
-                <button onClick={()=>setIsOpen(prev=>({...prev, inquiry: !prev.inquiry}))}>문의 관리</button>
-                {isOpen.inquiry &&
+                <button onClick={()=>setIsOpen('inquiry')}>문의 관리</button>
+                {isOpen === 'inquiry' &&
                     <div><NavLink to='/admin/inquiry'>문의 내역</NavLink></div>
                 }
             </li>
             <li>
-                <button onClick={()=>setIsOpen(prev=>({...prev, support: !prev.support}))}>지원 관리</button>
-                {isOpen.support &&
+                <button onClick={()=>setIsOpen('support')}>지원 관리</button>
+                {isOpen === 'support' &&
                     <div>
                         <NavLink to='/admin/support/faq'>FAQ 카테고리 관리</NavLink>
                         <NavLink to='/admin/support/qna'>카테고리별 문답 관리</NavLink>
@@ -74,8 +75,8 @@ export default function Menu() {
                 }
             </li>
             <li>
-                <button onClick={()=>setIsOpen(prev=>({...prev, site: !prev.site}))}>사이트 관리</button>
-                {isOpen.site &&
+                <button onClick={()=>setIsOpen('site')}>사이트 관리</button>
+                {isOpen === 'site' &&
                     <div>
                         {superYN === 'y' &&
                             <NavLink to='/admin/site/account'>계정 관리</NavLink>
