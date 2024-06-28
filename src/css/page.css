@@ -277,6 +277,18 @@
 [class*="buy"][class*="Page"] section form .inputArea ul li > div:has(dl, p) dl{display: flex; align-items: center;}
 [class*="buy"][class*="Page"] section form .inputArea ul li > div:has(dl, p) dl dt{display: flex; align-items: center;}
 [class*="buy"][class*="Page"] section form .inputArea ul li > div:has(dl, p) dl dt::after{content: ':';}
+[class*="buy"][class*="Page"] section .orderArea{border-top: 1px solid black; max-width: 600px; margin-inline: auto;}
+[class*="buy"][class*="Page"] section .orderArea dl{display: flex; align-items: center;}
+[class*="buy"][class*="Page"] section .orderArea dl > *{flex: 1;}
+[class*="buy"][class*="Page"] section .orderArea dl > dt{color: #999;}
+[class*="buy"][class*="Page"] section .orderArea dl > dd{text-align: right; }
+[class*="buy"][class*="Page"] section .orderArea .productArea{padding: 20px; border-bottom: 1px solid #DEDEDE;}
+[class*="buy"][class*="Page"] section .orderArea .productArea strong{display: block; font-weight: 700; margin-bottom: 20px;}
+[class*="buy"][class*="Page"] section .orderArea .productArea dl:not(:last-of-type){margin-bottom: 10px;}
+[class*="buy"][class*="Page"] section .orderArea .priceArea{padding: 20px 20px 26px; border-bottom: 1px solid #DEDEDE; background-color: #F8F8F8;}
+[class*="buy"][class*="Page"] section .orderArea .priceArea dl:first-of-type{margin-bottom: 10px;}
+[class*="buy"][class*="Page"] section .orderArea .priceArea dl:last-of-type{margin-top: 20px; padding-top: 26px; border-top: 1px solid #DEDEDE;}
+[class*="buy"][class*="Page"] section .orderArea .priceArea dl:last-of-type > *{color: black; font-weight: 700;}
 
 
 /* 견적 요청, 구매 완료 페이지 공통 */

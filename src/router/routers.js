@@ -99,6 +99,7 @@ export const routers = [
         children: [
             { index: true, element: <Buy/> },
             { path: ':id', element: <Buy/> },
+            { path: 'order/:orderCode', element: <Buy/> },
         ]
     },
     {

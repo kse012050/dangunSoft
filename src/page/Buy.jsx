@@ -108,7 +108,7 @@ const addresEnList = [
 
 
 export default function Buy() {
-    const { id } = useParams()
+    const { id, orderCode } = useParams()
     const { idx } = urlParams(useLocation())
     const navigate = useNavigate();
     const [inputs, setInputs] = useState();
@@ -137,8 +137,8 @@ export default function Buy() {
     const [isLoading, setIsLoading] = useState()
 
     useEffect(()=>{
-        (id || idx) || navigate('/product')
-    },[id, idx, navigate])
+        ((id || orderCode) || idx) || navigate('/product')
+    },[id, orderCode, idx, navigate])
 
     useEffect(() => {
         inputsRef.current = inputs;
@@ -299,35 +299,71 @@ export default function Buy() {
         <>
             <section>
                 <h2>ご購入</h2>
-                <div className='productBox'>
-                    <figure>
-                        {idx &&
-                            <img src={require(`../images/products/${idx}.svg`)} alt="" />
-                        }
-                        <figcaption>
-                            {/* <strong>IntelliJ IDEA商業用2年</strong> */}
-                            <strong>{ productInfo?.product_name }</strong>
-                            <p>{ productInfo?.price.toLocaleString() }円</p>
-                            <div>
-                                <button
-                                    onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry > 2 ? prev.order_quantiry - 1 : prev.order_quantiry}))}
-                                >-</button>
-                                { orderProduct?.order_quantiry }
-                                <button
-                                    onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry + 1}))}
-                                >+</button>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    {/* <dl className='deliveryArea'>
-                        <dt>税</dt>
-                        <dd>0円</dd>
-                    </dl> */}
-                    <dl className="amountBox">
-                        <dt>合計 (税込み)</dt>
-                        <dd>{ (orderProduct?.order_quantiry * productInfo?.price).toLocaleString() }円</dd>
-                    </dl>
-                </div>
+                {id &&
+                    <div className='productBox'>
+                        <figure>
+                            {idx &&
+                                <img src={require(`../images/products/${idx}.svg`)} alt="" />
+                            }
+                            <figcaption>
+                                {/* <strong>IntelliJ IDEA商業用2年</strong> */}
+                                <strong>{ productInfo?.product_name }</strong>
+                                <p>{ productInfo?.price.toLocaleString() }円</p>
+                                <div>
+                                    <button
+                                        onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry > 2 ? prev.order_quantiry - 1 : prev.order_quantiry}))}
+                                    >-</button>
+                                    { orderProduct?.order_quantiry }
+                                    <button
+                                        onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry + 1}))}
+                                    >+</button>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        {/* <dl className='deliveryArea'>
+                            <dt>税</dt>
+                            <dd>0円</dd>
+                        </dl> */}
+                        <dl className="amountBox">
+                            <dt>合計 (税込み)</dt>
+                            <dd>{ (orderProduct?.order_quantiry * productInfo?.price).toLocaleString() }円</dd>
+                        </dl>
+                    </div>
+                }
+
+                { orderCode &&
+                    <div className='orderArea'>
+                        <div className='productArea'>
+                            <strong>[JetBrains] All Products Pack</strong>
+                            <dl>
+                                <dt>수량</dt>
+                                <dd>24개</dd>
+                            </dl>
+                            <dl>
+                                <dt>금액</dt>
+                                <dd>¥ 1,200</dd>
+                            </dl>
+                            <dl>
+                                <dt>할인</dt>
+                                <dd>¥ - 100</dd>
+                            </dl>
+                        </div>
+                        <div className='priceArea'>
+                            <dl>
+                                <dt>합계</dt>
+                                <dd>¥ 1,800.00</dd>
+                            </dl>
+                            <dl>
+                                <dt>할인 합계</dt>
+                                <dd>¥ - 200</dd>
+                            </dl>
+                            <dl>
+                                <dt>최종 결제 금액</dt>
+                                <dd>¥ 1,600.00</dd>
+                            </dl>
+                        </div>
+                    </div>
+                }
                 <form>
                     <fieldset className='inputBox' onChange={(e)=>inputChange(e, setInputs)}>
                         <strong>ご注文者の情報</strong>

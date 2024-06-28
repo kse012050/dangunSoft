@@ -22,6 +22,10 @@ export default function Root() {
     if(className === 'faq2'){
         className = 'faq'
     }
+    console.log(className);
+    if(className === 'orderDetail'){
+        className = 'buyDetail'
+    }
 
     useEffect(()=>{
         userPageLog(location.join('/'), window.location.href, window.navigator.userAgent, document.referrer)

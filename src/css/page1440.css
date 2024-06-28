@@ -211,6 +211,11 @@
 [class*="buy"][class*="Page"] section form .inputArea ul li div:has(input) input[type="radio"] + label{font-size: 16px;}
 [class*="buy"][class*="Page"] section form .inputArea ul li div:has(input) input[type="radio"] + label::before{width: 24px;}
 [class*="buy"][class*="Page"] section form .inputArea ul li div:has(dl, p){font-size: 15px; line-height: 22px;}
+[class*="buy"][class*="Page"] section .orderArea{margin-top: 80px;}
+[class*="buy"][class*="Page"] section .orderArea dl{font-size: 16px; line-height: 22px;}
+[class*="buy"][class*="Page"] section .orderArea .productArea strong{font-size: 18px; line-height: 24px;}
+[class*="buy"][class*="Page"] section .orderArea .priceArea dl:last-of-type dt{font-size: 18px; line-height: 24px;}
+[class*="buy"][class*="Page"] section .orderArea .priceArea dl:last-of-type dd{font-size: 20px; line-height: 26px;}
 
 
 /* 견적 요청, 구매 완료 페이지 공통 */
