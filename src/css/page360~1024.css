@@ -122,6 +122,9 @@
 .faqPage section .test > div details > div{font-size: 14px; line-height: 18px;}
 
 
+/* 지원 페이지 - FAQ - 상세 페이지*/
+
+
 /* 견적요청 페이지 */
 :is(.estimatePage, .estimateDetailPage) section form .inputBox > p{font-size: 15px; margin-top: 20px;}
 

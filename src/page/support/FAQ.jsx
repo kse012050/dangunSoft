@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { urlParams } from '../../js/common'
 import { userApi } from '../../api/api';
 
@@ -60,20 +60,23 @@ function List({ category_id }){
     useEffect(()=>{
         userApi('faq', '', {board_type: 'faq', category1: category_id, search_text: search})
             .then((result)=>{
-                // console.log(result.list);
+                console.log(result.list);
                 // console.log(result.list.map(data=> data.faq_list).flat());
                 if(result.result){
-                    setList(result.list.map(data=> data.faq_list).flat())
+                    setList(result.list)
+                    // setList(result.list.map(data=> data.faq_list).flat())
                 }
             })
     },[category_id, search])
     return (
         <>
             {list && list.map((data)=>
-                <details key={data.board_id}>
-                    <summary>{data.title}</summary>
+                <details key={data.category_id}>
+                    <summary>{data.name}</summary>
                     <div>
-                        {data.comment}
+                        { data.faq_list.map((data2)=>
+                            <Link key={data2.board_id} to={`/support/faq/detail/${data2.board_id}`}>{ data2.title }</Link>
+                        ) }
                     </div>
                 </details>
             )}

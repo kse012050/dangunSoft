@@ -167,6 +167,10 @@
 .faqPage section .test > div{width: calc((100% - 30px) / 2);}
 
 
+/* 지원 페이지 - FAQ - 상세 페이지*/
+.faqDetailPage .titleArea{font-size: 36px; line-height: 46px;}
+
+
 /* 견적요청 페이지 */
 
 

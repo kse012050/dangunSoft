@@ -3,6 +3,7 @@ import Board2 from "../page/support/Board2";
 import BoardDetail from "../page/support/BoardDetail";
 import FAQ from "../page/support/FAQ";
 import FAQ2 from "../page/support/FAQ2";
+import FAQDetail from "../page/support/FAQDetail";
 import Inquiry from "../page/support/Inquiry";
 import InquiryResult from "../page/support/InquiryResult";
 import Main from "../page/Main";
@@ -40,6 +41,7 @@ import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
 import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
 import CategoryQnACreate from "../admin/page/support/QnA/Create";
 
+
 export const routers = [
     {
         path: '/',
@@ -67,15 +69,16 @@ export const routers = [
         path: '/support',
         element: <Root />,
         children: [
-            { index: true, element: <Board2/> },
-            { path: 'board', element: <Board2/>  },
-            { path: 'board2', element: <Board/>  },
+            { index: true, element: <Board/> },
+            { path: 'board2', element: <Board2/>  },
+            { path: 'board', element: <Board/>  },
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
             { path: 'inquiryResult', element: <InquiryResult/>  },
             { path: 'faq', element: <FAQ2/>  },
             { path: 'faq2', element: <FAQ/>  },
             { path: 'faq/:search', element: <FAQ/>  },
+            { path: 'faq/detail/:id', element: <FAQDetail/>  },
         ]
     },
     {
