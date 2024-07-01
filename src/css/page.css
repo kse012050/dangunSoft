@@ -274,6 +274,7 @@
 .faqDetailPage .editorArea .image-style-side{float: right;}
 .faqDetailPage .editorArea .image{margin-inline: auto; clear: both;}
 .faqDetailPage .editorArea .table table td{border: 1px solid #bfbfbf; min-width: 2em; padding: .4em;}
+.faqDetailPage .editorArea .table table :is(td, th){vertical-align: middle;}
 .faqDetailPage .editorArea figure.table{width: 100%;}
 .faqDetailPage .editorArea a{color: rgb(0, 0, 238);}
 

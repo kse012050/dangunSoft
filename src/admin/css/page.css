@@ -84,6 +84,7 @@
 
 /* 카테고리별 문답 관리 */
 .adminPage .adminSupportQnaCreatePage .ck.ck-editor{width: 100%;}
+.adminPage .adminSupportQnaCreatePage .ck.ck-editor :is(th, td){vertical-align: middle;}
 
 /* ------------------------------------------------------- */
 

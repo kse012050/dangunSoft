@@ -90,7 +90,7 @@ export default function Account({ popup, setPopup, close }) {
                         </li>
                         <li>
                             <div>
-                                <input type="text" name='contact_information' defaultValue={inputs?.contact_information} placeholder='연락처(내선)을 입력하세요.' data-formet='numb'/>
+                                <input type="text" name='contact_information' defaultValue={inputs?.contact_information} placeholder='연락처(내선)을 입력하세요.'/>
                             </div>
                         </li>
                         <li>

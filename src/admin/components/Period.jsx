@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { inputChange } from '../api/validation';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { urlParams } from '../../js/common';
 
 export default function Period() {
-    const { search_text } = urlParams(useLocation())
-    const [inputs, setInputs] = useState()
+    const { start_date, end_date, search_text } = urlParams(useLocation())
+    const [inputs, setInputs] = useState({start_date: start_date, end_date: end_date})
     const navigate = useNavigate()
 
     const onPeriod = (e) =>{
