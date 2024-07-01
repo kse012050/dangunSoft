@@ -3,6 +3,7 @@ import Products from './Product';
 import { useNavigate, useParams } from 'react-router-dom';
 import { adminApi } from '../../api/api';
 import Popup from '../../components/popup/Popup';
+import Loading from '../../../components/Loading';
 
 const productObj = {
     vendor_id: '',
@@ -20,6 +21,7 @@ export default function Calculation() {
     const [productList, setProductList] = useState()
     const [popup, setPopup] = useState()
     const [price, setPrice] = useState()
+    const [isLoading, setIsLoading] = useState()
     const navigate = useNavigate()
 
 
@@ -58,7 +60,7 @@ export default function Calculation() {
     const onSubmit = (e) =>{
         e.preventDefault()
 
-        console.log(productList);
+        // console.log(productList);
         if(!commentRef.current.value){
             commentRef.current.focus()
             return
@@ -77,6 +79,8 @@ export default function Calculation() {
             return
         }
 
+        setIsLoading(true)
+
         adminApi('board/manage/estimate', '', {board_id: id, comment: commentRef.current.value, order_product_list: [...productList.map(({ option_price_type, ...rest }) => rest)]})
             .then((result)=>{
                 // console.log(result);
@@ -90,6 +94,7 @@ export default function Calculation() {
                         }
                     })
                 }
+                setIsLoading(false)
             })
     }
 
@@ -157,6 +162,7 @@ export default function Calculation() {
                 >견적 전송</button>
             </div>
             { popup && <Popup popup={popup} setPopup={setPopup}/>}
+            { isLoading && <Loading /> }
         </>
     );
 }

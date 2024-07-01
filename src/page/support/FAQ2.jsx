@@ -112,7 +112,7 @@ export default function FAQ() {
                                                     </div>
                                                 )}
                                                 {(type === 'img' &&
-                                                    <img src={require(`../../images/faq/${detail}.png`)} alt="" />
+                                                    <img src={require(`../../images/${detail}.png`)} alt="" />
                                                 )}
                                                 {(type === 'video' &&
                                                     <iframe src={detail} title='test'></iframe>

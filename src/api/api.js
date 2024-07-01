@@ -1,4 +1,5 @@
-const userApiUrl =  `${process.env.REACT_APP_API_URL}`;
+// const userApiUrl =  `${process.env.REACT_APP_API_URL}`;
+const userApiUrl =  'https://nattosystem.team1985.com/api/';
 
 function commonOptions(type, data){
     const myHeaders = new Headers();
@@ -123,8 +124,10 @@ export function userPageLog(pageName, page_link, user_agent, referer/* , ip */){
         page_name = '관리자 - 구매 관리 - 구매 내역 페이지'
     }else if(pageName.includes('/admin/purchase/')){
         page_name = '관리자 - 구매 관리 - 구매 상세 페이지'
-    }else if(pageName === '/admin/inquiry'){
+    }else if(pageName === '/admin/inquiry' || pageName === '/admin/inquiry/inquiry'){
         page_name = '관리자 - 문의 관리 - 문의 내역 페이지'
+    }else if(pageName === '/admin/inquiry/simple'){
+        page_name = '관리자 - 문의 관리 - 간편 문의 내역 페이지'
     }else if(pageName.includes('/admin/inquiry/')){
         page_name = '관리자 - 문의 관리 - 문의 상세 페이지'
     }else if(pageName === '/admin/support/faq'){

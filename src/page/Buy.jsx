@@ -5,6 +5,7 @@ import { isSubmit, userApi } from '../api/api';
 import { urlParams } from '../js/common';
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import Popup from '../admin/components/popup/Popup';
+import Loading from '../components/Loading';
 
 const addresList = [
     '北海道',
@@ -303,7 +304,7 @@ export default function Buy() {
                     <div className='productBox'>
                         <figure>
                             {idx &&
-                                <img src={require(`../images/products/${idx}.svg`)} alt="" />
+                                <img src={require(`../images/${idx}.png`)} alt="" />
                             }
                             <figcaption>
                                 {/* <strong>IntelliJ IDEA商業用2年</strong> */}
@@ -553,13 +554,7 @@ export default function Buy() {
                 </form>
             </section>
             { popup && <Popup popup={popup} setPopup={setPopup}/>}
-            { isLoading &&
-                <div className='loading'>
-                    <svg className="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                        <circle className="path" fill="none" strokeWidth="6" strokeLinecap="round" cx="33" cy="33" r="30"></circle>
-                    </svg>
-                </div>
-            }
+            { isLoading && <Loading /> }
         </>
     );
 }

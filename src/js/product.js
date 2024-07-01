@@ -2424,7 +2424,7 @@ export const iconList = [
                         text: 'dotUltimate 1年'
                     },
                     {
-                        text: '¥60,970\n(税込み ¥49,907)'
+                        text: '¥60,970\n(税込み ¥67,067)'
                     },
                     {
                         text: '¥21,970\n(税込み ¥24,167)'
@@ -2435,7 +2435,7 @@ export const iconList = [
                         text: 'dotUltimate 2年'
                     },
                     {
-                        text: '¥48,776\n(税込み ¥39,926)'
+                        text: '¥48,776\n(税込み ¥53,654)'
                     },
                     {
                         text: '¥17,576\n(税込み ¥19,334)'
@@ -2446,7 +2446,7 @@ export const iconList = [
                         text: 'dotUltimate 3年'
                     },
                     {
-                        text: '¥36,582\n(税込み ¥29,944)'
+                        text: '¥36,582\n(税込み ¥40,240)'
                     },
                     {
                         text: '¥13,182\n(税込み ¥14,500)'
@@ -3741,6 +3741,14 @@ export const iconList = [
                         text: '¥2,600,000\n(VAT込み価格 ¥2,860,000)'
                     },
                 ],
+                [
+                    {
+                        text: '10000ユーザー'
+                    },
+                    {
+                        text: '¥9,100,000\n(VAT込み価格 ¥10,010,000)'
+                    },
+                ],
             ],
             // bottom: [
             //     [
@@ -4516,7 +4524,7 @@ export const iconList = [
     },
     {
         idx: 23,
-        topLink: '/estimate/1268',
+        topLink: '/estimate/1819',
         title: 'TeamCity',
         h3Small: 'Teamtoolはお見積もりを通じて供給価格をご案内しております。 購入をご希望のお客様は、お見積もりのリクエストをお願いします。',
         detail: '強力で簡単なCI/CDサーバー',
@@ -4586,7 +4594,7 @@ export const iconList = [
                     },
                     {
                         text: 'お見積もり',
-                        link: '/estimate'
+                        link: '/estimate/1819'
                     }
                 ],
                 [
@@ -4596,7 +4604,7 @@ export const iconList = [
                     },
                     {
                         text: 'ご購入',
-                        link: '/buy'
+                        link: '/buy/826'
                     }
                 ]
             ]

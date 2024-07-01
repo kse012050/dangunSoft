@@ -34,7 +34,7 @@ export default function Create({ setPopup, close }) {
     }
 
     const onSubmit = () => {
-        console.log(inputs);
+        // console.log(inputs);
         if(inputs.parent_category_id === ''){
             console.log(inputs.parent_category_id);
             return
@@ -56,6 +56,12 @@ export default function Create({ setPopup, close }) {
                         func: () =>{
                             prev.func()
                         }
+                    }))
+                }else if(result.result_code === 103){
+                    setPopup(({
+                        type: 'confirm',
+                        title: '알림',
+                        description: [result.error_message],
                     }))
                 }
             })

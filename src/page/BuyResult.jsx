@@ -25,7 +25,7 @@ export default function BuyResult() {
             <div className='productBox'>
                 <figure>
                     {idx &&
-                        <img src={require(`../images/products/${idx}.svg`)} alt="" />
+                        <img src={require(`../images/${idx}.png`)} alt="" />
                     }
                     <figcaption>
                         <strong>{buyDetail?.order_product_list[0].product_name}</strong>

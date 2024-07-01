@@ -215,9 +215,9 @@ footer ul.snsBox li a::before{content: ''; width: 30px; aspect-ratio: 1; backgro
 .userPage :is(.privacyPage, .commercePage) > div strong{font-weight: 700; display: block;}
 
 
-body:has(.userPage .loading){overflow: hidden;}
-.userPage .loading{position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1001;}
-.userPage .loading .spinner{animation: rotator 1.4s linear infinite;}
+body:has(.loading){overflow: hidden;}
+.loading{position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1001;}
+.loading .spinner{animation: rotator 1.4s linear infinite;}
 @keyframes rotator {
     0% {
         transform: rotate(0deg);
@@ -226,7 +226,7 @@ body:has(.userPage .loading){overflow: hidden;}
         transform: rotate(270deg);
    }
 }
-.userPage .loading .path{stroke: var(--color-point); stroke-dasharray: 187; stroke-dashoffset: 0; transform-origin: center; animation: dash 1.4s ease-in-out infinite;}
+.loading .path{stroke: var(--color-point); stroke-dasharray: 187; stroke-dashoffset: 0; transform-origin: center; animation: dash 1.4s ease-in-out infinite;}
 @keyframes dash {
     0% {
         stroke-dashoffset: 187;

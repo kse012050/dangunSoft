@@ -1,15 +1,19 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import Period from '../../components/Period';
 import { adminApi } from '../../api/api';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Pagination from '../../components/Pagination';
+import { urlParams } from '../../../js/common';
 
 export default function Purchase() {
+    const { start_date, end_date, search_text, page } = urlParams(useLocation())
     const [inputs, setInputs] = useState({})
     const [board, setBoard] = useState()
     const searchRef = useRef()
+    const navigate = useNavigate()
 
     useLayoutEffect(()=>{
-        adminApi('order', '', {...inputs})
+        adminApi('order', '', {page: page || 1, limit: 10, start_date, end_date, search_text: search_text})
             .then((result) => {
                 // console.log(result);
                 if(result.result){
@@ -19,15 +23,15 @@ export default function Purchase() {
                     })
                 }
             })
-    },[inputs])
+        },[inputs, start_date, end_date, search_text, page])
 
     const onSearch = () => {
-        if(!searchRef.current.value && !inputs?.search_text){
+        if(!searchRef.current.value && !inputs?.search_text && !search_text){
             searchRef.current.focus()
             return
         }
 
-        setInputs(prev=>({...prev, search_text: searchRef.current.value}))
+        navigate(`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}?search_text=${searchRef.current.value}`)
     }
 
     return (
@@ -40,7 +44,7 @@ export default function Purchase() {
                 <div className='board-count'>
                     <strong className="total">{ board?.page.totalCount }</strong>
                     <div className='searchBox'>
-                        <input type="search" name='search_text' placeholder='검색어를 입력하세요.' ref={searchRef} onKeyDown={(e)=> e.key === 'Enter' && onSearch()}/>
+                        <input type="search" name='search_text' placeholder='검색어를 입력하세요.' ref={searchRef} onKeyDown={(e)=> e.key === 'Enter' && onSearch()} defaultValue={search_text || ''}/>
                         <button onClick={onSearch}>검색</button>
                     </div>
                 </div>
@@ -96,12 +100,21 @@ export default function Purchase() {
                                 </p>
                                 <span>{ data.final_pay_price.toLocaleString() }</span>
                                 <span>결제 정보</span>
-                                <span>결제 상태</span>
-                                <span>구매일시</span>
+                                <span>
+                                    {data.state === 'request' && '결제 요청'}
+                                    {data.state === 'complete' && '결제 완료'}
+                                    {data.state === 'cancel' && '결제 전 취소'}
+                                    {data.state === 'refund' && '환불(결제 후 취소)'}
+                                </span>
+                                <span>{ data.reg_date }</span>
                             </Link>
                         </li>
                     )}
                 </ol>
+
+                { board && 
+                    <Pagination page={board.page} curruntParam={`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}${search_text ? `?search_text=${search_text}`: ''}`}/>
+                }
             </div>
         </>
     );

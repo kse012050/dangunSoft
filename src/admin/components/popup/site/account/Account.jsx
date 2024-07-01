@@ -26,11 +26,11 @@ export default function Account({ popup, setPopup, close }) {
         e.preventDefault();
         // console.log(inputs);
 
-        if(isSubmit(inputs)){
-            return;
-        }
-
+        
         if(!popup.data){
+            if(isSubmit(inputs)){
+                return;
+            }
             adminApi('manage', 'insert', inputs)
                 .then((result)=>{
                     // console.log(result);
@@ -85,12 +85,12 @@ export default function Account({ popup, setPopup, close }) {
                         </li>
                         <li>
                             <div>
-                                <input type="text" name='branch_department' defaultValue={inputs?.branch_department} placeholder='지사/부서를 입력하세요.' required/>
+                                <input type="text" name='branch_department' defaultValue={inputs?.branch_department} placeholder='지사/부서를 입력하세요.'/>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <input type="text" name='contact_information' defaultValue={inputs?.contact_information} placeholder='연락처(내선)을 입력하세요.' data-formet='numb' required/>
+                                <input type="text" name='contact_information' defaultValue={inputs?.contact_information} placeholder='연락처(내선)을 입력하세요.' data-formet='numb'/>
                             </div>
                         </li>
                         <li>
@@ -105,12 +105,12 @@ export default function Account({ popup, setPopup, close }) {
                         </li>
                         <li>
                             <div>
-                                <input type="text" name='email' defaultValue={inputs?.email} placeholder='이메일을 입력하세요.' required/>
+                                <input type="text" name='email' defaultValue={inputs?.email} placeholder='이메일을 입력하세요.'/>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <input type="text" name='etc_information' defaultValue={inputs?.etc_information} placeholder='기타 정보를 입력하세요.' required/>
+                                <input type="text" name='etc_information' defaultValue={inputs?.etc_information} placeholder='기타 정보를 입력하세요.'/>
                             </div>
                         </li>
                     </ul>

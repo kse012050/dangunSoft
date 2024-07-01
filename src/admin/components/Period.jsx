@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { inputChange } from '../api/validation';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { urlParams } from '../../js/common';
 
-export default function Period({ inputs, setInputs }) {
+export default function Period() {
+    const { search_text } = urlParams(useLocation())
+    const [inputs, setInputs] = useState()
+    const navigate = useNavigate()
 
     const onPeriod = (e) =>{
         // console.log(e.target.id);
@@ -38,6 +43,16 @@ export default function Period({ inputs, setInputs }) {
             return
         }
     }
+    
+    useEffect(()=>{
+        if(inputs?.start_date && inputs?.end_date){
+            navigate(`?start_date=${inputs.start_date}?end_date=${inputs.end_date}${search_text ? `?search_text=${search_text}` : ''}`)
+        }
+        
+        if(!inputs?.start_date && !inputs?.end_date){
+            navigate(`${search_text ? `?search_text=${search_text}` : ''}`)
+        }
+    },[inputs?.start_date, inputs?.end])
 
     return (
         <div className='board-period'>

@@ -1,13 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import SelectBox from '../../../components/SelectBox';
 import { adminApi } from '../../../api/api';
 import Popup from '../../../components/popup/Popup';
+import { urlParams } from '../../../../js/common';
 
 export default function CategoryQnA() {
-    const [inputs, setInputs] = useState()
+    const { category1, category2 } = urlParams(useLocation())
+    const [inputs, setInputs] = useState(/* {category1: category1, category2: category2} */)
     const [category, setCategory] = useState()
     const [firstDepth, setFirstDepth] = useState()
+    const [firstText, setFirstText] = useState()
     const [board, setBoard] = useState()
     const [popup, setPopup] = useState()
 
@@ -19,9 +22,10 @@ export default function CategoryQnA() {
         // console.log(parameter);
         adminApi('board', '', {...parameter})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
                     setBoard({
+                        page: result.data,
                         list: result.list
                     })
                 }
@@ -33,16 +37,30 @@ export default function CategoryQnA() {
 
         adminApi('category', '', {/* depth: '1', */ all_yn: 'n'})
             .then((result)=>{
-                // console.log(result);
+                console.log(result);
                 if(result.result){
                     setCategory(result.list)
                     setFirstDepth({
                         category_id: result.list.filter((data)=> data.parent_category_id === 0).map((data)=> data.category_id),
                         name: result.list.filter((data)=> data.parent_category_id === 0).map((data)=> data.name)
                     })
+
+                    if(category1){
+                        setFirstText((prev)=>({
+                            ...prev, category1: result.list.filter((data)=> data.category_id === Number(category1))[0]?.name
+                        }))
+                        setInputs(prev=>({...prev, category1: category1}))
+                    }
+
+                    if(category2){
+                        setFirstText((prev)=>({
+                            ...prev, category2: result.list.filter((data)=> data.category_id === Number(category2))[0]?.name
+                        }))
+                        setInputs(prev=>({...prev, category2: category2}))
+                    }
                 }
             })
-    },[boardFunc])
+    },[boardFunc, category1, category2])
 
     const firstDepthFunc = () => {
         boardFunc()
@@ -56,7 +74,7 @@ export default function CategoryQnA() {
         // console.log({board_id: data.board_id, title: data.title, comment: data.comment, category1: data.category1, category2: data.category2, exposure_yn: checked ? 'y' : 'n'});
         adminApi('board/manage', 'update', {board_id: data.board_id, title: data.title, comment: data.comment, category1: data.category1, category2: data.category2, exposure_yn: checked ? 'y' : 'n'})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
 
                 }
@@ -75,12 +93,32 @@ export default function CategoryQnA() {
 
                 <div className='board-selectBox'>
                     {firstDepth &&
-                        <SelectBox text={firstDepth.name} value={firstDepth.category_id} name='category1' setInputs={setInputs} func={firstDepthFunc} placeholder='1차 카테고리를 선택하세요.'/>
+                        <SelectBox 
+                            text={firstDepth.name} 
+                            value={firstDepth.category_id} 
+                            name='category1'
+                            firstText={firstText?.category1}
+                            setInputs={setInputs} 
+                            func={firstDepthFunc} 
+                            placeholder='1차 카테고리를 선택하세요.'
+                        />
                     }
                     {inputs?.category1 &&
-                        <SelectBox text={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.name)} value={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.category_id)} name='category2' setInputs={setInputs} placeholder='2차 카테고리를 선택하세요.' key={inputs.category1}/>
+                        <SelectBox 
+                            text={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.name)} 
+                            value={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.category_id)} 
+                            name='category2' 
+                            firstText={firstText?.category2}
+                            setInputs={setInputs} 
+                            placeholder='2차 카테고리를 선택하세요.' 
+                            key={inputs.category1}
+                        />
                     }
-                    <NavLink to='/admin/support/qna/create' className='btn-point'>등록</NavLink>
+                    <NavLink to={`/admin/support/qna/create${inputs?.category1 ? `?category1=${inputs.category1}` : ''}${inputs?.category2 ? `?category2=${inputs.category2}` : ''}`} className='btn-point'>등록</NavLink>
+                </div>
+
+                <div className='board-count'>
+                    <strong className="total">{ board?.page.totalCount }</strong>
                 </div>
 
                 {board && 

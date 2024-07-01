@@ -259,6 +259,23 @@
 .faqDetailPage ol li{color: #bbb;}
 .faqDetailPage ol li span{color: #333;}
 .faqDetailPage .titleArea{margin-bottom: 40px;}
+.faqDetailPage .editorArea{font-size: 15px; line-height: 19px; font-weight: 400; white-space: pre-line; border-bottom: 1px solid var(--color-line01);}
+.faqDetailPage .editorArea img{width: 100%; height: auto;}
+.faqDetailPage .editorArea > *:not(:last-child){margin-bottom: 10px;}
+.faqDetailPage .editorArea i{font-style: italic;}
+.faqDetailPage .editorArea strong{font-weight: 700;}
+.faqDetailPage .editorArea table{width: 100%;}
+.faqDetailPage .editorArea :is(h2, h3, h4){font-weight: 700;}
+.faqDetailPage .editorArea h2{font-size: 2em;}
+.faqDetailPage .editorArea h3{font-size: 1.5em;}
+.faqDetailPage .editorArea h4{font-size: 1.17em;}
+.faqDetailPage .editorArea textarea{padding-block: 15px;}
+.faqDetailPage .editorArea:has(.image-style-side)::after{content: ''; display: block; clear: both;}
+.faqDetailPage .editorArea .image-style-side{float: right;}
+.faqDetailPage .editorArea .image{margin-inline: auto; clear: both;}
+.faqDetailPage .editorArea .table table td{border: 1px solid #bfbfbf; min-width: 2em; padding: .4em;}
+.faqDetailPage .editorArea figure.table{width: 100%;}
+.faqDetailPage .editorArea a{color: rgb(0, 0, 238);}
 
 
 

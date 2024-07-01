@@ -13,7 +13,7 @@ export default function FAQDetail() {
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
-                    console.log(result.data);
+                    // console.log(result.data);
                     setDetail(result.data)
                     const category1 = result.data.category1;
                     const category2 = result.data.category2;
@@ -51,9 +51,12 @@ export default function FAQDetail() {
             {detail && 
                 <>
                     <h2 className='titleArea'>{detail.title}</h2>
-                    <div className='detailArea'>
-
-                    </div>
+                    {(detail.comment.includes('<') && detail.comment.includes('>'))?
+                        <div className='editorArea' dangerouslySetInnerHTML={{__html: detail.comment}}></div> :
+                        <div className='detailArea'>
+                            {detail.comment}
+                        </div>
+                    }
                 </>
             }
         </section>

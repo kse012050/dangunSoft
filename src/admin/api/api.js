@@ -1,5 +1,7 @@
-const adminApiUrl =  `${process.env.REACT_APP_API_URL}admin/`;
-const userApiUrl =  `${process.env.REACT_APP_API_URL}`;
+// const adminApiUrl =  `${process.env.REACT_APP_API_URL}admin/`;
+// const userApiUrl =  `${process.env.REACT_APP_API_URL}`;
+const adminApiUrl =  `https://nattosystem.team1985.com/api/admin/`;
+const userApiUrl =  'https://nattosystem.team1985.com/api/';
 
 // function commonOptions(type, data){
 //     const myHeaders = new Headers();

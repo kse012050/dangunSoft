@@ -81,6 +81,10 @@
 .adminPurchaseDetailPage .infoBox strong:has(+ .agreeArea){margin-top: 30px;}
 .adminPurchaseDetailPage .infoBox .agreeArea{display: flex; gap: 30px;}
 
+
+/* 카테고리별 문답 관리 */
+.adminPage .adminSupportQnaCreatePage .ck.ck-editor{width: 100%;}
+
 /* ------------------------------------------------------- */
 
 .adminPage .adminDashboardPage{display: flex; flex-wrap: wrap; justify-content: space-between; align-content: flex-start; gap: 80px;}

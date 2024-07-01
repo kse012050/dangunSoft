@@ -1,54 +1,65 @@
-import React, { useLayoutEffect, useState } from 'react';
-import Period from '../components/Period';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import BarChart from '../components/chart/BarChart';
 import PieChart from '../components/chart/PieChart';
 import { adminApi } from '../api/api';
 import { Link } from 'react-router-dom';
-
-function allDate(){
-    function getFormattedDate(date) {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1 필요
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
-    }
-    
-    // 오늘 날짜 구하기
-    const today = new Date();
-    const formattedToday = getFormattedDate(today);
-
-    // 일주일 전 날짜 구하기
-    // const oneWeekAgo = new Date();
-    // oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-    // const formattedOneWeekAgo = getFormattedDate(oneWeekAgo);
-    
-    // 한 달 전 날짜 구하기
-    const oneMonthAgo = new Date();
-    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-    const formattedOneMonthAgo = getFormattedDate(oneMonthAgo);
-
-    // 180일 전 날짜 구하기
-    // const oneEightyDaysAgo = new Date();
-    // oneEightyDaysAgo.setDate(oneEightyDaysAgo.getDate() - 180);
-    // const formattedOneEightyDaysAgo = getFormattedDate(oneEightyDaysAgo);
-
-    // 365일 전 날짜 구하기
-    // const oneYearAgo = new Date();
-    // oneYearAgo.setDate(oneYearAgo.getDate() - 365);
-    // const formattedOneYearAgo = getFormattedDate(oneYearAgo);
-
-    return {start_date: formattedOneMonthAgo, end_date: formattedToday}
-}
+import { inputChange } from '../api/validation';
 
 export default function Statistics() {
     const [inputs, setInputs] = useState()
     const [count, setCount] = useState();
     const [board, setBoard] = useState()
+    const [period, setPeriod] = useState('30일')
     const [excelDown, setExcelDown] = useState();
 
+    const onPeriod = (e) =>{
+        const { innerHTML } = e.target;
+        // console.log(innerHTML);
+        setPeriod(innerHTML)
+    }
+
+    useEffect(()=>{
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0'); 
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        // 오늘 날짜 구하기
+        const today = new Date();
+        let start;
+        const end = formatDate(today);
+
+        if(period === '오늘'){
+            start = formatDate(today);
+        }
+        if(period === '7일'){
+            today.setDate(today.getDate() - 7);
+            start = formatDate(today);
+        }
+        if(period === '30일'){
+            today.setDate(today.getDate() - 30);
+            start = formatDate(today);
+        }
+        if(period === '180일'){
+            today.setDate(today.getDate() - 180);
+            start = formatDate(today);
+        }
+        if(period === '365일'){
+            today.setDate(today.getDate() - 365);
+            start = formatDate(today);
+        }
+
+        setInputs({start_date: start, end_date: end})
+    },[period])
+
     useLayoutEffect(()=>{
-        const parameter = !inputs?.start_date ? allDate() : inputs;
-        adminApi('stat', '', parameter)
+        if(!inputs?.start_date){
+            return
+        }
+
+        adminApi('stat', '', inputs)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
@@ -71,8 +82,8 @@ export default function Statistics() {
                 }
             })
 
-        // console.log(parameter);
-        adminApi('stat/download', '', parameter)
+        // console.log(inputs);
+        adminApi('stat/download', '', inputs)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
@@ -85,7 +96,18 @@ export default function Statistics() {
         <>
             <h2>관리자 통계</h2>
             <strong>서비스 방문 / 이용 통계</strong>
-            <Period inputs={inputs} setInputs={setInputs}/>
+            <div className='board-period'>
+                <label htmlFor="">기간</label>
+                <div>
+                    <input type="date" name='start_date' value={inputs?.start_date || ''} disabled={!inputs?.start_date} onChange={(e)=>inputChange(e, setInputs)}/>
+                    <input type="date" name='end_date' value={inputs?.end_date || ''} disabled={!inputs?.end_date} onChange={(e)=>inputChange(e, setInputs)}/>
+                </div>
+                <button className={period === '오늘' ? 'btn-point' : 'btn-point-border'} onClick={onPeriod}>오늘</button>
+                <button className={period === '7일' ? 'btn-point' : 'btn-point-border'} onClick={onPeriod}>7일</button>
+                <button className={period === '30일' ? 'btn-point' : 'btn-point-border'} onClick={onPeriod}>30일</button>
+                <button className={period === '180일' ? 'btn-point' : 'btn-point-border'} onClick={onPeriod}>180일</button>
+                <button className={period === '365일' ? 'btn-point' : 'btn-point-border'} onClick={onPeriod}>365일</button>
+            </div>
 
             { count &&
                 <div className='chartArea'>

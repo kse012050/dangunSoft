@@ -2,11 +2,13 @@ import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { adminApi, isSubmit } from '../../api/api';
 import { useParams } from 'react-router-dom';
 import { inputChange } from '../../api/validation';
+import Loading from '../../../components/Loading';
 
 export default function Detail() {
     const { id } = useParams()
     const [detail, setDetail] = useState()
     const [inputs, setInputs] = useState({board_id: id, answer: ''})
+    const [isLoading, setIsLoading] = useState()
 
     const detailFunc = useCallback(()=>{
         adminApi('board/detail', '', {board_id: id})
@@ -30,10 +32,12 @@ export default function Detail() {
             return;
         }
         // console.log(inputs);
+        setIsLoading(true)
         adminApi('board/manage/answer', '', inputs)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
+                    setIsLoading(false)
                     detailFunc()
                 }
             })
@@ -101,13 +105,13 @@ export default function Detail() {
                         <li>
                             <span>미팅요청</span>
                             <div>
-                                <p>{ detail?.meeting_request_yn }</p>
+                                <p>{ detail?.meeting_request_yn === 'y' ? 'O' : 'X' }</p>
                             </div>
                         </li>
                         <li>
                             <span>비밀글</span>
                             <div>
-                                <p>{ detail?.secret_yn }</p>
+                                <p>{ detail?.secret_yn === 'y' ? 'O' : 'X' }</p>
                             </div>
                         </li>
                     </ul>
@@ -162,6 +166,7 @@ export default function Detail() {
                     </>
                 }
             </div>
+            { isLoading && <Loading /> }
         </>
     );
 }

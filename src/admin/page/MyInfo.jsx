@@ -1,18 +1,16 @@
 import React, { useLayoutEffect, useState } from 'react';
-import { adminApi, isSubmit } from '../api/api';
+import { adminApi } from '../api/api';
 import { inputChange } from '../api/validation';
 import Popup from '../components/popup/Popup';
-import { useNavigate } from 'react-router-dom';
 
 export default function MyInfo() {
     const [inputs, setInputs] = useState();
     const [popup, setPopup] = useState()
-    const navigate = useNavigate()
 
     useLayoutEffect(()=>{
         adminApi('profile')
             .then((result)=>{
-                // console.log(result.data);
+                console.log(result.data);
                 if(result.result){
                     setInputs({
                         id: result.data.id || 'admin',
@@ -30,11 +28,11 @@ export default function MyInfo() {
         e.preventDefault();
         // console.log(inputs);
 
-        if(isSubmit(inputs)){
-            return;
-        }
+        // if(isSubmit(inputs)){
+        //     return;
+        // }
         // console.log('완료');
-        
+        // console.log(inputs);
         adminApi('profile/update', '', inputs)
             .then((result)=>{
                 // console.log(result);
@@ -43,17 +41,17 @@ export default function MyInfo() {
                         type: 'confirm',
                         title: '알림',
                         description: ['변경된 정보가 저장되었습니다.'],
-                        func: () =>{
-                            adminApi('logout', '')
-                                .then((result)=>{
-                                    // console.log(result);
-                                    if(result.result){
-                                        sessionStorage.removeItem('adminToken')
-                                        localStorage.removeItem('adminToken')
-                                        navigate('/admin')
-                                    }
-                                })
-                        }
+                        // func: () =>{
+                        //     adminApi('logout', '')
+                        //         .then((result)=>{
+                        //             // console.log(result);
+                        //             if(result.result){
+                        //                 sessionStorage.removeItem('adminToken')
+                        //                 localStorage.removeItem('adminToken')
+                        //                 navigate('/admin')
+                        //             }
+                        //         })
+                        // }
                     })
                    
                 }
@@ -87,7 +85,7 @@ export default function MyInfo() {
                         <li>
                             <label htmlFor="contact_information">연락처(내선)</label>
                             <div>
-                                <input type="text" id='contact_information' name='contact_information' defaultValue={inputs?.contact_information} data-formet='numb' maxLength='11' required/>
+                                <input type="text" id='contact_information' name='contact_information' defaultValue={inputs?.contact_information} required/>
                             </div>
                         </li>
                         <li>
@@ -99,7 +97,7 @@ export default function MyInfo() {
                         <li>
                             <label htmlFor="password">비번</label>
                             <div>
-                                <input type="password" id='password' name='password' defaultValue={inputs?.password} autoComplete="off" required/>
+                                <input type="password" id='password' name='password' defaultValue={inputs?.password} autoComplete="off"/>
                             </div>
                         </li>
                     </ul>

@@ -9,7 +9,7 @@ export default function Detail() {
     useLayoutEffect(()=>{
         adminApi('order/detail', '', {order_id: id})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     setDetail(result.data)
                 }
@@ -38,19 +38,27 @@ export default function Detail() {
                     <li>
                         <span>결제금액</span>
                         <div>
-                            <p>{ detail?.final_pay_price }</p>
+                            <p>{ detail?.final_pay_price.toLocaleString() }</p>
                         </div>
                     </li>
                     <li>
                         <span>상태</span>
                         <div>
-                            <p>{ detail?.state }</p>
+                            <p>
+                                { detail?.state === 'request' && '결제 요청' }
+                                { detail?.state === 'complete' && '결제 완료' }
+                                { detail?.state === 'cancel' && '결제 전 취소' }
+                                { detail?.state === 'refund' && '환불(결제 후 취소)' }
+                            </p>
                         </div>
                     </li>
                     <li>
                         <span>결제정보</span>
                         <div>
-                            <p>{ detail?.state }</p>
+                            <p>
+                                { detail?.state === 'request' && detail?.charge_info_obj }
+                                { detail?.state === 'refund' && detail?.refund_charge_info_obj }
+                            </p>
                         </div>
                     </li>
                     <li>
@@ -120,13 +128,13 @@ export default function Detail() {
                     </>
                 }
 
-                {/* <strong>동의 정보</strong>
+                <strong>동의 정보</strong>
                 <div className='agreeArea'>
-                    <input type="checkbox" id='order'/>
-                    <label htmlFor="order">주문 동의</label>
+                    <input type="checkbox" id='order' defaultChecked/>
+                    <label htmlFor="">주문 동의</label>
                     <input type="checkbox" id='privacy'/>
-                    <label htmlFor="privacy">개인정보 취급위탁 동의</label>
-                </div> */}
+                    <label htmlFor="">개인정보 취급위탁 동의</label>
+                </div>
             </div>
         </>
     );

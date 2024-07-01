@@ -61,11 +61,11 @@ export default function Detail() {
                     </li>
                 </ul>
 
-                {!!detail?.order_product_list.length &&
+                {!!detail?.order_product_list?.length &&
                     <>
                         <strong>견적 요청 제품</strong>
                         <p>총 {detail?.order_product_list.length}건</p>
-                        {detail?.order_product_list.map((data)=>
+                        {detail?.order_product_list?.map((data)=>
                             <ul data-count key={ data.product_option_id }>
                                 <li>
                                     <span>벤더사</span>
@@ -107,9 +107,11 @@ export default function Detail() {
                         )}
                     </>
                 }
-                <div className='buttonArea'>
-                    <Link to={`/admin/estimate/calculation/${id}`} className='btn-point'>견적 작성</Link>
-                </div>
+                {detail?.order_product_list?.length &&
+                    <div className='buttonArea'>
+                        <Link to={`/admin/estimate/calculation/${id}`} className='btn-point'>견적 작성</Link>
+                    </div>
+                }
             </div>
         </>
     );

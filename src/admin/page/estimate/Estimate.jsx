@@ -1,15 +1,19 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import Period from '../../components/Period';
 import { adminApi } from '../../api/api';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { urlParams } from '../../../js/common';
+import Pagination from '../../components/Pagination';
 
 export default function Estimate() {
+    const { start_date, end_date, search_text, page } = urlParams(useLocation())
     const [inputs, setInputs] = useState({board_type: 'estimate'})
     const [board, setBoard] = useState()
     const searchRef = useRef()
+    const navigate = useNavigate()
 
     useLayoutEffect(()=>{
-        adminApi('board', '', {...inputs})
+        adminApi('board', '', {board_type : 'estimate', page: page || 1, limit: 10, start_date, end_date, search_text: search_text})
             .then((result) => {
                 // console.log(result);
                 if(result.result){
@@ -19,15 +23,18 @@ export default function Estimate() {
                     })
                 }
             })
-    },[inputs])
+        },[inputs, start_date, end_date, search_text, page])
 
     const onSearch = () => {
-        if(!searchRef.current.value && !inputs?.search_text){
+        if(!searchRef.current.value && !inputs?.search_text && !search_text){
             searchRef.current.focus()
             return
         }
+        console.log(searchRef.current.value);
 
-        setInputs(prev=>({...prev, search_text: searchRef.current.value}))
+        // setInputs(prev=>({...prev, search_text: searchRef.current.value}))
+        // navigate(`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}?search_text=${searchRef.current.value}`)
+        navigate(`?test=test?search_text=${searchRef.current.value}${start_date ? `&start_date=${start_date}&end_date=${end_date}`: ''}`)
     }
 
     return (
@@ -40,7 +47,7 @@ export default function Estimate() {
                 <div className='board-count'>
                     <strong className="total">{ board?.page.totalCount }</strong>
                     <div className='searchBox'>
-                        <input type="search" name='search_text' placeholder='검색어를 입력하세요.' ref={searchRef} onKeyDown={(e)=> e.key === 'Enter' && onSearch()}/>
+                        <input type="search" name='search_text' placeholder='검색어를 입력하세요.' ref={searchRef} onKeyDown={(e)=> e.key === 'Enter' && onSearch()} defaultValue={search_text}/>
                         <button onClick={onSearch}>검색</button>
                     </div>
                 </div>
@@ -72,11 +79,15 @@ export default function Estimate() {
                                 <span className='bigWidth'>{ data.vendor_name }</span>
                                 <span className='bigWidth'>{ data.product_name }</span>
                                 <span className='bigWidth'>{ data.reg_date }</span>
-                                <span>{ data.estimation_yn }</span>
+                                <span>{ data.estimation_yn === 'y' ? 'O' : 'X' }</span>
                             </Link>
                         </li>
                     )}
                 </ol>
+
+                { board && 
+                    <Pagination page={board.page} curruntParam={`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}${search_text ? `?search_text=${search_text}`: ''}`}/>
+                }
             </div>
         </>
     );

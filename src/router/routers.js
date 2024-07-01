@@ -33,6 +33,7 @@ import AdminEstimateCalculation from "../admin/page/estimate/Calculation";
 import AdminPurchase from "../admin/page/purchase/Purchase";
 import AdminPurchaseDetail from "../admin/page/purchase/Detail";
 import AdminInquiry from "../admin/page/inquiry/Inquiry";
+import AdminInquirySimple from "../admin/page/inquiry/Simple";
 import AdminInquiryDetail from "../admin/page/inquiry/Detail";
 import AdminSiteAccount from "../admin/page/site/account/Account";
 import AdminSitePopupManagement from "../admin/page/site/popupManagement/PopupManagement";
@@ -199,6 +200,12 @@ export const routers = [
         children: [
             { 
                 index: true, element: <AdminInquiry />
+            },
+            {
+                path: 'inquiry', element: <AdminInquiry />
+            },
+            {
+                path: 'simple', element: <AdminInquirySimple />
             },
             {
                 path: ':id', element: <AdminInquiryDetail />

@@ -22,7 +22,7 @@ export default function Root() {
     if(className === 'faq2'){
         className = 'faq'
     }
-    console.log(className);
+    // console.log(className);
     if(className === 'orderDetail'){
         className = 'buyDetail'
     }
