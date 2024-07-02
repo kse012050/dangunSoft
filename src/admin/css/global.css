@@ -189,6 +189,8 @@ mark.point{color: var(--color-point);}
 .adminPage .infoBox ul li div .radioBox{display: flex; gap: 10px;}
 .adminPage .infoBox ul[data-count]{position: relative; padding-left: 100px; counter-increment: infoCount;}
 .adminPage .infoBox ul[data-count]::before{content: counter(infoCount); position: absolute; left: 0; width: 100px; height: 100%; font-size: 20px; font-weight: 700; display: flex; justify-content: center; align-items: center; background-color: #f7f7f7; border-width: 0 1px 1px 0; border-style: solid; border-color: #dcdcdc;}
+.adminPage .infoBox > strong:has(+ .fileArea){margin-top: 30px;}
+.adminPage .infoBox .fileArea iframe{height: 500px;}
 .adminPage .infoBox .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
 
 

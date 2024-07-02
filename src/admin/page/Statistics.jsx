@@ -9,7 +9,7 @@ export default function Statistics() {
     const [inputs, setInputs] = useState()
     const [count, setCount] = useState();
     const [board, setBoard] = useState()
-    const [period, setPeriod] = useState('30일')
+    const [period, setPeriod] = useState('7일')
     const [excelDown, setExcelDown] = useState();
 
     const onPeriod = (e) =>{

@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Products from './Product';
 import { useNavigate, useParams } from 'react-router-dom';
-import { adminApi } from '../../api/api';
+import { adminApi, adminFileApi } from '../../api/api';
 import Popup from '../../components/popup/Popup';
 import Loading from '../../../components/Loading';
 
@@ -21,6 +21,7 @@ export default function Calculation() {
     const [productList, setProductList] = useState()
     const [popup, setPopup] = useState()
     const [price, setPrice] = useState()
+    const [file, setFile] = useState();
     const [isLoading, setIsLoading] = useState()
     const navigate = useNavigate()
 
@@ -57,7 +58,14 @@ export default function Calculation() {
         }
     },[productList])
 
-    const onSubmit = (e) =>{
+    const onFile = (e) => {
+        setFile({
+            file: e.target.files[0],
+            name: e.target.files[0].name
+        })
+    }
+
+    const onSubmit = async (e) =>{
         e.preventDefault()
 
         // console.log(productList);
@@ -79,9 +87,27 @@ export default function Calculation() {
             return
         }
 
+        let file_id =''
+
         setIsLoading(true)
 
-        adminApi('board/manage/estimate', '', {board_id: id, comment: commentRef.current.value, order_product_list: [...productList.map(({ option_price_type, ...rest }) => rest)]})
+        if(file.file){
+            await adminFileApi(file.file)
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        file_id = result.data.file_id
+                    }
+                })
+        }
+
+        let param = {board_id: id, comment: commentRef.current.value, order_product_list: [...productList.map(({ option_price_type, ...rest }) => rest)]}
+
+        if(file_id){
+            param = {...param, file_id}
+        }
+        // console.log(param);
+        adminApi('board/manage/estimate', '', param)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
@@ -148,15 +174,24 @@ export default function Calculation() {
                 </div>
             </div>
 
+            <div className='fileArea'>
+                <strong>파일첨부</strong>
+                <div>
+                    <input type="text" value={file?.name || ''} readOnly/>
+                    <input type="file" id='file' onChange={onFile} accept="application/pdf"/>
+                    <label htmlFor="file" className={file ? 'btn-point' : 'btn-point-border'}>파일첨부</label>
+                </div>
+            </div>
+
             <div className='commentArea'>
                 <strong>내용</strong>
                 <textarea name="comment" ref={commentRef}></textarea>
             </div>
             
             <div className="buttonArea">
-                <button className='btn-point'
+                {/* <button className='btn-point'
                     // onClick={onSave}
-                >저장</button>
+                >저장</button> */}
                 <button className='btn-point-border'
                     onClick={onSubmit}
                 >견적 전송</button>

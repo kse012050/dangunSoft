@@ -137,19 +137,19 @@ export default function Product({ data, productList, setProductList, productIdx 
         <>
             <span /* onClick={()=>console.log(inputs)} */>제품</span>
             <div>
-                <SelectBox text={vendors?.text} value={vendors?.value} setInputs={setInputs} firstText={firstText?.vendor_id} name='vendor_id' placeholder='벤더사를 선택해주세요.'/>
+                <SelectBox text={vendors?.text} value={vendors?.value} setInputs={setInputs} firstText={firstText?.vendor_id} name='vendor_id' placeholder='벤더사 선택'/>
             </div>
             <div>
-                <SelectBox text={products?.text} value={products?.value} setInputs={setInputs} firstText={firstText?.product_id} name='product_id' placeholder='제품을 선택해주세요.' disabled={!inputs?.vendor_id || !products}/>
+                <SelectBox text={products?.text} value={products?.value} setInputs={setInputs} firstText={firstText?.product_id} name='product_id' placeholder='제품 선택' disabled={!inputs?.vendor_id || !products}/>
             </div>
             <div>
-                <SelectBox text={options?.text} value={options?.value} setInputs={setInputs} firstText={firstText?.product_option_id} name='product_option_id' placeholder='옵션을 선택해주세요.' disabled={!inputs?.product_id || !options}/>
+                <SelectBox text={options?.text} value={options?.value} setInputs={setInputs} firstText={firstText?.product_option_id} name='product_option_id' placeholder='옵션 선택' disabled={!inputs?.product_id || !options}/>
             </div>
             <div>
                 <input type="number" defaultValue={inputs?.order_quantiry} min='1' onChange={(e)=>setInputs(prev=>({...prev, order_quantiry: e.target.value}))} disabled={!inputs?.product_option_id || !optionPrices}/>
             </div>
             <div>
-                <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독옵션을 선택해주세요.' disabled={!inputs?.product_option_id || !optionPrices}/>
+                <SelectBox text={optionPrices?.text} value={optionPrices?.value} setInputs={setInputs} firstText={firstText?.option_price_id} name='option_price_id' placeholder='구독 옵션 선택' disabled={!inputs?.product_option_id || !optionPrices}/>
             </div>
             <div>
                 <input type="text" value={(inputs?.total_price * inputs?.order_quantiry) || '0'} name='total_price' onChange={(e)=>inputChange(e, setInputs)} disabled={!inputs?.option_price_id || !optionPrices}/>

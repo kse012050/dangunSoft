@@ -10,7 +10,7 @@ export default function FAQCategory() {
     const boardFunc = useCallback(()=>{
         adminApi('category', '', {/* depth: '2', */ all_yn: 'n'})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     const arr = []
                     const parentArr = result.list.filter((data)=> data.parent_category_id === 0)
@@ -25,6 +25,7 @@ export default function FAQCategory() {
                     })
                     // console.log(arr);
                     setBoard({
+                        page: result.data,
                         list: arr
                     })
                 }
@@ -56,6 +57,12 @@ export default function FAQCategory() {
                     <NavLink to='/admin/support/qna'>문답 관리</NavLink>
                     <button className='btn-point' onClick={()=>setPopup({type: 'supportFAQCreate', func: boardFunc})}>등록</button>
                 </div>
+
+                {board &&
+                    <div className='board-count'>
+                        <strong className="total">{ board?.page.totalCount }</strong>
+                    </div>
+                }
 
                 <div className="board-title">
                     <b>1 depth</b>

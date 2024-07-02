@@ -73,6 +73,8 @@
 .adminEstimateCalculationDetailPage .finalArea > div dl:not(:last-of-type){font-size: 20px; margin-bottom: 20px;}
 .adminEstimateCalculationDetailPage .finalArea > div dl:last-of-type{font-size: 25px; font-weight: 700;}
 .adminEstimateCalculationDetailPage .finalArea > div dl:last-of-type > *{padding-top: 20px; border-top: 1px solid #DCDCDC;}
+.adminEstimateCalculationDetailPage .fileArea div{display: flex;}
+.adminEstimateCalculationDetailPage .fileArea div input[type="text"]{width: 300px; height: 42px;}
 .adminEstimateCalculationDetailPage .commentArea textarea{height: 300px; padding: 15px;}
 .adminEstimateCalculationDetailPage .buttonArea{display: flex; justify-content: flex-end; gap: 10px;}
 

@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { inputChange, inputsRequiredAdd } from '../../../api/validation';
-import { adminApi, adminFileApi, isSubmit } from '../../../api/api';
+import { adminApi, adminImgApi, isSubmit } from '../../../api/api';
 import Popup from '../../../components/popup/Popup';
 
 export default function Create() {
@@ -67,7 +67,7 @@ export default function Create() {
         let apiInputs = {...inputs}
         // console.log(imgFile);
         if(imgFile.length && typeof(imgFile[0]) === 'object'){
-            await adminFileApi(imgFile)
+            await adminImgApi(imgFile)
                 .then((result)=>{
                     // console.log(result);
                     if(result){

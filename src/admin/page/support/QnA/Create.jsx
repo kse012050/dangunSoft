@@ -149,7 +149,7 @@ export default function Create() {
                         </li>
                     </ul>
                     <div className='buttonArea'>
-                        <Link to='/admin/support/qna' className='btn-point-border'>취소</Link>
+                        <Link to={`/admin/support/qna${category1 ? `?category1=${category1}` : ''}${category2 ? `?category2=${category2}` : ''}`} className='btn-point-border'>취소</Link>
                         <input type="submit" className='btn-point' value={!id ? '등록': '수정'} onClick={onSubmit}/>
                     </div>
                 </fieldset>

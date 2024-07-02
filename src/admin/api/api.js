@@ -22,10 +22,26 @@ const userApiUrl =  'https://nattosystem.team1985.com/api/';
 //     }
 // }
 
-function fileOptions(data){
+function imgOptions(data){
     const myHeaders = new Headers();
     const token = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
     myHeaders.append("Cookie", `Bearer ${token}`);
+    
+    const formdata = new FormData();
+    formdata.append("file", data);
+
+    return {
+        method: "POST",
+        headers: myHeaders,
+        body: formdata,
+        redirect: "follow"
+    };
+}
+
+function fileOptions(data){
+    const myHeaders = new Headers();
+    const token = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
+    myHeaders.append("Authorization", `Bearer ${token}`);
     
     const formdata = new FormData();
     formdata.append("file", data);
@@ -59,13 +75,13 @@ export function isSubmit(inputs){
     
 }
 
-export function adminFileApi(data){
+export function adminImgApi(data){
     const fetchData = async () => {
         try{
             let array = []
             for(let a = 0; a < data.length; a++){
                 if(typeof(data[a]) === 'object'){
-                    await fetch(`${userApiUrl}imageUploadS3`, fileOptions(data[a]))
+                    await fetch(`${userApiUrl}imageUploadS3`, imgOptions(data[a]))
                         .then((response) => response.json())
                         .then((result) => array.push(result.data.file_id))
                 }
@@ -75,6 +91,20 @@ export function adminFileApi(data){
                 }
             }
             return array.join(',')
+        } catch(err){
+            console.error('Error fetching data:', err);
+        }
+    }
+    return fetchData().then((result)=>result)
+}
+
+export function adminFileApi(data){
+    const fetchData = async () => {
+        try{
+            return await fetch(`${adminApiUrl}fileUploadS3 `, fileOptions(data))
+            // await fetch(`https://nattosystem.team1985.com/api/admin/fileUploadS3 `, requestOptions)
+                .then((response) => response.json())
+                .then((result) => result)
         } catch(err){
             console.error('Error fetching data:', err);
         }

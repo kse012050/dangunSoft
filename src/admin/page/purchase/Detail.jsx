@@ -9,7 +9,7 @@ export default function Detail() {
     useLayoutEffect(()=>{
         adminApi('order/detail', '', {order_id: id})
             .then((result)=>{
-                // console.log(result.data);
+                // console.log(result.data.file_info);
                 if(result.result){
                     setDetail({...result.data})
                 }
@@ -76,13 +76,13 @@ export default function Detail() {
                         <strong>구매 상품 정보</strong>
                         <p>총 {detail?.order_product_list.length}건</p>
                         {detail?.order_product_list.map((data)=>
-                            <ul data-count key={data.order_id}>
-                            <li>
-                                <span>벤더사</span>
-                                <div>
-                                    <p>{ data.vendor_name }</p>
-                                </div>
-                            </li>
+                            <ul data-count key={data.order_with_product_id}>
+                                <li>
+                                    <span>벤더사</span>
+                                    <div>
+                                        <p>{ data.vendor_name }</p>
+                                    </div>
+                                </li>
                                 <li>
                                     <span>제품명</span>
                                     <div>
@@ -107,19 +107,19 @@ export default function Detail() {
                                         <p>{ data.option_price_type }</p>
                                     </div>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <span>구독 기간</span>
                                     <div>
                                         <p>{ data.option_price_info_obj }</p>
                                     </div>
-                                </li>
+                                </li> */}
                                 <li>
                                     <span>견적 금액</span>
                                     <div>
                                         <p>{ data.total_price.toLocaleString() }</p>
                                     </div>
                                 </li>
-                                <li>
+                                <li className='full'>
                                     <span>최종 금액</span>
                                     <div>
                                         <p>{ data.total_price.toLocaleString() }</p>
@@ -130,13 +130,22 @@ export default function Detail() {
                     </>
                 }
 
-                <strong>동의 정보</strong>
+                {!!detail?.file_info && 
+                    <>
+                        <strong>첨부파일</strong>
+                        <div className='fileArea'>
+                            <iframe src={detail.file_info.file_url} title='pdf 파일'></iframe>
+                        </div>
+                    </>
+                }
+
+                {/* <strong>동의 정보</strong>
                 <div className='agreeArea'>
                     <input type="checkbox" id='order' defaultChecked/>
                     <label htmlFor="">주문 동의</label>
                     <input type="checkbox" id='privacy'/>
                     <label htmlFor="">개인정보 취급위탁 동의</label>
-                </div>
+                </div> */}
             </div>
         </>
     );
