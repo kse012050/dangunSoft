@@ -9,9 +9,9 @@ export default function Detail() {
     useLayoutEffect(()=>{
         adminApi('order/detail', '', {order_id: id})
             .then((result)=>{
-                // console.log(result);
+                // console.log(result.data);
                 if(result.result){
-                    setDetail(result.data)
+                    setDetail({...result.data})
                 }
             })
     },[id])
@@ -56,8 +56,10 @@ export default function Detail() {
                         <span>결제정보</span>
                         <div>
                             <p>
-                                { detail?.state === 'request' && detail?.charge_info_obj }
-                                { detail?.state === 'refund' && detail?.refund_charge_info_obj }
+                                {/* { detail?.state === 'request' && detail?.charge_info_obj }
+                                { detail?.state === 'refund' && detail?.refund_charge_info_obj } */}
+                                { detail?.state === 'complete' && detail?.charge_info_obj?.id}
+                                { detail?.state === 'refund' && detail?.refund_charge_info_obj?.id}
                             </p>
                         </div>
                     </li>
@@ -69,7 +71,7 @@ export default function Detail() {
                     </li>
                 </ul>
 
-                {!!detail?.order_product_list.length &&
+                {!!detail?.order_product_list?.length &&
                     <>
                         <strong>구매 상품 정보</strong>
                         <p>총 {detail?.order_product_list.length}건</p>

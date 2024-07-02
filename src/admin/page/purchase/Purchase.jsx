@@ -70,7 +70,9 @@ export default function Purchase() {
                         <span>구매상품정보</span>
                     </p>
                     <b>결제금액</b>
-                    <b>결제정보</b>
+                    <p>
+                        <span>결제정보</span>
+                    </p>
                     <b>결제상태</b>
                     <b>구매일시</b>
                 </div>
@@ -99,7 +101,11 @@ export default function Purchase() {
                                     <span>{ data.product_name }</span>
                                 </p>
                                 <span>{ data.final_pay_price.toLocaleString() }</span>
-                                <span>결제 정보</span>
+                                <p>
+                                    <span>
+                                        { data.pay_id}
+                                    </span>
+                                </p>
                                 <span>
                                     {data.state === 'request' && '결제 요청'}
                                     {data.state === 'complete' && '결제 완료'}
