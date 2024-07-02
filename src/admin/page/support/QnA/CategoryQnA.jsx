@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import SelectBox from '../../../components/SelectBox';
 import { adminApi } from '../../../api/api';
 import Popup from '../../../components/popup/Popup';
@@ -7,12 +7,13 @@ import { urlParams } from '../../../../js/common';
 
 export default function CategoryQnA() {
     const { category1, category2 } = urlParams(useLocation())
-    const [inputs, setInputs] = useState(/* {category1: category1, category2: category2} */)
-    const [category, setCategory] = useState()
+    const [inputs, setInputs] = useState({category1: category1, category2: category2})
     const [firstDepth, setFirstDepth] = useState()
+    const [secondDepth, setSecondDepth] = useState()
     const [firstText, setFirstText] = useState()
     const [board, setBoard] = useState()
     const [popup, setPopup] = useState()
+    const navigate = useNavigate()
 
     const boardFunc = useCallback(()=>{
         let parameter = {board_type: 'faq'}
@@ -20,9 +21,9 @@ export default function CategoryQnA() {
             parameter = {...parameter, ...inputs}
         }
         // console.log(parameter);
-        adminApi('board', '', {...parameter})
+        adminApi('board', '', {...parameter, "all_yn": "y"})
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if(result.result){
                     setBoard({
                         page: result.data,
@@ -33,52 +34,79 @@ export default function CategoryQnA() {
     },[inputs])
 
     useEffect(()=>{
-        boardFunc()
-
-        adminApi('category', '', {/* depth: '1', */ all_yn: 'n'})
+        adminApi('category', '', {depth: '1', all_yn: 'y'})
             .then((result)=>{
-                console.log(result);
                 if(result.result){
-                    setCategory(result.list)
                     setFirstDepth({
-                        category_id: result.list.filter((data)=> data.parent_category_id === 0).map((data)=> data.category_id),
-                        name: result.list.filter((data)=> data.parent_category_id === 0).map((data)=> data.name)
+                        category_id: result.list.map((data)=> data.category_id),
+                        name: result.list.map((data)=> data.name),
+                        list: result.list
                     })
-
                     if(category1){
+                        setFirstText({category1: result.list.filter(data=>data.category_id === Number(category1))[0].name})
+                    }else if(result.list.map((data)=> data.category_id).length === 1){
                         setFirstText((prev)=>({
-                            ...prev, category1: result.list.filter((data)=> data.category_id === Number(category1))[0]?.name
+                            ...prev, category1: result.list[0].name
                         }))
-                        setInputs(prev=>({...prev, category1: category1}))
-                    }
-
-                    if(category2){
-                        setFirstText((prev)=>({
-                            ...prev, category2: result.list.filter((data)=> data.category_id === Number(category2))[0]?.name
-                        }))
-                        setInputs(prev=>({...prev, category2: category2}))
+                        setInputs(prev=> ({...prev, category1: result.list[0].category_id}))
                     }
                 }
             })
-    },[boardFunc, category1, category2])
+    },[category1])
 
-    const firstDepthFunc = () => {
-        boardFunc()
-        setInputs(prev=>({...prev, category2: ''}))
-    }
+    useEffect(()=>{
+        if(inputs?.category1){
+            adminApi('category', '', {depth: '2', all_yn: 'y', parent_category_id: inputs?.category1})
+                .then((result)=>{
+                    if(result.result){
+                        setSecondDepth({
+                            category_id: result.list.map(data=> data.category_id),
+                            name: result.list.map(data=> data.name),
+                            list: result.list
+                        })
+
+                        if(category2){
+                            setFirstText(prev=> ({...prev, category2: result.list.filter(data=>data.category_id === Number(category2))?.[0]?.name}))
+                        }
+                    }
+                })
+        }
+    },[inputs?.category1, category2])
+
+    useEffect(()=>{
+        if(inputs?.category2){
+            adminApi('board', '', {board_type: 'faq', all_yn: "y", category1: inputs?.category1, category2: inputs?.category2})
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        setBoard({
+                            page: result.data,
+                            list: result.list
+                        })
+                    }
+                })
+        }
+    },[inputs?.category2])
+
 
     const onExposure = (e, data) => {
         const { checked } = e.target
-        // console.log(inputs);
-        // console.log(data);
-        // console.log({board_id: data.board_id, title: data.title, comment: data.comment, category1: data.category1, category2: data.category2, exposure_yn: checked ? 'y' : 'n'});
         adminApi('board/manage', 'update', {board_id: data.board_id, title: data.title, comment: data.comment, category1: data.category1, category2: data.category2, exposure_yn: checked ? 'y' : 'n'})
             .then((result)=>{
-                // console.log(result);
                 if(result.result){
 
                 }
             })
+    }
+
+    const onLink = (e, id) => {
+        e.preventDefault()
+        navigate(`${inputs?.category1 ? `?category1=${inputs.category1}` : ''}${inputs?.category2 ? `?category2=${inputs.category2}` : ''}`)
+        if(!id){
+            navigate(`/admin/support/qna/create${inputs?.category1 ? `?category1=${inputs.category1}` : ''}${inputs?.category2 ? `?category2=${inputs.category2}` : ''}`)
+        }else{
+            navigate(`/admin/support/qna/${id}${inputs?.category1 ? `?category1=${inputs.category1}` : ''}${inputs?.category2 ? `?category2=${inputs.category2}` : ''}`)
+        }
     }
 
     return (
@@ -99,27 +127,29 @@ export default function CategoryQnA() {
                             name='category1'
                             firstText={firstText?.category1}
                             setInputs={setInputs} 
-                            func={firstDepthFunc} 
+                            // func={firstDepthFunc} 
                             placeholder='1차 카테고리를 선택하세요.'
                         />
                     }
-                    {inputs?.category1 &&
+                    {secondDepth &&
                         <SelectBox 
-                            text={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.name)} 
-                            value={category.filter((data)=> data.parent_category_id === inputs.category1).map((data)=> data.category_id)} 
+                            text={secondDepth.name} 
+                            value={secondDepth.category_id} 
                             name='category2' 
                             firstText={firstText?.category2}
                             setInputs={setInputs} 
                             placeholder='2차 카테고리를 선택하세요.' 
-                            key={inputs.category1}
+                            key={inputs?.category1}
                         />
                     }
-                    <NavLink to={`/admin/support/qna/create${inputs?.category1 ? `?category1=${inputs.category1}` : ''}${inputs?.category2 ? `?category2=${inputs.category2}` : ''}`} className='btn-point'>등록</NavLink>
+                    <NavLink to={`/admin/support/qna/create`} className='btn-point' onClick={(e)=>onLink(e)}>등록</NavLink>
                 </div>
 
-                <div className='board-count'>
-                    <strong className="total">{ board?.page.totalCount }</strong>
-                </div>
+                {board &&
+                    <div className='board-count'>
+                        <strong className="total">{ board?.page.totalCount }</strong>
+                    </div>
+                }
 
                 {board && 
                     <>
@@ -145,7 +175,7 @@ export default function CategoryQnA() {
                                         <label htmlFor={`check_${data.board_id}`}>노출 여부</label>
                                     </div>
                                     <div className='button'>
-                                        <Link to={`/admin/support/qna/${data.board_id}`} className='btn-point'>수정</Link>
+                                        <Link to={`/admin/support/qna/${data.board_id}`} className='btn-point' onClick={(e)=>onLink(e, data.board_id)}>수정</Link>
                                         <button className='btn-point-border'
                                             onClick={()=>setPopup({
                                                 type: 'cancel', 

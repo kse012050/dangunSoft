@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import SelectBox from '../../../components/SelectBox';
 import { adminApi, isSubmit } from '../../../api/api';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
@@ -9,39 +9,60 @@ import Popup from '../../../components/popup/Popup';
 export default function Create() {
     const { category1, category2 } = urlParams(useLocation())
     const { id } = useParams();
-    const [inputs, setInputs] = useState({board_type: 'faq', category1: category1, category2: category2})
-    const [category, setCategory] = useState()
+    const [inputs, setInputs] = useState({category1: category1, category2: category2})
     const [firstDepth, setFirstDepth] = useState()
+    const [secondDepth, setSecondDepth] = useState()
     const [firstText, setFirstText] = useState()
     const [popup, setPopup] = useState()
     const navigate = useNavigate()
 
-    useLayoutEffect(()=>{
-        inputsRequiredAdd(setInputs);
-        adminApi('category', '', {/* depth: '1',  */all_yn: 'n'})
+    useEffect(()=>{
+        adminApi('category', '', {depth: '1', all_yn: 'y'})
             .then((result)=>{
-                // console.log(result);
                 if(result.result){
-                    setCategory(result.list)
                     setFirstDepth({
-                        category_id: result.list.filter((data)=> data.parent_category_id === 0).map((data)=> data.category_id),
-                        name: result.list.filter((data)=> data.parent_category_id === 0).map((data)=> data.name)
+                        category_id: result.list.map((data)=> data.category_id),
+                        name: result.list.map((data)=> data.name),
+                        list: result.list
                     })
+                    console.log(result);
 
                     if(category1){
-                        setFirstText((prev)=>({
-                            ...prev, category1: result.list.filter((data)=> data.category_id === category1)[0]?.name
-                        }))
-                    }
+                        setFirstText({category1: result.list.filter(data=>data.category_id === Number(category1))[0].name})
 
-                    if(category2){
+                    }else if(result.list.map((data)=> data.category_id).length === 1){
                         setFirstText((prev)=>({
-                            ...prev, category2: result.list.filter((data)=> data.category_id === category2)[0]?.name
+                            ...prev, category1: result.list[0].name
                         }))
+                        setInputs(prev=> ({...prev, category1: result.list[0].category_id}))
                     }
                 }
             })
+    },[category1])
 
+    useEffect(()=>{
+        if(inputs?.category1){
+            adminApi('category', '', {depth: '2', all_yn: 'y', parent_category_id: inputs?.category1})
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        setSecondDepth({
+                            category_id: result.list.map(data=> data.category_id),
+                            name: result.list.map(data=> data.name),
+                            list: result.list
+                        })
+
+                        if(category2){
+                            setFirstText(prev=> ({...prev, category2: result.list.filter(data=>data.category_id === Number(category2))?.[0]?.name}))
+                        }
+                    }
+                })
+        }
+    },[inputs?.category1, category2])
+
+    useLayoutEffect(()=>{
+        inputsRequiredAdd(setInputs);
+        
         if(id){
             adminApi('board/detail', '', {board_id: id})
                 .then((result)=>{
@@ -76,6 +97,7 @@ export default function Create() {
                         description: id ? ['수정되었습니다.'] : ['등록되었습니다.'],
                         func: () =>{
                             navigate(`/admin/support/qna${inputs?.category1 ? `?category1=${inputs.category1}` : ''}${inputs?.category2 ? `?category2=${inputs.category2}` : ''}`)
+                            // navigate(`/admin/support/qna`)
                         }
                     })
                 }
@@ -88,23 +110,26 @@ export default function Create() {
             <h2>문답 {!id ? '등록': '수정'}</h2>
             <div className='board-selectBox'>
                 {firstDepth &&
-                    <>
-                        <SelectBox 
-                            text={firstDepth.name}
-                            value={firstDepth.category_id} 
-                            name='category1'
-                            setInputs={setInputs}
-                            firstText={firstText?.category1 || (inputs?.category1 && category?.filter((data)=> data.category_id === inputs.category1)?.[0]?.name)}
-                            placeholder='1차 카테고리를 선택하세요.'/>
-                        <SelectBox 
-                            text={category.filter((data)=> data.parent_category_id === inputs?.category1).map((data)=> data?.name)}
-                            value={category?.filter((data)=> data.parent_category_id === inputs?.category1).map((data)=> data.category_id)} name='category2' 
-                            firstText={firstText?.category2 || (inputs?.category2 && category.filter((data)=> data.category_id === inputs.category2)?.[0]?.name)}
-                            setInputs={setInputs} 
-                            placeholder='2차 카테고리를 선택하세요.' 
-                            key={inputs?.category1}
-                        />
-                    </>
+                    <SelectBox 
+                        text={firstDepth.name} 
+                        value={firstDepth.category_id} 
+                        name='category1'
+                        firstText={firstText?.category1}
+                        setInputs={setInputs} 
+                        // func={firstDepthFunc} 
+                        placeholder='1차 카테고리를 선택하세요.'
+                    />
+                }
+                {secondDepth &&
+                    <SelectBox 
+                        text={secondDepth.name} 
+                        value={secondDepth.category_id} 
+                        name='category2' 
+                        firstText={firstText?.category2}
+                        setInputs={setInputs} 
+                        placeholder='2차 카테고리를 선택하세요.' 
+                        key={inputs?.category1}
+                    />
                 }
             </div>
             <form onChange={(e)=>inputChange(e, setInputs)}>
