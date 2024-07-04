@@ -27,7 +27,6 @@ export default function FAQTitle() {
                     setPath(prev=>({...prev, category2: result.list.filter(data=>data.category_id === Number(category2))[0]?.name}))
                 }
             })
-
     },[category1, category2])
 
     return (
