@@ -84,7 +84,7 @@ export default function Inquiry() {
                             <li>
                                 <label htmlFor="contact_information">電話番号</label>
                                 <div>
-                                    <input type="text" placeholder='電話番号を入力してください' name='contact_information' id='contact_information' data-formet='numb' required/>
+                                    <input type="text" placeholder='電話番号を入力してください' name='contact_information' id='contact_information' required/>
                                 </div>
                             </li>
                             <li>

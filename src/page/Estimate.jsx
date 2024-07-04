@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import Select from '../components/Select';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 // import { productsList } from '../js/product'
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import { isSubmit, userApi } from '../api/api';
@@ -14,29 +14,57 @@ const orderProductList = {
     option_price_id: '',
 }
 
-const firstTextList = {
-    vendor_id: '',
-    product_id: '',
-    product_option_id: '',
-    order_quantiry: '',
-    option_price_id: '5',
-}
+// const firstTextList = {
+//     vendor_id: '',
+//     product_id: '',
+//     product_option_id: '',
+//     order_quantiry: '',
+//     option_price_id: '5',
+// }
 
 export default function Estimate() {
+    const { id } = useParams()
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({board_type: 'estimate'})
-    const [products, setProducts] = useState([{...orderProductList}])
-    const [firstTexts, setFirstTexts] = useState([{...firstTextList}])
+    const [products, setProducts] = useState()
+    // const [firstTexts, setFirstTexts] = useState([{...firstTextList}])
 
     useEffect(()=>{
         inputsRequiredAdd(setInputs);
-    },[])
 
+        if(id){
+            userApi('product/detail', '', {option_price_id: id})
+                .then((result)=>{
+                    if(result.result){
+                        setProducts([{
+                            vendor_id: result.data.vendor_id,
+                            product_id: result.data.product_id,
+                            product_option_id: result.data.product_option_id,
+                            order_quantiry: result.data.minimum_quantiry,
+                            // option_price_id: result.data.optionList[0].optionPriceList[0].option_price_id,
+
+                        }])
+                      
+                        const productId = result.data.product_id;
+                        userApi('product', '', {vendor_id: result.data.vendor_id})
+                            .then((result)=>{
+                                if(result.result){
+                                    setProducts(prev=>([{...prev[0], product_option_id: result.list.filter((data)=>data.product_id === productId)[0].optionList[0].optionPriceList[0].product_option_id}]))
+                                }
+                            })
+                    }
+                })
+        }else{
+            setProducts([{...orderProductList}])
+        }
+    },[id])
+
+    
 
     const onSubmit = (e) => {
         e.preventDefault();
-        // console.log(inputs);
-        // console.log(products);
+        console.log(inputs);
+        console.log(products);
         
         if(isSubmit(inputs)){
             return;
@@ -76,11 +104,11 @@ export default function Estimate() {
 
     return (
         <section>
-            <h2>お見積もり</h2>
+            <h2 onClick={()=>console.log(products)}>お見積もり</h2>
             <form onChange={(e)=>inputChange(e, setInputs)}>
-                {!!products.length && products.map((_, i)=>
+                {!!products?.length && products.map((data, i)=>
                     <React.Fragment key={i}>
-                        <EstimateProduct orderProductList={orderProductList} products={products} setProducts={setProducts} firstTextList={firstTextList} firstTexts={firstTexts} setFirstTexts={setFirstTexts} productIdx={i} /* key={products.length} *//>
+                        <EstimateProduct productData={data} products={products} setProducts={setProducts} productIdx={i} orderProductList={orderProductList} id={!!(i === 0 && id)}/>
                     </React.Fragment>
                 )}
                 <fieldset className='inputBox'>

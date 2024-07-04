@@ -1,49 +1,23 @@
-import React, { Fragment, useEffect, useId, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useId, useLayoutEffect, useState } from 'react';
 import Select from '../components/Select';
 import { userApi } from '../api/api';
-import { useParams } from 'react-router-dom';
 
-export default function EstimateProduct({ orderProductList, products, setProducts, firstTextList, firstTexts, setFirstTexts, productIdx}) {
-    const { id } = useParams()
+export default function EstimateProduct({ productData, products, setProducts, productIdx, orderProductList, id }) {
     const uuid = useId()
-    const [inputs, setInputs] = useState({...orderProductList})
-    const [firstText, setFirstText] = useState({...firstTextList})
+    const [inputs, setInputs] = useState()
+    const [firstText, setFirstText] = useState()
     const [vender, setVender] = useState()
     const [product, setProduct] = useState()
     const [option, setOption] = useState()
     const [optionPrice, setOptionPrice] = useState()
+    const [dataChange, setDataChange] = useState(!id)
+    useEffect(()=>{
+        setInputs({...productData})
+    },[products.length, productData])
 
     useLayoutEffect(()=>{
-        // setInputs(prev=> !prev ? {...orderProductList} : {...prev})
-        // console.log(id);
-        if(id){
-            userApi('product/detail', '', {option_price_id: id})
-                .then((result)=>{
-                    // console.log(result);
-                    if(result.result){
-                        setInputs(prev=> ({...prev, vendor_id: result.data.vendor_id, product_id: result.data.product_id}))
-                        setFirstText(prev=> ({...prev, vendor_id: result.data.vendor_name, product_id: result.data.product_name}))
-
-                        // setProduct({
-                        //     data: [...result.data.optionList]
-                        // })
-                        
-                        const productId = result.data.product_id;
-                        userApi('product', '', {vendor_id: result.data.vendor_id})
-                            .then((result)=>{
-                                // console.log(result.list.filter((data)=>data.product_id === productId)[0].optionList);
-                                if(result.result){
-                                    setProduct({
-                                        data: [...result.list.filter((data)=>data.product_id === productId)[0].optionList]
-                                    })
-                                }
-                            })
-                    }
-                })
-        }else{
             userApi('vendor')
                 .then((result)=>{
-                    // console.log(result);
                     if(result.result){
                         setVender({
                             list: result.list.map((data)=> data.vendor_name),
@@ -53,70 +27,81 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                         if(result.list.length === 1){
                             setInputs(prev=>({...prev, vendor_id: result.list[0].vendor_id}))
                             setFirstText(prev=>({...prev, vendor_id: result.list[0].vendor_name}))
+                        }else if(dataChange){
+                            setInputs({vendor_id: result.list[0].vendor_id})
+                            setFirstText({vendor_id: result.list[0].vendor_name})
+
                         }
                     }
                 })
-        }
-    },[])
+    },[dataChange])
 
     useEffect(()=>{
-        setInputs(!products?.[productIdx] ? {...orderProductList} : {...products[productIdx]})
-        setFirstText(!firstTexts?.[productIdx] ? {...firstTextList} : {...firstTexts[productIdx]})
-    },[products.length])
-
-    useEffect(()=>{
-        if(inputs?.vendor_id && !id){
+        if(inputs?.vendor_id){
             userApi('product', '', {vendor_id: inputs.vendor_id})
                 .then((result)=>{
-                    // console.log(result);
                     if(result.result){
                         setProduct({
                             list: result.list.map((data)=> data.product_name),
                             value: result.list.map((data)=> data.product_id),
                             data: result.list
                         })
-
-                        setInputs((prev)=>({...prev, product_id: ''}))
-                        setFirstText((prev)=>({...prev, product_id: ''}))
+                        if(dataChange){
+                            setInputs((prev)=>({...prev, product_id: ''}))
+                            setFirstText((prev)=>({...prev, product_id: ''}))
+                        }else{
+                            setFirstText((prev)=>({...prev, product_id: result.list.filter(data=>data.product_id === prev.product_id)?.[0]?.product_name}))
+                        }
                     }
                 })
         }
-    },[inputs?.vendor_id, id])
+    },[inputs?.vendor_id, dataChange])
 
     useEffect(()=>{
-        if(inputs?.product_id && product && !id){
+        if(inputs?.product_id && product){
             setOption({
-                list: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data.option_name),
-                value: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data.product_option_id),
-                data: product.data.filter((data)=> data.product_id === inputs.product_id)[0]?.optionList
+                list: product?.data.filter((data)=> data?.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data?.option_name),
+                value: product?.data.filter((data)=> data?.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data?.product_option_id),
+                data: product?.data.filter((data)=> data?.product_id === inputs.product_id)[0]?.optionList
             })
 
-            setInputs((prev)=>({...prev, product_option_id: '', order_quantiry: ''}))
-            setFirstText((prev)=>({...prev, product_option_id: '', order_quantiry: ''}))
-            setOptionPrice()
+            if(dataChange){
+                setInputs((prev)=>({...prev, product_option_id: '', order_quantiry: ''}))
+                setOptionPrice()
+            }else{
+                setFirstText((prev)=>({
+                    ...prev, 
+                    product_id: product.data.filter(data=>data.product_id === inputs.product_id)?.[0]?.product_name,
+                    product_option_id: '', 
+                    order_quantiry: ''
+                }))
+            }
+        }else{
+            setInputs((prev)=>({...prev, product_option_id: '', order_quantiry: '', option_price_id: ''}))
         }
-
-        if(product && id){
-            // console.log(product.data);
-            setOption({
-                list: product.data?.map((data)=> data.option_name),
-                value: product.data?.map((data)=> data.product_option_id),
-                data: product.data
-            })
-
-        }
-    },[inputs?.product_id, product, id])
+    },[inputs?.product_id, product, dataChange])
 
     useEffect(()=>{
-        if(inputs?.product_option_id){
+        if(inputs?.product_option_id && option){
             setInputs((prev)=>({
                 ...prev,
-                order_quantiry: option.data.filter(data=> data.product_option_id === inputs?.product_option_id)[0].minimum_quantiry,
-                option_price_id: option.data.filter(data=> data.product_option_id === inputs?.product_option_id)[0].optionPriceList[0].option_price_id
+                order_quantiry: option?.data.filter(data=> data?.product_option_id === inputs?.product_option_id)?.[0]?.minimum_quantiry,
+                option_price_id: option?.data.filter(data=> data?.product_option_id === inputs?.product_option_id)?.[0]?.optionPriceList[0].option_price_id
             }))
-            setOptionPrice(option.data.filter(data=>data.product_option_id === inputs.product_option_id)[0].optionPriceList)
+            setOptionPrice(option?.data.filter(data=>data?.product_option_id === inputs.product_option_id)?.[0]?.optionPriceList)
+            if(!dataChange){
+                setFirstText((prev)=>({
+                    ...prev, 
+                    product_option_id: option.data[0].option_name, 
+                }))
+            }
+        }else{
+            setFirstText((prev)=>({
+                ...prev, 
+                product_option_id: ''
+            }))
         }
-    },[inputs?.product_option_id])
+    },[inputs?.product_option_id, option, dataChange])
 
     const productChange = (e) =>{
         const { name, value } = e.target
@@ -124,19 +109,12 @@ export default function EstimateProduct({ orderProductList, products, setProduct
     }
 
     useEffect(()=>{
-        // console.log(inputs);
         setProducts(prev=>{
-            const arr = [...prev]
-            arr[productIdx] = {...inputs}
+            const arr = prev
+            arr[productIdx] = inputs
             return arr
         })
-
-        setFirstTexts(prev=>{
-            const arr = [...prev]
-            arr[productIdx] = {...firstText}
-            return arr
-        })
-    },[inputs, productIdx, setProducts, firstText, setFirstTexts])
+    },[inputs, productIdx, setProducts, firstText])
 
     return (
         <fieldset className='inputBox-product' onChange={(e)=>e.stopPropagation()}>
@@ -151,7 +129,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     <label htmlFor="" onClick={()=>console.log(firstText)}>製品</label>
                     <div>
                         <div>
-                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs.vendor_id || !product || id} key={inputs.vendor_id} />
+                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs?.vendor_id || !product || id} key={inputs?.vendor_id || products.length} />
                         </div>
                     </div>
                 </li>
@@ -159,14 +137,14 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     <label htmlFor="">オプション</label>
                     <div>
                         <div>
-                            <Select placeholder="選択" list={option?.list} value={option?.value} firstText={firstText?.product_option_id} setInputs={setInputs} setFirstText={setFirstText} name='product_option_id'  disabled={!inputs.product_id || !option} key={inputs.product_id}/>
+                            <Select placeholder="選択" list={option?.list} value={option?.value} firstText={firstText?.product_option_id} setInputs={setInputs} setFirstText={setFirstText} name='product_option_id'  disabled={!inputs?.product_id || !option} key={inputs?.product_id || products.length}/>
                         </div>
                     </div>
                 </li>
                 <li className='half'>
                     <label htmlFor="order_quantiry">数量</label>
                     <div>
-                        <input type="number" min='1' name='order_quantiry' id='order_quantiry' disabled={!inputs.product_option_id} value={inputs.order_quantiry} onChange={productChange}/>
+                        <input type="number" min='1' name='order_quantiry' id='order_quantiry' disabled={!inputs?.product_option_id} value={inputs?.order_quantiry || ''} onChange={productChange}/>
                     </div>
                 </li>
                 <li>
@@ -174,7 +152,7 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                     <div>
                         {optionPrice && optionPrice.map((data, i)=>
                             <React.Fragment key={data.option_price_id}>
-                                <input type="radio" name='option_price_id' id={`optionPrice_${uuid}_${data.option_price_id}`} value={data.option_price_id} defaultChecked={i === 0} onChange={productChange}/>
+                                <input type="radio" name={`option_price_id_${uuid}`} id={`optionPrice_${uuid}_${data.option_price_id}`} value={data.option_price_id} defaultChecked={i === 0} onChange={productChange}/>
                                 <label htmlFor={`optionPrice_${uuid}_${data.option_price_id}`}>
                                     {data.price_type === '신규' && '新規'}
                                     {data.price_type === '갱신' && '更新'}
@@ -182,32 +160,24 @@ export default function EstimateProduct({ orderProductList, products, setProduct
                                 </label>
                             </React.Fragment>
                         )}
-                        {/* <input type="radio" name={`test_${uuid}`} id={`test01_${uuid}`} defaultChecked={true}/>
-                        <label htmlFor={`test01_${uuid}`}>新規</label>
-                        <input type="radio" name={`test_${uuid}`} id={`test02_${uuid}`}/>
-                        <label htmlFor={`test02_${uuid}`}>更新</label>
-                        <input type="radio" name={`test_${uuid}`} id={`test03_${uuid}`}/>
-                        <label htmlFor={`test03_${uuid}`}>アップグレード</label> */}
                     </div>
                 </li>
             </ul>
             <div>
-                {products.length - 1 === productIdx &&
-                    <button type='button' className={(!inputs?.order_quantiry || id) ? 'disabled' : ''}
-                        onClick={()=>{
-                            if(inputs?.order_quantiry){
-                                setProducts(prev=>[...prev, {...orderProductList}])
-                                setFirstTexts(prev=>[...prev, {...firstTextList}])
-                            }
-                        }}
-                        disabled={id}
-                    >+ 製品追加</button>
+                {products.length === (productIdx + 1) && 
+                    <button type='button' className={(!inputs?.order_quantiry) ? 'disabled' : ''}
+                            onClick={()=>{
+                                if(inputs?.order_quantiry){
+                                    setProducts(prev=>[...prev, {...orderProductList}])
+                                }
+                            }}
+                        >+ 製品追加</button>
                 }
-                { products.length > 1 &&
+                {!id && products.length > 1 && 
                     <button type='button'
                         onClick={()=>{
-                            setProducts(prev=> prev.filter((_, i)=> i !== productIdx))
-                            setFirstTexts(prev=> prev.filter((_, i)=> i !== productIdx))
+                            setProducts(prev=> [...prev.filter((_, i)=> i !== productIdx)])
+                            setDataChange(false)
                         }}   
                     >- 削除</button>
                 }

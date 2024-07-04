@@ -157,6 +157,7 @@ export const iconList = [
     {
         idx: 0,
         title: 'All Products Pack',
+        topLink: '/estimate/923',
         detail: 'すべてのJetBrainsデスクトップツールのパッケージ',
         type: [
             'IDE',
