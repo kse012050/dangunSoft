@@ -3,6 +3,7 @@ import Board2 from "../page/support/Board2";
 import BoardDetail from "../page/support/BoardDetail";
 import FAQ from "../page/support/FAQ";
 import FAQ2 from "../page/support/FAQ2";
+import FAQTitle from "../page/support/FAQTitle";
 import FAQDetail from "../page/support/FAQDetail";
 import Inquiry from "../page/support/Inquiry";
 import InquiryResult from "../page/support/InquiryResult";
@@ -79,6 +80,7 @@ export const routers = [
             { path: 'faq', element: <FAQ2/>  },
             { path: 'faq2', element: <FAQ/>  },
             { path: 'faq/:search', element: <FAQ/>  },
+            { path: 'faq/title/:category1', element: <FAQTitle/>  },
             { path: 'faq/detail/:id', element: <FAQDetail/>  },
         ]
     },

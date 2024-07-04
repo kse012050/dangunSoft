@@ -43,8 +43,9 @@ export default function FAQDetail() {
     return (
         <section className='faqDetailPage'>
             {path && 
-                <ol>
-                    <li>{`${path.category1} / `}<span>{`${path.category2}`}</span></li>
+                <ol className='faqPager'>
+                    <li>{`${path.category1}`}</li>
+                    <li>{`${path.category2}`}</li>
                 </ol>
             }
 

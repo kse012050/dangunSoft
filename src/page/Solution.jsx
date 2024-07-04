@@ -11,7 +11,7 @@ export default function Solution() {
                     JetBrains AIを使用することで、これまでとは異なる<br/>
                     IDE（統合開発環境）でより多くの情報と機能を利用できるようになります。
                 </p>
-                <Link to='/estimate' className='linkArea'>お見積もり</Link>
+                <Link to='/estimate/1076' className='linkArea'>お見積もり</Link>
             </section>
 
             <section className='aboutArea'>
@@ -71,8 +71,8 @@ export default function Solution() {
                         <li title='ライセンスの共有'><span title='포함'></span></li>
                         <li title='技術的なお問い合わせ'><span title='포함'></span></li>
                         <li title='ライセンス所有'><span>法人</span></li>
-                        <li><span><Link to='/estimate' className='btn-border-white'>お見積もり</Link></span></li>
-                        <li><span><Link to='/buy' className='btn-white'>ご購入</Link></span></li>
+                        <li><span><Link to='/estimate/1076' className='btn-border-white'>お見積もり</Link></span></li>
+                        <li><span><Link to='/buy/1076' className='btn-white'>ご購入</Link></span></li>
                     </ul>
                 </div>
                 <div>
@@ -88,8 +88,8 @@ export default function Solution() {
                         <li title='ライセンスの共有'><span></span></li>
                         <li title='技術的なお問い合わせ'><span></span></li>
                         <li title='ライセンス所有'><span>個人</span></li>
-                        <li><span><Link to='/estimate' className='btn-border-white'>お見積もり</Link></span></li>
-                        <li><span><Link to='/buy' className='btn-white'>ご購入</Link></span></li>
+                        <li><span><Link to='/estimate/1172' className='btn-border-white'>お見積もり</Link></span></li>
+                        <li><span><Link to='/buy/1172' className='btn-white'>ご購入</Link></span></li>
                     </ul>
                 </div>
             </section>

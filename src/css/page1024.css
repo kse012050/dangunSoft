@@ -167,6 +167,15 @@
 .faqPage section .test > div{width: calc((100% - 30px) / 2);}
 
 
+/* 지원 페이지 - FAQ - 타이틀 페이지, 상세 페이지*/
+.faqDetailPage, .faqTitlePage{padding-block: 20px 120px;}
+
+
+/* 지원 페이지 - FAQ - 타이틀 페이지*/
+.faqTitlePage strong{font-size: 36px; line-height: 46px;}
+.faqTitlePage ul li a{font-size: 18px; line-height: 24px;}
+
+
 /* 지원 페이지 - FAQ - 상세 페이지*/
 .faqDetailPage .titleArea{font-size: 36px; line-height: 46px;}
 

@@ -86,7 +86,7 @@
 
 
 
-:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPage, .estimateResultPage, .buyResultPage) section h2 + p{line-height: 22px;}
+:is(.boardPage, .boardDetailPage, .inquiryPage, .faqPager, .estimateResultPage, .buyResultPage) section h2 + p{line-height: 22px;}
 
 /* 지원 페이지 - 문의하기, FAQ 공통 */
 
@@ -122,9 +122,15 @@
 .faqPage section .test > div details > div{font-size: 14px; line-height: 18px;}
 
 
+/* 지원 페이지 - FAQ - 타이틀 페이지, 상세 페이지*/
+.faqDetailPage, .faqTitlePage{padding-block: 30px 100px;}
+
+
+/* 지원 페이지 - FAQ - 타이틀 페이지*/
+
+
 /* 지원 페이지 - FAQ - 상세 페이지*/
-.faqDetailPage{padding-block: 30px 100px;}
-.faqDetailPage ol{margin-bottom: 60px;}
+.faqPager{margin-bottom: 60px;}
 
 
 /* 견적요청 페이지 */

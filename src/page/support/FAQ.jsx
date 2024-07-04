@@ -46,7 +46,7 @@ export default function FAQ() {
                 {category && category.map((data)=>
                     <div key={data.category_id}>
                         <strong>{ data.name }</strong>
-                        <List category_id={data.category_id}/>
+                        <List category_id={data.category_id} category1={data.category_id}/>
                     </div>
                 )}
             </div>
@@ -54,17 +54,23 @@ export default function FAQ() {
     );
 }
 
-function List({ category_id }){
+function List({ category_id, category1 }){
     const { search } = urlParams(useLocation())
     const [list, setList] = useState()
+    const navigate = useNavigate();
+
+    const onTitleLink = (e, category_id) =>{
+        // console.log(e.target.parentNode.open);
+        if(e.target.parentNode.open){
+            navigate(`/support/faq/title/${category1}?category2=${category_id}`)
+        }
+    }
+
     useEffect(()=>{
         userApi('faq', '', {board_type: 'faq', category1: category_id, search_text: search})
             .then((result)=>{
-                console.log(result.list);
-                // console.log(result.list.map(data=> data.faq_list).flat());
                 if(result.result){
                     setList(result.list)
-                    // setList(result.list.map(data=> data.faq_list).flat())
                 }
             })
     },[category_id, search])
@@ -72,7 +78,7 @@ function List({ category_id }){
         <>
             {list && list.map((data)=>
                 <details key={data.category_id}>
-                    <summary>{data.name}</summary>
+                    <summary onClick={(e)=>onTitleLink(e, data.category_id)}>{data.name}</summary>
                     <div>
                         { data.faq_list.map((data2)=>
                             <Link key={data2.board_id} to={`/support/faq/detail/${data2.board_id}`}>{ data2.title }</Link>
