@@ -2,6 +2,11 @@ body:not(:has(.adminPage)){zoom: 0.67;}
 /* 줄바꿈 */
 br[class]:not([class*="pc"]){display: none;}
 
+
+/* 컨텐츠 사이즈 */
+.userPage[class$="Page"] > section:only-of-type{min-height: 115vh;}
+
+
 /* 버튼 */
 .userPage [class*='btn']{font-size: 18px;}
 .userPage [class*='btn-border']{line-height: 58px;}
@@ -73,8 +78,11 @@ input:is([type="checkbox"], [type="radio"]) + label::before{width: 24px;}
 
 /* 완료 */
 .userPage .resultBox strong{font-size: 20px; line-height: 26px;}
-.userPage .resultBox dl :is(dt, dd){padding-block: 24px;}
 .userPage .resultBox dl{font-size: 16px;}
+.userPage .resultBox dl dt{padding-block: 24px;}
+.userPage .resultBox dl dd:first-of-type{padding-top: 24px;}
+.userPage .resultBox dl dd:last-of-type{padding-bottom: 24px;}
+.userPage .resultBox dl dd:not(:last-of-type){margin-bottom: 10px;}
 
 
 /* 해더 */

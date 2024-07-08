@@ -77,10 +77,11 @@ export const routers = [
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
             { path: 'inquiryResult', element: <InquiryResult/>  },
-            { path: 'faq', element: <FAQ2/>  },
-            { path: 'faq2', element: <FAQ/>  },
+            // { path: 'faq', element: <FAQ2/>  },
+            { path: 'faq', element: <FAQ/>  },
             { path: 'faq/:search', element: <FAQ/>  },
             { path: 'faq/title/:category1', element: <FAQTitle/>  },
+            { path: 'faq/title/:category1/:category2', element: <FAQTitle/>  },
             { path: 'faq/detail/:id', element: <FAQDetail/>  },
         ]
     },

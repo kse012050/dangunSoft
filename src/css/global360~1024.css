@@ -51,7 +51,11 @@ input[type="checkbox"] + label::before{width: 22px;}
 
 /* 완료 */
 .userPage .resultBox dl{font-size: 15px;}
-.userPage .resultBox dl :is(dt, dd){padding-block: 19px;}
+/* .userPage .resultBox dl :is(dt, dd){padding-block: 19px;} */
+.userPage .resultBox dl dt{padding-block: 19px;}
+.userPage .resultBox dl dd:first-of-type{padding-top: 19px;}
+.userPage .resultBox dl dd:last-of-type{padding-bottom: 19px;}
+.userPage .resultBox dl dd:not(:last-of-type){margin-bottom: 10px;}
 
 
 /* 해더 */

@@ -5,9 +5,11 @@ import { userApi } from '../../api/api';
 
 
 export default function FAQ() {
+    const { open } = urlParams(useLocation())
     const navigation = useNavigate()
     const [category, setCategory] = useState()
     const [searchValue, setSearchValue] = useState()
+    const [openList, setOpenList] = useState(open ? open.split(','):[])
 
     useLayoutEffect(()=>{
         userApi('category')
@@ -46,7 +48,7 @@ export default function FAQ() {
                 {category && category.map((data)=>
                     <div key={data.category_id}>
                         <strong>{ data.name }</strong>
-                        <List category_id={data.category_id} category1={data.category_id}/>
+                        <List category_id={data.category_id} category1={data.category_id} openList={openList} setOpenList={setOpenList}/>
                     </div>
                 )}
             </div>
@@ -54,16 +56,25 @@ export default function FAQ() {
     );
 }
 
-function List({ category_id, category1 }){
-    const { search } = urlParams(useLocation())
+function List({ category_id, category1, openList, setOpenList }){
+    const { search, open } = urlParams(useLocation())
     const [list, setList] = useState()
     const navigate = useNavigate();
 
     const onTitleLink = (e, category_id) =>{
         // console.log(e.target.parentNode.open);
         if(e.target.parentNode.open){
-            navigate(`/support/faq/title/${category1}?category2=${category_id}`)
+            navigate(`${openList.length ? `?open=${openList.join(',')}` : ''}`)
+            navigate(`/support/faq/title/${category1}/${category_id}`)
+        }else{
+            setOpenList(prev=> [...prev, category_id])
         }
+    }
+
+    const onListLink = (e, id) => {
+        e.preventDefault()
+        navigate(`${openList.length ? `?open=${openList.join(',')}` : ''}`)
+        navigate(`/support/faq/detail/${id}`)
     }
 
     useEffect(()=>{
@@ -77,11 +88,11 @@ function List({ category_id, category1 }){
     return (
         <>
             {list && list.map((data)=>
-                <details key={data.category_id}>
+                <details key={data.category_id} open={open?.includes(data.category_id)}>
                     <summary onClick={(e)=>onTitleLink(e, data.category_id)}>{data.name}</summary>
                     <div>
                         { data.faq_list.map((data2)=>
-                            <Link key={data2.board_id} to={`/support/faq/detail/${data2.board_id}`}>{ data2.title }</Link>
+                            <Link key={data2.board_id} to={`/support/faq/detail/${data2.board_id}`} onClick={(e)=>onListLink(e, data2.board_id)}>{ data2.title }</Link>
                         ) }
                     </div>
                 </details>

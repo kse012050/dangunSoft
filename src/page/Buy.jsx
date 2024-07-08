@@ -130,12 +130,14 @@ export default function Buy() {
         post_code_en:"",
     });
     const [productInfo, setProductInfo] = useState()
+    const [productInfoSum, setProductInfoSum] = useState()
     const sameRef = useRef()
     const [popup, setPopup] = useState()
     const inputsRef = useRef(inputs);
     const orderProductRef = useRef(orderProduct);
     const licenseInfoRef = useRef(licenseInfo);
     const [isLoading, setIsLoading] = useState()
+
 
     useEffect(()=>{
         ((id || orderCode) || idx) || navigate('/product')
@@ -160,29 +162,37 @@ export default function Buy() {
 
             let parameter = {
                 ...inputsRef.current,
-                order_product_list: [{
+                order_product_list: [
                     ...orderProductRef.current
-                }],
+                ],
                 license_info: {
                     ...licenseInfoRef.current
                 },
                 pay_token: response.id
             }
-            // console.log(parameter);
+
+            if(id){
+                parameter = {...parameter, order_product_list: [...orderProductRef.current]}
+            }
+
+            // if(orderCode){
+            //     parameter = {...parameter, order_id: orderCode}
+            // }
 
             setIsLoading(true)
-
+            // console.log(parameter);
             userApi('order/manage', '', {...parameter})
                 .then((result)=>{
-                    console.log(result);
+                    // console.log(result);
                     if(result.result){
+                        setIsLoading(false)
                         sessionStorage.setItem('buyDetail', JSON.stringify(result.data));
-                        navigate(`/buyResult?idx=${idx}`)
+                        navigate(`/buyResult${idx ? `?idx=${idx}`: ''}`)
                     }
                 })
         };
 
-    },[inputs, orderProduct, licenseInfo, idx, navigate])
+    },[inputs, orderProduct, licenseInfo, idx, navigate, id, orderCode])
 
 
     useLayoutEffect(()=>{
@@ -207,15 +217,15 @@ export default function Buy() {
         if(id){
             userApi('product/detail', '', {option_price_id: id})
                 .then((result)=>{
-                    console.log(result);
+                    // console.log(result);
                     if(result.result){
-                        setOrderProduct({
+                        setOrderProduct([{
                             vendor_id: result.data.vendor_id,
                             product_id: result.data.product_id,
                             product_option_id: result.data.optionList[0].product_option_id,
                             order_quantiry: result.data.optionList[0].minimum_quantiry,
                             option_price_id: result.data.optionList[0].optionPriceList[0].option_price_id,
-                        })
+                        }])
                         setProductInfo({
                             product_name: result.data.product_name,
                             option_name: result.data.optionList[0].option_name,
@@ -224,7 +234,42 @@ export default function Buy() {
                     }
                 })
         }
-    },[id])
+
+        if(orderCode){
+            userApi('order/detail', '', {order_code: orderCode})
+                .then((result)=>{
+                    // console.log(result);
+                    if(result.result){
+                        setInputs(prev=> ({ ...prev,
+                            write_name: result.data.write_name,
+                            company_name: result.data.company_name,
+                            contact_information: result.data.contact_Information,
+                            email: result.data.email,
+                            order_id: result.data.order_product_list[0].order_id
+                        }))
+                        setOrderProduct([...result.data.order_product_list.map(data=>({
+                            vendor_id: data.vendor_id,
+                            product_id: data.product_id,
+                            product_option_id: data.product_option_id,
+                            order_quantiry: data.order_quantiry,
+                            option_price_id: data.option_price_info_obj.option_price_id,
+                        }))])
+                        setProductInfo([...result.data.order_product_list.map(data=>({
+                            product_name: data.product_name,
+                            order_quantiry: data.order_quantiry,
+                            total_price: data.total_price,
+                            discount_price: data.discount_price,
+                            final_pay_price: data.final_pay_price,
+                        }))])
+                        setProductInfoSum({
+                            discount_price: result.data.discount_price,
+                            final_pay_price: result.data.final_pay_price,
+                            state: result.data.state
+                        })
+                    }
+                })
+        }
+    },[id, orderCode])
 
     const onSame = (e) => {
         const { checked } = e.target
@@ -240,10 +285,25 @@ export default function Buy() {
         }
     }
 
-    const onsubmit = (e) =>{
+    const onSubmit = (e) =>{
         e.preventDefault();
         // console.log(inputs);
-        console.log(licenseInfo);
+        // console.log(licenseInfo);
+        // console.log(productInfo);
+        if(orderCode && productInfoSum.state !== 'request'){
+            setPopup({
+                type: 'confirm',
+                title: '알림',
+                description: [
+                    '구매가 불가능한 상태입니다.',
+                    '관리자에게 문의해주세요.'
+                ],
+                func: () =>{
+                    navigate('/product')
+                }
+            })
+            return
+        }
         
         if(isSubmit(inputs)){
             return;
@@ -308,15 +368,15 @@ export default function Buy() {
                             }
                             <figcaption>
                                 {/* <strong>IntelliJ IDEA商業用2年</strong> */}
-                                <strong>{ productInfo?.product_name }</strong>
+                                <strong>{ productInfo?.product_name } {productInfo?.option_name}</strong>
                                 <p>{ productInfo?.price.toLocaleString() }円</p>
                                 <div>
                                     <button
-                                        onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry > 2 ? prev.order_quantiry - 1 : prev.order_quantiry}))}
+                                        onClick={()=> setOrderProduct(prev=> [...prev.map(data=>({...data, order_quantiry: data.order_quantiry >= 2 ? data.order_quantiry - 1 : data.order_quantiry}))])}
                                     >-</button>
-                                    { orderProduct?.order_quantiry }
+                                    { orderProduct?.[0].order_quantiry }
                                     <button
-                                        onClick={()=> setOrderProduct(prev=> ({...prev, order_quantiry: prev.order_quantiry + 1}))}
+                                        onClick={()=> setOrderProduct(prev=> [...prev.map(data=>({...data, order_quantiry: data.order_quantiry + 1}))])}
                                     >+</button>
                                 </div>
                             </figcaption>
@@ -327,40 +387,46 @@ export default function Buy() {
                         </dl> */}
                         <dl className="amountBox">
                             <dt>合計 (税込み)</dt>
-                            <dd>{ (orderProduct?.order_quantiry * productInfo?.price).toLocaleString() }円</dd>
+                            <dd>{ (orderProduct?.[0].order_quantiry * productInfo?.price).toLocaleString() }円</dd>
                         </dl>
                     </div>
                 }
 
-                { orderCode &&
+                { (orderCode && productInfo && productInfoSum) &&
                     <div className='orderArea'>
-                        <div className='productArea'>
-                            <strong>[JetBrains] All Products Pack</strong>
-                            <dl>
-                                <dt>수량</dt>
-                                <dd>24개</dd>
-                            </dl>
-                            <dl>
-                                <dt>금액</dt>
-                                <dd>¥ 1,200</dd>
-                            </dl>
-                            <dl>
-                                <dt>할인</dt>
-                                <dd>¥ - 100</dd>
-                            </dl>
-                        </div>
+                        {productInfo.map((data, i)=>
+                            <div className='productArea' key={i}>
+                                <strong>{data.product_name}</strong>
+                                <dl>
+                                    <dt>数量</dt>
+                                    <dd>{data.order_quantiry}</dd>
+                                </dl>
+                                <dl>
+                                    <dt>金額</dt>
+                                    <dd>¥ {data.total_price.toLocaleString()}</dd>
+                                </dl>
+                                <dl>
+                                    <dt>割引</dt>
+                                    <dd>¥ - {data.discount_price.toLocaleString()}</dd>
+                                </dl>
+                            </div>
+                        )}
                         <div className='priceArea'>
                             <dl>
-                                <dt>합계</dt>
-                                <dd>¥ 1,800.00</dd>
+                                <dt>合計</dt>
+                                <dd>¥ 
+                                    {productInfo.reduce((accumulator, currentValue) => {
+                                        return accumulator + (currentValue.order_quantiry * currentValue.total_price);
+                                    }, 0).toLocaleString()}
+                                </dd>
                             </dl>
                             <dl>
-                                <dt>할인 합계</dt>
-                                <dd>¥ - 200</dd>
+                                <dt>割引合計</dt>
+                                <dd>¥ - {productInfoSum.discount_price.toLocaleString()}</dd>
                             </dl>
                             <dl>
-                                <dt>최종 결제 금액</dt>
-                                <dd>¥ 1,600.00</dd>
+                                <dt>最終決済金額(税込み)</dt>
+                                <dd>¥ {productInfoSum.final_pay_price.toLocaleString()}</dd>
                             </dl>
                         </div>
                     </div>
@@ -372,13 +438,13 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="write_name">名前</label>
                                 <div>
-                                    <input type="text" id='write_name' name='write_name' placeholder='名前を入力してください' required/>
+                                    <input type="text" id='write_name' name='write_name' defaultValue={inputs?.write_name} placeholder='名前を入力してください' required/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="company_name">会社名</label>
                                 <div>
-                                    <input type="text" id='company_name' name='company_name' placeholder='企業名を入力してください' required/>
+                                    <input type="text" id='company_name' name='company_name' defaultValue={inputs?.company_name} placeholder='企業名を入力してください' required/>
                                     <input type="checkbox" id='individual_yn' name='individual_yn' required/>
                                     <label htmlFor="individual_yn">個人</label>
                                 </div>
@@ -386,13 +452,13 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="contact_information">電話番号</label>
                                 <div>
-                                    <input type="text" id='contact_information' name='contact_information' placeholder='電話番号を入力してください' required/>
+                                    <input type="text" id='contact_information' name='contact_information' defaultValue={inputs?.contact_information} placeholder='電話番号を入力してください' required/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="email">メール</label>
                                 <div>
-                                    <input type="text" id='email' name='email' placeholder='メールを入力してください' required/>
+                                    <input type="text" id='email' name='email' defaultValue={inputs?.email} placeholder='メールを入力してください' required/>
                                 </div>
                             </li>
                         </ul>
@@ -545,11 +611,14 @@ export default function Buy() {
                     </fieldset> */}
                     <dl className="amountBox">
                         <dt>最終決済金額</dt>
-                        <dd>{ (orderProduct?.order_quantiry * productInfo?.price).toLocaleString() }円</dd>
+                        <dd>
+                            { id && (orderProduct?.[0].order_quantiry * productInfo?.price).toLocaleString() }
+                            {orderCode && (productInfoSum?.final_pay_price)}
+                        円</dd>
                     </dl>
                     <div className='submitBox'>
                         <input type="reset" className='btn-border-black' value='キャンセル'/>
-                        <input type="submit" className='btn-bg' value='決済する' onClick={onsubmit}/>
+                        <input type="submit" className='btn-bg' value='決済する' onClick={onSubmit}/>
                     </div>
                 </form>
             </section>

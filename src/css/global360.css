@@ -3,6 +3,10 @@ br[class]:not([class*="mobile"]){display: none;}
 
 
 /* 컨텐츠 사이즈 */
+.userPage[class$="Page"] > section:only-of-type{min-height: calc(100vh - 400px);}
+
+
+/* 컨텐츠 사이즈 */
 .contentSize{--minSpacing: 30px;}
 .userPage > *:not(header, footer){--minSpacing: 30px;}
 
@@ -41,6 +45,7 @@ br[class]:not([class*="mobile"]){display: none;}
 
 /* 상품 정보 */
 .userPage .productBox{padding-top: 20px; --imgWidth: 80px; --gap: 20px;}
+.userPage .productBox figure:not(:last-of-type){margin-bottom: 20px;}
 .userPage .productBox figure figcaption div{margin-top: 20px;}
 /* .userPage .productBox .deliveryArea{margin-top: 20px; padding-right: 12px;} */
 

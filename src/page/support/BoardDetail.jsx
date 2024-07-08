@@ -7,23 +7,23 @@ export default function BoardDetail() {
     const [dateil, setDetail] = useState()
     const navigate = useNavigate();
     const boardPassword = sessionStorage.getItem('boardPassword')
-
+    
     useEffect(()=>{
-        const parameter = {board_id: id}
-        boardPassword && (parameter.secret_password = boardPassword)
+        let parameter = {board_id: id};
+        (boardPassword && boardPassword !== 'null') && (parameter = {...parameter, secret_password: boardPassword});
         userApi('board/detail', '', parameter)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
                     setDetail(result.data)
                 }else{
-                    navigate('/support/board2')
+                    navigate('/support/board')
                 }
-            })
+            });
 
-        sessionStorage.setItem('boardPassword', boardPassword)
+        sessionStorage.setItem('boardPassword', boardPassword);
         return () => {
-            sessionStorage.removeItem('boardPassword')
+            sessionStorage.removeItem('boardPassword');
         }
     },[id, boardPassword, navigate])
 
@@ -53,7 +53,7 @@ export default function BoardDetail() {
                 <br/>
                 감사합니다.
             </div>
-            <Link to='/support/board2' className='btn-border-black'>リスト</Link>
+            <Link to='/support/board' className='btn-border-black'>リスト</Link>
         </section>
     );
 }

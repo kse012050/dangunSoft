@@ -1,24 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { inputChange, inputsRequiredAdd } from '../../api/validation';
 import { isSubmit, userApi } from '../../api/api';
 import Popup from '../../components/popup/Popup';
+import Loading from '../../components/Loading';
 
 export default function Inquiry() {
     const [inputs, setInputs] = useState({board_type: 'inquiry'})
     const [popup, setPopup] = useState()
     const secretPasswordRef = useRef()
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState()
 
     useEffect(()=>{
         inputsRequiredAdd(setInputs);
     },[])
 
-    const onReset = () => {
-        Object.keys(inputs).forEach((key) => {
-            setInputs(prev => ({...prev, [key]: ''}))
-        })
-    }
+    // 취소 눌렀을 때 뒤로 가기가 아니라 초기화 시킬 떄
+    // const onReset = () => {
+    //     Object.keys(inputs).forEach((key) => {
+    //         setInputs(prev => ({...prev, [key]: ''}))
+    //     })
+    // }
 
     const onSubmit = (e) =>{
         e.preventDefault();
@@ -35,7 +38,7 @@ export default function Inquiry() {
         copyInputs.phonetic_guide = `${inputs.phonetic_guide_last} ${inputs.phonetic_guide_first}`
         delete copyInputs.phonetic_guide_last;
         delete copyInputs.phonetic_guide_first;
-        copyInputs.contact_information = `+81 ${copyInputs.contact_information}`
+        copyInputs.contact_information = `${copyInputs.contact_information}`
 
         if(copyInputs.secret_yn && copyInputs.secret_yn === 'y' && !copyInputs.secret_password){
             secretPasswordRef.current.focus()
@@ -43,9 +46,11 @@ export default function Inquiry() {
         }
         // console.log(copyInputs);
 
+        setIsLoading(true)
         userApi('board/manage', 'insert', copyInputs)
             .then((result)=>{
                 if(result.result){
+                    setIsLoading(false)
                     sessionStorage.setItem('inquiryDetail', JSON.stringify(copyInputs));
                     navigate('/support/inquiryResult')
                 }
@@ -96,7 +101,7 @@ export default function Inquiry() {
                             <li>
                                 <label htmlFor="title">タイトル</label>
                                 <div>
-                                    <input type="text" placeholder='タイトルを入力してください' name='title' id='title'/>
+                                    <input type="text" placeholder='タイトルを入力してください' name='title' id='title' required/>
                                 </div>
                             </li>
                             <li>
@@ -117,12 +122,14 @@ export default function Inquiry() {
                         </div>
                     </fieldset>
                     <div className='submitBox'>
-                        <input type="reset" className='btn-border-black' value='キャンセル' onClick={onReset}/>
+                        <Link to='/support' className='btn-border-black'>キャンセル</Link>
+                        {/* <input type="reset" className='btn-border-black' value='キャンセル' onClick={onReset}/> */}
                         <input type="submit" className='btn-bg' value='確認' onClick={onSubmit}/>
                     </div>
                 </form>
             </section>
             { popup && <Popup popup={popup} setPopup={setPopup}/>}
+            { isLoading && <Loading /> }
         </>
     );
 }

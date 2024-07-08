@@ -10,9 +10,17 @@ import Popup from '../components/popup/Popup';
 export default function Main() {
     const [inputs, setInputs] = useState()
     const [popup, setPopup] = useState()
+    const [firstPopup, setFirstPopup] = useState()
 
     useEffect(()=>{
         inputsRequiredAdd(setInputs);
+
+        userApi('popup')
+            .then((result)=>{
+                if(result.result){
+                    setFirstPopup(result.data)
+                }
+            })
     },[])
 
     const onSubmit = (e) =>{
@@ -220,11 +228,11 @@ export default function Main() {
                 <ul data-styleidx>
                     <li>
                         @Twitter
-                        <Link to=''>+Follow</Link>
+                        <Link to='https://x.com/nattosystem'>+Follow</Link>
                     </li>
                     <li>
                         @Line_ID
-                        <Link to=''>+友達登録</Link>
+                        <Link to='https://liff.line.me/1645278921-kWRPP32q/?accountId=827gemiv'>+友達登録</Link>
                     </li>
                 </ul>
             </div>
@@ -280,7 +288,13 @@ export default function Main() {
                 </form>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.24431736511!2d139.72150827625802!3d35.670985730535854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c82fbd6ae09%3A0xee70acf788450c72!2z5pel5pys44CB44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yS5LiB55uu77yS4oiS77yYIERG44OT44Or!5e0!3m2!1sja!2skr!4v1713921721212!5m2!1sja!2skr" title='동영상'></iframe>
             </section>
-
+            {firstPopup &&
+                <div className='firstPopup'>
+                    <Link to={firstPopup.link}>
+                        <img src={firstPopup.board_picture_list[0].file_url} alt="" />
+                    </Link>
+                </div>
+            }
             { popup && <Popup popup={popup} setPopup={setPopup}/>}
         </>
     );

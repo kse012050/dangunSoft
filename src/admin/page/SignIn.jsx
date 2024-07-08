@@ -8,11 +8,12 @@ import { userPageLog } from '../../api/api';
 
 export default function SignIn() {
     const location = useLocation().pathname.slice(1).split('/')[0];
-    const [inputs, setInputs] = useState()
+    const userId = localStorage.getItem('adminID')
+    const [inputs, setInputs] = useState({id: userId})
     const [popup, setPopup] = useState()
     const navigate = useNavigate()
     const rememberIDRef = useRef()
-    const adminToken = localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken');
+    const adminToken = sessionStorage.getItem('adminToken');
 
     useEffect(()=>{
         adminToken && navigate('/admin/statistics')
@@ -23,18 +24,20 @@ export default function SignIn() {
     const onSubmit = (e) =>{
         e.preventDefault();
         // console.log(inputs);
-
+        
         if(isSubmit(inputs)){
             return;
         }
         
+        // console.log(inputs);
         adminApi('login', '', inputs)
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
                     rememberIDRef.current.checked ? 
-                        localStorage.setItem('adminToken', result.data.token) :
-                        sessionStorage.setItem('adminToken', result.data.token);
+                        localStorage.setItem('adminID', inputs.id) :
+                        localStorage.removeItem('adminID');
+                    sessionStorage.setItem('adminToken', result.data.token);
                     navigate('/admin/statistics')
                 }else{
                     setPopup({type: 'signIn'})
@@ -48,9 +51,9 @@ export default function SignIn() {
                 <form onChange={(e)=>inputChange(e, setInputs)}>
                     <h2>NATTOSYSTEM 관리자</h2>
                     <ul>
-                        <li><input type="text" name="id" id="id" placeholder="id" data-formet="id" required autoFocus /></li>
+                        <li><input type="text" name="id" id="id" placeholder="id" data-formet="id" value={inputs?.id || ''} required autoFocus onChange={(e)=>inputChange(e, setInputs)}/></li>
                         <li><input type="password" name="password" id="password" placeholder="password" required onKeyDown={(e)=> e.key === 'Enter' && onSubmit(e)} autoComplete="off"/></li>
-                        <li><input type="checkbox" id='rememberID' ref={rememberIDRef}/><label htmlFor="rememberID">아이디 기억하기</label></li>
+                        <li><input type="checkbox" id='rememberID' ref={rememberIDRef} defaultChecked={userId}/><label htmlFor="rememberID">아이디 기억하기</label></li>
                     </ul>
                     {/* <button type="button" onClick={onSubmit} popovertarget="signIn">로그인</button> */}
                     <input type="submit" value='로그인' onClick={onSubmit}/>

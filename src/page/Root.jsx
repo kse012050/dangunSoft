@@ -23,7 +23,7 @@ export default function Root() {
         className = 'faq'
     }
     // console.log(className);
-    if(className === 'orderDetail'){
+    if(className === 'orderDetail' || className.includes('NT_')){
         className = 'buyDetail'
     }
 

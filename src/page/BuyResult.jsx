@@ -23,19 +23,21 @@ export default function BuyResult() {
             <p>ライセンスは確認後、記載のメールでにお伝えします。</p>
 
             <div className='productBox'>
-                <figure>
-                    {idx &&
-                        <img src={require(`../images/${idx}.png`)} alt="" />
-                    }
-                    <figcaption>
-                        <strong>{buyDetail?.order_product_list[0].product_name}</strong>
-                        <p>{buyDetail?.order_product_list[0].total_price.toLocaleString()}円</p>
-                        <div>{buyDetail?.order_product_list[0].order_quantiry}つ</div>
-                    </figcaption>
-                </figure>
+                {buyDetail?.order_product_list && buyDetail?.order_product_list.map((data)=>
+                    <figure>
+                        {idx &&
+                            <img src={require(`../images/${idx}.png`)} alt="" />
+                        }
+                            <figcaption>
+                                <strong>{data.product_name} {data.option_name}</strong>
+                                <p>{data.total_price.toLocaleString()}円</p>
+                                <div>{data.order_quantiry}つ</div>
+                            </figcaption>
+                    </figure>
+                )}
                 <dl className="amountBox">
                     <dt>合計 (税込み)</dt>
-                    <dd>{buyDetail?.order_product_list[0].total_price.toLocaleString()}円</dd>
+                    <dd>{buyDetail?.order_product_list?.[0]?.total_price.toLocaleString()}円</dd>
                 </dl>
             </div>
             
@@ -109,7 +111,7 @@ export default function BuyResult() {
                     <dt>決済方法</dt>
                     <dd>
                         クレジットカード
-                        {/* 결제 방법 */}
+                        결제 방법
                     </dd>
                 </dl>
             </div>

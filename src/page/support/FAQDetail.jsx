@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { userApi } from '../../api/api';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function FAQDetail() {
     const { id } = useParams()
@@ -44,8 +44,8 @@ export default function FAQDetail() {
         <section className='faqDetailPage'>
             {path && 
                 <ol className='faqPager'>
-                    <li>{`${path.category1}`}</li>
-                    <li>{`${path.category2}`}</li>
+                    <li><Link to={`/support/faq/title/${detail?.category1}`}>{`${path.category1}`}</Link></li>
+                    <li><Link to={`/support/faq/title/${detail?.category1}/${detail?.category2}`}>{`${path.category2}`}</Link></li>
                 </ol>
             }
 
