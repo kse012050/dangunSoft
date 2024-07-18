@@ -92,8 +92,9 @@ export default function EstimateProduct({ productData, products, setProducts, pr
             if(!dataChange){
                 setFirstText((prev)=>({
                     ...prev, 
-                    product_option_id: option.data[0].option_name, 
+                    product_option_id: option.data.filter(data=>data.product_option_id === inputs?.product_option_id)[0].option_name, 
                 }))
+                // setDataChange(prev=>!prev)
             }
         }else{
             setFirstText((prev)=>({
@@ -114,22 +115,23 @@ export default function EstimateProduct({ productData, products, setProducts, pr
             arr[productIdx] = inputs
             return arr
         })
+        // console.log(inputs);
     },[inputs, productIdx, setProducts, firstText])
 
     return (
         <fieldset className='inputBox-product' onChange={(e)=>e.stopPropagation()}>
             <ul>
                 <li>
-                    <label htmlFor="" onClick={()=>console.log(inputs)}>メーカー</label>
+                    <label htmlFor="" /* onClick={()=>console.log(inputs)} */>メーカー</label>
                     <div>
-                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} firstText={firstText?.vendor_id} setInputs={setInputs} setFirstText={setFirstText} name='vendor_id' disabled={id}/>
+                        <Select placeholder="メーカー選択" list={vender?.list} value={vender?.value} firstText={firstText?.vendor_id} setInputs={setInputs} setFirstText={setFirstText} name='vendor_id'/>
                     </div>
                 </li>
                 <li>
-                    <label htmlFor="" onClick={()=>console.log(firstText)}>製品</label>
+                    <label htmlFor="" /* onClick={()=>console.log(firstText)} */>製品</label>
                     <div>
                         <div>
-                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs?.vendor_id || !product || id} key={inputs?.vendor_id || products.length} />
+                            <Select placeholder="製品選択" list={product?.list} value={product?.value} firstText={firstText?.product_id} setInputs={setInputs} setFirstText={setFirstText} name='product_id' disabled={!inputs?.vendor_id || !product} key={inputs?.vendor_id || products.length} />
                         </div>
                     </div>
                 </li>
@@ -148,7 +150,7 @@ export default function EstimateProduct({ productData, products, setProducts, pr
                     </div>
                 </li>
                 <li>
-                    <label htmlFor="" onClick={()=>console.log(optionPrice)}>サブスクリプション·オプション</label>
+                    <label htmlFor="" /* onClick={()=>console.log(optionPrice)} */>サブスクリプション·オプション</label>
                     <div>
                         {optionPrice && optionPrice.map((data, i)=>
                             <React.Fragment key={data.option_price_id}>

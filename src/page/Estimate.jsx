@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 // import Select from '../components/Select';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 // import { productsList } from '../js/product'
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import { isSubmit, userApi } from '../api/api';
 import EstimateProduct from './EstimateProduct';
+import Loading from '../components/Loading';
 
 const orderProductList = {
     vendor_id: '',
@@ -27,6 +28,7 @@ export default function Estimate() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({board_type: 'estimate'})
     const [products, setProducts] = useState()
+    const [isLoading, setIsLoading] = useState()
     // const [firstTexts, setFirstTexts] = useState([{...firstTextList}])
 
     useEffect(()=>{
@@ -63,8 +65,8 @@ export default function Estimate() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(inputs);
-        console.log(products);
+        // console.log(inputs);
+        // console.log(products);
         
         if(isSubmit(inputs)){
             return;
@@ -83,6 +85,7 @@ export default function Estimate() {
             return
         }
 
+        setIsLoading(true)
         const test = {...inputs, order_product_list: [...products]}
         test.write_name = `${test.write_name_last} ${test.write_name_first}`
         delete test.write_name_last
@@ -96,6 +99,7 @@ export default function Estimate() {
             .then((result)=>{
                 // console.log(result);
                 if(result.result){
+                    setIsLoading(false)
                     sessionStorage.setItem('estimateDetail', JSON.stringify(result.data));
                     navigate('/estimateResult')
                 }
@@ -103,63 +107,67 @@ export default function Estimate() {
     }
 
     return (
-        <section>
-            <h2 onClick={()=>console.log(products)}>お見積もり</h2>
-            <form onChange={(e)=>inputChange(e, setInputs)}>
-                {!!products?.length && products.map((data, i)=>
-                    <React.Fragment key={i}>
-                        <EstimateProduct productData={data} products={products} setProducts={setProducts} productIdx={i} orderProductList={orderProductList} id={!!(i === 0 && id)}/>
-                    </React.Fragment>
-                )}
-                <fieldset className='inputBox'>
-                    <ul>
-                        <li>
-                            <label htmlFor="company_name">企業名</label>
-                            <div>
-                                <input type="text" name='company_name' id='company_name' placeholder='企業名を入力してください'/>
-                            </div>
-                        </li>
-                        <li>
-                            <label htmlFor="write_name_last">名前(姓/名)</label>
-                            <div>
-                                <input type="text" name='write_name_last' id='write_name_last' placeholder='姓' required/>
-                                <input type="text" name='write_name_first' id='write_name_first' placeholder='名' required/>
-                            </div>
-                        </li>
-                        <li>
-                            <label htmlFor="phonetic_guide_last">ふりがな</label>
-                            <div>
-                                <input type="text" name='phonetic_guide_last' id='phonetic_guide_last' placeholder='姓' required/>
-                                <input type="text" name='phonetic_guide_first' id='phonetic_guide_first' placeholder='名' required/>
-                            </div>
-                        </li>
-                        <li>
-                            <label htmlFor="email">メール</label>
-                            <div>
-                                <input type="text" name='email' id='email' placeholder='メールアドレスを入力してください' required/>
-                            </div>
-                        </li>
-                        <li>
-                            <label htmlFor="contact_information">電話番号</label>
-                            <div>
-                                <input type="text" name='contact_information' id='contact_information' placeholder='電話番号を入力してください' /* data-formet="numb" */ required/>
-                            </div>
-                        </li>
-                        <li>
-                            <label htmlFor="comment">お問い合わせ</label>
-                            <div>
-                                <textarea name="comment" id="comment" placeholder='内容'></textarea>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>お見積もりを求める場合は、<button type='button'>プライバシーポリシー</button>に同意するものとみなします。</p>
-                </fieldset>
-                <div className='submitBox'>
-                    <input type="reset" className='btn-border-black' value='初期化'/>
-                    <input type="submit" className='btn-bg' value='確認' onClick={onSubmit}/>
-                </div>
-            </form>
-        </section>
+        <>
+            <section>
+                <h2 onClick={()=>console.log(products)}>お見積もり</h2>
+                <form onChange={(e)=>inputChange(e, setInputs)}>
+                    {!!products?.length && products.map((data, i)=>
+                        <React.Fragment key={i}>
+                            <EstimateProduct productData={data} products={products} setProducts={setProducts} productIdx={i} orderProductList={orderProductList} id={!!(i === 0 && id)}/>
+                        </React.Fragment>
+                    )}
+                    <fieldset className='inputBox'>
+                        <ul>
+                            <li>
+                                <label htmlFor="company_name">企業名</label>
+                                <div>
+                                    <input type="text" name='company_name' id='company_name' placeholder='企業名を入力してください'/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="write_name_last">名前(姓/名)</label>
+                                <div>
+                                    <input type="text" name='write_name_last' id='write_name_last' placeholder='姓' required/>
+                                    <input type="text" name='write_name_first' id='write_name_first' placeholder='名' required/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="phonetic_guide_last">ふりがな</label>
+                                <div>
+                                    <input type="text" name='phonetic_guide_last' id='phonetic_guide_last' placeholder='姓' required/>
+                                    <input type="text" name='phonetic_guide_first' id='phonetic_guide_first' placeholder='名' required/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="email">メール</label>
+                                <div>
+                                    <input type="text" name='email' id='email' placeholder='メールアドレスを入力してください' required/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="contact_information">電話番号</label>
+                                <div>
+                                    <input type="text" name='contact_information' id='contact_information' placeholder='電話番号を入力してください' /* data-formet="numb" */ required/>
+                                </div>
+                            </li>
+                            <li>
+                                <label htmlFor="comment">お問い合わせ</label>
+                                <div>
+                                    <textarea name="comment" id="comment" placeholder='内容'></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>お見積もりを求める場合は、<Link to='/privacy' target='_blank'>プライバシーポリシー</Link> に同意するものとみなします。</p>
+                    </fieldset>
+                    <div className='submitBox'>
+                        {/* <Link to='/' className='btn-border-black'>初期化</Link> */}
+                        <input type="reset" className='btn-border-black' value='初期化'/>
+                        <input type="submit" className='btn-bg' value='確認' onClick={onSubmit}/>
+                    </div>
+                </form>
+            </section>
+            { isLoading && <Loading /> }
+        </>
     );
 }
 

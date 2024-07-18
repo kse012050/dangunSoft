@@ -6,6 +6,7 @@ import { urlParams } from '../js/common';
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import Popup from '../admin/components/popup/Popup';
 import Loading from '../components/Loading';
+import AddressForm from './AddressForm';
 
 const addresList = [
     '北海道',
@@ -194,6 +195,37 @@ export default function Buy() {
 
     },[inputs, orderProduct, licenseInfo, idx, navigate, id, orderCode])
 
+    useEffect(()=>{
+        const script2 = document.createElement('script');
+        script2.src = 'https://yubinbango.github.io/yubinbango/yubinbango.js';
+        script2.charset = 'UTF-8';
+        script2.async = true;
+        document.body.appendChild(script2);
+
+        return () => {
+            document.body.removeChild(script2);
+        };
+    },[])
+
+    const handlePostalCodeChange = (e) => {
+        const newPostalCode = e.target.value;
+        setLicenseInfo(prev => ({ ...prev, post_code: newPostalCode }));
+    
+        if (newPostalCode.length === 7) {
+          // 우편번호로 주소를 가져와서 상태를 업데이트
+          new window.YubinBango.Core(newPostalCode, (newAddress) => {
+            setLicenseInfo(prev => ({
+              ...prev,
+              address: newAddress.region,
+            //   address: newAddress.l,
+              address_detail: newAddress.l + ' ' + newAddress.m
+            }));
+            console.log(newAddress.m);
+            console.log(newAddress.o);
+          });
+        }
+      };
+
 
     useLayoutEffect(()=>{
         inputsRequiredAdd(setInputs);
@@ -207,7 +239,6 @@ export default function Buy() {
         script.setAttribute('data-partial', 'true');
         script.setAttribute('data-on-created', 'onTokenCreated');
         document.querySelector('.payjsArea').appendChild(script)
-
 
         // const script2 = document.createElement('script');
         // script2.src = 'https://yubinbango.github.io/yubinbango/yubinbango.js';
@@ -288,7 +319,7 @@ export default function Buy() {
     const onSubmit = (e) =>{
         e.preventDefault();
         // console.log(inputs);
-        // console.log(licenseInfo);
+        console.log(licenseInfo);
         // console.log(productInfo);
         if(orderCode && productInfoSum.state !== 'request'){
             setPopup({
@@ -319,7 +350,7 @@ export default function Buy() {
             return
         }
 
-        document.querySelector('#payjp_checkout_box input[type="button"]').click()
+        // document.querySelector('#payjp_checkout_box input[type="button"]').click()
 
         // if(!document.querySelector('input[type="hidden"][name="payjp-token"]').value){
         //     setPopup({
@@ -359,6 +390,19 @@ export default function Buy() {
     return (
         <>
             <section>
+            
+                <form className="h-adr">
+                    <span className="p-country-name" /* style="display:none;" */>Japan</span>
+                    〒<input type="text" className="p-postal-code" size="8" maxLength="8" />
+                    {/* <input type="text" className="p-postal-code" size="4" maxLength="4"/><br/> */}
+                    <input type="text" className="p-region" readOnly /><br/>
+                    <input type="text" className="p-region" readOnly /><br/>
+                    <input type="text" className="p-locality" readOnly /><br/>
+                    <input type="text" className="p-street-address" /><br/>
+                    <input type="text" className="p-extended-address" />
+                </form>
+
+                <AddressForm />
                 <h2>ご購入</h2>
                 {id &&
                     <div className='productBox'>
@@ -508,13 +552,13 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="">郵便番号</label>
                                 <div>
-                                    <input type="text" name='post_code' placeholder='郵便番号検索' value={licenseInfo?.post_code || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
+                                    <input type="text" name='post_code' placeholder='郵便番号検索' value={licenseInfo?.post_code || ''} /* onChange={(e)=>inputChange(e, setLicenseInfo)} */ onChange={handlePostalCodeChange} className='required'/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="">住所</label>
                                 <div>
-                                    <Select set={setLicenseInfo} list={addresList} name='address' placeholder='住所を入力してください'/>
+                                    <Select set={setLicenseInfo} list={addresList} name='address' firstText={licenseInfo?.address} placeholder='住所を入力してください'/>
                                 </div>
                                 <div>
                                     <input type="text" name='address_detail' placeholder='残りの住所を入力してください' value={licenseInfo?.address_detail || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
