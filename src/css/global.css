@@ -4,11 +4,11 @@
 
 
 /* 버튼 */
-.userPage [class*='btn']{border-radius: 6px; font-weight: 700; text-align: center;}
+.userPage [class*='btn']{border-radius: 6px; font-weight: 700; text-align: center; color: black;}
 .userPage [class*='btn-border']{display: block; border-width: 1px; border-style: solid;}
 .userPage .btn-border-white{border-color: white; color: white;}
 .userPage .btn-border-black{border-color: black;}
-.userPage .btn-bg{background-color: black; color: white;}
+.userPage .btn-bg{background-color: black; color: white; width: 100%;}
 .userPage .btn-white{background-color: white; color: black;}
 .userPage #payjp_checkout_box{display: none;}
 .userPage #payjp_checkout_box input[type=button]{border: 1px solid var(--color-point); background: transparent; color: var(--color-point);}
@@ -26,6 +26,7 @@ label{cursor: pointer;}
 .userPage :is(input, textarea)::placeholder{color: var(--color-font04);}
 .userPage :is(input:not([type="submit"]):disabled, .selectBox > button.disabled){background-color: #dcdcdc;}
 .userPage .selectBox{position: relative;}
+.userPage .selectBox.error > button{border: 1px solid #F00;}
 .userPage .selectBox > button::after{content: ''; aspect-ratio: 1; position: absolute; top: 50%; transform: translateY(-50%); background: url(../images/icon-arrow-down.png) no-repeat center / cover;}
 .userPage .selectBox > button.placeholder{color: var(--color-font04);}
 .userPage .selectBox button{width: 100%; text-align: left;}
@@ -100,7 +101,9 @@ body:has([data-popup]){overflow: hidden;}
 .userPage .purchaseBox2 table tr :is(th, td){vertical-align: middle; white-space: pre-wrap;}
 .userPage .purchaseBox2 table tbody tr *:not(:first-child){text-align: center;}
 .userPage .purchaseBox2 table tbody tr td[title="포함"]::after{display: inline-block; content: ''; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover; background-image: url(../images/icon-check-black.png);}
-.userPage .purchaseBox2 table tbody tr td :is(button, a){width: 100%; max-width: 223px; margin-inline: auto;}
+.userPage .purchaseBox2 table tbody tr td :is(button, a){width: 100%; max-width: 223px; margin-inline: auto; transition: 0.5s background-color;}
+.userPage .purchaseBox2 table tbody tr td :is(button, a).btn-border-black:hover{background-color: #f1f1f1;}
+.userPage .purchaseBox2 table tbody tr td :is(button, a).btn-bg:hover{background-color: #555;}
 .userPage .purchaseBox2::-webkit-scrollbar-thumb{background-color: var(--color-point); border-radius: 6px;}
 
 
@@ -209,7 +212,7 @@ footer address dl:nth-of-type(1), footer address dl:nth-of-type(2){margin-right:
 footer address p{width: 100%;}
 footer > p{font-weight: 700; color: white;}
 footer ul.snsBox{display: flex; gap: 20px;}
-footer ul.snsBox li a{width: 48px; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: var(--color-font01); border-radius: 100%; text-indent: -9999px;}
+footer ul.snsBox li a{font-size: 0px; width: 48px; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: var(--color-font01); border-radius: 100%; text-indent: -9999px;}
 footer ul.snsBox li a::before{content: ''; width: 30px; aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat left top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) / 100%;}
 
 .userPage :is(.privacyPage, .commercePage) > div h2{font-weight: 700; text-align: center;}

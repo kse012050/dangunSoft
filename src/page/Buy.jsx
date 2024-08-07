@@ -1,12 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Select from '../components/Select';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { isSubmit, userApi } from '../api/api';
 import { urlParams } from '../js/common';
 import { inputChange, inputsRequiredAdd } from '../api/validation';
 import Popup from '../admin/components/popup/Popup';
 import Loading from '../components/Loading';
-import AddressForm from './AddressForm';
 
 const addresList = [
     '北海道',
@@ -119,16 +118,16 @@ export default function Buy() {
         write_name:'',
         write_name_en:'',
         company_name:'',
-        company_name_en:'',
-        contact_information:'',
-        email:'',
         individual_yn:'n',
-        address:"",
-        address_en:"",
-        address_detail:"",
-        address_detail_en:"",
+        company_name_en:'',
         post_code:"",
+        address:"",
+        address_detail:"",
         post_code_en:"",
+        address_en: "",
+        address_detail_en: "",
+        email:'',
+        contact_information:'',
     });
     const [productInfo, setProductInfo] = useState()
     const [productInfoSum, setProductInfoSum] = useState()
@@ -208,8 +207,8 @@ export default function Buy() {
     },[])
 
     const handlePostalCodeChange = (e) => {
-        const newPostalCode = e.target.value;
-        setLicenseInfo(prev => ({ ...prev, post_code: newPostalCode }));
+        const newPostalCode = e.target.value.replace(/-/g, '');
+        setLicenseInfo(prev => ({ ...prev, post_code_en: e.target.value }));
     
         if (newPostalCode.length === 7) {
           // 우편번호로 주소를 가져와서 상태를 업데이트
@@ -217,14 +216,11 @@ export default function Buy() {
             setLicenseInfo(prev => ({
               ...prev,
               address: newAddress.region,
-            //   address: newAddress.l,
               address_detail: newAddress.l + ' ' + newAddress.m
             }));
-            console.log(newAddress.m);
-            console.log(newAddress.o);
           });
         }
-      };
+    };
 
 
     useLayoutEffect(()=>{
@@ -239,6 +235,7 @@ export default function Buy() {
         script.setAttribute('data-partial', 'true');
         script.setAttribute('data-on-created', 'onTokenCreated');
         document.querySelector('.payjsArea').appendChild(script)
+
 
         // const script2 = document.createElement('script');
         // script2.src = 'https://yubinbango.github.io/yubinbango/yubinbango.js';
@@ -305,13 +302,30 @@ export default function Buy() {
     const onSame = (e) => {
         const { checked } = e.target
         if(checked){
+            setLicenseInfo(prev => {
+                const arr = {
+                    ...prev,
+                    write_name: inputs.write_name,
+                    company_name: inputs.company_name,
+                    contact_information: inputs.contact_information,
+                    email: inputs.email,
+                    individual_yn: inputs.individual_yn
+                }
+                if(inputs.individual_yn === 'y'){
+                    delete arr.company_name
+                    delete arr.company_name_en
+                }
+                return arr
+            })
+        }else{
             setLicenseInfo(prev => ({
                 ...prev,
-                write_name: inputs.write_name,
-                company_name: inputs.company_name,
-                contact_information: inputs.contact_information,
-                email: inputs.email,
-                individual_yn_license: inputs.individual_yn
+                write_name: '',
+                company_name: '',
+                company_name_en: '',
+                contact_information: '',
+                email: '',
+                individual_yn: 'n'
             }))
         }
     }
@@ -319,7 +333,7 @@ export default function Buy() {
     const onSubmit = (e) =>{
         e.preventDefault();
         // console.log(inputs);
-        console.log(licenseInfo);
+        // console.log(licenseInfo);
         // console.log(productInfo);
         if(orderCode && productInfoSum.state !== 'request'){
             setPopup({
@@ -339,10 +353,20 @@ export default function Buy() {
         if(isSubmit(inputs)){
             return;
         }
-
+        
         if(Object.entries(licenseInfo).some(([key, value]) => {
-            if (!value && document.querySelector(`[id="${key}_license"].required`)) {
-                document.querySelector(`[id="${key}_license"]`).focus()
+            // if (!value && document.querySelector(`[id="${key}_license"].required`)) {
+            if(licenseInfo.individual_yn === 'y' && key === 'company_name' || licenseInfo.individual_yn === 'y' && key === 'company_name_en'){
+
+            }else if (!value && document.querySelector(`[name="${key}"].required`)) {
+                const selector = document.querySelector(`[name="${key}"].required`) 
+                const tagName = document.querySelector(`[name="${key}"].required`).tagName;
+                if(tagName === 'INPUT'){
+                    selector.focus()
+                }
+                if(tagName === 'DIV'){
+                    selector.classList.add('error')
+                }
                 return true; 
             }
             return false;
@@ -350,7 +374,7 @@ export default function Buy() {
             return
         }
 
-        // document.querySelector('#payjp_checkout_box input[type="button"]').click()
+        document.querySelector('#payjp_checkout_box input[type="button"]').click()
 
         // if(!document.querySelector('input[type="hidden"][name="payjp-token"]').value){
         //     setPopup({
@@ -390,19 +414,6 @@ export default function Buy() {
     return (
         <>
             <section>
-            
-                <form className="h-adr">
-                    <span className="p-country-name" /* style="display:none;" */>Japan</span>
-                    〒<input type="text" className="p-postal-code" size="8" maxLength="8" />
-                    {/* <input type="text" className="p-postal-code" size="4" maxLength="4"/><br/> */}
-                    <input type="text" className="p-region" readOnly /><br/>
-                    <input type="text" className="p-region" readOnly /><br/>
-                    <input type="text" className="p-locality" readOnly /><br/>
-                    <input type="text" className="p-street-address" /><br/>
-                    <input type="text" className="p-extended-address" />
-                </form>
-
-                <AddressForm />
                 <h2>ご購入</h2>
                 {id &&
                     <div className='productBox'>
@@ -488,8 +499,19 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="company_name">会社名</label>
                                 <div>
-                                    <input type="text" id='company_name' name='company_name' defaultValue={inputs?.company_name} placeholder='企業名を入力してください' required/>
-                                    <input type="checkbox" id='individual_yn' name='individual_yn' required/>
+                                    <input type="text" id='company_name' name='company_name' value={inputs?.company_name || ''} placeholder='企業名を入力してください' disabled={inputs?.individual_yn === 'y'} onChange={(e)=>inputChange(e, setInputs)} required/>
+                                    <input type="checkbox" id='individual_yn' name='individual_yn' 
+                                        required
+                                        onChange={(e)=>{
+                                            if(e.target.checked){
+                                                setInputs(prev=> {
+                                                    const arr = {...prev}
+                                                    delete arr.company_name
+                                                    return arr
+                                                })
+                                            }
+                                        }} 
+                                    />
                                     <label htmlFor="individual_yn">個人</label>
                                 </div>
                             </li>
@@ -513,12 +535,12 @@ export default function Buy() {
                             <input type="checkbox" id='same' name='same' onChange={onSame} ref={sameRef}
                                 disabled={
                                     (!inputs?.write_name ||
-                                    !inputs?.company_name ||
+                                    !((inputs?.individual_yn === 'y') || (inputs?.company_name && inputs?.individual_yn === 'n')) ||
                                     !inputs?.contact_information ||
                                     !inputs?.email)
                                 }
                             />
-                            <label htmlFor="same">주문자와 동일</label>
+                            <label htmlFor="same">注文者と同一</label>
                         </div>
                         <ul>
                             <li>
@@ -536,15 +558,31 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="company_name_license">会社名</label>
                                 <div>
-                                    <input type="text" id='company_name_license' name='company_name' placeholder='会社名を入力してください' value={licenseInfo?.company_name || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked} className='required'/>
-                                    <input type="checkbox" name='individual_yn' id='individual_yn_license' checked={licenseInfo?.individual_yn_license === 'y'} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked}/>
+                                    <input type="text" id='company_name_license' name='company_name' placeholder='会社名を入力してください' value={licenseInfo?.company_name || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked || licenseInfo?.individual_yn === 'y'} className='required'/>
+                                    <input type="checkbox" name='individual_yn' id='individual_yn_license' 
+                                        checked={licenseInfo?.individual_yn === 'y'} 
+                                        onClick={(e)=>setLicenseInfo(prev=>{
+                                            const arr = {...prev, individual_yn_license: e.target.checked ? 'y' : 'n'}
+                                            if(e.target.checked){
+                                                delete arr.company_name
+                                                delete arr.company_name_en
+                                            }else{
+                                                arr.company_name = ''
+                                                arr.company_name_en = ''
+                                            }
+                                            return arr
+                                        })}
+                                        onChange={(e)=>{
+                                            inputChange(e, setLicenseInfo)
+                                        }} 
+                                        disabled={sameRef?.current?.checked}/>
                                     <label htmlFor="individual_yn_license">個人</label>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="company_name_en_license">会社名(英語)</label>
                                 <div>
-                                    <input type="text" id='company_name_en_license' name='company_name_en' placeholder='会社名(英語)を入力してください' className='required'/>
+                                    <input type="text" id='company_name_en_license' name='company_name_en' placeholder='会社名(英語)を入力してください' value={licenseInfo?.company_name_en || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={licenseInfo?.individual_yn === 'y'} className='required'/>
                                     {/* <input type="checkbox" />
                                     <label htmlFor="">個人</label> */}
                                 </div>
@@ -552,41 +590,29 @@ export default function Buy() {
                             <li>
                                 <label htmlFor="">郵便番号</label>
                                 <div>
-                                    <input type="text" name='post_code' placeholder='郵便番号検索' value={licenseInfo?.post_code || ''} /* onChange={(e)=>inputChange(e, setLicenseInfo)} */ onChange={handlePostalCodeChange} className='required'/>
+                                    <input type="text" name='post_code' placeholder='郵便番号検索' value={licenseInfo?.post_code || ''} onChange={handlePostalCodeChange} className='required'/>
                                 </div>
                             </li>
                             <li>
                                 <label htmlFor="">住所</label>
                                 <div>
-                                    <Select set={setLicenseInfo} list={addresList} name='address' firstText={licenseInfo?.address} placeholder='住所を入力してください'/>
+                                    <Select set={setLicenseInfo} list={addresList} name='address' firstText={licenseInfo?.address} placeholder='住所を入力してください' className='required'/>
                                 </div>
                                 <div>
                                     <input type="text" name='address_detail' placeholder='残りの住所を入力してください' value={licenseInfo?.address_detail || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="">郵便番号(英語)</label>
-                                <div>
-                                    <input type="text" name='post_code_en' placeholder='郵便番号(英語)検索' value={licenseInfo?.post_code_en || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
-                                </div>
-                            </li>
-                            <li>
                                 <label htmlFor="">住所(英語)</label>
                                 <div>
-                                    <Select set={setLicenseInfo} list={addresEnList} name='address_en' placeholder='住所(英語)を入力してください'/>
+                                    <Select set={setLicenseInfo} list={addresEnList} name='address_en' placeholder='住所(英語)を入力してください' className='required'/>
                                 </div>
                                 <div>
                                     <input type="text" name='address_detail_en' placeholder='残りの住所(英語)を入力してください' value={licenseInfo?.address_detail_en || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} className='required'/>
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="contact_information">電話番号</label>
-                                <div>
-                                    <input type="text" id='contact_information' name='contact_information' placeholder='電話番号を入力してください' value={licenseInfo?.contact_information || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked} className='required'/>
-                                </div>
-                            </li>
-                            <li>
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">メール</label>
                                 <div>
                                     <input type="text" id='email' name='email' placeholder='メールを入力してください' value={licenseInfo?.email || ''} onChange={(e)=>inputChange(e, setLicenseInfo)} disabled={sameRef?.current?.checked} className='required'/>
                                 </div>
@@ -661,7 +687,8 @@ export default function Buy() {
                         円</dd>
                     </dl>
                     <div className='submitBox'>
-                        <input type="reset" className='btn-border-black' value='キャンセル'/>
+                        {/* <input type="reset" className='btn-border-black' value='キャンセル'/> */}
+                        <Link to='/' className='btn-border-black'>キャンセル</Link>
                         <input type="submit" className='btn-bg' value='決済する' onClick={onSubmit}/>
                     </div>
                 </form>

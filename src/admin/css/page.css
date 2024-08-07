@@ -79,6 +79,9 @@
 .adminEstimateCalculationDetailPage .buttonArea{display: flex; justify-content: flex-end; gap: 10px;}
 
 
+/* 관리자 - 구매 관리 */
+.adminPurchasePage .boardBox-purchase .selectBox{width: 200px;}
+
 /* 관리자 - 구매 관리 - 구매 상세 */
 .adminPurchaseDetailPage .infoBox strong:has(+ .agreeArea){margin-top: 30px;}
 .adminPurchaseDetailPage .infoBox .agreeArea{display: flex; gap: 30px;}
@@ -86,7 +89,6 @@
 
 /* 카테고리별 문답 관리 */
 .adminPage .adminSupportQnaCreatePage .ck.ck-editor{width: 100%;}
-.adminPage .adminSupportQnaCreatePage .ck.ck-editor :is(th, td){vertical-align: middle;}
 
 /* ------------------------------------------------------- */
 

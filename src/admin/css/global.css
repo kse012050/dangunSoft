@@ -106,13 +106,13 @@ mark.point{color: var(--color-point);}
 .adminPage .exposure input[type="checkbox"] + label::after{content: ''; position: absolute; left: 3px; top: 3px; background-color: #DCDCDC; width: 24px; aspect-ratio: 1; border-radius: 100%; transition: 0.5s;}
 .adminPage .exposure input[type="checkbox"]:checked + label::after{left: 33px; background-color: var(--color-point);}
 .adminPage [class*="boardBox"] .board-detail li .exposure{justify-content: center;}
-.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{width: 140px; flex-shrink: 0;}
+.adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{max-width: 140px; flex-shrink: 0;}
 .adminPage [class*="boardBox"] :is(.board-title, .board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button > *{line-height: 30px;}
-.adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button{display: flex; justify-content: flex-start; gap: 5px;}
+.adminPage [class*="boardBox"] :is(.board-detail li:not(:has( > a)), .board-detail li:has(a) > a) > .button:has(:nth-child(2)){display: flex; justify-content: flex-start; gap: 5px;}
 .adminPage [class*="boardBox"] > :is(a, button){display: block; max-width: 65.94px; margin-left: auto; margin-bottom: 10px;}
 /* .adminPage [class*="boardBox"] .board-detail .button{display: flex; justify-content: center; gap: 10px; width: 150px;} */
 .adminPage [class*="boardBox"].boardBox-ventor .board-detail:not(:has(:nth-child(1)))::after{content: '벤더사가 없습니다.';}
-.adminPage [class*="boardBox"].boardBox-ventor .board-detail p{text-align: left;}
+.adminPage [class*="boardBox"].boardBox-ventor :is(.board-detail, .board-title) p{text-align: left;}
 .adminPage [class*="boardBox"].boardBox-product .board-detail:not(:has(:nth-child(1)))::after{content: '제품이 없습니다.';}
 .adminPage [class*="boardBox"].boardBox-suppot-faq .board-detail p{text-align: left;}
 .adminPage [class*="boardBox"][class*="boardBox-suppot-inquiry"] :is(.board-title:has(p), .board-detail li:not(:has( > a)):has(p), .board-detail li:has(a):has(p) > a){padding-inline: 20px; gap: 20px;}
@@ -171,6 +171,9 @@ mark.point{color: var(--color-point);}
 .adminPage .inputBox > ul > li.optionArea > div > div:has(input[type="checkbox"]) p{width: 100px;}
 .adminPage .inputBox > ul > li.optionArea > div > div:not(:has(input[type="checkbox"])) p{width: 144px;}
 .adminPage .inputBox > ul > li.optionArea > button{align-self: center;}
+.adminPage .inputBox > ul:has(.half){display: flex; flex-wrap: wrap;}
+.adminPage .inputBox > ul:has(.half) li{width: 100%;}
+.adminPage .inputBox > ul > li.half{width: 50%;}
 .adminPage .inputBox .buttonArea{display: flex; justify-content: flex-end; gap: 10px; margin-top: 30px;}
 
 
@@ -206,11 +209,11 @@ mark.point{color: var(--color-point);}
 
 /* 해더 */
 .adminPage{--adminHeaderHeight: 60px;}
-.adminPage header{position: sticky; top: 0; width: 100%; height: var(--adminHeaderHeight); display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: white; box-sizing: border-box; box-shadow: 0px 5px 21px -5px #cdd1e1; z-index: 100;}
+.adminPage header{position: fixed; top: 0; left: 0; width: 100%; height: var(--adminHeaderHeight); display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: white; box-sizing: border-box; box-shadow: 0px 5px 21px -5px #cdd1e1; z-index: 100;}
 .adminPage header h1 a{--styleIdx: 0; display: block; width: 150px; aspect-ratio: 249 / 40; background: url(../../images/logo.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%; text-indent: -9999px;}
 .adminPage > div{display: flex;}
-.adminPage > div .menuArea{ width: 220px; min-height: 100vh; flex-shrink: 0; padding: 40px 20px; box-shadow: 0px 5px 21px -5px #cdd1e1; box-sizing: border-box;}
-.adminPage > div .menuArea li > :is(button, a){font-size: 20px; font-weight: 700;}
+.adminPage > div .menuArea{ position: fixed; top: var(--adminHeaderHeight); left: 0; width: 220px; min-height: 100vh; flex-shrink: 0; padding: 40px 20px; box-shadow: 0px 5px 21px -5px #cdd1e1; box-sizing: border-box;}
+.adminPage > div .menuArea li > :is(button, a){font-size: 18px; font-weight: 700;}
 .adminPage > div .menuArea li:not(:last-child){margin-bottom: 20px;}
 .adminPage > div .menuArea li button{color: rgba(22, 22, 22, 0.5);}
 .adminPage > div .menuArea li button:hover{color: black;}
@@ -218,8 +221,27 @@ mark.point{color: var(--color-point);}
 .adminPage > div .menuArea li a{color: rgba(22, 22, 22, 0.5);}
 .adminPage > div .menuArea li a:is(.active, :hover){color: #222;}
 .adminPage > div .menuArea li div{padding-inline: 20px; margin-top: 20px;}
-.adminPage > div .menuArea li div a{display: block; font-size: 16px; font-weight: 700; padding-block: 10px;}
+.adminPage > div .menuArea li div a{display: block; font-size: 15px; font-weight: 700; padding-block: 10px;}
 /* .adminPage > div .menuArea li div a.active{color: #222;} */
+/* 해더 */
+.adminPage > div > [class*="Page"]{/* flex: 1; */ width: calc(100% - 220px); margin-left: 220px; margin-top: var(--adminHeaderHeight); padding: 40px; box-sizing: border-box;}
+.adminPage > div > [class*="Page"] > h2:has(:is(button, a)){display: flex; justify-content: space-between; align-items: center;}
+
+
+.ck-editor__editable_inline{min-height: 300px;}
+.ck-content i{font-style: italic;}
+.ck-content strong{font-weight: 700;}
+.ck-content :is(h2, h3, h4){font-weight: 700;}
+.ck-content h2{font-size: 2em;}
+.ck-content h3{font-size: 1.5em;}
+.ck-content h4{font-size: 1.17em;}
+.ck-content :is(ul, ol){font-size: 1em; line-height: 1.6em; padding-top: .2em; padding-left: 40px; margin-bottom: var(--ck-spacing-large);}
+.ck-content ul{list-style: disc;}
+.ck-content ol{list-style: decimal;}
+.ck-editor__editable_inline{min-height: 300px;}
+.ck-content .table{margin-inline: 0;}
+.ck-content a{color: rgb(0, 0, 238); text-decoration: underline;}
+.ck-content :is(th, td){vertical-align: middle;}
 
 
 /* ------------------------------------------------------- */
@@ -262,22 +284,6 @@ mark.point{color: var(--color-point);}
 /* 페이저 */
 .adminPage .board-pager{margin-top: 30px;}
 
-.ck-editor__editable_inline{min-height: 300px;}
-.ck-content i{font-style: italic;}
-.ck-content strong{font-weight: 700;}
-.ck-content :is(h2, h3, h4){font-weight: 700;}
-.ck-content h2{font-size: 2em;}
-.ck-content h3{font-size: 1.5em;}
-.ck-content h4{font-size: 1.17em;}
-.ck-content :is(ul, ol){font-size: 1em; line-height: 1.6em; padding-top: .2em; padding-left: 40px; margin-bottom: var(--ck-spacing-large);}
-.ck-content ul{list-style: disc;}
-.ck-content ol{list-style: decimal;}
-.ck-editor__editable_inline{min-height: 300px;}
-.ck-content .table{margin-inline: 0;}
-.ck-content a{color: rgb(0, 0, 238);}
 
 
-/* 해더 */
-.adminPage > div > [class*="Page"]{/* flex: 1; */ width: calc(100% - 200px); padding: 40px; box-sizing: border-box;}
-.adminPage > div > [class*="Page"] > h2:has(:is(button, a)){display: flex; justify-content: space-between; align-items: center;}
 

@@ -4,16 +4,18 @@ import { adminApi } from '../../api/api';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { urlParams } from '../../../js/common';
 import Pagination from '../../components/Pagination';
+import Popup from '../../components/popup/Popup';
 
 export default function Estimate() {
     const { start_date, end_date, search_text, page } = urlParams(useLocation())
     const [inputs, setInputs] = useState({board_type: 'estimate'})
     const [board, setBoard] = useState()
+    const [popup, setPopup] = useState()
     const searchRef = useRef()
     const navigate = useNavigate()
 
     useLayoutEffect(()=>{
-        adminApi('board', '', {board_type : 'estimate', page: page || 1, limit: 10, start_date, end_date, search_text: search_text})
+        adminApi('board', '', {board_type : 'estimate', page: page || 1, limit: 30, start_date, end_date, search_text: search_text})
             .then((result) => {
                 // console.log(result);
                 if(result.result){
@@ -30,10 +32,6 @@ export default function Estimate() {
             searchRef.current.focus()
             return
         }
-        console.log(searchRef.current.value);
-
-        // setInputs(prev=>({...prev, search_text: searchRef.current.value}))
-        // navigate(`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}?search_text=${searchRef.current.value}`)
         navigate(`?test=test?search_text=${searchRef.current.value}${start_date ? `&start_date=${start_date}&end_date=${end_date}`: ''}`)
     }
 
@@ -64,6 +62,7 @@ export default function Estimate() {
                     <b className='bigWidth'>제품명</b>
                     <b className='bigWidth'>작성시간</b>
                     <b>견적 신청</b>
+                    <b className='button'>관리</b>
                 </div>
 
                 <ol className="board-detail">
@@ -80,6 +79,37 @@ export default function Estimate() {
                                 <span className='bigWidth'>{ data.product_name }</span>
                                 <span className='bigWidth'>{ data.reg_date }</span>
                                 <span>{ data.estimation_yn === 'y' ? 'O' : 'X' }</span>
+                                <div className='button'>
+                                    <button className='btn-point-border'
+                                        type='button'
+                                        onClick={(e)=>{
+                                            e.preventDefault()
+                                            setPopup({
+                                                type: 'cancel', 
+                                                title: '알림',
+                                                description: [
+                                                    '해당 견적 요청 내역을 삭제하겠습니까?',
+                                                    '삭제된 견적 요청 내역은 복구할 수 없습니다.',
+                                                ],
+                                                func: () => {
+                                                    adminApi('board/manage', 'delete', {board_id: data.board_id})
+                                                        .then((result)=>{
+                                                            if(result.result){
+                                                                setPopup({
+                                                                    type: 'confirm',
+                                                                    title: '알림',
+                                                                    description: ['해당 견적 요청 내역이 삭제 되었습니다.'],
+                                                                    func: () =>{
+                                                                        navigate(0)
+                                                                    }
+                                                                })
+                                                            }
+                                                        })
+                                                }
+                                            })
+                                        }}
+                                    >삭제</button>
+                                </div>
                             </Link>
                         </li>
                     )}
@@ -88,6 +118,7 @@ export default function Estimate() {
                 { board && 
                     <Pagination page={board.page} curruntParam={`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}${search_text ? `?search_text=${search_text}`: ''}`}/>
                 }
+                { popup && <Popup popup={popup} setPopup={setPopup}/>}
             </div>
         </>
     );

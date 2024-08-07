@@ -4,12 +4,14 @@ import Period from '../../components/Period';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { urlParams } from '../../../js/common';
 import Pagination from '../../components/Pagination';
+import Popup from '../../components/popup/Popup';
 
 export default function Inquiry() {
     const { start_date, end_date, search_text, page } = urlParams(useLocation())
-    const currentInputs = {board_type: 'inquiry', page:1, limit: 10}
+    const currentInputs = {board_type: 'inquiry', page:1, limit: 30}
     const [board, setBoard] = useState()
     const [inputs, setInputs] = useState({...currentInputs})
+    const [popup, setPopup] = useState()
     const searchRef = useRef()
     const navigate = useNavigate()
     // console.log(currentInputs);
@@ -34,7 +36,6 @@ export default function Inquiry() {
         }
 
         navigate(`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}?search_text=${searchRef.current.value}`)
-        // setInputs(prev=>({...prev, search_text: searchRef.current.value}))
     }
 
     return (
@@ -77,6 +78,7 @@ export default function Inquiry() {
                     <b className='test02'>비밀글</b>
                     <b className='test01'>작성시간</b>
                     <b className='test02'>답변</b>
+                    <b className='button'>관리</b>
                 </div>
 
                 <ol className="board-detail">
@@ -102,6 +104,36 @@ export default function Inquiry() {
                                 <b className='test02'>{ data.secret_yn === 'y' ? 'O' : 'X' }</b>
                                 <b className='test01'>{ data.reg_date }</b>
                                 <b className='test02'>{ data.answer ? '답변': '미답변' }</b>
+                                <div className='button'>
+                                    <button className='btn-point-border'
+                                        onClick={(e)=>{
+                                            e.preventDefault()
+                                            setPopup({
+                                                type: 'cancel', 
+                                                title: '알림',
+                                                description: [
+                                                    '해당 문의를 삭제하겠습니까?',
+                                                    '삭제된 문의는 복구할 수 없습니다.',
+                                                ],
+                                                func: () => {
+                                                    adminApi('board/manage', 'delete', {board_id: data.board_id})
+                                                        .then((result)=>{
+                                                            if(result.result){
+                                                                setPopup({
+                                                                    type: 'confirm',
+                                                                    title: '알림',
+                                                                    description: ['해당 문의가 삭제 되었습니다.'],
+                                                                    func: () =>{
+                                                                        navigate(0)
+                                                                    }
+                                                                })
+                                                            }
+                                                        })
+                                                }
+                                            })
+                                        }}
+                                    >삭제</button>
+                                </div>
                             </Link>
                         </li>
                     )}
@@ -110,6 +142,7 @@ export default function Inquiry() {
                 { board && 
                     <Pagination page={board.page} curruntParam={`${start_date ? `?start_date=${start_date}?end_date=${end_date}`: ''}${search_text ? `?search_text=${search_text}`: ''}`}/>
                 }
+                { popup && <Popup popup={popup} setPopup={setPopup}/>}
             </div>
         </>
     );
