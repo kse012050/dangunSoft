@@ -1,8 +1,7 @@
 import Board from "../page/support/Board";
-import Board2 from "../page/support/Board2";
+// import Board2 from "../page/support/Board2";
 import BoardDetail from "../page/support/BoardDetail";
 import FAQ from "../page/support/FAQ";
-import FAQ2 from "../page/support/FAQ2";
 import FAQTitle from "../page/support/FAQTitle";
 import FAQDetail from "../page/support/FAQDetail";
 import Inquiry from "../page/support/Inquiry";
@@ -42,6 +41,7 @@ import AdminSitePopupManagementCreate from "../admin/page/site/popupManagement/C
 import FAQCategory from "../admin/page/support/FAQ/FAQCategory";
 import CategoryQnA from "../admin/page/support/QnA/CategoryQnA";
 import CategoryQnACreate from "../admin/page/support/QnA/Create";
+import Solution2 from "../page/Solution2";
 
 
 export const routers = [
@@ -57,7 +57,7 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <Product/> },
-            { path: ':productIdx', element: <ProductDetail/> },
+            { path: ':productName', element: <ProductDetail/> },
         ]
     },
     {
@@ -65,6 +65,8 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <Solution/> },
+            { path: 'solution', element: <Solution/>  },
+            { path: 'solution2', element: <Solution2/>  },
         ]
     },
     {
@@ -72,12 +74,11 @@ export const routers = [
         element: <Root />,
         children: [
             { index: true, element: <Board/> },
-            { path: 'board2', element: <Board2/>  },
+            // { path: 'board2', element: <Board2/>  },
             { path: 'board', element: <Board/>  },
             { path: 'board/:id', element: <BoardDetail/>  },
             { path: 'inquiry', element: <Inquiry/>  },
             { path: 'inquiryResult', element: <InquiryResult/>  },
-            // { path: 'faq', element: <FAQ2/>  },
             { path: 'faq', element: <FAQ/>  },
             { path: 'faq/:search', element: <FAQ/>  },
             { path: 'faq/title/:category1', element: <FAQTitle/>  },

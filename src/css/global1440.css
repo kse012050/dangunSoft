@@ -89,8 +89,8 @@ input:is([type="checkbox"], [type="radio"]) + label::before{width: 24px;}
 .userPage header h1{width: 249px;}
 .userPage header nav ul{display: flex;}
 .userPage header nav ul li > a{line-height: 90px; width: 180px; color: var(--color-font03);}
-.userPage header nav ul li:last-child > a{display: flex; justify-content: center; align-items: center;}
-.userPage header nav ul li:last-child > a::after{--styleIdx: 0; margin-left: 6px; content: ''; width: 26px; aspect-ratio: 1; background: url(../images/gnb-arrow.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
+.userPage header nav ul li:nth-last-child(-n + 2) > a{display: flex; justify-content: center; align-items: center;}
+.userPage header nav ul li:nth-last-child(-n + 2) > a::after{--styleIdx: 0; margin-left: 6px; content: ''; width: 26px; aspect-ratio: 1; background: url(../images/gnb-arrow.png) no-repeat left top calc(100% * var(--styleIdx)) / 100%;}
 .userPage header nav ul li > a:is(:hover, .active){color: inherit;}
 .userPage header nav ul li > a.active{position: relative;}
 .userPage header nav ul li > a.active::before{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 5px; background-color: var(--color-point);}

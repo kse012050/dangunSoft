@@ -49,8 +49,8 @@ export default function Main() {
                     setPopup({
                         type: 'confirm',
                         description: [
-                            '견적 문의가 완료되었습니다.',
-                            '담당자 확인 후 회신드리겠습니다.'
+                            'お問い合わせを受け付けいたしました。',
+                            '担当者よりご連絡いたしますので 今しばらくお待ちください。'
                         ],
                         func: () => {
                             document.querySelectorAll('input[name]').forEach((selector)=>{
@@ -108,31 +108,31 @@ export default function Main() {
                 >
                     {/* 슬라이드 추가 */}
                     <SwiperSlide>
-                        <Link to='/product/2'>
+                        <Link to='/product/IntelliJ IDEA'>
                             <strong>IntelliJ IDEA</strong>
                             <p>IntelliJ IDEAは、JavaとKotlin開発者のためのIDE(統合開発環境)です。IntelliJ IDEAのスマートなコード完成により、開発者の生産性が向上します。 また、IntelliJ IDEAの多様なフレームワークのサポートにより、開発者が自由に開発することができます。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to='/product/0'>
+                        <Link to='/product/All Products Pack'>
                             <strong>All Products Pack</strong>
                             <p>All Products Packは、文字通りJetBrainsのすべてのデスクトップツールを1つのライセンスにまとめた製品です。 All Products Packを利用することで、多数のライセンスをよりお得に利用できるようになりました。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to='/product/22'>
+                        <Link to='/product/Qodana'>
                             <strong>Qodana</strong>
                             <p>Qodanaはコード品質検査プラットフォームです。Qodanaの2,500以上のコード検査は、コード品質をさらに向上させます。 また、Qodanaのライセンスチェック機能は、不適切なライセンスの使用を防止します。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to='/product/8'>
+                        <Link to='/product/WebStorm'>
                             <strong>WebStorm</strong>
                             <p>WebStormはJavaScriptとTypeScriptのためのIDE(統合開発環境)です。WebStormはReactをはじめ、Vue、Angular、NodeJSまでさまざまな技術スタックを完全にサポートします。</p>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Link to='/product/1'>
+                        <Link to='/product/JetBrains AI'>
                             <strong>JetBrains AI</strong>
                             <p>JetBrains AIは、IDE(統合開発環境) 内部で強力なAI機能を提供するJetBrainsのプラグインです。JetBrains AIは、AIチャットからリファクタリング、ランタイムエラーの説明、コード完成まで、数多くのAI機能を提供します。</p>
                         </Link>
@@ -223,7 +223,7 @@ export default function Main() {
             </section>
 
             <div className='snsArea'>
-                <strong>Friends with <mark>NATTOSYSTEM</mark></strong>
+                <strong><mark>NATTOSYSTEM</mark>と友達になりましょう !</strong>
                 <p>今すぐNATTOSYSTEMと友達になって、最新ニュースと割引特典をお楽しみください ! </p>
                 <ul data-styleidx>
                     <li>
@@ -255,7 +255,7 @@ export default function Main() {
                 </ul>
                 <form onChange={(e)=>inputChange(e, setInputs)}>
                     <fieldset>
-                        <strong>Get in Touch</strong>
+                        <strong>手軽なお問い合わせ</strong>
                         <ul>
                             <li>
                                 <label htmlFor="write_name_last">名前</label>
@@ -271,7 +271,7 @@ export default function Main() {
                                 </div>
                             </li>
                             <li>
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">メール</label>
                                 <div>
                                     <input type="text" placeholder='メールアドレスを入力してください' name='email' id='email' required/>
                                 </div>
@@ -289,10 +289,13 @@ export default function Main() {
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.24431736511!2d139.72150827625802!3d35.670985730535854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c82fbd6ae09%3A0xee70acf788450c72!2z5pel5pys44CB44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yS5LiB55uu77yS4oiS77yYIERG44OT44Or!5e0!3m2!1sja!2skr!4v1713921721212!5m2!1sja!2skr" title='동영상'></iframe>
             </section>
             {firstPopup &&
-                <div className='firstPopup'>
-                    <Link to={firstPopup.link}>
-                        <img src={firstPopup.board_picture_list[0].file_url} alt="" />
-                    </Link>
+                <div className='firstPopup' onClick={()=>setFirstPopup(false)}>
+                    <div onClick={(e)=>e.stopPropagation()}>
+                        <Link to={firstPopup.link}>
+                            <img src={firstPopup.board_picture_list[0].file_url} alt="" />
+                        </Link>
+                        <button onClick={()=>setFirstPopup(false)}>닫기</button>
+                    </div>
                 </div>
             }
             { popup && <Popup popup={popup} setPopup={setPopup}/>}

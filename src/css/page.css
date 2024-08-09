@@ -110,9 +110,7 @@
 /* 제품 페이지 */
 /* 제품 페이지, 제품 상세 페이지 공통 */
 :is(.productPage .welcomeArea, .productDetailPage .topArea) p{color: rgba(255, 255, 255, 0.7);}
-:is(.productPage, .productDetailPage, .solutionPage) h3{font-weight: 700;
-
-}
+:is(.productPage, .productDetailPage, .solutionPage) h3{font-weight: 700;}
 /* 제품 페이지 - welcome */
 .productPage .welcomeArea{background-color: black; color: white; background-image: url(../images/solution-wave01.png); background-repeat: no-repeat; background-position: center bottom; background-size: 100%;}
 .productPage .welcomeArea::before{display: block; content: ''; aspect-ratio: 372 / 80; background: url(../images/product-top.png) no-repeat center / cover;}
@@ -165,9 +163,9 @@
 
 /* 솔루션 페이지 */
 .solutionPage{color: white; background: #111 url(../images/solution-bg02.png) no-repeat center / 100%;}
-.solutionPage header{background-color: #111;}
-.solutionPage header h1 a{--styleIdx: 1;}
-.solutionPage header::after{background-color: rgba(255, 255, 255, 0.2);}
+:is(.solutionPage, .solution2Page) header{background-color: #111;}
+:is(.solutionPage, .solution2Page) header h1 a{--styleIdx: 1;}
+:is(.solutionPage, .solution2Page) header::after{background-color: rgba(255, 255, 255, 0.2);}
 
 /* 솔루션 페이지 공통 */
 .solutionPage h3 + p{color: rgba(255, 255, 255, 0.7);}
@@ -197,6 +195,53 @@
 
 /* 솔루션 페이지 - 구매 옵션 */
 
+
+/* 솔루션 제품 페이지 */
+.solution2Page > :is(div, section){padding-block: 90px;}
+.solution2Page mark{color: #F31199; display: block;}
+.solution2Page h2{font-size: 72px; line-height: 72px; color: white; font-weight: 600; letter-spacing: -0.36px;}
+.solution2Page div > strong{font-size: 54px; font-weight: 900; display: block;}
+.solution2Page p{font-size: 18px; line-height: 28px; font-weight: 400; letter-spacing: -0.72px; color: rgba(255, 255, 255, 0.5);}
+.solution2Page{background-color: #0D1116; color: white;}
+.solution2Page .topArea{padding-block: 131.5px 132.5px;}
+.solution2Page .topArea div strong{margin-bottom: 30px; line-height: 64px; max-width: 610px; letter-spacing: -2.16px;}
+.solution2Page .topArea div b{font-size: 40px; line-height: 48px; margin-bottom: 18px; max-width: 542px; font-weight: 400; letter-spacing: -1.6px; color: #F3F3F3; display: block;}
+.solution2Page .topArea div p{margin-bottom: 48px; max-width: 533px;}
+.solution2Page .topArea div a{font-size: 18px; font-weight: 700; text-align: center; display: block; max-width: 535px; line-height: 58px; border: 1px solid white; border-radius: 6px;}
+.solution2Page .hubArea h2{margin-bottom: 18px;}
+.solution2Page .hubArea > p{max-width: 600px; margin-bottom: 60px;}
+.solution2Page .hubArea ul{display: flex; flex-wrap: wrap; justify-content: center; gap: 28px 34px;}
+.solution2Page .hubArea ul li{width: calc((100% - 68px) / 3); height: 184px; position: relative; border-radius: 7.5px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(13,17,22,0.03) 100%);}
+.solution2Page .hubArea ul li::before{content: ''; position: absolute; left: 2px; width: calc(100% - 4px); top: 2px; height: calc(100% - 4px); border-radius: 7.5px; background: #0D1116;}
+.solution2Page .hubArea ul li::after{content: ''; position: absolute; left: 2px; width: calc(100% - 4px); top: 2px; height: calc(100% - 4px); border-radius: 7.5px; background: linear-gradient(114deg, #131313 0%, rgba(61, 61, 61, 0.30) 103.45%); backdrop-filter: blur(10px);}
+.solution2Page .hubArea ul li a{padding: 20px 18px; display: block; position: relative; z-index: 1;}
+.solution2Page .hubArea ul li a::before{content: ''; width: 48px; margin-bottom: 24px; aspect-ratio: 1; background-image: var(--img); background-repeat: no-repeat; background-position: center; background-size: cover; display: block;}
+.solution2Page .hubArea ul li a b{font-size: 20px; line-height: 24px; margin-bottom: 4px; letter-spacing: -0.8px;}
+.solution2Page .chooseArea strong{margin-bottom: 36px;}
+.solution2Page .chooseArea ul{display: flex; flex-wrap: wrap; gap: 28px 34px;}
+.solution2Page .chooseArea ul li{width: calc((100% - 68px) / 3); height: 130px; padding: 18px; border-radius: 8px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(13,17,22,0.03) 100%); backdrop-filter: blur(10px); box-sizing: border-box; position: relative;}
+.solution2Page .chooseArea ul li::before{content: ''; position: absolute; left: 2px; width: calc(100% - 4px); top: 2px; height: calc(100% - 4px); border-radius: 8px; background: #0D1116;}
+.solution2Page .chooseArea ul li::after{content: ''; position: absolute; left: 2px; width: calc(100% - 4px); top: 2px; height: calc(100% - 4px); border-radius: 8px; background: linear-gradient(114deg, #131313 0%, rgba(61, 61, 61, 0.30) 103.45%); backdrop-filter: blur(10px);}
+.solution2Page .chooseArea ul li p{color: white; position: relative; z-index: 1;}
+.solution2Page .chooseArea ul li p::before{content: ''; width: 28px; margin-bottom: 9px; aspect-ratio: 1; background-image: var(--img); background-position: center; background-size: cover; display: block;}
+.solution2Page .platformArea h2{margin-bottom: 56px;}
+.solution2Page .platformArea ul li{padding: 64px 64px 64px 160px; border: 2px solid #F31199; border-radius: 6px; position: relative;}
+.solution2Page .platformArea ul li::before{content: ''; position: absolute; left: 64px; top: 64px; width: 64px; aspect-ratio: 1; background-image: var(--img); background-repeat: no-repeat; background-position: center; background-size: cover;}
+.solution2Page .platformArea ul li:not(:last-child){margin-bottom: 40px;}
+.solution2Page .platformArea ul li strong{font-size: 32px; line-height: 49px; margin-bottom: 24px; font-weight: 700; left: -0.043px; display: block;}
+.solution2Page .platformArea ul li b{font-size: 28px; line-height: 33px; margin-bottom: 8px; display: block;}
+.solution2Page .platformArea ul li p{font-size: 16px; line-height: 28px; font-weight: 400; color: rgba(255, 255, 255, 0.7); letter-spacing: 0.024px;}
+.solution2Page .platformArea ul li div{display: flex; flex-wrap: wrap; gap: 16px; margin-top: 9.5px;}
+.solution2Page .platformArea ul li div span{font-size: 13px; line-height: 24px; padding-inline: 10px; background-color: rgba(243, 17, 153, 0.90); border-radius: 4px;}
+.solution2Page .platformArea ul li a{font-size: 16px; right: 64px; top: 40px; padding: 12px 20px; font-weight: 500; position: absolute; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 12px;}
+.solution2Page .tableArea strong{margin-bottom: 36px;}
+.solution2Page .tableArea table{width: 100%; border: 1px solid white; border-radius: 6px; border-collapse: separate;}
+.solution2Page .tableArea table tr{height: 57px;}
+.solution2Page .tableArea table tr *{font-size: 16px; line-height: 22.4px; padding-inline: 16.8px; font-weight: 400; vertical-align: middle;}
+.solution2Page .tableArea table tr *:not(:first-child){text-align: center; border-left: 0.7px solid white;}
+.solution2Page .tableArea table thead tr th{background: linear-gradient(114deg, rgba(19, 19, 19, 0.80) 0%, rgba(61, 61, 61, 0.40) 103.45%);}
+.solution2Page .tableArea table tbody tr td{border-top: 0.7px solid white;}
+.solution2Page .tableArea table tbody tr td.check{background: url(../images/icon-check-white.png) no-repeat center / 32px; text-indent: -9999px;}
 
 
 :is(.boardPage, .boardDetailPage, .inquiryPage, .inquiryResultPage, .faqPage, .estimatePage, .estimateDetailPage, [class*="buy"][class*="Page"], .estimateResultPage, .buyResultPage) section h2{font-weight: 700; text-align: center;}
