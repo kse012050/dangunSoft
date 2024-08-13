@@ -34,12 +34,13 @@ export default function EstimateProduct({ productData, products, setProducts, pr
                         }
                     }
                 })
-    },[dataChange])
+    },[dataChange, id])
 
     useEffect(()=>{
         if(inputs?.vendor_id){
             userApi('product', '', {vendor_id: inputs.vendor_id})
                 .then((result)=>{
+                    // console.log(result);
                     if(result.result){
                         setProduct({
                             list: result.list.map((data)=> data.product_name),
@@ -59,6 +60,8 @@ export default function EstimateProduct({ productData, products, setProducts, pr
 
     useEffect(()=>{
         if(inputs?.product_id && product){
+            // console.log(inputs?.product_id);
+            
             setOption({
                 list: product?.data.filter((data)=> data?.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data?.option_name),
                 value: product?.data.filter((data)=> data?.product_id === inputs.product_id)[0]?.optionList?.map((data)=> data?.product_option_id),
@@ -92,7 +95,7 @@ export default function EstimateProduct({ productData, products, setProducts, pr
             if(!dataChange){
                 setFirstText((prev)=>({
                     ...prev, 
-                    product_option_id: option.data.filter(data=>data.product_option_id === inputs?.product_option_id)[0].option_name, 
+                    product_option_id: option.data.filter(data=>data.product_option_id === inputs?.product_option_id)[0]?.option_name, 
                 }))
                 // setDataChange(prev=>!prev)
             }

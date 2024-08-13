@@ -24,7 +24,7 @@ export default function Product() {
     return (
         <>
             <section className='welcomeArea'>
-                <h2>Welcome to JetBrains Tool!</h2>
+                <h2>Welcome to JetBrains Tools!</h2>
                 <p>JetBrainsは、個人とチームの両方のために、さまざまなツールを提供しています。</p>
                 <Link to='/estimate' className='btn-border-white'>お見積もり</Link>
             </section>
@@ -45,7 +45,7 @@ export default function Product() {
                 <ul style={{'--styleTotal': iconList.length}}>
                     { list.map((data)=>
                         <li style={{'--styleIdx': data.idx}} key={data.idx}>
-                            <Link to={`/product/${data.idx}`}>
+                            <Link to={`/product/${data.title}`}>
                                 <img src={require(`../images/${data.idx}.png`)} alt="" />
                                 <b>{ data.title }</b>
                                 <p>{ data.detail }</p>

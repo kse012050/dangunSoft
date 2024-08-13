@@ -35,6 +35,7 @@ export default function Estimate() {
         inputsRequiredAdd(setInputs);
 
         if(id){
+            // console.log(id);
             userApi('product/detail', '', {option_price_id: id})
                 .then((result)=>{
                     if(result.result){

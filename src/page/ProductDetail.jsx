@@ -3,8 +3,9 @@ import { iconList } from '../js/product'
 import { Link, useParams } from 'react-router-dom';
 
 export default function ProductDetail() {
-    const { productIdx } = useParams()
-    const productData = iconList.filter((data)=>data.idx === Number(productIdx))[0]
+    const { productName } = useParams()
+    const productData = iconList.filter((data)=>data.title === productName)[0]
+    // const productData = iconList.filter((data)=>data.idx === Number(productIdx))[0]
     // console.log(productData);
  
     return (
@@ -14,7 +15,7 @@ export default function ProductDetail() {
                 <p>
                     { productData.summary }
                 </p>
-                <img src={require(`../images/${productIdx}.png`)} alt="" />
+                <img src={require(`../images/${productData.idx}.png`)} alt="" />
                 <Link to={productData.topLink} className='linkArea'>お見積もり</Link>
             </section>
 
@@ -36,7 +37,7 @@ export default function ProductDetail() {
 
             <section className='purchaseArea'>
                 <h3>ご購入オプション
-                    <small style={productData.h3Small && {display: 'block', lineHeight: '1.2', marginTop: '10px'}}>
+                    <small style={/* productData.h3Small && */ {display: 'block', lineHeight: '1.2', marginTop: '10px'}}>
                         {productData.h3Small || 'ご購入は新規のみ可能です。 更新はお見積もりのリクエストをお願いします。'}
                     </small>
                 </h3>
@@ -73,7 +74,10 @@ export default function ProductDetail() {
                                             rowSpan={data?.row ? data.row : 1}
                                         >
                                             {data.link &&
-                                                <Link to={`${data.link}${data.link.includes('buy')? '?idx=' + productIdx: ''}`} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                                <Link to={`${data.link}${data.link.includes('buy')? '?idx=' + productData.idx: ''}`} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                            }
+                                            {data.text && !data.link &&
+                                                data.text
                                             }
                                         </td>
                                     )}
@@ -117,6 +121,9 @@ export default function ProductDetail() {
                                             >
                                                 {data.link &&
                                                     <Link to={data.link} className={a ? 'btn-bg': 'btn-border-black'}>{ data.text }</Link>
+                                                }
+                                                {data.text && !data.link &&
+                                                    data.text
                                                 }
                                             </td>
                                         )}
@@ -237,29 +244,31 @@ export default function ProductDetail() {
                 </section>
             }
 
-            <section className='FAQBox'>
-                <h3>FAQ</h3>
-                <ul className='FAQBox'>
-                    
-                    {productData.FAQ.map((faqData, i)=>
-                        <li key={i}>
-                            <details>
-                                <summary>{ faqData.title }</summary>
-                                <div>
-                                    <p>{ faqData.description }</p>
-                                    { faqData.list &&
-                                        <ul>
-                                            {faqData.list.map((faqListData, faqIdx)=>
-                                                <li key={faqIdx}>{ faqListData }</li>
-                                            )}
-                                        </ul>
-                                    }
-                                </div>
-                            </details>
-                        </li>
-                    )}
-                </ul>
-            </section>
+            {productData.FAQ && 
+                <section className='FAQBox'>
+                    <h3>FAQ</h3>
+                    <ul className='FAQBox'>
+                        
+                        {productData.FAQ.map((faqData, i)=>
+                            <li key={i}>
+                                <details>
+                                    <summary>{ faqData.title }</summary>
+                                    <div>
+                                        <p>{ faqData.description }</p>
+                                        { faqData.list &&
+                                            <ul>
+                                                {faqData.list.map((faqListData, faqIdx)=>
+                                                    <li key={faqIdx}>{ faqListData }</li>
+                                                )}
+                                            </ul>
+                                        }
+                                    </div>
+                                </details>
+                            </li>
+                        )}
+                    </ul>
+                </section>
+            }
         </>
     );
 }

@@ -104,6 +104,16 @@ export const tabList = [
             'TeamCity',
         ]
     },
+    {
+        name: 'IDE Services',
+        type: [
+            "IDE Provisioner",
+            "License Vault",
+            "JetBrains AI",
+            "Code With Me",
+            "CodeCanvas"
+        ]
+    },
 ]
 
 const commonSubscribe = [
@@ -314,7 +324,7 @@ export const iconList = [
     },
     {
         idx: 1,
-        title: 'JetBrains AI',
+        title: 'JetBrains AI Pro',
         topLink: '/estimate/1076',
         detail: 'IDE内部に強力なAI機能を提供するプラグイン',
         type: [
@@ -440,6 +450,50 @@ export const iconList = [
                         link: '/buy/1172'
                     },
                 ]
+            ]
+        }, 
+        purchase2: {
+            title: [
+                [
+                    {
+                        text: ''
+                    },
+                    {
+                        text: '先払い'
+                    },
+                    {
+                        text: '後払い'
+                    }
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: 'On-Premises'
+                    },
+                    {
+                        text: '$360 / user\n(税込み $396)'
+                    },
+                    {
+                        text: '$360 / user\n(税込み $396)'
+                    },
+                ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: 'Cloud Single-Tenant',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate'
+                    }
+                ],
             ]
         },
         FAQ: [
@@ -3368,6 +3422,49 @@ export const iconList = [
                 ]
             ]
         },
+        purchase2: {
+            title: [
+                [
+                    {
+                        text: '',
+                    },
+                    {
+                        text: '先払い',
+                    },
+                    {
+                        text: '後払い'
+                    }
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: 'On-Premises'
+                    },
+                    {
+                        text: '$420 / user\n(税込み $462)'
+                    },
+                    {
+                        text: '$420 / user\n(税込み $462)'
+                    },
+                ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: 'Cloud Single-Tenant',
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/'
+                    }
+                ],
+            ]
+        },
         // purchaseText: ['Code With Me Enterpriseは10 hostから購入可能です。'],
         FAQ: [
             {
@@ -3751,28 +3848,28 @@ export const iconList = [
                     },
                 ],
             ],
-            // bottom: [
-            //     [
-            //         {
-            //             text: '',
-            //             link: ''
-            //         },
-            //         {
-            //             text: 'お見積もり',
-            //             link: '/estimate/1323'
-            //         },
-            //     ],
-            //     [
-            //         {
-            //             text: '',
-            //             link: ''
-            //         },
-            //         {
-            //             text: 'ご購入',
-            //             link: '/buy/1323'
-            //         },
-            //     ]
-            // ]
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1323'
+                    },
+                ],
+                // [
+                //     {
+                //         text: '',
+                //         link: ''
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/1323'
+                //     },
+                // ]
+            ]
         },
         purchase3: {
             title: [
@@ -3857,28 +3954,28 @@ export const iconList = [
                     },
                 ],
             ],
-            // bottom: [
-            //     [
-            //         {
-            //             text: '',
-            //             link: ''
-            //         },
-            //         {
-            //             text: 'お見積もり',
-            //             link: '/estimate/1333'
-            //         },
-            //     ],
-            //     [
-            //         {
-            //             text: '',
-            //             link: ''
-            //         },
-            //         {
-            //             text: 'ご購入',
-            //             link: '/buy/1333'
-            //         },
-            //     ]
-            // ]
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1333'
+                    },
+                ],
+                // [
+                //     {
+                //         text: '',
+                //         link: ''
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/1333'
+                //     },
+                // ]
+            ]
         },
         purchase4: {
             title: [
@@ -3963,28 +4060,28 @@ export const iconList = [
                     },
                 ],
             ],
-            // bottom: [
-            //     [
-            //         {
-            //             text: '',
-            //             link: ''
-            //         },
-            //         {
-            //             text: 'お見積もり',
-            //             link: '/estimate/1351'
-            //         },
-            //     ],
-            //     [
-            //         {
-            //             text: '',
-            //             link: ''
-            //         },
-            //         {
-            //             text: 'ご購入',
-            //             link: '/buy/1351'
-            //         },
-            //     ]
-            // ]
+            bottom: [
+                [
+                    {
+                        text: '',
+                        link: ''
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1351'
+                    },
+                ],
+                // [
+                //     {
+                //         text: '',
+                //         link: ''
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/1351'
+                //     },
+                // ]
+            ]
         },
         purchaseText: [
             'YouTrack Cloudは年間サブスクリプションライセンス、YouTrack Serverは永久ライセンスです。',
@@ -4598,16 +4695,16 @@ export const iconList = [
                         link: '/estimate/1819'
                     }
                 ],
-                [
-                    {
-                        text: '',
-                        link: ''
-                    },
-                    {
-                        text: 'ご購入',
-                        link: '/buy/826'
-                    }
-                ]
+                // [
+                //     {
+                //         text: '',
+                //         link: ''
+                //     },
+                //     {
+                //         text: 'ご購入',
+                //         link: '/buy/826'
+                //     }
+                // ]
             ]
         },
         purchase2: {
@@ -4733,7 +4830,226 @@ export const iconList = [
                 description: 'TeamCity Cloudで購入した各Commiterに対してBuild Creditが提供されます。TeamCity CloudでBuild Creditは、ビルドエージェントを使用するための「通貨」のような役割を果たします。Build Creditは、エージェントがビルドを実行している間、自動的に差し引かれます。',
             }
         ]
-    }
+    },
+    {
+        idx: 24,
+        topLink: '/estimate/1835',
+        title: 'IDE Provisioner',
+        h3Small: '企業内IDEプロビジョニングソリューション',
+        detail: '企業内IDEプロビジョニングソリューション',
+        type: [
+            'Provisioning',
+            'IDE',
+        ],
+        summary: 'IDE Provisionerは企業内のJetBrains IDE（統合開発環境）及びプラグインの使用を統制するプロビジョニングツールです。\nIDE Provisionerを通じて社内開発者に一貫した開発環境を提供することができます。',
+        info:  'IDE Provisionerは企業内の開発者が使用可能なIDEの種類及びバージョンを制限します。 これにより、脆弱性が発見されたツールを使用できないように全社的に制御できます。 また、IDE ProvisionerはVMオプション、コードスタイルなどIDE(統合開発環境)設定を社内開発者のIDEに伝播し、一貫した開発環境を提供します。',
+        function: [
+            {
+                title: '사용자 및 팀 관리',
+                description: 'IDE Provisionerは数多くの開発者を一つの空間で管理します。 IDE Provisionerを通じて各チームまたは開発者全体に適用されるプロファイルを生成し、開発者の作業管理を中央化します。',
+                img: 'IDE01'
+            },
+            {
+                title: 'IDE 및 플러그인 관리',
+                description: 'IDE Provisionerを通じてプロフィールが適用されたチームまたは開発者が使用可能なIDE(統合開発環境)およびプラグインを選択することができます。 IDE Provisionerは特定バージョンのツールの使用を制限することができます。',
+                img: 'IDE02'
+            },
+            {
+                title: '플러그인 저장소 생성',
+                description: 'IDE Provisionerで社内専用プラグインストレージを作成することができます。 社内専用プラグインストアに社内で許可されたバージョンのプラグインのみをアップロードして、一貫した開発ツールを提供します。',
+                img: 'IDE03'
+            }
+        ],
+        purchase: {
+            title: [
+                [
+                    {
+                        text: '',
+                    },
+                    {
+                        text: '先払い',
+                    },
+                    {
+                        text: '後払い',
+                    },
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: 'On-Premises'
+                    },
+                    {
+                        text: '$120 / user\n(税込み $132)'
+                    },
+                    {
+                        text: '$120 / user\n(税込み $132)'
+                    },
+                ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: 'Cloud Single-Tenant',
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1835'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1835'
+                    },
+                ],
+            ]
+        },
+    },
+    {
+        idx: 25,
+        topLink: '/estimate/1860',
+        title: 'License Vault',
+        h3Small: ' ',
+        detail: '企業内の柔軟なライセンス自動管理ソリューション',
+        type: [
+            'Licensing',
+            'IDE',
+        ],
+        summary: 'License Vaultはライセンスを自動的に管理してくれるソリューションです。\nLicense Vaultを通じて数多くのJetBrainsライセンスを柔軟かつ効率的に管理することができます。',
+        info:  'License Vaultは自動的に未使用ライセンスを回収し、他のユーザーに割り当てます。 これにより、企業規模が大きくなるにつれてライセンス数量が増加しても効率的にライセンスを使用することができます。 License Vaultは保有量を超過し、急に必要なライセンスに対して作業を中断することなくライセンスを優先的に使用し、その後に費用を支払う柔軟性を提供します。',
+        function: [
+            {
+                title: '라이선스 자동 관리',
+                description: 'License Vaultはライセンスを自動的に分配します。 ユーザがIDE（統合開発環境）を実行し、License Vault URLだけを入力すると、ライセンスが直ちにユーザに割り当てられます。',
+                img: 'licenseVault01'
+            },
+            {
+                title: '스마트 텍스트 에디터',
+                description: 'License Vaultは可視性の高いリアルタイム統計を提供します。 License Vaultが提供する統計を通じて企業のライセンス管理を最適化することができます。',
+                img: 'licenseVault02'
+            },
+            {
+                title: 'True-Up 라이선스',
+                description: 'License Vaultを通じて保有量を超過しても、急に必要なライセンスを先に使用することができます。 License VaultのTrue-Upライセンスを通じて、新規入社者または短期プロジェクトに必要なライセンスを直ちに使用し、その後に費用を支払うことができます。',
+                img: 'licenseVault03'
+            }
+        ],
+        purchase: {
+            title: [
+                [
+                    {
+                        text: '',
+                    },
+                    {
+                        text: '先払い',
+                    },
+                    {
+                        text: '後払い',
+                    },
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: 'On-Premises'
+                    },
+                    {
+                        text: '使用量に応じて請求'
+                    },
+                    {
+                        text: '使用量に応じて請求'
+                    },
+                ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: 'Cloud Single-Tenant',
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1860'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1860'
+                    },
+                ],
+            ]
+        },
+    },
+    {
+        idx: 26,
+        topLink: '/estimate/1853',
+        title: 'CodeCanvas',
+        h3Small: ' ',
+        detail: 'すべてが用意された遠隔開発環境プラットフォーム',
+        type: [
+            'Remote Dev',
+            'IDE',
+        ],
+        summary: 'CodeCanvasは企業の要求事項に合うIDE(統合開発環境)があらかじめ用意された遠隔開発環境プラットフォームです。\nCodeCanvasは開発者の開発環境のセッティング時間をなくし、開発作業にさらに集中するようにします。',
+        info:  'CodeCanvasは企業のソースコードセキュリティを向上させる遠隔開発環境プラットフォームです。 企業はCodeCanvasを活用して社内ソースコードを開発者のPCではなく社内サーバーに保存することになります。 これにより、企業の資産であるソース コードをより安全に管理できます。 また、CodeCanvasを通じてあらかじめ準備された遠隔開発環境を社内に配布し、ユーザーが直ちに開発作業を始めることができます。',
+        function: [
+            {
+                title: '미리 준비된 개발 환경',
+                description: 'CodeCanvasは依存性ダウンロード、ストレージアップデート、インデックスなど、すべての作業が完了した開発環境を提供します。 したがって、開発者はCodeCanvasを通じて別途の作業なしに直ちにIDE(統合開発環境)を開始し、開発作業に集中することができます。',
+                img: 'codeCanvas01'
+            },
+            {
+                title: '컴퓨팅 리소스 선택',
+                description: 'CodeCanvasでは、プロジェクト規模、コードベースサイズに適したコンピューティングリソースを選択できます。 CodeCanvasでCPU、メモリ、ディスク容量など、ユーザーに適した規模のリソースを選択し、コストを最適化することができます。',
+                img: 'codeCanvas02'
+            },
+            {
+                title: '유연하고 강력한 개발 환경 관리',
+                description: 'CodeCanvasはIDE（統合開発環境）バージョン、コンピューティングリソースなどを集中管理します。 CodeCanvasを通じて社内開発環境を柔軟かつ強力に管理することができます。',
+                img: 'codeCanvas03'
+            }
+        ],
+        purchase: {
+            title: [
+                [
+                    {
+                        text: '',
+                    },
+                    {
+                        text: '先払い',
+                    },
+                    {
+                        text: '後払い',
+                    },
+                ]
+            ],
+            details: [
+                [
+                    {
+                        text: 'On-Premises'
+                    },
+                    {
+                        text: '$600 / user\n(税込み $660)'
+                    },
+                    {
+                        text: '$600 / user\n(税込み $660)'
+                    },
+                ],
+            ],
+            bottom: [
+                [
+                    {
+                        text: 'Cloud Single-Tenant',
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1853'
+                    },
+                    {
+                        text: 'お見積もり',
+                        link: '/estimate/1853'
+                    },
+                ],
+            ]
+        },
+    },
 ]
 
 

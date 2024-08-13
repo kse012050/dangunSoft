@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import {styleIdx} from '../js/style.js';
 import Header from '../components/Header'
@@ -9,6 +9,8 @@ import { userPageLog } from '../api/api.js';
 
 export default function Root() {
     const location = useLocation().pathname.slice(1).split('/');
+    const { productName } = useParams()
+    
     let className = !location[0] ? 
                             'main' : 
                             (isNaN(Number(location.at(-1))) ? location.at(-1) : `${location.at(-2)}Detail`)
@@ -25,6 +27,10 @@ export default function Root() {
     // console.log(className);
     if(className === 'orderDetail' || className.includes('NT_')){
         className = 'buyDetail'
+    }
+    
+    if(productName){
+        className = 'productDetail'
     }
 
     useEffect(()=>{
